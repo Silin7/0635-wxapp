@@ -1,0 +1,16 @@
+/**app.wxss**/
+@import "./styleSheet/flex.wxss";
+@import "./styleSheet/color.wxss";
+@import "./styleSheet/flex.wxss";
+@import "./styleSheet/font.wxss";
+@import "./styleSheet/mrpd.wxss";
+@import "./styleSheet/text.wxss";
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 

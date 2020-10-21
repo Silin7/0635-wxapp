@@ -1,0 +1,19 @@
+/* 圆角 */
+.br_5 {
+  border-radius: 5px;
+}
+.br_10 {
+  border-radius: 10px;
+}
+.br_15 {
+  border-radius: 15px;
+}
+.br_20 {
+  border-radius: 20px;
+}
+.br_25 {
+  border-radius: 25%;
+}
+.br_50 {
+  border-radius: 50%;
+}

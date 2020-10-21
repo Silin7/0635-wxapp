@@ -1,0 +1,104 @@
+
+// 处理日期
+var dayjs = function (date, status, state) {
+  if (date) {
+    // state为true，date格式为：YYYY-MM-DD；state为fasle，date格式为：YYYY-MM-DD HH-MM-SS
+    if (state == true) {
+      var dateArray = date
+    } else {
+      var dateArray = date.split(' ')[0]
+      var timeArray = date.split(' ')[1]
+    }
+    // yyyy-mm-dd
+    if (status === '0') {
+      return dateArray
+    }
+    // yyyy/mm/dd
+    if (status === '0-1') {
+      dateArray = dateArray.split('-')
+      dateArray = dateArray.join('/')
+      return dateArray
+    }
+    // yyyy-mm-dd hh:mm
+    if (status === '1') {
+      var dateBox = []
+      timeArray = timeArray.split(':')
+      timeArray.pop()
+      timeArray = timeArray.join(':')
+      dateBox.push(dateArray)
+      dateBox.push(timeArray)
+      dateBox = dateBox.join(' ')
+      return dateBox
+    }
+    // mm/dd
+    if (status === '2') {
+      dateArray = dateArray.split('-')
+      dateArray.shift()
+      dateArray = dateArray.join('/')
+      return dateArray
+    }
+    // mm/dd hh:mm
+    if (status === '3') {
+      var dateBox = []
+      dateArray = dateArray.split('-')
+      dateArray.shift()
+      dateArray = dateArray.join('/')
+      timeArray = timeArray.split(':')
+      timeArray.pop()
+      timeArray = timeArray.join(':')
+      dateBox.push(dateArray)
+      dateBox.push(timeArray)
+      dateBox = dateBox.join(' ')
+      return dateBox
+    }
+    // mm/dd hh:mm 注: date格式为：YYYY-MM-DD HH-MM
+    if (status === '3-1') {
+      var dateBox = []
+      dateArray = dateArray.split('-')
+      dateArray.shift()
+      dateArray = dateArray.join('/')
+      dateBox.push(dateArray)
+      dateBox.push(timeArray)
+      dateBox = dateBox.join(' ')
+      return dateBox
+    }
+    // yyyy/mm/dd hh:mm
+    if (status === '4') {
+      var dateBox = []
+      dateArray = dateArray.split('-')
+      dateArray = dateArray.join('/')
+      timeArray = timeArray.split(':')
+      timeArray.pop()
+      timeArray = timeArray.join(':')
+      dateBox.push(dateArray)
+      dateBox.push(timeArray)
+      dateBox = dateBox.join(' ')
+      return dateBox
+    }
+    // hh:mm
+    if (status === '5') {
+      timeArray = timeArray.split(':')
+      timeArray.pop()
+      timeArray = timeArray.join(':')
+      return timeArray
+    }
+    // hh:mm 注: date格式为：YYYY-MM-DD HH-MM
+    if (status === '5-1') {
+      return timeArray
+    }
+    // mm/dd hh:mm:ss
+    if (status === '6') {
+      var dateBox = []
+      dateArray = dateArray.split('-')
+      dateArray.shift()
+      dateArray = dateArray.join('/')
+      dateBox.push(dateArray)
+      dateBox.push(timeArray)
+      dateBox = dateBox.join(' ')
+      return dateBox
+    }
+  }
+}
+ module.exports = {
+   dayjs: dayjs,
+ }

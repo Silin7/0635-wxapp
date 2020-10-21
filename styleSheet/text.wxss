@@ -1,0 +1,112 @@
+/* 首行缩进 */
+.ti_6 {
+  text-indent: 6px;
+}
+.ti_8 {
+  text-indent: 8px;
+}
+.ti_10 {
+  text-indent: 10px;
+}
+.ti_12 {
+  text-indent: 12px;
+}
+.ti_14 {
+  text-indent: 14px;
+}
+.ti_16 {
+  text-indent: 16px;
+}
+.ti_18 {
+  text-indent: 18px;
+}
+.ti_20 {
+  text-indent: 20px;
+}
+.ti_30 {
+  text-indent: 30px;
+}
+
+/* 字间距 */
+.ls_1 {
+  letter-spacing: 1px;
+}
+.ls_2 {
+  letter-spacing: 2px;
+}
+.ls_3 {
+  letter-spacing: 3px;
+}
+.ls_4 {
+  letter-spacing: 4px;
+}
+.ls_5 {
+  letter-spacing: 5px;
+}
+.ls_6 {
+  letter-spacing: 6px;
+}
+.ls_8 {
+  letter-spacing: 8px;
+}
+.ls_10 {
+  letter-spacing: 10px;
+}
+
+/* 多行文本溢出显示省略号 */
+.to_1 {
+  display: -webkit-box; 
+  overflow:hidden;
+  text-overflow: elipsis;
+  word-break: break-all;
+  -webkit-box-orient:vertical; 
+  -webkit-line-clamp: 1;
+}
+.to_2 {
+  display: -webkit-box; 
+  overflow:hidden;
+  text-overflow: elipsis;
+  word-break: break-all;
+  -webkit-box-orient:vertical; 
+  -webkit-line-clamp: 2;
+}
+.to_3 {
+  display: -webkit-box; 
+  overflow:hidden;
+  text-overflow: elipsis;
+  word-break: break-all;
+  -webkit-box-orient:vertical; 
+  -webkit-line-clamp: 3;
+}
+.to_4 {
+  display: -webkit-box; 
+  overflow:hidden;
+  text-overflow: elipsis;
+  word-break: break-all;
+  -webkit-box-orient:vertical; 
+  -webkit-line-clamp: 4;
+}
+.to_5 {
+  display: -webkit-box; 
+  overflow:hidden;
+  text-overflow: elipsis;
+  word-break: break-all;
+  -webkit-box-orient:vertical; 
+  -webkit-line-clamp: 6;
+}
+.to_6 {
+  display: -webkit-box; 
+  overflow:hidden;
+  text-overflow: elipsis;
+  word-break: break-all;
+  -webkit-box-orient:vertical; 
+  -webkit-line-clamp: 6;
+}
+.to_8 {
+  display: -webkit-box; 
+  overflow:hidden;
+  text-overflow: elipsis;
+  word-break: break-all;
+  -webkit-box-orient:vertical; 
+  -webkit-line-clamp: 8;
+}
