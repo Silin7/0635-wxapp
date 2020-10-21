@@ -4,10 +4,15 @@ const app = getApp()
 
 Page({
   data: {
+    value: '',
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
+  },
+  onChange(event) {
+    // event.detail 为当前输入的值
+    console.log(event.detail);
   },
   onLoad: function () {
     if (app.globalData.userInfo) {
