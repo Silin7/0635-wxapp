@@ -5,6 +5,7 @@
 @import "./styleSheet/font.wxss";
 @import "./styleSheet/mrpd.wxss";
 @import "./styleSheet/text.wxss";
+@import "./styleSheet/w_h.wxss";
 .container {
   height: 100%;
   display: flex;

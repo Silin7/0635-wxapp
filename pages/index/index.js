@@ -1,5 +1,4 @@
-//index.js
-//获取应用实例
+import esRequest from '../../utils/esRequest'
 const app = getApp()
 
 Page({
@@ -48,6 +47,21 @@ Page({
     this.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
+    })
+  },
+   aaa: function() {
+    let data = {
+      state: 0,
+      name: 'silin.wang111',
+      password: '123456',
+    }
+    esRequest('POST', 'post_register', data).then(res => {
+      console.log(res)
+      // if (res && res.data.code == 0) {
+      //   console.log(res)
+      // } else {
+      //   console.log(res)
+      // }
     })
   }
 })

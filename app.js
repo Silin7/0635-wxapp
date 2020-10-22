@@ -1,9 +1,6 @@
-//app.js
-import esRequest from "./utils/esRequest"
-
 App({
   onLaunch: function () {
-    // 登录
+    // 获取openid和session_key
     wx.login({
       success: (res) => {
         if (res.code) {

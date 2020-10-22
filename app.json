@@ -1,5 +1,7 @@
 {
   "pages":[
+    "pages/loginModule/authorize/authorize",
+    "pages/loginModule/phone/phone",
     "pages/index/index"
   ],
   "window":{

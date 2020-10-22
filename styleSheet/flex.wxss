@@ -1,3 +1,17 @@
+/* 弹性盒 */
+.bs_bb {
+  box-sizing: border-box;
+}
+.d_i {
+  display: inline;
+}
+.d_b {
+  display: block;
+}
+.d_ib {
+  display: inline-block;
+}
+
 .fx_r_c_c {
   display: flex;
   flex-flow: row;

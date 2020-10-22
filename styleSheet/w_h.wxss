@@ -1,0 +1,20 @@
+.w_100 {
+  width: 100%;
+}
+.w_100w {
+  width: 100vw;
+}
+.h_100 {
+  height: 100%;
+}
+.h_100h {
+  height: 100vh;
+}
+.w_h_100 {
+  width: 100%;
+  height: 100%;
+}
+.w_h_100wh {
+  width: 100vw;
+  height: 100vh;
+}
