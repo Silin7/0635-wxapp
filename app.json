@@ -1,8 +1,8 @@
 {
   "pages":[
+    "pages/homeModule/homePage/homePage",
     "pages/loginModule/authorize/authorize",
-    "pages/loginModule/phone/phone",
-    "pages/index/index"
+    "pages/loginModule/getPhone/getPhone"
   ],
   "window":{
     "backgroundTextStyle":"light",
