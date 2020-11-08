@@ -1,0 +1,27 @@
+<view class="relative w_h_100wh bg_F">
+  <view class="page_top bs_bb">
+    <view class="logo_box">
+      <image src="/images/loginMoudle/logo.png" class="logo_img"></image>
+    </view>
+    <view class="co_F fs_26 ls_2">聊吧</view>
+  </view>
+  <view class="page_center bg_F bs_bb">
+    <!-- 请输入用户名 -->
+    <view class="login_name fx_r_s_c">
+      <view class="login_name_icon">
+        <image src="/images/loginMoudle/userName.png" class="login_name_icon_img"></image>
+      </view>
+      <van-field value="{{userName}}" placeholder="请输入用户名" bind:blur="inputName"/>
+    </view>
+    <!-- 请输入密码 -->
+    <view class="login_name fx_r_s_c m_t_20">
+      <view class="login_name_icon">
+        <image src="/images/loginMoudle/password.png" class="login_name_icon_img"></image>
+      </view>
+      <van-field type="password" value="{{password}}" placeholder="请输入密码" bind:blur="inputPassword"/>
+    </view>
+    <view class="login_text fx_r_s_c co_9 fs_14 m_t_10">忘记密码？</view>
+    <view class="sign_up_btn m_t_20" bindtap="sign_in">登录</view>
+  </view>
+  <view class="to_register fx_r_c_c fs_14 co_9">还没有账号？点此注册 ></view>
+</view>

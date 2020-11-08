@@ -16,7 +16,17 @@ var IDNumber = function(IDNumber) {
   }
 }
 
+// 账号,密码验证 4到16位（字母，数字，下划线，减号）
+var APNumber = function(phoneNumber) {
+  if (!/^[a-zA-Z0-9_-]{4,16}$/.test(phoneNumber)) {
+    return false
+  } else {
+    return true
+  }
+}
+
  module.exports = {
    phoneNumber: phoneNumber,
-   IDNumber: IDNumber
+   IDNumber: IDNumber,
+   APNumber: APNumber
  }
