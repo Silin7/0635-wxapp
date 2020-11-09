@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/loginModule/registerPage/registerPage",
     "pages/loginModule/loginPage/loginPage",
     "pages/homeModule/homePage/homePage",
     "pages/loginModule/authorize/authorize",
