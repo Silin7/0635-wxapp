@@ -23,7 +23,7 @@
 
 .page_center {
   width: 90vw;
-  height: 250px;
+  height: 280px;
   position: absolute;
   top: 30vh;
   left: 5vw;

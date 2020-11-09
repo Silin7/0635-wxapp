@@ -35,6 +35,15 @@
 .m_t_30 {
   margin-top: 30px;
 }
+.m_t_40 {
+  margin-top: 40px;
+}
+.m_t_50 {
+  margin-top: 50px;
+}
+.m_t_60 {
+  margin-top: 60px;
+}
 .m_b_5 {
   margin-bottom: 5px;
 }

@@ -5,12 +5,13 @@ Page({
   data: {
     userName: '',
     password: '',
+    password2: ''
   },
 
   onLoad: function (options) {
   },
 
-  // 用户名
+  // 账号
   inputName: function (event) {
     this.setData({
       userName: event.detail.value
@@ -24,26 +25,47 @@ Page({
     })
   },
 
-  // 登录
-  sign_in: function () {
+  // 再次输入密码
+  inputPassword2: function (event) {
+    this.setData({
+      password2: event.detail.value
+    })
+  },
+
+  // 注册
+  to_register: function () {
     if (!this.data.userName) {
-      Toast.fail('请输入用户名')
+      Toast.fail('请输入账号')
       return
     }
     if (!this.data.password) {
       Toast.fail('请输入密码')
       return
     }
-    // 用户名,密码应为4到16位的字母，数字，下划线组成
+    if (!this.data.password2) {
+      Toast.fail('请再次输入密码')
+      return
+    }
     if (!regular.APNumber(this.data.userName)) {
-      Toast.fail('用户名格式不正确')
+      Toast.fail('账号格式错误')
       return
     }
     if (!regular.APNumber(this.data.password)) {
-      Toast.fail('密码格式不正确')
+      Toast.fail('密码格式错误')
+      return
+    }
+    if (this.data.password !== this.data.password2) {
+      Toast.fail('密码不一致')
       return
     }
     console.log(this.data)
   },
+
+  // 去登录
+  to_login: function () {
+    wx.redirectTo({
+      url: '/pages/loginModule/loginPage/loginPage'
+    })
+  }
 
 })

@@ -23,9 +23,9 @@
 
 .page_center {
   width: 90vw;
-  height: 260px;
+  height: 340px;
   position: absolute;
-  top: 18vh;
+  top: 20vh;
   left: 5vw;
   border-radius: 20px;
   padding: 20px 20px;
@@ -38,9 +38,10 @@
   height: 40px;
 }
 .login_text {
-  width: 50%;
+  width: 90%;
   background-color: #F9F9F9;
   height: 40px;
+  margin-left: 5%;
 }
 .login_name_icon {
   width: 50px;
@@ -63,10 +64,6 @@
   border-radius: 20px;
   letter-spacing: 5px;
   background: -webkit-linear-gradient(left, #9F83F2, #D38ADC);
-}
-
-.to_login {
-  margin-top: 150px;
 }
 
 .van-cell {
