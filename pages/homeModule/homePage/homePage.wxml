@@ -1,12 +1,32 @@
-<view class="homePage bs_bb oy_a" style="height: {{windowHeight-84}}px">
+<view class="bg_F5 bs_bb oy_a" style="height: {{windowHeight-84}}px">
   <!-- swiper滚动图 -->
-	<swiper indicator-dots="{{true}}" autoplay="{{true}}" style="height: 360rpx;">
+	<swiper indicator-dots="{{true}}" autoplay="{{true}}" circular="{{true}}" style="height: 360rpx;">
 		<block wx:for="{{swiperList}}" wx:key="index" wx:for-item="item">
 			<swiper-item bindtap="swiperTap" data-item="{{item}}">
 				<image style="height: 360rpx; width: 100%;" src="{{item.image}}"></image>
 			</swiper-item>
 		</block>
 	</swiper>
+  <!-- 子模块01 -->
+  <view class="icon_module bs_bb m_t_10">
+    <view class="icon_module_item" wx:for="{{iconList}}" wx:key="index">
+      <view class="item_icon">
+        <image src="{{item.image}}" class="item_icon_img"></image>
+      </view>
+      <view class="item_text fw_7 ls_1">{{item.name}}</view>
+    </view>
+  </view>
+  <!-- 子模块02 -->
+  <view class="sub_module m_t_10">
+    <view class="sub_module_left">
+      <view class="sub_module_01">1</view>
+      <view class="sub_module_02 m_t_15">2</view>
+    </view>
+    <view class="sub_module_right">
+      <view class="sub_module_02">2</view>
+      <view class="sub_module_01 m_t_15">1</view>
+    </view>
+  </view>
 </view>
 
 <!-- 底部导航 -->

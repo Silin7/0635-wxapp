@@ -1,6 +1,7 @@
 {
   "navigationBarTitleText": "0635聊吧",
   "usingComponents": {
+    "van-icon": "/miniprogram_npm/vant-weapp/icon/index",
     "van-tabbar": "/miniprogram_npm/vant-weapp/tabbar/index",
     "van-tabbar-item": "/miniprogram_npm/vant-weapp/tabbar-item/index"
   }

@@ -3,11 +3,15 @@ Page({
   data: {
     windowHeight: 0,
     swiperList: [
-      { id: '01', image: '/images/homeMoudle/swiper_01.jpg' },
-      { id: '02', image: '/images/homeMoudle/swiper_02.jpg' },
-      { id: '03', image: '/images/homeMoudle/swiper_03.jpg' },
-      { id: '04', image: '/images/homeMoudle/swiper_04.jpg' },
-      { id: '05', image: '/images/homeMoudle/swiper_05.jpg' }
+      { id: 'swiper01', image: '/images/homeMoudle/swiper_01.jpg' },
+      { id: 'swiper02', image: '/images/homeMoudle/swiper_02.jpg' },
+      { id: 'swiper03', image: '/images/homeMoudle/swiper_03.jpg' }
+    ],
+    iconList: [
+      { name: '景区', image: '/images/homeMoudle/icon_lx.png', id: 'icon01' },
+      { name: '美食', image: '/images/homeMoudle/icon_ms.png', id: 'icon02' },
+      { name: '游戏', image: '/images/homeMoudle/icon_yx.png', id: 'icon03' },
+      { name: '待定', image: '/images/homeMoudle/icon_dd.png', id: 'icon04' },
     ],
     footerActive: 0,
     footerIcon: {
