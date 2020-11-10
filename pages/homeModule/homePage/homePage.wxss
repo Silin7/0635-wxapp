@@ -1,5 +1,6 @@
 .homePage {
   border: 1px solid firebrick;
+  padding: 12rpx;
 }
 
 /* 底部导航 */
