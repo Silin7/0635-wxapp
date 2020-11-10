@@ -1,11 +1,13 @@
+// "navigationBarBackgroundColor": "#C7C7FE",
 Page({
-
   data: {
     windowHeight: 0,
     swiperList: [
       { id: '01', image: '/images/homeMoudle/swiper_01.jpg' },
       { id: '02', image: '/images/homeMoudle/swiper_02.jpg' },
-      { id: '03', image: '/images/homeMoudle/swiper_03.jpg' }
+      { id: '03', image: '/images/homeMoudle/swiper_03.jpg' },
+      { id: '04', image: '/images/homeMoudle/swiper_04.jpg' },
+      { id: '05', image: '/images/homeMoudle/swiper_05.jpg' }
     ],
     footerActive: 0,
     footerIcon: {

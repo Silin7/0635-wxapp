@@ -1,5 +1,4 @@
 {
-  "navigationBarBackgroundColor": "#C7C7FE",
   "navigationBarTitleText": "0635聊吧",
   "usingComponents": {
     "van-tabbar": "/miniprogram_npm/vant-weapp/tabbar/index",
