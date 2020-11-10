@@ -8,10 +8,10 @@ Page({
       { id: 'swiper03', image: '/images/homeMoudle/swiper_03.jpg' }
     ],
     iconList: [
-      { name: '景区', image: '/images/homeMoudle/icon_lx.png', id: 'icon01' },
-      { name: '美食', image: '/images/homeMoudle/icon_ms.png', id: 'icon02' },
-      { name: '游戏', image: '/images/homeMoudle/icon_yx.png', id: 'icon03' },
-      { name: '待定', image: '/images/homeMoudle/icon_dd.png', id: 'icon04' },
+      { name: '聊城景区', image: '/images/homeMoudle/icon_lx.jpg', id: 'icon01' },
+      { name: '聊城美食', image: '/images/homeMoudle/icon_ms.jpg', id: 'icon02' },
+      { name: '解压游戏', image: '/images/homeMoudle/icon_yx.jpg', id: 'icon03' },
+      { name: '暂未开通', image: '/images/homeMoudle/icon_dd.jpg', id: 'icon04' },
     ],
     footerActive: 0,
     footerIcon: {
