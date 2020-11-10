@@ -31,7 +31,6 @@
     <view class="sub_module_right">
       <view class="sub_module_02">
         <image src="/images/homeMoudle/banner_xq.jpg" class="item_icon_img"></image>
-        <view class="item_banner_text">游人如织，跋山涉水</view>
         <view class="item_banner_text">执子之手，与子偕老</view>
       </view>
       <view class="sub_module_01 m_t_15">
