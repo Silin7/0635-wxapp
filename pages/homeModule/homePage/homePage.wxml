@@ -1,3 +1,8 @@
+<view class="homePage bs_bb oy_a" style="height: {{windowHeight-84}}px">
+
+</view>
+
+<!-- 底部导航 -->
 <van-tabbar active="{{ active }}" bind:change="onChange">
   <van-tabbar-item>
     <image slot="icon" src="{{ icon.home_normal }}" mode="aspectFit" style="width: 30px; height: 24px;"/>

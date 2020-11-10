@@ -1,3 +1,8 @@
+.homePage {
+  border: 1px solid firebrick;
+}
+
+/* 底部导航 */
 .van-tabbar-item--active {
   color: #4545FF!important;
 }

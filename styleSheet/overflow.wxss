@@ -1,0 +1,12 @@
+.ox_a {
+  overflow-x: auto;
+}
+.ox_h {
+  overflow-x: hidden;
+}
+.oy_a {
+  overflow-y: auto;
+}
+.oy_h {
+  overflow-y: hidden;
+}

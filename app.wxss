@@ -4,6 +4,7 @@
 @import "./styleSheet/flex.wxss";
 @import "./styleSheet/font.wxss";
 @import "./styleSheet/mrpd.wxss";
+@import "./styleSheet/overflow.wxss";
 @import "./styleSheet/text.wxss";
 @import "./styleSheet/w_h.wxss";
 .container {

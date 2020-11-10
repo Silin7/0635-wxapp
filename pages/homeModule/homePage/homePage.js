@@ -1,6 +1,7 @@
 Page({
 
   data: {
+    windowHeight: 0,
     active: 0,
     icon: {
       home_normal: '/images/homeMoudle/home_normal.png',
@@ -17,7 +18,10 @@ Page({
   },
 
   onChange(event) {
-    this.setData({ active: event.detail });
+    this.setData({
+      active: event.detail
+    })
+    console.log(event.detail)
   },
 
   onLoad: function (options) {
@@ -25,7 +29,8 @@ Page({
   },
   
   onReady: function () {
-
+    let windowHeight = wx.getSystemInfoSync().windowHeight
+    this.setData({ windowHeight: windowHeight })
   },
   
   onShow: function () {
