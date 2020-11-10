@@ -1,0 +1,7 @@
+.van-tabbar-item--active {
+  color: #4545FF!important;
+}
+.van-tabbar-item__text {
+  font-size: 12px;
+  font-weight: 700 !important;
+}

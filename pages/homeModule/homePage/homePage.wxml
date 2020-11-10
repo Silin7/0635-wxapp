@@ -1,9 +1,26 @@
 <van-tabbar active="{{ active }}" bind:change="onChange">
   <van-tabbar-item>
-    <image slot="icon" src="{{ icon.normal }}" mode="aspectFit" style="width: 30px; height: 24px;"/>
-    <image slot="icon-active" src="{{ icon.active }}" mode="aspectFit" style="width: 30px; height: 24px;"/>
+    <image slot="icon" src="{{ icon.home_normal }}" mode="aspectFit" style="width: 30px; height: 24px;"/>
+    <image slot="icon-active" src="{{ icon.home_active }}" mode="aspectFit" style="width: 30px; height: 24px;"/>
     首页
   </van-tabbar-item>
-  <van-tabbar-item icon="search">标签</van-tabbar-item>
-  <van-tabbar-item icon="setting-o">标签</van-tabbar-item>
+  <van-tabbar-item>
+    <image slot="icon" src="{{ icon.compass_normal }}" mode="aspectFit" style="width: 30px; height: 24px;"/>
+    <image slot="icon-active" src="{{ icon.compass_active }}" mode="aspectFit" style="width: 30px; height: 24px;"/>
+    发现
+  </van-tabbar-item>
+  <van-tabbar-item>
+    <image slot="icon" src="{{ icon.release_normal }}" mode="aspectFit" style="width: 38px; height: 38px;"/>
+    <image slot="icon-active" src="{{ icon.release_active }}" mode="aspectFit" style="width: 38px; height: 38px;"/>
+  </van-tabbar-item>
+  <van-tabbar-item>
+    <image slot="icon" src="{{ icon.news_normal }}" mode="aspectFit" style="width: 30px; height: 24px;"/>
+    <image slot="icon-active" src="{{ icon.news_active }}" mode="aspectFit" style="width: 30px; height: 24px;"/>
+    消息
+  </van-tabbar-item>
+  <van-tabbar-item>
+    <image slot="icon" src="{{ icon.mine_normal }}" mode="aspectFit" style="width: 30px; height: 24px;"/>
+    <image slot="icon-active" src="{{ icon.mine_active }}" mode="aspectFit" style="width: 30px; height: 24px;"/>
+    我的
+  </van-tabbar-item>
 </van-tabbar>
