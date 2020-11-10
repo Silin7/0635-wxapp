@@ -1,0 +1,51 @@
+.head_portrait_box {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 160px;
+  border: 1px solid red;
+}
+.head_portrait {
+  width: 100px;
+  height: 100px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.head_portrait_text {
+  height: 36px;
+  width: 160px;
+  background: -webkit-linear-gradient(left, #9F83F2, #D38ADC);
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FFFFFF;
+  font-weight: 700;
+}
+
+.information_box {
+  border: 1px solid red;
+  padding: 10px 20px;
+}
+.information_item {
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+.information_item_text {
+  width: 25vw;
+}
+
+/* 导航 */
+.van-nav-bar {
+  padding-top: 0px !important;
+}
+.van-nav-bar__text {
+  color: #4545FF !important;
+}
+.van-field__body {
+  width: 68vw;
+  border-bottom: 1px solid #F5F5F5;
+  letter-spacing: 2px;
+}

@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/mineModule/personalData/personalData",
     "pages/homeModule/homePage/homePage",
     "pages/loginModule/registerPage/registerPage",
     "pages/loginModule/loginPage/loginPage",
