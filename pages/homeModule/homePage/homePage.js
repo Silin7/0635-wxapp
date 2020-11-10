@@ -2,8 +2,13 @@ Page({
 
   data: {
     windowHeight: 0,
-    active: 0,
-    icon: {
+    swiperList: [
+      { id: '01', image: '/images/homeMoudle/swiper_01.jpg' },
+      { id: '02', image: '/images/homeMoudle/swiper_02.jpg' },
+      { id: '03', image: '/images/homeMoudle/swiper_03.jpg' }
+    ],
+    footerActive: 0,
+    footerIcon: {
       home_normal: '/images/homeMoudle/home_normal.png',
       home_active: '/images/homeMoudle/home_active.png',
       compass_normal: '/images/homeMoudle/compass_normal.png',
@@ -19,7 +24,7 @@ Page({
 
   onChange(event) {
     this.setData({
-      active: event.detail
+      footerActive: event.detail
     })
     console.log(event.detail)
   },
@@ -47,5 +52,9 @@ Page({
 
   onReachBottom: function () {
 
+  },
+
+  swiperTap: function (e) {
+    console.log(e.currentTarget.dataset.item)
   }
 })

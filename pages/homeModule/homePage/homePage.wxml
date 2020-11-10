@@ -1,31 +1,38 @@
 <view class="homePage bs_bb oy_a" style="height: {{windowHeight-84}}px">
-
+  <!-- swiper滚动图 -->
+	<swiper indicator-dots="{{true}}" autoplay="{{true}}" style="height: 360rpx;">
+		<block wx:for="{{swiperList}}" wx:key="index" wx:for-item="item">
+			<swiper-item bindtap="swiperTap" data-item="{{item}}">
+				<image style="height: 360rpx; width: 100%;" src="{{item.image}}"></image>
+			</swiper-item>
+		</block>
+	</swiper>
 </view>
 
 <!-- 底部导航 -->
-<van-tabbar active="{{ active }}" bind:change="onChange">
+<van-tabbar active="{{footerActive}}" bind:change="onChange">
   <van-tabbar-item>
-    <image slot="icon" src="{{ icon.home_normal }}" mode="aspectFit" style="width: 30px; height: 24px;"/>
-    <image slot="icon-active" src="{{ icon.home_active }}" mode="aspectFit" style="width: 30px; height: 24px;"/>
+    <image slot="icon" src="{{ footerIcon.home_normal }}" mode="aspectFit" style="width: 30px; height: 24px;"/>
+    <image slot="icon-active" src="{{ footerIcon.home_active }}" mode="aspectFit" style="width: 30px; height: 24px;"/>
     首页
   </van-tabbar-item>
   <van-tabbar-item>
-    <image slot="icon" src="{{ icon.compass_normal }}" mode="aspectFit" style="width: 30px; height: 24px;"/>
-    <image slot="icon-active" src="{{ icon.compass_active }}" mode="aspectFit" style="width: 30px; height: 24px;"/>
+    <image slot="icon" src="{{ footerIcon.compass_normal }}" mode="aspectFit" style="width: 30px; height: 24px;"/>
+    <image slot="icon-active" src="{{ footerIcon.compass_active }}" mode="aspectFit" style="width: 30px; height: 24px;"/>
     发现
   </van-tabbar-item>
   <van-tabbar-item>
-    <image slot="icon" src="{{ icon.release_normal }}" mode="aspectFit" style="width: 38px; height: 38px;"/>
-    <image slot="icon-active" src="{{ icon.release_active }}" mode="aspectFit" style="width: 38px; height: 38px;"/>
+    <image slot="icon" src="{{ footerIcon.release_normal }}" mode="aspectFit" style="width: 38px; height: 38px;"/>
+    <image slot="icon-active" src="{{ footerIcon.release_active }}" mode="aspectFit" style="width: 38px; height: 38px;"/>
   </van-tabbar-item>
   <van-tabbar-item>
-    <image slot="icon" src="{{ icon.news_normal }}" mode="aspectFit" style="width: 30px; height: 24px;"/>
-    <image slot="icon-active" src="{{ icon.news_active }}" mode="aspectFit" style="width: 30px; height: 24px;"/>
+    <image slot="icon" src="{{ footerIcon.news_normal }}" mode="aspectFit" style="width: 30px; height: 24px;"/>
+    <image slot="icon-active" src="{{ footerIcon.news_active }}" mode="aspectFit" style="width: 30px; height: 24px;"/>
     消息
   </van-tabbar-item>
   <van-tabbar-item>
-    <image slot="icon" src="{{ icon.mine_normal }}" mode="aspectFit" style="width: 30px; height: 24px;"/>
-    <image slot="icon-active" src="{{ icon.mine_active }}" mode="aspectFit" style="width: 30px; height: 24px;"/>
+    <image slot="icon" src="{{ footerIcon.mine_normal }}" mode="aspectFit" style="width: 30px; height: 24px;"/>
+    <image slot="icon-active" src="{{ footerIcon.mine_active }}" mode="aspectFit" style="width: 30px; height: 24px;"/>
     我的
   </van-tabbar-item>
 </van-tabbar>
