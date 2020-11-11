@@ -15,7 +15,6 @@ Page({
     })
   },
   getUserInfo: function(e) {
-    console.log(e)
     wx.setStorageSync('rawData', e.detail.rawData)
     wx.setStorageSync('signature', e.detail.signature)
     wx.setStorageSync('encryptedData', e.detail.encryptedData)

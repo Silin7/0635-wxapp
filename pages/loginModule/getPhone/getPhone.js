@@ -16,7 +16,6 @@ Page({
   },
   // 获取手机号
   getPhoneNumber: function (e) {
-    console.log(e)
     if (e.detail.errMsg == "getPhoneNumber:ok") {
       let data = {
         sessionKey: this.data.session_key,
@@ -25,7 +24,6 @@ Page({
         encryptedData: e.detail.encryptedData,
         iv: e.detail.iv,
       }
-      console.log(data)
     }
   }
 })
