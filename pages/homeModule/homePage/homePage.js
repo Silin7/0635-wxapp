@@ -40,8 +40,9 @@ Page({
   },
   
   onReady: function () {
-    let windowHeight = wx.getSystemInfoSync().windowHeight
-    this.setData({ windowHeight: windowHeight })
+    this.setData({
+      windowHeight: wx.getSystemInfoSync().windowHeight
+    })
   },
   
   onShow: function () {
