@@ -3,8 +3,9 @@
   <!-- <van-nav-bar title="标题" right-text="返回" bind:click-left="onClickLeft" bind:click-right="onClickRight">
     <van-icon name="arrow-left" slot="left" color="#4545FF" />
   </van-nav-bar> -->
+  
   <!-- 头像 -->
-  <view class="head_portrait_box bs_bb">
+  <!-- <view class="head_portrait_box bs_bb">
     <view class="head_portrait">
       <image src="/images/homeMoudle/banner_cy.jpg" class="w_h_100"></image>
     </view>
@@ -12,26 +13,51 @@
       <text class="dialog-close ls_2 fs_16" decode="true">鲁P&nbsp;</text>
       <text class="ls_2">00001</text>
     </view>
-  </view>
+  </view> -->
+
   <!-- 个人信息 -->
   <view class="information_box bs_bb" style="height: {{windowHeight-160}}px;">
-    <!-- 昵称 -->
-    <view class="information_item m_t_10">
+    <!-- <view class="information_item m_t_10">
       <view class="information_item_text ls_3">昵称</view>
-      <van-field value="{{dataForm.nickname}}" placeholder="请输入昵称"/>
+      <van-field value="{{dataForm.nickname}}" placeholder="请输入昵称" style="width: {{windowWidth-120}}px;"/>
     </view>
-    <!-- 昵称 -->
     <view class="information_item m_t_10">
-      <view class="information_item_text ls_3">年龄</view>
-      <van-field value="{{dataForm.age}}" placeholder="请输入年龄"/>
+      <view class="information_item_text ls_3">生日</view>
+      <van-field value="{{dataForm.birthday}}" placeholder="请输入生日" readonly="{{true}}" bindtap="dataTap" style="width: {{windowWidth-120}}px;"/>
+      <view class="information_item_edit">
+        <image class="w_h_100" src="/images/loginMoudle/edit.png"></image>
+      </view>
     </view>
+    <view class="information_item m_t_10">
+      <view class="information_item_text ls_3">性别</view>
+      <van-radio-group class="information_item_radio_group" style="width: {{windowWidth-120}}px;" value="{{dataForm.gender}}" bind:change="genderChange">
+        <van-radio name="01" checked-color="#4545FF">男</van-radio>
+        <van-radio name="02" checked-color="#4545FF">女</van-radio>
+      </van-radio-group>
+    </view>
+    <view class="information_item m_t_10">
+      <view class="information_item_text ls_2">所在城市</view>
+      <van-field value="{{dataForm.address}}" placeholder="请选择所在城市" readonly="{{true}}" bindtap="addressTap" style="width: {{windowWidth-120}}px;"/>
+    </view> -->
   </view>
 </view>
 
-<van-datetime-picker
-  type="datetime"
-  value="{{ currentDate }}"
-  min-date="{{ minDate }}"
-  max-date="{{ maxDate }}"
-  bind:input="onInput"
-/>
+<!-- 选择日期 -->
+<van-popup show="{{showDate}}" position="bottom">
+  <van-datetime-picker
+    type="date"
+    value="{{ currentDate }}"
+    min-date="{{ minDate }}"
+    formatter="{{ formatter }}"
+    bind:cancel="cancelDate"
+    bind:confirm="confirmDate"/>
+</van-popup>
+
+<van-popup show="{{showAdderss}}" position="bottom">
+  <van-picker
+  show-toolbar
+  title="选择所在城市"
+  columns="{{ adderssList }}"
+  bind:cancel="adderssCancel"
+  bind:confirm="adderssConfirm"/>
+</van-popup>

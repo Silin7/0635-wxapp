@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/notModule/notFound/notFound",
     "pages/mineModule/personalData/personalData",
     "pages/homeModule/homePage/homePage",
     "pages/loginModule/registerPage/registerPage",
