@@ -1,0 +1,7 @@
+<van-tabs bind:change="changeTabs">
+  <van-tab title="好友"></van-tab>
+  <van-tab title="话题"></van-tab>
+</van-tabs>
+<!-- 好友 -->
+<view class="bg_C" style="height: {{windowHeight-44}}px">
+</view>

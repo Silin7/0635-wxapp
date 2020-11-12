@@ -1,0 +1,7 @@
+
+
+
+/* vant-组件 */
+.van-tabs__line {
+  background: linear-gradient(to right, #4545FF, #4545FF, #9A93F3, #D58BBC);
+}
