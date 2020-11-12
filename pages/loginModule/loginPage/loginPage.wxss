@@ -63,7 +63,7 @@
   text-align: center;
   border-radius: 20px;
   letter-spacing: 5px;
-  background: -webkit-linear-gradient(left, #9F83F2, #D38ADC);
+  background: -webkit-linear-gradient(left, #9A93F3, #D58BBC);
 }
 
 .to_register {

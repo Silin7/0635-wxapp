@@ -11,7 +11,7 @@ page {
   padding: 0;
   text-shadow: 0 0 1rem #fefefe;
   font-family:Arial;
-  background: linear-gradient(to right, #9F83F2, #D38ADC);
+  background: linear-gradient(to right, #9A93F3, #D58BBC);
   -webkit-background-clip: text;
   color: transparent;
 }
@@ -23,7 +23,7 @@ page {
   padding: 0;
   text-shadow: 0 0 1rem #fefefe;
   font-family:Arial;
-  background: linear-gradient(to right, #9F83F2, #D38ADC);
+  background: linear-gradient(to right, #9A93F3, #D58BBC);
   -webkit-background-clip: text;
   color: transparent;
   font-weight: 700;
@@ -35,11 +35,11 @@ page {
   padding: 8px 16px;
   cursor: pointer;
   border: 2px solid;
-  border-image: -webkit-linear-gradient(  #9F83F2, #D38ADC) 30 30;
-  border-image: -moz-linear-gradient(  #9F83F2, #D38ADC) 30 30;
-  border-image: linear-gradient(  #9F83F2, #D38ADC) 30 30;
+  border-image: -webkit-linear-gradient(  #9A93F3, #D58BBC) 30 30;
+  border-image: -moz-linear-gradient(  #9A93F3, #D58BBC) 30 30;
+  border-image: linear-gradient(  #9A93F3, #D58BBC) 30 30;
   border-radius: 5px;
-  background: linear-gradient(to right, #9F83F2, #D38ADC);
+  background: linear-gradient(to right, #9A93F3, #D58BBC);
   -webkit-background-clip: text;
   color: transparent;
   font-weight: 600;
