@@ -1,9 +1,9 @@
 {
   "pages":[
-    "pages/mineModule/personalData/personalData",
-    "pages/homeModule/homePage/homePage",
-    "pages/loginModule/registerPage/registerPage",
     "pages/loginModule/loginPage/loginPage",
+    "pages/loginModule/registerPage/registerPage",
+    "pages/homeModule/homePage/homePage",
+    "pages/mineModule/personalData/personalData",
     "pages/loginModule/authorize/authorize",
     "pages/loginModule/getPhone/getPhone",
     "pages/components/choosePicker/choosePicker",

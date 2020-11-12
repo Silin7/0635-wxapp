@@ -6,30 +6,25 @@ Page({
     dataForm: {
       nickname: '',
       // 性别（男：01，女：02） 	
-      gender: '01',
+      gender: '',
       birthday: '',
       age: '',
       // 感情状况（01：单身；02：热恋；03：已婚；04：离异）
       emotional: '',
-      height: '',
-      weight: '',
-      // 民族
-      nation: '',
       address: '',
-      school: '',
-      hobby: '',
       // 职业
       occupation: '',
       // 个性签名
       personalSignature: '',
     },
+    pickerShow: false,
+    pickerType: '',
     pickerTitle: '',
+    pickerList: [],
     showDate: false,
     currentDate: new Date(2000, 5, 15).getTime(),
     minDate: new Date(1950, 12, 31).getTime(),
     maxDate: new Date().getTime(),
-    showAdderss: false,
-    adderssList: ['杭州', '宁波', '温州', '嘉兴', '湖州'],
   },
 
   onLoad: function (options) {
@@ -44,21 +39,6 @@ Page({
 
   onShow: function () {
     console.log(mixins.getAge('1997-1-1'))
-    this.aaa()
-  },
-  
-  async aaa() {
-    await this.dsq()
-    console.log('11111111111111111')
-  },
-
-  dsq: function () {
-    return new Promise(async(resolve, reject) => {
-      setTimeout(() => {
-        console.log(reject)
-        resolve()
-      }, 3000);
-    })
   },
 
   // 选择性别
@@ -68,7 +48,6 @@ Page({
       dataForm: this.data.dataForm
     });
   },
-
   // 弹出日期选择器
   dataTap: function () {
     this.setData({
@@ -79,24 +58,38 @@ Page({
   confirmDate(event) {
     console.log(mixins.formatDate(event.detail, '07'))
   },
-
-  // 弹出所在城市选择器
+  // 请选择所在县市
   addressTap: function () {
     this.setData({
-      pickerTitle: '选择所在城市',
-      showAdderss: true
+      pickerType: 'address',
+      pickerTitle: '选择所在县市',
+      pickerShow: true,
+      pickerList: ['杭州', '宁波', '温州', '嘉兴', '湖州']
     })
   },
-  // 选择所在城市
+  // 请选择感情状态
+  emotionalTap: function () {
+    this.setData({
+      pickerType: 'emotional',
+      pickerShow: true,
+      pickerTitle: '请选择感情状态',
+      pickerList: ['单身', '热恋', '已婚', '离异', '保密']
+    })
+  },
+  // 请选择职业
+  occupationTap: function () {
+    this.setData({
+      pickerType: 'occupation',
+      pickerShow: true,
+      pickerTitle: '请选择职业',
+      pickerList: ['学生', '教师', '工人', '农民', '其他']
+    })
+  },
+  
+
+
+  // 选中
   confirmItem(event) {
     console.log(event)
   }
 })
-
-// 导航栏
-// onClickLeft() {
-//   wx.showToast({ title: '点击返回', icon: 'none' });
-// },
-// onClickRight() {
-//   wx.showToast({ title: '点击按钮', icon: 'none' });
-// },

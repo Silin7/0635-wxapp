@@ -1,36 +1,26 @@
 <component-dateTimePicker bind:confirmDate="confirmDate" overlayShow="{{showDate}}" minDate="{{minDate}}" maxDate="{{maxDate}}" currentDate="{{currentDate}}"/>
-<component-choosePicker bind:confirmItem="confirmItem" overlayShow="{{showAdderss}}" pickerTitle="{{pickerTitle}}" dataList="{{adderssList}}"/>
+<component-choosePicker bind:confirmItem="confirmItem" overlayShow="{{pickerShow}}" pickerTitle="{{pickerTitle}}" dataList="{{pickerList}}"/>
 
 <view class="personal_box">
-  <!-- 导航栏 -->
-  <!-- <van-nav-bar title="标题" right-text="返回" bind:click-left="onClickLeft" bind:click-right="onClickRight">
-    <van-icon name="arrow-left" slot="left" color="#4545FF" />
-  </van-nav-bar> -->
-  
   <!-- 头像 -->
   <view class="head_portrait_box bs_bb">
     <view class="head_portrait">
       <image src="/images/homeMoudle/banner_cy.jpg" class="w_h_100 br_20"></image>
-      <text class="head_portrait_age">22</text>
+      <text class="head_portrait_age">
+        <text class="head_portrait_age_text">{{dataForm.age}}</text>
+      </text>
     </view>
-    <!-- <view class="head_portrait_text fs_14">
+    <view class="head_portrait_text fs_14">
       <text class="dialog-close ls_2 fs_16" decode="true">鲁P&nbsp;</text>
       <text class="ls_2">00001</text>
-    </view> -->
+    </view>
   </view>
 
   <!-- 个人信息 -->
   <view class="information_box bs_bb" style="height: {{windowHeight-160}}px;">
-    <!-- <view class="information_item m_t_10">
+    <view class="information_item m_t_10">
       <view class="information_item_text ls_3">昵称</view>
       <van-field value="{{dataForm.nickname}}" placeholder="请输入昵称" style="width: {{windowWidth-120}}px;"/>
-    </view>
-    <view class="information_item m_t_10">
-      <view class="information_item_text ls_3">生日</view>
-      <van-field value="{{dataForm.birthday}}" placeholder="请输入生日" readonly="{{true}}" bindtap="dataTap" style="width: {{windowWidth-120}}px;"/>
-      <view class="information_item_edit">
-        <image class="w_h_100" src="/images/loginMoudle/edit.png"></image>
-      </view>
     </view>
     <view class="information_item m_t_10">
       <view class="information_item_text ls_3">性别</view>
@@ -40,8 +30,27 @@
       </van-radio-group>
     </view>
     <view class="information_item m_t_10">
-      <view class="information_item_text ls_2">所在城市</view>
-      <van-field value="{{dataForm.address}}" placeholder="请选择所在城市" readonly="{{true}}" bindtap="addressTap" style="width: {{windowWidth-120}}px;"/>
-    </view> -->
+      <view class="information_item_text ls_3">生日</view>
+      <van-field value="{{dataForm.birthday}}" placeholder="请输入生日" readonly="{{true}}" bindtap="dataTap" style="width: {{windowWidth-120}}px;"/>
+      <view class="information_item_edit">
+        <image class="w_h_100" src="/images/loginMoudle/edit.png"></image>
+      </view>
+    </view>
+    <view class="information_item m_t_10">
+      <view class="information_item_text ls_2">职业</view>
+      <van-field value="{{dataForm.occupation}}" placeholder="请选择职业" readonly="{{true}}" bindtap="occupationTap" style="width: {{windowWidth-120}}px;"/>
+    </view>
+    <view class="information_item m_t_10">
+      <view class="information_item_text ls_2">感情状态</view>
+      <van-field value="{{dataForm.emotional}}" placeholder="请选择感情状态" readonly="{{true}}" bindtap="emotionalTap" style="width: {{windowWidth-120}}px;"/>
+    </view>
+    <view class="information_item m_t_10">
+      <view class="information_item_text ls_2">所在县市</view>
+      <van-field value="{{dataForm.address}}" placeholder="请选择所在县市" readonly="{{true}}" bindtap="addressTap" style="width: {{windowWidth-120}}px;"/>
+    </view>
+    <view class="information_item m_t_10">
+      <view class="information_item_text ls_3">个性签名</view>
+      <van-field value="{{dataForm.personalSignature}}" placeholder="请输入个性签名" style="width: {{windowWidth-120}}px;"/>
+    </view>
   </view>
 </view>
