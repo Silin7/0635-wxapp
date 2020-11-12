@@ -4,14 +4,13 @@ Component({
       type: Boolean,
       value: false,
     },
-    pickerTitle: {
+    dateType: {
       type: String,
-      value: ''
+      value: 'date'
     },
-    dataList: {
-      type: Array,
-      value: []
-    }
+    minDate: Number,
+    maxDate: Number,
+    currentDate: Number
   },
   
   data: {
@@ -25,16 +24,16 @@ Component({
 
   methods: {
     // 取消按钮
-    onCancel: function () {
+    cancelDate: function () {
       this.setData({
         overlayShow: false
       })
     },
     // 确定按钮
-    onConfirm: function (e) {
+    confirmDate: function (e) {
       // 通过triggerEvent将参数传给父组件
-      this.triggerEvent('confirmItem', e.detail)
-      this.onCancel()
+      this.triggerEvent('confirmDate', e.detail)
+      this.cancelDate()
     }
   }
 })
