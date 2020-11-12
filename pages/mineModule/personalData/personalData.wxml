@@ -1,3 +1,6 @@
+<component-dateTimePicker bind:confirmDate="confirmDate" overlayShow="{{showDate}}" minDate="{{minDate}}" maxDate="{{maxDate}}" currentDate="{{currentDate}}"/>
+<component-choosePicker bind:confirmItem="confirmItem" overlayShow="{{showAdderss}}" pickerTitle="{{pickerTitle}}" dataList="{{adderssList}}"/>
+
 <view class="personal_box">
   <!-- 导航栏 -->
   <!-- <van-nav-bar title="标题" right-text="返回" bind:click-left="onClickLeft" bind:click-right="onClickRight">
@@ -5,15 +8,16 @@
   </van-nav-bar> -->
   
   <!-- 头像 -->
-  <!-- <view class="head_portrait_box bs_bb">
+  <view class="head_portrait_box bs_bb">
     <view class="head_portrait">
-      <image src="/images/homeMoudle/banner_cy.jpg" class="w_h_100"></image>
+      <image src="/images/homeMoudle/banner_cy.jpg" class="w_h_100 br_20"></image>
+      <text class="head_portrait_age">22</text>
     </view>
-    <view class="head_portrait_text fs_14">
+    <!-- <view class="head_portrait_text fs_14">
       <text class="dialog-close ls_2 fs_16" decode="true">鲁P&nbsp;</text>
       <text class="ls_2">00001</text>
-    </view>
-  </view> -->
+    </view> -->
+  </view>
 
   <!-- 个人信息 -->
   <view class="information_box bs_bb" style="height: {{windowHeight-160}}px;">
@@ -41,23 +45,3 @@
     </view> -->
   </view>
 </view>
-
-<!-- 选择日期 -->
-<van-popup show="{{showDate}}" position="bottom">
-  <van-datetime-picker
-    type="date"
-    value="{{ currentDate }}"
-    min-date="{{ minDate }}"
-    formatter="{{ formatter }}"
-    bind:cancel="cancelDate"
-    bind:confirm="confirmDate"/>
-</van-popup>
-
-<van-popup show="{{showAdderss}}" position="bottom">
-  <van-picker
-  show-toolbar
-  title="选择所在城市"
-  columns="{{ adderssList }}"
-  bind:cancel="adderssCancel"
-  bind:confirm="adderssConfirm"/>
-</van-popup>

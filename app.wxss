@@ -1,5 +1,5 @@
 /**app.wxss**/
-@import "./styleSheet/flex.wxss";
+@import "./styleSheet/border.wxss";
 @import "./styleSheet/color.wxss";
 @import "./styleSheet/flex.wxss";
 @import "./styleSheet/font.wxss";

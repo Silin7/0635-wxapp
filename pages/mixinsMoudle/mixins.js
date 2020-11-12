@@ -54,9 +54,53 @@ var IDNumber = function(IDNumber) {
     return true
   }
 }
+// 根据出生日期算出年龄（周岁）
+// data：生日，格式：YYYY-MM-DD
+var getAge = function (data) {
+  var returnAge;
+  var strBirthdayArr = data.split("-");
+  var birthYear = strBirthdayArr[0];
+  var birthMonth = strBirthdayArr[1];
+  var birthDay = strBirthdayArr[2];
+  var d = new Date();
+  var nowYear = d.getFullYear();
+  var nowMonth = d.getMonth() + 1;
+  var nowDay = d.getDate();
+  if (nowYear == birthYear) {
+    //同年 则为0岁
+    returnAge = 0;
+  } else {
+    // 年之差
+    var ageDiff = nowYear - birthYear;
+    if (ageDiff > 0) {
+      if (nowMonth == birthMonth) {
+        // 日之差
+        var dayDiff = nowDay - birthDay;
+        if(dayDiff < 0) {
+          returnAge = ageDiff - 1;
+        } else {
+          returnAge = ageDiff ;
+        }
+      } else {
+        // 月之差
+        var monthDiff = nowMonth - birthMonth;
+        if (monthDiff < 0) {
+          returnAge = ageDiff - 1;
+        } else {
+          returnAge = ageDiff ;
+        }
+      }
+    } else {
+      // 返回-1, 表示出生日期输入错误 晚于今天
+      returnAge = -1;
+    }
+  }
+  return returnAge;
+}
 
 module.exports = {
   formatDate: formatDate,
   phoneNumber: phoneNumber,
   IDNumber: IDNumber,
+  getAge: getAge,
 }

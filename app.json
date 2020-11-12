@@ -1,12 +1,14 @@
 {
   "pages":[
-    "pages/notModule/notFound/notFound",
     "pages/mineModule/personalData/personalData",
     "pages/homeModule/homePage/homePage",
     "pages/loginModule/registerPage/registerPage",
     "pages/loginModule/loginPage/loginPage",
     "pages/loginModule/authorize/authorize",
-    "pages/loginModule/getPhone/getPhone"
+    "pages/loginModule/getPhone/getPhone",
+    "pages/components/choosePicker/choosePicker",
+    "pages/components/dateTimePicker/dateTimePicker",
+    "pages/notModule/notFound/notFound"
   ],
   "window":{
     "backgroundTextStyle":"light",

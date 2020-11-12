@@ -1,6 +1,6 @@
 {
   "navigationBarTitleText": "微信授权",
   "usingComponents": {
-    "van-button": "/miniprogram_npm/vant-weapp/button/index"
+    "van-button": "vant-weapp/button/index"
   }
 }

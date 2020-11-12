@@ -23,21 +23,11 @@ Page({
       // 个性签名
       personalSignature: '',
     },
+    pickerTitle: '',
     showDate: false,
-    currentDate: new Date(2000, 1, 1).getTime(),
+    currentDate: new Date(2000, 5, 15).getTime(),
     minDate: new Date(1950, 12, 31).getTime(),
     maxDate: new Date().getTime(),
-    formatter(type, value) {
-      if (type === 'year') {
-        return `${value}年`;
-      } else if (type === 'month') {
-        return `${value}月`;
-      }
-      else if (type === 'day') {
-        return `${value}日`;
-      }
-      return value;
-    },
     showAdderss: false,
     adderssList: ['杭州', '宁波', '温州', '嘉兴', '湖州'],
   },
@@ -53,7 +43,24 @@ Page({
   },
 
   onShow: function () {
+    console.log(mixins.getAge('1997-1-1'))
+    this.aaa()
   },
+  
+  async aaa() {
+    await this.dsq()
+    console.log('11111111111111111')
+  },
+
+  dsq: function () {
+    return new Promise(async(resolve, reject) => {
+      setTimeout(() => {
+        console.log(reject)
+        resolve()
+      }, 3000);
+    })
+  },
+
   // 选择性别
   genderChange: function (event) {
     this.data.dataForm.gender = event.detail
@@ -61,77 +68,28 @@ Page({
       dataForm: this.data.dataForm
     });
   },
-  // 显示日期按钮
+
+  // 弹出日期选择器
   dataTap: function () {
     this.setData({
       showDate: true
     })
   },
-  // 日期取消按钮
-  cancelDate: function () {
-    this.setData({
-      showDate: false
-    })
-  },
-  // 日期确定按钮
+  // 选择日期
   confirmDate(event) {
-    this.setData({
-      currentDate: event.detail,
-    });
-    // console.log(mixins.formatDate(event.detail, '07'))
+    console.log(mixins.formatDate(event.detail, '07'))
   },
+
+  // 弹出所在城市选择器
   addressTap: function () {
     this.setData({
+      pickerTitle: '选择所在城市',
       showAdderss: true
     })
   },
-  adderssCancel: function () {
-    this.setData({
-      showAdderss: false
-    })
-  },
-  adderssConfirm(event) {
-    const { picker, value, index } = event.detail;
-    console.log(`当前值：${value}, 当前索引：${index}`);
-  },
-  // 根据出生日期算出年龄
-  jsGetAge: function (strBirthday) {
-    var returnAge;
-    var strBirthdayArr=strBirthday.split("-");
-    var birthYear = strBirthdayArr[0];
-    var birthMonth = strBirthdayArr[1];
-    var birthDay = strBirthdayArr[2];
-    d = new Date();
-    var nowYear = d.getFullYear();
-    var nowMonth = d.getMonth() + 1;
-    var nowDay = d.getDate();
-    if (nowYear == birthYear) {
-      //同年 则为0岁
-      returnAge = 0;
-    } else {
-      var ageDiff = nowYear - birthYear ; //年之差
-      if (ageDiff > 0) {
-        if (nowMonth == birthMonth) {
-          var dayDiff = nowDay - birthDay;//日之差
-          if(dayDiff < 0) {
-            returnAge = ageDiff - 1;
-          } else {
-            returnAge = ageDiff ;
-          }
-        } else {
-          var monthDiff = nowMonth - birthMonth;//月之差
-          if (monthDiff < 0) {
-            returnAge = ageDiff - 1;
-          } else {
-            returnAge = ageDiff ;
-          }
-        }
-      } else {
-        returnAge = -1;//返回-1 表示出生日期输入错误 晚于今天
-      }
-    }
-    //返回周岁年龄
-    return returnAge;
+  // 选择所在城市
+  confirmItem(event) {
+    console.log(event)
   }
 })
 

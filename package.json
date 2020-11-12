@@ -1,7 +1,6 @@
 {
   "name": "wsl-xcx",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -18,5 +17,8 @@
   "homepage": "https://github.com/Silin7/wsl-xcx#readme",
   "dependencies": {
     "vant-weapp": "^0.5.28"
-  }
+  },
+  "keywords": [],
+  "devDependencies": {},
+  "description": ""
 }
