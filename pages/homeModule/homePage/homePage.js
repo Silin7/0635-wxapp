@@ -28,13 +28,6 @@ Page({
     },
   },
 
-  onChange(event) {
-    this.setData({
-      footerActive: event.detail
-    })
-    console.log(event.detail)
-  },
-
   onLoad: function (options) {
 
   },
@@ -59,6 +52,17 @@ Page({
 
   onReachBottom: function () {
 
+  },
+
+  navChange(event) {
+    this.setData({
+      footerActive: event.detail
+    })
+    if (event.detail === 4) {
+      wx.navigateTo({
+        url: '/pages/mineModule/personalData/personalData',
+      })
+    }
   },
 
   swiperTap: function (e) {

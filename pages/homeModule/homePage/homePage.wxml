@@ -42,7 +42,7 @@
 </view>
 
 <!-- 底部导航 -->
-<van-tabbar active="{{footerActive}}" bind:change="onChange">
+<van-tabbar active="{{footerActive}}" bind:change="navChange">
   <van-tabbar-item>
     <image slot="icon" src="{{ footerIcon.home_normal }}" mode="aspectFit" style="width: 30px; height: 24px;"/>
     <image slot="icon-active" src="{{ footerIcon.home_active }}" mode="aspectFit" style="width: 30px; height: 24px;"/>

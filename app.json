@@ -1,10 +1,11 @@
 {
   "pages":[
     "pages/mineModule/myConcerns/myConcerns",
+    "pages/mineModule/personalCenter/personalCenter",
     "pages/mineModule/personalData/personalData",
+    "pages/homeModule/homePage/homePage",
     "pages/loginModule/loginPage/loginPage",
     "pages/loginModule/registerPage/registerPage",
-    "pages/homeModule/homePage/homePage",
     "pages/loginModule/authorize/authorize",
     "pages/loginModule/getPhone/getPhone",
     "pages/components/loading/loading",
