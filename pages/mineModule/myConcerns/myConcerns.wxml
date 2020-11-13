@@ -1,7 +1,50 @@
+<component-loading wx:if="{{isLoading}}"/>
+
 <van-tabs bind:change="changeTabs">
-  <van-tab title="好友"></van-tab>
+  <van-tab title="关注"></van-tab>
   <van-tab title="话题"></van-tab>
 </van-tabs>
 <!-- 好友 -->
-<view class="bg_C" style="height: {{windowHeight-44}}px">
+<view class="follow_list bs_bb" style="height: {{windowHeight-44}}px" wx:if="{{pageIndex === 0}}">
+  <view class="follow_item m_b_10">
+    <view class="follow_head_portrait">
+      <image src="/images/homeMoudle/banner_gy.jpg" class="w_h_100 br_10"></image>
+    </view>
+    <view class="follow_info_text" style="width: {{windowWidth-90}}px;">
+      <view class="follow_name_personalSignature" style="width: {{windowWidth-180}}px;">
+        <view class="follow_name">
+          <view class="follow_name_text to_1 ls_1">小小程序员1</view>
+          <view class="follow_gender">
+            <image src="/images/mineMoudle/girl_icon.png" class="w_h_100 br_10"></image>
+          </view>
+        </view>
+        <view class="follow_personalSignature to_1 fs_14 co_9 m_t_5">保持热爱奔赴山海，各自努力顶峰相见！</view>
+      </view>
+      <view class="follow_follow">
+        <view>取消关注</view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 话题 -->
+<view class="follow_list bs_bb" style="height: {{windowHeight-44}}px" wx:if="{{pageIndex === 1}}">
+  <view class="follow_item m_b_10">
+    <view class="follow_head_portrait">
+      <image src="/images/homeMoudle/banner_gy.jpg" class="w_h_100 br_10"></image>
+    </view>
+    <view class="follow_info_text" style="width: {{windowWidth-90}}px;">
+      <view class="follow_name_personalSignature" style="width: {{windowWidth-180}}px;">
+        <view class="follow_name">
+          <view class="follow_name_text to_1 ls_1">小小程序员2</view>
+          <view class="follow_gender">
+            <image src="/images/mineMoudle/girl_icon.png" class="w_h_100 br_10"></image>
+          </view>
+        </view>
+        <view class="follow_personalSignature to_1 fs_14 co_9 m_t_5">保持热爱奔赴山海，各自努力顶峰相见！</view>
+      </view>
+      <view class="follow_follow">
+        <view>取消关注</view>
+      </view>
+    </view>
+  </view>
 </view>
