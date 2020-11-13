@@ -1,0 +1,15 @@
+<view class="background">
+  <!-- <image src="/images/other/Wiki-background.jpg" class="background_img"></image> -->
+</view>
+
+<view class="hex-border">
+  <view class="hexagons">
+    <view class="hexagon"></view>
+    <view class="hexagon"></view>
+    <view class="hexagon"></view>
+    <view class="hexagon"></view>
+    <view class="hexagon"></view>
+    <view class="hexagon"></view>
+    <view class="hexagon"></view>
+  </view>
+</view>
