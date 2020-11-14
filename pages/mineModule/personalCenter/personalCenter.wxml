@@ -1,0 +1,3 @@
+<view class="personal_banner">
+  <image src="/images/homeMoudle/banner_jy.jpg" class="w_h_100"></image>
+</view>
