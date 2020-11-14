@@ -1,6 +1,7 @@
 Page({
   data: {
-
+    windowWidth: 0,
+    windowHeight: 0,
   },
   
   onLoad: function (options) {
@@ -8,7 +9,10 @@ Page({
   },
   
   onReady: function () {
-
+    this.setData({
+      windowWidth: wx.getSystemInfoSync().windowWidth,
+      windowHeight: wx.getSystemInfoSync().windowHeight
+    })
   },
   
   onShow: function () {
