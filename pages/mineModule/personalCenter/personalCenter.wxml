@@ -3,11 +3,13 @@
   <image src="/images/homeMoudle/banner_jy.jpg" class="w_h_100"></image>
   <view class="personal_info1">
     <view class="personal_info1_box">
+      <!-- 我的ID -->
       <view class="personal_info1_left">
         <view class="fs_22">聊吧</view>
-        <view class="fs_12 ls_1">ID号：00001</view>
+        <view class="fs_12 ls_1">ID号：<text class="fw_7 fs_13">00001</text></view>
       </view>
-      <view class="personal_info1_right">
+      <!-- 我的关注 -->
+      <view class="personal_info1_right" bindtap="myConcerns">
         <view class="personal_info1_right_item">
           <view class="p_l_6">9</view>
           <view></view>
@@ -24,14 +26,15 @@
 </view>
 
 <view class="personal_info2">
-  <view class="personal_info2_box">
+  <!-- 个人简介 -->
+  <view class="personal_info2_box" bindtap="personalData">
     <view class="personal_info2_left">
         <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100 br_20"></image>
     </view>
     <view class="personal_info2_right" style="width: {{windowWidth-140}}px;">
       <view class="name_follow">
         <view class="ls_2 fw_7">小小程序员</view>
-        <view class="personal_info2_right_follow">关注</view>
+        <view class="personal_info2_right_follow" catchtap="followTA">关注</view>
       </view>
       <view class="fs_12 fx_r_s_c">
         <image src="/images/mineMoudle/boy_icon.png" style="width: 18px; height: 18px; padding:0 3px;"></image>
@@ -69,7 +72,7 @@
     </view>
   </view>
   <!-- 我的话题 -->
-  <view class="my_tracks">
+  <view class="my_tracks m_t_10">
     <view class="my_tracks_top">
       <view class="my_tracks_top_box">
         <view class="footprint_box">

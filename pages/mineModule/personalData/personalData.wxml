@@ -15,20 +15,14 @@
       <text class="ls_2">00001</text>
     </view>
   </view>
-
   <!-- 个人信息 -->
   <view class="information_box bs_bb" style="height: {{windowHeight-160}}px;">
+    <!-- 昵称 -->
     <view class="information_item m_t_10">
       <view class="information_item_text ls_3">昵称</view>
-      <van-field value="{{dataForm.nickname}}" placeholder="请输入昵称" style="width: {{windowWidth-120}}px;"/>
+      <van-field value="{{dataForm.nickname}}" placeholder="请输入昵称" style="width: {{windowWidth-120}}px;" maxlength="{{8}}"/>
     </view>
-    <view class="information_item m_t_10">
-      <view class="information_item_text ls_3">性别</view>
-      <van-radio-group class="information_item_radio_group" style="width: {{windowWidth-120}}px;" value="{{dataForm.gender}}" bind:change="genderChange">
-        <van-radio name="01" checked-color="#4545FF">男</van-radio>
-        <van-radio name="02" checked-color="#4545FF">女</van-radio>
-      </van-radio-group>
-    </view>
+    <!-- 生日 -->
     <view class="information_item m_t_10">
       <view class="information_item_text ls_3">生日</view>
       <van-field value="{{dataForm.birthday}}" placeholder="请输入生日" readonly="{{true}}" bindtap="dataTap" style="width: {{windowWidth-120}}px;"/>
@@ -36,21 +30,29 @@
         <image class="w_h_100" src="/images/loginMoudle/edit.png"></image>
       </view>
     </view>
+    <!-- 性别 -->
     <view class="information_item m_t_10">
-      <view class="information_item_text ls_2">职业</view>
-      <van-field value="{{dataForm.occupation}}" placeholder="请选择职业" readonly="{{true}}" bindtap="occupationTap" style="width: {{windowWidth-120}}px;"/>
+      <view class="information_item_text ls_3">性别</view>
+      <van-radio-group class="information_item_radio_group" style="width: {{windowWidth-120}}px;" value="{{dataForm.gender}}" bind:change="genderChange">
+        <van-radio name="01" checked-color="#4545FF">男</van-radio>
+        <van-radio name="02" checked-color="#4545FF">女</van-radio>
+      </van-radio-group>
     </view>
-    <view class="information_item m_t_10">
-      <view class="information_item_text ls_2">感情状态</view>
-      <van-field value="{{dataForm.emotional}}" placeholder="请选择感情状态" readonly="{{true}}" bindtap="emotionalTap" style="width: {{windowWidth-120}}px;"/>
+    <!-- 星座 -->
+    <view class="information_item m_t_10 color_45">
+      <view class="information_item_text ls_2">星座</view>
+      <van-field value="{{dataForm.constellation}}" placeholder="请选择星座" readonly="{{true}}" bindtap="constellationTap" style="width: {{windowWidth-120}}px;"/>
     </view>
+    <!-- 所在县市 -->
     <view class="information_item m_t_10">
       <view class="information_item_text ls_2">所在县市</view>
       <van-field value="{{dataForm.address}}" placeholder="请选择所在县市" readonly="{{true}}" bindtap="addressTap" style="width: {{windowWidth-120}}px;"/>
     </view>
-    <view class="information_item m_t_10">
+    <!-- 个性签名 -->
+    <view class="information_item m_t_10 color_45">
       <view class="information_item_text ls_3">个性签名</view>
-      <van-field value="{{dataForm.personalSignature}}" placeholder="请输入个性签名" style="width: {{windowWidth-120}}px;"/>
+      <van-field value="{{dataForm.personalSignature}}" placeholder="请输入个性签名" style="width: {{windowWidth-120}}px;" maxlength="{{16}}"/>
     </view>
+    <view class="information_item fs_12 co_9">*注：个性签名最多为16个字符</view>
   </view>
 </view>

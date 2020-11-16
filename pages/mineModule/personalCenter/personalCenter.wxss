@@ -57,18 +57,17 @@ page {
   position: absolute;
   top: 380rpx;
   width: 100vw;
-  height: 1120px;
   border-radius: 20px 20px 0 0;
   background-color: #F5F5F5;
   overflow-y: auto;
   z-index: 10;
+  padding: 10px 0 20px;
 }
 .personal_info2_box {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  border-bottom: 1px solid red;
 }
 .personal_info2_left {
   width: 80px;

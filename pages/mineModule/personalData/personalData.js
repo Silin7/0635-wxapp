@@ -5,16 +5,11 @@ Page({
     windowHeight: 0,
     dataForm: {
       nickname: '',
-      // 性别（男：01，女：02） 	
-      gender: '',
-      birthday: '',
       age: '',
-      // 感情状况（01：单身；02：热恋；03：已婚；04：离异）
-      emotional: '',
+      birthday: '',
+      gender: '',
+      constellation: '',
       address: '',
-      // 职业
-      occupation: '',
-      // 个性签名
       personalSignature: '',
     },
     pickerShow: false,
@@ -58,36 +53,26 @@ Page({
   confirmDate(event) {
     console.log(mixins.formatDate(event.detail, '07'))
   },
+  // 请选择星座
+  constellationTap: function () {
+    this.setData({
+      pickerType: 'constellation',
+      pickerShow: true,
+      pickerTitle: '请选择星座',
+      pickerList: ['白羊座', '金牛座', '双子座', '巨蟹座', '狮子座', '处女座', '天秤座', '天蝎座', '射手座', '摩羯座', '水瓶座', '双鱼座']
+    })
+  },
   // 请选择所在县市
   addressTap: function () {
     this.setData({
       pickerType: 'address',
       pickerTitle: '选择所在县市',
       pickerShow: true,
-      pickerList: ['杭州', '宁波', '温州', '嘉兴', '湖州']
-    })
-  },
-  // 请选择感情状态
-  emotionalTap: function () {
-    this.setData({
-      pickerType: 'emotional',
-      pickerShow: true,
-      pickerTitle: '请选择感情状态',
-      pickerList: ['单身', '热恋', '已婚', '离异', '保密']
-    })
-  },
-  // 请选择职业
-  occupationTap: function () {
-    this.setData({
-      pickerType: 'occupation',
-      pickerShow: true,
-      pickerTitle: '请选择职业',
-      pickerList: ['学生', '教师', '工人', '农民', '其他']
+      pickerList: ['东昌府区', '阳谷县', '莘县', '茌平区', '东阿县', '冠县', '高唐县', '临清市', '其他']
     })
   },
   
-
-
+  
   // 选中
   confirmItem(event) {
     console.log(event)

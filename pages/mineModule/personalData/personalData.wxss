@@ -1,3 +1,6 @@
+.personal_box {
+  position: relative;
+}
 .head_portrait_box {
   display: flex;
   flex-flow: column;
@@ -51,7 +54,7 @@
   padding: 10px 20px;
 }
 .information_item {
-  height: 40px;
+  height: 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -91,9 +94,9 @@
   border-bottom: 1px solid #F5F5F5;
   letter-spacing: 2px;
 }
-/* .van-field__placeholder {
+.color_45 .van-field__placeholder {
   color: #4545FF !important;
-} */
+}
 .van-popup {
   background: -webkit-linear-gradient(left, #9A93F3, #D58BBC, #9A93F3);
 }
