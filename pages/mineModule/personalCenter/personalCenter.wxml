@@ -42,6 +42,7 @@
       <view class="fs_12 co_9 ls_1">保持热爱奔赴山海，各自努力顶峰相见！</view>
     </view>
   </view>
+  <!-- 我的足迹 -->
   <view class="my_tracks">
     <view class="my_tracks_top">
       <view class="my_tracks_top_box">
@@ -54,16 +55,61 @@
     </view>
     <view class="my_tracks_center m_t_20">
       <view class="my_tracks_center_img">
-        <image src="/images/homeMoudle/banner_cy.jpg" class="w_h_100"></image>
+        <image src="/images/homeMoudle/banner_cy.jpg" class="w_h_100 br_5"></image>
       </view>
       <view class="my_tracks_center_img">
-        <image src="/images/homeMoudle/banner_cy.jpg" class="w_h_100"></image>
+        <image src="/images/homeMoudle/banner_cy.jpg" class="w_h_100 br_5"></image>
       </view>
       <view class="my_tracks_center_img">
-        <image src="/images/homeMoudle/banner_cy.jpg" class="w_h_100"></image>
+        <image src="/images/homeMoudle/banner_cy.jpg" class="w_h_100 br_5"></image>
       </view>
       <view class="my_tracks_center_img">
-        <image src="/images/homeMoudle/banner_cy.jpg" class="w_h_100"></image>
+        <image src="/images/homeMoudle/banner_cy.jpg" class="w_h_100 br_5"></image>
+      </view>
+    </view>
+  </view>
+  <!-- 我的话题 -->
+  <view class="my_tracks">
+    <view class="my_tracks_top">
+      <view class="my_tracks_top_box">
+        <view class="footprint_box">
+          <image src="/images/mineMoudle/conversation_icon.png" class="w_h_100 d_ib"></image>
+        </view>
+        <view class="d_ib p_l_10">话题</view>
+      </view>
+      <text class="dialog-close see_more p_t_5 fs_12 co_9" decode="true">查看更多 &gt;</text>
+    </view>
+    <view class="my_conversation_center m_t_10">
+      <view class="my_conversation_center_box">
+        <view class="my_conversation_center_img">
+          <image src="/images/homeMoudle/banner_cy.jpg" class="w_h_100 br_10"></image>
+        </view>
+        <view class="my_conversation_center_text_box m_l_10">
+          <view class="my_conversation_center_text to_1 fs_14 ls_1">美食晒出来</view>
+          <view class="my_conversation_center_text to_1 fs_12 co_9 ls_1">美食啊晒出来美食啊晒出来美食啊晒出来美食啊晒出来美食啊晒出来美食啊晒出来美</view>
+        </view>
+      </view>
+    </view>
+    <view class="my_conversation_center m_t_10">
+      <view class="my_conversation_center_box">
+        <view class="my_conversation_center_img">
+          <image src="/images/homeMoudle/banner_cy.jpg" class="w_h_100 br_10"></image>
+        </view>
+        <view class="my_conversation_center_text_box m_l_10">
+          <view class="my_conversation_center_text to_1 fs_14 ls_1">美食晒出来</view>
+          <view class="my_conversation_center_text to_1 fs_12 co_9 ls_1">美食啊晒出来美食啊晒出来美食啊晒出来美食啊晒出来美食啊晒出来美食啊晒出来美</view>
+        </view>
+      </view>
+    </view>
+    <view class="my_conversation_center m_t_10">
+      <view class="my_conversation_center_box">
+        <view class="my_conversation_center_img">
+          <image src="/images/homeMoudle/banner_cy.jpg" class="w_h_100 br_10"></image>
+        </view>
+        <view class="my_conversation_center_text_box m_l_10">
+          <view class="my_conversation_center_text to_1 fs_14 ls_1">美食晒出来</view>
+          <view class="my_conversation_center_text to_1 fs_12 co_9 ls_1">美食啊晒出来美食啊晒出来美食啊晒出来美食啊晒出来美食啊晒出来美食啊晒出来美</view>
+        </view>
       </view>
     </view>
   </view>
