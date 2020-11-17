@@ -1,9 +1,8 @@
 import baseURL from "./baseURL"
-import programRequest from "./sub-unitRequest/programRequest"
-import registerRequest from "./sub-unitRequest/registerRequest"
+import loginRequest from "./sub-unitRequest/loginRequest"
 
 export default ( methodme, urlme, datame, id, id2 ) => {
-  let globalNameObj = Object.assign({}, programRequest, registerRequest)
+  let globalNameObj = Object.assign({}, loginRequest)
   var url = ''
   if (id2 && id) {
     url = baseURL.baseURL + globalNameObj[urlme].apiName + '/' + id + '/' + id2
