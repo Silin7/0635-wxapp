@@ -3,15 +3,15 @@ Page({
   data: {
     windowHeight: 0,
     swiperList: [
-      { id: 'swiper01', image: '/images/homeMoudle/swiper_01.jpg' },
+      { id: 'swiper01', image: '/images/homeMoudle/swiper_02.jpg' },
       { id: 'swiper02', image: '/images/homeMoudle/swiper_02.jpg' },
-      { id: 'swiper03', image: '/images/homeMoudle/swiper_03.jpg' }
+      { id: 'swiper03', image: '/images/homeMoudle/swiper_02.jpg' }
     ],
     iconList: [
-      { name: '聊城景区', image: '/images/homeMoudle/icon_lx.jpg', id: 'icon01' },
-      { name: '聊城美食', image: '/images/homeMoudle/icon_ms.jpg', id: 'icon02' },
-      { name: '解压游戏', image: '/images/homeMoudle/icon_yx.jpg', id: 'icon03' },
-      { name: '暂未开通', image: '/images/homeMoudle/icon_dd.jpg', id: 'icon04' },
+      { name: '聊城景区', image: '/images/homeMoudle/banner_xq.jpg', id: 'icon01' },
+      { name: '聊城美食', image: '/images/homeMoudle/banner_xq.jpg', id: 'icon02' },
+      { name: '解压游戏', image: '/images/homeMoudle/banner_xq.jpg', id: 'icon03' },
+      { name: '暂未开通', image: '/images/homeMoudle/banner_xq.jpg', id: 'icon04' },
     ],
     footerActive: 0,
     footerIcon: {
@@ -29,7 +29,6 @@ Page({
   },
 
   onLoad: function (options) {
-
   },
   
   onReady: function () {
@@ -39,7 +38,9 @@ Page({
   },
   
   onShow: function () {
-
+    this.setData({
+      footerActive: 0
+    })
   },
 
   onUnload: function () {
@@ -60,12 +61,33 @@ Page({
     })
     if (event.detail === 4) {
       wx.navigateTo({
-        url: '/pages/mineModule/personalData/personalData',
+        url: '/pages/mineModule/personalCenter/personalCenter',
       })
     }
   },
 
   swiperTap: function (e) {
     console.log(e.currentTarget.dataset.item)
+  },
+
+  bindGetUserInfo (e) {
+    console.log(e.detail.userInfo)
+    wx.getUserInfo({
+      success: function(res) {
+        var userInfo = res.userInfo
+        var nickName = userInfo.nickName
+        var avatarUrl = userInfo.avatarUrl
+        var gender = userInfo.gender //性别 0：未知、1：男、2：女
+        var province = userInfo.province
+        var city = userInfo.city
+        var country = userInfo.country
+        console.log(nickName)
+        console.log(avatarUrl)
+        console.log(gender)
+        console.log(province)
+        console.log(city)
+        console.log(country)
+      }
+    })
   }
 })

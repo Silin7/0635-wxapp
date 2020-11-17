@@ -20,11 +20,11 @@
   <view class="sub_module m_t_10">
     <view class="sub_module_left">
       <view class="sub_module_01">
-        <image src="/images/homeMoudle/banner_jy.jpg" class="item_icon_img"></image>
+        <image src="/images/homeMoudle/banner_xq.jpg" class="item_icon_img"></image>
         <view class="item_banner_text">志同道合，莫逆之交</view>
       </view>
       <view class="sub_module_02 m_t_15">
-        <image src="/images/homeMoudle/banner_cy.jpg" class="item_icon_img"></image>
+        <image src="/images/homeMoudle/banner_xq.jpg" class="item_icon_img"></image>
         <view class="item_banner_text">游人如织，跋山涉水</view>
       </view>
     </view>
@@ -34,11 +34,13 @@
         <view class="item_banner_text">执子之手，与子偕老</view>
       </view>
       <view class="sub_module_01 m_t_15">
-        <image src="/images/homeMoudle/banner_gy.jpg" class="item_icon_img"></image>
+        <image src="/images/homeMoudle/banner_xq.jpg" class="item_icon_img"></image>
         <view class="item_banner_text">广施善行，大爱无疆</view>
       </view>
     </view>
   </view>
+  <!-- <open-data type="userAvatarUrl"></open-data>
+  <open-data type="userNickName"></open-data> -->
 </view>
 
 <!-- 底部导航 -->

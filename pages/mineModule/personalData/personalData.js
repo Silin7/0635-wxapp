@@ -1,10 +1,11 @@
 import mixins from '../../mixinsMoudle/mixins'
+import Toast from '../../../miniprogram_npm/vant-weapp/toast/toast';
 Page({
   data: {
     windowWidth: 0,
     windowHeight: 0,
     dataForm: {
-      nickname: '',
+      userPhone: '',
       age: '',
       birthday: '',
       gender: '',
@@ -33,9 +34,15 @@ Page({
   },
 
   onShow: function () {
-    console.log(mixins.getAge('1997-1-1'))
   },
 
+  // 填写电话
+  userPhoneTap: function (event) {
+    this.data.dataForm.userPhone = event.detail.value
+    this.setData({
+      dataForm: this.data.dataForm
+    });
+  },
   // 选择性别
   genderChange: function (event) {
     this.data.dataForm.gender = event.detail
@@ -51,7 +58,13 @@ Page({
   },
   // 选择日期
   confirmDate(event) {
-    console.log(mixins.formatDate(event.detail, '07'))
+    let birthday = mixins.formatDate(event.detail, '03', '-')
+    let age = mixins.getAge(birthday)
+    this.data.dataForm.birthday = birthday
+    this.data.dataForm.age = age
+    this.setData({
+      dataForm: this.data.dataForm
+    })
   },
   // 请选择星座
   constellationTap: function () {
@@ -71,10 +84,23 @@ Page({
       pickerList: ['东昌府区', '阳谷县', '莘县', '茌平区', '东阿县', '冠县', '高唐县', '临清市', '其他']
     })
   },
-  
-  
-  // 选中
+  // 选中星座，所在县市
   confirmItem(event) {
-    console.log(event)
+    if (this.data.pickerType == 'constellation') {
+      this.data.dataForm.constellation = event.detail.value
+    }
+    if (this.data.pickerType == 'address') {
+      this.data.dataForm.address = event.detail.value
+    }
+    this.setData({
+      dataForm: this.data.dataForm
+    })
+  },
+  // 填写个性签名
+  personalSignatureTap: function (event) {
+    this.data.dataForm.personalSignature = event.detail.value
+    this.setData({
+      dataForm: this.data.dataForm
+    });
   }
 })

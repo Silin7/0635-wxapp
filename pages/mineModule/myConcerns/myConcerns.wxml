@@ -46,7 +46,7 @@
   </view>
   <view class="follow_item m_b_10">
     <view class="follow_head_portrait">
-      <image src="/images/homeMoudle/banner_cy.jpg" class="w_h_100 br_10"></image>
+      <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100 br_10"></image>
     </view>
     <view class="follow_info_text" style="width: {{windowWidth-90}}px;">
       <view class="follow_name_personalSignature" style="width: {{windowWidth-180}}px;">

@@ -1,3 +1,4 @@
+<van-toast id="van-toast" position="middle" mask="{{true}}"/>
 <component-dateTimePicker bind:confirmDate="confirmDate" overlayShow="{{showDate}}" minDate="{{minDate}}" maxDate="{{maxDate}}" currentDate="{{currentDate}}"/>
 <component-choosePicker bind:confirmItem="confirmItem" overlayShow="{{pickerShow}}" pickerTitle="{{pickerTitle}}" dataList="{{pickerList}}"/>
 
@@ -5,7 +6,7 @@
   <!-- 头像 -->
   <view class="head_portrait_box bs_bb">
     <view class="head_portrait">
-      <image src="/images/homeMoudle/banner_cy.jpg" class="w_h_100 br_20"></image>
+      <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100 br_20"></image>
       <text class="head_portrait_age">
         <text class="head_portrait_age_text">{{dataForm.age}}</text>
       </text>
@@ -16,11 +17,11 @@
     </view>
   </view>
   <!-- 个人信息 -->
-  <view class="information_box bs_bb" style="height: {{windowHeight-160}}px;">
-    <!-- 昵称 -->
+  <view class="information_box bs_bb" style="height: {{windowHeight-204}}px;">
+    <!-- 电话 -->
     <view class="information_item m_t_10">
-      <view class="information_item_text ls_3">昵称</view>
-      <van-field value="{{dataForm.nickname}}" placeholder="请输入昵称" style="width: {{windowWidth-120}}px;" maxlength="{{8}}"/>
+      <view class="information_item_text ls_3">电话</view>
+      <van-field type="number" value="{{dataForm.userPhone}}" placeholder="请输入电话" style="width: {{windowWidth-120}}px;" maxlength="{{11}}" bind:blur="userPhoneTap"/>
     </view>
     <!-- 生日 -->
     <view class="information_item m_t_10">
@@ -51,8 +52,8 @@
     <!-- 个性签名 -->
     <view class="information_item m_t_10 color_45">
       <view class="information_item_text ls_3">个性签名</view>
-      <van-field value="{{dataForm.personalSignature}}" placeholder="请输入个性签名" style="width: {{windowWidth-120}}px;" maxlength="{{16}}"/>
+      <van-field value="{{dataForm.personalSignature}}" placeholder="请输入个性签名" style="width: {{windowWidth-120}}px;" maxlength="{{18}}" bind:blur="personalSignatureTap"/>
     </view>
-    <view class="information_item fs_12 co_9">*注：个性签名最多为16个字符</view>
+    <view class="information_item fs_12 co_9">*注：个性签名最多为18个字符</view>
   </view>
 </view>

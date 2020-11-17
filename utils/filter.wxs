@@ -99,6 +99,6 @@ var dayjs = function (date, status, state) {
     }
   }
 }
- module.exports = {
-   dayjs: dayjs,
- }
+module.exports = {
+  dayjs: dayjs,
+}

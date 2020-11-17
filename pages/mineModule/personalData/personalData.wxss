@@ -82,20 +82,19 @@
   padding-right: 20%;
 }
 
-/* 导航 */
-.van-nav-bar {
+.van-field__body {
+  width: 68vw;
+  letter-spacing: 1px;
+}
+.color_45 .van-field__placeholder {
+  color: #4545FF !important;
+}
+/* .van-nav-bar {
   padding-top: 0px !important;
 }
 .van-nav-bar__text {
   color: #4545FF !important;
-}
-.van-field__body {
-  width: 68vw;
-  border-bottom: 1px solid #F5F5F5;
-  letter-spacing: 2px;
-}
-.color_45 .van-field__placeholder {
-  color: #4545FF !important;
+  font-weight: 700 !important;
 }
 .van-popup {
   background: -webkit-linear-gradient(left, #9A93F3, #D58BBC, #9A93F3);
@@ -113,4 +112,4 @@
 }
 .van-picker__confirm {
   color: #FFFFFF !important;
-}
+} */

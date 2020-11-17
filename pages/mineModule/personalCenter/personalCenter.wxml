@@ -1,6 +1,6 @@
 <view class="personal_banner">
   <view class="mask"></view>
-  <image src="/images/homeMoudle/banner_jy.jpg" class="w_h_100"></image>
+  <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
   <view class="personal_info1">
     <view class="personal_info1_box">
       <!-- 我的ID -->
@@ -28,12 +28,14 @@
 <view class="personal_info2">
   <!-- 个人简介 -->
   <view class="personal_info2_box" bindtap="personalData">
-    <view class="personal_info2_left">
-        <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100 br_20"></image>
+    <!-- 微信头像 -->
+    <view class="personal_info2_left br_20" style="overflow: hidden;">
+      <open-data type="userAvatarUrl"></open-data>
     </view>
     <view class="personal_info2_right" style="width: {{windowWidth-140}}px;">
       <view class="name_follow">
-        <view class="ls_2 fw_7">小小程序员</view>
+        <!-- 微信昵称 -->
+        <view class="ls_2 fw_7"><open-data type="userNickName"></open-data></view>
         <view class="personal_info2_right_follow" catchtap="followTA">关注</view>
       </view>
       <view class="fs_12 fx_r_s_c">
@@ -58,16 +60,16 @@
     </view>
     <view class="my_tracks_center m_t_20">
       <view class="my_tracks_center_img">
-        <image src="/images/homeMoudle/banner_cy.jpg" class="w_h_100 br_5"></image>
+        <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100 br_5"></image>
       </view>
       <view class="my_tracks_center_img">
-        <image src="/images/homeMoudle/banner_cy.jpg" class="w_h_100 br_5"></image>
+        <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100 br_5"></image>
       </view>
       <view class="my_tracks_center_img">
-        <image src="/images/homeMoudle/banner_cy.jpg" class="w_h_100 br_5"></image>
+        <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100 br_5"></image>
       </view>
       <view class="my_tracks_center_img">
-        <image src="/images/homeMoudle/banner_cy.jpg" class="w_h_100 br_5"></image>
+        <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100 br_5"></image>
       </view>
     </view>
   </view>
@@ -85,7 +87,7 @@
     <view class="my_conversation_center m_t_10">
       <view class="my_conversation_center_box">
         <view class="my_conversation_center_img">
-          <image src="/images/homeMoudle/banner_cy.jpg" class="w_h_100 br_10"></image>
+          <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100 br_10"></image>
         </view>
         <view class="my_conversation_center_text_box m_l_10">
           <view class="my_conversation_center_text to_1 fs_14 ls_1">美食晒出来</view>
@@ -96,7 +98,7 @@
     <view class="my_conversation_center m_t_10">
       <view class="my_conversation_center_box">
         <view class="my_conversation_center_img">
-          <image src="/images/homeMoudle/banner_cy.jpg" class="w_h_100 br_10"></image>
+          <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100 br_10"></image>
         </view>
         <view class="my_conversation_center_text_box m_l_10">
           <view class="my_conversation_center_text to_1 fs_14 ls_1">美食晒出来</view>
@@ -107,7 +109,7 @@
     <view class="my_conversation_center m_t_10">
       <view class="my_conversation_center_box">
         <view class="my_conversation_center_img">
-          <image src="/images/homeMoudle/banner_cy.jpg" class="w_h_100 br_10"></image>
+          <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100 br_10"></image>
         </view>
         <view class="my_conversation_center_text_box m_l_10">
           <view class="my_conversation_center_text to_1 fs_14 ls_1">美食晒出来</view>
