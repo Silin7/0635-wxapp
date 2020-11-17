@@ -10,24 +10,32 @@
       <view class="login_name_icon">
         <image src="/images/loginMoudle/userName.png" class="login_name_icon_img"></image>
       </view>
-      <van-field value="{{userName}}" placeholder="请输入账号" bind:blur="inputName"/>
+      <van-field value="{{userName}}" placeholder="请输入账号" bind:blur="inputName" maxlength="{{16}}"/>
     </view>
     <!-- 请输入密码 -->
     <view class="login_name fx_r_s_c m_t_20">
       <view class="login_name_icon">
         <image src="/images/loginMoudle/password.png" class="login_name_icon_img"></image>
       </view>
-      <van-field type="password" value="{{password}}" placeholder="请输入密码" bind:blur="inputPassword"/>
+      <van-field type="password" value="{{password}}" placeholder="请输入密码" bind:blur="inputPassword" maxlength="{{16}}"/>
     </view>
     <!-- 再次输入密码 -->
-    <view class="login_name fx_r_s_c m_t_20">
+    <view class="login_name fx_r_s_c m_t_20" wx:if="{{state === '0'}}">
       <view class="login_name_icon">
         <image src="/images/loginMoudle/password2.png" class="login_name_icon_img"></image>
       </view>
-      <van-field type="password" value="{{password2}}" placeholder="请再次输入密码" bind:blur="inputPassword2"/>
+      <van-field type="password" value="{{password2}}" placeholder="请再次输入密码" bind:blur="inputPassword2" maxlength="{{16}}"/>
+    </view>
+    <!-- 请输入新密码 -->
+    <view class="login_name fx_r_s_c m_t_20" wx:if="{{state === '1'}}">
+      <view class="login_name_icon">
+        <image src="/images/loginMoudle/password2.png" class="login_name_icon_img"></image>
+      </view>
+      <van-field type="password" value="{{newPassword}}" placeholder="请输入新密码" bind:blur="inputPassword3" maxlength="{{16}}"/>
     </view>
     <view class="login_text fx_r_s_c co_9 fs_14 m_t_20">4到16位的字母，数字，下划线</view>
-    <view class="sign_up_btn m_t_20" bindtap="to_register">注册</view>
+    <view class="sign_up_btn m_t_20" bindtap="to_register" wx:if="{{state === '0'}}">注册</view>
+    <view class="sign_up_btn m_t_20" bindtap="to_register" wx:if="{{state === '1'}}">修改密码</view>
     <text class='dialog-close m_t_60 fx_r_c_c fs_14 co_9' decode='true' bindtap="to_login">&lt; 已有账号？点此登录</text>
   </view>
 

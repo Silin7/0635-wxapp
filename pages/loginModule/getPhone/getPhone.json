@@ -1,6 +1,0 @@
-{
-  "navigationBarTitleText": "手机号授权",
-  "usingComponents": {
-    "van-button": "vant-weapp/button/index"
-  }
-}

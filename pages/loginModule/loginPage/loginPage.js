@@ -1,4 +1,5 @@
 import regular from "../../../utils/regular"
+import esRequest from "../../../utils/esRequest"
 import Toast from '../../../miniprogram_npm/vant-weapp/toast/toast';
 
 Page({
@@ -42,13 +43,31 @@ Page({
       Toast.fail('密码格式错误')
       return
     }
-    console.log(this.data)
+    esRequest('POST', 'sign_in', this.data).then(res => {
+      if (res && res.data.code == 0) {
+        Toast.success('登录成功')
+        setTimeout(() => {
+          wx.redirectTo({
+            url: '/pages/homeModule/homePage/homePage'
+          })
+        }, 2000)
+      } else {
+        Toast.fail(res.data.msg)
+      }
+    })
   },
 
   // 注册
   to_register: function () {
     wx.redirectTo({
       url: '/pages/loginModule/registerPage/registerPage'
+    })
+  },
+
+  // 修改密码
+  changePassword: function () {
+    wx.redirectTo({
+      url: '/pages/loginModule/registerPage/registerPage?state=1'
     })
   }
 
