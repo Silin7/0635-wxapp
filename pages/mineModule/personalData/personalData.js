@@ -22,20 +22,16 @@ Page({
     minDate: new Date(1950, 12, 31).getTime(),
     maxDate: new Date().getTime(),
   },
-
   onLoad: function (options) {
   },
-
   onReady: function () {
     this.setData({
       windowWidth: wx.getSystemInfoSync().windowWidth,
       windowHeight: wx.getSystemInfoSync().windowHeight
     })
   },
-
   onShow: function () {
   },
-
   // 填写电话
   userPhoneTap: function (event) {
     this.data.dataForm.userPhone = event.detail.value
@@ -102,5 +98,13 @@ Page({
     this.setData({
       dataForm: this.data.dataForm
     });
+  },
+  // 保存
+  save_btn: function () {
+    if (mixins.phoneNumber(this.data.dataForm.userPhone)) {
+      console.log(this.data.dataForm)
+    } else {
+      Toast.fail('电话格式错误')
+    }
   }
 })

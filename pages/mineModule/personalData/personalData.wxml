@@ -17,7 +17,7 @@
     </view>
   </view>
   <!-- 个人信息 -->
-  <view class="information_box bs_bb" style="height: {{windowHeight-204}}px;">
+  <view class="information_box bs_bb" style="height: {{windowHeight-240}}px;">
     <!-- 电话 -->
     <view class="information_item m_t_10">
       <view class="information_item_text ls_3">电话</view>
@@ -55,5 +55,9 @@
       <van-field value="{{dataForm.personalSignature}}" placeholder="请输入个性签名" style="width: {{windowWidth-120}}px;" maxlength="{{18}}" bind:blur="personalSignatureTap"/>
     </view>
     <view class="information_item fs_12 co_9">*注：个性签名最多为18个字符</view>
+  </view>
+  <!-- 保存信息 -->
+  <view class="sign_up">
+    <view class="sign_up_btn" bindtap="save_btn">保存</view>
   </view>
 </view>
