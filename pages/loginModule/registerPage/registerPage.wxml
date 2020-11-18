@@ -34,8 +34,9 @@
       <van-field type="password" value="{{newPassword}}" placeholder="请输入新密码" bind:blur="inputPassword3" maxlength="{{16}}"/>
     </view>
     <view class="login_text fx_r_s_c co_9 fs_14 m_t_20">4到16位的字母，数字，下划线</view>
-    <view class="sign_up_btn m_t_20" bindtap="to_register" wx:if="{{state === '0'}}">注册</view>
-    <view class="sign_up_btn m_t_20" bindtap="to_register" wx:if="{{state === '1'}}">修改密码</view>
+    <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" wx:if="{{state === '0'}}" class="sign_up_btn m_t_20">注册</button>
+    <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" wx:if="{{state === '1'}}" class="sign_up_btn m_t_20">修改密码</button>
+    <view class="tips fx_r_s_c co_C fs_12 m_t_10">*注: 请点击确认授权，否则我们不能获取到您的微信头像</view>
     <text class='dialog-close m_t_60 fx_r_c_c fs_14 co_9' decode='true' bindtap="to_login">&lt; 已有账号？点此登录</text>
   </view>
 

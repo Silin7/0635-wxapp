@@ -1,10 +1,13 @@
 import mixins from '../../mixinsMoudle/mixins'
+import esRequest from '../../../utils/esRequest'
 import Toast from '../../../miniprogram_npm/vant-weapp/toast/toast';
 Page({
   data: {
+    id_key: '',
     windowWidth: 0,
     windowHeight: 0,
     dataForm: {
+      id: '',
       userPhone: '',
       age: '',
       birthday: '',
@@ -23,6 +26,10 @@ Page({
     maxDate: new Date().getTime(),
   },
   onLoad: function (options) {
+    this.setData({
+      id_key: wx.getStorageSync('id_key').substr(1)
+    })
+    this.getMineInfo()
   },
   onReady: function () {
     this.setData({
@@ -31,6 +38,21 @@ Page({
     })
   },
   onShow: function () {
+  },
+  // 获取个人信息
+  getMineInfo: function () {
+    let data = {
+      id: wx.getStorageSync('id_key')
+    }
+    esRequest('GET', 'mine_info', data).then (res => {
+      if (res && res.data.code == 0) {
+        this.setData({
+          dataForm: res.data.data
+        })
+      } else {
+        Toast.fail('系统错误')
+      }
+    })
   },
   // 填写电话
   userPhoneTap: function (event) {
@@ -130,7 +152,20 @@ Page({
       }
     }
     if (mixins.phoneNumber(this.data.dataForm.userPhone)) {
-      console.log(this.data.dataForm)
+      this.data.dataForm.id = wx.getStorageSync('id_key')
+      esRequest('POST', 'update_mineInfo', this.data.dataForm).then(res => {
+        console.log(res)
+        if (res && res.data.code == 0) {
+          Toast.success('操作成功')
+          setTimeout(() => {
+            wx.navigateBack({
+              delta: 1
+            })
+          }, 2000)
+        } else {
+          Toast.fail(res.data.msg)
+        }
+      })
     } else {
       Toast.fail('电话格式错误')
     }

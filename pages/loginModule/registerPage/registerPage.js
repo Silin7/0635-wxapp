@@ -4,12 +4,14 @@ import Toast from '../../../miniprogram_npm/vant-weapp/toast/toast';
 
 Page({
   data: {
-    id: '',
     state: '',
     userName: '',
     password: '',
     password2: '',
-    newPassword: ''
+    newPassword: '',
+    nickName: '',
+    gender: '',
+    avatarUrl: '',
   },
 
   onLoad: function (options) {
@@ -46,8 +48,16 @@ Page({
     })
   },
 
-  // 注册
-  to_register: function () {
+  // 授权 注册
+  bindGetUserInfo: function (e) {
+    if (e.detail.errMsg == 'getUserInfo:fail auth deny') {
+      Toast.fail('未授权')
+      return
+    } else {
+      this.data.nickName = e.detail.userInfo.nickName
+      this.data.gender = e.detail.userInfo.gender.toString(),
+      this.data.avatarUrl = e.detail.userInfo.avatarUrl
+    }
     if (!this.data.userName) {
       Toast.fail('请输入账号')
       return
@@ -82,14 +92,23 @@ Page({
         return
       }
     }
-    if (this.data.state == '1') {
-      this.data.id = ''
-      esRequest('POST', 'is_register', this.data).then(res => {
+    if (this.data.state == '0') {
+      let data = {
+        userName: this.data.userName,
+        state: '0'
+      }
+      esRequest('POST', 'is_register', data).then(res => {
+        let data2 = {
+          userName: this.data.userName,
+          password: this.data.password,
+          nickName: this.data.nickName,
+          gender: this.data.gender,
+          avatarUrl: this.data.avatarUrl
+        }
         if (res && res.data.code == 0) {
-          this.data.id = res.data.data.id
-          esRequest('POST', 'change_password', this.data).then(res => {
+          esRequest('POST', 'register_inster', data2).then(res => {
             if (res && res.data.code == 0) {
-              Toast.success('修改成功')
+              Toast.success('注册成功')
               setTimeout(() => {
                 wx.redirectTo({
                   url: '/pages/loginModule/loginPage/loginPage'
@@ -104,12 +123,22 @@ Page({
         }
       })
     }
-    if (this.data.state == '0') {
-      esRequest('POST', 'is_register', this.data).then(res => {
+    if (this.data.state == '1') {
+      let data1 = {
+        userName: this.data.userName,
+        state: '1'
+      }
+      esRequest('POST', 'is_register', data1).then(res => {
         if (res && res.data.code == 0) {
-          esRequest('POST', 'register_inster', this.data).then(res => {
+          this.data.id = res.data.data.id
+          let data2 = {
+            id: res.data.data.id,
+            userName: this.data.userName,
+            password: this.data.password,
+          }
+          esRequest('POST', 'change_password', data2).then(res => {
             if (res && res.data.code == 0) {
-              Toast.success('注册成功')
+              Toast.success('修改成功')
               setTimeout(() => {
                 wx.redirectTo({
                   url: '/pages/loginModule/loginPage/loginPage'

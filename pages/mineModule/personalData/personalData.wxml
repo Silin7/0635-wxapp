@@ -13,7 +13,7 @@
     </view>
     <view class="head_portrait_text fs_14">
       <text class="dialog-close ls_2 fs_18" decode="true">鲁P&nbsp;</text>
-      <text class="ls_2 fs_18">00001</text>
+      <text class="ls_2 fs_18">{{id_key}}</text>
     </view>
   </view>
   <!-- 个人信息 -->

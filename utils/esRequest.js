@@ -1,8 +1,9 @@
 import baseURL from "./baseURL"
 import loginRequest from "./sub-unitRequest/loginRequest"
+import mineRequest from "./sub-unitRequest/mineRequest"
 
 export default ( methodme, urlme, datame, id, id2 ) => {
-  let globalNameObj = Object.assign({}, loginRequest)
+  let globalNameObj = Object.assign({}, loginRequest, mineRequest)
   var url = ''
   if (id2 && id) {
     url = baseURL.baseURL + globalNameObj[urlme].apiName + '/' + id + '/' + id2
