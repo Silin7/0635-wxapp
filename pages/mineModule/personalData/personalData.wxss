@@ -61,14 +61,6 @@
   align-items: center;
   position: relative;
 }
-.information_item2 {
-  min-height: 80px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-  border: 1px solid red;
-}
 .information_item_text {
   width: 80px;
 }

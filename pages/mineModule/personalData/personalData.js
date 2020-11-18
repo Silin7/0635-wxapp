@@ -101,6 +101,34 @@ Page({
   },
   // 保存
   save_btn: function () {
+    let data = this.data.dataForm
+    for (let key in data) {
+      if (data[key] == '') {
+        if (key == 'userPhone') {
+          Toast.fail('请填写电话')
+          return
+        }
+        if (key == 'birthday') {
+          Toast.fail('请填写生日')
+          return
+        }
+        if (key == 'gender') {
+          Toast.fail('请选择性别')
+          return
+        }
+        if (key == 'constellation') {
+          Toast.fail('请选择星座')
+          return
+        }
+        if (key == 'address') {
+          Toast.fail('请填写地址')
+          return
+        }
+        if (key == 'personalSignature') {
+          this.data.dataForm.personalSignature = '我的签名是系统赠送的。'
+        }
+      }
+    }
     if (mixins.phoneNumber(this.data.dataForm.userPhone)) {
       console.log(this.data.dataForm)
     } else {
