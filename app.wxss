@@ -15,4 +15,21 @@
   justify-content: space-between;
   padding: 200rpx 0;
   box-sizing: border-box;
-} 
+}
+/* 全局组件样式 */
+.van-picker__toolbar {
+  height: 60px !important;
+  line-height: 60px !important;
+  letter-spacing: 5px !important;
+  font-weight: 700 !important;
+}
+.van-picker__title {
+  font-size: 14px !important;
+  letter-spacing: 3px !important;
+}
+.van-picker__cancel {
+  color: #4545FF !important;
+}
+.van-picker__confirm {
+  color: #4545FF !important;
+}

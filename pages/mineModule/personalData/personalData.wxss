@@ -110,39 +110,3 @@
 .color_45 .van-field__placeholder {
   color: #4545FF !important;
 }
-/* .van-nav-bar {
-  padding-top: 0px !important;
-}
-.van-nav-bar__text {
-  color: #4545FF !important;
-  font-weight: 700 !important;
-}
-.van-popup {
-  background: -webkit-linear-gradient(left, #9A93F3, #D58BBC, #9A93F3);
-}
-.van-picker {
-  font-weight: 700 !important;
-  color: #FFFFFF !important;
-  background: -webkit-linear-gradient(left, #9A93F3, #D58BBC, #9A93F3);
-}
-.van-ellipsis {
-  color: #FFFFFF !important;
-}
- */
-
-.van-picker__toolbar {
-  height: 60px !important;
-  line-height: 60px !important;
-  letter-spacing: 5px !important;
-  font-weight: 700 !important;
-}
-.van-picker__title {
-  font-size: 14px !important;
-  letter-spacing: 3px !important;
-}
-.van-picker__cancel {
-  color: #4545FF !important;
-}
-.van-picker__confirm {
-  color: #4545FF !important;
-}
