@@ -39,9 +39,9 @@
   border-radius: 10px;
 }
 .head_portrait_text {
-  height: 36px;
-  width: 160px;
-  background: rgba(69, 69, 255, 0.568);
+  height: 38px;
+  width: 150px;
+  background: #021C72;
   border-radius: 8px;
   display: flex;
   justify-content: center;
@@ -128,9 +128,21 @@
 .van-ellipsis {
   color: #FFFFFF !important;
 }
+ */
+
+.van-picker__toolbar {
+  height: 60px !important;
+  line-height: 60px !important;
+  letter-spacing: 5px !important;
+  font-weight: 700 !important;
+}
+.van-picker__title {
+  font-size: 14px !important;
+  letter-spacing: 3px !important;
+}
 .van-picker__cancel {
-  color: #FFFFFF !important;
+  color: #4545FF !important;
 }
 .van-picker__confirm {
-  color: #FFFFFF !important;
-} */
+  color: #4545FF !important;
+}

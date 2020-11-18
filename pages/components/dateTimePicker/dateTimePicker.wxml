@@ -5,5 +5,6 @@
     min-date="{{minDate}}"
     max-date="{{maxDate}}"
     bind:cancel="cancelDate"
-    bind:confirm="confirmDate"/>
+    bind:confirm="confirmDate"
+    item-height="60"/>
 </van-popup>

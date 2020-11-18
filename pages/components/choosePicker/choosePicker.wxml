@@ -1,8 +1,9 @@
 <van-popup show="{{overlayShow}}" position="bottom">
   <van-picker
-  show-toolbar
+    show-toolbar
     title="{{pickerTitle}}"
     columns="{{dataList}}"
     bind:cancel="onCancel"
-    bind:confirm="onConfirm"/>
+    bind:confirm="onConfirm"
+    item-height="60"/>
 </van-popup>
