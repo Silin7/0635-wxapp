@@ -1,15 +1,15 @@
 {
   "pages":[
-    "pages/loginModule/registerPage/registerPage",
     "pages/homeModule/homePage/homePage",
     "pages/mineModule/personalCenter/personalCenter",
     "pages/mineModule/personalData/personalData",
     "pages/mineModule/myConcerns/myConcerns",
+    "pages/loginModule/registerPage/registerPage",
     "pages/loginModule/loginPage/loginPage",
-    "pages/components/loading/loading",
-    "pages/components/choosePicker/choosePicker",
     "pages/components/dateTimePicker/dateTimePicker",
-    "pages/notModule/notFound/notFound"
+    "pages/components/choosePicker/choosePicker",
+    "pages/notModule/notFound/notFound",
+    "pages/components/loading/loading"
   ],
   "permission": {
     "scope.userLocation": {
