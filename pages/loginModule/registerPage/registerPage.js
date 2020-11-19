@@ -97,7 +97,7 @@ Page({
         userName: this.data.userName,
         state: '0'
       }
-      esRequest('POST', 'is_register', data).then(res => {
+      esRequest('is_register', data).then(res => {
         let data2 = {
           userName: this.data.userName,
           password: this.data.password,
@@ -106,7 +106,7 @@ Page({
           avatarUrl: this.data.avatarUrl
         }
         if (res && res.data.code == 0) {
-          esRequest('POST', 'register_inster', data2).then(res => {
+          esRequest('register_inster', data2).then(res => {
             if (res && res.data.code == 0) {
               Toast.success('注册成功')
               setTimeout(() => {
@@ -128,7 +128,7 @@ Page({
         userName: this.data.userName,
         state: '1'
       }
-      esRequest('POST', 'is_register', data1).then(res => {
+      esRequest('is_register', data1).then(res => {
         if (res && res.data.code == 0) {
           this.data.id = res.data.data.id
           let data2 = {
@@ -136,7 +136,7 @@ Page({
             userName: this.data.userName,
             password: this.data.password,
           }
-          esRequest('POST', 'change_password', data2).then(res => {
+          esRequest('change_password', data2).then(res => {
             if (res && res.data.code == 0) {
               Toast.success('修改成功')
               setTimeout(() => {

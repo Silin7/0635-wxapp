@@ -43,7 +43,7 @@ Page({
       Toast.fail('密码格式错误')
       return
     }
-    esRequest('POST', 'sign_in', this.data).then(res => {
+    esRequest('sign_in', this.data).then(res => {
       if (res && res.data.code == 0) {
         Toast.success('登录成功')
         setTimeout(() => {

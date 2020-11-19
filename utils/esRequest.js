@@ -2,17 +2,15 @@ import baseURL from "./baseURL"
 import loginRequest from "./sub-unitRequest/loginRequest"
 import mineRequest from "./sub-unitRequest/mineRequest"
 
-export default ( methodme, urlme, datame, id, id2 ) => {
-  let globalNameObj = Object.assign({}, loginRequest, mineRequest)
-  var url = ''
-  if (id2 && id) {
-    url = baseURL.baseURL + globalNameObj[urlme].apiName + '/' + id + '/' + id2
-  } else if (id) {
-    url = baseURL.baseURL + globalNameObj[urlme].apiName + '/' + id
+export default (localObjects, parametersData, parameters) => {
+  let globalObjects = Object.assign({}, loginRequest, mineRequest)
+  var requestURL = ''
+  if (parameters) {
+    requestURL = baseURL.baseURL + globalObjects[localObjects].apiName + '/' + parameters
   } else {
-    url = baseURL.baseURL + globalNameObj[urlme].apiName
+    requestURL = baseURL.baseURL + globalObjects[localObjects].apiName
   }
-  // const tokenme = wx.getStorageSync('token')
+  // var tokenme = wx.getStorageSync('token')
   // if (tokenme === undefined) {
   //   wx.showToast({
   //     title: '获取用户登录信息异常',
@@ -20,12 +18,12 @@ export default ( methodme, urlme, datame, id, id2 ) => {
   // }
   return new Promise((resolve, reject) => {
     wx.request({
-      header: {
+      // header: {
         // 'token':tokenme
-      },
-      method: methodme,
-      url: url,
-      data: datame,
+      // },
+      method: localObjects.apiMethod,
+      url: requestURL,
+      data: parametersData,
       success(res) {
         resolve(res)
       },

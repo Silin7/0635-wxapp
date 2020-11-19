@@ -44,7 +44,7 @@ Page({
     let data = {
       id: wx.getStorageSync('id_key')
     }
-    esRequest('GET', 'mine_info', data).then (res => {
+    esRequest('mine_info', data).then (res => {
       if (res && res.data.code == 0) {
         this.setData({
           dataForm: res.data.data
@@ -153,7 +153,7 @@ Page({
     }
     if (mixins.phoneNumber(this.data.dataForm.userPhone)) {
       this.data.dataForm.id = wx.getStorageSync('id_key')
-      esRequest('POST', 'update_mineInfo', this.data.dataForm).then(res => {
+      esRequest('update_mineInfo', this.data.dataForm).then(res => {
         console.log(res)
         if (res && res.data.code == 0) {
           Toast.success('操作成功')
