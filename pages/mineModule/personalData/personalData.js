@@ -8,6 +8,8 @@ Page({
     windowHeight: 0,
     dataForm: {
       id: '',
+      nickName: '',
+      avatarUrl: '',
       userPhone: '',
       age: '',
       birthday: '',
@@ -63,10 +65,10 @@ Page({
   },
   // 选择性别
   genderChange: function (event) {
-    this.data.dataForm.gender = event.detail
-    this.setData({
-      dataForm: this.data.dataForm
-    });
+    // this.data.dataForm.gender = event.detail
+    // this.setData({
+    //   dataForm: this.data.dataForm
+    // });
   },
   // 弹出日期选择器
   dataTap: function () {

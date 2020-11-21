@@ -30,19 +30,20 @@
   <view class="personal_info2_box" bindtap="personalData">
     <!-- 微信头像 -->
     <view class="personal_info2_left br_20" style="overflow: hidden;">
-      <open-data type="userAvatarUrl"></open-data>
+      <image src="{{dataForm.avatarUrl}}" class="w_h_100 br_20"></image>
     </view>
     <view class="personal_info2_right" style="width: {{windowWidth-140}}px;">
       <view class="name_follow">
         <!-- 微信昵称 -->
-        <view class="ls_2 fw_7"><open-data type="userNickName"></open-data></view>
+        <view class="ls_2 fw_7">{{dataForm.nickName}}</view>
         <view class="personal_info2_right_follow" catchtap="followTA">关注</view>
       </view>
-      <view class="fs_12 fx_r_s_c">
-        <image src="/images/mineMoudle/boy_icon.png" style="width: 18px; height: 18px; padding:0 3px;"></image>
-        <view>23岁</view><text class="fw_7 p_l_3 p_r_3">·</text>
-        <view>天蝎座</view><text class="fw_7 p_l_3 p_r_3">·</text>
-        <view>阳谷县</view>
+      <view class="fs_12 fx_r_s_c" wx:if="{{dataForm.age && dataForm.age && dataForm.age}}">
+        <image wx:if="{{dataForm.gender == '1'}}" src="/images/mineMoudle/boy_icon.png" style="width: 18px; height: 18px; padding:0 3px;"></image>
+        <image wx:if="{{dataForm.gender == '2'}}" src="/images/mineMoudle/girl_icon.png" style="width: 18px; height: 18px; padding:0 3px;"></image>
+        <view>{{dataForm.age}}岁<text class="fw_7 p_l_3 p_r_3">·</text></view>
+        <view>{{dataForm.constellation}}<text class="fw_7 p_l_3 p_r_3">·</text></view>
+        <view>{{dataForm.address}}</view>
       </view>
       <view class="fs_12 co_9 ls_1">保持热爱奔赴山海，各自努力顶峰相见！</view>
     </view>

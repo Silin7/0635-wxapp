@@ -6,7 +6,7 @@
   <!-- 头像 -->
   <view class="head_portrait_box bs_bb">
     <view class="head_portrait">
-      <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100 br_20"></image>
+      <image src="{{dataForm.avatarUrl}}" class="w_h_100 br_20"></image>
       <text class="head_portrait_age">
         <text class="head_portrait_age_text">{{dataForm.age}}</text>
       </text>
@@ -35,8 +35,8 @@
     <view class="information_item m_t_10">
       <view class="information_item_text ls_3">性别</view>
       <van-radio-group class="information_item_radio_group" style="width: {{windowWidth-120}}px;" value="{{dataForm.gender}}" bind:change="genderChange">
-        <van-radio name="01" checked-color="#4545FF">男</van-radio>
-        <van-radio name="02" checked-color="#4545FF">女</van-radio>
+        <van-radio name="1" checked-color="#4545FF">男</van-radio>
+        <van-radio name="2" checked-color="#4545FF">女</van-radio>
       </van-radio-group>
     </view>
     <!-- 星座 -->
