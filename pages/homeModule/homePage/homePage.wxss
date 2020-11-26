@@ -1,4 +1,23 @@
+.title_box {
+  box-sizing: border-box;
+  height: 30px;
+  padding: 0 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.title_icon_box {
+  width: 24px;
+  height: 24px;
+}
+.title_text {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-left: 10px;
+}
 
+/* 子模块01 */
 .icon_module {
   height: 100px;
   width: 100%;
@@ -9,7 +28,7 @@
 }
 .icon_module_item {
   box-sizing: border-box;
-  height: 80px;
+  height: 100px;
   width: 20vw;
   display: flex;
   flex-flow: column;
@@ -17,9 +36,9 @@
   align-items: center;
 }
 .item_icon {
-  width: 50px;
-  height: 50px;
-  border-radius: 25px;
+  width: 70px;
+  height: 70px;
+  border-radius: 35px;
   overflow: hidden;
 }
 .item_icon_img {
@@ -32,48 +51,95 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 28rpx;
+  font-size: 30rpx;
 }
 
-.sub_module {
+/* 子模块02 */
+.sub_module1 {
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+.sub_module1_item {
+  width: 30vw;
+  height: 100px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+.item_banner_mask {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  opacity: 0.3;
+}
+.item_banner_text1 {
+  position: absolute;
+  bottom: 35px;
+  right: 0;
+  z-index: 999;
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 8px;
+}
+
+/* 子模块03 */
+.sub_module2 {
   padding: 10px;
   display: flex;
   justify-content: space-between;
 }
-.sub_module_left {
+.sub_module2_left {
   width: 48%;
 }
-.sub_module_right {
+.sub_module2_right {
   width: 48%;
 }
-.sub_module_01 {
+.sub_module2_01 {
   width: 100%;
-  height: 160px;
+  height: 120px;
   border-radius: 10px;
   overflow: hidden;
   position: relative;
 }
-.sub_module_02 {
+.sub_module2_02 {
   width: 100%;
-  height: 240px;
+  height: 180px;
   border-radius: 10px;
   overflow: hidden;
   position: relative;
 }
-.item_banner_text {
+.item_banner_mask1 {
   position: absolute;
   bottom: 0;
-  height: 30px;
-  line-height: 30px;
   width: 100%;
+  height: 30px;
   background-color: #000000;
   opacity: 0.7;
+}
+.item_banner_text2 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
   color: #FFFFFF;
   font-size: 14px;
   font-weight: 700;
   text-align: center;
+  letter-spacing: 2px;
+  z-index: 999;
 }
-  
+
 
 /* 底部导航 */
 .van-tabbar-item--active {
