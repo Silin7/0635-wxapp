@@ -8,8 +8,9 @@
     "pages/loginModule/loginPage/loginPage",
     "pages/components/dateTimePicker/dateTimePicker",
     "pages/components/choosePicker/choosePicker",
-    "pages/notModule/notFound/notFound",
-    "pages/components/loading/loading"
+    "pages/components/footTabbar/footTabbar",
+    "pages/components/loading/loading",
+    "pages/notModule/notFound/notFound"
   ],
   "permission": {
     "scope.userLocation": {

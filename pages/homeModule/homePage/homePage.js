@@ -1,32 +1,25 @@
-// "navigationBarBackgroundColor": "#C7C7FE",
+import esRequest from '../../../utils/esRequest'
+import Toast from '../../../miniprogram_npm/vant-weapp/toast/toast';
+
 Page({
   data: {
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    windowWidth: 0,
     windowHeight: 0,
+    footerActive: 0,
+    overlayShow: true,
     swiperList: [
       { id: 'swiper01', image: '/images/homeMoudle/swiper_02.jpg' },
       { id: 'swiper02', image: '/images/homeMoudle/swiper_02.jpg' },
       { id: 'swiper03', image: '/images/homeMoudle/swiper_02.jpg' }
     ],
     iconList: [
-      { name: '景区', image: '/images/homeMoudle/banner_xq.jpg', id: 'icon01' },
-      { name: '美食', image: '/images/homeMoudle/banner_xq.jpg', id: 'icon02' },
-      { name: '游戏', image: '/images/homeMoudle/banner_xq.jpg', id: 'icon03' },
-      { name: '公益', image: '/images/homeMoudle/banner_xq.jpg', id: 'icon04' },
+      { name: '测试', image: '/images/homeMoudle/banner_xq.jpg', id: 'icon01' },
+      { name: '测试', image: '/images/homeMoudle/banner_xq.jpg', id: 'icon02' },
+      { name: '测试', image: '/images/homeMoudle/banner_xq.jpg', id: 'icon03' },
+      { name: '测试', image: '/images/homeMoudle/banner_xq.jpg', id: 'icon04' },
     ],
-    footerActive: 0,
-    footerIcon: {
-      home_normal: '/images/homeMoudle/home_normal.png',
-      home_active: '/images/homeMoudle/home_active.png',
-      compass_normal: '/images/homeMoudle/compass_normal.png',
-      compass_active: '/images/homeMoudle/compass_active.png',
-      release_normal: '/images/homeMoudle/release_normal.png',
-      release_active: '/images/homeMoudle/release_active.png',
-      news_normal: '/images/homeMoudle/news_normal.png',
-      news_active: '/images/homeMoudle/news_active.png',
-      mine_normal: '/images/homeMoudle/mine_normal.png',
-      mine_active: '/images/homeMoudle/mine_active.png',
-    },
+    dataForm: {},
   },
 
   onLoad: function (options) {
@@ -49,6 +42,7 @@ Page({
   
   onReady: function () {
     this.setData({
+      windowWidth: wx.getSystemInfoSync().windowWidth,
       windowHeight: wx.getSystemInfoSync().windowHeight
     })
   },
@@ -57,28 +51,16 @@ Page({
     this.setData({
       footerActive: 0
     })
+    this.getMineInfo()
   },
 
-  onUnload: function () {
-
-  },
-
-  onPullDownRefresh: function () {
-
-  },
-
-  onReachBottom: function () {
-
-  },
-
+  // 底部导航切换
   navChange(event) {
     this.setData({
       footerActive: event.detail
     })
     if (event.detail === 4) {
-      wx.navigateTo({
-        url: '/pages/mineModule/personalCenter/personalCenter',
-      })
+      
     }
   },
 
@@ -105,5 +87,44 @@ Page({
         console.log(country)
       }
     })
+  },
+
+  /*
+    我的（个人中心）
+  */
+  // 获取个人信息
+  getMineInfo: function () {
+    let data = {
+      id: wx.getStorageSync('id_key')
+    }
+    esRequest('mine_info', data).then (res => {
+      if (res && res.data.code == 0) {
+        this.setData({
+          dataForm: res.data.data
+        })
+      } else {
+        Toast.fail('系统错误')
+      }
+    })
+  },
+
+  // 我的关注
+  myConcerns: function () {
+    wx.navigateTo({
+      url: '/pages/mineModule/myConcerns/myConcerns',
+    })
+  },
+
+  // 编辑个人资料
+  personalData: function () {
+    wx.navigateTo({
+      url: '/pages/mineModule/personalData/personalData',
+    })
+  },
+
+  // 关注TA
+  followTA: function () {
+    console.log('关注TA')
   }
+
 })

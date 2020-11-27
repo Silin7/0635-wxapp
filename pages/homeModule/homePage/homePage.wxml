@@ -1,4 +1,5 @@
-<view class="bg_F5 bs_bb oy_a" style="height: {{windowHeight-84}}px">
+<!-- 首页 -->
+<view wx:if="{{footerActive === 0}}" class="bg_F5 bs_bb oy_a" style="height: {{windowHeight-84}}px;">
   <!-- swiper滚动图 -->
 	<swiper indicator-dots="{{true}}" autoplay="{{true}}" circular="{{true}}" style="height: 360rpx;">
 		<block wx:for="{{swiperList}}" wx:key="index" wx:for-item="item">
@@ -13,7 +14,7 @@
       <view class="sub_module4_item_01">
         <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
         <view class="item_banner_mask1"></view>
-        <view class="item_banner_text2">志同道合，莫逆之交</view>
+        <view class="item_banner_text2">测试测试</view>
       </view>
     </view>
     <view class="icon_module_item" wx:for="{{iconList}}" wx:key="index">
@@ -28,23 +29,23 @@
     <view class="title_icon_box">
       <image src="/images/homeMoudle/icon-appointment.png" class="w_h_100"></image>
     </view>
-    <text class="title_text">约一约</text>
+    <text class="title_text">测试</text>
   </view>
   <view class="sub_module1">
     <view class="sub_module1_item">
       <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
       <view class="item_banner_mask"></view>
-      <text class="item_banner_text1">约火锅</text>
+      <text class="item_banner_text1">测试</text>
     </view>
     <view class="sub_module1_item">
       <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
       <view class="item_banner_mask"></view>
-      <text class="item_banner_text1">约电影</text>
+      <text class="item_banner_text1">测试</text>
     </view>
     <view class="sub_module1_item">
       <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
       <view class="item_banner_mask"></view>
-      <text class="item_banner_text1">约更多</text>
+      <text class="item_banner_text1">测试</text>
     </view>
   </view>
   <!-- 子模块03 -->
@@ -52,31 +53,31 @@
     <view class="title_icon_box">
       <image src="/images/homeMoudle/icon-appointment.png" class="w_h_100"></image>
     </view>
-    <text class="title_text">约一约</text>
+    <text class="title_text">测试</text>
   </view>
   <view class="sub_module3">
     <view class="sub_module2_item1">
       <view class="sub_module2_item1_01">
         <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
         <view class="item_banner_mask1"></view>
-        <view class="item_banner_text2">志同道合，莫逆之交</view>
+        <view class="item_banner_text2">测试测试</view>
       </view>
       <view class="sub_module2_item1_02">
         <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
         <view class="item_banner_mask1"></view>
-        <view class="item_banner_text2">游人如织，跋山涉水</view>
+        <view class="item_banner_text2">测试测试</view>
       </view>
     </view>
     <view class="sub_module2_item1 m_t_15">
       <view class="sub_module2_item1_02">
         <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
         <view class="item_banner_mask1"></view>
-        <view class="item_banner_text2">执子之手，与子偕老</view>
+        <view class="item_banner_text2">测试测试</view>
       </view>
       <view class="sub_module2_item1_01">
         <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
         <view class="item_banner_mask1"></view>
-        <view class="item_banner_text2">广施善行，大爱无疆</view>
+        <view class="item_banner_text2">测试测试</view>
       </view>
     </view>
   </view>
@@ -85,31 +86,31 @@
     <view class="title_icon_box">
       <image src="/images/homeMoudle/icon-appointment.png" class="w_h_100"></image>
     </view>
-    <text class="title_text">约一约</text>
+    <text class="title_text">测试</text>
   </view>
   <view class="sub_module2">
     <view class="sub_module2_left">
       <view class="sub_module2_01">
         <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
         <view class="item_banner_mask1"></view>
-        <view class="item_banner_text2">志同道合，莫逆之交</view>
+        <view class="item_banner_text2">测试测试</view>
       </view>
       <view class="sub_module2_02 m_t_15">
         <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
         <view class="item_banner_mask1"></view>
-        <view class="item_banner_text2">游人如织，跋山涉水</view>
+        <view class="item_banner_text2">测试测试</view>
       </view>
     </view>
     <view class="sub_module2_right">
       <view class="sub_module2_02">
         <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
         <view class="item_banner_mask1"></view>
-        <view class="item_banner_text2">执子之手，与子偕老</view>
+        <view class="item_banner_text2">测试测试</view>
       </view>
       <view class="sub_module2_01 m_t_15">
         <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
         <view class="item_banner_mask1"></view>
-        <view class="item_banner_text2">广施善行，大爱无疆</view>
+        <view class="item_banner_text2">测试测试</view>
       </view>
     </view>
   </view>
@@ -118,31 +119,31 @@
     <view class="title_icon_box">
       <image src="/images/homeMoudle/icon-appointment.png" class="w_h_100"></image>
     </view>
-    <text class="title_text">约一约</text>
+    <text class="title_text">测试</text>
   </view>
   <view class="sub_module4">
     <view class="sub_module4_item">
       <view class="sub_module4_item_01">
         <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
         <view class="item_banner_mask1"></view>
-        <view class="item_banner_text2">志同道合，莫逆之交</view>
+        <view class="item_banner_text2">测试测试</view>
       </view>
     </view>
     <view class="sub_module4_item m_t_15">
       <view class="sub_module4_item_02">
         <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
         <view class="item_banner_mask1"></view>
-        <view class="item_banner_text2">游人如织，跋山涉水</view>
+        <view class="item_banner_text2">测试测试</view>
       </view>
       <view class="sub_module4_item_02">
         <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
         <view class="item_banner_mask1"></view>
-        <view class="item_banner_text2">执子之手，与子偕老</view>
+        <view class="item_banner_text2">测试测试</view>
       </view>
       <view class="sub_module4_item_02">
         <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
         <view class="item_banner_mask1"></view>
-        <view class="item_banner_text2">广施善行，大爱无疆</view>
+        <view class="item_banner_text2">测试测试</view>
       </view>
     </view>
   </view>
@@ -151,31 +152,31 @@
     <view class="title_icon_box">
       <image src="/images/homeMoudle/icon-appointment.png" class="w_h_100"></image>
     </view>
-    <text class="title_text">约一约</text>
+    <text class="title_text">测试</text>
   </view>
   <view class="sub_module3">
     <view class="sub_module2_item1">
       <view class="sub_module2_item1_02">
         <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
         <view class="item_banner_mask1"></view>
-        <view class="item_banner_text2">志同道合，莫逆之交</view>
+        <view class="item_banner_text2">测试测试</view>
       </view>
       <view class="sub_module2_item1_01">
         <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
         <view class="item_banner_mask1"></view>
-        <view class="item_banner_text2">游人如织，跋山涉水</view>
+        <view class="item_banner_text2">测试测试</view>
       </view>
     </view>
     <view class="sub_module2_item1 m_t_15">
       <view class="sub_module2_item1_01">
         <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
         <view class="item_banner_mask1"></view>
-        <view class="item_banner_text2">执子之手，与子偕老</view>
+        <view class="item_banner_text2">测试测试</view>
       </view>
       <view class="sub_module2_item1_02">
         <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
         <view class="item_banner_mask1"></view>
-        <view class="item_banner_text2">广施善行，大爱无疆</view>
+        <view class="item_banner_text2">测试测试</view>
       </view>
     </view>
   </view>
@@ -184,60 +185,160 @@
     <view class="title_icon_box">
       <image src="/images/homeMoudle/icon-appointment.png" class="w_h_100"></image>
     </view>
-    <text class="title_text">约一约</text>
+    <text class="title_text">测试</text>
   </view>
   <view class="sub_module2">
     <view class="sub_module2_left">
       <view class="sub_module2_02">
         <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
         <view class="item_banner_mask1"></view>
-        <view class="item_banner_text2">志同道合，莫逆之交</view>
+        <view class="item_banner_text2">测试测试</view>
       </view>
       <view class="sub_module2_01 m_t_15">
         <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
         <view class="item_banner_mask1"></view>
-        <view class="item_banner_text2">游人如织，跋山涉水</view>
+        <view class="item_banner_text2">测试测试</view>
       </view>
     </view>
     <view class="sub_module2_right">
       <view class="sub_module2_01">
         <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
         <view class="item_banner_mask1"></view>
-        <view class="item_banner_text2">执子之手，与子偕老</view>
+        <view class="item_banner_text2">测试测试</view>
       </view>
       <view class="sub_module2_02 m_t_15">
         <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
         <view class="item_banner_mask1"></view>
-        <view class="item_banner_text2">广施善行，大爱无疆</view>
+        <view class="item_banner_text2">测试测试</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 我的 -->
+<view wx:if="{{footerActive === 4}}" class="bg_F5 bs_bb oy_a" style="height: {{windowHeight-84}}px; position: relative;">
+  <view class="personal_banner">
+    <view class="mask"></view>
+    <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
+    <view class="personal_info1">
+      <view class="personal_info1_box">
+        <!-- 我的ID -->
+        <view class="personal_info1_left">
+          <view class="fs_22">聊吧</view>
+          <view class="fs_12 ls_1">ID号：<text class="fw_7 fs_13">00001</text></view>
+        </view>
+        <!-- 我的关注 -->
+        <view class="personal_info1_right" bindtap="myConcerns">
+          <view class="personal_info1_right_item">
+            <view class="p_l_6">9</view>
+            <view></view>
+            <view class="p_r_6">12</view>
+          </view>
+          <view class="personal_info1_right_item">
+            <view>关注</view>
+            <view class="fs_12">|</view>
+            <view>话题</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="personal_info2">
+    <!-- 个人简介 -->
+    <view class="personal_info2_box" bindtap="personalData">
+      <!-- 微信头像 -->
+      <view class="personal_info2_left br_20" style="overflow: hidden;">
+        <image src="{{dataForm.avatarUrl}}" class="w_h_100 br_20"></image>
+      </view>
+      <view class="personal_info2_right" style="width: {{windowWidth-140}}px;">
+        <view class="name_follow">
+          <!-- 微信昵称 -->
+          <view class="ls_2 fw_7">{{dataForm.nickName}}</view>
+          <view class="personal_info2_right_follow" catchtap="followTA">关注</view>
+        </view>
+        <view class="fs_12 fx_r_s_c" wx:if="{{dataForm.age && dataForm.age && dataForm.age}}">
+          <image wx:if="{{dataForm.gender == '1'}}" src="/images/mineMoudle/boy_icon.png" style="width: 18px; height: 18px; padding:0 3px;"></image>
+          <image wx:if="{{dataForm.gender == '2'}}" src="/images/mineMoudle/girl_icon.png" style="width: 18px; height: 18px; padding:0 3px;"></image>
+          <view>{{dataForm.age}}岁<text class="fw_7 p_l_3 p_r_3">·</text></view>
+          <view>{{dataForm.constellation}}<text class="fw_7 p_l_3 p_r_3">·</text></view>
+          <view>{{dataForm.address}}</view>
+        </view>
+        <view class="fs_12 co_9 ls_1">保持热爱奔赴山海，各自努力顶峰相见！</view>
+      </view>
+    </view>
+    <!-- 我的足迹 -->
+    <view class="my_tracks">
+      <view class="my_tracks_top">
+        <view class="my_tracks_top_box">
+          <view class="footprint_box">
+            <image src="/images/mineMoudle/footprint_icon.png" class="w_h_100 d_ib"></image>
+          </view>
+          <view class="d_ib p_l_10">足迹</view>
+        </view>
+        <text class="dialog-close see_more p_t_5 fs_12 co_9" decode="true">查看更多 &gt;</text>
+      </view>
+      <view class="my_tracks_center m_t_20">
+        <view class="my_tracks_center_img">
+          <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100 br_5"></image>
+        </view>
+        <view class="my_tracks_center_img">
+          <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100 br_5"></image>
+        </view>
+        <view class="my_tracks_center_img">
+          <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100 br_5"></image>
+        </view>
+        <view class="my_tracks_center_img">
+          <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100 br_5"></image>
+        </view>
+      </view>
+    </view>
+    <!-- 我的话题 -->
+    <view class="my_tracks m_t_10">
+      <view class="my_tracks_top">
+        <view class="my_tracks_top_box">
+          <view class="footprint_box">
+            <image src="/images/mineMoudle/conversation_icon.png" class="w_h_100 d_ib"></image>
+          </view>
+          <view class="d_ib p_l_10">话题</view>
+        </view>
+        <text class="dialog-close see_more p_t_5 fs_12 co_9" decode="true">查看更多 &gt;</text>
+      </view>
+      <view class="my_conversation_center m_t_10">
+        <view class="my_conversation_center_box">
+          <view class="my_conversation_center_img">
+            <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100 br_10"></image>
+          </view>
+          <view class="my_conversation_center_text_box m_l_10">
+            <view class="my_conversation_center_text to_1 fs_14 ls_1">美食晒出来</view>
+            <view class="my_conversation_center_text to_1 fs_12 co_9 ls_1">美食啊晒出来美食啊晒出来美食啊晒出来美食啊晒出来美食啊晒出来美食啊晒出来美</view>
+          </view>
+        </view>
+      </view>
+      <view class="my_conversation_center m_t_10">
+        <view class="my_conversation_center_box">
+          <view class="my_conversation_center_img">
+            <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100 br_10"></image>
+          </view>
+          <view class="my_conversation_center_text_box m_l_10">
+            <view class="my_conversation_center_text to_1 fs_14 ls_1">美食晒出来</view>
+            <view class="my_conversation_center_text to_1 fs_12 co_9 ls_1">美食啊晒出来美食啊晒出来美食啊晒出来美食啊晒出来美食啊晒出来美食啊晒出来美</view>
+          </view>
+        </view>
+      </view>
+      <view class="my_conversation_center m_t_10">
+        <view class="my_conversation_center_box">
+          <view class="my_conversation_center_img">
+            <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100 br_10"></image>
+          </view>
+          <view class="my_conversation_center_text_box m_l_10">
+            <view class="my_conversation_center_text to_1 fs_14 ls_1">美食晒出来</view>
+            <view class="my_conversation_center_text to_1 fs_12 co_9 ls_1">美食啊晒出来美食啊晒出来美食啊晒出来美食啊晒出来美食啊晒出来美食啊晒出来美</view>
+          </view>
+        </view>
       </view>
     </view>
   </view>
 </view>
 
 <!-- 底部导航 -->
-<van-tabbar active="{{footerActive}}" bind:change="navChange">
-  <van-tabbar-item>
-    <image slot="icon" src="{{ footerIcon.home_normal }}" mode="aspectFit" style="width: 30px; height: 24px;"/>
-    <image slot="icon-active" src="{{ footerIcon.home_active }}" mode="aspectFit" style="width: 30px; height: 24px;"/>
-    首页
-  </van-tabbar-item>
-  <van-tabbar-item>
-    <image slot="icon" src="{{ footerIcon.compass_normal }}" mode="aspectFit" style="width: 30px; height: 24px;"/>
-    <image slot="icon-active" src="{{ footerIcon.compass_active }}" mode="aspectFit" style="width: 30px; height: 24px;"/>
-    发现
-  </van-tabbar-item>
-  <van-tabbar-item>
-    <image slot="icon" src="{{ footerIcon.release_normal }}" mode="aspectFit" style="width: 38px; height: 38px;"/>
-    <image slot="icon-active" src="{{ footerIcon.release_active }}" mode="aspectFit" style="width: 38px; height: 38px;"/>
-  </van-tabbar-item>
-  <van-tabbar-item>
-    <image slot="icon" src="{{ footerIcon.news_normal }}" mode="aspectFit" style="width: 30px; height: 24px;"/>
-    <image slot="icon-active" src="{{ footerIcon.news_active }}" mode="aspectFit" style="width: 30px; height: 24px;"/>
-    消息
-  </van-tabbar-item>
-  <van-tabbar-item>
-    <image slot="icon" src="{{ footerIcon.mine_normal }}" mode="aspectFit" style="width: 30px; height: 24px;"/>
-    <image slot="icon-active" src="{{ footerIcon.mine_active }}" mode="aspectFit" style="width: 30px; height: 24px;"/>
-    我的
-  </van-tabbar-item>
-</van-tabbar>
+<component-footTabbar footerActive="{{footerActive}}" overlayShow="{{overlayShow}}" bind:navChange="navChange"/>
