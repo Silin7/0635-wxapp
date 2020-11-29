@@ -49,7 +49,7 @@ Page({
   
   onShow: function () {
     this.setData({
-      footerActive: 0
+      footerActive: 3
     })
     this.getMineInfo()
   },
@@ -59,9 +59,6 @@ Page({
     this.setData({
       footerActive: event.detail
     })
-    if (event.detail === 4) {
-      
-    }
   },
 
   swiperTap: function (e) {
@@ -88,10 +85,14 @@ Page({
       }
     })
   },
+  // 消息详情
+  newsDetails: function () {
+    wx.navigateTo({
+      url: '/pages/newsModule/newsDetails/newsDetails',
+    })
+  },
 
-  /*
-    我的（个人中心）
-  */
+  // 我的（个人中心）
   // 获取个人信息
   getMineInfo: function () {
     let data = {

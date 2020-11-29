@@ -1,0 +1,34 @@
+.news_date {
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 1px;
+  color: #999999;
+}
+.sub_module1 {
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+.sub_module1_item_ns {
+  width: 60px;
+  height: 60px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+.sub_module1_item_ns_info {
+  padding: 5px 0;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  line-height: 25px;
+  letter-spacing: 1px;
+  padding: 10px;
+  color: #666666;
+}
+.sub_module1_item_ns_info_item {
+  height: 25px;
+  line-height: 25px;
+}
