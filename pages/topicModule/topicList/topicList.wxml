@@ -1,0 +1,117 @@
+<view class="bg_F5 bs_bb oy_a" style="height: {{windowHeight}}px;">
+  <view class="topic_info">
+    <view class="topic_info_img">
+      <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
+    </view>
+    <view class="topic_info_box fx_c_s_c" style="width: {{windowWidth-120}}px;">
+      <view class="name_follow m_t_10">
+        <view class="ls_2 fw_7">测试</view>
+        <view class="personal_info2_right_follow">关注</view>
+      </view>
+      <view class="topic_info_text to_2 fs_12 co_9 m_t_10">
+        这是简介测试这是简介测试这是简介测试这是简介测试这是简介测试这是简介测试这是简介测试这是简介测试这是简介测试
+      </view>
+    </view>
+  </view>
+  <view class="topic_list bs_bb" style="height: {{windowHeight-130}}px;">
+    <view class="sub_module1 m_t_20">
+      <view class="sub_module1_item_fd_02">
+        <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
+      </view>
+      <view class="sub_module1_item_fd_info fx_c_s_s m_l_10" style="width: {{windowWidth-100}}px;">
+        <text class="sub_module1_item_fd_info_item to_1 fs_14">这个是标题这个是标题这个是标题这个是标题这个是标题</text>
+        <text class="sub_module1_item_fd_info_item2 to_1 fs_12 co_9">2020-11-20</text>
+      </view>
+    </view>
+    <view class="sub_module1 m_t_20">
+      <view class="sub_module1_item_fd_02">
+        <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
+      </view>
+      <view class="sub_module1_item_fd_info fx_c_s_s m_l_10" style="width: {{windowWidth-100}}px;">
+        <text class="sub_module1_item_fd_info_item to_1 fs_14">这个是标题这个是标题这个是标题这个是标题这个是标题</text>
+        <text class="sub_module1_item_fd_info_item2 to_1 fs_12 co_9">2020-11-20</text>
+      </view>
+    </view>
+    <view class="sub_module1 m_t_20">
+      <view class="sub_module1_item_fd_02">
+        <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
+      </view>
+      <view class="sub_module1_item_fd_info fx_c_s_s m_l_10" style="width: {{windowWidth-100}}px;">
+        <text class="sub_module1_item_fd_info_item to_1 fs_14">这个是标题这个是标题这个是标题这个是标题这个是标题</text>
+        <text class="sub_module1_item_fd_info_item2 to_1 fs_12 co_9">2020-11-20</text>
+      </view>
+    </view>
+    <view class="sub_module1 m_t_20">
+      <view class="sub_module1_item_fd_02">
+        <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
+      </view>
+      <view class="sub_module1_item_fd_info fx_c_s_s m_l_10" style="width: {{windowWidth-100}}px;">
+        <text class="sub_module1_item_fd_info_item to_1 fs_14">这个是标题这个是标题这个是标题这个是标题这个是标题</text>
+        <text class="sub_module1_item_fd_info_item2 to_1 fs_12 co_9">2020-11-20</text>
+      </view>
+    </view>
+    <view class="sub_module1 m_t_20">
+      <view class="sub_module1_item_fd_02">
+        <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
+      </view>
+      <view class="sub_module1_item_fd_info fx_c_s_s m_l_10" style="width: {{windowWidth-100}}px;">
+        <text class="sub_module1_item_fd_info_item to_1 fs_14">这个是标题这个是标题这个是标题这个是标题这个是标题</text>
+        <text class="sub_module1_item_fd_info_item2 to_1 fs_12 co_9">2020-11-20</text>
+      </view>
+    </view>
+    <view class="sub_module1 m_t_20">
+      <view class="sub_module1_item_fd_02">
+        <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
+      </view>
+      <view class="sub_module1_item_fd_info fx_c_s_s m_l_10" style="width: {{windowWidth-100}}px;">
+        <text class="sub_module1_item_fd_info_item to_1 fs_14">这个是标题这个是标题这个是标题这个是标题这个是标题</text>
+        <text class="sub_module1_item_fd_info_item2 to_1 fs_12 co_9">2020-11-20</text>
+      </view>
+    </view>
+    <view class="sub_module1 m_t_20">
+      <view class="sub_module1_item_fd_02">
+        <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
+      </view>
+      <view class="sub_module1_item_fd_info fx_c_s_s m_l_10" style="width: {{windowWidth-100}}px;">
+        <text class="sub_module1_item_fd_info_item to_1 fs_14">这个是标题这个是标题这个是标题这个是标题这个是标题</text>
+        <text class="sub_module1_item_fd_info_item2 to_1 fs_12 co_9">2020-11-20</text>
+      </view>
+    </view>
+    <view class="sub_module1 m_t_20">
+      <view class="sub_module1_item_fd_02">
+        <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
+      </view>
+      <view class="sub_module1_item_fd_info fx_c_s_s m_l_10" style="width: {{windowWidth-100}}px;">
+        <text class="sub_module1_item_fd_info_item to_1 fs_14">这个是标题这个是标题这个是标题这个是标题这个是标题</text>
+        <text class="sub_module1_item_fd_info_item2 to_1 fs_12 co_9">2020-11-20</text>
+      </view>
+    </view>
+    <view class="sub_module1 m_t_20">
+      <view class="sub_module1_item_fd_02">
+        <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
+      </view>
+      <view class="sub_module1_item_fd_info fx_c_s_s m_l_10" style="width: {{windowWidth-100}}px;">
+        <text class="sub_module1_item_fd_info_item to_1 fs_14">这个是标题这个是标题这个是标题这个是标题这个是标题</text>
+        <text class="sub_module1_item_fd_info_item2 to_1 fs_12 co_9">2020-11-20</text>
+      </view>
+    </view>
+    <view class="sub_module1 m_t_20">
+      <view class="sub_module1_item_fd_02">
+        <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
+      </view>
+      <view class="sub_module1_item_fd_info fx_c_s_s m_l_10" style="width: {{windowWidth-100}}px;">
+        <text class="sub_module1_item_fd_info_item to_1 fs_14">这个是标题这个是标题这个是标题这个是标题这个是标题</text>
+        <text class="sub_module1_item_fd_info_item2 to_1 fs_12 co_9">2020-11-20</text>
+      </view>
+    </view>
+    <view class="sub_module1 m_t_20">
+      <view class="sub_module1_item_fd_02">
+        <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
+      </view>
+      <view class="sub_module1_item_fd_info fx_c_s_s m_l_10" style="width: {{windowWidth-100}}px;">
+        <text class="sub_module1_item_fd_info_item to_1 fs_14">这个是标题这个是标题这个是标题这个是标题这个是标题</text>
+        <text class="sub_module1_item_fd_info_item2 to_1 fs_12 co_9">2020-11-20</text>
+      </view>
+    </view>
+  </view>
+</view>

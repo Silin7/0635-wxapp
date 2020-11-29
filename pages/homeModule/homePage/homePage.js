@@ -38,6 +38,7 @@ Page({
         }
       }
     })
+    this.getMineInfo()
   },
   
   onReady: function () {
@@ -48,10 +49,9 @@ Page({
   },
   
   onShow: function () {
-    this.setData({
-      footerActive: 3
-    })
-    this.getMineInfo()
+    // this.setData({
+    //   footerActive: 0
+    // })
   },
 
   // 底部导航切换
@@ -59,8 +59,12 @@ Page({
     this.setData({
       footerActive: event.detail
     })
+    if (event.detail === 4) {
+      this.getMineInfo()
+    }
   },
 
+  // 点击首页轮播图
   swiperTap: function (e) {
     console.log(e.currentTarget.dataset.item)
   },
@@ -85,6 +89,14 @@ Page({
       }
     })
   },
+
+  // 话题列表
+  topicList: function () {
+    wx.navigateTo({
+      url: '/pages/topicModule/topicList/topicList',
+    })
+  },
+
   // 消息详情
   newsDetails: function () {
     wx.navigateTo({

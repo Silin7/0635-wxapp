@@ -1,6 +1,7 @@
 {
   "pages":[
     "pages/homeModule/homePage/homePage",
+    "pages/topicModule/topicList/topicList",
     "pages/newsModule/newsDetails/newsDetails",
     "pages/mineModule/personalCenter/personalCenter",
     "pages/mineModule/personalData/personalData",
