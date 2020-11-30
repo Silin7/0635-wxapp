@@ -1,6 +1,6 @@
 let loginRequest = {
   is_register: {
-    apiMethod: 'POST',
+    apiMethod: 'GET',
     apiName: '/login/is_register',
     name: '判断账号是否存在（参数：userName，state）'// state为0：注册，state为1：修改密码
   },

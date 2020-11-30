@@ -26,7 +26,7 @@ Page({
   },
 
   // 登录
-  sign_in: function () {
+  signIn: function () {
     if (!this.data.userName) {
       Toast.fail('请输入账号')
       return
@@ -45,6 +45,7 @@ Page({
     }
     esRequest('sign_in', this.data).then(res => {
       if (res && res.data.code == 0) {
+        wx.setStorageSync('id_key', res.data.data.id)
         Toast.success('登录成功')
         setTimeout(() => {
           wx.redirectTo({

@@ -3,12 +3,12 @@ import loginRequest from "./sub-unitRequest/loginRequest"
 import mineRequest from "./sub-unitRequest/mineRequest"
 
 export default (localObjects, parametersData, parameters) => {
-  let globalObjects = Object.assign({}, loginRequest, mineRequest)
-  var requestURL = ''
+  var globalObjects = Object.assign({}, loginRequest, mineRequest)
+  var apiMethod = globalObjects[localObjects].apiMethod
   if (parameters) {
-    requestURL = baseURL.baseURL + globalObjects[localObjects].apiName + '/' + parameters
+    var requestURL = baseURL.baseURL + globalObjects[localObjects].apiName + '/' + parameters
   } else {
-    requestURL = baseURL.baseURL + globalObjects[localObjects].apiName
+    var requestURL = baseURL.baseURL + globalObjects[localObjects].apiName
   }
   // var tokenme = wx.getStorageSync('token')
   // if (tokenme === undefined) {
@@ -17,11 +17,12 @@ export default (localObjects, parametersData, parameters) => {
   //   })
   // }
   return new Promise((resolve, reject) => {
+    console.log(apiMethod)
     wx.request({
       // header: {
         // 'token':tokenme
       // },
-      method: localObjects.apiMethod,
+      method: apiMethod,
       url: requestURL,
       data: parametersData,
       success(res) {
