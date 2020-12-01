@@ -1,7 +1,7 @@
 {
   "pages":[
-    "pages/loginModule/loginPage/loginPage",
     "pages/homeModule/homePage/homePage",
+    "pages/loginModule/loginPage/loginPage",
     "pages/topicModule/topicList/topicList",
     "pages/newsModule/newsDetails/newsDetails",
     "pages/mineModule/personalCenter/personalCenter",
@@ -12,6 +12,7 @@
     "pages/components/choosePicker/choosePicker",
     "pages/components/footTabbar/footTabbar",
     "pages/components/loading/loading",
+    "pages/testPage/testPage",
     "pages/notModule/notFound/notFound"
   ],
   "permission": {

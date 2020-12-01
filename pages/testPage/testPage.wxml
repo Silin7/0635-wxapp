@@ -1,0 +1,12 @@
+
+<view class="video_box">
+  <!-- 小程序开发环境中会报 Failed to load media xxx net::ERR_FAILED From server xxx 这个错误，在真机中，不会出现该错误，忽略即可 -->
+  <video class="w_h_100"
+    src="http://uvideo.spriteapp.cn/video/2020/0730/5f22acff7206e_wpd.mp4"
+    binderror="videoErrorCallback"
+    controls="{{true}}"
+    show-fullscreen-btn="{{true}}"
+    auto-pause-if-navigate="{{true}}"
+    enable-auto-rotation="{{true}}">
+  </video>
+</view>
