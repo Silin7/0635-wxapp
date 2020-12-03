@@ -241,6 +241,15 @@
   color: #FFFFFF;
   background-color: red;
 }
+.sub_module1_item_ns_info_item_per {
+  width: 60px;
+  height: 20px;
+  border-radius: 5px;
+  color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .sub_module1_item_ns_info_item_state {
   width: 40px;
   height: 20px;
@@ -441,5 +450,5 @@
 }
 /* tab切换 */
 .van-tabs__line {
-  background-color: #4545FF!important;
+  background-color: #CA85D6!important;
 }

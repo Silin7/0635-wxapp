@@ -47,11 +47,27 @@ Page({
     this.setData({
       footerActive: event.detail
     })
+    if (event.detail === 0) {
+      wx.setNavigationBarTitle({
+        title: '0635聊吧' 
+      })
+    }
+    if (event.detail === 1) {
+      wx.setNavigationBarTitle({
+        title: '发现' 
+      })
+    }
     if (event.detail === 3) {
+      wx.setNavigationBarTitle({
+        title: '消息' 
+      })
       this.getPerMessage()
       this.getSysMessage()
     }
     if (event.detail === 4) {
+      wx.setNavigationBarTitle({
+        title: '我的' 
+      })
       this.getMineInfo()
     }
   },
@@ -126,24 +142,16 @@ Page({
       }
     })
   },
-
   // 我的关注
   myConcerns: function () {
     wx.navigateTo({
       url: '/pages/mineModule/myConcerns/myConcerns',
     })
   },
-
   // 编辑个人资料
   personalData: function () {
     wx.navigateTo({
       url: '/pages/mineModule/personalData/personalData',
     })
-  },
-
-  // 关注TA
-  followTA: function () {
-    console.log('关注TA')
   }
-
 })

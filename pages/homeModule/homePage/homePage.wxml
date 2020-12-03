@@ -239,8 +239,9 @@
             <text class="to_1 fs_12 co_9 m_l_10">{{filter.dayjs(item.create_time, '3-1')}}</text>
           </view>
           <view class="sub_module1_item_ns_info_item fx_r_s_e">
-            <text class="to_1 fs_14 co_6" style="width: {{windowWidth-120}}px;">{{item.message_title}}</text>
-            <text class="sub_module1_item_ns_info_item_number fx_r_c_c fs_12 fw_7">1</text>
+            <text class="to_1 fs_14 co_6" style="width: {{windowWidth-160}}px;">{{item.message_title}}</text>
+            <!-- <text class="sub_module1_item_ns_info_item_number fx_r_c_c fs_12 fw_7">1</text> -->
+            <text class="sub_module1_item_ns_info_item_per sub_module1_item_ns_info_item_bg_ac fs_12 fw_7">附近的人</text>
           </view>
         </view>
       </view>
@@ -307,7 +308,6 @@
         <view class="name_follow">
           <!-- 微信昵称 -->
           <view class="ls_2 fw_7">{{mineDataForm.nickName}}</view>
-          <view class="personal_info2_right_follow" catchtap="followTA">关注</view>
         </view>
         <view class="fs_12 fx_r_s_c" wx:if="{{mineDataForm.age && mineDataForm.age && mineDataForm.age}}">
           <image wx:if="{{mineDataForm.gender == '1'}}" src="/images/mineMoudle/boy_icon.png" style="width: 18px; height: 18px; padding:0 3px;"></image>
