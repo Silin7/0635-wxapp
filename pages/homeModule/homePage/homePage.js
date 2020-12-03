@@ -21,6 +21,8 @@ Page({
     ],
     // 发现模块
     dynamicList: [],
+    // 发动态
+    developmentTrend: '',
     // 消息模块
     messageTab: 0,
     perMessageList: [],
@@ -38,7 +40,7 @@ Page({
     })
   },
   onShow: function () {
-    this.setData({footerActive: 1})
+    this.setData({footerActive: 2})
     this.getMineInfo()
     this.getDynamicList()
   },
@@ -101,6 +103,12 @@ Page({
       url: '/pages/dynamicModule/dynamicDetails/dynamicDetails?id=' + e.currentTarget.dataset.item.id
     })
   },
+
+  // ------ 发动态 ------
+  onClickRight() {
+    wx.showToast({ title: '点击发表', icon: 'none' });
+  },
+
 
   // ------ 消息模块 ------
   // 消息tabs切换

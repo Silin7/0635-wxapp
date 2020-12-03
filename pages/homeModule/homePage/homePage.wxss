@@ -464,3 +464,13 @@
 .van-tabs__line {
   background-color: #4545FF!important;
 }
+.van-nav-bar {
+  padding-top: 0px !important;
+}
+.van-nav-bar__text {
+  font-weight: 700 !important;
+  color: #4545FF !important;
+}
+.van-icon-arrow-left {
+  font-size: 0px !important;
+}

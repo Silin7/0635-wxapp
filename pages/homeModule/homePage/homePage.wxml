@@ -229,6 +229,15 @@
   </view>
 </view>
 
+<!-- 发动态 -->
+<view wx:if="{{footerActive === 2}}" class="bs_bb oy_a" style="height: {{windowHeight-50}}px;">
+  <van-nav-bar title="" right-text="发表" left-arrow bind:click-right="onClickRight"/>
+  <van-cell-group>
+    <van-field custom-style="letter-spacing:2px; min-height: {{windowHeight-100}}px; border: 1rpx solid #CCCCCC; padding: 10px; font-size: 16px;"
+    value="{{developmentTrend}}" type="textarea" placeholder="说点什么把......" autosize border="{{ture}}"/>
+  </van-cell-group>
+</view>
+
 <!-- 消息 -->
 <view wx:if="{{footerActive === 3}}" class="bg_F5 bs_bb oy_a" style="height: {{windowHeight-50}}px;">
   <van-tabs active="{{messageTab}}" bind:change="messageTabChange">
