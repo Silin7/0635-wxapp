@@ -49,9 +49,9 @@ Page({
   },
   
   onShow: function () {
-    // this.setData({
-    //   footerActive: 0
-    // })
+    this.setData({
+      footerActive: 1
+    })
   },
 
   // 底部导航切换
@@ -67,27 +67,6 @@ Page({
   // 点击首页轮播图
   swiperTap: function (e) {
     console.log(e.currentTarget.dataset.item)
-  },
-
-  bindGetUserInfo (e) {
-    console.log(e.detail.userInfo)
-    wx.getUserInfo({
-      success: function(res) {
-        var userInfo = res.userInfo
-        var nickName = userInfo.nickName
-        var avatarUrl = userInfo.avatarUrl
-        var gender = userInfo.gender //性别 0：未知、1：男、2：女
-        var province = userInfo.province
-        var city = userInfo.city
-        var country = userInfo.country
-        console.log(nickName)
-        console.log(avatarUrl)
-        console.log(gender)
-        console.log(province)
-        console.log(city)
-        console.log(country)
-      }
-    })
   },
 
   // 话题列表

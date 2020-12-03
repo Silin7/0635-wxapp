@@ -10,18 +10,8 @@ export default (localObjects, parametersData, parameters) => {
   } else {
     var requestURL = baseURL.baseURL + globalObjects[localObjects].apiName
   }
-  // var tokenme = wx.getStorageSync('token')
-  // if (tokenme === undefined) {
-  //   wx.showToast({
-  //     title: '获取用户登录信息异常',
-  //   })
-  // }
   return new Promise((resolve, reject) => {
-    console.log(apiMethod)
     wx.request({
-      // header: {
-        // 'token':tokenme
-      // },
       method: apiMethod,
       url: requestURL,
       data: parametersData,
