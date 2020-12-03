@@ -316,7 +316,7 @@
           <view>{{mineDataForm.constellation}}<text class="fw_7 p_l_3 p_r_3">·</text></view>
           <view>{{mineDataForm.address}}</view>
         </view>
-        <view class="fs_12 co_9 ls_1">保持热爱奔赴山海，各自努力顶峰相见！</view>
+        <view class="fs_12 co_9 ls_1">{{mineDataForm.personalSignature}}</view>
       </view>
     </view>
     <!-- 我的足迹 -->

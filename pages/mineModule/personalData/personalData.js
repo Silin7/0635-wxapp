@@ -149,7 +149,7 @@ Page({
           return
         }
         if (key == 'personalSignature') {
-          this.data.dataForm.personalSignature = '我的签名是系统赠送的。'
+          this.data.dataForm.personalSignature = '保持热爱奔赴山海，各自努力顶峰相见！'
         }
       }
     }

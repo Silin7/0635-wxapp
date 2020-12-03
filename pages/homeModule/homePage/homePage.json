@@ -1,4 +1,5 @@
 {
+  "navigationBarTitleText": "0635聊吧",
   "usingComponents": {
     "van-toast": "vant-weapp/toast/index",
     "van-icon": "vant-weapp/icon/index",
