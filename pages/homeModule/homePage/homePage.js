@@ -19,6 +19,8 @@ Page({
       { name: '测试', image: '/images/homeMoudle/banner_xq.jpg', id: 'icon03' },
       { name: '测试', image: '/images/homeMoudle/banner_xq.jpg', id: 'icon04' },
     ],
+    // 发现模块
+    dynamicList: [],
     // 消息模块
     messageTab: 0,
     perMessageList: [],
@@ -26,22 +28,26 @@ Page({
     // 我的模块
     mineDataForm: {},
   },
-
   onLoad: function (options) {
     this.data.id_key = wx.getStorageSync('id_key')
-    this.getMineInfo()
   },
-  
   onReady: function () {
     this.setData({
       windowWidth: wx.getSystemInfoSync().windowWidth,
       windowHeight: wx.getSystemInfoSync().windowHeight
     })
   },
-  
   onShow: function () {
+    this.setData({footerActive: 1})
+    this.getMineInfo()
+    this.getDynamicList()
   },
 
+  //  ------ 首页模块 ------
+  // 点击首页轮播图
+  swiperTap: function (e) {
+    console.log(e.currentTarget.dataset.item)
+  },
   // 底部导航切换
   navChange(event) {
     this.setData({
@@ -72,19 +78,31 @@ Page({
     }
   },
 
-  // 点击首页轮播图
-  swiperTap: function (e) {
-    console.log(e.currentTarget.dataset.item)
+  // ------ 发现模块 ------
+  // 动态列表
+  getDynamicList: function () {
+    esRequest('dynamic_list').then(res => {
+      if (res && res.data.code == 0) {
+        this.data.dynamicList = res.data.data
+        this.data.dynamicList.forEach(item => {
+          item.content = item.content.toString().replace(/\<img/gi, '<img style="max-width:100%; height:auto"')
+        })
+        this.setData({
+          dynamicList: this.data.dynamicList
+        })
+      } else {
+        Toast.fail('系统错误')
+      }
+    })
   },
-
-  // 话题列表
-  topicList: function () {
+  // 动态详情
+  getDynamicDetalis: function (e) {
     wx.navigateTo({
-      url: '/pages/topicModule/topicList/topicList',
+      url: '/pages/dynamicModule/dynamicDetails/dynamicDetails?id=' + e.currentTarget.dataset.item.id
     })
   },
 
-  /* 消息模块 */
+  // ------ 消息模块 ------
   // 消息tabs切换
   messageTabChange: function (e) {
     this.data.messageTab = e.detail.index
@@ -122,11 +140,11 @@ Page({
   // 消息详情
   messageDetails: function (e) {
     wx.navigateTo({
-      url: '/pages/messageModule/messageDetails/messageDetails?id=' + e.currentTarget.dataset.item.id + '&type=' + this.data.messageTab,
+      url: '/pages/messageModule/messageDetails/messageDetails?id=' + e.currentTarget.dataset.item.id + '&type=' + this.data.messageTab
     })
   },
 
-  /* 我的模块 */
+  // ------ 我的模块 ------
   // 获取个人信息
   getMineInfo: function () {
     let data = {

@@ -55,7 +55,6 @@ Page({
           messageData: res.data.data,
           sysmessage_details: res.data.data.message_details.toString().replace(/\<img/gi, '<img style="max-width:100%; height:auto"')
         })
-
       } else {
         Toast.fail('系统错误')
       }

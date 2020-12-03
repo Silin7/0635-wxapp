@@ -212,6 +212,15 @@
   flex-flow: column;
   justify-content: space-between;
 }
+.rich_text_fd {
+  max-height: 160px;
+  line-height: 20px;
+}
+.see_details_fd {
+  font-size: 12px;
+  font-weight: 700;
+  color: #4545FF;
+}
 
 /* 消息 */
 .sub_module1_ns {
@@ -265,6 +274,9 @@
 }
 .sub_module1_item_ns_info_item_bg_r {
   background-color: rgb(255, 69, 69);
+}
+.sub_module1_item_ns_info_item_bg_a {
+  background-color: #A084F1;
 }
 .sub_module1_item_ns_info_item_bg_ac {
   background: -webkit-linear-gradient(left, #A084F1, #CA85D6);
@@ -450,5 +462,5 @@
 }
 /* tab切换 */
 .van-tabs__line {
-  background-color: #CA85D6!important;
+  background-color: #4545FF!important;
 }
