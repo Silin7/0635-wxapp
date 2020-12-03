@@ -3,7 +3,7 @@ import Toast from '../../../miniprogram_npm/vant-weapp/toast/toast';
 
 Page({
   data: {
-    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    id_key: '',
     windowWidth: 0,
     windowHeight: 0,
     footerActive: 0,
@@ -19,25 +19,16 @@ Page({
       { name: '测试', image: '/images/homeMoudle/banner_xq.jpg', id: 'icon03' },
       { name: '测试', image: '/images/homeMoudle/banner_xq.jpg', id: 'icon04' },
     ],
-    dataForm: {},
+    // 消息模块
+    messageTab: 0,
+    perMessageList: [],
+    sysMessageList: [],
+    // 我的模块
+    mineDataForm: {},
   },
 
   onLoad: function (options) {
-    // 查看是否授权
-    wx.getSetting({
-      success (res){
-        if (res.authSetting['scope.userInfo']) {
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称
-          wx.getUserInfo({
-            success: function(res) {
-              console.log(res.userInfo)
-            }
-          })
-        } else {
-          console.log('未授权')
-        }
-      }
-    })
+    this.data.id_key = wx.getStorageSync('id_key')
     this.getMineInfo()
   },
   
@@ -49,9 +40,6 @@ Page({
   },
   
   onShow: function () {
-    this.setData({
-      footerActive: 1
-    })
   },
 
   // 底部导航切换
@@ -59,6 +47,10 @@ Page({
     this.setData({
       footerActive: event.detail
     })
+    if (event.detail === 3) {
+      this.getPerMessage()
+      this.getSysMessage()
+    }
     if (event.detail === 4) {
       this.getMineInfo()
     }
@@ -76,23 +68,58 @@ Page({
     })
   },
 
+  /* 消息模块 */
+  // 消息tabs切换
+  messageTabChange: function (e) {
+    this.data.messageTab = e.detail.index
+  },
+  // 个人私信列表
+  getPerMessage: function () {
+    let data = {
+      receiver_id: this.data.id_key
+    }
+    esRequest('permessage_list', data).then(res => {
+      if (res && res.data.code == 0) {
+        this.setData({
+          perMessageList: res.data.data
+        })
+      } else {
+        Toast.fail('系统错误')
+      }
+    })
+  },
+  // 系统消息列表
+  getSysMessage: function () {
+    let data = {
+      receiver_id: this.data.id_key
+    }
+    esRequest('sysmessage_list', data).then(res => {
+      if (res && res.data.code == 0) {
+        this.setData({
+          sysMessageList: res.data.data
+        })
+      } else {
+        Toast.fail('系统错误')
+      }
+    })
+  },
   // 消息详情
-  newsDetails: function () {
+  messageDetails: function (e) {
     wx.navigateTo({
-      url: '/pages/newsModule/newsDetails/newsDetails',
+      url: '/pages/messageModule/messageDetails/messageDetails?id=' + e.currentTarget.dataset.item.id + '&type=' + this.data.messageTab,
     })
   },
 
-  // 我的（个人中心）
+  /* 我的模块 */
   // 获取个人信息
   getMineInfo: function () {
     let data = {
-      id: wx.getStorageSync('id_key')
+      id: this.data.id_key
     }
     esRequest('mine_info', data).then (res => {
       if (res && res.data.code == 0) {
         this.setData({
-          dataForm: res.data.data
+          mineDataForm: res.data.data
         })
       } else {
         Toast.fail('系统错误')

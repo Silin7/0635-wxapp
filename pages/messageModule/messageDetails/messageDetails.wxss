@@ -20,6 +20,7 @@
   position: relative;
 }
 .sub_module1_item_ns_info {
+  box-sizing: border-box;
   padding: 5px 0;
   background-color: #FFFFFF;
   border-radius: 10px;

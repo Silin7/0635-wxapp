@@ -4,7 +4,7 @@
     "pages/dynamicModule/dynamicList/dynamicList",
     "pages/loginModule/loginPage/loginPage",
     "pages/topicModule/topicList/topicList",
-    "pages/newsModule/newsDetails/newsDetails",
+    "pages/messageModule/messageDetails/messageDetails",
     "pages/mineModule/personalCenter/personalCenter",
     "pages/mineModule/personalData/personalData",
     "pages/mineModule/myConcerns/myConcerns",
