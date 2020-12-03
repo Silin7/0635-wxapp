@@ -22,6 +22,6 @@
 
 <!-- 底部按钮 -->
 <view class="social_contact_btns">
-  <view class="social_contact_btn social_contact_btn_bg_01">推自己</view>
-  <view class="social_contact_btn social_contact_btn_bg_02">要微信</view>
+  <view class="social_contact_btn social_contact_btn_bg_01">测试1</view>
+  <view class="social_contact_btn social_contact_btn_bg_02">测试2</view>
 </view>
