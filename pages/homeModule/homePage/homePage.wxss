@@ -222,6 +222,37 @@
   color: #4545FF;
 }
 
+/* 发动态 */
+.expression_box {
+  box-sizing: border-box;
+  width: 98vw;
+  margin: 20px auto;
+  padding: 10px;
+}
+.expression_box_item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+.expression_item_img {
+  width: 60px;
+  height: 60px;
+  background-color: #4545FF;
+  border-radius: 30px;
+  overflow: hidden;
+  position: relative;
+}
+.expression_item_mask {
+  width: 60px;
+  height: 60px;
+  background-color: #000000;
+  border-radius: 30px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 /* 消息 */
 .sub_module1_ns {
   padding: 10px;
@@ -472,5 +503,6 @@
   color: #4545FF !important;
 }
 .van-icon-arrow-left {
-  font-size: 0px !important;
+  /* font-size: 0px !important; */
+  display: none !important;
 }

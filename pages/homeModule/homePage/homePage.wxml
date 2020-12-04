@@ -230,12 +230,41 @@
 </view>
 
 <!-- 发动态 -->
-<view wx:if="{{footerActive === 2}}" class="bs_bb oy_a" style="height: {{windowHeight-50}}px;">
+<view wx:if="{{footerActive === 2}}" class="bg_F5 bs_bb oy_a" style="height: {{windowHeight-50}}px;">
   <van-nav-bar title="" right-text="发表" left-arrow bind:click-right="onClickRight"/>
-  <van-cell-group>
-    <van-field custom-style="letter-spacing:2px; min-height: {{windowHeight-100}}px; border: 1rpx solid #CCCCCC; padding: 10px; font-size: 16px;"
+  <van-field custom-style="box-sizing: border-box; width: 98vw; min-height: {{windowHeight-400}}px; margin: 0 auto; padding: 10px; font-size: 16px; font-weight: 700; letter-spacing:2px;border-radius: 10px; border: 1rpx solid red; background-color: #FFFFFF;"
     value="{{developmentTrend}}" type="textarea" placeholder="说点什么把......" autosize border="{{ture}}"/>
-  </van-cell-group>
+  <view class="expression_box">
+    <view class="fs_16 fw_7">选择此刻的心情吧</view>
+    <view class="expression_box_item">
+      <view class="expression_item_img">
+        <view class="expression_item_mask"></view>
+      </view>
+      <view class="expression_item_img">
+        <view class="expression_item_mask"></view>
+      </view>
+      <view class="expression_item_img">
+        <view class="expression_item_mask"></view>
+      </view>
+      <view class="expression_item_img">
+        <view class="expression_item_mask"></view>
+      </view>
+    </view>
+    <view class="expression_box_item">
+      <view class="expression_item_img">
+        <view class="expression_item_mask"></view>
+      </view>
+      <view class="expression_item_img">
+        <view class="expression_item_mask"></view>
+      </view>
+      <view class="expression_item_img">
+        <view class="expression_item_mask"></view>
+      </view>
+      <view class="expression_item_img">
+        <view class="expression_item_mask"></view>
+      </view>
+    </view>
+  </view>
 </view>
 
 <!-- 消息 -->
