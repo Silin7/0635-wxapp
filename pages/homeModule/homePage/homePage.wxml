@@ -212,13 +212,17 @@
 
 <!-- 发现 -->
 <view wx:if="{{footerActive === 1}}" class="bs_bb oy_a p_10" style="height: {{windowHeight-50}}px;">
-  <view class="sub_module1_fd" wx:for="{{dynamicList}}" wx:key="index">
+  <view class="sub_module1_fd m_t_10" wx:for="{{dynamicList}}" wx:key="index">
     <view class="sub_module1_img_fd">
       <image src="{{item.author_avatarUrl}}" class="w_h_100"></image>
     </view>
     <view class="sub_module1_info_fd" style="width: {{windowWidth-70}}px;">
-      <view class=" to_1 fs_16 fw_7">{{item.author_name}}</view>
-      <view class="rich_text_fd m_t_10 p_r_5 fs_16 co_6 ti_20 oy_h" style="width: {{windowWidth-70}}px;">
+      <view class=" to_1 fs_16 fw_7 sub_module1_info_fd_id_box">
+        <text>{{item.author_name}}</text>
+        <wxs module="filter" src="../../../utils/filter.wxs"></wxs>
+        <text class="sub_module1_info_fd_id_car m_l_10 fs_12">{{filter.licensePlate(item.author_id)}}</text>
+      </view>
+      <view class="rich_text_fd m_t_10 p_r_5 fs_16 co_6 ti_20 oy_h" style="width: {{windowWidth-70}}px;" bindtap="getDynamicDetalis" data-item="{{item}}">
         <rich-text nodes="{{item.content}}"></rich-text>
       </view>
       <view class="m_t_10 w_100 co_9 fx_r_b_c p_r_10">
@@ -232,36 +236,18 @@
 <!-- 发动态 -->
 <view wx:if="{{footerActive === 2}}" class="bg_F5 bs_bb oy_a" style="height: {{windowHeight-50}}px;">
   <van-nav-bar title="" right-text="发表" left-arrow bind:click-right="onClickRight"/>
-  <van-field custom-style="box-sizing: border-box; width: 98vw; min-height: {{windowHeight-400}}px; margin: 0 auto; padding: 10px; font-size: 16px; font-weight: 700; letter-spacing:2px;border-radius: 10px; border: 1rpx solid red; background-color: #FFFFFF;"
-    value="{{developmentTrend}}" type="textarea" placeholder="说点什么把......" autosize border="{{ture}}"/>
+  <van-field custom-style="box-sizing: border-box; width: 99vw; min-height: 300px; margin: 0 auto; padding: 10px; font-size: 16px; letter-spacing:2px; background-color: #FFFFFF;"
+    value="{{developmentTrend}}" type="textarea" placeholder="#今天要加油鸭#" autosize border="{{ture}}"/>
   <view class="expression_box">
     <view class="fs_16 fw_7">选择此刻的心情吧</view>
     <view class="expression_box_item">
-      <view class="expression_item_img">
-        <view class="expression_item_mask"></view>
-      </view>
-      <view class="expression_item_img">
-        <view class="expression_item_mask"></view>
-      </view>
-      <view class="expression_item_img">
-        <view class="expression_item_mask"></view>
-      </view>
-      <view class="expression_item_img">
-        <view class="expression_item_mask"></view>
+      <view class="{{selectedExpression === item.id ? 'expression_item_img2' : 'expression_item_img1'}}" wx:for="{{expressionList_t}}" wx:key="index" bindtap="selectExpression" data-item="{{item}}">
+        <image src="{{item.expression_image}}" class="w_h_100"></image>
       </view>
     </view>
     <view class="expression_box_item">
-      <view class="expression_item_img">
-        <view class="expression_item_mask"></view>
-      </view>
-      <view class="expression_item_img">
-        <view class="expression_item_mask"></view>
-      </view>
-      <view class="expression_item_img">
-        <view class="expression_item_mask"></view>
-      </view>
-      <view class="expression_item_img">
-        <view class="expression_item_mask"></view>
+      <view class="{{selectedExpression === item.id ? 'expression_item_img2' : 'expression_item_img1'}}" wx:for="{{expressionList_b}}" wx:key="index" bindtap="selectExpression" data-item="{{item}}">
+        <image src="{{item.expression_image}}" class="w_h_100"></image>
       </view>
     </view>
   </view>

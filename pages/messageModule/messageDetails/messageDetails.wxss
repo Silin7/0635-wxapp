@@ -26,7 +26,7 @@
   border-radius: 10px;
   line-height: 25px;
   letter-spacing: 1px;
-  padding: 10px;
+  padding: 20px 10px;
   color: #666666;
 }
 .sub_module1_item_ns_info_item {

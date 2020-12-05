@@ -15,6 +15,23 @@
   letter-spacing: 1px;
   line-height: 30px;
 }
+.sub_module1_info_fd_id_box {
+  display: flex;
+  align-items: center;
+  height: 30px;
+}
+.sub_module1_info_fd_id_car {
+  height: 25px;
+  width: 100px;
+  background: #021C72;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FFFFFF;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
 .sub_module1 {
   padding: 10px;
   display: flex;

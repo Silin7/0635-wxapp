@@ -8,7 +8,11 @@
       <image src="{{authorData.author_avatarUrl}}" class="w_h_100"></image>
     </view>
     <view class="news_date fs_14 m_l_10" style="width: {{windowWidth-100}}px;">
-      <text class="to_1 fw_7">{{authorData.author_name}}</text>
+      <view class="sub_module1_info_fd_id_box">
+        <text class="to_1 fw_7">{{authorData.author_name}}</text>
+        <!-- <wxs module="filter" src="../../../utils/filter.wxs"></wxs>
+        <text wx:if="{{authorData.author_id}}" class="sub_module1_info_fd_id_car m_l_10">{{filter.licensePlate(authorData.author_id)}}</text> -->
+      </view>
       <text class="to_1 co_9 fs_12">{{authorData.create_time}}</text>
     </view>
   </view>

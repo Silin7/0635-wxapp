@@ -212,6 +212,23 @@
   flex-flow: column;
   justify-content: space-between;
 }
+.sub_module1_info_fd_id_box {
+  display: flex;
+  align-items: center;
+  height: 30px;
+}
+.sub_module1_info_fd_id_car {
+  height: 25px;
+  width: 90px;
+  background: #021C72;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FFFFFF;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
 .rich_text_fd {
   max-height: 160px;
   line-height: 20px;
@@ -226,31 +243,29 @@
 .expression_box {
   box-sizing: border-box;
   width: 98vw;
-  margin: 20px auto;
+  margin: 10px auto 20px;
   padding: 10px;
 }
 .expression_box_item {
+  height: 90px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 15px;
 }
-.expression_item_img {
+.expression_item_img1 {
   width: 60px;
   height: 60px;
-  background-color: #4545FF;
   border-radius: 30px;
   overflow: hidden;
   position: relative;
 }
-.expression_item_mask {
-  width: 60px;
-  height: 60px;
-  background-color: #000000;
-  border-radius: 30px;
-  position: absolute;
-  top: 0;
-  left: 0;
+.expression_item_img2 {
+  width: 72px;
+  height: 72px;
+  border-radius: 36px;
+  overflow: hidden;
+  position: relative;
 }
 
 /* 消息 */

@@ -23,6 +23,19 @@ Page({
     dynamicList: [],
     // 发动态
     developmentTrend: '',
+    selectedExpression: 'expression01',
+    expressionList_t: [
+      { name: '测试', expression_image: '/images/homeMoudle/banner_xq.jpg', id: 'expression01' },
+      { name: '测试', expression_image: '/images/homeMoudle/banner_xq.jpg', id: 'expression02' },
+      { name: '测试', expression_image: '/images/homeMoudle/banner_xq.jpg', id: 'expression03' },
+      { name: '测试', expression_image: '/images/homeMoudle/banner_xq.jpg', id: 'expression04' },
+    ],
+    expressionList_b: [
+      { name: '测试', expression_image: '/images/homeMoudle/banner_xq.jpg', id: 'expression05' },
+      { name: '测试', expression_image: '/images/homeMoudle/banner_xq.jpg', id: 'expression06' },
+      { name: '测试', expression_image: '/images/homeMoudle/banner_xq.jpg', id: 'expression07' },
+      { name: '测试', expression_image: '/images/homeMoudle/banner_xq.jpg', id: 'expression08' },
+    ],
     // 消息模块
     messageTab: 0,
     perMessageList: [],
@@ -40,7 +53,7 @@ Page({
     })
   },
   onShow: function () {
-    this.setData({footerActive: 2})
+    this.setData({footerActive: 1})
     this.getMineInfo()
     this.getDynamicList()
   },
@@ -105,8 +118,15 @@ Page({
   },
 
   // ------ 发动态 ------
+  // 发表
   onClickRight() {
     wx.showToast({ title: '点击发表', icon: 'none' });
+  },
+  // 选择此刻的心情
+  selectExpression: function (e) {
+    this.setData({
+      selectedExpression: e.currentTarget.dataset.item.id
+    })
   },
 
 

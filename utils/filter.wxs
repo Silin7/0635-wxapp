@@ -99,6 +99,20 @@ var dayjs = function (date, status, state) {
     }
   }
 }
+
+// 车牌
+var licensePlate  = function (id_key) {
+  console.log(id_key)
+  var carNo = id_key.toString()
+  // carNo = carNo.substr(1)
+  carNo = carNo.split('')
+  carNo.shift()
+  carNo = carNo.join('')
+  carNo =  '鲁P' + carNo
+  return carNo
+}
+
 module.exports = {
   dayjs: dayjs,
+  licensePlate: licensePlate
 }
