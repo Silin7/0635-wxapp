@@ -1,0 +1,61 @@
+.scenic_img_box {
+  width: 100vw;
+  height: 280px;
+}
+.scenic_info_box {
+  box-sizing: border-box;
+  width: 100vw;
+  padding:10px 10px 5px;
+  background-color: #FFFFFF;
+  border-radius: 10px 10px 0px 0px;
+  position: absolute;
+  top: 260px;
+  z-index: 1;
+}
+.scenic_info_item {
+  height: 40px;
+  line-height: 40px;
+  color: #333333;
+}
+.scenic_info_item2 {
+  height: 30px;
+  line-height: 30px;
+  color: #333333;
+}
+.scenic_info_name {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.punch_clock {
+  width: 75px;
+  height: 30px;
+  padding-left: 5px;
+  border-radius: 10px;
+  background-color: #4545FF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FFFFFF;
+  font-size: 15px;
+  letter-spacing: 5px;
+}
+.scenic_info_date {
+  box-sizing: border-box;
+  border-bottom: 1rpx solid #cccccc;
+  /* border-bottom: 1px solid #F5F5F5; */
+}
+.scenic_details_box {
+  position: absolute;
+  top: 445px;
+  box-sizing: border-box;
+  width: 100vw;
+  padding:20px 10px;
+  margin-top: 20px;
+  background-color: #FFFFFF;
+  letter-spacing: 1px;
+  z-index: 1;
+}

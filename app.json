@@ -1,5 +1,7 @@
 {
   "pages":[
+    "pages/scenicModule/scenicDetails/scenicDetails",
+    "pages/scenicModule/scenicList/scenicList",
     "pages/homeModule/homePage/homePage",
     "pages/dynamicModule/dynamicList/dynamicList",
     "pages/dynamicModule/dynamicDetails/dynamicDetails",
