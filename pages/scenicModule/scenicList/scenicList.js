@@ -21,7 +21,6 @@ Page({
   getScenicSpot: function () {
     esRequest('scenicspot_list').then(res => {
       if (res && res.data.code == 0) {
-        console.log(res)
         this.setData({
           scenicSpotList: res.data.data
         })
@@ -32,8 +31,8 @@ Page({
   },
   // 消息详情
   scenicDetails: function (e) {
-    // wx.navigateTo({
-    //   url: '/pages/scenicModule/scenicDetails/scenicDetails?id=' + e.currentTarget.dataset.item.id
-    // })
+    wx.navigateTo({
+      url: '/pages/scenicModule/scenicDetails/scenicDetails?id=' + e.currentTarget.dataset.item.id
+    })
   },
 })

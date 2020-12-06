@@ -53,7 +53,7 @@ Page({
     })
   },
   onShow: function () {
-    this.setData({footerActive: 1})
+    // this.setData({footerActive: 1})
     this.getMineInfo()
     this.getDynamicList()
   },
@@ -62,6 +62,14 @@ Page({
   // 点击首页轮播图
   swiperTap: function (e) {
     console.log(e.currentTarget.dataset.item)
+  },
+  // 第一栏导航
+  oneNavBind: function (e) {
+    if (e.currentTarget.dataset.item.id === 'icon01') {
+      wx.navigateTo({
+        url: '/pages/scenicModule/scenicList/scenicList',
+      })
+    }
   },
   // 底部导航切换
   navChange(event) {

@@ -102,7 +102,6 @@ var dayjs = function (date, status, state) {
 
 // 车牌
 var licensePlate  = function (id_key) {
-  console.log(id_key)
   var carNo = id_key.toString()
   // carNo = carNo.substr(1)
   carNo = carNo.split('')
@@ -112,7 +111,16 @@ var licensePlate  = function (id_key) {
   return carNo
 }
 
+// 学生票
+var studentTicket = function (ticket) {
+  // var sticket = Number(ticket)
+  // sticket = sticket / 2
+  var sticket = ticket * 1 / 2
+  return sticket
+}
+
 module.exports = {
   dayjs: dayjs,
-  licensePlate: licensePlate
+  licensePlate: licensePlate,
+  studentTicket: studentTicket
 }

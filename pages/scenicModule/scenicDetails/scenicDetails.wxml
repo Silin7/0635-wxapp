@@ -5,16 +5,24 @@
   </view>
   <view class="scenic_info_box">
     <view class="scenic_info_item scenic_info_name">
-      <text class="co_0">东昌湖</text>
+      <text class="co_0">{{scenicDetails.scenicSpot_name}}</text>
       <text class="punch_clock">打卡</text>
     </view>
-    <view class="scenic_info_item2 ls_1">全年全天开放</view>
-    <view class="scenic_info_item scenic_info_date ls_1">聊城市东昌府区湖滨路2号</view>
-    <view class="scenic_info_item ls_1">官方电话：<text>0635-8426331</text></view>
+    <view class="scenic_info_item2 ls_1">{{scenicDetails.scenicSpot_hours}}</view>
+    <view class="scenic_info_item scenic_info_date ls_1">{{scenicDetails.scenicSpot_place}}</view>
+    <view class="scenic_info_item ls_1">官方电话：{{scenicDetails.scenicspot_phone}}</view>
+    <view class="scenic_info_ticket ls_1" wx:if="{{scenicDetails.scenicSpot_Ticket}}"> 
+      <view class="scenic_info_ticket_item ls_1">成人票 {{scenicDetails.scenicSpot_Ticket}}元</view>
+      <wxs module="filter" src="../../../utils/filter.wxs"></wxs>
+      <text class="scenic_info_ticket_item2 ls_1">学生票 {{filter.studentTicket(scenicDetails.scenicSpot_Ticket)}}元</text>
+    </view>
+    <view class="scenic_info_ticket ls_1" wx:else> 
+      <view class="scenic_info_ticket_item p_l_10 ls_10">免费</view>
+    </view>
   </view>
   
-  <view class="scenic_details_box" style="min-height: {{windowHeight-445}}px;">
-    <rich-text nodes="东昌湖风景名胜区位于聊城的西南市区，总面积20.6平方公里，驰名中外的京杭大运河穿风景区而过。景区以建于北宋时期的聊城古城为中心，以水面辽阔、风景秀丽、环绕于古城区四周的东昌湖为依托，集中体现了聊城“水、古、文”的特色，营造出聊城“城中有湖，湖中有城，城湖河一体”的独特风貌，是山东西部和冀、鲁、豫接壤地区非常有名的风景游览区。东昌湖风景名胜区文化的内涵深厚，旅游资源丰富，《水浒》、《聊斋》、《老残游记》等中国古代名著，对古聊城和东昌湖均有描述。千年的历史沧桑，层出不穷的杰出人物，造就了东昌湖风景名胜区丰厚的文化背景和底蕴。迷人的自然风光，众多的文化景点，也汇成了东昌湖风景名胜区的丰富旅游资源。风景区内，错落散布着中国现存古代木结构建筑之一的明代光岳楼，中国佛教文化的瑰宝宋代铁塔，集商业与文化之大成的精美清代建筑山陕会馆，中国清代四大私人藏书楼之一的海源阁等名胜古迹，以及傅斯年纪念馆、孔繁森同志纪念馆等文化景点。"></rich-text>
+  <view class="scenic_details_box" style="min-height: {{windowHeight-475}}px;">
+    <rich-text nodes="{{scenicDetails.scenicSpot_signature}}"></rich-text>
   </view>
   
 </view>

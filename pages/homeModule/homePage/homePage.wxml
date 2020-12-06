@@ -12,7 +12,7 @@
 	</swiper>
   <!-- 子模块01 -->
   <view class="icon_module bs_bb m_t_10">
-    <view class="icon_module_item" wx:for="{{iconList}}" wx:key="index">
+    <view class="icon_module_item" wx:for="{{iconList}}" wx:key="index" bindtap="oneNavBind" data-item="{{item}}">
       <view class="item_icon">
         <image src="{{item.image}}" class="w_h_100"></image>
       </view>
