@@ -1,3 +1,5 @@
+<van-toast id="van-toast" />
+
 <view class="bg_F5 bs_bb oy_a" style="height: {{windowHeight}}px; ">
   <!-- 景区图片 -->
   <view class="scenic_img_box">
@@ -7,11 +9,12 @@
     <view class="scenic_info_item scenic_info_name">
       <text class="co_0">{{scenicDetails.scenicSpot_name}}</text>
       <text class="punch_clock" bindtap="punchClock" wx:if="{{isFollow == '0'}}">打卡{{}}</text>
-      <text class="punch_clock2" bindtap="punchClock" wx:else>已打卡</text>
+      <text class="punch_clock2" bindtap="cancePunch" wx:else>已打卡</text>
     </view>
     <view class="scenic_info_item2 ls_1">{{scenicDetails.scenicSpot_hours}}</view>
     <view class="scenic_info_item scenic_info_date ls_1">{{scenicDetails.scenicSpot_place}}</view>
-    <view class="scenic_info_item ls_1">官方电话：{{scenicDetails.scenicspot_phone}}</view>
+    <view class="scenic_info_item ls_1" wx:if="{{scenicDetails.scenicspot_phone}}">官方电话：{{scenicDetails.scenicspot_phone}}</view>
+    <view class="scenic_info_item ls_1" wx:else>官方电话：暂无联系方式</view>
     <view class="scenic_info_ticket ls_1" wx:if="{{scenicDetails.scenicSpot_Ticket}}"> 
       <view class="scenic_info_ticket_item ls_1">成人票 {{scenicDetails.scenicSpot_Ticket}}元</view>
       <wxs module="filter" src="../../../utils/filter.wxs"></wxs>

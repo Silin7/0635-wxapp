@@ -58,11 +58,35 @@ Page({
   // 打卡
   punchClock: function () {
     let data = {
-      scenicSpot_id: this.data.scenicId,
       followers_id: this.data.id_key,
+      scenicSpot_id: this.data.scenicDetails.id,
+      scenicSpot_name: this.data.scenicDetails.scenicSpot_name,
+      scenicSpot_img: this.data.scenicDetails.scenicSpot_img
     }
-    console.log(data)
-    // is_follow_scenicspot
+    esRequest('follow_scenicspot', data).then(res => {
+      if (res && res.data.code == 0) {
+        Toast.success('打卡成功')
+        this.isPunchClock()
+      } else {
+        Toast.fail('系统错误')
+      }
+    })
+  },
+
+  // 取消打卡
+  cancePunch: function () {
+    let data = {
+      followers_id: this.data.id_key,
+      scenicSpot_id: this.data.scenicDetails.id
+    }
+    esRequest('cancel_scenicspot', data).then(res => {
+      if (res && res.data.code == 0) {
+        Toast.success('取消打卡')
+        this.isPunchClock()
+      } else {
+        Toast.fail('系统错误')
+      }
+    })
   },
 
 })
