@@ -46,6 +46,19 @@
   margin: 5px 0;
   font-size: 14px;
 }
+.scenic_info_ticket_item3 {
+  width: 120px;
+  height: 30px;
+  background-color: #4545FF;
+  color: #FFFFFF;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  margin: 5px 0;
+  font-size: 14px;
+}
 .scenic_info_item {
   height: 40px;
   line-height: 40px;
@@ -70,6 +83,19 @@
   padding-left: 5px;
   border-radius: 10px;
   background-color: #4545FF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FFFFFF;
+  font-size: 15px;
+  letter-spacing: 5px;
+}
+.punch_clock2 {
+  width: 75px;
+  height: 30px;
+  padding-left: 5px;
+  border-radius: 10px;
+  background-color: #CA85D6;
   display: flex;
   justify-content: center;
   align-items: center;

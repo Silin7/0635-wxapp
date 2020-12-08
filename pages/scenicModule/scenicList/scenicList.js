@@ -5,7 +5,9 @@ Page({
   data: {
     windowWidth: 0,
     windowHeight: 0,
-    scenicSpotList: [],
+    scenicActive: 0,
+    scenicspotPosition: '东昌府区',
+    scenicSpotList: []
   },
 
   onReady: function () {
@@ -17,9 +19,18 @@ Page({
   onShow: function () {
     this.getScenicSpot()
   },
+  // 切换Tabs
+  scenicChange: function (e) {
+    this.data.scenicspotPosition = e.detail.title
+    console.log(this.data.scenicspotPosition)
+    this.getScenicSpot()
+  },
   // 景点列表
   getScenicSpot: function () {
-    esRequest('scenicspot_list').then(res => {
+    let data = {
+      scenicspot_position: this.data.scenicspotPosition
+    }
+    esRequest('scenicspot_list', data).then(res => {
       if (res && res.data.code == 0) {
         this.setData({
           scenicSpotList: res.data.data

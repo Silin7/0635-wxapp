@@ -1,3 +1,13 @@
+<van-tabs active="{{scenicActive}}" bind:change="scenicChange">
+  <van-tab title="东昌府区"></van-tab>
+  <van-tab title="茌平区"></van-tab>
+  <van-tab title="临清市"></van-tab>
+  <van-tab title="阳谷县"></van-tab>
+  <van-tab title="东阿县"></van-tab>
+  <van-tab title="高唐县"></van-tab>
+  <van-tab title="冠县"></van-tab>
+  <van-tab title="莘县"></van-tab>
+</van-tabs>
 <view class="bg_F5 bs_bb oy_a" style="height: {{windowHeight}}px;">
   <view class="sub_module1_ns" wx:for="{{scenicSpotList}}" wx:key="index" bindtap="scenicDetails" data-item="{{item}}" >
     <view class="sub_module1_item_ns">

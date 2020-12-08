@@ -59,3 +59,8 @@
 .sub_module1_item_ns_info_item_bg_ac {
   background: -webkit-linear-gradient(left, #A084F1, #CA85D6);
 }
+
+/* 导航栏 */
+.van-tabs__line {
+  background-color: #4545FF !important;
+}
