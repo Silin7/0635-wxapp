@@ -3,7 +3,7 @@
 <view class="bg_F5 bs_bb oy_a" style="height: {{windowHeight}}px; ">
   <!-- 景区图片 -->
   <view class="scenic_img_box">
-    <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
+    <image src="{{scenicDetails.scenicSpot_img}}" class="w_h_100"></image>
   </view>
   <view class="scenic_info_box">
     <view class="scenic_info_item scenic_info_name">
