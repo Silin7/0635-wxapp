@@ -47,6 +47,12 @@
 .bg_F {
   background-color: #FFFFFF;
 }
+.bg_F0 {
+  background-color: #F0F0F0;
+}
 .bg_F5 {
-  background-color: #F5F5F5;
+  background-color: #F7F8FA;
+}
+.bg_F7 {
+  background-color: #F7F8FA;
 }

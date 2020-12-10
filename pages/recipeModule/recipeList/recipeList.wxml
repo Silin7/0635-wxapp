@@ -1,20 +1,33 @@
 <van-toast id="van-toast" />
-<view class="bs_bb oy_a" style="height: {{windowHeight}}px;">
-  <van-search
-    label="菜谱"
-    value="{{keyword}}"
-    placeholder="请输入关键词"
-    bind:change="searchChange"
-    background="#4545FF"
-    use-action-slot>
-    <view slot="action" bind:tap="searchClick" class="co_F fw_7 ls_2">搜索</view>
-  </van-search>
-</view>
 
+<van-search
+  label="菜谱"
+  value="{{keyword}}"
+  placeholder="请输入关键词"
+  bind:change="searchChange"
+  background="#A084F1"
+  use-action-slot>
+  <view slot="action" bind:tap="searchClick" class="co_F fw_7 ls_2">搜索</view>
+</van-search>
 
-<!-- <view wx:for="{{recipeList}}" wx:key="index" wx:for-item="item">
-  {{item.name}}
-  <view wx:for="{{item.data}}"  wx:key="index" wx:for-item="item2">
-    {{item2.name}}
+<view class="bs_bb bg_F7 fx_r_b_s" style="height: {{windowHeight-54}}px;">
+  <view class="sidebar_box oy_a" style="height: {{windowHeight-54}}px;">
+    <van-sidebar active-key="{{sidebarKey}}" bind:change="sidebarChange">
+      <van-sidebar-item wx:for="{{recipeList}}" wx:key="index" title="{{item.name}}"/>
+    </van-sidebar>
   </view>
-</view> -->
+  <view class="bs_bb oy_a p_10 sidebar_item_box" style="width: {{windowWidth-80}}px; height: {{windowHeight-54}}px;">
+   <view wx:for="{{recipeItemList}}" wx:key="index" class="recipe_item_title">
+      <view class="recipe_item_title_name">{{item.name}}</view>
+      <view class="sidebar_item_box">
+        <view class="recipe_item" wx:for="{{item.data}}" wx:key="index" wx:for-item="item2">
+          <view class="recipe_item_image">
+            <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
+          </view>
+          <view class="recipe_item_name">{{item2}}</view>
+      </view>
+    </view>
+    </view>
+    
+  </view>
+</view>

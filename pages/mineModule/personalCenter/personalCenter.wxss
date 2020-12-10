@@ -1,6 +1,6 @@
 page {
   position: relative;
-  background-color: #F5F5F5;
+  background-color: #F7F8FA;
 }
 .personal_banner {
   width: 100vw;
@@ -58,7 +58,7 @@ page {
   top: 380rpx;
   width: 100vw;
   border-radius: 20px 20px 0 0;
-  background-color: #F5F5F5;
+  background-color: #F7F8FA;
   overflow-y: auto;
   z-index: 10;
   padding: 10px 0 20px;

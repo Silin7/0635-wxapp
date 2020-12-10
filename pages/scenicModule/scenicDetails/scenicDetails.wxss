@@ -106,7 +106,7 @@
 .scenic_info_date {
   box-sizing: border-box;
   border-bottom: 1rpx solid #cccccc;
-  /* border-bottom: 1px solid #F5F5F5; */
+  /* border-bottom: 1px solid #F7F8FA; */
 }
 .scenic_details_box {
   position: absolute;

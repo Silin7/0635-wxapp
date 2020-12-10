@@ -196,7 +196,7 @@
   display: flex;
   justify-content: space-between;
   padding: 10px 0;
-  border-bottom: 1rpx solid #F5F5F5;
+  border-bottom: 1rpx solid #F7F8FA;
 }
 .sub_module1_img_fd {
   width: 40px;
@@ -384,7 +384,7 @@
   top: 380rpx;
   width: 100vw;
   border-radius: 20px 20px 0 0;
-  background-color: #F5F5F5;
+  background-color: #F7F8FA;
   overflow-y: auto;
   z-index: 1;
   padding: 10px 0 20px;

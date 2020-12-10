@@ -7,7 +7,9 @@ Page({
     windowWidth: 0,
     windowHeight: 0,
     keyword: '',
-    recipeList: []
+    recipeList: [],
+    recipeItemList: [],
+    sidebarKey: 0,
   },
   onLoad: function (options) {
   },
@@ -19,9 +21,9 @@ Page({
   },
   onShow: function () {
     this.setData({
-      recipeList: Json.recipe_catalogs.data
+      recipeList: Json.recipe_catalogs.data,
+      recipeItemList: Json.recipe_catalogs.data[0].data
     })
-    console.log(this.data.recipeList)
   },
   // 搜索框value change
   searchChange: function (e) {
@@ -33,4 +35,10 @@ Page({
   searchClick: function () {
     Toast('搜索' + this.data.keyword);
   },
+  // 侧边栏chenge
+  sidebarChange: function (e) {
+    this.setData({
+      recipeItemList: this.data.recipeList[e.detail].data
+    })
+  }
 })
