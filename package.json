@@ -16,7 +16,7 @@
   },
   "homepage": "https://github.com/Silin7/wsl-xcx#readme",
   "dependencies": {
-    "@vant/weapp": "^1.6.3"
+    "vant-weapp": "^0.5.28"
   },
   "keywords": [],
   "devDependencies": {},
