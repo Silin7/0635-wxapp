@@ -1,5 +1,5 @@
 {
-  "name": "wsl-xcx",
+  "name": "birch-forest-xcx",
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
@@ -9,14 +9,14 @@
     "type": "git",
     "url": "git+https://github.com/Silin7/wsl-xcx.git"
   },
-  "author": "",
+  "author": "silin.wang",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Silin7/wsl-xcx/issues"
   },
   "homepage": "https://github.com/Silin7/wsl-xcx#readme",
   "dependencies": {
-    "vant-weapp": "^0.5.28"
+    "@vant/weapp": "^1.6.3"
   },
   "keywords": [],
   "devDependencies": {},
