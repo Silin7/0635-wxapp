@@ -9,12 +9,6 @@
     use-action-slot>
     <view slot="action" bind:tap="searchClick" class="co_F fw_7 ls_2">搜索</view>
   </van-search>
-
-  <van-sidebar active-key="{{ activeKey }}">
-    <van-sidebar-item title="标签名" />
-    <van-sidebar-item title="标签名" />
-    <van-sidebar-item title="标签名" />
-  </van-sidebar>
 </view>
 
 
