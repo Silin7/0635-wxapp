@@ -1,4 +1,4 @@
-{
+﻿{
   "name": "birch-forest-xcx",
   "version": "1.0.0",
   "main": "app.js",
@@ -16,9 +16,7 @@
   },
   "homepage": "https://github.com/Silin7/wsl-xcx#readme",
   "dependencies": {
-    "vant-weapp": "^0.5.28"
-  },
-  "keywords": [],
-  "devDependencies": {},
-  "description": ""
+    "@vant/weapp": "^1.4.4",
+    "regenerator-runtime": "^0.13.7"
+  }
 }
