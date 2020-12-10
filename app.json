@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/recipeModule/recipeList/recipeList",
     "pages/homeModule/homePage/homePage",
     "pages/scenicModule/scenicList/scenicList",
     "pages/scenicModule/scenicDetails/scenicDetails",
@@ -30,6 +31,5 @@
     "navigationBarTitleText": "Weixin",
     "navigationBarTextStyle":"black"
   },
-  "style": "v2",
   "sitemapLocation": "sitemap.json"
 }
