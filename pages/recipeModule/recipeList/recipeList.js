@@ -1,4 +1,3 @@
-// import esRequest from '../../../utils/esRequest'
 import Toast from '../../../miniprogram_npm/vant-weapp/toast/toast';
 import Json from '../../../json/recipe_catalogs'
 
@@ -9,7 +8,7 @@ Page({
     keyword: '',
     recipeList: [],
     recipeItemList: [],
-    sidebarKey: 0,
+    sidebarKey: 0
   },
   onLoad: function (options) {
   },
@@ -33,12 +32,20 @@ Page({
   },
   // 点击搜索
   searchClick: function () {
-    Toast('搜索' + this.data.keyword);
+    wx.navigateTo({
+      url: '/pages/recipeModule/recipeInfo/recipeInfo?keyword=' + this.data.keyword
+    })
   },
   // 侧边栏chenge
   sidebarChange: function (e) {
     this.setData({
       recipeItemList: this.data.recipeList[e.detail].data
+    })
+  },
+  // 点击菜品进入info页面
+  recipeInfo: function (e) {
+    wx.navigateTo({
+      url: '/pages/recipeModule/recipeInfo/recipeInfo?keyword=' + e.currentTarget.dataset.item
     })
   }
 })

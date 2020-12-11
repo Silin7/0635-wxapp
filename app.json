@@ -1,9 +1,11 @@
 {
   "pages":[
+    "pages/recipeModule/recipeList/recipeList",
+    "pages/recipeModule/recipeDetail/recipeDetail",
+    "pages/recipeModule/recipeInfo/recipeInfo",
     "pages/homeModule/homePage/homePage",
     "pages/scenicModule/scenicList/scenicList",
     "pages/scenicModule/scenicDetails/scenicDetails",
-    "pages/recipeModule/recipeList/recipeList",
     "pages/dynamicModule/dynamicList/dynamicList",
     "pages/dynamicModule/dynamicDetails/dynamicDetails",
     "pages/loginModule/loginPage/loginPage",

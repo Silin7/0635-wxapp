@@ -220,7 +220,8 @@
 .sub_module1_info_fd_id_car {
   height: 25px;
   width: 90px;
-  background: #021C72;
+  /* background: #A084F1; */
+  background: -webkit-linear-gradient(left, #A084F1, #CA85D6);
   border-radius: 5px;
   display: flex;
   justify-content: center;

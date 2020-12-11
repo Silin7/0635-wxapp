@@ -16,14 +16,14 @@
       <van-sidebar-item wx:for="{{recipeList}}" wx:key="index" title="{{item.name}}"/>
     </van-sidebar>
   </view>
-  <view class="bs_bb oy_a p_10 sidebar_item_box" style="width: {{windowWidth-80}}px; height: {{windowHeight-54}}px;">
+  <view class="bs_bb bg_F oy_a p_10 sidebar_item_box" style="width: {{windowWidth-80}}px; height: {{windowHeight-54}}px;">
    <view wx:for="{{recipeItemList}}" wx:key="index" class="recipe_item_title">
-      <view class="recipe_item_title_name">{{item.name}}</view>
+      <view class="recipe_item_title_name">
+        <image wx:if="{{item.image_url}}" src="{{item.image_url}}" class="w_h_100"></image>
+        <image wx:else src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
+      </view>
       <view class="sidebar_item_box">
-        <view class="recipe_item" wx:for="{{item.data}}" wx:key="index" wx:for-item="item2">
-          <view class="recipe_item_image">
-            <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
-          </view>
+        <view class="recipe_item" wx:for="{{item.data}}" wx:key="index" wx:for-item="item2" bindtap="recipeInfo" data-item="{{item2}}">
           <view class="recipe_item_name">{{item2}}</view>
       </view>
     </view>

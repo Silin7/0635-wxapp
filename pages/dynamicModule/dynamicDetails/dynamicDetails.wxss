@@ -23,7 +23,7 @@
 .sub_module1_info_fd_id_car {
   height: 25px;
   width: 100px;
-  background: #021C72;
+  background: #4545FF;
   border-radius: 5px;
   display: flex;
   justify-content: center;

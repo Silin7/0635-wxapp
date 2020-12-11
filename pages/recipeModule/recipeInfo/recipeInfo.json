@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "菜谱",
+  "usingComponents": {
+    "van-toast": "vant-weapp/toast/index"
+  }
+}

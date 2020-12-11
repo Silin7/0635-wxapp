@@ -1,0 +1,49 @@
+.recipeInfo_item {
+  box-sizing: border-box;
+  width: 100%;
+  height: 120px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FFFFFF;
+}
+.recipeInfo_item_img {
+  width: 160px;
+  height: 120px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.recipeInfo_item_box {
+  height: 120px;
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+}
+.recipeInfo_item_name {
+  height: 40px;
+  line-height: 40px;
+  font-size: 20px;
+  font-weight: 700;
+}
+.recipeInfo_item_cookstory {
+  height: 50px;
+  line-height: 25px;
+  font-size: 13px;
+  color: #999999;
+  text-indent: 20px;
+}
+.recipeInfo_item_an {
+  height: 30px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  box-sizing: border-box;
+  padding-right: 10px;
+  font-size: 13px;
+  color: #333333;
+  font-weight: 700;
+}
