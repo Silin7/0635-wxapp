@@ -2,9 +2,9 @@
 
 <view class="bs_bb bg_F5 oy_a" style="height: {{windowHeight}}px;">
   <view class="page_banner">
-    <image src="{{recipeDetail.original_photo_path}}" class="w_h_100"></image>
+    <image src="{{photo}}" class="w_h_100"></image>
   </view>
   <view class="p_10">
-    <view class="recipeDetail_name ls_2">{{recipeDetail.title}}</view>
+    <view class="recipeDetail_name ls_2">{{title}}</view>
   </view>
 </view>
