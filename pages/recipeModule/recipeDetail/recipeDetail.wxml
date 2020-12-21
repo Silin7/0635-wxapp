@@ -1,10 +1,42 @@
 <van-toast id="van-toast" />
 
-<view class="bs_bb bg_F5 oy_a" style="height: {{windowHeight}}px;">
+<view class="bs_bb bg_F5" style="height: {{windowHeight}}px; background-color: red;">
   <view class="page_banner">
-    <image src="{{photo}}" class="w_h_100"></image>
+    <image src="{{menu_details.photo_path}}" class="w_h_100"></image>
   </view>
-  <view class="p_10">
-    <view class="recipeDetail_name ls_2">{{title}}</view>
+  <!-- 菜名 -->
+  <view class="p_10 header_box">
+    <view class="recipeDetail_name ls_2 to_1 co_3">
+      <text>{{menu_details.title}}</text>
+      <text class="recipeDetail_collection">收藏</text>
+    </view>
+    <view class="recipeDetail_info fx_r_s_c m_t_10">
+      <view class="fx_r_c_c m_l_5">
+        <image src="/images/menuMoudle/menu_nz.png" class="menu_nz w_h_100"></image>
+        <text class="m_l_5 co_6">{{menu_details.cook_time}}</text>
+      </view>
+      <view class="fx_r_c_c m_l_30">
+        <image src="/images/menuMoudle/menu_dj.png" class="menu_nz w_h_100"></image>
+        <text class="m_l_5 co_6">{{menu_details.cook_difficulty}}</text>
+      </view>
+    </view>
+  </view>
+   <!-- 食材 -->
+  <view class="p_10 major_box">
+    <view class="box_title">准备食材</view>
+    <view wx:for="{{menu_details.major}}" wx:key="index" class="fx_r_b_c bs_bb p_l_10 p_r_10">
+      <view class="step_title ls_1">{{item.title}}</view>
+      <view class="step_title">{{item.note}}</view>
+    </view>
+  </view>
+  <!-- 步骤 -->
+  <view class="p_10 step_box">
+    <view class="box_title">制作步骤</view>
+    <view wx:for="{{menu_details.cookstep}}" wx:key="index">
+      <view class="step_title">{{index+1}}、{{item.content}}</view>
+      <view class="img_box">
+        <image src="{{item.image}}" class="w_h_100"></image>
+      </view>
+    </view>
   </view>
 </view>
