@@ -233,28 +233,8 @@
   </view>
 </view>
 
-<!-- 发动态 -->
-<view wx:if="{{footerActive === 2}}" class="bg_F5 bs_bb oy_a" style="height: {{windowHeight-50}}px;">
-  <van-nav-bar title="" right-text="发表" left-arrow bind:click-right="onClickRight"/>
-  <van-field custom-style="box-sizing: border-box; width: 99vw; min-height: 300px; margin: 0 auto; padding: 10px; font-size: 16px; letter-spacing:2px; background-color: #FFFFFF;"
-    value="{{developmentTrend}}" type="textarea" placeholder="#今天要加油鸭#" autosize border="{{ture}}"/>
-  <view class="expression_box">
-    <view class="fs_16 fw_7">选择此刻的心情吧</view>
-    <view class="expression_box_item">
-      <view class="{{selectedExpression === item.id ? 'expression_item_img2' : 'expression_item_img1'}}" wx:for="{{expressionList_t}}" wx:key="index" bindtap="selectExpression" data-item="{{item}}">
-        <image src="{{item.expression_image}}" class="w_h_100"></image>
-      </view>
-    </view>
-    <view class="expression_box_item">
-      <view class="{{selectedExpression === item.id ? 'expression_item_img2' : 'expression_item_img1'}}" wx:for="{{expressionList_b}}" wx:key="index" bindtap="selectExpression" data-item="{{item}}">
-        <image src="{{item.expression_image}}" class="w_h_100"></image>
-      </view>
-    </view>
-  </view>
-</view>
-
 <!-- 消息 -->
-<view wx:if="{{footerActive === 3}}" class="bg_F5 bs_bb oy_a" style="height: {{windowHeight-50}}px;">
+<view wx:if="{{footerActive === 2}}" class="bg_F5 bs_bb oy_a" style="height: {{windowHeight-50}}px;">
   <van-tabs active="{{messageTab}}" bind:change="messageTabChange">
     <van-tab title="个人私信">
       <view class="sub_module1_ns" wx:for="{{perMessageList}}" wx:key="index" bindtap="messageDetails" data-item="{{item}}" >
@@ -296,7 +276,7 @@
 </view>
 
 <!-- 我的 -->
-<view wx:if="{{footerActive === 4}}" class="bg_F5 bs_bb oy_a" style="height: {{windowHeight-50}}px; position: relative;">
+<view wx:if="{{footerActive === 3}}" class="bg_F5 bs_bb oy_a" style="height: {{windowHeight-50}}px; position: relative;">
   <view class="personal_banner">
     <view class="mask"></view>
     <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>

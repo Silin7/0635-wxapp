@@ -10,10 +10,10 @@
     <image slot="icon-active" src="{{ footerIcon.compass_active }}" mode="aspectFit" style="width: 30px; height: 24px;"/>
     发现
   </van-tabbar-item>
-  <van-tabbar-item>
+  <!-- <van-tabbar-item>
     <image slot="icon" src="{{ footerIcon.release_normal }}" mode="aspectFit" style="width: 38px; height: 38px;"/>
     <image slot="icon-active" src="{{ footerIcon.release_active }}" mode="aspectFit" style="width: 38px; height: 38px;"/>
-  </van-tabbar-item>
+  </van-tabbar-item> -->
   <van-tabbar-item>
     <image slot="icon" src="{{ footerIcon.news_normal }}" mode="aspectFit" style="width: 30px; height: 24px;"/>
     <image slot="icon-active" src="{{ footerIcon.news_active }}" mode="aspectFit" style="width: 30px; height: 24px;"/>
