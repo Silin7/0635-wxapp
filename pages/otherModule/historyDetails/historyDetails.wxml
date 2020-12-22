@@ -1,0 +1,10 @@
+<van-toast id="van-toast" />
+
+<view>
+  <view class="page_banner">
+    <image src="{{item.picUrl}}" class="w_h_100"></image>
+  </view>
+  <view wx:for="{{dataList}}" wx:key="index">
+    <view>{{item.details}}</view>
+  </view>
+</view>

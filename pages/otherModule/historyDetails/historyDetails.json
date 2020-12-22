@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "历史上的今天",
+  "usingComponents": {
+    "van-toast": "vant-weapp/toast/index"
+  }
+}

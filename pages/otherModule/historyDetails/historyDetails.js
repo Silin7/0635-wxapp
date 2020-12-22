@@ -5,34 +5,37 @@ Page({
   data: {
     windowWidth: 0,
     windowHeight: 0,
-    menuId: '',
-    menu_details: {}
+    dataList: []
   },
+
   onLoad: function (options) {
-    this.data.menuId = options.id ? options.id : ''
+
   },
+
   onReady: function () {
     this.setData({
       windowWidth: wx.getSystemInfoSync().windowWidth,
       windowHeight: wx.getSystemInfoSync().windowHeight
     })
   },
+
   onShow: function () {
-    this.getRecipeDetail()
+    this.historyToday()
   },
-  // 获取菜单详情
-  getRecipeDetail: function () {
+
+  // 历史上的今天
+  historyToday: function () {
     let data = {
-      id: this.data.menuId
+      type: '1'
     }
-    esRequest('recipe_detail', data).then(res => {
-      if (res && res.data.state === 'success') {
+    esRequest('history_today', data).then(res => {
+      if (res && res.data.code == 1) {
         this.setData({
-          menu_details: res.data.result.recipe
+          dataList: res.data.data
         })
       } else {
         Toast.fail('系统错误')
       }
     })
-  }
+  },
 })

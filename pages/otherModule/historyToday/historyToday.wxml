@@ -1,0 +1,11 @@
+<van-toast id="van-toast" />
+
+<view>
+  <view class="page_banner">
+    <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
+  </view>
+  <view wx:for="{{dataList}}" wx:key="index">
+    <view>{{item.title}}</view>
+    <view>{{item.year}}-{{item.month}}-{{item.day}}</view>
+  </view>
+</view>
