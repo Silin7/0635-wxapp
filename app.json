@@ -1,8 +1,8 @@
 {
   "pages":[
+    "pages/otherModule/garbage/garbage",
     "pages/otherModule/historyToday/historyToday",
     "pages/otherModule/historyDetails/historyDetails",
-    "pages/otherModule/garbage/garbage",
     "pages/homeModule/homePage/homePage",
     "pages/recipeModule/recipeList/recipeList",
     "pages/recipeModule/recipeInfo/recipeInfo",
