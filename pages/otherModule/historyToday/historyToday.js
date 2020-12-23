@@ -38,4 +38,11 @@ Page({
       }
     })
   },
+
+  // 查看详情
+  dataDetails: function (e) {
+    wx.navigateTo({
+      url: '/pages/otherModule/historyDetails/historyDetails?index=' + e.currentTarget.dataset.index
+    })
+  }
 })

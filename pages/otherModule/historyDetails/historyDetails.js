@@ -5,11 +5,12 @@ Page({
   data: {
     windowWidth: 0,
     windowHeight: 0,
-    dataList: []
+    index: '',
+    historyData: {}
   },
 
   onLoad: function (options) {
-
+    this.data.index = options.index ? Number(options.index) : 0
   },
 
   onReady: function () {
@@ -31,7 +32,7 @@ Page({
     esRequest('history_today', data).then(res => {
       if (res && res.data.code == 1) {
         this.setData({
-          dataList: res.data.data
+          historyData: res.data.data[this.data.index]
         })
       } else {
         Toast.fail('系统错误')

@@ -1,7 +1,7 @@
 {
   "pages":[
-    "pages/otherModule/historyDetails/historyDetails",
     "pages/otherModule/historyToday/historyToday",
+    "pages/otherModule/historyDetails/historyDetails",
     "pages/otherModule/garbage/garbage",
     "pages/homeModule/homePage/homePage",
     "pages/recipeModule/recipeList/recipeList",

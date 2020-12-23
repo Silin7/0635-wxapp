@@ -1,4 +1,10 @@
-.page_banner {
+page {
+  box-sizing: border-box;
   width: 100vw;
-  height: 260px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: 2px;
+  padding: 10px;
+  text-indent: 30px;
 }
