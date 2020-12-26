@@ -5,7 +5,7 @@ Page({
   data: {
     windowWidth: 0,
     windowHeight: 0,
-    rubbishName: '',
+    rubbishName: '塑料',
     aim: {},
     recommendList: [],
     flag: false
