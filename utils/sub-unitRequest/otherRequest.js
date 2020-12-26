@@ -9,6 +9,11 @@ let otherRequest = {
     apiName: '/other/rubbish',
     name: '垃圾分类查询（name）'
   },
+  girl_random: {
+    apiMethod: 'GET',
+    apiName: '/other/girl_random',
+    name: '随机获取美女福利图片'
+  },
   
 }
 module.exports = otherRequest

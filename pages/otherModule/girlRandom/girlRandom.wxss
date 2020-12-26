@@ -1,0 +1,3 @@
+.van-button--active {
+  color: #4545FF !important;
+}

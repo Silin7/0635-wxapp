@@ -1,5 +1,5 @@
 import mixins from '../../mixinsMoudle/mixins'
-import esRequest from '../../../utils/esRequest'
+import esRequest from '../../../utils/esRequest';
 import Toast from '../../../miniprogram_npm/vant-weapp/toast/toast';
 Page({
   data: {

@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "美女福利",
+  "usingComponents": {
+    "van-toast": "vant-weapp/toast/index",
+    "van-image": "vant-weapp/image/index",
+    "van-dialog": "vant-weapp/dialog/index"
+  }
+}
