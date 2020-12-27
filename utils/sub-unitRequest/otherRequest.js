@@ -14,6 +14,11 @@ let otherRequest = {
     apiName: '/other/girl_random',
     name: '随机获取美女福利图片'
   },
+  jokes_random: {
+    apiMethod: 'GET',
+    apiName: '/other/jokes_random',
+    name: '随机获取笑话段子列表'
+  },
   
 }
 module.exports = otherRequest

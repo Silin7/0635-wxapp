@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/otherModule/jokesRandom/jokesRandom",
     "pages/otherModule/girlRandom/girlRandom",
     "pages/homeModule/homePage/homePage",
     "pages/otherModule/garbage/garbage",
