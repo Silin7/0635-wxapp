@@ -51,5 +51,12 @@ Page({
     }).catch(() => {
       // on cancel
     });
+  },
+
+  // 换一批
+  refreshBtn: function () {
+    wx.redirectTo({
+      url: '/pages/otherModule/girlRandom/girlRandom',
+    })
   }
 })
