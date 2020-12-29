@@ -1,7 +1,7 @@
 {
   "pages":[
-    "pages/otherModule/weather/weather",
     "pages/homeModule/homePage/homePage",
+    "pages/otherModule/weather/weather",
     "pages/otherModule/garbage/garbage",
     "pages/otherModule/jokesRandom/jokesRandom",
     "pages/otherModule/girlRandom/girlRandom",

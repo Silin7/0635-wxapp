@@ -20,6 +20,8 @@ Page({
       { name: '测试', image: '/images/homeMoudle/banner_xq.jpg', id: 'icon04' },
     ],
     // 发现模块
+    findtype: 0,
+    typeList: [],
     dynamicList: [],
     // 发动态
     developmentTrend: '',
@@ -56,6 +58,7 @@ Page({
     // this.setData({footerActive: 1})
     this.getMineInfo()
     this.getDynamicList()
+    this.getNewsTypes()
   },
 
   //  ------ 首页模块 ------
@@ -102,6 +105,15 @@ Page({
   },
 
   // ------ 发现模块 ------
+  findChange: function (e) {
+    this.setData({
+      findtype: e.detail.index
+    })
+    if (e.detail.index > 0) {
+      let typeId = this.data.typeList[e.detail.index].typeId
+      this.getNewsList(typeId)
+    }
+  },
   // 动态列表
   getDynamicList: function () {
     esRequest('dynamic_list').then(res => {
@@ -112,6 +124,34 @@ Page({
         })
         this.setData({
           dynamicList: this.data.dynamicList
+        })
+      } else {
+        Toast.fail('系统错误')
+      }
+    })
+  },
+  // 新闻类型
+  getNewsTypes: function () {
+    esRequest('news_types').then(res => {
+      if (res && res.data.code == 1) {
+        this.setData({
+          typeList: res.data.data
+        })
+      } else {
+        Toast.fail('系统错误')
+      }
+    })
+  },
+  // 新闻列表
+  getNewsList: function (typeId) {
+    let data = {
+      typeId: typeId,
+      page: 1
+    }
+    esRequest('news_list', data).then(res => {
+      if (res && res.data.code == 1) {
+        this.setData({
+          newsList: res.data.data
         })
       } else {
         Toast.fail('系统错误')
