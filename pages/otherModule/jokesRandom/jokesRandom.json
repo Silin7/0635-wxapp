@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "随机笑话",
+  "usingComponents": {
+    "van-toast": "vant-weapp/toast/index",
+    "van-image": "vant-weapp/image/index",
+    "van-dialog": "vant-weapp/dialog/index"
+  }
+}

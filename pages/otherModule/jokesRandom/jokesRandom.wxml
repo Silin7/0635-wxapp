@@ -1,0 +1,14 @@
+<van-toast id="van-toast" />
+<van-dialog id="van-dialog" />
+
+<view wx:if="{{jokesList.length > 0}}">
+  <!-- 图片列表篇 -->
+  <view wx:for="{{jokesList}}" wx:key="index">
+    <view>{{item.content}}</view>
+    <view>{{item.updateTime}}</view>
+  </view>
+  <!-- 换一批 -->
+  <view class="refresh_box">
+    <view class="refresh_btn" bindtap="refreshBtn">换一批</view>
+  </view>
+</view>
