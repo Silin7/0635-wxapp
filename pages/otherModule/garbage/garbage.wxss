@@ -18,8 +18,9 @@
   height: 40px;
   line-height: 40px;
   padding-left: 10px;
-  font-size: 14px;
+  font-size: 13px;
   letter-spacing: 1px;
+  font-weight: 700;
 }
 .garbage_ci {
   box-sizing: border-box;
@@ -40,9 +41,9 @@
 }
 /*  */
 .van-search {
-  letter-spacing: 2px !important;
+  letter-spacing: 1px !important;
   font-weight: 700 !important;
 }
-.van-search view {
+/* .van-search view {
   color: #FFFFFF !important;
-}
+} */

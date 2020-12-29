@@ -19,6 +19,15 @@ let otherRequest = {
     apiName: '/other/jokes_random',
     name: '随机获取笑话段子列表'
   },
-  
+  weather_current: {
+    apiMethod: 'GET',
+    apiName: '/other/weather_current',
+    name: '获取特定城市今日天气信息（position）'
+  },
+  weather_forecast: {
+    apiMethod: 'GET',
+    apiName: '/other/weather_forecast',
+    name: '获取特定城市今天及未来天气信息（position）'
+  },
 }
 module.exports = otherRequest

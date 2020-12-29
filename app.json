@@ -1,9 +1,10 @@
 {
   "pages":[
-    "pages/otherModule/jokesRandom/jokesRandom",
-    "pages/otherModule/girlRandom/girlRandom",
+    "pages/otherModule/weather/weather",
     "pages/homeModule/homePage/homePage",
     "pages/otherModule/garbage/garbage",
+    "pages/otherModule/jokesRandom/jokesRandom",
+    "pages/otherModule/girlRandom/girlRandom",
     "pages/otherModule/historyToday/historyToday",
     "pages/otherModule/historyDetails/historyDetails",
     "pages/recipeModule/recipeList/recipeList",

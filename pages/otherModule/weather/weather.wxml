@@ -1,0 +1,4 @@
+<van-toast id="van-toast" />
+
+<canvas canvas-id="canvasColumn" id="canvasColumn" class="charts" bindtouchstart="touchColumn"></canvas>
+<canvas canvas-id="canvasColumn2" id="canvasColumn2" class="charts" bindtouchstart="touchColumn"></canvas>

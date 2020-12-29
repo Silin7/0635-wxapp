@@ -5,7 +5,7 @@
   value="{{rubbishName}}"
   use-action-slot
   shape="round"
-  background="#CA85D6"
+  background="#A084F1"
   bind:change="onChange">
   <view slot="action" bind:tap="getRubbish">搜索</view>
 </van-search>

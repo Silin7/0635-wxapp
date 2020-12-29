@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "天气预报",
+  "usingComponents": {
+    "van-toast": "vant-weapp/toast/index"
+  }
+}
