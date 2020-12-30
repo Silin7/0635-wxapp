@@ -21,7 +21,23 @@ Page({
     ],
     // 发现模块
     findtype: 0,
-    typeList: [],
+    typeId: '',
+    typeList: [
+      { "typeId": "001", "typeName": "同城" },
+      { "typeId": "521", "typeName": "头条" },
+      { "typeId": "515", "typeName": "游戏" },
+      { "typeId": "520", "typeName": "娱乐" },
+      { "typeId": "510", "typeName": "科技" },
+      { "typeId": "511", "typeName": "军事" },
+      { "typeId": "509", "typeName": "财经" },
+      { "typeId": "519", "typeName": "体育" },
+      { "typeId": "513", "typeName": "NBA" },
+      { "typeId": "516", "typeName": "健康" },
+      { "typeId": "514", "typeName": "股票" },
+    ],
+    newsList: [],
+    newsPage: 1,
+    newsNext: true,
     dynamicList: [],
     // 发动态
     developmentTrend: '',
@@ -58,7 +74,6 @@ Page({
     // this.setData({footerActive: 1})
     this.getMineInfo()
     this.getDynamicList()
-    this.getNewsTypes()
   },
 
   //  ------ 首页模块 ------
@@ -105,16 +120,22 @@ Page({
   },
 
   // ------ 发现模块 ------
+  // 切换tabs类型
   findChange: function (e) {
+    let index = e.detail.index
     this.setData({
-      findtype: e.detail.index
+      findtype: index,
+      newsPage: 1,
+      newsList: [],
+      newsNext: true
     })
-    if (e.detail.index > 0) {
-      let typeId = this.data.typeList[e.detail.index].typeId
-      this.getNewsList(typeId)
+    if (index > 0) {
+      this.data.typeId = this.data.typeList[index].typeId
+      this.getNewsList()
     }
+    
   },
-  // 动态列表
+  // 同城动态列表
   getDynamicList: function () {
     esRequest('dynamic_list').then(res => {
       if (res && res.data.code == 0) {
@@ -130,38 +151,39 @@ Page({
       }
     })
   },
-  // 新闻类型
-  getNewsTypes: function () {
-    esRequest('news_types').then(res => {
-      if (res && res.data.code == 1) {
-        this.setData({
-          typeList: res.data.data
-        })
-      } else {
-        Toast.fail('系统错误')
-      }
+  // 同城动态详情
+  getDynamicDetalis: function (e) {
+    wx.navigateTo({
+      url: '/pages/dynamicModule/dynamicDetails/dynamicDetails?id=' + e.currentTarget.dataset.item.id
     })
   },
   // 新闻列表
   getNewsList: function (typeId) {
     let data = {
-      typeId: typeId,
-      page: 1
+      typeId: this.data.typeId,
+      page: this.data.newsPage
     }
     esRequest('news_list', data).then(res => {
       if (res && res.data.code == 1) {
         this.setData({
-          newsList: res.data.data
+          newsList: this.data.newsList.concat(res.data.data)
         })
       } else {
-        Toast.fail('系统错误')
+        this.data.newsNext = false
       }
     })
   },
-  // 动态详情
-  getDynamicDetalis: function (e) {
+  // 新闻触底函数
+  onScrollBottom: function () {
+    if (this.data.newsNext) {
+      this.data.newsPage += 1
+      this.getNewsList()
+    }
+  },
+  // 新闻详情
+  getNewsDetalis: function (e) {
     wx.navigateTo({
-      url: '/pages/dynamicModule/dynamicDetails/dynamicDetails?id=' + e.currentTarget.dataset.item.id
+      url: '/pages/dynamicModule/newsDetails/newsDetails?newsId=' + e.currentTarget.dataset.item.newsId
     })
   },
 
@@ -176,7 +198,6 @@ Page({
       selectedExpression: e.currentTarget.dataset.item.id
     })
   },
-
 
   // ------ 消息模块 ------
   // 消息tabs切换
@@ -249,3 +270,13 @@ Page({
     })
   }
 })
+// 新闻类型
+// getNewsTypes: function () {
+//   esRequest('news_types').then(res => {
+//     if (res && res.data.code == 1) {
+//       console.log(res.data.data)
+//     } else {
+//       Toast.fail('系统错误')
+//     }
+//   })
+// },

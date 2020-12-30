@@ -213,7 +213,6 @@
 <!-- 发现 -->
 <view wx:if="{{footerActive === 1}}" class="bs_bb" style="height: {{windowHeight-50}}px;">
   <van-tabs active="{{findtype}}" bind:change="findChange">
-    <van-tab title="同城"></van-tab>
     <van-tab wx:for="{{typeList}}" wx:key="index" title="{{item.typeName}}"></van-tab>
   </van-tabs>
   <view wx:if="{{findtype == 0}}" class="oy_a bs_bb p_10" style="height: {{windowHeight-114}}px;">
@@ -237,9 +236,17 @@
       </view>
     </view>
   </view>
-  <view wx:if="{{findtype != 0}}" class="oy_a bs_bb p_10" style="height: {{windowHeight-114}}px;">
-  111
-  </view>
+  <scroll-view wx:if="{{findtype != 0}}" scroll-y="true" bindscrolltolower="onScrollBottom" class="bs_bb p_10 " style="height: {{windowHeight-114}}px;">
+    <view wx:for="{{newsList}}" wx:key="index" class="find_news" bindtap="getNewsDetalis" data-item="{{item}}">
+      <view class="find_news_img">
+        <image src="{{item.imgList[0]}}" class="w_h_100"></image>
+      </view>
+      <view class="find_news_title" style="width: {{windowWidth-100}}px;">
+        <text class="to_2" style="height: 70px;">{{item.title}}</text>
+        <!-- <text class="find_news_time">{{item.postTime}}</text> -->
+      </view>
+    </view>
+  </scroll-view>
 </view>
 
 <!-- 消息 -->
