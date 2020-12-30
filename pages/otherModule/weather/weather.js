@@ -223,12 +223,11 @@ Page({
         }
       }
     });
+  },
+
+  // 切换城市
+  dropChange: function (e) {
+    console.log(e)
   }
 })
 
-// temp  	温度值
-// weather  	天气描述，具体描述请查看附件，天气描述清单
-// windDirection  	风向描述，具体描述请查看附件，风向表清单
-// windPower  	风力描述，具体描述请查看附件，风力表清单
-// humidity  	湿度值
-// reportTime  	此次天气发布时间
