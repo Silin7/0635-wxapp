@@ -34,7 +34,7 @@ Page({
 
   onShow: function () {
     this.weatherCurrent()
-    this.waitForecast()
+    // this.waitForecast()
   },
 
   async waitForecast () {
@@ -139,7 +139,7 @@ Page({
     })
   },
 
-  // 图标信息
+  // 图表信息
   getServerData: function () {
     let data = {
       position: this.data.position
@@ -186,7 +186,7 @@ Page({
     })
   },
 
-  // 绘图
+  // 绘制图表
   showColumn(canvasId, chartData) {
     canvaColumn = new uCharts({
       $this: _self,
@@ -223,11 +223,6 @@ Page({
         }
       }
     });
-  },
-
-  // 切换城市
-  dropChange: function (e) {
-    console.log(e)
   }
 })
 

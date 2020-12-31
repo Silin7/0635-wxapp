@@ -1,31 +1,31 @@
 <van-toast id="van-toast" />
 
+<view class="t_weather">
+  <view class="weather_reportTime">气象数据最近更新时间：{{current.reportTime}}</view>
+  <view class="weather_img">
+    <view class="weather_img_box">
+      <image src="{{weatherImg}}" class="w_h_100"></image>
+    </view>
+  </view>
+  <view class="weather_temp m_t_20">{{current.temp}}</view>
+  <view class="weather_item">
+    <view class="weather_item_img">
+      <image src="/images/otherMoudle/weather_fx.png" class="w_h_100"></image>
+    </view>
+    <text class="m_l_20 weather_item_txt">风向：{{current.windDirection}}</text>
+  </view>
+  <view class="weather_item">
+    <view class="weather_item_img">
+      <image src="/images/otherMoudle/weather_fl.png" class="w_h_100"></image>
+    </view>
+    <text class="m_l_20 weather_item_txt">风力：{{current.windPower}}</text>
+  </view>
+  <view class="weather_item">
+    <view class="weather_item_img">
+      <image src="/images/otherMoudle/weather_sd.png" class="w_h_100"></image>
+    </view>
+    <text class="m_l_20 weather_item_txt">湿度：{{current.humidity}}</text>
+  </view>
+</view>
 
-<image src="{{weatherImg}}"></image>
-<view>{{current.temp}}</view>
-<view>{{current.weather}}</view>
-<view>{{current.windDirection}}</view>
-<view>{{current.windPower}}</view>
-<view>{{current.humidity}}</view>
-<view>{{current.reportTime}}</view>
-
-<canvas canvas-id="canvasColumn" id="canvasColumn" class="charts" bindtouchstart="touchColumn"></canvas>
-<canvas canvas-id="canvasColumn2" id="canvasColumn2" class="charts" bindtouchstart="touchColumn"></canvas>
-
-<!-- 
-temp  	温度值
-weather  	天气描述，具体描述请查看附件，天气描述清单
-windDirection  	风向描述，具体描述请查看附件，风向表清单
-windPower  	风力描述，具体描述请查看附件，风力表清单
-humidity  	湿度值
-reportTime  	此次天气发布时间 
-
-"address": "广东省 深圳市",
-"cityCode": "440300",
-"temp": "18℃",
-"weather": "小雨",
-"windDirection": "东北",
-"windPower": "≤3级",
-"humidity": "92%",
-"reportTime": "2018-11-27 22:40:53"
--->
+<!-- <canvas canvas-id="canvasColumn" id="canvasColumn" class="charts" bindtouchstart="touchColumn"></canvas> -->
