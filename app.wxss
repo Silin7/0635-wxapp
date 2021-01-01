@@ -6,6 +6,7 @@
 @import "./styleSheet/mrpd.wxss";
 @import "./styleSheet/overflow.wxss";
 @import "./styleSheet/text.wxss";
+@import "./styleSheet/vant.wxss";
 @import "./styleSheet/w_h.wxss";
 .container {
   height: 100%;

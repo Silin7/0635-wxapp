@@ -20,24 +20,6 @@ Page({
       { name: '测试', image: '/images/homeMoudle/banner_xq.jpg', id: 'icon04' },
     ],
     // 发现模块
-    findtype: 0,
-    typeId: '',
-    typeList: [
-      { "typeId": "001", "typeName": "同城" },
-      { "typeId": "521", "typeName": "头条" },
-      { "typeId": "515", "typeName": "游戏" },
-      { "typeId": "520", "typeName": "娱乐" },
-      { "typeId": "510", "typeName": "科技" },
-      { "typeId": "511", "typeName": "军事" },
-      { "typeId": "509", "typeName": "财经" },
-      { "typeId": "519", "typeName": "体育" },
-      { "typeId": "513", "typeName": "NBA" },
-      { "typeId": "516", "typeName": "健康" },
-      { "typeId": "514", "typeName": "股票" },
-    ],
-    newsList: [],
-    newsPage: 1,
-    newsNext: true,
     dynamicList: [],
     // 发动态
     developmentTrend: '',
@@ -120,21 +102,6 @@ Page({
   },
 
   // ------ 发现模块 ------
-  // 切换tabs类型
-  findChange: function (e) {
-    let index = e.detail.index
-    this.setData({
-      findtype: index,
-      newsPage: 1,
-      newsList: [],
-      newsNext: true
-    })
-    if (index > 0) {
-      this.data.typeId = this.data.typeList[index].typeId
-      this.getNewsList()
-    }
-    
-  },
   // 同城动态列表
   getDynamicList: function () {
     esRequest('dynamic_list').then(res => {
@@ -157,36 +124,7 @@ Page({
       url: '/pages/dynamicModule/dynamicDetails/dynamicDetails?id=' + e.currentTarget.dataset.item.id
     })
   },
-  // 新闻列表
-  getNewsList: function (typeId) {
-    let data = {
-      typeId: this.data.typeId,
-      page: this.data.newsPage
-    }
-    esRequest('news_list', data).then(res => {
-      if (res && res.data.code == 1) {
-        this.setData({
-          newsList: this.data.newsList.concat(res.data.data)
-        })
-      } else {
-        this.data.newsNext = false
-      }
-    })
-  },
-  // 新闻触底函数
-  onScrollBottom: function () {
-    if (this.data.newsNext) {
-      this.data.newsPage += 1
-      this.getNewsList()
-    }
-  },
-  // 新闻详情
-  getNewsDetalis: function (e) {
-    wx.navigateTo({
-      url: '/pages/dynamicModule/newsDetails/newsDetails?newsId=' + e.currentTarget.dataset.item.newsId
-    })
-  },
-
+  
   // ------ 发动态 ------
   // 发表
   onClickRight() {

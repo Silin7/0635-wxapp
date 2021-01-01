@@ -1,0 +1,4 @@
+/* 导航栏 */
+.van-tabs__line {
+  background-color: #4545FF !important;
+}

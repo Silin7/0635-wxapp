@@ -211,42 +211,26 @@
 </view>
 
 <!-- 发现 -->
-<view wx:if="{{footerActive === 1}}" class="bs_bb" style="height: {{windowHeight-50}}px;">
-  <van-tabs active="{{findtype}}" bind:change="findChange">
-    <van-tab wx:for="{{typeList}}" wx:key="index" title="{{item.typeName}}"></van-tab>
-  </van-tabs>
-  <view wx:if="{{findtype == 0}}" class="oy_a bs_bb p_10" style="height: {{windowHeight-114}}px;">
-    <view class="sub_module1_fd m_t_10" wx:for="{{dynamicList}}" wx:key="index">
-      <view class="sub_module1_img_fd">
-        <image src="{{item.author_avatarUrl}}" class="w_h_100"></image>
+<view wx:if="{{footerActive === 1}}" class="bs_bb oy_a p_10" style="height: {{windowHeight-50}}px;">
+  <view class="sub_module1_fd m_t_10" wx:for="{{dynamicList}}" wx:key="index">
+    <view class="sub_module1_img_fd">
+      <image src="{{item.author_avatarUrl}}" class="w_h_100"></image>
+    </view>
+    <view class="sub_module1_info_fd" style="width: {{windowWidth-70}}px;">
+      <view class=" to_1 fs_16 fw_7 sub_module1_info_fd_id_box">
+        <text>{{item.author_name}}</text>
+        <wxs module="filter" src="../../../utils/filter.wxs"></wxs>
+        <text class="sub_module1_info_fd_id_car m_l_10 fs_12">{{filter.licensePlate(item.author_id)}}</text>
       </view>
-      <view class="sub_module1_info_fd" style="width: {{windowWidth-70}}px;">
-        <view class=" to_1 fs_16 fw_7 sub_module1_info_fd_id_box">
-          <text>{{item.author_name}}</text>
-          <wxs module="filter" src="../../../utils/filter.wxs"></wxs>
-          <text class="sub_module1_info_fd_id_car m_l_10 fs_12">{{filter.licensePlate(item.author_id)}}</text>
-        </view>
-        <view class="rich_text_fd m_t_10 p_r_5 fs_16 co_6 ti_20 oy_h" style="width: {{windowWidth-70}}px;" bindtap="getDynamicDetalis" data-item="{{item}}">
-          <rich-text nodes="{{item.content}}"></rich-text>
-        </view>
-        <view class="m_t_10 w_100 co_9 fx_r_b_c p_r_10">
-          <text class="fs_13">{{item.create_time}}</text>
-          <text class='dialog-close see_details_fd' decode='true' bindtap="getDynamicDetalis" data-item="{{item}}">查看详情&gt;</text>
-        </view>
+      <view class="rich_text_fd m_t_10 p_r_5 fs_16 co_6 ti_20 oy_h" style="width: {{windowWidth-70}}px;" bindtap="getDynamicDetalis" data-item="{{item}}">
+        <rich-text nodes="{{item.content}}"></rich-text>
+      </view>
+      <view class="m_t_10 w_100 co_9 fx_r_b_c p_r_10">
+        <text class="fs_13">{{item.create_time}}</text>
+        <text class='dialog-close see_details_fd' decode='true' bindtap="getDynamicDetalis" data-item="{{item}}">查看详情&gt;</text>
       </view>
     </view>
   </view>
-  <scroll-view wx:if="{{findtype != 0}}" scroll-y="true" bindscrolltolower="onScrollBottom" class="bs_bb p_10 " style="height: {{windowHeight-114}}px;">
-    <view wx:for="{{newsList}}" wx:key="index" class="find_news" bindtap="getNewsDetalis" data-item="{{item}}">
-      <view class="find_news_img">
-        <image src="{{item.imgList[0]}}" class="w_h_100"></image>
-      </view>
-      <view class="find_news_title" style="width: {{windowWidth-100}}px;">
-        <text class="to_2" style="height: 70px;">{{item.title}}</text>
-        <!-- <text class="find_news_time">{{item.postTime}}</text> -->
-      </view>
-    </view>
-  </scroll-view>
 </view>
 
 <!-- 消息 -->

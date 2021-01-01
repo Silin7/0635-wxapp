@@ -1,0 +1,17 @@
+<van-toast id="van-toast" />
+
+<van-tabs active="{{findtype}}" bind:change="findChange">
+  <van-tab wx:for="{{typeList}}" wx:key="index" title="{{item.typeName}}"></van-tab>
+</van-tabs>
+
+<scroll-view scroll-y="true" bindscrolltolower="onScrollBottom" class="bs_bb p_10 " style="height: {{windowHeight-44}}px;">
+  <view wx:for="{{newsList}}" wx:key="index" class="find_news" bindtap="getNewsDetalis" data-item="{{item}}">
+    <view class="find_news_img">
+      <image src="{{item.imgList[0]}}" class="w_h_100"></image>
+    </view>
+    <view class="find_news_title" style="width: {{windowWidth-100}}px;">
+      <text class="to_2" style="height: 70px;">{{item.title}}</text>
+      <!-- <text class="find_news_time">{{item.postTime}}</text> -->
+    </view>
+  </view>
+</scroll-view>
