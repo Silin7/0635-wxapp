@@ -1,4 +1,3 @@
-/* 子模块03 */
 .sub_module2 {
   padding: 10px;
   display: flex;

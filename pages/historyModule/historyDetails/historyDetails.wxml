@@ -1,16 +1,49 @@
 <van-toast id="van-toast" />
 
 <view class="bg_F5 bs_bb oy_a" style="height: {{windowHeight}}px; ">
-  <!-- 景区图片 -->
+  <!-- 图片 -->
   <view class="scenic_img_box">
     <image src="{{cityDetails.city_image}}" class="w_h_100"></image>
   </view>
+  <!-- 简介 -->
   <view class="scenic_info_box">
-    <view class="scenic_info_item scenic_info_name">
+    <view class="scenic_info_item">
       <text class="co_0">{{cityDetails.city_name}}</text>
     </view>
-    <view class="scenic_details_box" style="min-height: {{windowHeight-475}}px;">
-      <rich-text nodes="{{cityDetails.famous_people}}"></rich-text>
+    <view class="scenic_details_box" wx:if="{{cityDetails.county_annals}}">
+      <view class="scenic_details_title">县志</view>
+      <rich-text class="scenic_details_node" nodes="{{cityDetails.county_annals}}"></rich-text>
+    </view>
+    <view class="scenic_details_box" wx:if="{{cityDetails.leader}}">
+      <view class="scenic_details_title">领导人</view>
+      <rich-text class="scenic_details_node" nodes="{{cityDetails.leader}}"></rich-text>
+    </view>
+    <view class="scenic_details_box" wx:if="{{cityDetails.origin_name}}">
+      <view class="scenic_details_title">名称由来</view>
+      <rich-text class="scenic_details_node" nodes="{{cityDetails.origin_name }}"></rich-text>
+    </view>
+    <view class="scenic_details_box" wx:if="{{cityDetails.historical_evolution}}">
+      <view class="scenic_details_title">历史沿革</view>
+      <rich-text class="scenic_details_node" nodes="{{cityDetails.historical_evolution}}"></rich-text>
+    </view>
+    <view class="scenic_details_box" wx:if="{{cityDetails.administrative_division}}">
+      <view class="scenic_details_title">行政区划</view>
+      <rich-text class="scenic_details_node" nodes="{{cityDetails.administrative_division}}"></rich-text>
+    </view>
+    <view class="scenic_details_box" wx:if="{{cityDetails.famous_people}}">
+      <view class="scenic_details_title">著名人物</view>
+      <rich-text class="scenic_details_node" nodes="{{cityDetails.famous_people}}"></rich-text>
     </view>
   </view>
 </view>
+
+<!-- <div style="display: flex; justify-content: space-between; align-items: center;">
+  <div style="width: 30%; display: flex; justify-content: center; align-items: center; font-weight: 700;">区长</div>
+  <div style="width: 30%; display: flex; justify-content: center; align-items: center; font-weight: 700;">区委书记</div>
+  <div style="width: 30%; display: flex; justify-content: center; align-items: center; font-weight: 700;">区委副书记</div>
+</div>
+<div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
+  <div style="width: 30%; display: flex; justify-content: center; align-items: center;">荣红智</div>
+  <div style="width: 30%; display: flex; justify-content: center; align-items: center;">刘培国</div>
+  <div style="width: 30%; display: flex; justify-content: center; align-items: center;">毕黎明</div>
+</div> -->

@@ -1,6 +1,3 @@
-import esRequest from '../../../utils/esRequest';
-import Toast from '../../../miniprogram_npm/vant-weapp/toast/toast';
-
 Page({
   data: {
     windowWidth: 0,
@@ -28,6 +25,12 @@ Page({
   },
 
   onShow: function () {
-  }
+  },
 
+  // 历史详情
+  historyDetails: function (e) {
+    wx.navigateTo({
+      url: '/pages/historyModule/historyDetails/historyDetails?cityId=' + e.currentTarget.dataset.id
+    })
+  }
 })

@@ -10,7 +10,8 @@ Page({
   },
 
   onLoad: function (options) {
-    this.data.cityId = options.cityId ? options.cityId : '1001'
+    console.log(options.cityId)
+    this.data.cityId = options.cityId ? options.cityId : ''
   },
 
   onReady: function () {
@@ -24,7 +25,7 @@ Page({
     this.historicalEvolution()
   },
 
-  // xxx
+  // 本地历史
   historicalEvolution: function () {
     let data = {
       id: this.data.cityId
