@@ -5,9 +5,12 @@ Page({
   data: {
     windowWidth: 0,
     windowHeight: 0,
+    cityId: '',
+    cityDetails: {}
   },
 
   onLoad: function (options) {
+    this.data.cityId = options.cityId ? options.cityId : '1001'
   },
 
   onReady: function () {
@@ -18,15 +21,19 @@ Page({
   },
 
   onShow: function () {
+    this.historicalEvolution()
   },
 
   // xxx
-  xxx: function () {
+  historicalEvolution: function () {
     let data = {
+      id: this.data.cityId
     }
-    esRequest('xxx', data).then(res => {
-      if (res && res.data.state === 'success') {
-        console.log(res)
+    esRequest('historical_evolution', data).then(res => {
+      if (res && res.data.code == 0) {
+        this.setData({
+          cityDetails: res.data.data
+        })
       } else {
         Toast.fail('系统错误')
       }

@@ -1,1 +1,35 @@
-/* pages/historyModule/historyDetails/historyDetails.wxss */
+.scenic_img_box {
+  width: 100vw;
+  height: 280px;
+}
+.scenic_info_box {
+  box-sizing: border-box;
+  width: 100vw;
+  padding:10px 10px 5px;
+  background-color: #FFFFFF;
+  border-radius: 10px 10px 0px 0px;
+  position: absolute;
+  top: 260px;
+  z-index: 1;
+}
+
+.scenic_info_item {
+  height: 40px;
+  line-height: 40px;
+  color: #333333;
+}
+.scenic_info_name {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.scenic_details_box {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  background-color: #FFFFFF;
+  letter-spacing: 1px;
+}
