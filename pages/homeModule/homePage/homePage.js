@@ -20,6 +20,8 @@ Page({
       { name: '测试', image: '/images/homeMoudle/banner_xq.jpg', id: 'icon04' },
     ],
     // 发现模块
+    newsTypeList: [],
+    cityTypeList: [],
     dynamicList: [],
     // 发动态
     developmentTrend: '',
@@ -43,22 +45,27 @@ Page({
     // 我的模块
     mineDataForm: {},
   },
+
   onLoad: function (options) {
     this.data.id_key = wx.getStorageSync('id_key')
   },
+
   onReady: function () {
     this.setData({
       windowWidth: wx.getSystemInfoSync().windowWidth,
       windowHeight: wx.getSystemInfoSync().windowHeight
     })
   },
+
   onShow: function () {
     // this.setData({footerActive: 1})
+    this.getNewsType()
+    this.getCityType()
     this.getMineInfo()
     this.getDynamicList()
   },
 
-  //  ------ 首页模块 ------
+  /* ------ 首页模块 ------ */
   // 点击首页轮播图
   swiperTap: function (e) {
     console.log(e.currentTarget.dataset.item)
@@ -72,7 +79,7 @@ Page({
     }
   },
   // 底部导航切换
-  navChange(event) {
+  navChange: function (event) {
     this.setData({
       footerActive: event.detail
     })
@@ -86,14 +93,14 @@ Page({
         title: '发现' 
       })
     }
-    if (event.detail === 3) {
+    if (event.detail === 2) {
       wx.setNavigationBarTitle({
         title: '消息' 
       })
       this.getPerMessage()
       this.getSysMessage()
     }
-    if (event.detail === 4) {
+    if (event.detail === 3) {
       wx.setNavigationBarTitle({
         title: '我的' 
       })
@@ -101,7 +108,31 @@ Page({
     }
   },
 
-  // ------ 发现模块 ------
+  /* ------ 发现模块 ------ */
+  // 新闻类型列表
+  getNewsType: function () {
+    esRequest('admin_news_type').then(res => {
+      if (res && res.data.code == 0) {
+        this.setData({
+          newsTypeList: res.data.data
+        })
+      } else {
+        Toast.fail('系统错误')
+      }
+    })
+  },
+  // 县市类型列表
+  getCityType: function () {
+    esRequest('admin_city_type').then(res => {
+      if (res && res.data.code == 0) {
+        this.setData({
+          cityTypeList: res.data.data
+        })
+      } else {
+        Toast.fail('系统错误')
+      }
+    })
+  },
   // 同城动态列表
   getDynamicList: function () {
     esRequest('dynamic_list').then(res => {
@@ -125,7 +156,7 @@ Page({
     })
   },
   
-  // ------ 发动态 ------
+  /* ------ 发动态 ------ */
   // 发表
   onClickRight() {
     wx.showToast({ title: '点击发表', icon: 'none' });
@@ -137,7 +168,7 @@ Page({
     })
   },
 
-  // ------ 消息模块 ------
+  /* ------ 消息模块 ------ */
   // 消息tabs切换
   messageTabChange: function (e) {
     this.data.messageTab = e.detail.index
@@ -179,7 +210,7 @@ Page({
     })
   },
 
-  // ------ 我的模块 ------
+  /* ------ 我的模块 ------ */
   // 获取个人信息
   getMineInfo: function () {
     let data = {
@@ -208,13 +239,3 @@ Page({
     })
   }
 })
-// 新闻类型
-// getNewsTypes: function () {
-//   esRequest('news_types').then(res => {
-//     if (res && res.data.code == 1) {
-//       console.log(res.data.data)
-//     } else {
-//       Toast.fail('系统错误')
-//     }
-//   })
-// },
