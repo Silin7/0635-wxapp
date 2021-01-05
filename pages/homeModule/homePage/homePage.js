@@ -121,6 +121,13 @@ Page({
       }
     })
   },
+  // 新闻列表
+  newsList: function (e) {
+    console.log(e.currentTarget.dataset.item)
+    wx.navigateTo({
+      url: '/pages/dynamicModule/newsList/newsList?typeId=' + e.currentTarget.dataset.item.typeId
+    })
+  },
   // 县市类型列表
   getCityType: function () {
     esRequest('admin_city_type').then(res => {
@@ -132,6 +139,10 @@ Page({
         Toast.fail('系统错误')
       }
     })
+  },
+  // 县市新闻列表
+  cnewsList: function (e) {
+    console.log(e.currentTarget.dataset.item)
   },
   // 同城动态列表
   getDynamicList: function () {

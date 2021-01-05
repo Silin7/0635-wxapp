@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "",
+  "navigationBarTitleText": "新闻列表",
   "usingComponents": {
     "van-toast": "vant-weapp/toast/index",
     "van-tab": "vant-weapp/tab/index",

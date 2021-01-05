@@ -1,12 +1,12 @@
 {
   "pages":[
     "pages/homeModule/homePage/homePage",
+    "pages/dynamicModule/newsList/newsList",
+    "pages/dynamicModule/newsDetails/newsDetails",
     "pages/dynamicModule/dynamicList/dynamicList",
     "pages/dynamicModule/dynamicDetails/dynamicDetails",
     "pages/historyModule/historyList/historyList",
     "pages/historyModule/historyDetails/historyDetails",
-    "pages/dynamicModule/newsList/newsList",
-    "pages/dynamicModule/newsDetails/newsDetails",
     "pages/otherModule/weather/weather",
     "pages/otherModule/garbage/garbage",
     "pages/otherModule/jokesRandom/jokesRandom",
