@@ -218,9 +218,9 @@
   </view>
   <view class="n_sub_module1">
     <view class="n_sub_module1_item_fd_01" wx:for="{{newsTypeList}}" wx:key="index">
-      <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100" wx:if="{{item.typeId}}"></image>
-      <view class="n_item_banner_mask" wx:if="{{item.typeId}}" bindtap="newsList" data-item="{{item}}"></view>
-      <text class="n_item_banner_text1_fd" wx:if="{{item.typeId}}" bindtap="newsList" data-item="{{item}}">{{item.typeName}}</text>
+      <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100" wx:if="{{item.type_id}}"></image>
+      <view class="n_item_banner_mask" wx:if="{{item.type_id}}" bindtap="newsList" data-item="{{item}}"></view>
+      <text class="n_item_banner_text1_fd" wx:if="{{item.type_id}}" bindtap="newsList" data-item="{{item}}">{{item.type_name}}</text>
     </view>
   </view>
   <!-- 我的家乡 -->
@@ -229,9 +229,9 @@
   </view>
   <view class="n_sub_module1">
     <view class="n_sub_module1_item_fd" wx:for="{{cityTypeList}}" wx:key="index" bindtap="cnewsList" data-item="{{item}}">
-      <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100" wx:if="{{item.typeId}}"></image>
-      <view class="n_item_banner_mask" wx:if="{{item.typeId}}"></view>
-      <text class="n_item_banner_text1_fd" wx:if="{{item.typeId}}">{{item.typeName}}</text>
+      <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100" wx:if="{{item.type_id}}"></image>
+      <view class="n_item_banner_mask" wx:if="{{item.type_id}}"></view>
+      <text class="n_item_banner_text1_fd" wx:if="{{item.type_id}}">{{item.type_name}}</text>
     </view>
   </view>
   <!-- <view class="sub_module1_fd m_t_10" wx:for="{{dynamicList}}" wx:key="index">

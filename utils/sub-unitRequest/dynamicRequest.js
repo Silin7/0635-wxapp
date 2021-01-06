@@ -1,4 +1,9 @@
 let dynamicRequest = {
+  dynamic_news_list: {
+    apiMethod: 'GET',
+    apiName: '/dynamic/dynamic_news_list',
+    name: '县市新闻列表'
+  },
   dynamic_list: {
     apiMethod: 'GET',
     apiName: '/dynamic/dynamic_list',
