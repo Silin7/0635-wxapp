@@ -217,10 +217,10 @@
     <text class="fx_r_c_c fs_13 co_6 fw_7 ls_2">新闻分类</text>
   </view>
   <view class="n_sub_module1">
-    <view class="n_sub_module1_item_fd_01" wx:for="{{newsTypeList}}" wx:key="index" bindtap="newsList" data-item="{{item}}">
+    <view class="n_sub_module1_item_fd_01" wx:for="{{newsTypeList}}" wx:key="index">
       <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100" wx:if="{{item.typeId}}"></image>
-      <view class="n_item_banner_mask" wx:if="{{item.typeId}}"></view>
-      <text class="n_item_banner_text1_fd" wx:if="{{item.typeId}}">{{item.typeName}}</text>
+      <view class="n_item_banner_mask" wx:if="{{item.typeId}}" bindtap="newsList" data-item="{{item}}"></view>
+      <text class="n_item_banner_text1_fd" wx:if="{{item.typeId}}" bindtap="newsList" data-item="{{item}}">{{item.typeName}}</text>
     </view>
   </view>
   <!-- 我的家乡 -->

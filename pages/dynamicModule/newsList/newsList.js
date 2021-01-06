@@ -13,6 +13,11 @@ Page({
 
   onLoad: function (options) {
     this.data.typeId = options.typeId ? options.typeId : ''
+    if (options.typeName) {
+      wx.setNavigationBarTitle({
+        title: `${options.typeName}新闻`
+      })
+    }
   },
 
   onReady: function () {

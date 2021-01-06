@@ -2,10 +2,11 @@
 <scroll-view scroll-y="true" bindscrolltolower="onScrollBottom" class="bs_bb p_10 " style="height: {{windowHeight}}px;">
   <view wx:for="{{newsList}}" wx:key="index" class="find_news" bindtap="getNewsDetalis" data-item="{{item}}">
     <view class="find_news_img">
-      <image src="{{item.imgList[0]}}" class="w_h_100"></image>
+      <image wx:if="{{item.imgList[0]}}" src="{{item.imgList[0]}}" class="w_h_100"></image>
+      <image wx:else src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
     </view>
-    <view class="find_news_title" style="width: {{windowWidth-100}}px;">
-      <text class="to_2" style="height: 70px;">{{item.title}}</text>
+    <view style="width: {{windowWidth-100}}px;">
+      <view class="find_news_title to_2">{{item.title}}</view>
       <!-- <text class="find_news_time">{{item.postTime}}</text> -->
     </view>
   </view>

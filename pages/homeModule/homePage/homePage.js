@@ -125,7 +125,7 @@ Page({
   newsList: function (e) {
     console.log(e.currentTarget.dataset.item)
     wx.navigateTo({
-      url: '/pages/dynamicModule/newsList/newsList?typeId=' + e.currentTarget.dataset.item.typeId
+      url: '/pages/dynamicModule/newsList/newsList?typeId=' + e.currentTarget.dataset.item.typeId + '&typeName=' + e.currentTarget.dataset.item.typeName
     })
   },
   // 县市类型列表
