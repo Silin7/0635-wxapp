@@ -1,7 +1,8 @@
 {
   "pages":[
-    "pages/dynamicModule/cnewsList/cnewsList",
     "pages/homeModule/homePage/homePage",
+    "pages/dynamicModule/cnewsDetails/cnewsDetails",
+    "pages/dynamicModule/cnewsList/cnewsList",
     "pages/dynamicModule/newsList/newsList",
     "pages/dynamicModule/newsDetails/newsDetails",
     "pages/dynamicModule/dynamicList/dynamicList",

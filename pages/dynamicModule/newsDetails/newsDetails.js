@@ -11,7 +11,7 @@ Page({
   },
 
   onLoad: function (options) {
-    this.data.newsId = options.newsId ? options.newsId : 'FUU0C3L205118VMB'
+    this.data.newsId = options.newsId ? options.newsId : ''
   },
 
   onReady: function () {

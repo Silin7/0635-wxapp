@@ -123,9 +123,8 @@ Page({
   },
   // 新闻列表
   newsList: function (e) {
-    console.log(e.currentTarget.dataset.item)
     wx.navigateTo({
-      url: '/pages/dynamicModule/newsList/newsList?typeId=' + e.currentTarget.dataset.item.typeId + '&typeName=' + e.currentTarget.dataset.item.typeName
+      url: '/pages/dynamicModule/newsList/newsList?typeId=' + e.currentTarget.dataset.item.type_id + '&typeName=' + e.currentTarget.dataset.item.type_name
     })
   },
   // 县市类型列表
@@ -143,6 +142,9 @@ Page({
   // 县市新闻列表
   cnewsList: function (e) {
     console.log(e.currentTarget.dataset.item)
+    wx.navigateTo({
+      url: '/pages/dynamicModule/cnewsList/cnewsList?typeId=' + e.currentTarget.dataset.item.type_id + '&typeName=' + e.currentTarget.dataset.item.type_name
+    })
   },
   // 同城动态列表
   getDynamicList: function () {

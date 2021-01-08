@@ -10,7 +10,7 @@ Page({
   },
 
   onLoad: function (options) {
-    this.data.typeId = options.typeId ? options.typeId : '1001'
+    this.data.typeId = options.typeId ? options.typeId : ''
     if (options.typeName) {
       wx.setNavigationBarTitle({
         title: `${options.typeName}新闻`
@@ -48,7 +48,7 @@ Page({
   // 新闻详情
   getNewsDetalis: function (e) {
     wx.navigateTo({
-      url: '/pages/dynamicModule/newsDetails/newsDetails?newsId=' + e.currentTarget.dataset.item.newsId
+      url: '/pages/dynamicModule/newsDetails/newsDetails?newsId=' + e.currentTarget.dataset.item.id
     })
   }
 })
