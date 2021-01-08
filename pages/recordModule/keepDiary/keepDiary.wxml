@@ -1,0 +1,6 @@
+<van-toast id="van-toast" />
+
+<van-cell title="选择单个日期" value="{{diary_time}}" bind:click="dataTap" />
+<component-dateTimePicker bind:confirmDate="confirmDate" overlayShow="{{time_show}}" dateType="datetime" currentDate="{{currentDate}}"/>
+<van-cell title="选择天气" value="{{weather}}" bind:click="weatherTap" />
+<component-choosePicker bind:confirmItem="confirmItem" overlayShow="{{pickerShow}}" pickerTitle="{{pickerTitle}}" dataList="{{pickerList}}"/>

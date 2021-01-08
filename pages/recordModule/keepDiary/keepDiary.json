@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "",
+  "usingComponents": {
+    "van-toast": "vant-weapp/toast/index",
+    "van-cell": "vant-weapp/cell/index",
+    "van-calendar": "vant-weapp/calendar/index",
+    "component-choosePicker": "/pages/components/choosePicker/choosePicker",
+    "component-dateTimePicker": "/pages/components/dateTimePicker/dateTimePicker"
+  }
+}

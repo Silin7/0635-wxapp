@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/recordModule/keepDiary/keepDiary",
     "pages/homeModule/homePage/homePage",
     "pages/dynamicModule/cnewsDetails/cnewsDetails",
     "pages/dynamicModule/cnewsList/cnewsList",
@@ -20,12 +21,12 @@
     "pages/recipeModule/recipeDetail/recipeDetail",
     "pages/scenicModule/scenicList/scenicList",
     "pages/scenicModule/scenicDetails/scenicDetails",
-    "pages/loginModule/loginPage/loginPage",
     "pages/topicModule/topicList/topicList",
     "pages/messageModule/messageDetails/messageDetails",
     "pages/mineModule/personalCenter/personalCenter",
     "pages/mineModule/personalData/personalData",
     "pages/mineModule/myConcerns/myConcerns",
+    "pages/loginModule/loginPage/loginPage",
     "pages/loginModule/registerPage/registerPage",
     "pages/components/dateTimePicker/dateTimePicker",
     "pages/components/choosePicker/choosePicker",
