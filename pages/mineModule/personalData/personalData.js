@@ -23,9 +23,7 @@ Page({
     pickerTitle: '',
     pickerList: [],
     showDate: false,
-    currentDate: new Date(2000, 5, 15).getTime(),
-    minDate: new Date(1950, 12, 31).getTime(),
-    maxDate: new Date().getTime(),
+    currentDate: new Date(2000, 5, 15).getTime()
   },
   onLoad: function (options) {
     this.setData({

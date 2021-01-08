@@ -1,5 +1,5 @@
 <van-toast id="van-toast" position="middle" mask="{{true}}"/>
-<component-dateTimePicker bind:confirmDate="confirmDate" overlayShow="{{showDate}}" minDate="{{minDate}}" maxDate="{{maxDate}}" currentDate="{{currentDate}}"/>
+<component-dateTimePicker bind:confirmDate="confirmDate" overlayShow="{{showDate}}" currentDate="{{currentDate}}"/>
 <component-choosePicker bind:confirmItem="confirmItem" overlayShow="{{pickerShow}}" pickerTitle="{{pickerTitle}}" dataList="{{pickerList}}"/>
 
 <view class="personal_box">
