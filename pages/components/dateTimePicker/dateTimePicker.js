@@ -8,8 +8,6 @@ Component({
       type: String,
       value: 'date'
     },
-    minDate: Number,
-    maxDate: Number,
     currentDate: Number
   },
   
