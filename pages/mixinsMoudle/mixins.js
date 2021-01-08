@@ -7,8 +7,8 @@ var formatDate = function (date, type, connector) {
   var YY = date.getFullYear();
   var MM = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1);
   var DD = (date.getDate() < 10 ? '0' + (date.getDate()) : date.getDate());
-  var hh = (date.getHours() < 10 ? '0' + date.getHours() : date.getHours()) + ':';
-  var mm = (date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes()) + ':';
+  var hh = (date.getHours() < 10 ? '0' + date.getHours() : date.getHours());
+  var mm = (date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes());
   var ss = (date.getSeconds() < 10 ? '0' + date.getSeconds() : date.getSeconds());
   if (!type) {
     type = '03'
@@ -29,13 +29,16 @@ var formatDate = function (date, type, connector) {
     return YY + connector +  MM + connector +  DD + " " + hh;
   }
   if (type === '05') {
-    return YY + connector +  MM + connector +  DD + " " + hh + mm;
+    return YY + connector +  MM + connector +  DD + " " + hh + ':' + mm;
   }
   if (type === '06') {
-    return YY + connector +  MM + connector +  DD + " " + hh + mm + ss;
+    return YY + connector +  MM + connector +  DD + " " + hh + ':' + mm + ':' + ss;
   }
   if (type === '07') {
     return YY + '年' +  MM + '月' +  DD + '日';
+  }
+  if (type === '08') {
+    return YY + '年' +  MM + '月' +  DD + '日' + ' ' + hh + '点' +  mm + '分';
   }
 }
 // 手机号格式验证
