@@ -1,0 +1,14 @@
+<van-toast id="van-toast" />
+
+<view class="page_box bg_F5" style="height: {{windowHeight}}px;">
+  <view class="keep_diary">
+    <text bindtap="keepDiary">+写日记</text>
+  </view>
+  <view class="diary_item bg_F" wx:for="{{diaryList}}" wx:key="index" bindtap="diaryDetails" data-item="{{item}}">
+    <view class="item_top">
+      <text>{{item.diary_date}}</text>
+      <text>{{item.diary_weather}}</text>
+    </view>
+    <view class="item_content to_2">{{item.diary_content}}</view>
+  </view>
+</view>

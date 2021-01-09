@@ -33,6 +33,11 @@ Page({
         Toast.fail('系统错误')
       }
     })
+  },
+
+  // xxx
+  xxx: function (e) {
+    console.log(e.currentTarget.dataset.xxx)
   }
 
 })

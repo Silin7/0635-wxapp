@@ -1,21 +1,37 @@
 import mixins from '../../mixinsMoudle/mixins'
-// import esRequest from '../../../utils/esRequest';
-// import Toast from '../../../miniprogram_npm/vant-weapp/toast/toast';
+import esRequest from '../../../utils/esRequest';
+import Toast from '../../../miniprogram_npm/vant-weapp/toast/toast';
 
 Page({
   data: {
+    id_key: '',
     windowWidth: 0,
     windowHeight: 0,
+    type: '',
+    id: '',
     time_show: false,
     diary_time: '',
     currentDate: new Date().getTime(),
-    weather: '',
+    weather: '晴',
     pickerShow: false,
     pickerTitle: '',
     pickerList: [],
+    diary_content: '',
+    dataForm: {}
   },
 
   onLoad: function (options) {
+    this.data.id_key = wx.getStorageSync('id_key')
+    if (options.type) {
+      this.setData({
+        type: options.type,
+      })
+    }
+    if (options.id) {
+      this.setData({
+        id: options.id,
+      })
+    }
   },
 
   onReady: function () {
@@ -26,8 +42,13 @@ Page({
   },
 
   onShow: function () {
-    console.log('this.data.currentDate---->', this.data.currentDate)
-    
+    let date = {
+      detail: new Date().getTime()
+    }
+    this.confirmDate(date)
+    if (this.data.type === '01') {
+      this.diaryDetail()
+    }
   },
   
   // 弹出日期选择器
@@ -44,6 +65,7 @@ Page({
     })
   },
 
+  // 选择天气
   weatherTap: function () {
     this.setData({
       pickerShow: true,
@@ -51,41 +73,56 @@ Page({
       pickerList: ['晴', '阴', '多云', '雨', '雪', '雾', '霾', '浮尘', '扬沙', '沙尘暴', '台风']
     })
   },
-  // 选择天气
   confirmItem(event) {
     this.setData({
       weather: event.detail.value
     })
   },
 
-  // 日期处理函数
-  formatDate(date) {
-    date = new Date(date);
-    var tYear = date.getFullYear();
-    var tMonth = date.getMonth();
-    var tDate = date.getDate();
-    tMonth = this.add0MD(tMonth + 1);
-    tDate = this.add0MD(tDate);
-    return tYear + "-" + tMonth + "-" + tDate;
-  },
-  add0MD: function (MD) {
-    var key = MD;
-    if(MD.toString().length == 1){
-      key = "0" + MD;
-    }
-    return key;
+  // 写日记
+  diaryContent(event) {
+    this.setData({
+      diary_content: event.detail
+    })
   },
 
-  // xxx
-  // xxx: function () {
-  //   let data = {
-  //   }
-  //   esRequest('xxx', data).then(res => {
-  //     if (res && res.data.state === 'success') {
-  //       console.log(res)
-  //     } else {
-  //       Toast.fail('系统错误')
-  //     }
-  //   })
-  // }
+  // 日记详情
+  diaryDetail: function () {
+    let data = {
+      id: this.data.id
+    }
+    esRequest('diary_detail', data).then(res => {
+      if (res && res.data.code === 0) {
+        this.setData({
+          diary_time: res.data.data.diary_date,
+          weather: res.data.data.diary_weather,
+          diary_content: res.data.data.diary_content
+        })
+      } else {
+        Toast.fail('系统错误')
+      }
+    })
+  },
+
+  // 保存日记
+  keepDiary: function () {
+    let data = {
+      user_id: this.data.id_key,
+      diary_date: this.data.diary_time,
+      diary_weather: this.data.weather,
+      diary_content: this.data.diary_content
+    }
+    esRequest('keep_diary', data).then(res => {
+      if (res && res.data.code === 0) {
+        Toast.success('操作成功')
+        // setTimeout(() => {
+        //   wx.navigateBack({
+        //     delta: 1
+        //   })
+        // }, 2000)
+      } else {
+        Toast.fail('系统错误')
+      }
+    })
+  }
 })
