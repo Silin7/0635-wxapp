@@ -112,7 +112,7 @@ Page({
   // 新闻类型列表
   getNewsType: function () {
     esRequest('admin_news_type').then(res => {
-      if (res && res.data.code == 0) {
+      if (res && res.data.code === 0) {
         this.setData({
           newsTypeList: res.data.data
         })
@@ -130,7 +130,7 @@ Page({
   // 县市类型列表
   getCityType: function () {
     esRequest('admin_city_type').then(res => {
-      if (res && res.data.code == 0) {
+      if (res && res.data.code === 0) {
         this.setData({
           cityTypeList: res.data.data
         })
@@ -149,7 +149,7 @@ Page({
   // 同城动态列表
   getDynamicList: function () {
     esRequest('dynamic_list').then(res => {
-      if (res && res.data.code == 0) {
+      if (res && res.data.code === 0) {
         this.data.dynamicList = res.data.data
         this.data.dynamicList.forEach(item => {
           item.content = item.content.toString().replace(/\<img/gi, '<img style="max-width:100%; height:auto"')
@@ -192,7 +192,7 @@ Page({
       receiver_id: this.data.id_key
     }
     esRequest('permessage_list', data).then(res => {
-      if (res && res.data.code == 0) {
+      if (res && res.data.code === 0) {
         this.setData({
           perMessageList: res.data.data
         })
@@ -207,7 +207,7 @@ Page({
       receiver_id: this.data.id_key
     }
     esRequest('sysmessage_list', data).then(res => {
-      if (res && res.data.code == 0) {
+      if (res && res.data.code === 0) {
         this.setData({
           sysMessageList: res.data.data
         })
@@ -230,7 +230,7 @@ Page({
       id: this.data.id_key
     }
     esRequest('mine_info', data).then (res => {
-      if (res && res.data.code == 0) {
+      if (res && res.data.code === 0) {
         this.setData({
           mineDataForm: res.data.data
         })

@@ -44,7 +44,7 @@ Page({
       return
     }
     esRequest('sign_in', this.data).then(res => {
-      if (res && res.data.code == 0) {
+      if (res && res.data.code === 0) {
         wx.setStorageSync('id_key', res.data.data.id)
         Toast.success('登录成功')
         setTimeout(() => {

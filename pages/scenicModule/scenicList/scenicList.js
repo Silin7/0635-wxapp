@@ -43,7 +43,7 @@ Page({
       scenicspot_position: this.data.scenicspotPosition
     }
     esRequest('scenicspot_list', data).then(res => {
-      if (res && res.data.code == 0) {
+      if (res && res.data.code === 0) {
         this.setData({
           totalCount: res.data.totalCount,
           scenicSpotList: this.data.scenicSpotList.concat(res.data.data)

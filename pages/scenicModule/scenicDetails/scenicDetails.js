@@ -30,7 +30,7 @@ Page({
       id: this.data.scenicId
     }
     esRequest('scenicspot_info', data).then(res => {
-      if (res && res.data.code == 0) {
+      if (res && res.data.code === 0) {
         this.setData({
           scenicDetails: res.data.data
         })
@@ -46,7 +46,7 @@ Page({
       followers_id: this.data.id_key,
     }
     esRequest('is_follow_scenicspot', data).then(res => {
-      if (res && res.data.code == 0) {
+      if (res && res.data.code === 0) {
         this.setData({
           isFollow: res.data.type
         })
@@ -64,7 +64,7 @@ Page({
       scenicSpot_img: this.data.scenicDetails.scenicSpot_img
     }
     esRequest('follow_scenicspot', data).then(res => {
-      if (res && res.data.code == 0) {
+      if (res && res.data.code === 0) {
         Toast.success('打卡成功')
         this.isPunchClock()
       } else {
@@ -80,7 +80,7 @@ Page({
       scenicSpot_id: this.data.scenicDetails.id
     }
     esRequest('cancel_scenicspot', data).then(res => {
-      if (res && res.data.code == 0) {
+      if (res && res.data.code === 0) {
         Toast.success('取消打卡')
         this.isPunchClock()
       } else {

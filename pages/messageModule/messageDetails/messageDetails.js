@@ -33,7 +33,7 @@ Page({
       id: this.data.messageId
     }
     esRequest('permessage_details', data).then(res => {
-      if (res && res.data.code == 0) {
+      if (res && res.data.code === 0) {
         this.setData({
           messageData: res.data.data,
           sysmessage_details: res.data.data.message_content.toString().replace(/\<img/gi, '<img style="max-width:100%; height:auto"')
@@ -50,7 +50,7 @@ Page({
       id: this.data.messageId
     }
     esRequest('sysmessage_details', data).then(res => {
-      if (res && res.data.code == 0) {
+      if (res && res.data.code === 0) {
         this.setData({
           messageData: res.data.data,
           sysmessage_details: res.data.data.message_details.toString().replace(/\<img/gi, '<img style="max-width:100%; height:auto"')

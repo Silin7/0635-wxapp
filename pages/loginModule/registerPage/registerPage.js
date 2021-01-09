@@ -105,9 +105,9 @@ Page({
           gender: this.data.gender,
           avatarUrl: this.data.avatarUrl
         }
-        if (res && res.data.code == 0) {
+        if (res && res.data.code === 0) {
           esRequest('register_inster', data2).then(res => {
-            if (res && res.data.code == 0) {
+            if (res && res.data.code === 0) {
               Toast.success('注册成功')
               setTimeout(() => {
                 wx.redirectTo({
@@ -129,7 +129,7 @@ Page({
         state: '1'
       }
       esRequest('is_register', data1).then(res => {
-        if (res && res.data.code == 0) {
+        if (res && res.data.code === 0) {
           this.data.id = res.data.data.id
           let data2 = {
             id: res.data.data.id,
@@ -137,7 +137,7 @@ Page({
             password: this.data.password,
           }
           esRequest('change_password', data2).then(res => {
-            if (res && res.data.code == 0) {
+            if (res && res.data.code === 0) {
               Toast.success('修改成功')
               setTimeout(() => {
                 wx.redirectTo({

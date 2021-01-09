@@ -35,7 +35,7 @@ Page({
       type_id: this.data.typeId,
     }
     esRequest('dynamic_news_list', data).then(res => {
-      if (res && res.data.code == 0) {
+      if (res && res.data.code === 0) {
         this.setData({
           newsList: res.data.data
         })

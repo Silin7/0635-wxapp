@@ -31,7 +31,7 @@ Page({
       id: this.data.cityId
     }
     esRequest('historical_evolution', data).then(res => {
-      if (res && res.data.code == 0) {
+      if (res && res.data.code === 0) {
         this.setData({
           cityDetails: res.data.data
         })

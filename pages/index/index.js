@@ -3,11 +3,13 @@
 
 Page({
   data: {
+    id_key: '',
     windowWidth: 0,
     windowHeight: 0,
   },
 
   onLoad: function (options) {
+    this.data.id_key = wx.getStorageSync('id_key')
   },
 
   onReady: function () {
@@ -25,7 +27,7 @@ Page({
     let data = {
     }
     esRequest('xxx', data).then(res => {
-      if (res && res.data.state === 'success') {
+      if (res && res.data.code === 0) {
         console.log(res)
       } else {
         Toast.fail('系统错误')

@@ -27,7 +27,7 @@ Page({
       id: this.data.messageId
     }
     esRequest('dynamic_details', data).then(res => {
-      if (res && res.data.code == 0) {
+      if (res && res.data.code === 0) {
         this.setData({
           authorData: res.data.data,
           dynamic_details: res.data.data.content.toString().replace(/\<img/gi, '<img style="max-width:100%; height:auto"')

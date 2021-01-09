@@ -42,7 +42,7 @@ Page({
           aim: res.data.data.aim,
           recommendList: res.data.data.recommendList
         })
-      } else if (res && res.data.code == 0) {
+      } else if (res && res.data.code === 0) {
         this.setData({
           flag: false,
           msg: res.data.msg

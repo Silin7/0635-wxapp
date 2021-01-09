@@ -28,7 +28,7 @@ Page({
       id: wx.getStorageSync('id_key')
     }
     esRequest('mine_info', data).then (res => {
-      if (res && res.data.code == 0) {
+      if (res && res.data.code === 0) {
         this.setData({
           dataForm: res.data.data
         })
