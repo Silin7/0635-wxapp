@@ -3,7 +3,7 @@
   <view wx:for="{{newsList}}" wx:key="index" class="find_news" bindtap="getNewsDetalis" data-item="{{item}}">
     <view class="find_news_img">
       <image wx:if="{{item.news_image}}" src="{{item.news_image}}" class="w_h_100"></image>
-      <image wx:else src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
+      <image wx:else src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
     </view>
     <view style="width: {{windowWidth-100}}px;">
       <view class="find_news_title to_2">{{item.news_title}}</view>

@@ -56,43 +56,43 @@ Page({
         for (let i = 0; i < array.length; i++) {
           if (array[i] == '转') {
             this.setData({
-              weatherImg: '/images/otherMoudle/weather_zhuan.png'
+              weatherImg: '/images/otherModule/weather_zhuan.png'
             })
             continue;
           }
           if (array[i] == '晴') {
             this.setData({
-              weatherImg: '/images/otherMoudle/weather_qing.png'
+              weatherImg: '/images/otherModule/weather_qing.png'
             })
             continue;
           }
           if (array[i] == '阴') {
             this.setData({
-              weatherImg: '/images/otherMoudle/weather_yin.png'
+              weatherImg: '/images/otherModule/weather_yin.png'
             })
             continue;
           }
           if (array[i] == '雾') {
             this.setData({
-              weatherImg: '/images/otherMoudle/weather_wu.png'
+              weatherImg: '/images/otherModule/weather_wu.png'
             })
             continue;
           }
           if (array[i] == '雨') {
             this.setData({
-              weatherImg: '/images/otherMoudle/weather_yu.png'
+              weatherImg: '/images/otherModule/weather_yu.png'
             })
             continue;
           }
           if (array[i] == '雪') {
             this.setData({
-              weatherImg: '/images/otherMoudle/weather_xue.png'
+              weatherImg: '/images/otherModule/weather_xue.png'
             })
             continue;
           }
           if (array[i] == '云') {
             this.setData({
-              weatherImg: '/images/otherMoudle/weather_yun.png'
+              weatherImg: '/images/otherModule/weather_yun.png'
             })
             continue;
           }

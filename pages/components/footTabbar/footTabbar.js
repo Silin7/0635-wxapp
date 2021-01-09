@@ -12,16 +12,16 @@ Component({
   
   data: {
     footerIcon: {
-      home_normal: '/images/homeMoudle/home_normal.png',
-      home_active: '/images/homeMoudle/home_active.png',
-      compass_normal: '/images/homeMoudle/compass_normal.png',
-      compass_active: '/images/homeMoudle/compass_active.png',
-      release_normal: '/images/homeMoudle/release_normal.png',
-      release_active: '/images/homeMoudle/release_active.png',
-      news_normal: '/images/homeMoudle/news_normal.png',
-      news_active: '/images/homeMoudle/news_active.png',
-      mine_normal: '/images/homeMoudle/mine_normal.png',
-      mine_active: '/images/homeMoudle/mine_active.png',
+      home_normal: '/images/homeModule/home_normal.png',
+      home_active: '/images/homeModule/home_active.png',
+      compass_normal: '/images/homeModule/compass_normal.png',
+      compass_active: '/images/homeModule/compass_active.png',
+      release_normal: '/images/homeModule/release_normal.png',
+      release_active: '/images/homeModule/release_active.png',
+      news_normal: '/images/homeModule/news_normal.png',
+      news_active: '/images/homeModule/news_active.png',
+      mine_normal: '/images/homeModule/mine_normal.png',
+      mine_active: '/images/homeModule/mine_active.png',
     }
   },
 

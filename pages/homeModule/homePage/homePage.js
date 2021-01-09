@@ -9,15 +9,15 @@ Page({
     footerActive: 0,
     overlayShow: true,
     swiperList: [
-      { id: 'swiper01', image: '/images/homeMoudle/swiper_02.jpg' },
-      { id: 'swiper02', image: '/images/homeMoudle/swiper_02.jpg' },
-      { id: 'swiper03', image: '/images/homeMoudle/swiper_02.jpg' }
+      { id: 'swiper01', image: '/images/homeModule/swiper_02.jpg' },
+      { id: 'swiper02', image: '/images/homeModule/swiper_02.jpg' },
+      { id: 'swiper03', image: '/images/homeModule/swiper_02.jpg' }
     ],
     iconList: [
-      { name: '测试', image: '/images/homeMoudle/banner_xq.jpg', id: 'icon01' },
-      { name: '测试', image: '/images/homeMoudle/banner_xq.jpg', id: 'icon02' },
-      { name: '测试', image: '/images/homeMoudle/banner_xq.jpg', id: 'icon03' },
-      { name: '测试', image: '/images/homeMoudle/banner_xq.jpg', id: 'icon04' },
+      { name: '测试', image: '/images/homeModule/banner_xq.jpg', id: 'icon01' },
+      { name: '测试', image: '/images/homeModule/banner_xq.jpg', id: 'icon02' },
+      { name: '测试', image: '/images/homeModule/banner_xq.jpg', id: 'icon03' },
+      { name: '测试', image: '/images/homeModule/banner_xq.jpg', id: 'icon04' },
     ],
     // 发现模块
     newsTypeList: [],
@@ -27,16 +27,16 @@ Page({
     developmentTrend: '',
     selectedExpression: 'expression01',
     expressionList_t: [
-      { name: '测试', expression_image: '/images/homeMoudle/banner_xq.jpg', id: 'expression01' },
-      { name: '测试', expression_image: '/images/homeMoudle/banner_xq.jpg', id: 'expression02' },
-      { name: '测试', expression_image: '/images/homeMoudle/banner_xq.jpg', id: 'expression03' },
-      { name: '测试', expression_image: '/images/homeMoudle/banner_xq.jpg', id: 'expression04' },
+      { name: '测试', expression_image: '/images/homeModule/banner_xq.jpg', id: 'expression01' },
+      { name: '测试', expression_image: '/images/homeModule/banner_xq.jpg', id: 'expression02' },
+      { name: '测试', expression_image: '/images/homeModule/banner_xq.jpg', id: 'expression03' },
+      { name: '测试', expression_image: '/images/homeModule/banner_xq.jpg', id: 'expression04' },
     ],
     expressionList_b: [
-      { name: '测试', expression_image: '/images/homeMoudle/banner_xq.jpg', id: 'expression05' },
-      { name: '测试', expression_image: '/images/homeMoudle/banner_xq.jpg', id: 'expression06' },
-      { name: '测试', expression_image: '/images/homeMoudle/banner_xq.jpg', id: 'expression07' },
-      { name: '测试', expression_image: '/images/homeMoudle/banner_xq.jpg', id: 'expression08' },
+      { name: '测试', expression_image: '/images/homeModule/banner_xq.jpg', id: 'expression05' },
+      { name: '测试', expression_image: '/images/homeModule/banner_xq.jpg', id: 'expression06' },
+      { name: '测试', expression_image: '/images/homeModule/banner_xq.jpg', id: 'expression07' },
+      { name: '测试', expression_image: '/images/homeModule/banner_xq.jpg', id: 'expression08' },
     ],
     // 消息模块
     messageTab: 0,

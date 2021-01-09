@@ -22,23 +22,23 @@
   <!-- 子模块02 -->
   <view class="title_box m_t_10">
     <view class="title_icon_box">
-      <image src="/images/homeMoudle/icon-appointment.png" class="w_h_100"></image>
+      <image src="/images/homeModule/icon-appointment.png" class="w_h_100"></image>
     </view>
     <text class="title_text">测试</text>
   </view>
   <view class="sub_module1">
     <view class="sub_module1_item">
-      <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
+      <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
       <view class="item_banner_mask"></view>
       <text class="item_banner_text1">测试</text>
     </view>
     <view class="sub_module1_item">
-      <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
+      <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
       <view class="item_banner_mask"></view>
       <text class="item_banner_text1">测试</text>
     </view>
     <view class="sub_module1_item">
-      <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
+      <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
       <view class="item_banner_mask"></view>
       <text class="item_banner_text1">测试</text>
     </view>
@@ -46,31 +46,31 @@
   <!-- 子模块03 -->
   <view class="title_box m_t_10">
     <view class="title_icon_box">
-      <image src="/images/homeMoudle/icon-appointment.png" class="w_h_100"></image>
+      <image src="/images/homeModule/icon-appointment.png" class="w_h_100"></image>
     </view>
     <text class="title_text">测试</text>
   </view>
   <view class="sub_module3">
     <view class="sub_module2_item1">
       <view class="sub_module2_item1_01">
-        <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
+        <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
         <view class="item_banner_mask1"></view>
         <view class="item_banner_text2">测试测试</view>
       </view>
       <view class="sub_module2_item1_02">
-        <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
+        <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
         <view class="item_banner_mask1"></view>
         <view class="item_banner_text2">测试测试</view>
       </view>
     </view>
     <view class="sub_module2_item1 m_t_15">
       <view class="sub_module2_item1_02">
-        <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
+        <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
         <view class="item_banner_mask1"></view>
         <view class="item_banner_text2">测试测试</view>
       </view>
       <view class="sub_module2_item1_01">
-        <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
+        <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
         <view class="item_banner_mask1"></view>
         <view class="item_banner_text2">测试测试</view>
       </view>
@@ -79,31 +79,31 @@
   <!-- 子模块04 -->
   <view class="title_box m_t_10">
     <view class="title_icon_box">
-      <image src="/images/homeMoudle/icon-appointment.png" class="w_h_100"></image>
+      <image src="/images/homeModule/icon-appointment.png" class="w_h_100"></image>
     </view>
     <text class="title_text">测试</text>
   </view>
   <view class="sub_module2">
     <view class="sub_module2_left">
       <view class="sub_module2_01">
-        <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
+        <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
         <view class="item_banner_mask1"></view>
         <view class="item_banner_text2">测试测试</view>
       </view>
       <view class="sub_module2_02 m_t_15">
-        <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
+        <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
         <view class="item_banner_mask1"></view>
         <view class="item_banner_text2">测试测试</view>
       </view>
     </view>
     <view class="sub_module2_right">
       <view class="sub_module2_02">
-        <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
+        <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
         <view class="item_banner_mask1"></view>
         <view class="item_banner_text2">测试测试</view>
       </view>
       <view class="sub_module2_01 m_t_15">
-        <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
+        <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
         <view class="item_banner_mask1"></view>
         <view class="item_banner_text2">测试测试</view>
       </view>
@@ -112,31 +112,31 @@
   <!-- 子模块05 -->
   <view class="title_box m_t_10">
     <view class="title_icon_box">
-      <image src="/images/homeMoudle/icon-appointment.png" class="w_h_100"></image>
+      <image src="/images/homeModule/icon-appointment.png" class="w_h_100"></image>
     </view>
     <text class="title_text">测试</text>
   </view>
   <view class="sub_module4">
     <view class="sub_module4_item">
       <view class="sub_module4_item_01">
-        <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
+        <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
         <view class="item_banner_mask1"></view>
         <view class="item_banner_text2">测试测试</view>
       </view>
     </view>
     <view class="sub_module4_item m_t_15">
       <view class="sub_module4_item_02">
-        <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
+        <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
         <view class="item_banner_mask1"></view>
         <view class="item_banner_text2">测试测试</view>
       </view>
       <view class="sub_module4_item_02">
-        <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
+        <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
         <view class="item_banner_mask1"></view>
         <view class="item_banner_text2">测试测试</view>
       </view>
       <view class="sub_module4_item_02">
-        <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
+        <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
         <view class="item_banner_mask1"></view>
         <view class="item_banner_text2">测试测试</view>
       </view>
@@ -145,31 +145,31 @@
   <!-- 子模块06 -->
   <view class="title_box m_t_10">
     <view class="title_icon_box">
-      <image src="/images/homeMoudle/icon-appointment.png" class="w_h_100"></image>
+      <image src="/images/homeModule/icon-appointment.png" class="w_h_100"></image>
     </view>
     <text class="title_text">测试</text>
   </view>
   <view class="sub_module3">
     <view class="sub_module2_item1">
       <view class="sub_module2_item1_02">
-        <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
+        <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
         <view class="item_banner_mask1"></view>
         <view class="item_banner_text2">测试测试</view>
       </view>
       <view class="sub_module2_item1_01">
-        <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
+        <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
         <view class="item_banner_mask1"></view>
         <view class="item_banner_text2">测试测试</view>
       </view>
     </view>
     <view class="sub_module2_item1 m_t_15">
       <view class="sub_module2_item1_01">
-        <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
+        <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
         <view class="item_banner_mask1"></view>
         <view class="item_banner_text2">测试测试</view>
       </view>
       <view class="sub_module2_item1_02">
-        <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
+        <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
         <view class="item_banner_mask1"></view>
         <view class="item_banner_text2">测试测试</view>
       </view>
@@ -178,31 +178,31 @@
   <!-- 子模块07 -->
   <view class="title_box m_t_10">
     <view class="title_icon_box">
-      <image src="/images/homeMoudle/icon-appointment.png" class="w_h_100"></image>
+      <image src="/images/homeModule/icon-appointment.png" class="w_h_100"></image>
     </view>
     <text class="title_text">测试</text>
   </view>
   <view class="sub_module2">
     <view class="sub_module2_left">
       <view class="sub_module2_02">
-        <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
+        <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
         <view class="item_banner_mask1"></view>
         <view class="item_banner_text2">测试测试</view>
       </view>
       <view class="sub_module2_01 m_t_15">
-        <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
+        <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
         <view class="item_banner_mask1"></view>
         <view class="item_banner_text2">测试测试</view>
       </view>
     </view>
     <view class="sub_module2_right">
       <view class="sub_module2_01">
-        <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
+        <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
         <view class="item_banner_mask1"></view>
         <view class="item_banner_text2">测试测试</view>
       </view>
       <view class="sub_module2_02 m_t_15">
-        <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
+        <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
         <view class="item_banner_mask1"></view>
         <view class="item_banner_text2">测试测试</view>
       </view>
@@ -218,7 +218,7 @@
   </view>
   <view class="n_sub_module1">
     <view class="n_sub_module1_item_fd_01" wx:for="{{newsTypeList}}" wx:key="index">
-      <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100" wx:if="{{item.type_id}}"></image>
+      <image src="/images/homeModule/banner_xq.jpg" class="w_h_100" wx:if="{{item.type_id}}"></image>
       <view class="n_item_banner_mask" wx:if="{{item.type_id}}" bindtap="newsList" data-item="{{item}}"></view>
       <text class="n_item_banner_text1_fd" wx:if="{{item.type_id}}" bindtap="newsList" data-item="{{item}}">{{item.type_name}}</text>
     </view>
@@ -229,7 +229,7 @@
   </view>
   <view class="n_sub_module1">
     <view class="n_sub_module1_item_fd" wx:for="{{cityTypeList}}" wx:key="index" bindtap="cnewsList" data-item="{{item}}">
-      <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100" wx:if="{{item.type_id}}"></image>
+      <image src="/images/homeModule/banner_xq.jpg" class="w_h_100" wx:if="{{item.type_id}}"></image>
       <view class="n_item_banner_mask" wx:if="{{item.type_id}}"></view>
       <text class="n_item_banner_text1_fd" wx:if="{{item.type_id}}">{{item.type_name}}</text>
     </view>
@@ -279,7 +279,7 @@
     <van-tab title="系统消息">
       <view class="sub_module1_ns" wx:for="{{sysMessageList}}" wx:key="index" bindtap="messageDetails" data-item="{{item}}" >
         <view class="sub_module1_item_ns">
-          <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
+          <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
         </view>
         <view class="sub_module1_item_ns_info fx_c_s_s" style="width: {{windowWidth-90}}px;">
           <view class="sub_module1_item_ns_info_item fx_r_s_c">
@@ -301,7 +301,7 @@
 <view wx:if="{{footerActive === 3}}" class="bg_F5 bs_bb oy_a" style="height: {{windowHeight-50}}px; position: relative;">
   <view class="personal_banner">
     <view class="mask"></view>
-    <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
+    <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
     <view class="personal_info1">
       <view class="personal_info1_box">
         <!-- 我的ID -->
@@ -338,8 +338,8 @@
           <view class="ls_2 fw_7">{{mineDataForm.nickName}}</view>
         </view>
         <view class="fs_12 fx_r_s_c" wx:if="{{mineDataForm.age && mineDataForm.age && mineDataForm.age}}">
-          <image wx:if="{{mineDataForm.gender == '1'}}" src="/images/mineMoudle/boy_icon.png" style="width: 18px; height: 18px; padding:0 3px;"></image>
-          <image wx:if="{{mineDataForm.gender == '2'}}" src="/images/mineMoudle/girl_icon.png" style="width: 18px; height: 18px; padding:0 3px;"></image>
+          <image wx:if="{{mineDataForm.gender == '1'}}" src="/images/mineModule/boy_icon.png" style="width: 18px; height: 18px; padding:0 3px;"></image>
+          <image wx:if="{{mineDataForm.gender == '2'}}" src="/images/mineModule/girl_icon.png" style="width: 18px; height: 18px; padding:0 3px;"></image>
           <view>{{mineDataForm.age}}岁<text class="fw_7 p_l_3 p_r_3">·</text></view>
           <view>{{mineDataForm.constellation}}<text class="fw_7 p_l_3 p_r_3">·</text></view>
           <view>{{mineDataForm.address}}</view>
@@ -352,7 +352,7 @@
       <view class="my_tracks_top">
         <view class="my_tracks_top_box">
           <view class="footprint_box">
-            <image src="/images/mineMoudle/footprint_icon.png" class="w_h_100 d_ib"></image>
+            <image src="/images/mineModule/footprint_icon.png" class="w_h_100 d_ib"></image>
           </view>
           <view class="d_ib p_l_10">足迹</view>
         </view>
@@ -360,16 +360,16 @@
       </view>
       <view class="my_tracks_center m_t_20">
         <view class="my_tracks_center_img">
-          <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100 br_5"></image>
+          <image src="/images/homeModule/banner_xq.jpg" class="w_h_100 br_5"></image>
         </view>
         <view class="my_tracks_center_img">
-          <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100 br_5"></image>
+          <image src="/images/homeModule/banner_xq.jpg" class="w_h_100 br_5"></image>
         </view>
         <view class="my_tracks_center_img">
-          <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100 br_5"></image>
+          <image src="/images/homeModule/banner_xq.jpg" class="w_h_100 br_5"></image>
         </view>
         <view class="my_tracks_center_img">
-          <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100 br_5"></image>
+          <image src="/images/homeModule/banner_xq.jpg" class="w_h_100 br_5"></image>
         </view>
       </view>
     </view>
@@ -378,7 +378,7 @@
       <view class="my_tracks_top">
         <view class="my_tracks_top_box">
           <view class="footprint_box">
-            <image src="/images/mineMoudle/conversation_icon.png" class="w_h_100 d_ib"></image>
+            <image src="/images/mineModule/conversation_icon.png" class="w_h_100 d_ib"></image>
           </view>
           <view class="d_ib p_l_10">话题</view>
         </view>
@@ -387,7 +387,7 @@
       <view class="my_conversation_center m_t_10">
         <view class="my_conversation_center_box">
           <view class="my_conversation_center_img">
-            <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100 br_10"></image>
+            <image src="/images/homeModule/banner_xq.jpg" class="w_h_100 br_10"></image>
           </view>
           <view class="my_conversation_center_text_box m_l_10">
             <view class="my_conversation_center_text to_1 fs_14 ls_1">美食晒出来</view>
@@ -398,7 +398,7 @@
       <view class="my_conversation_center m_t_10">
         <view class="my_conversation_center_box">
           <view class="my_conversation_center_img">
-            <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100 br_10"></image>
+            <image src="/images/homeModule/banner_xq.jpg" class="w_h_100 br_10"></image>
           </view>
           <view class="my_conversation_center_text_box m_l_10">
             <view class="my_conversation_center_text to_1 fs_14 ls_1">美食晒出来</view>
@@ -409,7 +409,7 @@
       <view class="my_conversation_center m_t_10">
         <view class="my_conversation_center_box">
           <view class="my_conversation_center_img">
-            <image src="/images/homeMoudle/banner_xq.jpg" class="w_h_100 br_10"></image>
+            <image src="/images/homeModule/banner_xq.jpg" class="w_h_100 br_10"></image>
           </view>
           <view class="my_conversation_center_text_box m_l_10">
             <view class="my_conversation_center_text to_1 fs_14 ls_1">美食晒出来</view>

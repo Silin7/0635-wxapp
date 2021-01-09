@@ -1,7 +1,7 @@
 {
   "pages":[
-    "pages/recordModule/keepDiary/keepDiary",
     "pages/homeModule/homePage/homePage",
+    "pages/recordModule/keepDiary/keepDiary",
     "pages/dynamicModule/cnewsDetails/cnewsDetails",
     "pages/dynamicModule/cnewsList/cnewsList",
     "pages/dynamicModule/newsList/newsList",

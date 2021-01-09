@@ -12,11 +12,11 @@
     </view>
     <view class="recipeDetail_info fx_r_s_c m_t_10">
       <view class="fx_r_c_c m_l_5">
-        <image src="/images/menuMoudle/menu_nz.png" class="menu_nz w_h_100"></image>
+        <image src="/images/menuModule/menu_nz.png" class="menu_nz w_h_100"></image>
         <text class="m_l_5 co_6">{{menu_details.cook_time}}</text>
       </view>
       <view class="fx_r_c_c m_l_30">
-        <image src="/images/menuMoudle/menu_dj.png" class="menu_nz w_h_100"></image>
+        <image src="/images/menuModule/menu_dj.png" class="menu_nz w_h_100"></image>
         <text class="m_l_5 co_6">{{menu_details.cook_difficulty}}</text>
       </view>
     </view>

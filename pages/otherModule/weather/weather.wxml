@@ -10,19 +10,19 @@
   <view class="weather_temp m_t_20">{{current.temp}}</view>
   <view class="weather_item">
     <view class="weather_item_img">
-      <image src="/images/otherMoudle/weather_fx.png" class="w_h_100"></image>
+      <image src="/images/otherModule/weather_fx.png" class="w_h_100"></image>
     </view>
     <text class="m_l_20 weather_item_txt">风向：{{current.windDirection}}</text>
   </view>
   <view class="weather_item">
     <view class="weather_item_img">
-      <image src="/images/otherMoudle/weather_fl.png" class="w_h_100"></image>
+      <image src="/images/otherModule/weather_fl.png" class="w_h_100"></image>
     </view>
     <text class="m_l_20 weather_item_txt">风力：{{current.windPower}}</text>
   </view>
   <view class="weather_item">
     <view class="weather_item_img">
-      <image src="/images/otherMoudle/weather_sd.png" class="w_h_100"></image>
+      <image src="/images/otherModule/weather_sd.png" class="w_h_100"></image>
     </view>
     <text class="m_l_20 weather_item_txt">湿度：{{current.humidity}}</text>
   </view>

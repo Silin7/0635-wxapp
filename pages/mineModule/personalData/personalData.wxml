@@ -28,7 +28,7 @@
       <view class="information_item_text ls_3">生日</view>
       <van-field value="{{dataForm.birthday}}" placeholder="请输入生日" readonly="{{true}}" bindtap="dataTap" style="width: {{windowWidth-120}}px;"/>
       <view class="information_item_edit">
-        <image class="w_h_100" src="/images/loginMoudle/edit.png"></image>
+        <image class="w_h_100" src="/images/loginModule/edit.png"></image>
       </view>
     </view>
     <!-- 性别 -->

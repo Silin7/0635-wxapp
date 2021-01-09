@@ -20,7 +20,7 @@
    <view wx:for="{{recipeItemList}}" wx:key="index" class="recipe_item_title">
       <view class="recipe_item_title_name">
         <image wx:if="{{item.image_url}}" src="{{item.image_url}}" class="w_h_100"></image>
-        <image wx:else src="/images/homeMoudle/banner_xq.jpg" class="w_h_100"></image>
+        <image wx:else src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
       </view>
       <view class="sidebar_item_box">
         <view class="recipe_item" wx:for="{{item.data}}" wx:key="index" wx:for-item="item2" bindtap="recipeInfo" data-item="{{item2}}">
