@@ -14,5 +14,10 @@ let recordRequest = {
     apiName: '/record/keep_diary',
     name: '写日记（diary_date, diary_weather, diary_content）'
   },
+  delete_diary: {
+    apiMethod: 'GET',
+    apiName: '/record/delete_diary',
+    name: '删除日记（id）'
+  },
 }
 module.exports = recordRequest

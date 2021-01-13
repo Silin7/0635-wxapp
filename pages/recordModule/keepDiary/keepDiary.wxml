@@ -1,4 +1,5 @@
 <van-toast id="van-toast" />
+<van-dialog id="van-dialog" />
 <!-- 日期 -->
 <component-dateTimePicker bind:confirmDate="confirmDate" overlayShow="{{time_show}}" dateType="datetime" currentDate="{{currentDate}}"/>
 <!-- 天气 -->
@@ -22,13 +23,17 @@
     </view>
   </view>
   <!-- 内容 -->
-  <view class="page_center oy_a p_10" style="height: {{windowHeight - 70}}px;">
+  <view class="page_center oy_a p_10" style="height: {{windowHeight - 140}}px;">
     <van-field
       autosize
       type="textarea"
       value="{{diary_content}}"
       placeholder="请输入留言"
       border="{{false}}"/>
+  </view>
+  <!-- 保存 -->
+  <view class="sign_up">
+    <view class="sign_up_btn" bindtap="deleteDiary">删除</view>
   </view>
 </view>
 

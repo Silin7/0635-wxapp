@@ -1,6 +1,7 @@
 import mixins from '../../mixinsMoudle/mixins'
 import esRequest from '../../../utils/esRequest';
 import Toast from '../../../miniprogram_npm/vant-weapp/toast/toast';
+import Dialog from '../../../miniprogram_npm/vant-weapp/dialog/dialog';
 
 Page({
   data: {
@@ -115,14 +116,41 @@ Page({
     esRequest('keep_diary', data).then(res => {
       if (res && res.data.code === 0) {
         Toast.success('操作成功')
-        // setTimeout(() => {
-        //   wx.navigateBack({
-        //     delta: 1
-        //   })
-        // }, 2000)
+        setTimeout(() => {
+          wx.navigateBack({
+            delta: 1
+          })
+        }, 2000)
       } else {
         Toast.fail('系统错误')
       }
     })
+  },
+
+  // 删除日记
+  deleteDiary: function () {
+    Dialog.confirm({
+      title: '删除日记',
+      message: '您确定要删除这篇日记吗？',
+    }).then(() => {
+      let data = {
+        id: this.data.id
+      }
+      esRequest('delete_diary', data).then(res => {
+        if (res && res.data.code === 0) {
+          Toast.success('操作成功')
+          setTimeout(() => {
+            wx.navigateBack({
+              delta: 1
+            })
+          }, 2000)
+        } else {
+          Toast.fail('系统错误')
+        }
+      })
+    }).catch(() => {
+      Toast('取消')
+    });
+    
   }
 })
