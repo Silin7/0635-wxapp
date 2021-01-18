@@ -1,7 +1,7 @@
 let historyRequest = {
-  historical_evolution: {
+  local_historical: {
     apiMethod: 'GET',
-    apiName: '/history/historical_evolution',
+    apiName: '/history/local_historical',
     name: '历史详情'
   }
 }

@@ -1,7 +1,7 @@
 let recordRequest = {
-  diary_list: {
+  record_diary: {
     apiMethod: 'GET',
-    apiName: '/record/diary_list',
+    apiName: '/record/record_diary',
     name: '日记列表（user_id）'
   },
   diary_detail: {
