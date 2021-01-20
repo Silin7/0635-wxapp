@@ -29,7 +29,7 @@ Page({
     let data = {
       user_id: this.data.id_key
     }
-    esRequest('diary_list', data).then(res => {
+    esRequest('record_diary', data).then(res => {
       if (res && res.data.code === 0) {
         this.setData({
           diaryList: res.data.data
