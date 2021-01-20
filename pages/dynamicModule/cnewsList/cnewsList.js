@@ -48,7 +48,7 @@ Page({
   // 新闻详情
   getNewsDetalis: function (e) {
     wx.navigateTo({
-      url: '/pages/dynamicModule/newsDetails/newsDetails?newsId=' + e.currentTarget.dataset.item.id
+      url: '/pages/dynamicModule/cnewsDetails/cnewsDetails?id=' + e.currentTarget.dataset.item.id
     })
   }
 })

@@ -1,8 +1,13 @@
 {
   "pages":[
+    "pages/homeModule/indexPage/indexPage",
+    "pages/homeModule/findPage/findPage",
+    "pages/homeModule/minePage/minePage",
+    "pages/homeModule/newsPage/newsPage",
+    "pages/loginModule/loginPage/loginPage",
+    "pages/loginModule/registerPage/registerPage",
     "pages/recordModule/diaryList/diaryList",
     "pages/recordModule/keepDiary/keepDiary",
-    "pages/homeModule/homePage/homePage",
     "pages/dynamicModule/cnewsDetails/cnewsDetails",
     "pages/dynamicModule/cnewsList/cnewsList",
     "pages/dynamicModule/newsList/newsList",
@@ -27,8 +32,6 @@
     "pages/mineModule/personalCenter/personalCenter",
     "pages/mineModule/personalData/personalData",
     "pages/mineModule/myConcerns/myConcerns",
-    "pages/loginModule/loginPage/loginPage",
-    "pages/loginModule/registerPage/registerPage",
     "pages/components/dateTimePicker/dateTimePicker",
     "pages/components/choosePicker/choosePicker",
     "pages/components/footTabbar/footTabbar",
@@ -36,6 +39,32 @@
     "pages/testPage/testPage",
     "pages/notModule/notFound/notFound"
   ],
+  "tabBar": {
+    "color": "#333333",
+    "selectedColor": "#4545FF",
+    "backgroundColor": "#FFFFFF",
+    "list": [{
+      "pagePath": "pages/homeModule/indexPage/indexPage",
+      "text": "首页",
+      "iconPath": "/images/homeModule/compass_normal.png",
+      "selectedIconPath": "/images/homeModule/compass_active.png"
+    },{
+      "pagePath": "pages/homeModule/findPage/findPage",
+      "text": "发现",
+      "iconPath": "/images/homeModule/home_normal.png",
+      "selectedIconPath": "/images/homeModule/home_active.png"
+    },{
+      "pagePath": "pages/homeModule/newsPage/newsPage",
+      "text": "消息",
+      "iconPath": "/images/homeModule/news_normal.png",
+      "selectedIconPath": "/images/homeModule/news_active.png"
+    },{
+      "pagePath": "pages/homeModule/minePage/minePage",
+      "text": "我的",
+      "iconPath": "/images/homeModule/mine_normal.png",
+      "selectedIconPath": "/images/homeModule/mine_active.png"
+    }]
+  },
   "permission": {
     "scope.userLocation": {
       "desc": "你的位置信息将用于小程序位置接口的效果展示"

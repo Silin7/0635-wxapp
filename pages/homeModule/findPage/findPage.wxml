@@ -1,0 +1,43 @@
+<van-toast id="van-toast" />
+
+<!-- 新闻分类 -->
+<view class="n_title_box_fd">
+  <text class="fx_r_c_c fs_13 co_6 fw_7 ls_2">新闻分类</text>
+</view>
+<view class="n_sub_module1">
+  <view class="n_sub_module1_item_fd_01" wx:for="{{newsTypeList}}" wx:key="index">
+    <image src="/images/homeModule/banner_xq.jpg" class="w_h_100" wx:if="{{item.type_id}}"></image>
+    <view class="n_item_banner_mask" wx:if="{{item.type_id}}" bindtap="newsList" data-item="{{item}}"></view>
+    <text class="n_item_banner_text1_fd" wx:if="{{item.type_id}}" bindtap="newsList" data-item="{{item}}">{{item.type_name}}</text>
+  </view>
+</view>
+<!-- 我的家乡 -->
+<view class="n_title_box_fd">
+  <text class="fx_r_c_c fs_13 co_6 fw_7 ls_2">我的家乡</text>
+</view>
+<view class="n_sub_module1">
+  <view class="n_sub_module1_item_fd" wx:for="{{cityTypeList}}" wx:key="index" bindtap="cnewsList" data-item="{{item}}">
+    <image src="/images/homeModule/banner_xq.jpg" class="w_h_100" wx:if="{{item.type_id}}"></image>
+    <view class="n_item_banner_mask" wx:if="{{item.type_id}}"></view>
+    <text class="n_item_banner_text1_fd" wx:if="{{item.type_id}}">{{item.type_name}}</text>
+  </view>
+</view>
+<!-- <view class="sub_module1_fd m_t_10" wx:for="{{dynamicList}}" wx:key="index">
+  <view class="sub_module1_img_fd">
+    <image src="{{item.author_avatarUrl}}" class="w_h_100"></image>
+  </view>
+  <view class="sub_module1_info_fd" style="width: {{windowWidth-90}}px;">
+    <view class=" to_1 fs_16 fw_7 sub_module1_info_fd_id_box">
+      <text>{{item.author_name}}</text>
+      <wxs module="filter" src="../../../utils/filter.wxs"></wxs>
+      <text class="sub_module1_info_fd_id_car m_l_10 fs_12">{{filter.licensePlate(item.author_id)}}</text>
+    </view>
+    <view class="rich_text_fd m_t_10 p_r_5 fs_16 co_6 ti_20 oy_h" style="width: {{windowWidth-90}}px;" bindtap="getDynamicDetalis" data-item="{{item}}">
+      <rich-text nodes="{{item.content}}"></rich-text>
+    </view>
+    <view class="m_t_10 w_100 co_9 fx_r_b_c p_r_10">
+      <text class="fs_13">{{item.create_time}}</text>
+      <text class='dialog-close see_details_fd' decode='true' bindtap="getDynamicDetalis" data-item="{{item}}">查看详情&gt;</text>
+    </view>
+  </view>
+</view> -->

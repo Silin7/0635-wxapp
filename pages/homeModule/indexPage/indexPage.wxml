@@ -1,0 +1,208 @@
+<van-toast id="van-toast" />
+
+<!-- swiper滚动图 -->
+<swiper indicator-dots="{{true}}" autoplay="{{true}}" circular="{{true}}" style="height: 360rpx;">
+	<block wx:for="{{swiperList}}" wx:key="index" wx:for-item="item">
+		<swiper-item bindtap="swiperTap" data-item="{{item}}">
+			<image style="height: 360rpx; width: 100%;" src="{{item.image}}"></image>
+		</swiper-item>
+	</block>
+</swiper>
+<!-- 子模块01 -->
+<view class="icon_module bs_bb m_t_10">
+  <view class="icon_module_item" wx:for="{{iconList}}" wx:key="index" bindtap="oneNavBind" data-item="{{item}}">
+    <view class="item_icon">
+      <image src="{{item.image}}" class="w_h_100"></image>
+    </view>
+    <view class="item_text fs_18 fw_7 ls_5 p_l_5 bs_bb">{{item.name}}</view>
+  </view>
+</view>
+<!-- 子模块02 -->
+<view class="title_box m_t_10">
+  <view class="title_icon_box">
+    <image src="/images/homeModule/icon-appointment.png" class="w_h_100"></image>
+  </view>
+  <text class="title_text">测试</text>
+</view>
+<view class="sub_module1">
+  <view class="sub_module1_item">
+    <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
+    <view class="item_banner_mask"></view>
+    <text class="item_banner_text1">测试</text>
+  </view>
+  <view class="sub_module1_item">
+    <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
+    <view class="item_banner_mask"></view>
+    <text class="item_banner_text1">测试</text>
+  </view>
+  <view class="sub_module1_item">
+    <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
+    <view class="item_banner_mask"></view>
+    <text class="item_banner_text1">测试</text>
+  </view>
+</view>
+<!-- 子模块03 -->
+<view class="title_box m_t_10">
+  <view class="title_icon_box">
+    <image src="/images/homeModule/icon-appointment.png" class="w_h_100"></image>
+  </view>
+  <text class="title_text">测试</text>
+</view>
+<view class="sub_module3">
+  <view class="sub_module2_item1">
+    <view class="sub_module2_item1_01">
+      <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
+      <view class="item_banner_mask1"></view>
+      <view class="item_banner_text2">测试测试</view>
+    </view>
+    <view class="sub_module2_item1_02">
+      <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
+      <view class="item_banner_mask1"></view>
+      <view class="item_banner_text2">测试测试</view>
+    </view>
+  </view>
+  <view class="sub_module2_item1 m_t_15">
+    <view class="sub_module2_item1_02">
+      <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
+      <view class="item_banner_mask1"></view>
+      <view class="item_banner_text2">测试测试</view>
+    </view>
+    <view class="sub_module2_item1_01">
+      <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
+      <view class="item_banner_mask1"></view>
+      <view class="item_banner_text2">测试测试</view>
+    </view>
+  </view>
+</view>
+<!-- 子模块04 -->
+<view class="title_box m_t_10">
+  <view class="title_icon_box">
+    <image src="/images/homeModule/icon-appointment.png" class="w_h_100"></image>
+  </view>
+  <text class="title_text">测试</text>
+</view>
+<view class="sub_module2">
+  <view class="sub_module2_left">
+    <view class="sub_module2_01">
+      <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
+      <view class="item_banner_mask1"></view>
+      <view class="item_banner_text2">测试测试</view>
+    </view>
+    <view class="sub_module2_02 m_t_15">
+      <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
+      <view class="item_banner_mask1"></view>
+      <view class="item_banner_text2">测试测试</view>
+    </view>
+  </view>
+  <view class="sub_module2_right">
+    <view class="sub_module2_02">
+      <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
+      <view class="item_banner_mask1"></view>
+      <view class="item_banner_text2">测试测试</view>
+    </view>
+    <view class="sub_module2_01 m_t_15">
+      <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
+      <view class="item_banner_mask1"></view>
+      <view class="item_banner_text2">测试测试</view>
+    </view>
+  </view>
+</view>
+<!-- 子模块05 -->
+<view class="title_box m_t_10">
+  <view class="title_icon_box">
+    <image src="/images/homeModule/icon-appointment.png" class="w_h_100"></image>
+  </view>
+  <text class="title_text">测试</text>
+</view>
+<view class="sub_module4">
+  <view class="sub_module4_item">
+    <view class="sub_module4_item_01">
+      <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
+      <view class="item_banner_mask1"></view>
+      <view class="item_banner_text2">测试测试</view>
+    </view>
+  </view>
+  <view class="sub_module4_item m_t_15">
+    <view class="sub_module4_item_02">
+      <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
+      <view class="item_banner_mask1"></view>
+      <view class="item_banner_text2">测试测试</view>
+    </view>
+    <view class="sub_module4_item_02">
+      <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
+      <view class="item_banner_mask1"></view>
+      <view class="item_banner_text2">测试测试</view>
+    </view>
+    <view class="sub_module4_item_02">
+      <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
+      <view class="item_banner_mask1"></view>
+      <view class="item_banner_text2">测试测试</view>
+    </view>
+  </view>
+</view>
+<!-- 子模块06 -->
+<view class="title_box m_t_10">
+  <view class="title_icon_box">
+    <image src="/images/homeModule/icon-appointment.png" class="w_h_100"></image>
+  </view>
+  <text class="title_text">测试</text>
+</view>
+<view class="sub_module3">
+  <view class="sub_module2_item1">
+    <view class="sub_module2_item1_02">
+      <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
+      <view class="item_banner_mask1"></view>
+      <view class="item_banner_text2">测试测试</view>
+    </view>
+    <view class="sub_module2_item1_01">
+      <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
+      <view class="item_banner_mask1"></view>
+      <view class="item_banner_text2">测试测试</view>
+    </view>
+  </view>
+  <view class="sub_module2_item1 m_t_15">
+    <view class="sub_module2_item1_01">
+      <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
+      <view class="item_banner_mask1"></view>
+      <view class="item_banner_text2">测试测试</view>
+    </view>
+    <view class="sub_module2_item1_02">
+      <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
+      <view class="item_banner_mask1"></view>
+      <view class="item_banner_text2">测试测试</view>
+    </view>
+  </view>
+</view>
+<!-- 子模块07 -->
+<view class="title_box m_t_10">
+  <view class="title_icon_box">
+    <image src="/images/homeModule/icon-appointment.png" class="w_h_100"></image>
+  </view>
+  <text class="title_text">测试</text>
+</view>
+<view class="sub_module2">
+  <view class="sub_module2_left">
+    <view class="sub_module2_02">
+      <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
+      <view class="item_banner_mask1"></view>
+      <view class="item_banner_text2">测试测试</view>
+    </view>
+    <view class="sub_module2_01 m_t_15">
+      <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
+      <view class="item_banner_mask1"></view>
+      <view class="item_banner_text2">测试测试</view>
+    </view>
+  </view>
+  <view class="sub_module2_right">
+    <view class="sub_module2_01">
+      <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
+      <view class="item_banner_mask1"></view>
+      <view class="item_banner_text2">测试测试</view>
+    </view>
+    <view class="sub_module2_02 m_t_15">
+      <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
+      <view class="item_banner_mask1"></view>
+      <view class="item_banner_text2">测试测试</view>
+    </view>
+  </view>
+</view>

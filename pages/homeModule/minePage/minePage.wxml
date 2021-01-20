@@ -1,0 +1,122 @@
+<van-toast id="van-toast" />
+
+<view class="personal_banner">
+  <view class="mask"></view>
+  <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
+  <view class="personal_info1">
+    <view class="personal_info1_box">
+      <!-- 我的ID -->
+      <view class="personal_info1_left">
+        <view class="fs_22">聊吧</view>
+        <view class="fs_12 ls_1">ID号：<text class="fw_7 fs_13">00001</text></view>
+      </view>
+      <!-- 我的关注 -->
+      <view class="personal_info1_right" bindtap="myConcerns">
+        <view class="personal_info1_right_item">
+          <view class="p_l_6">9</view>
+          <view></view>
+          <view class="p_r_6">12</view>
+        </view>
+        <view class="personal_info1_right_item">
+          <view>关注</view>
+          <view class="fs_12">|</view>
+          <view>话题</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="personal_info2">
+  <!-- 个人简介 -->
+  <view class="personal_info2_box" bindtap="personalData">
+    <!-- 微信头像 -->
+    <view class="personal_info2_left br_20" style="overflow: hidden;">
+      <image src="{{mineDataForm.avatarUrl}}" class="w_h_100 br_20"></image>
+    </view>
+    <view class="personal_info2_right" style="width: {{windowWidth-140}}px;">
+      <view class="name_follow">
+        <!-- 微信昵称 -->
+        <view class="ls_2 fw_7">{{mineDataForm.nickName}}</view>
+      </view>
+      <view class="fs_12 fx_r_s_c" wx:if="{{mineDataForm.age && mineDataForm.age && mineDataForm.age}}">
+        <image wx:if="{{mineDataForm.gender == '1'}}" src="/images/mineModule/boy_icon.png" style="width: 18px; height: 18px; padding:0 3px;"></image>
+        <image wx:if="{{mineDataForm.gender == '2'}}" src="/images/mineModule/girl_icon.png" style="width: 18px; height: 18px; padding:0 3px;"></image>
+        <view>{{mineDataForm.age}}岁<text class="fw_7 p_l_3 p_r_3">·</text></view>
+        <view>{{mineDataForm.constellation}}<text class="fw_7 p_l_3 p_r_3">·</text></view>
+        <view>{{mineDataForm.address}}</view>
+      </view>
+      <view class="fs_12 co_9 ls_1">{{mineDataForm.personalSignature}}</view>
+    </view>
+  </view>
+  <!-- 我的足迹 -->
+  <view class="my_tracks">
+    <view class="my_tracks_top">
+      <view class="my_tracks_top_box">
+        <view class="footprint_box">
+          <image src="/images/mineModule/footprint_icon.png" class="w_h_100 d_ib"></image>
+        </view>
+        <view class="d_ib p_l_10">足迹</view>
+      </view>
+      <text class="dialog-close see_more p_t_5 fs_12 co_9" decode="true">查看更多 &gt;</text>
+    </view>
+    <view class="my_tracks_center m_t_20">
+      <view class="my_tracks_center_img">
+        <image src="/images/homeModule/banner_xq.jpg" class="w_h_100 br_5"></image>
+      </view>
+      <view class="my_tracks_center_img">
+        <image src="/images/homeModule/banner_xq.jpg" class="w_h_100 br_5"></image>
+      </view>
+      <view class="my_tracks_center_img">
+        <image src="/images/homeModule/banner_xq.jpg" class="w_h_100 br_5"></image>
+      </view>
+      <view class="my_tracks_center_img">
+        <image src="/images/homeModule/banner_xq.jpg" class="w_h_100 br_5"></image>
+      </view>
+    </view>
+  </view>
+  <!-- 我的话题 -->
+  <view class="my_tracks m_t_10">
+    <view class="my_tracks_top">
+      <view class="my_tracks_top_box">
+        <view class="footprint_box">
+          <image src="/images/mineModule/conversation_icon.png" class="w_h_100 d_ib"></image>
+        </view>
+        <view class="d_ib p_l_10">话题</view>
+      </view>
+      <text class="dialog-close see_more p_t_5 fs_12 co_9" decode="true">查看更多 &gt;</text>
+    </view>
+    <view class="my_conversation_center m_t_10">
+      <view class="my_conversation_center_box">
+        <view class="my_conversation_center_img">
+          <image src="/images/homeModule/banner_xq.jpg" class="w_h_100 br_10"></image>
+        </view>
+        <view class="my_conversation_center_text_box m_l_10">
+          <view class="my_conversation_center_text to_1 fs_14 ls_1">美食晒出来</view>
+          <view class="my_conversation_center_text to_1 fs_12 co_9 ls_1">美食啊晒出来美食啊晒出来美食啊晒出来美食啊晒出来美食啊晒出来美食啊晒出来美</view>
+        </view>
+      </view>
+    </view>
+    <view class="my_conversation_center m_t_10">
+      <view class="my_conversation_center_box">
+        <view class="my_conversation_center_img">
+          <image src="/images/homeModule/banner_xq.jpg" class="w_h_100 br_10"></image>
+        </view>
+        <view class="my_conversation_center_text_box m_l_10">
+          <view class="my_conversation_center_text to_1 fs_14 ls_1">美食晒出来</view>
+          <view class="my_conversation_center_text to_1 fs_12 co_9 ls_1">美食啊晒出来美食啊晒出来美食啊晒出来美食啊晒出来美食啊晒出来美食啊晒出来美</view>
+        </view>
+      </view>
+    </view>
+    <view class="my_conversation_center m_t_10">
+      <view class="my_conversation_center_box">
+        <view class="my_conversation_center_img">
+          <image src="/images/homeModule/banner_xq.jpg" class="w_h_100 br_10"></image>
+        </view>
+        <view class="my_conversation_center_text_box m_l_10">
+          <view class="my_conversation_center_text to_1 fs_14 ls_1">美食晒出来</view>
+          <view class="my_conversation_center_text to_1 fs_12 co_9 ls_1">美食啊晒出来美食啊晒出来美食啊晒出来美食啊晒出来美食啊晒出来美食啊晒出来美</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

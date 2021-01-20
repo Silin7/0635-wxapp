@@ -49,7 +49,7 @@ Page({
         Toast.success('登录成功')
         setTimeout(() => {
           wx.redirectTo({
-            url: '/pages/homeModule/homePage/homePage'
+            url: '/pages/homeModule/indexPage/indexPage'
           })
         }, 2000)
       } else {

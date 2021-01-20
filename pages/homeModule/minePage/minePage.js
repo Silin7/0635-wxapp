@@ -3,14 +3,14 @@ import Toast from '../../../miniprogram_npm/vant-weapp/toast/toast';
 
 Page({
   data: {
+    id_key: '',
     windowWidth: 0,
     windowHeight: 0,
-    id: '',
-    newsDetails: {}
+    mineDataForm: {}
   },
 
   onLoad: function (options) {
-    this.data.id = options.id ? options.id : ''
+    this.data.id_key = wx.getStorageSync('id_key')
   },
 
   onReady: function () {
@@ -21,25 +21,36 @@ Page({
   },
 
   onShow: function () {
-    this.newsDetails()
+    this.getMineInfo()
   },
 
-  // 新闻详情
-  newsDetails: function () {
+  // 获取个人信息
+  getMineInfo: function () {
     let data = {
-      id: this.data.id
+      id: this.data.id_key
     }
-    esRequest('dynamic_news_details', data).then(res => {
+    esRequest('mine_info', data).then (res => {
       if (res && res.data.code === 0) {
-        this.data.newsDetails = res.data.data
-        this.data.newsDetails.news_content = this.data.newsDetails.news_content.toString().replace(/\<img/gi, '<img style="max-width:100%; height:auto"')
         this.setData({
-          newsDetails: this.data.newsDetails
+          mineDataForm: res.data.data
         })
       } else {
         Toast.fail('系统错误')
       }
     })
-  }
+  },
 
+  // 我的关注
+  myConcerns: function () {
+    wx.navigateTo({
+      url: '/pages/mineModule/myConcerns/myConcerns',
+    })
+  },
+  
+  // 编辑个人资料
+  personalData: function () {
+    wx.navigateTo({
+      url: '/pages/mineModule/personalData/personalData',
+    })
+  }
 })

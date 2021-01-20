@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "发现",
+  "usingComponents": {
+    "van-toast": "vant-weapp/toast/index"
+  }
+}
