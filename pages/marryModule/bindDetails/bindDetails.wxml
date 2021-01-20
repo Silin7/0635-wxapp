@@ -1,0 +1,179 @@
+<van-toast id="van-toast" />
+
+<view class="oy_a" style="height: {{windowHeight-80}}px;">
+  <!-- swiper滚动图 -->
+  <swiper indicator-dots="{{true}}" autoplay="{{true}}" circular="{{true}}" class="swiper">
+    <block wx:for="{{swiperList}}" wx:key="index" wx:for-item="item">
+      <swiper-item bindtap="swiperTap" data-item="{{item}}">
+        <!-- <image class="swiper" src="{{item}}"></image> -->
+        <image class="swiper" src="/images/homeModule/banner_xq.jpg"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- 详情 -->
+  <view class="page_box">
+    <!-- 简介 -->
+    <view class="name_item">
+      <view class="item_left" style="width: {{windowWidth-80}}px;">
+        <view class="item_left_top to_1">君莫笑</view>
+        <view class="item_left_btm">
+          <text>男</text>
+          <text class="m_l_5 m_r_5">·</text>
+          <text>23岁</text>
+          <text class="m_l_5 m_r_5">·</text>
+          <text>天蝎座</text>
+          <text class="m_l_5 m_r_5">·</text>
+          <text>阳谷县</text>
+        </view>
+      </view>
+      <view class="item_right">
+        <image src="/images/marryModule/like_ta.png" style="width: 30px; height: 30px;"></image>
+        <!-- <text class="item_right_text">喜欢Ta</text> -->
+      </view>
+    </view>
+    <!-- 官方认证 -->
+    <view class="attestation">
+      <view class="attestation_top">官方认证</view>
+      <view class="attestation_box">
+        <view class="attestation_item">
+          <image src="/images/marryModule/attestation_c.png" style="width: 30px; height: 30px;"></image>
+          <text class="attestation_no">未认证</text>
+        </view>
+        <view class="attestation_item">
+          <image src="/images/marryModule/attestation_f.png" style="width: 30px; height: 30px;"></image>
+          <text class="attestation_no">未认证</text>
+        </view>
+        <view class="attestation_item">
+          <image src="/images/marryModule/attestation_x.png" style="width: 30px; height: 30px;"></image>
+          <text class="attestation_no">未认证</text>
+        </view>
+        <view class="attestation_item">
+          <image src="/images/marryModule/attestation_r.png" style="width: 30px; height: 30px;"></image>
+          <text class="attestation_no">未认证</text>
+        </view>
+      </view>
+    </view>
+    <!-- 自我介绍 -->
+    <view class="introduce">
+      <view class="introduce_top">自我介绍</view>
+      <view class="introduce_content to_2">众所周知，自我介绍是日常工作中与陌生人建立关系。</view>
+    </view>
+    <!-- 基本信息 -->
+    <view class="information">
+      <view class="information_top">基本信息</view>
+      <view class="information_item">
+        <view class="information_item_box">
+          <view class="box_item1">
+            <image src="/images/marryModule/info_height.png" style="height: 16px; width: 16px;"></image>
+            <text class="m_l_5">身高</text>
+          </view>
+          <view class="box_item2">{{personDetails.height}}</view>
+        </view>
+        <view class="information_item_box">
+          <view class="box_item1">
+            <image src="/images/marryModule/info_weight.png" style="height: 16px; width: 16px;"></image>
+            <text class="m_l_5">体重</text>
+          </view>
+          <view class="box_item2">{{personDetails.weight}}</view>
+        </view>
+      </view>
+      <view class="information_item">
+        <view class="information_item_box">
+          <view class="box_item1">
+            <image src="/images/marryModule/info_education.png" style="height: 16px; width: 16px;"></image>
+            <text class="m_l_5">学历</text>
+          </view>
+          <view class="box_item2">{{personDetails.education}}</view>
+        </view>
+        <view class="information_item_box">
+          <view class="box_item1">
+            <image src="/images/marryModule/info_occupation.png" style="height: 16px; width: 16px;"></image>
+            <text class="m_l_5">职业</text>
+          </view>
+          <view class="box_item2">{{personDetails.occupation}}</view>
+        </view>
+      </view>
+      <view class="information_item">
+        <view class="information_item_box">
+          <view class="box_item1">
+            <image src="/images/marryModule/info_income.png" style="height: 16px; width: 16px;"></image>
+            <text class="m_l_5">收入</text>
+          </view>
+          <view class="box_item2">{{personDetails.income}}</view>
+        </view>
+        <view class="information_item_box">
+          <view class="box_item1">
+            <image src="/images/marryModule/info_car.png" style="height: 16px; width: 16px;"></image>
+            <text class="m_l_5">是否有车</text>
+          </view>
+          <view class="box_item2">{{personDetails.car}}</view>
+        </view>
+      </view>
+      <view class="information_item">
+        <view class="information_item_box">
+          <view class="box_item1">
+            <image src="/images/marryModule/info_house.png" style="height: 16px; width: 16px;"></image>
+            <text class="m_l_5">是否有房</text>
+          </view>
+          <view class="box_item2">{{personDetails.house}}</view>
+        </view>
+        <view class="information_item_box">
+          <view class="box_item1">
+            <image src="/images/marryModule/info_state.png" style="height: 16px; width: 16px;"></image>
+            <text class="m_l_5">感情状态</text>
+          </view>
+          <view class="box_item2">{{personDetails.state}}</view>
+        </view>
+      </view>
+    </view>
+    <!-- 择偶标准 -->
+    <view class="standard">
+      <view class="standard_top">择偶标准</view>
+      <view class="information_item">
+      <view class="information_item_box">
+          <view class="box_item1">
+            <image src="/images/marryModule/info_age.png" style="height: 16px; width: 16px;"></image>
+            <text class="m_l_5">年龄</text>
+          </view>
+          <view class="box_item2">{{personDetails.m_age}}</view>
+        </view>
+        <view class="information_item_box">
+          <view class="box_item1">
+            <image src="/images/marryModule/info_height.png" style="height: 16px; width: 16px;"></image>
+            <text class="m_l_5">身高</text>
+          </view>
+          <view class="box_item2">{{personDetails.m_height}}</view>
+        </view>
+      </view>
+      <view class="information_item">
+        <view class="information_item_box">
+          <view class="box_item1">
+            <image src="/images/marryModule/info_education.png" style="height: 16px; width: 16px;"></image>
+            <text class="m_l_5">学历</text>
+          </view>
+          <view class="box_item2">{{personDetails.m_education}}</view>
+        </view>
+        <view class="information_item_box">
+          <view class="box_item1">
+            <image src="/images/marryModule/info_income.png" style="height: 16px; width: 16px;"></image>
+            <text class="m_l_5">收入</text>
+          </view>
+          <view class="box_item2">{{personDetails.m_income}}</view>
+        </view>
+      </view>
+      <view class="information_item">
+        <view class="standard_item_box">
+          <view class="tandard_item1">
+            <image src="/images/marryModule/info_remark.png" style="height: 16px; width: 16px;"></image>
+            <text class="m_l_5">备注</text>
+          </view>
+          <view class="tandard_item2">{{personDetails.m_introduce}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="sign_up">
+  <view class="sign_up_btn">保存</view>
+</view>

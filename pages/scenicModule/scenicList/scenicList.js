@@ -19,9 +19,11 @@ Page({
       windowHeight: wx.getSystemInfoSync().windowHeight
     })
   },
+
   onShow: function () {
     this.getScenicSpot()
   },
+
   // 切换Tabs
   scenicChange: function (e) {
     this.data.scenicspotPage = 1
@@ -32,6 +34,7 @@ Page({
     //   scrollTop: 0
     // })
   },
+
   // 景点列表
   getScenicSpot: function () {
     if (this.data.scenicspotPosition === '全部景点') {
@@ -53,12 +56,14 @@ Page({
       }
     })
   },
+
   // 消息详情
   scenicDetails: function (e) {
     wx.navigateTo({
       url: '/pages/scenicModule/scenicDetails/scenicDetails?id=' + e.currentTarget.dataset.item.id
     })
   },
+  
   // 触底函数
   onScrollBottom: function () {
     if (this.data.totalCount > this.data.scenicSpotList.length) {

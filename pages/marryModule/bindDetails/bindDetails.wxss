@@ -1,0 +1,229 @@
+.swiper {
+  width: 100%;
+  height: 480rpx;
+}
+page {
+  color: #333333;
+}
+.page_box {
+  box-sizing: border-box;
+  background-color: #F7F8FA;
+  padding: 10px;
+}
+/* 简介 */
+.name_item {
+  box-sizing: border-box;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.item_left {
+  box-sizing: border-box;
+  height: 50px;
+}
+.item_left_top {
+  height: 25px;
+  line-height: 25px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+.item_left_btm {
+  height: 25px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 12px;
+  color: #999999;
+}
+.item_right {
+  box-sizing: border-box;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 5px 0;
+}
+.item_right_text {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+/* 官方认证 */
+.attestation {
+  margin-top: 10px;
+  height: 90px;
+  background-color: #FFFFFF;
+  border-radius: 5px;
+}
+.attestation_top {
+  height: 30px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 700;
+  margin-left: 10px;
+  letter-spacing: 2px;
+}
+.attestation_box {
+  box-sizing: border-box;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.attestation_item {
+  box-sizing: border-box;
+  width: 25%;
+  height: 60px;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.attestation_no {
+  font-size: 10px;
+  color: #999999;
+  letter-spacing: 1px;
+}
+/* 自我介绍 */
+.introduce {
+  margin-top: 10px;
+  max-height: 90px;
+  background-color: #FFFFFF;
+  border-radius: 5px;
+  padding: 10px;
+}
+.introduce_top {
+  height: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+.introduce_content {
+  margin-top: 5px;
+  line-height: 20px;
+  font-size: 12px;
+  text-indent: 10px;
+  color: #666666;
+}
+/* 基本信息 */
+.information {
+  margin-top: 10px;
+  background-color: #FFFFFF;
+  border-radius: 5px;
+  padding: 10px;
+}
+.information_top {
+  height: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+.information_item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+}
+.information_item_box {
+  width: 48%;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+.box_item1 {
+  width: 50%;
+  height: 40px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: #999999;
+}
+.box_item2 {
+  width: 50%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 13px;
+}
+/* 择偶标准 */
+.standard {
+  margin-top: 10px;
+  background-color: #FFFFFF;
+  border-radius: 5px;
+  padding: 10px;
+}
+.standard_top {
+  height: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+.standard_item_box {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+.tandard_item1 {
+  width: 25%;
+  height: 40px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: #999999;
+}
+.tandard_item2 {
+  width: 75%;
+  height: 40px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 13px;
+}
+
+/* 底部按钮 */
+.sign_up {
+  box-sizing: border-box;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 15px 10px;
+}
+.sign_up_btn {
+  width: 80%;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  letter-spacing: 3px;
+  border-radius: 20px;
+  background: -webkit-linear-gradient(left, #9A93F3, #D58BBC);
+  font-weight: bold;
+  color: #FFFFFF;
+}

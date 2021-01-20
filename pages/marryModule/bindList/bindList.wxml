@@ -1,0 +1,24 @@
+<van-toast id="van-toast" />
+
+<van-tabs active="{{tabActive}}" bind:change="tabChange">
+  <van-tab wx:for="{{typeList}}" wx:key="index" title="{{item.key}}" name="{{item.value}}">
+  </van-tab>
+</van-tabs>
+
+<view class="page_box oy_a" style="height: {{windowHeight-44}}px;">
+  <view class="person_item" wx:for="{{personList}}" wx:key="index" bindtap="personDetails" data-item="{{item}}">
+    <view class="person_img">
+      <image src="{{item.photo}}" class="w_h_100"></image>
+    </view>
+    <view class="person_name">
+      <view class="person_name_item1">
+        <text class="fs_14 fw_7 ls_2 to_1">{{item.nick_name}}</text>
+        <text class="fs_12 m_l_5 m_r_5 co_45 fw_7">{{item.age}}岁</text>
+      </view>
+      <view class="person_name_item2 ls_2">
+        <van-icon name="like" color="red" class="m_r_2"/>
+        {{item.introduce}}
+      </view>
+    </view>
+  </view>
+</view>

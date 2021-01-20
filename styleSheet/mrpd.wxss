@@ -80,6 +80,9 @@
 .m_l_30 {
   margin-left: 30px;
 }
+.m_r_2 {
+  margin-right: 2px;
+}
 .m_r_5 {
   margin-right: 5px;
 }

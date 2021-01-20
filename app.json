@@ -1,5 +1,7 @@
 {
   "pages":[
+    "pages/marryModule/bindDetails/bindDetails",
+    "pages/marryModule/bindList/bindList",
     "pages/homeModule/indexPage/indexPage",
     "pages/homeModule/findPage/findPage",
     "pages/homeModule/minePage/minePage",
