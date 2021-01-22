@@ -6,8 +6,8 @@
   <swiper indicator-dots="{{true}}" autoplay="{{true}}" circular="{{true}}" class="swiper">
     <block wx:for="{{swiperList}}" wx:key="index" wx:for-item="item">
       <swiper-item bindtap="swiperTap" data-item="{{item}}">
-        <!-- <image class="swiper" src="{{item}}"></image> -->
-        <image class="swiper" src="/images/homeModule/banner_xq.jpg"></image>
+        <image class="swiper" src="{{item}}"></image>
+        <!-- <image class="swiper" src="/images/homeModule/banner_xq.jpg"></image> -->
       </swiper-item>
     </block>
   </swiper>
@@ -16,15 +16,15 @@
     <!-- 简介 -->
     <view class="name_item">
       <view class="item_left" style="width: {{windowWidth-80}}px;">
-        <view class="item_left_top to_1">君莫笑</view>
+        <view class="item_left_top to_1">{{personDetails.nick_name}}</view>
         <view class="item_left_btm">
-          <text>男</text>
+          <text>{{personDetails.gender}}</text>
           <text class="m_l_5 m_r_5">·</text>
-          <text>23岁</text>
+          <text>{{personDetails.age}}</text>
           <text class="m_l_5 m_r_5">·</text>
-          <text>天蝎座</text>
+          <text>{{personDetails.constellation}}</text>
           <text class="m_l_5 m_r_5">·</text>
-          <text>阳谷县</text>
+          <text>{{personDetails.address}}</text>
         </view>
       </view>
       <view class="item_right">
@@ -38,26 +38,30 @@
       <view class="attestation_box">
         <view class="attestation_item">
           <image src="/images/marryModule/attestation_c.png" style="width: 30px; height: 30px;"></image>
-          <text class="attestation_no">未认证</text>
+          <text class="attestation_no1" wx:if="{{personDetails.official_car}}">{{personDetails.official_car}}</text>
+          <text class="attestation_no" wx:else>未认证</text>
         </view>
         <view class="attestation_item">
           <image src="/images/marryModule/attestation_f.png" style="width: 30px; height: 30px;"></image>
-          <text class="attestation_no">未认证</text>
+          <text class="attestation_no1" wx:if="{{personDetails.official_house}}">{{personDetails.official_house}}</text>
+          <text class="attestation_no" wx:else>未认证</text>
         </view>
         <view class="attestation_item">
           <image src="/images/marryModule/attestation_x.png" style="width: 30px; height: 30px;"></image>
-          <text class="attestation_no">未认证</text>
+          <text class="attestation_no1" wx:if="{{personDetails.official_education}}">{{personDetails.official_education}}</text>
+          <text class="attestation_no" wx:else>未认证</text>
         </view>
         <view class="attestation_item">
           <image src="/images/marryModule/attestation_r.png" style="width: 30px; height: 30px;"></image>
-          <text class="attestation_no">未认证</text>
+          <text class="attestation_no1" wx:if="{{personDetails.official_person}}">{{personDetails.official_person}}</text>
+          <text class="attestation_no" wx:else>未认证</text>
         </view>
       </view>
     </view>
     <!-- 自我介绍 -->
     <view class="introduce">
       <view class="introduce_top">自我介绍</view>
-      <view class="introduce_content to_2">众所周知，自我介绍是日常工作中与陌生人建立关系。</view>
+      <view class="introduce_content to_2">{{personDetails.introduce}}</view>
     </view>
     <!-- 基本信息 -->
     <view class="information">
@@ -175,6 +179,7 @@
   </view>
 </view>
 
+<!-- 底部按钮 -->
 <view class="btn_box">
   <view class="btn_box_item1">
     <view class="btn_gz" bindtap="btnGz">
