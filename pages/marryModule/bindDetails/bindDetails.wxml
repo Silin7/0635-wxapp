@@ -176,16 +176,16 @@
 </view>
 
 <view class="btn_box">
-  <view class="box_item1">
+  <view class="btn_box_item1">
     <view class="btn_gz" bindtap="btnGz">
       <image src="/images/marryModule/btn_gz.png" style="width: 28px; height: 28px;"></image>
       <text class="btn_text">关注Ta</text>
     </view>
-    <view class="btn_wx" bindtap="btnWx">
+    <view class="btn_wx" bindtap="btnWY" data-type="01">
       <image src="/images/marryModule/btn_wx.png" style="width: 28px; height: 28px;"></image>
-      <text class="btn_text">换微信</text>
+      <text class="btn_text">要微信</text>
     </view>
-    <view class="btn_yt" bindtap="btnYh">
+    <view class="btn_yt" bindtap="btnWY" data-type="02">
       <image src="/images/marryModule/btn_yt.png" style="width: 28px; height: 28px;"></image>
       <text class="btn_text">求约会</text>
     </view>

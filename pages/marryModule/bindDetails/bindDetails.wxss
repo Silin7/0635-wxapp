@@ -216,7 +216,7 @@ page {
   align-items: center;
   padding: 0 15px 10px;
 }
-.box_item1 {
+.btn_box_item1 {
   width: 56%;
   height: 60px;
   display: flex;

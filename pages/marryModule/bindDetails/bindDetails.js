@@ -8,11 +8,12 @@ Page({
     windowWidth: 0,
     windowHeight: 0,
     swiperList: [],
-    personDetails: {}
+    personDetails: {},
+    userInfo: {}
   },
 
   onLoad: function (options) {
-    this.data.id_key = wx.getStorageSync('id_key')
+    this.data.id_key = wx.getStorageSync('id_key').toString()
   },
 
   onReady: function () {
@@ -24,6 +25,7 @@ Page({
 
   onShow: function () {
     this.marryDetails()
+    this.userInfo()
   },
 
   // 点击首页轮播图
@@ -51,6 +53,20 @@ Page({
           swiperList: this.data.swiperList,
           personDetails: res.data.data
         })
+      } else {
+        Toast.fail('系统错误')
+      }
+    })
+  },
+
+  // 本人信息
+  userInfo: function () {
+    let data = {
+      id: this.data.id_key
+    }
+    esRequest('mine_info',data).then(res => {
+      if (res && res.data.code === 0) {
+        this.data.userInfo = res.data.data
       } else {
         Toast.fail('系统错误')
       }
@@ -99,14 +115,121 @@ Page({
     })
   },
 
-  // 换微信
-  btnWx: function () {
+  // 要微信 / 求约会
+  btnWY: function (e) {
+    let _this = this
+    if (e.currentTarget.dataset.type === '01') {
+      Dialog.confirm({
+        title: '要微信',
+        message: '您确定要Ta的微信嘛？',
+      }).then(() => {
+        let data = {
+          receiver_id: this.data.personDetails.user_id,
+          sender_id: this.data.id_key,
+          message_type: '01'
+        }
+        esRequest('is_permessage', data).then(res => {
+          if (res && res.data.code === 0) {
+            if (res.data.type === '1') {
+              Toast.success('发送过消息啦')
+            }
+            if (res.data.type === '0') {
+              _this.btnnWx()
+            }
+          } else {
+            Toast.fail('系统错误')
+          }
+        })
+      }).catch(() => {
+        Toast.success('取消')
+      });
+    }
+    if (e.currentTarget.dataset.type === '02') {
+      Dialog.confirm({
+        title: '求约会',
+        message: '您确定和Ta的约会嘛？',
+      }).then(() => {
+        let data = {
+          receiver_id: this.data.personDetails.user_id,
+          sender_id: this.data.id_key,
+          message_type: '02'
+        }
+        esRequest('is_permessage', data).then(res => {
+          if (res && res.data.code === 0) {
+            if (res.data.type === '1') {
+              Toast.success('发送过消息啦')
+            }
+            if (res.data.type === '0') {
+              _this.btnYh()
+            }
+          } else {
+            Toast.fail('系统错误')
+          }
+        })
+      }).catch(() => {
+        Toast.success('取消')
+      });
+    }
+  },
 
+  // 要微信
+  btnnWx: function () {
+    var message_title = ''
+    var message_content = ''
+    if (this.data.personDetails.gender === '男') {
+      message_title = '小哥哥，可以给个微信吗？'
+      message_content = `你好，能给我你的微信吗？我被你的颜值所打动，在我心里你一定是个乐观开朗的男孩子。但我不能自己妄加推断，所以想了解一下你真正的性格。`
+    }
+    if (this.data.personDetails.gender === '女') {
+      message_title = '小姐姐，可以给个微信吗？'
+      message_content = `你好，能给我你的微信吗？我被你的颜值所打动，在我心里你一定是个善良温柔的女孩子。但我不能自己妄加推断，所以想了解一下你真正的性格。`
+    }
+    let data = {
+      receiver_id: this.data.personDetails.user_id,
+      sender_id: this.data.id_key,
+      sender_name: this.data.userInfo.nickName,
+      sender_img: this.data.userInfo.avatarUrl,
+      message_title: message_title,
+      message_content: message_content,
+      message_type: '01'
+    }
+    esRequest('permessage_send', data).then(res => {
+      if (res && res.data.code === 0) {
+        Toast.success('发送成功')
+      } else {
+        Toast.fail('系统错误')
+      }
+    })
   },
 
   // 求约会
   btnYh: function () {
-
+    var message_title = ''
+    var message_content = ''
+    if (this.data.personDetails.gender === '男') {
+      message_title = '小哥哥，可以约你出去浪吗？'
+      message_content = `你好，能给我你的微信吗？我被你的颜值所打动，在我心里你一定是个乐观开朗的男孩子。但我不能自己妄加推断，所以想了解一下你真正的性格。`
+    }
+    if (this.data.personDetails.gender === '女') {
+      message_title = '小姐姐，可以约你出去浪吗？'
+      message_content = `你好，能给我你的微信吗？我被你的颜值所打动，在我心里你一定是个善良温柔的女孩子。但我不能自己妄加推断，所以想了解一下你真正的性格。`
+    }
+    let data = {
+      receiver_id: this.data.personDetails.user_id,
+      sender_id: this.data.id_key,
+      sender_name: this.data.userInfo.nickName,
+      sender_img: this.data.userInfo.avatarUrl,
+      message_title: message_title,
+      message_content: message_content,
+      message_type: '02'
+    }
+    esRequest('permessage_send', data).then(res => {
+      if (res && res.data.code === 0) {
+        Toast.success('发送成功')
+      } else {
+        Toast.fail('系统错误')
+      }
+    })
   }
 
 })
