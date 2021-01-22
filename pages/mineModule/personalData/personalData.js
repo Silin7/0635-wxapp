@@ -25,20 +25,24 @@ Page({
     showDate: false,
     currentDate: new Date(2000, 5, 15).getTime()
   },
+
   onLoad: function (options) {
     this.setData({
-      id_key: wx.getStorageSync('id_key').substr(1)
+      id_key: options.id
     })
     this.getMineInfo()
   },
+
   onReady: function () {
     this.setData({
       windowWidth: wx.getSystemInfoSync().windowWidth,
       windowHeight: wx.getSystemInfoSync().windowHeight
     })
   },
+
   onShow: function () {
   },
+
   // 获取个人信息
   getMineInfo: function () {
     let data = {
@@ -54,6 +58,7 @@ Page({
       }
     })
   },
+
   // 填写电话
   userPhoneTap: function (event) {
     this.data.dataForm.userPhone = event.detail.value
@@ -61,6 +66,7 @@ Page({
       dataForm: this.data.dataForm
     });
   },
+
   // 选择性别
   genderChange: function (event) {
     // this.data.dataForm.gender = event.detail
@@ -68,12 +74,14 @@ Page({
     //   dataForm: this.data.dataForm
     // });
   },
+
   // 弹出日期选择器
   dataTap: function () {
     this.setData({
       showDate: true
     })
   },
+
   // 选择日期
   confirmDate(event) {
     let birthday = mixins.formatDate(event.detail, '03', '-')
@@ -84,6 +92,7 @@ Page({
       dataForm: this.data.dataForm
     })
   },
+
   // 请选择星座
   constellationTap: function () {
     this.setData({
@@ -93,15 +102,17 @@ Page({
       pickerList: ['白羊座', '金牛座', '双子座', '巨蟹座', '狮子座', '处女座', '天秤座', '天蝎座', '射手座', '摩羯座', '水瓶座', '双鱼座']
     })
   },
+
   // 请选择所在县市
   addressTap: function () {
     this.setData({
       pickerType: 'address',
       pickerTitle: '选择所在县市',
       pickerShow: true,
-      pickerList: ['东昌府区', '阳谷县', '莘县', '茌平区', '东阿县', '冠县', '高唐县', '临清市', '其他']
+      pickerList: ['东昌府区', '阳谷县', '莘县', '茌平区', '东阿县', '冠县', '高唐县', '临清市', '其他城市']
     })
   },
+
   // 选中星座，所在县市
   confirmItem(event) {
     if (this.data.pickerType == 'constellation') {
@@ -114,6 +125,7 @@ Page({
       dataForm: this.data.dataForm
     })
   },
+
   // 填写个性签名
   personalSignatureTap: function (event) {
     this.data.dataForm.personalSignature = event.detail.value
@@ -121,11 +133,12 @@ Page({
       dataForm: this.data.dataForm
     });
   },
+
   // 保存
   save_btn: function () {
     let data = this.data.dataForm
     for (let key in data) {
-      if (data[key] == '') {
+      if (data[key] == null) {
         if (key == 'userPhone') {
           Toast.fail('请填写电话')
           return
@@ -154,7 +167,6 @@ Page({
     if (mixins.phoneNumber(this.data.dataForm.userPhone)) {
       this.data.dataForm.id = wx.getStorageSync('id_key')
       esRequest('update_mineInfo', this.data.dataForm).then(res => {
-        console.log(res)
         if (res && res.data.code === 0) {
           Toast.success('操作成功')
           setTimeout(() => {

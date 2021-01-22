@@ -8,7 +8,7 @@
     <view class="head_portrait">
       <image src="{{dataForm.avatarUrl}}" class="w_h_100 br_20"></image>
       <text class="head_portrait_age">
-        <text class="head_portrait_age_text">{{dataForm.age}}</text>
+        <text class="head_portrait_age_text">{{dataForm.age ? dataForm.age : 0}}</text>
       </text>
     </view>
     <view class="head_portrait_text fs_14">
