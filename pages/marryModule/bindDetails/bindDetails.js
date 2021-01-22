@@ -1,5 +1,6 @@
 import esRequest from '../../../utils/esRequest';
 import Toast from '../../../miniprogram_npm/vant-weapp/toast/toast';
+import Dialog from '../../../miniprogram_npm/vant-weapp/dialog/dialog';
 
 Page({
   data: {
@@ -56,9 +57,56 @@ Page({
     })
   },
 
-  // xxx
-  xxx: function (e) {
-    console.log(e.currentTarget.dataset.xxx)
+  // 关注Ta
+  btnGz: function () {
+    let _this = this
+    let data = {
+      followers_id: this.data.id_key,
+      watched_id: this.data.personDetails.user_id
+    }
+    esRequest('is_follow_users', data).then(res => {
+      if (res && res.data.code === 0) {
+        if (res.data.type === '1') {
+          Toast.success('已关注Ta啦')
+        }
+        if (res.data.type === '0') {
+          Dialog.confirm({
+            title: '关注',
+            message: '您确定要关注Ta吗？',
+          }).then(() => {
+            let data2 = {
+              followers_id: _this.data.id_key,
+              watched_id: _this.data.personDetails.user_id,
+              nick_name: _this.data.personDetails.nick_name,
+              gender: _this.data.personDetails.gender,
+              photo: _this.data.personDetails.photo1,
+              introduce: _this.data.personDetails.introduce
+            }
+            esRequest('follow_users', data2).then(res => {
+              if (res && res.data.code === 0) {
+                Toast.success('关注成功')
+              } else {
+                Toast.fail('系统错误')
+              }
+            })
+          }).catch(() => {
+            Toast.success('取消')
+          });
+        }
+      } else {
+        Toast.fail('系统错误')
+      }
+    })
+  },
+
+  // 换微信
+  btnWx: function () {
+
+  },
+
+  // 求约会
+  btnYh: function () {
+
   }
 
 })

@@ -217,14 +217,22 @@ page {
   padding: 0 15px 10px;
 }
 .box_item1 {
-  width: 45%;
+  width: 56%;
   height: 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+.btn_gz {
+  width: 30%;
+  height: 60px;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  align-items: center;
+}
 .btn_wx {
-  width: 50%;
+  width: 30%;
   height: 60px;
   display: flex;
   flex-flow: column;
@@ -232,7 +240,7 @@ page {
   align-items: center;
 }
 .btn_yt {
-  width: 50%;
+  width: 30%;
   height: 60px;
   display: flex;
   flex-flow: column;
@@ -246,7 +254,7 @@ page {
   letter-spacing: 2px;
 }
 .btn_kf {
-  width: 40%;
+  width: 38%;
   height: 60px;
   display: flex;
   justify-content: flex-end;
@@ -266,4 +274,7 @@ page {
 }
 button {
   padding: 0 !important;
+}
+.van-button__text {
+  color: #4545FF !important;
 }
