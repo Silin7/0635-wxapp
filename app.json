@@ -1,11 +1,11 @@
 {
   "pages":[
-    "pages/marryModule/bindDetails/bindDetails",
-    "pages/marryModule/bindList/bindList",
-    "pages/homeModule/minePage/minePage",
     "pages/homeModule/indexPage/indexPage",
     "pages/homeModule/findPage/findPage",
     "pages/homeModule/newsPage/newsPage",
+    "pages/homeModule/minePage/minePage",
+    "pages/marryModule/bindList/bindList",
+    "pages/marryModule/bindDetails/bindDetails",
     "pages/loginModule/loginPage/loginPage",
     "pages/loginModule/registerPage/registerPage",
     "pages/mineModule/myConcerns/myConcerns",
