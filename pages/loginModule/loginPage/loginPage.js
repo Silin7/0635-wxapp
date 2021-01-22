@@ -48,7 +48,7 @@ Page({
         wx.setStorageSync('id_key', res.data.data.id)
         Toast.success('登录成功')
         setTimeout(() => {
-          wx.redirectTo({
+          wx.switchTab({
             url: '/pages/homeModule/indexPage/indexPage'
           })
         }, 2000)

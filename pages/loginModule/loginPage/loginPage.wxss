@@ -34,12 +34,12 @@
 
 .login_name {
   width: 100%;
-  background-color: #F9F9F9;
+  /* background-color: #F9F9F9; */
   height: 40px;
 }
 .login_text {
   width: 50%;
-  background-color: #F9F9F9;
+  /* background-color: #F9F9F9; */
   height: 40px;
 }
 .login_name_icon {

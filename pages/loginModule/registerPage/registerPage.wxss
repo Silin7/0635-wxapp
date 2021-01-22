@@ -34,18 +34,18 @@
 
 .login_name {
   width: 100%;
-  background-color: #F9F9F9;
+  /* background-color: #F9F9F9; */
   height: 40px;
 }
 .login_text {
   width: 90%;
-  background-color: #F9F9F9;
+  /* background-color: #F9F9F9; */
   height: 40px;
   margin-left: 5%;
 }
 .tips {
   width: 100%;
-  background-color: #F9F9F9;
+  /* background-color: #F9F9F9; */
   height: 20px;
   /* color: #4545FF; */
 }
