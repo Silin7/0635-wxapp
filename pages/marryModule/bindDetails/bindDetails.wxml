@@ -175,13 +175,15 @@
 </view>
 
 <view class="btn_box">
-  <view class="btn_wx">
-    <image src="/images/marryModule/btn_wx.png" style="width: 28px; height: 28px;"></image>
-    <text class="btn_text">交换微信</text>
-  </view>
-  <view class="btn_yt">
-    <image src="/images/marryModule/btn_yt.png" style="width: 28px; height: 28px;"></image>
-    <text class="btn_text">甜甜约会</text>
+  <view class="box_item1">
+    <view class="btn_wx">
+      <image src="/images/marryModule/btn_wx.png" style="width: 28px; height: 28px;"></image>
+      <text class="btn_text">交换微信</text>
+    </view>
+    <view class="btn_yt">
+      <image src="/images/marryModule/btn_yt.png" style="width: 28px; height: 28px;"></image>
+      <text class="btn_text">甜甜约会</text>
+    </view>
   </view>
   <view class="btn_kf">
     <!-- <text class="kf_btn">联系客服</text> -->
