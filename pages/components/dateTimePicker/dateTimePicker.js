@@ -12,6 +12,8 @@ Component({
   },
   
   data: {
+    maxDate: new Date().getTime(),
+    minDate: new Date(1970, 1, 1).getTime()
   },
 
   attached: function () {

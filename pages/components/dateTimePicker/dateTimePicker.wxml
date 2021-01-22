@@ -2,6 +2,8 @@
   <van-datetime-picker
     type="{{dateType}}"
     value="{{currentDate}}"
+    max-date="{{maxDate}}"
+    min-date="{{minDate}}"
     bind:cancel="cancelDate"
     bind:confirm="confirmDate"
     item-height="60"/>
