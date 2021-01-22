@@ -6,6 +6,8 @@ Page({
     id_key: '',
     windowWidth: 0,
     windowHeight: 0,
+    follow: 0,
+    collection: 0,
     mineDataForm: {}
   },
 
@@ -13,6 +15,7 @@ Page({
     this.setData({
       id_key: wx.getStorageSync('id_key')
     })
+    this.concernsList()
   },
 
   onReady: function () {
@@ -38,6 +41,20 @@ Page({
         })
       } else {
         Toast.fail('系统错误')
+      }
+    })
+  },
+
+  // 我关注的人
+  concernsList: function () {
+    let data = {
+      followers_id: this.data.id_key
+    }
+    esRequest('concerns_list', data).then(res => {
+      if (res && res.data.code === 0) {
+        this.setData({
+          follow: res.data.data.length
+        })
       }
     })
   },

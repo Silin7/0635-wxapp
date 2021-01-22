@@ -1,6 +1,8 @@
 {
   "navigationBarTitleText": "我的关注",
   "usingComponents": {
+    "van-toast": "vant-weapp/toast/index",
+    "van-dialog": "vant-weapp/dialog/index",
     "van-tab": "vant-weapp/tab/index",
     "van-tabs": "vant-weapp/tabs/index",
     "component-loading": "/pages/components/loading/loading"

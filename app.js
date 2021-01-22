@@ -6,10 +6,11 @@ App({
         if (res.code) {
           let data = {
             appid: 'wx6fef8f853abfa20e',
-            secret: '637d5ad0a04af65fe13856021aa6c468',
+            secret: '9a4bc1e1b91c5c905b0bca7c5d7a99e9',
             code: res.code,
             grant_type: 'authorization_code'
           }
+          // https://api.weixin.qq.com/sns/jscode2session?appid=APPID&secret=SECRET&js_code=JSCODE&grant_type=authorization_code
           let URL = `https://api.weixin.qq.com/sns/jscode2session?appid=${data.appid}&secret=${data.secret}&js_code=${data.code}&grant_type=${data.grant_type}`
           wx.request({
             method: 'GET',

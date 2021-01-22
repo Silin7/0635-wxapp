@@ -14,14 +14,14 @@
       <!-- 我的关注 -->
       <view class="personal_info1_right" bindtap="myConcerns">
         <view class="personal_info1_right_item">
-          <view class="p_l_6">9</view>
+          <view class="p_l_6">{{follow}}</view>
           <view></view>
-          <view class="p_r_6">12</view>
+          <view class="p_r_6">{{collection}}</view>
         </view>
         <view class="personal_info1_right_item">
           <view>关注</view>
           <view class="fs_12">|</view>
-          <view>话题</view>
+          <view>收藏</view>
         </view>
       </view>
     </view>
