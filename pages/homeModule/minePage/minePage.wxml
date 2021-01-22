@@ -8,7 +8,8 @@
       <!-- 我的ID -->
       <view class="personal_info1_left">
         <view class="fs_22">聊吧</view>
-        <view class="fs_12 ls_1">ID号：<text class="fw_7 fs_13">00001</text></view>
+        <wxs module="filter" src="../../../utils/filter.wxs"></wxs>
+        <view class="fs_12 ls_1">ID号：<text class="fw_7 fs_13">{{filter.licensePlate(id_key)}}</text></view>
       </view>
       <!-- 我的关注 -->
       <view class="personal_info1_right" bindtap="myConcerns">
@@ -34,18 +35,21 @@
       <image src="{{mineDataForm.avatarUrl}}" class="w_h_100 br_20"></image>
     </view>
     <view class="personal_info2_right" style="width: {{windowWidth-140}}px;">
+      <!-- 微信昵称 -->
       <view class="name_follow">
-        <!-- 微信昵称 -->
         <view class="ls_2 fw_7">{{mineDataForm.nickName}}</view>
       </view>
-      <view class="fs_12 fx_r_s_c" wx:if="{{mineDataForm.age && mineDataForm.age && mineDataForm.age}}">
+      <!-- 年龄 星座 地址 -->
+      <view class="fs_12 fx_r_s_c" wx:if="{{mineDataForm.age && mineDataForm.constellation && mineDataForm.address}}">
         <image wx:if="{{mineDataForm.gender == '1'}}" src="/images/mineModule/boy_icon.png" style="width: 18px; height: 18px; padding:0 3px;"></image>
         <image wx:if="{{mineDataForm.gender == '2'}}" src="/images/mineModule/girl_icon.png" style="width: 18px; height: 18px; padding:0 3px;"></image>
         <view>{{mineDataForm.age}}岁<text class="fw_7 p_l_3 p_r_3">·</text></view>
         <view>{{mineDataForm.constellation}}<text class="fw_7 p_l_3 p_r_3">·</text></view>
         <view>{{mineDataForm.address}}</view>
       </view>
-      <view class="fs_12 co_9 ls_1">{{mineDataForm.personalSignature}}</view>
+      <!-- 个性签名 -->
+      <view class="fs_12 co_9 ls_1" wx:if="{{mineDataForm.personalSignature}}">{{mineDataForm.personalSignature}}</view>
+      <view class="fs_12 co_9 ls_1" wx:else>点击完善个人信息</view>
     </view>
   </view>
   <!-- 我的足迹 -->

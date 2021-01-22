@@ -10,7 +10,9 @@ Page({
   },
 
   onLoad: function (options) {
-    this.data.id_key = wx.getStorageSync('id_key')
+    this.setData({
+      id_key: wx.getStorageSync('id_key')
+    })
   },
 
   onReady: function () {
@@ -49,8 +51,10 @@ Page({
   
   // 编辑个人资料
   personalData: function () {
+    let id = this.data.id_key.toString()
+    id = id.substr(1)
     wx.navigateTo({
-      url: '/pages/mineModule/personalData/personalData',
+      url: '/pages/mineModule/personalData/personalData?id=' + id,
     })
   }
 })
