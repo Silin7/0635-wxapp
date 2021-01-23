@@ -5,6 +5,7 @@ import Dialog from '../../../miniprogram_npm/vant-weapp/dialog/dialog';
 Page({
   data: {
     id_key: '',
+    user_id: '',
     windowWidth: 0,
     windowHeight: 0,
     swiperList: [],
@@ -14,6 +15,7 @@ Page({
 
   onLoad: function (options) {
     this.data.id_key = wx.getStorageSync('id_key').toString()
+    this.data.user_id = options.user_id ? options.user_id : ''
   },
 
   onReady: function () {
@@ -41,7 +43,7 @@ Page({
   // 基本信息
   marryDetails: function () {
     let data = {
-      user_id: '100001'
+      user_id: this.data.user_id
     }
     esRequest('marry_details', data).then(res => {
       if (res && res.data.code === 0) {
