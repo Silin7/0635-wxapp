@@ -5,7 +5,7 @@
   <!-- 作者信息 -->
   <view class="author_box fx_r_s_c">
     <view class="author_img_box">
-      <image src="{{authorData.author_avatarUrl}}" class="w_h_100"></image>
+      <image src="{{authorData.author_avatar_url}}" class="w_h_100"></image>
     </view>
     <view class="news_date fs_14 m_l_10" style="width: {{windowWidth-100}}px;">
       <view class="sub_module1_info_fd_id_box">

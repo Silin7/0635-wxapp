@@ -24,7 +24,7 @@
 </view>
 <!-- <view class="sub_module1_fd m_t_10" wx:for="{{dynamicList}}" wx:key="index">
   <view class="sub_module1_img_fd">
-    <image src="{{item.author_avatarUrl}}" class="w_h_100"></image>
+    <image src="{{item.author_avatar_url}}" class="w_h_100"></image>
   </view>
   <view class="sub_module1_info_fd" style="width: {{windowWidth-90}}px;">
     <view class=" to_1 fs_16 fw_7 sub_module1_info_fd_id_box">
