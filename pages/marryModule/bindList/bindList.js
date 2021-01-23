@@ -16,11 +16,11 @@ Page({
     friends: '',
     typeList: [
       { key: '推荐', value: '01' },
-      { key: '幸福婚姻', value: '02' },
-      { key: '甜甜恋爱', value: '03' },
-      { key: '同城交友', value: '04' },
-      { key: '女神专区', value: '05' },
-      { key: '男神专区', value: '06' }
+      { key: '相亲', value: '02' },
+      { key: '恋爱', value: '03' },
+      { key: '交友', value: '04' },
+      { key: '女神', value: '05' },
+      { key: '男神', value: '06' }
     ],
     personList: []
   },
