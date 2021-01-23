@@ -78,65 +78,70 @@ Page({
   // 关注Ta
   btnGz: function () {
     let _this = this
-    let data = {
-      followers_id: this.data.id_key,
-      watched_id: this.data.personDetails.user_id
-    }
-    esRequest('is_follow_users', data).then(res => {
-      if (res && res.data.code === 0) {
-        if (res.data.type === '1') {
-          Toast.success('已关注Ta啦')
-        }
-        if (res.data.type === '0') {
-          Dialog.confirm({
-            title: '关注',
-            message: '您确定要关注Ta吗？',
-          }).then(() => {
-            let data2 = {
-              followers_id: _this.data.id_key,
-              watched_id: _this.data.personDetails.user_id,
-              nick_name: _this.data.personDetails.nick_name,
-              gender: _this.data.personDetails.gender,
-              photo: _this.data.personDetails.photo1,
-              introduce: _this.data.personDetails.introduce
-            }
-            esRequest('follow_users', data2).then(res => {
-              if (res && res.data.code === 0) {
-                Toast.success('关注成功')
-              } else {
-                Toast.fail('系统错误')
-              }
-            })
-          }).catch(() => {
-            Toast.success('取消')
-          });
-        }
-      } else {
-        Toast.fail('系统错误')
+    Dialog.confirm({
+      title: '关注',
+      message: '您确定要关注Ta吗？',
+    }).then(() => {
+      let data = {
+        followers_id: _this.data.id_key,
+        watched_id: _this.data.personDetails.user_id,
+        nick_name: _this.data.personDetails.nick_name,
+        photo: _this.data.personDetails.photo1,
+        introduce: _this.data.personDetails.introduce
       }
-    })
+      esRequest('follow_users', data).then(res => {
+        if (res && res.data.code === 0) {
+          if (res.data.type === '1') {
+            Toast.success('已关注Ta啦')
+          }
+          if (res.data.type === '0') {
+            Toast.success('关注成功')
+          }
+        } else {
+          Toast.fail('系统错误')
+        }
+      })
+    }).catch(() => {
+      Toast.success('取消')
+    });
+    
   },
 
   // 要微信 / 求约会
   btnWY: function (e) {
-    let _this = this
+    // 要微信
     if (e.currentTarget.dataset.type === '01') {
       Dialog.confirm({
         title: '要微信',
         message: '您确定要Ta的微信嘛？',
       }).then(() => {
+        let message_title = ''
+        let message_content = ''
+        if (this.data.personDetails.gender === '男') {
+          message_title = '小哥哥，可以给个微信吗？'
+          message_content = `你好，能给我你的微信吗？我被你的颜值所打动，在我心里你一定是个乐观开朗的男孩子。但我不能自己妄加推断，所以想了解一下你真正的性格。`
+        }
+        if (this.data.personDetails.gender === '女') {
+          message_title = '小姐姐，可以给个微信吗？'
+          message_content = `你好，能给我你的微信吗？我被你的颜值所打动，在我心里你一定是个善良温柔的女孩子。但我不能自己妄加推断，所以想了解一下你真正的性格。`
+        }
         let data = {
           receiver_id: this.data.personDetails.user_id,
           sender_id: this.data.id_key,
+          sender_name: this.data.userInfo.nickName,
+          sender_img: this.data.userInfo.avatarUrl,
+          message_title: message_title,
+          message_content: message_content,
           message_type: '01'
         }
-        esRequest('is_permessage', data).then(res => {
+        esRequest('permessage_send', data).then(res => {
           if (res && res.data.code === 0) {
+            Toast.success('发送成功')
             if (res.data.type === '1') {
               Toast.success('发送过消息啦')
             }
             if (res.data.type === '0') {
-              _this.btnnWx()
+              Toast.success('发送成功')
             }
           } else {
             Toast.fail('系统错误')
@@ -146,23 +151,38 @@ Page({
         Toast.success('取消')
       });
     }
+    // 求约会
     if (e.currentTarget.dataset.type === '02') {
       Dialog.confirm({
         title: '求约会',
         message: '您确定和Ta的约会嘛？',
       }).then(() => {
+        let message_title = ''
+        let message_content = ''
+        if (this.data.personDetails.gender === '男') {
+          message_title = '小哥哥，可以约你出去浪吗？'
+          message_content = `你好，能给我你的微信吗？我被你的颜值所打动，在我心里你一定是个乐观开朗的男孩子。但我不能自己妄加推断，所以想了解一下你真正的性格。`
+        }
+        if (this.data.personDetails.gender === '女') {
+          message_title = '小姐姐，可以约你出去浪吗？'
+          message_content = `你好，能给我你的微信吗？我被你的颜值所打动，在我心里你一定是个善良温柔的女孩子。但我不能自己妄加推断，所以想了解一下你真正的性格。`
+        }
         let data = {
           receiver_id: this.data.personDetails.user_id,
           sender_id: this.data.id_key,
+          sender_name: this.data.userInfo.nickName,
+          sender_img: this.data.userInfo.avatarUrl,
+          message_title: message_title,
+          message_content: message_content,
           message_type: '02'
         }
-        esRequest('is_permessage', data).then(res => {
+        esRequest('permessage_send', data).then(res => {
           if (res && res.data.code === 0) {
             if (res.data.type === '1') {
               Toast.success('发送过消息啦')
             }
             if (res.data.type === '0') {
-              _this.btnYh()
+              Toast.success('发送成功')
             }
           } else {
             Toast.fail('系统错误')
@@ -172,66 +192,5 @@ Page({
         Toast.success('取消')
       });
     }
-  },
-
-  // 要微信
-  btnnWx: function () {
-    var message_title = ''
-    var message_content = ''
-    if (this.data.personDetails.gender === '男') {
-      message_title = '小哥哥，可以给个微信吗？'
-      message_content = `你好，能给我你的微信吗？我被你的颜值所打动，在我心里你一定是个乐观开朗的男孩子。但我不能自己妄加推断，所以想了解一下你真正的性格。`
-    }
-    if (this.data.personDetails.gender === '女') {
-      message_title = '小姐姐，可以给个微信吗？'
-      message_content = `你好，能给我你的微信吗？我被你的颜值所打动，在我心里你一定是个善良温柔的女孩子。但我不能自己妄加推断，所以想了解一下你真正的性格。`
-    }
-    let data = {
-      receiver_id: this.data.personDetails.user_id,
-      sender_id: this.data.id_key,
-      sender_name: this.data.userInfo.nickName,
-      sender_img: this.data.userInfo.avatarUrl,
-      message_title: message_title,
-      message_content: message_content,
-      message_type: '01'
-    }
-    esRequest('permessage_send', data).then(res => {
-      if (res && res.data.code === 0) {
-        Toast.success('发送成功')
-      } else {
-        Toast.fail('系统错误')
-      }
-    })
-  },
-
-  // 求约会
-  btnYh: function () {
-    var message_title = ''
-    var message_content = ''
-    if (this.data.personDetails.gender === '男') {
-      message_title = '小哥哥，可以约你出去浪吗？'
-      message_content = `你好，能给我你的微信吗？我被你的颜值所打动，在我心里你一定是个乐观开朗的男孩子。但我不能自己妄加推断，所以想了解一下你真正的性格。`
-    }
-    if (this.data.personDetails.gender === '女') {
-      message_title = '小姐姐，可以约你出去浪吗？'
-      message_content = `你好，能给我你的微信吗？我被你的颜值所打动，在我心里你一定是个善良温柔的女孩子。但我不能自己妄加推断，所以想了解一下你真正的性格。`
-    }
-    let data = {
-      receiver_id: this.data.personDetails.user_id,
-      sender_id: this.data.id_key,
-      sender_name: this.data.userInfo.nickName,
-      sender_img: this.data.userInfo.avatarUrl,
-      message_title: message_title,
-      message_content: message_content,
-      message_type: '02'
-    }
-    esRequest('permessage_send', data).then(res => {
-      if (res && res.data.code === 0) {
-        Toast.success('发送成功')
-      } else {
-        Toast.fail('系统错误')
-      }
-    })
   }
-
 })
