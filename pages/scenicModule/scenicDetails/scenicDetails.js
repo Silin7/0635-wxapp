@@ -11,7 +11,7 @@ Page({
     isFollow: '0'
   },
   onLoad: function (options) {
-    this.data.id_key = wx.getStorageSync('id_key')
+    this.data.id_key = wx.getStorageSync('id_key').toString()
     this.data.scenicId = options.id ? options.id : '2'
   },
   onReady: function () {

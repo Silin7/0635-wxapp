@@ -7,12 +7,15 @@ Page({
     windowWidth: 0,
     windowHeight: 0,
     messageTab: 0,
+    totalCount: 0,
+    page: 1,
+    limit: 10,
     perMessageList: [],
     sysMessageList: []
   },
 
   onLoad: function (options) {
-    this.data.id_key = wx.getStorageSync('id_key')
+    this.data.id_key = wx.getStorageSync('id_key').toString()
   },
 
   onReady: function () {
@@ -24,23 +27,43 @@ Page({
 
   onShow: function () {
     this.getPerMessage()
-    this.getSysMessage()
   },
 
   // 消息tabs切换
   messageTabChange: function (e) {
     this.data.messageTab = e.detail.index
+    if (e.detail.index === 0) {
+      this.setData({
+        page: 1,
+        limit: 10,
+        totalCount: 0,
+        perMessageList: []
+      })
+      this.getPerMessage()
+    }
+    if (e.detail.index === 1) {
+      this.setData({
+        page: 1,
+        limit: 10,
+        totalCount: 0,
+        sysMessageList: []
+      })
+      this.getSysMessage()
+    }
   },
 
   // 个人私信列表
   getPerMessage: function () {
     let data = {
+      page: this.data.page,
+      limit: this.data.limit,
       receiver_id: this.data.id_key
     }
     esRequest('permessage_list', data).then(res => {
       if (res && res.data.code === 0) {
         this.setData({
-          perMessageList: res.data.data
+          totalCount: res.data.totalCount,
+          perMessageList: this.data.perMessageList.concat(res.data.data)
         })
       } else {
         Toast.fail('系统错误')
@@ -51,12 +74,15 @@ Page({
   // 系统消息列表
   getSysMessage: function () {
     let data = {
+      page: this.data.page,
+      limit: this.data.limit,
       receiver_id: this.data.id_key
     }
     esRequest('sysmessage_list', data).then(res => {
       if (res && res.data.code === 0) {
         this.setData({
-          sysMessageList: res.data.data
+          totalCount: res.data.totalCount,
+          sysMessageList: this.data.sysMessageList.concat(res.data.data)
         })
       } else {
         Toast.fail('系统错误')
@@ -69,5 +95,21 @@ Page({
     wx.navigateTo({
       url: '/pages/messageModule/messageDetails/messageDetails?id=' + e.currentTarget.dataset.item.id + '&type=' + this.data.messageTab
     })
+  },
+
+  // 触底函数1
+  onScrollBottom1: function () {
+    if (this.data.totalCount > this.data.perMessageList.length) {
+      this.data.page += 1
+      this.getPerMessage()
+    }
+  },
+
+  // 触底函数2
+  onScrollBottom2: function () {
+    if (this.data.totalCount > this.data.sysMessageList.length) {
+      this.data.page += 1
+      this.getSysMessage()
+    }
   }
 })

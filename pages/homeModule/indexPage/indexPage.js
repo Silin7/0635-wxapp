@@ -20,7 +20,7 @@ Page({
   },
 
   onLoad: function (options) {
-    this.data.id_key = wx.getStorageSync('id_key')
+    this.data.id_key = wx.getStorageSync('id_key').toString()
   },
 
   onReady: function () {
