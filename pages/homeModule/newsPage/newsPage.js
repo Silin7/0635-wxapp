@@ -54,6 +54,7 @@ Page({
 
   // 个人私信列表
   getPerMessage: function () {
+    this.data.perMessageList = []
     let data = {
       page: this.data.page,
       limit: this.data.limit,
