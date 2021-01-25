@@ -1,4 +1,6 @@
 
+/* 此文件为js参数验证规则 */
+
 // 手机号验证
 var phoneNumber = function(phoneNumber) {
   if (!/^1[3456789]\d{9}$/.test(phoneNumber)) {
@@ -25,8 +27,8 @@ var APNumber = function(phoneNumber) {
   }
 }
 
- module.exports = {
-   phoneNumber: phoneNumber,
-   IDNumber: IDNumber,
-   APNumber: APNumber
- }
+module.exports = {
+  phoneNumber: phoneNumber,
+  IDNumber: IDNumber,
+  APNumber: APNumber
+}

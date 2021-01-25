@@ -1,3 +1,4 @@
+/* 此文件为wxml页面参数过滤 */
 
 // 处理日期
 var dayjs = function (date, status, state) {

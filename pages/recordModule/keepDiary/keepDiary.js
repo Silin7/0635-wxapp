@@ -1,4 +1,4 @@
-import mixins from '../../mixinsMoudle/mixins'
+import mixins from '../../../utils/mixins'
 import esRequest from '../../../utils/esRequest';
 import Toast from '../../../miniprogram_npm/vant-weapp/toast/toast';
 import Dialog from '../../../miniprogram_npm/vant-weapp/dialog/dialog';

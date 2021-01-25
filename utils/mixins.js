@@ -1,3 +1,5 @@
+/* 此文件为js参数做处理 */
+
 // 时间戳转日期
 // date: 时间戳
 // type: 返回日期格式类型 01:YYYY, 02:YYYY-MM, 03:YYYY-MM-DD, 04:YYYY-MM-DD hh, 05:YYYY-MM-DD hh-mm, 06:YYYY-MM-DD hh-mm-ss, 07:YYYY年MM月DD日 默认: 03, 可不传
@@ -41,22 +43,7 @@ var formatDate = function (date, type, connector) {
     return YY + '年' +  MM + '月' +  DD + '日' + ' ' + hh + '点' +  mm + '分';
   }
 }
-// 手机号格式验证
-var phoneNumber = function(phoneNumber) {
-  if (!/^1[3456789]\d{9}$/.test(phoneNumber)) {
-    return false
-  } else {
-    return true
-  }
-}
-// 身份证格式验证
-var IDNumber = function(IDNumber) {
-  if (!/^[1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$/.test(IDNumber)) {
-    return false
-  } else {
-    return true
-  }
-}
+
 // 根据出生日期算出年龄（周岁）
 // data：生日，格式：YYYY-MM-DD
 var getAge = function (data) {
@@ -103,7 +90,5 @@ var getAge = function (data) {
 
 module.exports = {
   formatDate: formatDate,
-  phoneNumber: phoneNumber,
-  IDNumber: IDNumber,
   getAge: getAge,
 }

@@ -1,4 +1,5 @@
-import mixins from '../../mixinsMoudle/mixins'
+import mixins from '../../../utils/mixins'
+import regular from '../../../utils/regular'
 import esRequest from '../../../utils/esRequest';
 import Toast from '../../../miniprogram_npm/vant-weapp/toast/toast';
 Page({
@@ -164,7 +165,7 @@ Page({
         }
       }
     }
-    if (mixins.phoneNumber(this.data.dataForm.userPhone)) {
+    if (regular.phoneNumber(this.data.dataForm.userPhone)) {
       this.data.dataForm.id = wx.getStorageSync('id_key')
       esRequest('update_mineInfo', this.data.dataForm).then(res => {
         if (res && res.data.code === 0) {
