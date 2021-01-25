@@ -1,0 +1,10 @@
+/* 导航栏 */
+.van-tabs__line {
+  background-color: #4545FF !important;
+}
+/* .van-tab--active {
+  font-weight: 700 !important;
+  color: #4545FF !important;
+  font-size: 18px !important;
+  letter-spacing: 2px !important;
+} */

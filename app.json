@@ -1,6 +1,10 @@
 {
   "pages":[
+    "pages/recipeModule/recipeList/recipeList",
+    "pages/recipeModule/recipeInfo/recipeInfo",
+    "pages/recipeModule/recipeDetail/recipeDetail",
     "pages/homeModule/indexPage/indexPage",
+    "pages/homeModule/findPage2/findPage",
     "pages/homeModule/findPage/findPage",
     "pages/homeModule/newsPage/newsPage",
     "pages/homeModule/minePage/minePage",
@@ -26,9 +30,6 @@
     "pages/otherModule/girlRandom/girlRandom",
     "pages/otherModule/historyToday/historyToday",
     "pages/otherModule/historyDetails/historyDetails",
-    "pages/recipeModule/recipeList/recipeList",
-    "pages/recipeModule/recipeInfo/recipeInfo",
-    "pages/recipeModule/recipeDetail/recipeDetail",
     "pages/scenicModule/scenicList/scenicList",
     "pages/scenicModule/scenicDetails/scenicDetails",
     "pages/topicModule/topicList/topicList",
@@ -50,7 +51,7 @@
       "iconPath": "/images/homeModule/compass_normal.png",
       "selectedIconPath": "/images/homeModule/compass_active.png"
     },{
-      "pagePath": "pages/homeModule/findPage/findPage",
+      "pagePath": "pages/homeModule/findPage2/findPage",
       "text": "发现",
       "iconPath": "/images/homeModule/home_normal.png",
       "selectedIconPath": "/images/homeModule/home_active.png"
