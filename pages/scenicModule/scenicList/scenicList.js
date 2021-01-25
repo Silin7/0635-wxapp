@@ -37,7 +37,7 @@ Page({
 
   // 景点列表
   getScenicSpot: function () {
-    if (this.data.scenicspotPosition === '全部景点') {
+    if (this.data.scenicspotPosition === '全部') {
       this.data.scenicspotPosition = ''
     }
     let data = {

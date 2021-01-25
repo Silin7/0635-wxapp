@@ -1,8 +1,8 @@
 <van-toast id="van-toast" />
 
 <van-tabs active="{{scenicActive}}" bind:change="scenicChange">
-  <van-tab title="全部景点"></van-tab>
-  <van-tab title="东昌府区"></van-tab>
+  <van-tab title="全部"></van-tab>
+  <van-tab title="东昌府"></van-tab>
   <van-tab title="茌平区"></van-tab>
   <van-tab title="临清市"></van-tab>
   <van-tab title="阳谷县"></van-tab>
