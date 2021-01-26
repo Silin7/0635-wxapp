@@ -40,9 +40,14 @@
 
 /* 侧边栏 */
 .van-sidebar-item--selected {
-  border-color: var(--sidebar-selected-border-color,#4545FF) !important;
+  border-color: var(--sidebar-selected-border-color,#F7F8FA) !important;
+  /* border-color: var(--sidebar-selected-border-color,#4545FF) !important; */
 }
 .van-sidebar-item {
   background-color: #F7F8FA !important;
+}
+.van-sidebar-item--selected {
+  color: #4545FF !important;
+  font-weight: 700 !important;
 }
   

@@ -6,9 +6,11 @@ Page({
     id_key: '',
     windowWidth: 0,
     windowHeight: 0,
+    sidebarKey: 0,
     newsTypeList: [],
-    cityTypeList: [],
-    dynamicList: [],
+    typeId: '',
+    newsPage: 1,
+    newsList: [],
   },
 
   onLoad: function (options) {
@@ -22,67 +24,71 @@ Page({
   },
 
   onShow: function () {
-    this.getNewsType()
-    this.getCityType()
-    this.getDynamicList()
+    this.awaitNews()
   },
+
+  async awaitNews () {
+    await this.getNewsType()
+    this.data.typeId = this.data.newsTypeList[0].type_id
+    this.getNewsList()
+  },
+
+  // change sidebar
+  sidebarChange: function (event) {
+    this.setData({
+      typeId: this.data.newsTypeList[event.detail].type_id,
+      newsPage: 1,
+      newsList: [],
+    })
+    this.getNewsList()
+  },
+
   // 新闻类型列表
   getNewsType: function () {
-    esRequest('admin_news_type').then(res => {
-      if (res && res.data.code === 0) {
-        this.setData({
-          newsTypeList: res.data.data
-        })
-      } else {
-        Toast.fail('系统错误')
-      }
+    return new Promise (async (resolve, reject) => {
+      esRequest('admin_news_type').then(res => {
+        if (res && res.data.code === 0) {
+          this.setData({
+            newsTypeList: res.data.data
+          })
+        } else {
+          Toast.fail('系统错误')
+        }
+        resolve()
+      })
     })
   },
+
   // 新闻列表
-  newsList: function (e) {
-    wx.navigateTo({
-      url: '/pages/dynamicModule/newsList/newsList?typeId=' + e.currentTarget.dataset.item.type_id + '&typeName=' + e.currentTarget.dataset.item.type_name
-    })
-  },
-  // 县市类型列表
-  getCityType: function () {
-    esRequest('admin_city_type').then(res => {
-      if (res && res.data.code === 0) {
+  getNewsList: function () {
+    let data = {
+      typeId: this.data.typeId,
+      page: this.data.newsPage
+    }
+    esRequest('news_list', data).then(res => {
+      if (res && res.data.code == 1) {
         this.setData({
-          cityTypeList: res.data.data
+          newsList: this.data.newsList.concat(res.data.data)
         })
       } else {
-        Toast.fail('系统错误')
+        this.data.newsNext = false
       }
     })
   },
-  // 县市新闻列表
-  cnewsList: function (e) {
-    console.log(e.currentTarget.dataset.item)
-    wx.navigateTo({
-      url: '/pages/dynamicModule/cnewsList/cnewsList?typeId=' + e.currentTarget.dataset.item.type_id + '&typeName=' + e.currentTarget.dataset.item.type_name
-    })
+
+  // 新闻触底函数
+  onScrollBottom: function () {
+    if (this.data.newsNext) {
+      this.data.newsPage += 1
+      this.getNewsList()
+    }
   },
-  // 同城动态列表
-  getDynamicList: function () {
-    esRequest('dynamic_list').then(res => {
-      if (res && res.data.code === 0) {
-        this.data.dynamicList = res.data.data
-        this.data.dynamicList.forEach(item => {
-          item.content = item.content.toString().replace(/\<img/gi, '<img style="max-width:100%; height:auto"')
-        })
-        this.setData({
-          dynamicList: this.data.dynamicList
-        })
-      } else {
-        Toast.fail('系统错误')
-      }
-    })
-  },
-  // 同城动态详情
-  getDynamicDetalis: function (e) {
+
+  // 新闻详情
+  getNewsDetalis: function (e) {
     wx.navigateTo({
-      url: '/pages/dynamicModule/dynamicDetails/dynamicDetails?id=' + e.currentTarget.dataset.item.id
+      url: '/pages/dynamicModule/newsDetails/newsDetails?newsId=' + e.currentTarget.dataset.item.newsId
     })
   }
+
 })
