@@ -109,13 +109,15 @@
   /* border-bottom: 1px solid #F7F8FA; */
 }
 .scenic_details_box {
+  box-sizing: border-box;
   position: absolute;
   top: 455px;
-  box-sizing: border-box;
-  width: 100vw;
-  padding:20px 10px;
-  margin-top: 20px;
-  background-color: #FFFFFF;
-  letter-spacing: 1px;
   z-index: 1;
+  width: 100vw;
+  margin-top: 20px;
+  padding:20px 10px;
+  background-color: #FFFFFF;
+  color: #333333;
+  line-height: 30px;
+  letter-spacing: 1px;
 }

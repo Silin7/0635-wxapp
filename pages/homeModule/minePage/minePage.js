@@ -8,14 +8,14 @@ Page({
     windowHeight: 0,
     follow: 0,
     collection: 0,
-    mineDataForm: {}
+    mineDataForm: {},
+    scenicspotList: []
   },
 
   onLoad: function (options) {
     this.setData({
-      id_key: wx.getStorageSync('id_key')
+      id_key: wx.getStorageSync('id_key').toString()
     })
-    this.concernsList()
   },
 
   onReady: function () {
@@ -26,7 +26,9 @@ Page({
   },
 
   onShow: function () {
+    this.concernsList()
     this.getMineInfo()
+    this.mineScenicspotList()
   },
 
   // 获取个人信息
@@ -45,7 +47,30 @@ Page({
     })
   },
 
-  // 我关注的人
+  // 足迹列表
+  mineScenicspotList: function () {
+    let data = {
+      followers_id: this.data.id_key
+    }
+    esRequest('mine_scenicspot_list', data).then (res => {
+      if (res && res.data.code === 0) {
+        this.setData({
+          scenicspotList: res.data.data
+        })
+      } else {
+        Toast.fail('系统错误')
+      }
+    })
+  },
+
+  // 足迹详情
+  scenicspotDetails: function (e) {
+    wx.navigateTo({
+      url: '/pages/scenicModule/scenicDetails/scenicDetails?id=' + e.currentTarget.dataset.id
+    })
+  },
+
+  // 我关注的人（number）
   concernsList: function () {
     let data = {
       followers_id: this.data.id_key
@@ -59,7 +84,7 @@ Page({
     })
   },
 
-  // 我的关注
+  // 跳转到我的关注
   myConcerns: function () {
     wx.navigateTo({
       url: '/pages/mineModule/myConcerns/myConcerns',

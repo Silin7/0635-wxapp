@@ -554,6 +554,15 @@
 .my_tracks_center_img {
   width: 20vw;
   height: 100px;
+  position: relative;
+}
+
+.my_tracks_center_mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #999999;
+  opacity: 0.7;
 }
 
 .my_conversation_center {

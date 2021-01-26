@@ -1,9 +1,11 @@
 {
   "pages":[
+    "pages/homeModule/minePage/minePage",
     "pages/homeModule/indexPage/indexPage",
     "pages/homeModule/findPage/findPage",
     "pages/homeModule/newsPage/newsPage",
-    "pages/homeModule/minePage/minePage",
+    "pages/scenicModule/scenicList/scenicList",
+    "pages/scenicModule/scenicDetails/scenicDetails",
     "pages/recipeModule/recipeList/recipeList",
     "pages/recipeModule/recipeInfo/recipeInfo",
     "pages/recipeModule/recipeDetail/recipeDetail",
@@ -29,8 +31,6 @@
     "pages/otherModule/girlRandom/girlRandom",
     "pages/otherModule/historyToday/historyToday",
     "pages/otherModule/historyDetails/historyDetails",
-    "pages/scenicModule/scenicList/scenicList",
-    "pages/scenicModule/scenicDetails/scenicDetails",
     "pages/topicModule/topicList/topicList",
     "pages/messageModule/messageDetails/messageDetails",
     "pages/components/dateTimePicker/dateTimePicker",
