@@ -3,22 +3,22 @@
 <view class="bg_F5 bs_bb oy_a" style="height: {{windowHeight}}px; ">
   <!-- 景区图片 -->
   <view class="scenic_img_box">
-    <image src="{{scenicDetails.scenicSpot_img}}" class="w_h_100"></image>
+    <image src="{{scenicDetails.scenicspot_img}}" class="w_h_100"></image>
   </view>
   <view class="scenic_info_box">
     <view class="scenic_info_item scenic_info_name">
-      <text class="co_0">{{scenicDetails.scenicSpot_name}}</text>
+      <text class="co_0">{{scenicDetails.scenicspot_name}}</text>
       <text class="punch_clock" bindtap="punchClock" wx:if="{{isFollow == '0'}}">打卡{{}}</text>
       <text class="punch_clock2" bindtap="cancePunch" wx:else>已打卡</text>
     </view>
-    <view class="scenic_info_item2 ls_1">{{scenicDetails.scenicSpot_hours}}</view>
-    <view class="scenic_info_item scenic_info_date ls_1">{{scenicDetails.scenicSpot_place}}</view>
+    <view class="scenic_info_item2 ls_1">{{scenicDetails.scenicspot_hours}}</view>
+    <view class="scenic_info_item scenic_info_date ls_1">{{scenicDetails.scenicspot_place}}</view>
     <view class="scenic_info_item ls_1" wx:if="{{scenicDetails.scenicspot_phone}}">官方电话：{{scenicDetails.scenicspot_phone}}</view>
     <view class="scenic_info_item ls_1" wx:else>官方电话：暂无联系方式</view>
-    <view class="scenic_info_ticket ls_1" wx:if="{{scenicDetails.scenicSpot_Ticket}}"> 
-      <view class="scenic_info_ticket_item ls_1">成人票 {{scenicDetails.scenicSpot_Ticket}}元</view>
+    <view class="scenic_info_ticket ls_1" wx:if="{{scenicDetails.scenicspot_Ticket}}"> 
+      <view class="scenic_info_ticket_item ls_1">成人票 {{scenicDetails.scenicspot_Ticket}}元</view>
       <wxs module="filter" src="../../../utils/filter.wxs"></wxs>
-      <text class="scenic_info_ticket_item2 ls_1">学生票 {{filter.studentTicket(scenicDetails.scenicSpot_Ticket)}}元</text>
+      <text class="scenic_info_ticket_item2 ls_1">学生票 {{filter.studentTicket(scenicDetails.scenicspot_Ticket)}}元</text>
     </view>
     <view class="scenic_info_ticket ls_1" wx:else> 
       <view class="scenic_info_ticket_item3 p_l_10 ls_10">免费</view>
@@ -26,7 +26,7 @@
   </view>
   
   <view class="scenic_details_box" style="min-height: {{windowHeight-475}}px;">
-    <rich-text nodes="{{scenicDetails.scenicSpot_signature}}"></rich-text>
+    <rich-text nodes="{{scenicDetails.scenicspot_signature}}"></rich-text>
   </view>
   
 </view>

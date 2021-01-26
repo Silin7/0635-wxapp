@@ -10,7 +10,7 @@ Page({
     scenicspotPage: 1,
     scenicspotLimit: 10,
     scenicspotPosition: '',
-    scenicSpotList: []
+    scenicspotList: []
   },
 
   onReady: function () {
@@ -27,7 +27,7 @@ Page({
   // 切换Tabs
   scenicChange: function (e) {
     this.data.scenicspotPage = 1
-    this.data.scenicSpotList = []
+    this.data.scenicspotList = []
     this.data.scenicspotPosition = e.detail.title
     this.getScenicSpot()
     // wx.pageScrollTo({
@@ -49,7 +49,7 @@ Page({
       if (res && res.data.code === 0) {
         this.setData({
           totalCount: res.data.totalCount,
-          scenicSpotList: this.data.scenicSpotList.concat(res.data.data)
+          scenicspotList: this.data.scenicspotList.concat(res.data.data)
         })
       } else {
         Toast.fail('系统错误')
@@ -66,7 +66,7 @@ Page({
   
   // 触底函数
   onScrollBottom: function () {
-    if (this.data.totalCount > this.data.scenicSpotList.length) {
+    if (this.data.totalCount > this.data.scenicspotList.length) {
       this.data.scenicspotPage += 1
       this.getScenicSpot()
     }

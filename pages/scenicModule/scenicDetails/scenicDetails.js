@@ -42,7 +42,7 @@ Page({
   // 是否已打卡
   isPunchClock: function () {
     let data = {
-      scenicSpot_id: this.data.scenicId,
+      scenicspot_id: this.data.scenicId,
       followers_id: this.data.id_key,
     }
     esRequest('is_follow_scenicspot', data).then(res => {
@@ -59,9 +59,9 @@ Page({
   punchClock: function () {
     let data = {
       followers_id: this.data.id_key,
-      scenicSpot_id: this.data.scenicDetails.id,
-      scenicSpot_name: this.data.scenicDetails.scenicSpot_name,
-      scenicSpot_img: this.data.scenicDetails.scenicSpot_img
+      scenicspot_id: this.data.scenicDetails.id,
+      scenicspot_name: this.data.scenicDetails.scenicspot_name,
+      scenicspot_img: this.data.scenicDetails.scenicspot_img
     }
     esRequest('follow_scenicspot', data).then(res => {
       if (res && res.data.code === 0) {
@@ -77,7 +77,7 @@ Page({
   cancePunch: function () {
     let data = {
       followers_id: this.data.id_key,
-      scenicSpot_id: this.data.scenicDetails.id
+      scenicspot_id: this.data.scenicDetails.id
     }
     esRequest('cancel_scenicspot', data).then(res => {
       if (res && res.data.code === 0) {
