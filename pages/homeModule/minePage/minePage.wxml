@@ -61,7 +61,7 @@
         </view>
         <view class="d_ib p_l_10">足迹</view>
       </view>
-      <text class="dialog-close see_more p_t_5 fs_12 co_9" decode="true">查看更多 &gt;</text>
+      <text class="dialog-close see_more p_t_5 fs_12 co_9" decode="true" bindtap="tracksMore">查看更多 &gt;</text>
     </view>
     <view class="my_tracks_center m_t_20">
       <view class="my_tracks_center_img" wx:for="{{scenicspotList}}" wx:key="index" wx:if="{{index < 4}}" bindtap="scenicspotDetails" data-id="{{item.scenicspot_id}}">

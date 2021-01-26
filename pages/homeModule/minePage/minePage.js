@@ -70,6 +70,13 @@ Page({
     })
   },
 
+  // 足迹更多
+  tracksMore: function () {
+    wx.navigateTo({
+      url: '/pages/scenicModule/mineScenic/mineScenic'
+    })
+  },
+
   // 我关注的人（number）
   concernsList: function () {
     let data = {

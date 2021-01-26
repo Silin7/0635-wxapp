@@ -4,6 +4,7 @@
     "pages/homeModule/indexPage/indexPage",
     "pages/homeModule/findPage/findPage",
     "pages/homeModule/newsPage/newsPage",
+    "pages/scenicModule/mineScenic/mineScenic",
     "pages/scenicModule/scenicList/scenicList",
     "pages/scenicModule/scenicDetails/scenicDetails",
     "pages/recipeModule/recipeList/recipeList",
