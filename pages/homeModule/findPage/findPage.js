@@ -8,6 +8,7 @@ Page({
     windowHeight: 0,
     sidebarKey: 0,
     newsTypeList: [],
+    newsNext: true,
     typeId: '',
     newsPage: 1,
     newsList: [],

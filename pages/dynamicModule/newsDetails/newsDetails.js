@@ -38,7 +38,7 @@ Page({
         if (res.data.data.images.length > 0) {
           res.data.data.images.forEach(item => {
             let str1 = item.position
-            let str2 = `<img style="max-width:100%; height:auto" src="${item.imgSrc}"/>`
+            let str2 = `<img style="max-width:100%; height:auto; margin: 5px 0;" src="${item.imgSrc}"/>`
             _this.data.newsContent = _this.data.newsContent.toString().replace(str1, str2)
           }) 
         }
