@@ -1,4 +1,7 @@
 {
-  "navigationBarTitleText": "消息",
-  "usingComponents": {}
+  "navigationBarTitleText": "个人私信",
+  "usingComponents": {
+    "van-toast": "vant-weapp/toast/index",
+    "van-dialog": "vant-weapp/dialog/index"
+  }
 }

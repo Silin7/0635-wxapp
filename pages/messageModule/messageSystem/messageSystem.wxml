@@ -1,0 +1,9 @@
+<van-toast id="van-toast" />
+<view class="bg_F5 bs_bb oy_a p_b_10" style="height: {{windowHeight}}px;">
+  <view class="news_date fs_14">{{messageData.create_time}}</view>
+  <view class="sub_module1 ">
+    <view class="sub_module1_item_ns_info fx_c_s_s" style="width: {{windowWidth-20}}px;">
+      <rich-text nodes="{{sysmessage_details}}"></rich-text>
+    </view>
+  </view>
+</view>

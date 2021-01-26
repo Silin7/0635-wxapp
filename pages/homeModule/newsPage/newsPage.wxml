@@ -23,7 +23,7 @@
   </van-tab>
   <van-tab title="系统消息">
     <scroll-view style="height: {{windowHeight-44}}px;" scroll-y="true" bindscrolltolower="onScrollBottom2">
-      <view class="sub_module1_ns" wx:for="{{sysMessageList}}" wx:key="index" bindtap="messageDetails" data-item="{{item}}" >
+      <view class="sub_module1_ns" wx:for="{{sysMessageList}}" wx:key="index" bindtap="messageSystem" data-item="{{item}}" >
         <view class="sub_module1_item_ns">
           <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
         </view>

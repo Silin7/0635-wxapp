@@ -1,9 +1,21 @@
 <van-toast id="van-toast" />
-<view class="bg_F5 bs_bb oy_a p_b_10" style="height: {{windowHeight}}px;">
+<van-dialog id="van-dialog" />
+
+<view class="page_box" style="height: {{windowHeight}}px;">
   <view class="news_date fs_14">{{messageData.create_time}}</view>
-  <view class="sub_module1 ">
-    <view class="sub_module1_item_ns_info fx_c_s_s" style="width: {{windowWidth-20}}px;">
+  <!-- 消息详情 -->
+  <view class="sub_module1">
+    <image src="{{messageData.sender_img}}" class="sender_img"></image>
+    <view class="sub_module1_item_ns_info fx_c_s_s" style="width: {{windowWidth-80}}px;">
+      <view class="sub_module1_item_ns_triangle"></view>
       <rich-text nodes="{{sysmessage_details}}"></rich-text>
+      <view class="sub_module1_item_ns_btns" wx:if="{{messageData.message_type != '03' && messageData.message_type != '04'}}">
+        <text class="sub_module1_item_ns_btns_ty" bindtap="gladlyConsent">欣然同意</text>
+        <text class="sub_module1_item_ns_btns_jj" bindtap="cruelRefusal">残忍拒绝</text>
+      </view>
     </view>
   </view>
+  <view wx:if="{{messageData.message_type != '03' && messageData.message_type != '04'}}" class="remark">*注：点击同意按钮后，系统会将您个人中心中绑定的手机号推送给对方，请确认您的手机号与微信同号</view>
 </view>
+
+  

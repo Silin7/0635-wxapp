@@ -1,15 +1,27 @@
+.page_box {
+  background-color: #F7F8FA;
+  box-sizing: border-box;
+  padding-bottom: 10px;
+  position: relative;
+}
 .news_date {
-  height: 40px;
+  height: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
   letter-spacing: 1px;
-  color: #999999;
+  color: #333333;
+  font-size: 12px;
 }
 .sub_module1 {
-  padding: 10px;
+  padding: 0 10px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+}
+.sender_img {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
 }
 .sub_module1_item_ns {
   width: 60px;
@@ -21,15 +33,62 @@
 }
 .sub_module1_item_ns_info {
   box-sizing: border-box;
-  padding: 5px 0;
-  background-color: #FFFFFF;
   border-radius: 10px;
   line-height: 25px;
   letter-spacing: 1px;
-  padding: 20px 10px;
-  color: #666666;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #FFFFFF;
+  font-size: 16px;
+  color: #333333;
+  position: relative;
+}
+.sub_module1_item_ns_triangle {
+  position: absolute;
+  top: 10px;
+  left: -8px;
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-right: 16px solid #FFFFFF;
+  border-bottom: 8px solid transparent;
 }
 .sub_module1_item_ns_info_item {
   height: 25px;
   line-height: 25px;
+}
+.sub_module1_item_ns_btns {
+  margin-top: 10px;
+  height: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.sub_module1_item_ns_btns_ty {
+  letter-spacing: 2px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #4545FF;
+}
+.sub_module1_item_ns_btns_jj {
+  letter-spacing: 2px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #D58BBC;
+}
+.remark {
+  position: absolute;
+  bottom: 20px;
+  padding: 0 10px;
+  line-height: 20px;
+  font-size: 12px;
+  color: #999999;
+  letter-spacing: 1px;
+  text-indent: 24px;
+}
+
+/* dialog */
+.van-button__text {
+  color: #4545FF !important;
 }
