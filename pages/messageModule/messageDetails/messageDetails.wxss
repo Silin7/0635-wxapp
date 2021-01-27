@@ -34,7 +34,7 @@
 .sub_module1_item_ns_info {
   box-sizing: border-box;
   border-radius: 10px;
-  line-height: 25px;
+  line-height: 30px;
   letter-spacing: 1px;
   padding: 10px;
   margin-top: 10px;

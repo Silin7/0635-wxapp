@@ -1,9 +1,11 @@
 {
   "pages":[
-    "pages/homeModule/newsPage/newsPage",
-    "pages/homeModule/minePage/minePage",
     "pages/homeModule/indexPage/indexPage",
     "pages/homeModule/findPage/findPage",
+    "pages/homeModule/newsPage/newsPage",
+    "pages/homeModule/minePage/minePage",
+    "pages/marryModule/bindList/bindList",
+    "pages/marryModule/bindDetails/bindDetails",
     "pages/messageModule/messageDetails/messageDetails",
     "pages/messageModule/messageSystem/messageSystem",
     "pages/scenicModule/mineScenic/mineScenic",
@@ -12,8 +14,6 @@
     "pages/recipeModule/recipeList/recipeList",
     "pages/recipeModule/recipeInfo/recipeInfo",
     "pages/recipeModule/recipeDetail/recipeDetail",
-    "pages/marryModule/bindList/bindList",
-    "pages/marryModule/bindDetails/bindDetails",
     "pages/loginModule/loginPage/loginPage",
     "pages/loginModule/registerPage/registerPage",
     "pages/mineModule/myConcerns/myConcerns",
@@ -49,13 +49,18 @@
     "list": [{
       "pagePath": "pages/homeModule/indexPage/indexPage",
       "text": "首页",
+      "iconPath": "/images/homeModule/home_normal.png",
+      "selectedIconPath": "/images/homeModule/home_active.png"
+    },{
+      "pagePath": "pages/homeModule/findPage/findPage",
+      "text": "发现",
       "iconPath": "/images/homeModule/compass_normal.png",
       "selectedIconPath": "/images/homeModule/compass_active.png"
     },{
       "pagePath": "pages/homeModule/findPage/findPage",
-      "text": "发现",
-      "iconPath": "/images/homeModule/home_normal.png",
-      "selectedIconPath": "/images/homeModule/home_active.png"
+      "text": "新闻",
+      "iconPath": "/images/homeModule/xinwen_normal.png",
+      "selectedIconPath": "/images/homeModule/xinwen_active.png"
     },{
       "pagePath": "pages/homeModule/newsPage/newsPage",
       "text": "消息",

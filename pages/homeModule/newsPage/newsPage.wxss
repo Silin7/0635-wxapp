@@ -589,6 +589,17 @@
   line-height: 20px;
   text-align: center;
 }
+.van-swipe-cell__right {
+  box-sizing: border-box !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  color: #4545FF !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  letter-spacing: 2px !important;
+  padding: 0 5px !important;
+}
 
 
 /* 底部导航 */
@@ -613,4 +624,8 @@
 .van-icon-arrow-left {
   /* font-size: 0px !important; */
   display: none !important;
+}
+/* dialog */
+.van-button__text {
+  color: #4545FF !important;
 }

@@ -192,7 +192,7 @@
     </view>
     <view class="btn_yt" bindtap="btnWY" data-type="02">
       <image src="/images/marryModule/btn_yt.png" style="width: 28px; height: 28px;"></image>
-      <text class="btn_text">求约会</text>
+      <text class="btn_text">推自己</text>
     </view>
   </view>
   <view class="btn_kf">

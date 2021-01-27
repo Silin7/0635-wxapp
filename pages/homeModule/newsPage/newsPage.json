@@ -2,7 +2,9 @@
   "navigationBarTitleText": "消息",
   "usingComponents": {
     "van-toast": "vant-weapp/toast/index",
+    "van-dialog": "vant-weapp/dialog/index",
     "van-tab": "vant-weapp/tab/index",
-    "van-tabs": "vant-weapp/tabs/index"
+    "van-tabs": "vant-weapp/tabs/index",
+    "van-swipe-cell": "vant-weapp/swipe-cell/index"
   }
 }

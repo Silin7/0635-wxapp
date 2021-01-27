@@ -154,18 +154,18 @@ Page({
     // 求约会
     if (e.currentTarget.dataset.type === '02') {
       Dialog.confirm({
-        title: '求约会',
-        message: '您确定和Ta的约会嘛？',
+        title: '推自己',
+        message: '系统会将您个人中心绑定的手机号作为微信推送给对方，请确认您的手机号是否正确',
       }).then(() => {
         let message_title = ''
         let message_content = ''
         if (this.data.personDetails.gender === '男') {
-          message_title = '小哥哥，可以约你出去浪吗？'
-          message_content = `你好，能给我你的微信吗？我被你的颜值所打动，在我心里你一定是个乐观开朗的男孩子。但我不能自己妄加推断，所以想了解一下你真正的性格。`
+          message_title = '小哥哥，很想和你认识一下呢？'
+          message_content = `你好，我被你的颜值所打动，在我心里你一定是个乐观开朗的男孩子。但我不能自己妄加推断，所以想了解一下你真正的性格。这是我的微信号<span style="color: #4545FF;">${this.data.userInfo.userPhone}</span>，期待我们的缘分鸭。`
         }
         if (this.data.personDetails.gender === '女') {
-          message_title = '小姐姐，可以约你出去浪吗？'
-          message_content = `你好，能给我你的微信吗？我被你的颜值所打动，在我心里你一定是个善良温柔的女孩子。但我不能自己妄加推断，所以想了解一下你真正的性格。`
+          message_title = '小姐姐，很想和你认识一下呢？'
+          message_content = `你好，我被你的颜值所打动，在我心里你一定是个善良温柔的女孩子。但我不能自己妄加推断，所以想了解一下你真正的性格。这是我的微信号<span style="color: #4545FF;">${this.data.userInfo.userPhone}</span>，期待我们的缘分鸭。`
         }
         let data = {
           receiver_id: this.data.personDetails.user_id,
