@@ -3,36 +3,38 @@ import Toast from '../../../miniprogram_npm/vant-weapp/toast/toast';
 
 Page({
   data: {
+    id: '',
     windowWidth: 0,
     windowHeight: 0,
-    messageId: '',
-    authorData: {},
-    dynamic_details: ''
+    advertisementDetails: {}
   },
+
   onLoad: function (options) {
-    this.data.messageId = options.id ? options.id : ''
+    this.data.id = options.id ? options.id : ''
   },
+
   onReady: function () {
     this.setData({
       windowWidth: wx.getSystemInfoSync().windowWidth,
       windowHeight: wx.getSystemInfoSync().windowHeight
     })
   },
-  onShow: function () {
-    this.getPermessageDetails()
-  },
-  // 个人私信详情
-  getPermessageDetails: function () {
-    let data = {
-      id: this.data.messageId
-    }
-    esRequest('dynamic_details', data).then(res => {
-      if (res && res.data.code === 0) {
-        this.setData({
-          authorData: res.data.data,
-          dynamic_details: res.data.data.content.toString().replace(/\<img/gi, '<img style="max-width:100%; height:auto"')
-        })
 
+  onShow: function () {
+    this.advertisementDetails()
+  },
+
+  // 广告详情
+  advertisementDetails: function () {
+    let data = {
+      id: this.data.id
+    }
+    esRequest('advertisement_details', data).then(res => {
+      if (res && res.data.code === 0) {
+        res.data.data.content = res.data.data.content.toString().replace(/\<img/gi, '<img style="max-width:100%; height:auto"')
+        this.setData({
+          advertisementDetails: res.data.data
+        })
       } else {
         Toast.fail('系统错误')
       }

@@ -1,0 +1,10 @@
+.rich_text {
+  box-sizing: border-box;
+  overflow-y: auto;
+  width: 100%;
+  padding: 10px;
+  line-height: 30px;
+  letter-spacing: 1px;
+  color: #333333;
+  background-color: #FFFFFF;
+}

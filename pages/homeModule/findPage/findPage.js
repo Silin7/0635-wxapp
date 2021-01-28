@@ -6,6 +6,11 @@ Page({
     id_key: '',
     windowWidth: 0,
     windowHeight: 0,
+    tabActive: 0,
+    dynamicPage: 1,
+    dynamicLimit: 10,
+    totalCount: 0,
+    dynamicList: [],
     sidebarKey: 0,
     newsTypeList: [],
     newsNext: true,
@@ -25,6 +30,12 @@ Page({
   },
 
   onShow: function () {
+    // 切换底部tabs清空
+    this.setData({
+      dynamicList: [],
+      newsList: [],
+    })
+    this.getDynamicList()
     this.awaitNews()
   },
 
@@ -34,7 +45,22 @@ Page({
     this.getNewsList()
   },
 
-  // change sidebar
+  // tabs切换
+  tabChange: function (event) {
+    this.setData({
+      tabActive: event.detail.name
+    })
+    if (event.detail.name === 0) {
+      this.setData({
+        dynamicPage: 1,
+        totalCount: 0,
+        dynamicList: [],
+      })
+      this.getDynamicList()
+    }
+  },
+
+  // sidebar切换
   sidebarChange: function (event) {
     this.setData({
       typeId: this.data.newsTypeList[event.detail].type_id,
@@ -42,6 +68,61 @@ Page({
       newsList: [],
     })
     this.getNewsList()
+  },
+  
+  // 同城动态列表
+  getDynamicList: function () {
+    let data = {
+      page: this.data.dynamicPage,
+      limit: this.data.dynamicLimit
+    }
+    esRequest('dynamic_list', data).then(res => {
+      if (res && res.data.code === 0) {
+        this.setData({
+          totalCount: res.data.totalCount,
+          dynamicList: this.data.dynamicList.concat(res.data.data)
+        })
+      } else {
+        Toast.fail('系统错误')
+      }
+    })
+  },
+
+  // 查看大图或保存图片
+  dynamicImg: function (e) {
+    let current = e.currentTarget.dataset.item.image
+    let urls = [e.currentTarget.dataset.item.image]
+    wx.previewImage({
+      // 当前显示图片的http链接
+      current: current,
+      // 需要预览的图片http链接列表
+      urls: urls
+    })
+  },
+
+  // 同城动态函数
+  onScrollBottom1: function () {
+    if (this.data.totalCount > this.data.dynamicList.length) {
+      this.data.dynamicPage += 1
+      this.getDynamicList()
+    }
+  },
+
+  // 同城动态详情
+  getDynamicDetalis: function (e) {
+    // 01：相亲
+    if (e.currentTarget.dataset.item.type_id === '01') {
+      wx.navigateTo({
+        url: '/pages/marryModule/bindDetails/bindDetails?user_id=' + e.currentTarget.dataset.item.author_id
+      })
+    }
+    // 02：新闻
+    if (e.currentTarget.dataset.item.type_id === '02') {
+      wx.navigateTo({
+        url: '/pages/dynamicModule/advertisement/advertisement?id=' + e.currentTarget.dataset.item.advertisement_id
+      })
+    }
+    // 03：普通
   },
 
   // 新闻类型列表
@@ -78,7 +159,7 @@ Page({
   },
 
   // 新闻触底函数
-  onScrollBottom: function () {
+  onScrollBottom2: function () {
     if (this.data.newsNext) {
       this.data.newsPage += 1
       this.getNewsList()
@@ -91,5 +172,4 @@ Page({
       url: '/pages/dynamicModule/newsDetails/newsDetails?newsId=' + e.currentTarget.dataset.item.newsId
     })
   }
-
 })

@@ -4,6 +4,8 @@
     "pages/homeModule/findPage/findPage",
     "pages/homeModule/newsPage/newsPage",
     "pages/homeModule/minePage/minePage",
+    "pages/dynamicModule/newsDetails/newsDetails",
+    "pages/dynamicModule/advertisement/advertisement",
     "pages/marryModule/bindList/bindList",
     "pages/marryModule/bindDetails/bindDetails",
     "pages/messageModule/messageDetails/messageDetails",
@@ -20,12 +22,6 @@
     "pages/mineModule/personalData/personalData",
     "pages/recordModule/diaryList/diaryList",
     "pages/recordModule/keepDiary/keepDiary",
-    "pages/dynamicModule/cnewsDetails/cnewsDetails",
-    "pages/dynamicModule/cnewsList/cnewsList",
-    "pages/dynamicModule/newsList/newsList",
-    "pages/dynamicModule/newsDetails/newsDetails",
-    "pages/dynamicModule/dynamicList/dynamicList",
-    "pages/dynamicModule/dynamicDetails/dynamicDetails",
     "pages/historyModule/historyList/historyList",
     "pages/historyModule/historyDetails/historyDetails",
     "pages/otherModule/weather/weather",
@@ -56,11 +52,6 @@
       "text": "发现",
       "iconPath": "/images/homeModule/compass_normal.png",
       "selectedIconPath": "/images/homeModule/compass_active.png"
-    },{
-      "pagePath": "pages/homeModule/findPage/findPage",
-      "text": "新闻",
-      "iconPath": "/images/homeModule/xinwen_normal.png",
-      "selectedIconPath": "/images/homeModule/xinwen_active.png"
     },{
       "pagePath": "pages/homeModule/newsPage/newsPage",
       "text": "消息",

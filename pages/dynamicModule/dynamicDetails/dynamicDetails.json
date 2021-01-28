@@ -1,6 +1,0 @@
-{
-  "navigationBarTitleText": "动态详情",
-  "usingComponents": {
-    "van-toast": "vant-weapp/toast/index"
-  }
-}
