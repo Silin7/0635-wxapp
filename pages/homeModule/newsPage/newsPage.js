@@ -73,29 +73,10 @@ Page({
     })
   },
 
-  // 系统消息列表
-  getSysMessage: function () {
-    let data = {
-      page: this.data.page,
-      limit: this.data.limit,
-      receiver_id: this.data.id_key
-    }
-    esRequest('sysmessage_list', data).then(res => {
-      if (res && res.data.code === 0) {
-        this.setData({
-          totalCount: res.data.totalCount,
-          sysMessageList: this.data.sysMessageList.concat(res.data.data)
-        })
-      } else {
-        Toast.fail('系统错误')
-      }
-    })
-  },
-
   // 个人私信详情
   messageDetails: function (e) {
     wx.navigateTo({
-      url: '/pages/messageModule/messageDetails/messageDetails?id=' + e.currentTarget.dataset.item.id
+      url: '/pages/dynamicModule/messageDetails/messageDetails?id=' + e.currentTarget.dataset.item.id
     })
   },
 
@@ -121,19 +102,39 @@ Page({
     });
   },
 
-  // 系统消息详情
-  messageSystem: function (e) {
-    wx.navigateTo({
-      url: '/pages/messageModule/messageSystem/messageSystem?id=' + e.currentTarget.dataset.item.id
-    })
-  },
-
   // 个人私信触底函数
   onScrollBottom1: function () {
     if (this.data.totalCount > this.data.perMessageList.length) {
       this.data.page += 1
       this.getPerMessage()
     }
+  },
+
+  // 系统消息列表
+  getSysMessage: function () {
+    let data = {
+      page: this.data.page,
+      limit: this.data.limit,
+      receiver_id: this.data.id_key
+    }
+    esRequest('sysmessage_list', data).then(res => {
+      if (res && res.data.code === 0) {
+        this.setData({
+          totalCount: res.data.totalCount,
+          sysMessageList: this.data.sysMessageList.concat(res.data.data)
+        })
+      } else {
+        Toast.fail('系统错误')
+      }
+    })
+  },
+
+  // 系统消息详情
+  messageSystem: function (e) {
+    wx.navigateTo({
+      // url: '/pages/messageModule/messageSystem/messageSystem?id=' + e.currentTarget.dataset.item.id
+      url: '/pages/dynamicModule/advertisement/advertisement?id=' + e.currentTarget.dataset.item.id + '&type=2'
+    })
   },
 
   // 系统消息触底函数

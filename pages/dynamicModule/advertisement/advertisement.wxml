@@ -1,5 +1,5 @@
 <van-toast id="van-toast" />
 
 <view class="rich_text" style="height: {{windowHeight}}px;">
-  <rich-text nodes="{{advertisementDetails.content}}"></rich-text>
+  <rich-text nodes="{{contentDetails}}"></rich-text>
 </view>

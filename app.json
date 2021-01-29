@@ -1,15 +1,14 @@
 {
   "pages":[
-    "pages/homeModule/indexPage/indexPage",
     "pages/homeModule/findPage/findPage",
+    "pages/homeModule/indexPage/indexPage",
     "pages/homeModule/newsPage/newsPage",
     "pages/homeModule/minePage/minePage",
     "pages/dynamicModule/newsDetails/newsDetails",
     "pages/dynamicModule/advertisement/advertisement",
+    "pages/dynamicModule/messageDetails/messageDetails",
     "pages/marryModule/bindList/bindList",
     "pages/marryModule/bindDetails/bindDetails",
-    "pages/messageModule/messageDetails/messageDetails",
-    "pages/messageModule/messageSystem/messageSystem",
     "pages/scenicModule/mineScenic/mineScenic",
     "pages/scenicModule/scenicList/scenicList",
     "pages/scenicModule/scenicDetails/scenicDetails",

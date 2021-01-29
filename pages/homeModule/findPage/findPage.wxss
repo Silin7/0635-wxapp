@@ -11,6 +11,12 @@
   margin: 10px 0;
   padding: 10px;
   background-color: #FFFFFF;
+  position: relative;
+}
+.dynamic_tag {
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
 .dynamic_user_info {
   box-sizing: border-box;
@@ -137,5 +143,10 @@
   color: #4545FF !important;
   font-weight: 700 !important;
   font-size: 16px !important;
+  letter-spacing: 2px !important;
+}
+/* tag */
+.van-tag--mark {
+  border-radius: var(--tag-round-border-radius,999px) 0 0 var(--tag-round-border-radius,999px) !important;
   letter-spacing: 2px !important;
 }
