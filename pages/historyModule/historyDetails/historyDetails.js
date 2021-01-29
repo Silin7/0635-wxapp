@@ -28,7 +28,7 @@ Page({
   // 本地历史
   historicalEvolution: function () {
     let data = {
-      id: this.data.cityId
+      city_id: this.data.cityId
     }
     esRequest('local_historical', data).then(res => {
       if (res && res.data.code === 0) {

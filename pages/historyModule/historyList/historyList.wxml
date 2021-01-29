@@ -1,55 +1,9 @@
 <van-toast id="van-toast" />
 
-<view class="sub_module2">
-  <view class="sub_module2_left">
-    <view class="sub_module2_02" bindtap="historyDetails" data-id="1001">
-      <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
-      <view class="item_banner_mask1"></view>
-      <view class="item_banner_text2">东昌府区</view>
-    </view>
-    <view class="sub_module2_02 m_t_15" bindtap="historyDetails" data-id="1001">
-      <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
-      <view class="item_banner_mask1"></view>
-      <view class="item_banner_text2">茌平区</view>
-    </view>
-  </view>
-   <view class="sub_module2_right">
-    <view class="sub_module2_02" bindtap="historyDetails" data-id="1001">
-      <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
-      <view class="item_banner_mask1"></view>
-      <view class="item_banner_text2">临清市</view>
-    </view>
-    <view class="sub_module2_02 m_t_15" bindtap="historyDetails" data-id="1001">
-      <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
-      <view class="item_banner_mask1"></view>
-      <view class="item_banner_text2">阳谷县</view>
-    </view>
-  </view>
-</view>
-
-<view class="sub_module2">
-  <view class="sub_module2_left">
-    <view class="sub_module2_02" bindtap="historyDetails" data-id="1001">
-      <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
-      <view class="item_banner_mask1"></view>
-      <view class="item_banner_text2">东阿县</view>
-    </view>
-    <view class="sub_module2_02 m_t_15" bindtap="historyDetails" data-id="1001">
-      <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
-      <view class="item_banner_mask1"></view>
-      <view class="item_banner_text2">高唐县</view>
-    </view>
-  </view>
-  <view class="sub_module2_right">
-    <view class="sub_module2_02" bindtap="historyDetails" data-id="1001">
-      <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
-      <view class="item_banner_mask1"></view>
-      <view class="item_banner_text2">冠县</view>
-    </view>
-    <view class="sub_module2_02 m_t_15" bindtap="historyDetails" data-id="1001">
-      <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
-      <view class="item_banner_mask1"></view>
-      <view class="item_banner_text2">莘县</view>
-    </view>
+<view class="history_box">
+  <view class="history_item" wx:for="{{historyList}}" wx:key="inex" bindtap="historyDetails" data-id="{{item.type_id}}">
+    <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
+    <view class="item_banner_mask1"></view>
+    <view class="item_banner_text2">{{item.type_name}}</view>
   </view>
 </view>

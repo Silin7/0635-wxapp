@@ -7,8 +7,8 @@
 <!-- 同城 -->
 <scroll-view wx:if="{{tabActive === 0}}" scroll-y="true" bindscrolltolower="onScrollBottom1" class="dynamic_box" style="height: {{windowHeight-44}}px;">
   <view class="dynamic_item" wx:for="{{dynamicList}}" wx:key="index" bindtap="getDynamicDetalis" data-item="{{item}}">
-  <!-- 标签 -->
-  <van-tag color="#4545FF" plain class="dynamic_tag" size="large"> 标 签 </van-tag>
+    <!-- 标签 -->
+    <van-tag color="#4545FF" plain class="dynamic_tag" size="large"> 标 签 </van-tag>
     <!-- 作者信息 -->
     <view class="dynamic_user_info">
       <image src="{{item.author_avatar_url}}" class="dynamic_user_img"></image>

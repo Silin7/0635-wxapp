@@ -1,19 +1,16 @@
-.sub_module2 {
-  padding: 10px;
+.history_box {
+  padding: 0 10px;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
-.sub_module2_left {
+.history_item {
+  flex-shrink: 0;
+  overflow: hidden;
+  margin: 10px 0;
   width: 48%;
-}
-.sub_module2_right {
-  width: 48%;
-}
-.sub_module2_02 {
-  width: 100%;
   height: 180px;
   border-radius: 10px;
-  overflow: hidden;
   position: relative;
 }
 .item_banner_mask1 {

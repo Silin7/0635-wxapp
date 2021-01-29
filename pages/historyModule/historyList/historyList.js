@@ -1,17 +1,11 @@
+import esRequest from '../../../utils/esRequest';
+import Toast from '../../../miniprogram_npm/vant-weapp/toast/toast';
+
 Page({
   data: {
     windowWidth: 0,
     windowHeight: 0,
-    historyList: [
-      { id: '1001', city: '' },
-      { id: '1002', city: '茌平区' },
-      { id: '1003', city: '临清市' },
-      { id: '1004', city: '阳谷县' },
-      { id: '1005', city: '东阿县' },
-      { id: '1006', city: '高唐县' },
-      { id: '1007', city: '冠县' },
-      { id: '1008', city: '莘县' },
-    ]
+    historyList: []
   },
 
   onLoad: function (options) {
@@ -25,6 +19,20 @@ Page({
   },
 
   onShow: function () {
+    this.historyList()
+  },
+
+  // 历史列表
+  historyList: function () {
+    esRequest('admin_city_type').then(res => {
+      if (res && res.data.code === 0) {
+        this.setData({
+          historyList: res.data.data
+        })
+      } else {
+        Toast.fail('系统错误')
+      }
+    })
   },
 
   // 历史详情
