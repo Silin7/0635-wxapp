@@ -45,5 +45,10 @@ Page({
         url: '/pages/scenicModule/scenicList/scenicList',
       })
     }
+    if (e.currentTarget.dataset.item.id === 'icon02') {
+      wx.navigateTo({
+        url: '/pages/historyModule/historyList/historyList',
+      })
+    }
   }
 })

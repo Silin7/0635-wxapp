@@ -1,14 +1,14 @@
 import esRequest from '../../../utils/esRequest';
 import Toast from '../../../miniprogram_npm/vant-weapp/toast/toast';
-import Dialog from '../../../miniprogram_npm/vant-weapp/dialog/dialog';
 
 Page({
   data: {
     isAuthSavePhoto: false, 
     windowWidth: 0,
     windowHeight: 0,
-    imageList: [],
     photoUrl: '',
+    photoList: [],
+    imageList: []
   },
 
   onLoad: function (options) {
@@ -19,18 +19,26 @@ Page({
       windowWidth: wx.getSystemInfoSync().windowWidth,
       windowHeight: wx.getSystemInfoSync().windowHeight
     })
+    this.girlRandom()
   },
 
   onShow: function () {
-    this.girlRandom()
   },
 
   // 随机获取美女福利图片
   girlRandom: function () {
+    this.setData({
+      photoList: [],
+      imageList: []
+    })
     esRequest('girl_random').then(res => {
       if (res && res.data.code == 1) {
+        res.data.data.forEach(item => {
+          this.data.photoList.push(item.imageUrl)
+        })
         this.setData({
-          imageList: res.data.data
+          imageList: res.data.data,
+          photoList: this.data.photoList
         })
       } else {
         Toast.fail('系统错误')
@@ -38,20 +46,15 @@ Page({
     })
   },
 
-  // 下载图片
+  // 查看大图或保存图片
   bPicture: function (e) {
-    this.setData({
-      photoUrl: e.currentTarget.dataset.item.imageUrl
+    this.data.photoUrl = e.currentTarget.dataset.item.imageUrl
+    wx.previewImage({
+      // 当前显示图片的http链接
+      current: this.data.photoUrl,
+      // 需要预览的图片http链接列表
+      urls: this.data.photoList
     })
-    Dialog.confirm({
-      title: '保存到相册',
-      message: '您确定要下载超清原图吗？',
-    }).then(() => {
-      // on confirm
-      this.onSaveToPhone()
-    }).catch(() => {
-      // on cancel
-    });
   },
 
   // 换一批
@@ -59,130 +62,6 @@ Page({
     wx.redirectTo({
       url: '/pages/otherModule/girlRandom/girlRandom',
     })
-  },
-
-  // 保存图片到手机
-  onSaveToPhone() {
-    this.getSetting().then((res) => {
-      // 判断用户是否授权了保存到本地的权限
-      if (!res.authSetting['scope.writePhotosAlbum']) {
-        this.authorize().then(() => {
-          this.savedownloadFile(this.data.photoUrl)
-          this.setData({
-            isAuthSavePhoto: false
-          })
-        }).catch(() => {
-          wx.showToast({
-            title: '您拒绝了授权',
-            icon: 'none',
-            duration: 1500
-          })
-          this.setData({
-            isAuthSavePhoto: true
-          })
-        })
-      } else {
-        this.savedownloadFile(this.data.photoUrl)
-      }
-    })
-  },
-  //打开设置，引导用户授权
-  onOpenSetting() {
-    wx.openSetting({
-      success:(res) => {
-        console.log(res.authSetting)
-        if (!res.authSetting['scope.writePhotosAlbum']) {
-          wx.showToast({
-            title: '您未授权',
-            icon: 'none',
-            duration: 1500
-          })
-          this.setData({// 拒绝授权
-            isAuthSavePhoto: true
-          })
-
-        } else {// 接受授权
-          this.setData({
-            isAuthSavePhoto: false
-          })
-          this.onSaveToPhone() // 接受授权后保存图片
-
-        }
-
-      }
-    })
-   
-  },
-  // 获取用户已经授予了哪些权限
-  getSetting() {
-    return new Promise((resolve, reject) => {
-      wx.getSetting({
-        success: res => {
-          resolve(res)
-        }
-      })
-    })
-  },
-  // 发起首次授权请求
-  authorize() {
-    return new Promise((resolve, reject) => {
-      wx.authorize({
-        scope: 'scope.writePhotosAlbum',
-        success: () => {
-          resolve()
-        },
-        fail: res => { //这里是用户拒绝授权后的回调
-          console.log('拒绝授权')
-          reject()
-        }
-      })
-    })
-  },
-  savedownloadFile(img) {
-    this.downLoadFile(img).then((res) => {
-      return this.saveImageToPhotosAlbum(res.tempFilePath)
-    }).then(() => {      
-    })
-  },
-  //单文件下载(下载文件资源到本地)，客户端直接发起一个 HTTPS GET 请求，返回文件的本地临时路径。
-  downLoadFile(img) {
-    return new Promise((resolve, reject) => {
-      wx.downloadFile({
-        url: img,
-        success: (res) => {
-          console.log('downloadfile', res)
-          resolve(res)
-        }
-      })
-    })
-  },
-  // 保存图片到系统相册
-  saveImageToPhotosAlbum(saveUrl) {
-    return new Promise((resolve, reject) => {
-      wx.saveImageToPhotosAlbum({
-        filePath: saveUrl,
-        success: (res) => {
-          wx.showToast({
-            title: '保存成功',
-            duration: 1000,
-          })
-          resolve()
-        }
-      })
-    })
-  },
-  // 弹出模态框提示用户是否要去设置页授权
-  showModal(){
-    wx.showModal({
-      title: '检测到您没有打开保存到相册的权限，是否前往设置打开？',
-      success: (res) => {
-        if (res.confirm) {
-          console.log('用户点击确定')
-          this.onOpenSetting() // 打开设置页面          
-        } else if (res.cancel) {
-          console.log('用户点击取消')
-        }
-      }
-    })
   }
+
 })

@@ -57,7 +57,7 @@ Page({
     })
   },
 
-  // 消息详情
+  // 景点详情
   scenicDetails: function (e) {
     wx.navigateTo({
       url: '/pages/scenicModule/scenicDetails/scenicDetails?id=' + e.currentTarget.dataset.item.id

@@ -1,17 +1,8 @@
 <van-toast id="van-toast" />
-<van-dialog id="van-dialog" />
 
-<view wx:if="{{imageList.length > 0}}">
+<view wx:if="{{imageList.length > 0}}" class="bg_F5">
   <!-- 图片列表篇 -->
-  <van-image
-    wx:for="{{imageList}}"
-    wx:key="index"
-    width="100vw"
-    height="300px"
-    src="{{item.imageUrl}}"
-    bind:click="bPicture"
-    data-item="{{item}}"
-  />
+  <image wx:for="{{imageList}}" wx:key="index" src="{{item.imageUrl}}" bindtap="bPicture" data-item="{{item}}" class="van_img"/>
   <!-- 换一批 -->
   <view class="refresh_box">
     <view class="refresh_btn" bindtap="refreshBtn">换一批</view>
