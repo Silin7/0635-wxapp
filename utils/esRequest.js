@@ -1,19 +1,20 @@
 import baseURL from "./baseURL"
 import adminRequest from "./sub-unitRequest/adminRequest"
-import loginRequest from "./sub-unitRequest/loginRequest"
-import historyRequest from "./sub-unitRequest/historyRequest"
-import mineRequest from "./sub-unitRequest/mineRequest"
 import dynamicRequest from "./sub-unitRequest/dynamicRequest"
+import historyRequest from "./sub-unitRequest/historyRequest"
+import loginRequest from "./sub-unitRequest/loginRequest"
+import marryRequest from "./sub-unitRequest/marryRequest"
 import messageRequest from "./sub-unitRequest/messageRequest"
+import mineRequest from "./sub-unitRequest/mineRequest"
+import otherRequest from "./sub-unitRequest/otherRequest"
 import recipeRequest from "./sub-unitRequest/recipeRequest"
 import recordRequest from "./sub-unitRequest/recordRequest"
 import scenicspotRequest from "./sub-unitRequest/scenicspotRequest"
+import specialtyRequest from "./sub-unitRequest/specialtyRequest"
 import treasureChest from "./sub-unitRequest/treasureChest"
-import otherRequest from "./sub-unitRequest/otherRequest"
-import marryRequest from "./sub-unitRequest/marryRequest"
 
 export default (localObjects, parametersData, parameters) => {
-  var globalObjects = Object.assign({}, adminRequest, loginRequest, historyRequest, mineRequest, dynamicRequest, messageRequest, recipeRequest, recordRequest, scenicspotRequest, treasureChest, otherRequest, marryRequest)
+  var globalObjects = Object.assign({}, adminRequest, dynamicRequest, historyRequest, loginRequest, marryRequest, messageRequest, mineRequest, otherRequest, recipeRequest, recordRequest, scenicspotRequest, specialtyRequest, treasureChest)
   var apiMethod = globalObjects[localObjects].apiMethod
   if (parameters) {
     var requestURL = baseURL.baseURL + globalObjects[localObjects].apiName + '/' + parameters

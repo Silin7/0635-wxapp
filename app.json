@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/specialtyModule/specialtyList/specialtyList",
     "pages/homeModule/indexPage/indexPage",
     "pages/homeModule/findPage/findPage",
     "pages/homeModule/newsPage/newsPage",
