@@ -1,6 +1,9 @@
 {
   "pages":[
     "pages/specialtyModule/specialtyList/specialtyList",
+    "pages/scenicModule/scenicList/scenicList",
+    "pages/scenicModule/scenicDetails/scenicDetails",
+    "pages/scenicModule/mineScenic/mineScenic",
     "pages/homeModule/indexPage/indexPage",
     "pages/homeModule/findPage/findPage",
     "pages/homeModule/newsPage/newsPage",
@@ -24,9 +27,6 @@
     "pages/dynamicModule/messageDetails/messageDetails",
     "pages/marryModule/bindList/bindList",
     "pages/marryModule/bindDetails/bindDetails",
-    "pages/scenicModule/mineScenic/mineScenic",
-    "pages/scenicModule/scenicList/scenicList",
-    "pages/scenicModule/scenicDetails/scenicDetails",
     "pages/loginModule/loginPage/loginPage",
     "pages/loginModule/registerPage/registerPage",
     "pages/mineModule/myConcerns/myConcerns",

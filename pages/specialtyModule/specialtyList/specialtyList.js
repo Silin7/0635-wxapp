@@ -6,6 +6,13 @@ Page({
     id_key: '',
     windowWidth: 0,
     windowHeight: 0,
+    cityActive: 0,
+    cityList: [],
+    specialtyPage: 1,
+    specialtyLimit: 10,
+    totalCount: 0,
+    specialtyPosition: '',
+    specialtyList: []
   },
 
   onLoad: function (options) {
@@ -20,25 +27,65 @@ Page({
   },
 
   onShow: function () {
-    this.specialtyList()
+    this.getCityList()
+    this.getSpecialtyList()
   },
 
-  // 特产列表
-  specialtyList: function () {
-    let data = {
-    }
-    esRequest('specialty_list', data).then(res => {
+  // tabs 切换
+  cityChange: function (e) {
+    this.data.specialtyPage = 1
+    this.data.specialtyList = []
+    this.data.specialtyPosition = e.detail.title
+    this.getSpecialtyList()
+  },
+
+  // 县市列表
+  getCityList: function () {
+    esRequest('admin_city_type').then(res => {
       if (res && res.data.code === 0) {
-        console.log(res)
+        this.data.cityList = res.data.data
+        this.data.cityList.unshift({ id: '', type_id: '', type_name: '全部' })
+        this.setData({
+          cityList: this.data.cityList
+        })
       } else {
         Toast.fail('系统错误')
       }
     })
   },
 
+  // 特产列表
+  getSpecialtyList: function () {
+    if (this.data.specialtyPosition === '全部') {
+      this.data.specialtyPosition = ''
+    }
+    let data = {
+      page: this.data.specialtyPage,
+      limit: this.data.specialtyLimit,
+      specialty_position: this.data.specialtyPosition
+    }
+    esRequest('specialty_list', data).then(res => {
+      if (res && res.data.code === 0) {
+        this.setData({
+          totalCount: res.data.totalCount,
+          specialtyList: this.data.specialtyList.concat(res.data.data)
+        })
+      } else {
+        Toast.fail('系统错误')
+      }
+    })
+  },
+
+  // 触底函数
+  onScrollBottom: function () {
+    if (this.data.totalCount > this.data.specialtyList.length) {
+      this.data.specialtyPage += 1
+      this.getSpecialtyList()
+    }
+  },
+  
   // xxx
   xxx: function (e) {
     console.log(e.currentTarget.dataset.xxx)
   }
-
 })

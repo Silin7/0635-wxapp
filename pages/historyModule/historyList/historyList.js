@@ -22,7 +22,7 @@ Page({
     this.historyList()
   },
 
-  // 历史列表
+  // 县市列表
   historyList: function () {
     esRequest('admin_city_type').then(res => {
       if (res && res.data.code === 0) {

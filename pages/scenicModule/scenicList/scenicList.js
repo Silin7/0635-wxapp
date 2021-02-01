@@ -6,9 +6,10 @@ Page({
     windowWidth: 0,
     windowHeight: 0,
     scenicActive: 0,
-    totalCount: 0,
+    cityList: [],
     scenicspotPage: 1,
     scenicspotLimit: 10,
+    totalCount: 0,
     scenicspotPosition: '',
     scenicspotList: []
   },
@@ -21,6 +22,7 @@ Page({
   },
 
   onShow: function () {
+    this.getCityList()
     this.getScenicSpot()
   },
 
@@ -33,6 +35,21 @@ Page({
     // wx.pageScrollTo({
     //   scrollTop: 0
     // })
+  },
+
+  // 县市列表
+  getCityList: function () {
+    esRequest('admin_city_type').then(res => {
+      if (res && res.data.code === 0) {
+        this.data.cityList = res.data.data
+        this.data.cityList.unshift({ id: '', type_id: '', type_name: '全部' })
+        this.setData({
+          cityList: this.data.cityList
+        })
+      } else {
+        Toast.fail('系统错误')
+      }
+    })
   },
 
   // 景点列表

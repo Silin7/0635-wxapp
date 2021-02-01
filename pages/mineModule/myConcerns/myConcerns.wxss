@@ -48,7 +48,7 @@
 /* vant-组件 */
 .van-tabs__line {
   /* background: linear-gradient(to right, #4545FF, #4545FF, #9A93F3, #D58BBC); */
-  background:  #4545FF;
+  background:  #4545FF !important;
 }
 .van-tab__title {
   letter-spacing: 5px !important;

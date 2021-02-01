@@ -1,1 +1,13 @@
-/* pages/specialtyModule/specialtyList/specialtyList.wxss */
+
+
+
+/* 导航栏 */
+.van-tabs__line {
+  background-color: #FFFFFF !important;
+}
+.van-tab--active {
+  font-weight: 700 !important;
+  color: #4545FF !important;
+  font-size: 16px !important;
+  letter-spacing: 2px !important;
+}
