@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "",
+  "usingComponents": {
+    "van-toast": "vant-weapp/toast/index"
+  }
+}

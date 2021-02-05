@@ -1,0 +1,18 @@
+<van-toast id="van-toast" />
+
+<view class="bg_F5 bs_bb oy_a" style="height: {{windowHeight}}px; ">
+  <!-- swiper滚动图 -->
+  <swiper indicator-dots="{{true}}" autoplay="{{true}}" circular="{{true}}" style="height: 420rpx;">
+    <block wx:for="{{specialty_image}}" wx:key="index">
+      <swiper-item bindtap="swiperTap" data-item="{{item}}">
+        <image style="height: 420rpx; width: 100%;" src="{{item}}"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view>{{specialtyDetails.specialty_name}}</view>
+  <view>{{specialtyDetails.specialty_position}}</view>
+  <view>{{specialtyDetails.specialty_introduction}}</view>
+  <view>{{specialtyDetails.specialty_origin}}</view>
+  <view>{{specialtyDetails.specialty_seller}}</view>
+</view>
+

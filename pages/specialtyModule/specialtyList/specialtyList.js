@@ -84,8 +84,10 @@ Page({
     }
   },
   
-  // xxx
-  xxx: function (e) {
-    console.log(e.currentTarget.dataset.xxx)
+  // 特产详情
+  specialtyDetails: function (e) {
+    wx.navigateTo({
+      url: '/pages/specialtyModule/specialtyDetails/specialtyDetails?id=' + e.currentTarget.dataset.item.id,
+    })
   }
 })

@@ -1,10 +1,11 @@
 {
   "pages":[
+    "pages/specialtyModule/specialtyDetails/specialtyDetails",
+    "pages/specialtyModule/specialtyList/specialtyList",
     "pages/homeModule/indexPage/indexPage",
     "pages/homeModule/findPage/findPage",
     "pages/homeModule/newsPage/newsPage",
     "pages/homeModule/minePage/minePage",
-    "pages/specialtyModule/specialtyList/specialtyList",
     "pages/scenicModule/scenicList/scenicList",
     "pages/scenicModule/scenicDetails/scenicDetails",
     "pages/scenicModule/mineScenic/mineScenic",
