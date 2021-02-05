@@ -1,5 +1,5 @@
 import baseURL from "./baseURL"
-import adminRequest from "./sub-unitRequest/adminRequest"
+import classificationRequest from "./sub-unitRequest/classificationRequest"
 import dynamicRequest from "./sub-unitRequest/dynamicRequest"
 import historyRequest from "./sub-unitRequest/historyRequest"
 import loginRequest from "./sub-unitRequest/loginRequest"
@@ -14,7 +14,7 @@ import specialtyRequest from "./sub-unitRequest/specialtyRequest"
 import treasureChest from "./sub-unitRequest/treasureChest"
 
 export default (localObjects, parametersData, parameters) => {
-  var globalObjects = Object.assign({}, adminRequest, dynamicRequest, historyRequest, loginRequest, marryRequest, messageRequest, mineRequest, otherRequest, recipeRequest, recordRequest, scenicspotRequest, specialtyRequest, treasureChest)
+  var globalObjects = Object.assign({}, classificationRequest, dynamicRequest, historyRequest, loginRequest, marryRequest, messageRequest, mineRequest, otherRequest, recipeRequest, recordRequest, scenicspotRequest, specialtyRequest, treasureChest)
   var apiMethod = globalObjects[localObjects].apiMethod
   if (parameters) {
     var requestURL = baseURL.baseURL + globalObjects[localObjects].apiName + '/' + parameters

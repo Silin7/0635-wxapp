@@ -39,7 +39,7 @@ Page({
 
   // 县市列表
   getCityList: function () {
-    esRequest('admin_city_type').then(res => {
+    esRequest('classification_city').then(res => {
       if (res && res.data.code === 0) {
         this.data.cityList = res.data.data
         this.data.cityList.unshift({ id: '', type_id: '', type_name: '全部' })

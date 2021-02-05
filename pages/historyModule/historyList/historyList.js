@@ -24,7 +24,7 @@ Page({
 
   // 县市列表
   historyList: function () {
-    esRequest('admin_city_type').then(res => {
+    esRequest('classification_city').then(res => {
       if (res && res.data.code === 0) {
         this.setData({
           historyList: res.data.data

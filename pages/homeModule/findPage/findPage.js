@@ -128,7 +128,7 @@ Page({
   // 新闻类型列表
   getNewsType: function () {
     return new Promise (async (resolve, reject) => {
-      esRequest('admin_news_type').then(res => {
+      esRequest('classification_news').then(res => {
         if (res && res.data.code === 0) {
           this.setData({
             newsTypeList: res.data.data
