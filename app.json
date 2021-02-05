@@ -1,13 +1,13 @@
 {
   "pages":[
-    "pages/specialtyModule/specialtyList/specialtyList",
-    "pages/scenicModule/scenicList/scenicList",
-    "pages/scenicModule/scenicDetails/scenicDetails",
-    "pages/scenicModule/mineScenic/mineScenic",
     "pages/homeModule/indexPage/indexPage",
     "pages/homeModule/findPage/findPage",
     "pages/homeModule/newsPage/newsPage",
     "pages/homeModule/minePage/minePage",
+    "pages/specialtyModule/specialtyList/specialtyList",
+    "pages/scenicModule/scenicList/scenicList",
+    "pages/scenicModule/scenicDetails/scenicDetails",
+    "pages/scenicModule/mineScenic/mineScenic",
     "pages/otherModule/jokesRandom/jokesRandom",
     "pages/otherModule/girlRandom/girlRandom",
     "pages/otherModule/garbage/garbage",
