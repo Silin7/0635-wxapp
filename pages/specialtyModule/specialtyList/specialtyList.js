@@ -27,6 +27,9 @@ Page({
   },
 
   onShow: function () {
+    this.setData({
+      specialtyList: []
+    })
     this.getCityList()
     this.getSpecialtyList()
   },

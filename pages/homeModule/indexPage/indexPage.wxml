@@ -25,17 +25,17 @@
   <text class="title_text">测试</text>
 </view>
 <view class="sub_module1">
-  <view class="sub_module1_item">
+  <view class="sub_module1_item" bindtap="testBind1">
     <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
     <view class="item_banner_mask"></view>
     <text class="item_banner_text1">测试</text>
   </view>
-  <view class="sub_module1_item">
+  <view class="sub_module1_item" bindtap="testBind2">
     <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
     <view class="item_banner_mask"></view>
     <text class="item_banner_text1">测试</text>
   </view>
-  <view class="sub_module1_item">
+  <view class="sub_module1_item" bindtap="testBind3">
     <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
     <view class="item_banner_mask"></view>
     <text class="item_banner_text1">测试</text>
@@ -50,24 +50,24 @@
 </view>
 <view class="sub_module3">
   <view class="sub_module2_item1">
-    <view class="sub_module2_item1_01">
+    <view class="sub_module2_item1_01" bindtap="testBind4">
       <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
       <view class="item_banner_mask1"></view>
       <view class="item_banner_text2">测试测试</view>
     </view>
-    <view class="sub_module2_item1_02">
+    <view class="sub_module2_item1_02" bindtap="testBind5">
       <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
       <view class="item_banner_mask1"></view>
       <view class="item_banner_text2">测试测试</view>
     </view>
   </view>
   <view class="sub_module2_item1 m_t_15">
-    <view class="sub_module2_item1_02">
+    <view class="sub_module2_item1_02" bindtap="testBind6">
       <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
       <view class="item_banner_mask1"></view>
       <view class="item_banner_text2">测试测试</view>
     </view>
-    <view class="sub_module2_item1_01">
+    <view class="sub_module2_item1_01" bindtap="testBind7">
       <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
       <view class="item_banner_mask1"></view>
       <view class="item_banner_text2">测试测试</view>

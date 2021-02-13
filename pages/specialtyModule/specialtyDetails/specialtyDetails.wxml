@@ -9,10 +9,27 @@
       </swiper-item>
     </block>
   </swiper>
-  <view>{{specialtyDetails.specialty_name}}</view>
-  <view>{{specialtyDetails.specialty_position}}</view>
-  <view>{{specialtyDetails.specialty_introduction}}</view>
-  <view>{{specialtyDetails.specialty_origin}}</view>
-  <view>{{specialtyDetails.specialty_seller}}</view>
+  <!-- 简介 -->
+  <view class="scenic_info_box">
+    <view class="scenic_info_item">
+      <text class="co_0">{{specialtyDetails.specialty_name}}</text>
+    </view>
+    <view class="scenic_details_box">
+      <view class="scenic_details_title">产地</view>
+      <rich-text wx:if="{{specialtyDetails.specialty_position}}" class="scenic_details_node" nodes="山东省聊城市{{specialtyDetails.specialty_position}}"></rich-text>
+      <rich-text wx:else class="scenic_details_node" nodes="山东省聊城市"></rich-text>
+    </view>
+    <view class="scenic_details_box" wx:if="{{specialtyDetails.specialty_introduction}}">
+      <view class="scenic_details_title">简介</view>
+      <rich-text class="scenic_details_node" nodes="{{specialtyDetails.specialty_introduction}}"></rich-text>
+    </view>
+    <view class="scenic_details_box" wx:if="{{specialtyDetails.specialty_origin}}">
+      <view class="scenic_details_title">历史</view>
+      <rich-text class="scenic_details_node" nodes="{{specialtyDetails.specialty_origin}}"></rich-text>
+    </view>
+    <view class="scenic_details_box" wx:if="{{specialtyDetails.specialty_seller}}">
+      <view class="scenic_details_title">销售商</view>
+      <rich-text class="scenic_details_node" nodes="{{specialtyDetails.specialty_seller}}"></rich-text>
+    </view>
+  </view>
 </view>
-

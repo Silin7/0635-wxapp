@@ -42,13 +42,72 @@ Page({
   oneNavBind: function (e) {
     if (e.currentTarget.dataset.item.id === 'icon01') {
       wx.navigateTo({
-        url: '/pages/scenicModule/scenicList/scenicList',
+        url: '/pages/scenicModule/scenicList/scenicList'
       })
     }
     if (e.currentTarget.dataset.item.id === 'icon02') {
       wx.navigateTo({
-        url: '/pages/historyModule/historyList/historyList',
+        url: '/pages/historyModule/historyList/historyList'
       })
     }
-  }
+    if (e.currentTarget.dataset.item.id === 'icon03') {
+      wx.navigateTo({
+        url: '/pages/specialtyModule/specialtyList/specialtyList'
+      })
+    }
+    if (e.currentTarget.dataset.item.id === 'icon04') {
+      wx.navigateTo({
+        url: '/pages/marryModule/bindList/bindList'
+      })
+    }
+  },
+
+  // testBind1
+  testBind1: function () {
+    wx.navigateTo({
+      url: '/pages/recipeModule/recipeList/recipeList'
+    })
+  },
+  
+  // testBind2
+  testBind2: function () {
+    wx.navigateTo({
+      url: '/pages/recordModule/diaryList/diaryList'
+    })
+  },
+
+  // testBind3
+  testBind3: function () {
+    wx.navigateTo({
+      url: '/pages/otherModule/girlRandom/girlRandom'
+    })
+  },
+
+  // testBind4
+  testBind4: function () {
+    wx.navigateTo({
+      url: '/pages/otherModule/jokesRandom/jokesRandom'
+    })
+  },
+
+  // testBind5
+  testBind5: function () {
+    wx.navigateTo({
+      url: '/pages/otherModule/garbage/garbage'
+    })
+  },
+
+  // testBind6
+  testBind6: function () {
+    wx.navigateTo({
+      url: '/pages/otherModule/weather/weather'
+    })
+  },
+
+  // testBind7
+  testBind7: function () {
+    wx.navigateTo({
+      url: '/pages/otherModule/historyToday/historyToday'
+    })
+  },
 })
