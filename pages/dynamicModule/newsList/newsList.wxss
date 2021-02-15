@@ -136,7 +136,7 @@
 }
 .van-sidebar-item {
   background-color: #F7F8FA !important;
-  padding: var(--sidebar-padding,16px 12px 16px 8px) !important;
+  /* padding: var(--sidebar-padding,16px 12px 16px 8px) !important; */
 }
 .van-sidebar-item--selected {
   background-color: #FFFFFF !important;
