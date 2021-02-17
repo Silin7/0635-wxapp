@@ -7,6 +7,7 @@ import marryRequest from "./sub-unitRequest/marryRequest"
 import messageRequest from "./sub-unitRequest/messageRequest"
 import mineRequest from "./sub-unitRequest/mineRequest"
 import otherRequest from "./sub-unitRequest/otherRequest"
+import pictureRequest from "./sub-unitRequest/pictureRequest"
 import recipeRequest from "./sub-unitRequest/recipeRequest"
 import recordRequest from "./sub-unitRequest/recordRequest"
 import scenicspotRequest from "./sub-unitRequest/scenicspotRequest"
@@ -14,7 +15,7 @@ import specialtyRequest from "./sub-unitRequest/specialtyRequest"
 import treasureChest from "./sub-unitRequest/treasureChest"
 
 export default (localObjects, parametersData, parameters) => {
-  var globalObjects = Object.assign({}, classificationRequest, dynamicRequest, historyRequest, loginRequest, marryRequest, messageRequest, mineRequest, otherRequest, recipeRequest, recordRequest, scenicspotRequest, specialtyRequest, treasureChest)
+  var globalObjects = Object.assign({}, classificationRequest, dynamicRequest, historyRequest, loginRequest, marryRequest, messageRequest, mineRequest, otherRequest, pictureRequest, recipeRequest, recordRequest, scenicspotRequest, specialtyRequest, treasureChest)
   var apiMethod = globalObjects[localObjects].apiMethod
   if (parameters) {
     var requestURL = baseURL.baseURL + globalObjects[localObjects].apiName + '/' + parameters
