@@ -1,1 +1,29 @@
-/* pages/pictureModule/wallportraitSeries/wallportraitSeries.wxss */
+.scroll_box {
+  box-sizing: border-box;
+  padding: 0 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FFFFFF;
+}
+.scroll_item {
+  box-sizing: border-box;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1rpx dashed #ECECEC;
+}
+.series_title {
+  height: 60px;
+  line-height: 30px;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+.series_image {
+  width: 120px;
+  height: 80px;
+  /* border-radius: 5px; */
+  overflow: hidden;
+}

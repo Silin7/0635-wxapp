@@ -83,7 +83,7 @@
 </view>
 <view class="sub_module2">
   <view class="sub_module2_left">
-    <view class="sub_module2_01">
+    <view class="sub_module2_01" bindtap="testBind8">
       <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
       <view class="item_banner_mask1"></view>
       <view class="item_banner_text2">测试测试</view>

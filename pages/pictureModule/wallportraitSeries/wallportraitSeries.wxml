@@ -1,1 +1,10 @@
 <van-toast id="van-toast" />
+
+<scroll-view scroll-y="true" bindscrolltolower="onScrollBottom" class="scroll_box" style="height: {{windowHeight}}px;">
+  <view wx:for="{{seriesList}}" wx:key="index" class="scroll_item" bindtap="wallportraitList" data-item="{{item}}">
+    <view style="width: {{windowWidth-160}}px;">
+      <view class="series_title to_2">{{item.series_name}}</view>
+    </view>
+    <image src="{{item.series_image}}" class="series_image"></image>
+  </view>
+</scroll-view>

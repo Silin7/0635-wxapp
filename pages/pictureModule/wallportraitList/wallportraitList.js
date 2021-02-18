@@ -5,7 +5,8 @@ Page({
   data: {
     windowWidth: 0,
     windowHeight: 0,
-    type_id: '',
+    series_id: '',
+    series_name: '',
     seriesPage: '1',
     seriesLimit: '10',
     seriesList: []
@@ -13,11 +14,11 @@ Page({
 
   onLoad: function (options) {
     if (options.id) {
-      this.data.type_id = options.id
+      this.data.series_id = options.id
     }
     if (options.name) {
-      wx.setNavigationBarTitle({
-        title: options.name
+      this.setData({
+        series_name: options.name
       })
     }
   },
@@ -30,17 +31,17 @@ Page({
   },
 
   onShow: function () {
-    this.wallportraitSeries()
+    this.wallportraitList()
   },
 
   // 头像系列
-  wallportraitSeries: function () {
+  wallportraitList: function () {
     let data = {
       page: this.data.seriesPage,
       limit: this.data.seriesLimit,
-      type_id: this.data.type_id
+      series_id: this.data.series_id
     }
-    esRequest('wallportrait_series', data).then(res => {
+    esRequest('wallportrait_list', data).then(res => {
       if (res && res.data.code === 0) {
         this.setData({
           seriesList: this.data.seriesList.concat(res.data.data)
@@ -55,15 +56,13 @@ Page({
   onScrollBottom: function () {
     if (this.data.totalCount > this.data.seriesList.length) {
       this.data.seriesPage += 1
-      this.wallportraitSeries()
+      this.wallportraitList()
     }
   },
 
   // xxx
-  wallportraitList: function (e) {
-    wx.navigateTo({
-      url: '/pages/pictureModule/wallportraitList/wallportraitList?id=' + e.currentTarget.dataset.item.series_id + '&name=' +  e.currentTarget.dataset.item.series_name
-    })
-  }
+  // wallportraitList: function (e) {
+  //   console.log(e.currentTarget.dataset.item)
+  // }
 
 })

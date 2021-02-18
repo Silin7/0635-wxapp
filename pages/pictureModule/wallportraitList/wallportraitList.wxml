@@ -1,0 +1,8 @@
+<van-toast id="van-toast" />
+
+<scroll-view scroll-y="true" bindscrolltolower="onScrollBottom" class="scroll_box" style="height: {{windowHeight}}px;">
+  <view class="series_name">{{series_name}}</view>
+  <view class="scroll_item" >
+    <image wx:for="{{seriesList}}" wx:key="index" src="{{item.wallportrait_url}}" class="series_image"></image>
+  </view>
+</scroll-view>

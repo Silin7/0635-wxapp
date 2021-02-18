@@ -1,7 +1,8 @@
 {
   "pages":[
-    "pages/pictureModule/wallportraitSeries/wallportraitSeries",
     "pages/pictureModule/wallportraitType/wallportraitType",
+    "pages/pictureModule/wallportraitSeries/wallportraitSeries",
+    "pages/pictureModule/wallportraitList/wallportraitList",
     "pages/homeModule/indexPage/indexPage",
     "pages/homeModule/findPage/findPage",
     "pages/homeModule/newsPage/newsPage",

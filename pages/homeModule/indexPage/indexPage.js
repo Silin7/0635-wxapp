@@ -110,4 +110,11 @@ Page({
       url: '/pages/otherModule/historyToday/historyToday'
     })
   },
+
+  // testBind8
+  testBind8: function () {
+    wx.navigateTo({
+      url: '/pages/pictureModule/wallportraitType/wallportraitType'
+    })
+  },
 })
