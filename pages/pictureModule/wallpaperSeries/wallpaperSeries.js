@@ -5,8 +5,7 @@ Page({
   data: {
     windowWidth: 0,
     windowHeight: 0,
-    series_id: '',
-    series_name: '',
+    type_id: '',
     seriesPage: '1',
     seriesLimit: '10',
     seriesList: []
@@ -14,11 +13,11 @@ Page({
 
   onLoad: function (options) {
     if (options.id) {
-      this.data.series_id = options.id
+      this.data.type_id = options.id
     }
     if (options.name) {
-      this.setData({
-        series_name: options.name
+      wx.setNavigationBarTitle({
+        title: options.name
       })
     }
   },
@@ -31,17 +30,17 @@ Page({
   },
 
   onShow: function () {
-    this.wallportraitList()
+    this.wallpaperSeries()
   },
 
-  // 头像系列
-  wallportraitList: function () {
+  // 壁纸系列
+  wallpaperSeries: function () {
     let data = {
       page: this.data.seriesPage,
       limit: this.data.seriesLimit,
-      series_id: this.data.series_id
+      type_id: this.data.type_id
     }
-    esRequest('wallportrait_list', data).then(res => {
+    esRequest('wallpaper_series', data).then(res => {
       if (res && res.data.code === 0) {
         this.setData({
           seriesList: this.data.seriesList.concat(res.data.data)
@@ -56,21 +55,15 @@ Page({
   onScrollBottom: function () {
     if (this.data.totalCount > this.data.seriesList.length) {
       this.data.seriesPage += 1
-      this.wallportraitList()
+      this.wallpaperSeries()
     }
   },
-  
-  // 点击保存图片
-  savePicture: function (e) {
-    let urls = []
-    let current = e.target.dataset.img
-    urls.push(current)
-    console.log(urls)
-    wx.previewImage({
-      // 当前显示图片的http链接
-      current: current,
-      // 需要预览的图片http链接列表
-      urls: urls
+
+  // xxx
+  wallportraitList: function (e) {
+    wx.navigateTo({
+      url: '/pages/pictureModule/wallpaperList/wallpaperList?id=' + e.currentTarget.dataset.item.series_id + '&name=' +  e.currentTarget.dataset.item.series_name
     })
   }
+
 })

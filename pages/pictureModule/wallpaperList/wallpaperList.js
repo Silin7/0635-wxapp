@@ -31,17 +31,17 @@ Page({
   },
 
   onShow: function () {
-    this.wallportraitList()
+    this.wallpaperList()
   },
 
   // 头像系列
-  wallportraitList: function () {
+  wallpaperList: function () {
     let data = {
       page: this.data.seriesPage,
       limit: this.data.seriesLimit,
       series_id: this.data.series_id
     }
-    esRequest('wallportrait_list', data).then(res => {
+    esRequest('wallpaper_list', data).then(res => {
       if (res && res.data.code === 0) {
         this.setData({
           seriesList: this.data.seriesList.concat(res.data.data)
@@ -56,10 +56,10 @@ Page({
   onScrollBottom: function () {
     if (this.data.totalCount > this.data.seriesList.length) {
       this.data.seriesPage += 1
-      this.wallportraitList()
+      this.wallpaperList()
     }
   },
-  
+
   // 点击保存图片
   savePicture: function (e) {
     let urls = []

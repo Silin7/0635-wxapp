@@ -1,8 +1,5 @@
 {
   "pages":[
-    "pages/pictureModule/wallportraitType/wallportraitType",
-    "pages/pictureModule/wallportraitSeries/wallportraitSeries",
-    "pages/pictureModule/wallportraitList/wallportraitList",
     "pages/homeModule/indexPage/indexPage",
     "pages/homeModule/findPage/findPage",
     "pages/homeModule/newsPage/newsPage",
@@ -33,6 +30,12 @@
     "pages/dynamicModule/messageDetails/messageDetails",
     "pages/mineModule/myConcerns/myConcerns",
     "pages/mineModule/personalData/personalData",
+    "pages/pictureModule/wallpaperType/wallpaperType",
+    "pages/pictureModule/wallpaperSeries/wallpaperSeries",
+    "pages/pictureModule/wallpaperList/wallpaperList",
+    "pages/pictureModule/wallportraitType/wallportraitType",
+    "pages/pictureModule/wallportraitSeries/wallportraitSeries",
+    "pages/pictureModule/wallportraitList/wallportraitList",
     "pages/loginModule/loginPage/loginPage",
     "pages/loginModule/registerPage/registerPage",
     "pages/components/dateTimePicker/dateTimePicker",

@@ -117,4 +117,11 @@ Page({
       url: '/pages/pictureModule/wallportraitType/wallportraitType'
     })
   },
+
+  // testBind9
+  testBind9: function () {
+    wx.navigateTo({
+      url: '/pages/pictureModule/wallpaperType/wallpaperType'
+    })
+  },
 })
