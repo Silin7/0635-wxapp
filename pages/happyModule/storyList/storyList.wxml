@@ -22,7 +22,7 @@
     </view>
     <view class="content_box">
       <view class="story_title">{{item.story_title}}</view>
-      <image src="{{item.story_url}}" class="story_url" bindtap="savePicture" data-img="{{item.story_url}}"></image>
+      <van-image lazy-load width="{{windowWidth-24}}" height="300" src="{{item.story_url}}" bind:click="savePicture" data-img="{{item.story_url}}"/>
     </view>
   </view>
 </view>

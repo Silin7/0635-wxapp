@@ -2,6 +2,7 @@
   "navigationBarTitleText": "拯救不开心",
   "usingComponents": {
     "van-toast": "vant-weapp/toast/index",
-    "van-dialog": "vant-weapp/dialog/index"
+    "van-dialog": "vant-weapp/dialog/index",
+    "van-image": "vant-weapp/image/index"
   }
 }
