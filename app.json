@@ -36,6 +36,7 @@
     "pages/pictureModule/wallportraitType/wallportraitType",
     "pages/pictureModule/wallportraitSeries/wallportraitSeries",
     "pages/pictureModule/wallportraitList/wallportraitList",
+    "pages/happyModule/storyList/storyList",
     "pages/loginModule/loginPage/loginPage",
     "pages/loginModule/registerPage/registerPage",
     "pages/components/dateTimePicker/dateTimePicker",

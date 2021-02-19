@@ -124,4 +124,22 @@ Page({
       url: '/pages/pictureModule/wallpaperType/wallpaperType'
     })
   },
+  // testBind10
+  testBind10: function () {
+    wx.navigateTo({
+      url: '/pages/happyModule/storyList/storyList?id=01'
+    })
+  },
+  // testBind11
+  testBind11: function () {
+    wx.navigateTo({
+      url: '/pages/happyModule/storyList/storyList?id=02'
+    })
+  },
+  // testBind12
+  testBind12: function () {
+    wx.navigateTo({
+      url: '/pages/happyModule/storyList/storyList?id=03'
+    })
+  },
 })

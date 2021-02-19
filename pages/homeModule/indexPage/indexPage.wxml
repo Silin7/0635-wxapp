@@ -123,17 +123,17 @@
     </view>
   </view>
   <view class="sub_module4_item m_t_15">
-    <view class="sub_module4_item_02">
+    <view class="sub_module4_item_02" bindtap="testBind10">
       <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
       <view class="item_banner_mask1"></view>
       <view class="item_banner_text2">测试测试</view>
     </view>
-    <view class="sub_module4_item_02">
+    <view class="sub_module4_item_02" bindtap="testBind11">
       <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
       <view class="item_banner_mask1"></view>
       <view class="item_banner_text2">测试测试</view>
     </view>
-    <view class="sub_module4_item_02">
+    <view class="sub_module4_item_02" bindtap="testBind12">
       <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
       <view class="item_banner_mask1"></view>
       <view class="item_banner_text2">测试测试</view>

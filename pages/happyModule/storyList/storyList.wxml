@@ -1,0 +1,43 @@
+<van-toast id="van-toast" />
+<van-dialog id="van-dialog" />
+
+<!-- 笑话 -->
+<view class="story_box" wx:if="{{type_id === '01'}}">
+  <view wx:for="{{storyList}}" wx:key="index">
+    <view class="transition_box">
+      <image src="http://121.89.215.228/birch-forest-media/saveUnhappy/picture/gd-love.gif" class="transition_img"/>
+    </view>
+    <view class="rich_box">
+      <rich-text nodes="{{item.story_content}}" class="rich_text"></rich-text>
+    </view>
+  </view>
+  <!-- <view class="story_epilogue">温习提示：十则冷笑话，每天更新ＹＯ~</view> -->
+</view>
+
+<!-- 图片 -->
+<view class="story_box" wx:if="{{type_id === '02'}}">
+  <view wx:for="{{storyList}}" wx:key="index">
+    <view class="transition_box">
+      <image src="http://121.89.215.228/birch-forest-media/saveUnhappy/picture/gd-love.gif" class="transition_img"/>
+    </view>
+    <view class="content_box">
+      <view class="story_title">{{item.story_title}}</view>
+      <image src="{{item.story_url}}" class="story_url" bindtap="savePicture" data-img="{{item.story_url}}"></image>
+    </view>
+  </view>
+</view>
+
+<!-- 视频 -->
+<view class="story_box" wx:if="{{type_id === '03'}}">
+  <view wx:for="{{storyList}}" wx:key="index">
+    <view class="transition_box">
+      <image src="http://121.89.215.228/birch-forest-media/saveUnhappy/picture/gd-love.gif" class="transition_img"/>
+    </view>
+    <view class="content_box">
+      <view class="story_title">{{item.story_title}}</view>
+      <video src="{{item.story_url}}" class="story_url"></video>
+      <!-- <view class="save_video" bindtap="saveVideo" data-url="{{item.story_url}}">保存到相册</view> -->
+    </view>
+  </view>
+</view>
+

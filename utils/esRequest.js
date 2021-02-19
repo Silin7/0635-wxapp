@@ -15,7 +15,7 @@ import scenicspotRequest from "./sub-unitRequest/scenicspotRequest"
 import specialtyRequest from "./sub-unitRequest/specialtyRequest"
 
 export default (localObjects, parametersData, parameters) => {
-  var globalObjects = Object.assign({}, classificationRequest, dynamicRequest, historyRequest, loginRequest, marryRequest, messageRequest, mineRequest, otherRequest, pictureRequest, recipeRequest, recordRequest, scenicspotRequest, specialtyRequest, happyRequest)
+  var globalObjects = Object.assign({}, classificationRequest, dynamicRequest, happyRequest, historyRequest, loginRequest, marryRequest, messageRequest, mineRequest, otherRequest, pictureRequest, recipeRequest, recordRequest, scenicspotRequest, specialtyRequest)
   var apiMethod = globalObjects[localObjects].apiMethod
   if (parameters) {
     var requestURL = baseURL.baseURL + globalObjects[localObjects].apiName + '/' + parameters
