@@ -1,6 +1,5 @@
 {
   "pages":[
-    "pages/appointmentModule/appointmentList/appointmentList",
     "pages/homeModule/indexPage/indexPage",
     "pages/homeModule/findPage/findPage",
     "pages/homeModule/newsPage/newsPage",
@@ -38,6 +37,7 @@
     "pages/pictureModule/wallportraitSeries/wallportraitSeries",
     "pages/pictureModule/wallportraitList/wallportraitList",
     "pages/happyModule/storyList/storyList",
+    "pages/appointmentModule/appointmentList/appointmentList",
     "pages/loginModule/loginPage/loginPage",
     "pages/loginModule/registerPage/registerPage",
     "pages/components/dateTimePicker/dateTimePicker",

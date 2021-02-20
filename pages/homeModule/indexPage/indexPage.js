@@ -40,27 +40,74 @@ Page({
 
   // 第一栏导航
   oneNavBind: function (e) {
+    // 景点
     if (e.currentTarget.dataset.item.id === 'icon01') {
       wx.navigateTo({
         url: '/pages/scenicModule/scenicList/scenicList'
       })
     }
+    // 历史
     if (e.currentTarget.dataset.item.id === 'icon02') {
       wx.navigateTo({
         url: '/pages/historyModule/historyList/historyList'
       })
     }
+    // 特产
     if (e.currentTarget.dataset.item.id === 'icon03') {
       wx.navigateTo({
         url: '/pages/specialtyModule/specialtyList/specialtyList'
       })
     }
+    // 社交
     if (e.currentTarget.dataset.item.id === 'icon04') {
       wx.navigateTo({
         url: '/pages/marryModule/bindList/bindList'
       })
     }
   },
+
+  // 活动
+  appointmentList: function () {
+    wx.navigateTo({
+      url: '/pages/appointmentModule/appointmentList/appointmentList'
+    })
+  },
+
+  // 头像
+  wallportraitType: function () {
+    wx.navigateTo({
+      url: '/pages/pictureModule/wallportraitType/wallportraitType'
+    })
+  },
+
+  // 壁纸
+  wallpaperType: function () {
+    wx.navigateTo({
+      url: '/pages/pictureModule/wallpaperType/wallpaperType'
+    })
+  },
+
+  // 笑话
+  storyList01: function () {
+    wx.navigateTo({
+      url: '/pages/happyModule/storyList/storyList?id=01'
+    })
+  },
+
+  // 图片
+  storyList02: function () {
+    wx.navigateTo({
+      url: '/pages/happyModule/storyList/storyList?id=02'
+    })
+  },
+
+  // 视频
+  storyList03: function () {
+    wx.navigateTo({
+      url: '/pages/happyModule/storyList/storyList?id=03'
+    })
+  },
+
 
   // testBind1
   testBind1: function () {
@@ -109,37 +156,5 @@ Page({
     wx.navigateTo({
       url: '/pages/otherModule/historyToday/historyToday'
     })
-  },
-
-  // testBind8
-  testBind8: function () {
-    wx.navigateTo({
-      url: '/pages/pictureModule/wallportraitType/wallportraitType'
-    })
-  },
-
-  // testBind9
-  testBind9: function () {
-    wx.navigateTo({
-      url: '/pages/pictureModule/wallpaperType/wallpaperType'
-    })
-  },
-  // testBind10
-  testBind10: function () {
-    wx.navigateTo({
-      url: '/pages/happyModule/storyList/storyList?id=01'
-    })
-  },
-  // testBind11
-  testBind11: function () {
-    wx.navigateTo({
-      url: '/pages/happyModule/storyList/storyList?id=02'
-    })
-  },
-  // testBind12
-  testBind12: function () {
-    wx.navigateTo({
-      url: '/pages/happyModule/storyList/storyList?id=03'
-    })
-  },
+  }
 })

@@ -590,6 +590,14 @@
   text-align: center;
 }
 
+/* 头像 / 壁纸 */
+.sub_module2_item1_txbz {
+  width: 48%;
+  height: 120px;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
 
 /* 底部导航 */
 .van-tabbar-item--active {
