@@ -120,8 +120,22 @@ var studentTicket = function (ticket) {
   return sticket
 }
 
+// 约会付款方式
+var appointmentPay = function (type) {
+  if (type === '01') {
+    return '发起方支付'
+  } else if (type === '02') {
+    return 'AA制'
+  } else if (type === '03') {
+    return '参与方支付'
+  } else {
+    return '暂定'
+  }
+}
+
 module.exports = {
   dayjs: dayjs,
   licensePlate: licensePlate,
-  studentTicket: studentTicket
+  studentTicket: studentTicket,
+  appointmentPay: appointmentPay
 }

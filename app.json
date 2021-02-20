@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/appointmentModule/appointmentList/appointmentList",
     "pages/homeModule/indexPage/indexPage",
     "pages/homeModule/findPage/findPage",
     "pages/homeModule/newsPage/newsPage",
