@@ -1,6 +1,11 @@
 <van-toast id="van-toast" />
+<van-tabs active="{{tabActive}}" bind:change="tabChange" color="#4545FF">
+  <van-tab title="同城"></van-tab>
+  <van-tab title="新闻"></van-tab>
+</van-tabs>
 
-<scroll-view class="dynamic_box" style="height: {{windowHeight}}px;" scroll-y="true" bindscrolltolower="onScrollBottom">
+<!-- 同城 -->
+<scroll-view wx:if="{{tabActive === 0}}" scroll-y="true" bindscrolltolower="onScrollBottom1" class="dynamic_box m_t_10" style="height: {{windowHeight-54}}px;">
   <view class="dynamic_item" wx:for="{{dynamicList}}" wx:key="index" bindtap="getDynamicDetalis" data-item="{{item}}">
     <!-- 标签 -->
     <van-tag color="#4545FF" plain class="dynamic_tag" size="large"> 标 签 </van-tag>
@@ -26,3 +31,24 @@
     </view>
   </view>
 </scroll-view>
+
+<!-- 新闻 -->
+<view class="bs_bb bg_F7 fx_r_b_s m_t_10" style="height: {{windowHeight-54}}px;" wx:if="{{tabActive === 1}}">
+  <view class="sidebar_box" style="height: {{windowHeight-54}}px;">
+    <van-sidebar active-key="{{sidebarKey}}" bind:change="sidebarChange">
+      <van-sidebar-item wx:for="{{newsTypeList}}" wx:key="index" title="{{item.type_name}}"/>
+    </van-sidebar>
+  </view>
+  <scroll-view scroll-y="true" bindscrolltolower="onScrollBottom2" class="sidebar_item_box" style="width: {{windowWidth-80}}px; height: {{windowHeight-54}}px;">
+    <view wx:for="{{newsList}}" wx:key="index" class="find_news" bindtap="getNewsDetalis" data-item="{{item}}">
+      <view class="find_news_img">
+        <image wx:if="{{item.imgList[0]}}" src="{{item.imgList[0]}}" class="w_h_100"></image>
+        <image wx:else src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
+      </view>
+      <view style="width: {{windowWidth-150}}px;">
+        <view class="find_news_title to_2">{{item.title}}</view>
+        <text class="find_news_time">{{item.postTime}}</text>
+      </view>
+    </view>
+  </scroll-view>
+</view>
