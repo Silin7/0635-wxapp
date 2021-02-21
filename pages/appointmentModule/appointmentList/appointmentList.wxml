@@ -1,45 +1,45 @@
 <van-toast id="van-toast" />
 
-<van-tabs active="{{appointmentActive}}" bind:change="appointmentChange" ellipsis="{{false}}">
-  <van-tab wx:for="{{appointmentType}}" wx:key="index" title="{{item.title}}" name="{{item.name}}"></van-tab>
+<van-tabs active="{{appointmentActive}}" bind:change="appointmentChange" ellipsis="{{false}}" border="{{ false }}" swipeable sticky animated>
+  <van-tab wx:for="{{appointmentType}}" wx:key="index" title="{{item.title}}" name="{{item.name}}">
+    <scroll-view class="bg_F5 bs_bb oy_a" scroll-y="true" style="height: {{windowHeight-44}}px;" bindscrolltolower="onScrollBottom">
+      <view class="item_box" wx:for="{{appointmentList}}" wx:key="index" bindtap="appointmentDetails" data-item="{{item}}" wx:if="{{isShow}}">
+        <view class="sponsor_box">
+          <image src="{{item.sponsor_img}}" class="sponsor_img"></image>
+          <text class="to_1 sponsor_name">{{item.sponsor_name}}</text>
+          <view class="plate_box">
+            <view wx:if="{{item.sponsor_gender == '01'}}" class="gender_boy">
+              <image src="/images/mineModule/boy_icon2.png" class="gender_icon"></image>
+              <text class="age_text">{{item.sponsor_age}}</text>
+            </view>
+            <view wx:if="{{item.sponsor_gender == '02'}}" class="gender_girl">
+              <image src="/images/mineModule/girl_icon2.png" class="gender_icon"></image>
+              <text class="age_text">{{item.sponsor_age}}</text>
+            </view>
+            <text class="appointment_type">{{item.sponsor_gender === '01' ? '个人发起' : '官方发起'}}</text>
+          </view>
+        </view>
+        <view class="appointment_box" style="width: {{windowWidth-120}}px;">
+          <view class="appointment_title to_1">{{item.appointment_title}}</view>
+          <view class="appointment_item">
+            <image src="/images/appointmentModule/time.png" class="appointment_img"></image>
+            <text class="appointment_text to_1" style="width: {{windowWidth-150}}px;">{{item.appointment_time}}</text>
+          </view>
+          <view class="appointment_item">
+            <image src="/images/appointmentModule/place.png" class="appointment_img"></image>
+            <text class="appointment_text to_1" style="width: {{windowWidth-150}}px;">{{item.appointment_place}}</text>
+          </view>
+          <view class="appointment_item">
+            <image src="/images/appointmentModule/pay.png" class="appointment_img"></image>
+            <wxs module="filter" src="../../../utils/filter.wxs"></wxs>
+            <text class="appointment_text to_1" style="width: {{windowWidth-150}}px;">{{filter.appointmentPay(item.appointment_pay)}}</text>
+          </view>
+          <view class="appointment_item2">
+            <image src="/images/appointmentModule/info.png" class="appointment_img m_t_5"></image>
+            <text class="appointment_text to_2" style="width: {{windowWidth-150}}px;">{{item.appointment_info}}</text>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </van-tab>
 </van-tabs>
-
-<scroll-view class="bg_F5 bs_bb oy_a" scroll-y="true" style="height: {{windowHeight-44}}px;" bindscrolltolower="onScrollBottom">
-  <view class="item_box" wx:for="{{appointmentList}}" wx:key="index" bindtap="appointmentDetails" data-item="{{item}}" wx:if="{{isShow}}">
-    <view class="sponsor_box">
-      <image src="{{item.sponsor_img}}" class="sponsor_img"></image>
-      <text class="to_1 sponsor_name">{{item.sponsor_name}}</text>
-      <view class="plate_box">
-        <view wx:if="{{item.sponsor_gender == '01'}}" class="gender_boy">
-          <image src="/images/mineModule/boy_icon2.png" class="gender_icon"></image>
-          <text class="age_text">{{item.sponsor_age}}</text>
-        </view>
-        <view wx:if="{{item.sponsor_gender == '02'}}" class="gender_girl">
-          <image src="/images/mineModule/girl_icon2.png" class="gender_icon"></image>
-          <text class="age_text">{{item.sponsor_age}}</text>
-        </view>
-        <text class="appointment_type">{{item.sponsor_gender === '01' ? '个人发起' : '官方发起'}}</text>
-      </view>
-    </view>
-    <view class="appointment_box" style="width: {{windowWidth-120}}px;">
-      <view class="appointment_title to_1">{{item.appointment_title}}</view>
-      <view class="appointment_item">
-        <image src="/images/appointmentModule/time.png" class="appointment_img"></image>
-        <text class="appointment_text to_1" style="width: {{windowWidth-150}}px;">{{item.appointment_time}}</text>
-      </view>
-      <view class="appointment_item">
-        <image src="/images/appointmentModule/place.png" class="appointment_img"></image>
-        <text class="appointment_text to_1" style="width: {{windowWidth-150}}px;">{{item.appointment_place}}</text>
-      </view>
-      <view class="appointment_item">
-        <image src="/images/appointmentModule/pay.png" class="appointment_img"></image>
-        <wxs module="filter" src="../../../utils/filter.wxs"></wxs>
-        <text class="appointment_text to_1" style="width: {{windowWidth-150}}px;">{{filter.appointmentPay(item.appointment_pay)}}</text>
-      </view>
-      <view class="appointment_item2">
-        <image src="/images/appointmentModule/info.png" class="appointment_img m_t_5"></image>
-        <text class="appointment_text to_2" style="width: {{windowWidth-150}}px;">{{item.appointment_info}}</text>
-      </view>
-    </view>
-  </view>
-</scroll-view>

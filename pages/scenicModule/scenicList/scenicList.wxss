@@ -9,9 +9,9 @@
   margin: 10px 0;
 }
 .sub_module1_item_ns {
+  box-sizing: border-box;
   width: 60px;
   height: 60px;
-  box-sizing: border-box;
   border-radius: 10px;
   overflow: hidden;
   position: relative;

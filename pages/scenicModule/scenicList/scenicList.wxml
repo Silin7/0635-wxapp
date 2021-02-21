@@ -1,22 +1,25 @@
 <van-toast id="van-toast" />
 
-<van-tabs active="{{scenicActive}}" bind:change="scenicChange" ellipsis="{{false}}">
-  <van-tab wx:for="{{cityList}}" wx:key="index" title="{{item.type_name}}"></van-tab>
+<!-- <van-tabs bind:change="onChange" swipeable sticky animated border="{{ false }}" line-width="60"> -->
+<van-tabs active="{{scenicActive}}" bind:change="scenicChange" ellipsis="{{false}}" border="{{ false }}" swipeable sticky animated>
+  <van-tab wx:for="{{cityList}}" wx:key="index" title="{{item.type_name}}">
+    <scroll-view class="bg_F5 bs_bb oy_a" scroll-y="true" style="height: {{windowHeight-44}}px;" bindscrolltolower="onScrollBottom">
+      <view class="sub_module1_ns" wx:for="{{scenicspotList}}" wx:key="index" bindtap="scenicDetails" data-item="{{item}}" >
+        <view class="sub_module1_item_ns">
+        <van-image width="60" height="60" lazy-load src="{{item.scenicspot_img}}"/>
+          <!-- <image src="{{item.scenicspot_img}}" class="w_h_100"></image> -->
+        </view>
+        <view class="sub_module1_item_ns_info fx_c_s_s" style="width: {{windowWidth-90}}px;">
+          <view class="sub_module1_item_ns_info_item fx_r_b_c">
+            <text class="to_1 fs_16">{{item.scenicspot_name}}</text>
+            <text class="sub_module1_item_ns_info_item_per sub_module1_item_ns_info_item_bg_a fs_12 fw_7">第{{item.id}}名</text>
+          </view>
+          <view class="sub_module1_item_ns_info_item fx_r_s_c">
+            <text class="to_1 fs_12 co_9 fx_r_s_c w_100">{{item.scenicspot_place}}</text>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </van-tab>
 </van-tabs>
 
-<scroll-view class="bg_F5 bs_bb oy_a" scroll-y="true" style="height: {{windowHeight-44}}px;" bindscrolltolower="onScrollBottom">
-  <view class="sub_module1_ns" wx:for="{{scenicspotList}}" wx:key="index" bindtap="scenicDetails" data-item="{{item}}" >
-    <view class="sub_module1_item_ns">
-      <image src="{{item.scenicspot_img}}" class="w_h_100"></image>
-    </view>
-    <view class="sub_module1_item_ns_info fx_c_s_s" style="width: {{windowWidth-90}}px;">
-      <view class="sub_module1_item_ns_info_item fx_r_b_c">
-        <text class="to_1 fs_16">{{item.scenicspot_name}}</text>
-        <text class="sub_module1_item_ns_info_item_per sub_module1_item_ns_info_item_bg_a fs_12 fw_7">第{{item.id}}名</text>
-      </view>
-      <view class="sub_module1_item_ns_info_item fx_r_s_c">
-        <text class="to_1 fs_12 co_9 fx_r_s_c w_100">{{item.scenicspot_place}}</text>
-      </view>
-    </view>
-  </view>
-</scroll-view>
