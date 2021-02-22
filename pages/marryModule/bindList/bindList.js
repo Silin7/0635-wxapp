@@ -27,6 +27,7 @@ Page({
 
   onLoad: function (options) {
     this.data.id_key = wx.getStorageSync('id_key').toString()
+    this.marryList()
   },
 
   onReady: function () {
@@ -35,11 +36,7 @@ Page({
       windowHeight: wx.getSystemInfoSync().windowHeight
     })
   },
-
-  onShow: function () {
-    this.marryList()
-  },
-
+  
   // 切换tabs
   tabChange(event) {
     if (event.detail.name === '01') {

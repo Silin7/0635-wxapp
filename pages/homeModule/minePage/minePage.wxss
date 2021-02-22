@@ -175,3 +175,8 @@
   line-height: 20px;
   text-align: center;
 }
+.image_class {
+  width: 18px;
+  height: 18px;
+  padding:0 3px;
+}

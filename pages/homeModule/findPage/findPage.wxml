@@ -8,7 +8,7 @@
         <van-tag color="#4545FF" plain class="dynamic_tag" size="large"> 标 签 </van-tag>
         <!-- 作者信息 -->
         <view class="dynamic_user_info">
-          <image src="{{item.author_avatar_url}}" class="dynamic_user_img"></image>
+          <van-image lazy-load width="50" height="50" src="{{item.author_avatar_url}}" image-class="br_10"/>
           <view class="dynamic_user_box">
             <view class="dynamic_user_name to_1">
               <text class="ls_1">{{item.author_name}}</text>
@@ -24,7 +24,7 @@
         </view>
         <!-- 动态图片 -->
         <view wx:if="{{item.image}}" catchtap="dynamicImg" data-item="{{item}}">
-          <image src="{{item.image}}" class="dynamic_img"></image>
+          <van-image lazy-load width="100%" height="180" src="{{item.image}}"/>
         </view>
       </view>
     </scroll-view>
@@ -39,8 +39,8 @@
       <scroll-view scroll-y="true" bindscrolltolower="onScrollBottom2" class="sidebar_item_box" style="width: {{windowWidth-80}}px; height: {{windowHeight-54}}px;">
         <view wx:for="{{newsList}}" wx:key="index" class="find_news" bindtap="getNewsDetalis" data-item="{{item}}">
           <view class="find_news_img">
-            <image wx:if="{{item.imgList[0]}}" src="{{item.imgList[0]}}" class="w_h_100"></image>
-            <image wx:else src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
+            <van-image lazy-load width="100%" height="100%" wx:if="{{item.imgList[0]}}" src="{{item.imgList[0]}}"/>
+            <van-image lazy-load width="100%" height="100%" wx:else src="/images/homeModule/banner_xq.jpg"/>
           </view>
           <view style="width: {{windowWidth-150}}px;">
             <view class="find_news_title to_2">{{item.title}}</view>

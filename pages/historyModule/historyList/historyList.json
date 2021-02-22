@@ -1,6 +1,7 @@
 {
   "navigationBarTitleText": "聊城历史",
   "usingComponents": {
-    "van-toast": "vant-weapp/toast/index"
+    "van-toast": "vant-weapp/toast/index",
+    "van-image": "vant-weapp/image/index"
   }
 }

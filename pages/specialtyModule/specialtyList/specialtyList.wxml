@@ -5,7 +5,9 @@
     <scroll-view scroll-y="true" bindscrolltolower="onScrollBottom" style="height: {{windowHeight-44}}px;">
       <view class="specialty_box bg_F5" style="min-height: {{windowHeight-44}}px;">
         <view class="specialty_item" wx:for="{{specialtyList}}" wx:key="index" bindtap="specialtyDetails" data-item="{{item}}">
-          <image src="{{item.specialty_cover}}" class="specialty_cover"></image>
+          <view class="specialty_cover">
+            <van-image lazy-load width="100%" height="160px" src="{{item.specialty_cover}}"/>
+          </view>
           <view class="specialty_name to_1">{{item.specialty_name}}</view>
           <!-- <view class="specialty_position">{{item.specialty_position ? item.specialty_position : '聊城'}}特产</view> -->
         </view>

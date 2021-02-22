@@ -1,5 +1,6 @@
 {
   "navigationBarTitleText": "头像分类",
   "usingComponents": {
+    "van-image": "vant-weapp/image/index"
   }
 }

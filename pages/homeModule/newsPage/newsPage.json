@@ -2,6 +2,7 @@
   "navigationBarTitleText": "消息",
   "usingComponents": {
     "van-toast": "vant-weapp/toast/index",
+    "van-image": "vant-weapp/image/index",
     "van-dialog": "vant-weapp/dialog/index",
     "van-tab": "vant-weapp/tab/index",
     "van-tabs": "vant-weapp/tabs/index",

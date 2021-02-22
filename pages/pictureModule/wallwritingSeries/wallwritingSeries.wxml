@@ -5,6 +5,6 @@
     <view style="width: {{windowWidth-160}}px;">
       <view class="series_title to_2">{{item.series_name}}</view>
     </view>
-    <image src="{{item.series_image}}" class="series_image"></image>
+    <van-image lazy-load width="120" height="80" src="{{item.series_image}}"/>
   </view>
 </scroll-view>

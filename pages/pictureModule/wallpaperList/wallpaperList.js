@@ -58,9 +58,8 @@ Page({
   // 点击保存图片
   savePicture: function (e) {
     let urls = []
-    let current = e.target.dataset.img
+    let current = e.currentTarget.dataset.img
     urls.push(current)
-    console.log(urls)
     wx.previewImage({
       // 当前显示图片的http链接
       current: current,

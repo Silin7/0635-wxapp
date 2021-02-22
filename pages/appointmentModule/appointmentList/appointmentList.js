@@ -28,6 +28,7 @@ Page({
 
   onLoad: function (options) {
     this.data.id_key = wx.getStorageSync('id_key').toString()
+    this.getAppointmentList()
   },
 
   onReady: function () {
@@ -35,10 +36,6 @@ Page({
       windowWidth: wx.getSystemInfoSync().windowWidth,
       windowHeight: wx.getSystemInfoSync().windowHeight
     })
-  },
-
-  onShow: function () {
-    this.getAppointmentList()
   },
 
   // 切换Tab

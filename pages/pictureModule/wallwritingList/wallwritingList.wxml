@@ -8,7 +8,7 @@
     </view>
     <view class="content_box">
       <rich-text class="story_title" nodes="{{item.wallwriting_info}}"></rich-text>
-      <van-image wx:if="{{item.wallwriting_url}}" lazy-load width="{{windowWidth-24}}" height="200" src="{{item.wallwriting_url}}" bind:click="savePicture" data-img="{{item.wallwriting_url}}"/>
+      <van-image lazy-load width="{{windowWidth-24}}" height="200" wx:if="{{item.wallwriting_url}}" src="{{item.wallwriting_url}}" bind:click="savePicture" data-img="{{item.wallwriting_url}}"/>
     </view>
   </view>
 </scroll-view>

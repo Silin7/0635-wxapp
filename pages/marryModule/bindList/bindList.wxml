@@ -6,7 +6,7 @@
       <view class="page_box" style="min-height: {{windowHeight-44}}px;">
         <view class="person_item" wx:for="{{personList}}" wx:key="index" bindtap="personDetails" data-item="{{item}}">
           <view class="person_img">
-            <image src="{{item.photo}}" class="w_h_100"></image>
+            <van-image lazy-load width="100%" height="100%" src="{{item.photo}}"/>
           </view>
           <view class="person_name">
             <view class="person_name_item1">
