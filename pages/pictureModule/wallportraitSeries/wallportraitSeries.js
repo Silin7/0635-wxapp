@@ -20,6 +20,7 @@ Page({
         title: options.name
       })
     }
+    this.wallportraitSeries()
   },
 
   onReady: function () {
@@ -27,10 +28,6 @@ Page({
       windowWidth: wx.getSystemInfoSync().windowWidth,
       windowHeight: wx.getSystemInfoSync().windowHeight
     })
-  },
-
-  onShow: function () {
-    this.wallportraitSeries()
   },
 
   // 头像系列
@@ -59,11 +56,10 @@ Page({
     }
   },
 
-  // xxx
+  // 头像列表
   wallportraitList: function (e) {
     wx.navigateTo({
       url: '/pages/pictureModule/wallportraitList/wallportraitList?id=' + e.currentTarget.dataset.item.series_id + '&name=' +  e.currentTarget.dataset.item.series_name
     })
   }
-
 })

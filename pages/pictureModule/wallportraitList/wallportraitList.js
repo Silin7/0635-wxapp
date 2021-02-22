@@ -21,17 +21,16 @@ Page({
         series_name: options.name
       })
     }
+    this.wallportraitList()
   },
 
   onReady: function () {
     this.setData({
-      windowWidth: wx.getSystemInfoSync().windowWidth,
       windowHeight: wx.getSystemInfoSync().windowHeight
     })
   },
 
   onShow: function () {
-    this.wallportraitList()
   },
 
   // 头像系列

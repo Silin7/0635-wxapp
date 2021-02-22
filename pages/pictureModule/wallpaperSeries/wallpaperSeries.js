@@ -20,6 +20,7 @@ Page({
         title: options.name
       })
     }
+    this.wallpaperSeries()
   },
 
   onReady: function () {
@@ -27,10 +28,6 @@ Page({
       windowWidth: wx.getSystemInfoSync().windowWidth,
       windowHeight: wx.getSystemInfoSync().windowHeight
     })
-  },
-
-  onShow: function () {
-    this.wallpaperSeries()
   },
 
   // 壁纸系列
@@ -59,11 +56,10 @@ Page({
     }
   },
 
-  // xxx
+  // 壁纸列表
   wallportraitList: function (e) {
     wx.navigateTo({
       url: '/pages/pictureModule/wallpaperList/wallpaperList?id=' + e.currentTarget.dataset.item.series_id + '&name=' +  e.currentTarget.dataset.item.series_name
     })
   }
-
 })

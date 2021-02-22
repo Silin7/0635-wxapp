@@ -3,6 +3,7 @@ import Toast from '../../../miniprogram_npm/vant-weapp/toast/toast';
 
 Page({
   data: {
+    windowWidth: 0,
     windowHeight: 0,
     series_id: '',
     series_name: '',
@@ -20,23 +21,27 @@ Page({
         series_name: options.name
       })
     }
-    this.wallpaperList()
   },
 
   onReady: function () {
     this.setData({
+      windowWidth: wx.getSystemInfoSync().windowWidth,
       windowHeight: wx.getSystemInfoSync().windowHeight
     })
   },
 
+  onShow: function () {
+    this.wallwritingList()
+  },
+
   // 头像系列
-  wallpaperList: function () {
+  wallwritingList: function () {
     let data = {
       page: this.data.seriesPage,
       limit: this.data.seriesLimit,
       series_id: this.data.series_id
     }
-    esRequest('wallpaper_list', data).then(res => {
+    esRequest('wallwriting_list', data).then(res => {
       if (res && res.data.code === 0) {
         this.setData({
           seriesList: this.data.seriesList.concat(res.data.data)
@@ -51,10 +56,10 @@ Page({
   onScrollBottom: function () {
     if (this.data.totalCount > this.data.seriesList.length) {
       this.data.seriesPage += 1
-      this.wallpaperList()
+      this.wallwritingList()
     }
   },
-
+  
   // 点击保存图片
   savePicture: function (e) {
     let urls = []

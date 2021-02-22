@@ -1,7 +1,5 @@
 Page({
   data: {
-    windowWidth: 0,
-    windowHeight: 0,
     wallportraitType: [
       { id: '1001', name: '女生头像', image: 'http://121.89.215.228/birch-forest-media/wallportraitType/1001.jpg' },
       { id: '1002', name: '男生头像', image: 'http://121.89.215.228/birch-forest-media/wallportraitType/1002.jpg' },
@@ -14,24 +12,10 @@ Page({
     ]
   },
 
-  onLoad: function (options) {
-  },
-
-  onReady: function () {
-    this.setData({
-      windowWidth: wx.getSystemInfoSync().windowWidth,
-      windowHeight: wx.getSystemInfoSync().windowHeight
-    })
-  },
-
-  onShow: function () {
-  },
-
   // 头像系列
   wallportraitSeries: function (e) {
     wx.navigateTo({
       url: '/pages/pictureModule/wallportraitSeries/wallportraitSeries?id=' + e.currentTarget.dataset.item.id + '&name=' +  e.currentTarget.dataset.item.name
     })
   }
-
 })

@@ -3,9 +3,9 @@ import Toast from '../../../miniprogram_npm/vant-weapp/toast/toast';
 
 Page({
   data: {
+    windowWidth: 0,
     windowHeight: 0,
-    series_id: '',
-    series_name: '',
+    type_id: '',
     seriesPage: '1',
     seriesLimit: '10',
     seriesList: []
@@ -13,30 +13,31 @@ Page({
 
   onLoad: function (options) {
     if (options.id) {
-      this.data.series_id = options.id
+      this.data.type_id = options.id
     }
     if (options.name) {
-      this.setData({
-        series_name: options.name
+      wx.setNavigationBarTitle({
+        title: options.name
       })
     }
-    this.wallpaperList()
+    this.wallwritingSeries()
   },
 
   onReady: function () {
     this.setData({
+      windowWidth: wx.getSystemInfoSync().windowWidth,
       windowHeight: wx.getSystemInfoSync().windowHeight
     })
   },
 
   // 头像系列
-  wallpaperList: function () {
+  wallwritingSeries: function () {
     let data = {
       page: this.data.seriesPage,
       limit: this.data.seriesLimit,
-      series_id: this.data.series_id
+      type_id: this.data.type_id
     }
-    esRequest('wallpaper_list', data).then(res => {
+    esRequest('wallwriting_series', data).then(res => {
       if (res && res.data.code === 0) {
         this.setData({
           seriesList: this.data.seriesList.concat(res.data.data)
@@ -51,21 +52,15 @@ Page({
   onScrollBottom: function () {
     if (this.data.totalCount > this.data.seriesList.length) {
       this.data.seriesPage += 1
-      this.wallpaperList()
+      this.wallwritingSeries()
     }
   },
 
-  // 点击保存图片
-  savePicture: function (e) {
-    let urls = []
-    let current = e.target.dataset.img
-    urls.push(current)
-    console.log(urls)
-    wx.previewImage({
-      // 当前显示图片的http链接
-      current: current,
-      // 需要预览的图片http链接列表
-      urls: urls
+  // 文案列表
+  wallportraitList: function (e) {
+    wx.navigateTo({
+      url: '/pages/pictureModule/wallwritingList/wallwritingList?id=' + e.currentTarget.dataset.item.series_id + '&name=' +  e.currentTarget.dataset.item.series_name
     })
   }
+
 })
