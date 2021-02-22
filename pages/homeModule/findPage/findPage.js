@@ -20,6 +20,8 @@ Page({
   },
 
   onLoad: function (options) {
+    this.getDynamicList()
+    this.awaitNews()
   },
 
   onReady: function () {
@@ -27,16 +29,6 @@ Page({
       windowWidth: wx.getSystemInfoSync().windowWidth,
       windowHeight: wx.getSystemInfoSync().windowHeight
     })
-  },
-
-  onShow: function () {
-    // 切换底部tabs清空
-    this.setData({
-      dynamicList: [],
-      newsList: [],
-    })
-    this.getDynamicList()
-    this.awaitNews()
   },
 
   async awaitNews () {
@@ -100,7 +92,7 @@ Page({
     })
   },
 
-  // 同城动态函数
+  // 同城动态触底函数
   onScrollBottom1: function () {
     if (this.data.totalCount > this.data.dynamicList.length) {
       this.data.dynamicPage += 1
@@ -108,7 +100,7 @@ Page({
     }
   },
 
-  // 同城动态详情
+  // 同城动态触底函数
   getDynamicDetalis: function (e) {
     // 01：相亲
     if (e.currentTarget.dataset.item.type_id === '01') {
