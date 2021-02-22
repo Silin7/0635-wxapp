@@ -87,6 +87,13 @@ Page({
     })
   },
 
+  // 文案
+  wallwritingType: function () {
+    wx.navigateTo({
+      url: '/pages/pictureModule/wallwritingType/wallwritingType'
+    })
+  },
+
   // 笑话
   storyList01: function () {
     wx.navigateTo({

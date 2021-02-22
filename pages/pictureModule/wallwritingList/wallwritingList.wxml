@@ -2,7 +2,14 @@
 
 <scroll-view scroll-y="true" bindscrolltolower="onScrollBottom" class="scroll_box" style="height: {{windowHeight}}px;">
   <view class="series_name">{{series_name}}</view>
-  <view class="scroll_item" >
-    <image wx:for="{{seriesList}}" wx:key="index" src="{{item.wallwriting_url}}" class="series_image" bindtap="savePicture" data-img="{{item.wallportrait_url}}"></image>
+  <view wx:for="{{seriesList}}" wx:key="index">
+    <view class="transition_box">
+      <image src="http://121.89.215.228/birch-forest-media/saveUnhappy/picture/gd-love.gif" class="transition_img"/>
+    </view>
+    <view class="content_box">
+      <rich-text class="story_title" nodes="{{item.wallwriting_info}}"></rich-text>
+      <van-image wx:if="{{item.wallwriting_url}}" lazy-load width="{{windowWidth-24}}" height="200" src="{{item.wallwriting_url}}" bindtap="savePicture" data-img="{{item.wallportrait_url}}"/>
+    </view>
   </view>
 </scroll-view>
+

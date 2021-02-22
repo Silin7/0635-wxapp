@@ -36,7 +36,7 @@
   </view>
 </view>
 
-<!-- 头像 / 壁纸 -->
+<!-- 头像 / 壁纸 / 文案 -->
 <view class="title_box2 m_t_10">
   <view class="title_icon_box">
     <image src="/images/homeModule/icon-appointment.png" class="w_h_100"></image>
@@ -54,7 +54,7 @@
     <view class="item_banner_mask"></view>
     <text class="item_banner_text1">壁纸</text>
   </view>
-  <view class="sub_module1_item" bindtap="">
+  <view class="sub_module1_item" bindtap="wallwritingType">
     <image src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
     <view class="item_banner_mask"></view>
     <text class="item_banner_text1">文案</text>
