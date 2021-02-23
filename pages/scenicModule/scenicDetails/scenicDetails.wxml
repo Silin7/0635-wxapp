@@ -12,7 +12,11 @@
       <text class="punch_clock2" bindtap="cancePunch" wx:else>已打卡</text>
     </view>
     <view class="scenic_info_item2 ls_1">{{scenicDetails.scenicspot_hours}}</view>
-    <view class="scenic_info_item scenic_info_date ls_1 to_1">{{scenicDetails.scenicspot_place}}</view>
+    <!-- 地图 -->
+    <view class="scenic_info_item scenic_info_date ls_1 to_1" bindtap="mapComponent">{{scenicDetails.scenicspot_place}}</view>
+    <view class="scenicspot_place_box" bindtap="mapComponent">
+      <map longitude="{{scenicDetails.longitude}}" latitude="{{scenicDetails.latitude}}" markers="{{markers}}" show-compass="{{false}}" style="width: 100%; height: 100%;"></map>
+    </view>
     <view class="scenic_info_item ls_1" wx:if="{{scenicDetails.scenicspot_phone}}">官方电话：{{scenicDetails.scenicspot_phone}}</view>
     <view class="scenic_info_item ls_1" wx:else>官方电话：暂无联系方式</view>
     <view class="scenic_info_ticket ls_1" wx:if="{{scenicDetails.scenicspot_Ticket}}"> 

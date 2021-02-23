@@ -1,0 +1,11 @@
+<map
+  id="map"
+  longitude="{{longitude}}"
+  latitude="{{latitude}}"
+  markers="{{markers}}"
+  polyline="{{polyline}}"
+  style="width: {{windowWidth}}px; height: {{windowHeight-120}}px;">
+</map>
+<view class="sname">{{sname}}</view>
+<view class="splace">{{splace}}</view>
+<view class="distance">距离您约：<text class="distance_text">{{distance}}</text> 公里</view>
