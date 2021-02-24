@@ -107,18 +107,25 @@
   box-sizing: border-box;
   /* border-bottom: 1px solid #F7F8FA; */
 }
+/* 边界 */
+.boundary {
+  position: absolute;
+  top: 605px;
+  width: 100%;
+  height: 20px;
+  background-color: #F7F8FA;
+}
 .scenic_details_box {
   box-sizing: border-box;
   position: absolute;
-  top: 605px;
+  top: 625px;
   z-index: 1;
   width: 100vw;
-  margin-top: 20px;
-  padding:20px 10px;
+  padding:15px;
   background-color: #FFFFFF;
   color: #333333;
   line-height: 30px;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
 }
 
 /* 地图 */
