@@ -15,16 +15,24 @@
       <text class="co_0">{{specialtyDetails.specialty_name}}</text>
     </view>
     <view class="scenic_details_box">
-      <view class="scenic_details_title">产地</view>
-      <rich-text wx:if="{{specialtyDetails.specialty_position}}" class="scenic_details_node" nodes="山东省聊城市{{specialtyDetails.specialty_position}}"></rich-text>
-      <rich-text wx:else class="scenic_details_node" nodes="山东省聊城市"></rich-text>
+      <view class="scenic_details_title">详细产地</view>
+      <rich-text wx:if="{{specialtyDetails.detailed_area}}" class="scenic_details_node" nodes="{{specialtyDetails.detailed_area}}"></rich-text>
+      <rich-text wx:else class="scenic_details_node" nodes="山东省聊城市{{specialtyDetails.specialty_position}}"></rich-text>
     </view>
     <view class="scenic_details_box" wx:if="{{specialtyDetails.specialty_introduction}}">
-      <view class="scenic_details_title">简介</view>
+      <view class="scenic_details_title">产品简介</view>
       <rich-text class="scenic_details_node" nodes="{{specialtyDetails.specialty_introduction}}"></rich-text>
     </view>
+    <view class="scenic_details_box" wx:if="{{specialtyDetails.product_features}}">
+      <view class="scenic_details_title">产品特征</view>
+      <rich-text class="scenic_details_node" nodes="{{specialtyDetails.product_features}}"></rich-text>
+    </view>
+    <view class="scenic_details_box" wx:if="{{specialtyDetails.geographical_scope}}">
+      <view class="scenic_details_title">地域范围</view>
+      <rich-text class="scenic_details_node" nodes="{{specialtyDetails.geographical_scope}}"></rich-text>
+    </view>
     <view class="scenic_details_box" wx:if="{{specialtyDetails.specialty_origin}}">
-      <view class="scenic_details_title">历史</view>
+      <view class="scenic_details_title">产品历史</view>
       <rich-text class="scenic_details_node" nodes="{{specialtyDetails.specialty_origin}}"></rich-text>
     </view>
     <view class="scenic_details_box" wx:if="{{specialtyDetails.specialty_seller}}">

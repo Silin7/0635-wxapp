@@ -8,6 +8,7 @@ Page({
     windowHeight: 0,
     scenicId: '',
     scenicDetails: {},
+    scenicspotImgs: [],
     markers: [],
     isFollow: '0'
   },
@@ -38,6 +39,7 @@ Page({
       if (res && res.data.code === 0) {
         this.setData({
           scenicDetails: res.data.data,
+          scenicspotImgs: res.data.data.scenicspot_imgs.split('，'),
           markers: [{
             latitude: res.data.data.latitude,
             longitude: res.data.data.longitude,

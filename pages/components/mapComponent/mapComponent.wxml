@@ -4,8 +4,10 @@
   latitude="{{latitude}}"
   markers="{{markers}}"
   polyline="{{polyline}}"
+  show-compass="{{true}}"
+  enable-rotate="{{true}}"
   style="width: {{windowWidth}}px; height: {{windowHeight-120}}px;">
 </map>
 <view class="sname">{{sname}}</view>
 <view class="splace">{{splace}}</view>
-<view class="distance">距离您约：<text class="distance_text">{{distance}}</text> 公里</view>
+<view class="distance">距您直线距离约：<text class="distance_text">{{distance}}</text> 公里</view>
