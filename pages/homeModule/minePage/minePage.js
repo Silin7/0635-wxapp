@@ -13,9 +13,14 @@ Page({
   },
 
   onLoad: function (options) {
-    this.setData({
-      id_key: wx.getStorageSync('id_key').toString()
-    })
+    if (wx.getStorageSync('id_key')) {
+      this.setData({
+        id_key: wx.getStorageSync('id_key').toString()
+      })
+      this.concernsList()
+      this.getMineInfo()
+      this.mineScenicspotList()
+    }
   },
 
   onReady: function () {
@@ -26,9 +31,23 @@ Page({
   },
 
   onShow: function () {
-    this.concernsList()
-    this.getMineInfo()
-    this.mineScenicspotList()
+    if (!wx.getStorageSync('id_key')) {
+      wx.redirectTo({
+        url: '/pages/loginModule/loginPage/loginPage',
+      })
+    }
+    if (wx.getStorageSync('tp_key')) {
+      if (wx.getStorageSync('tp_key') === '02') {
+        this.getMineInfo()
+      }
+      if (wx.getStorageSync('tp_key') === '03') {
+        this.mineScenicspotList()
+      }
+      if (wx.getStorageSync('tp_key') === '04') {
+        this.concernsList()
+      }
+      wx.setStorageSync('tp_key', '01')
+    }
   },
 
   // 获取个人信息
@@ -82,10 +101,10 @@ Page({
     let data = {
       followers_id: this.data.id_key
     }
-    esRequest('concerns_list', data).then(res => {
+    esRequest('concerns_count', data).then(res => {
       if (res && res.data.code === 0) {
         this.setData({
-          follow: res.data.data.length
+          follow: res.data.data
         })
       }
     })

@@ -169,6 +169,7 @@ Page({
       this.data.dataForm.id = wx.getStorageSync('id_key')
       esRequest('update_mineInfo', this.data.dataForm).then(res => {
         if (res && res.data.code === 0) {
+          wx.setStorageSync('tp_key', '02')
           Toast.success('操作成功')
           setTimeout(() => {
             wx.navigateBack({

@@ -9,6 +9,11 @@ let mineRequest = {
     apiName: '/mine/update_mineInfo',
     name: '修改保存个人信息'
   },
+  concerns_count: {
+    apiMethod: 'GET',
+    apiName: '/mine/concerns_count',
+    name: '我关注的人数量（参数：followers_id）'
+  },
   concerns_list: {
     apiMethod: 'GET',
     apiName: '/mine/concerns_list',

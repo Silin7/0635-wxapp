@@ -16,7 +16,10 @@ Page({
   },
 
   onLoad: function (options) {
-    this.data.id_key = wx.getStorageSync('id_key').toString()
+    if (wx.getStorageSync('id_key')) {
+      this.data.id_key = wx.getStorageSync('id_key').toString()
+      this.getPerMessage()
+    }
   },
 
   onReady: function () {
@@ -27,7 +30,11 @@ Page({
   },
 
   onShow: function () {
-    this.getPerMessage()
+    if (!wx.getStorageSync('id_key')) {
+      wx.redirectTo({
+        url: '/pages/loginModule/loginPage/loginPage',
+      })
+    }
   },
 
   // 消息tabs切换

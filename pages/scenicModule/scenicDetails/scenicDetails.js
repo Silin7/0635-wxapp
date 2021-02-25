@@ -82,6 +82,7 @@ Page({
     }
     esRequest('follow_scenicspot', data).then(res => {
       if (res && res.data.code === 0) {
+        wx.setStorageSync('tp_key', '03')
         Toast.success('打卡成功')
         this.isPunchClock()
       } else {
@@ -98,6 +99,7 @@ Page({
     }
     esRequest('cancel_scenicspot', data).then(res => {
       if (res && res.data.code === 0) {
+        wx.setStorageSync('tp_key', '03')
         Toast.success('取消打卡')
         this.isPunchClock()
       } else {

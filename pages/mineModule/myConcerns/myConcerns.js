@@ -61,6 +61,7 @@ Page({
       }
       esRequest('cancel_users', data).then(res => {
         if (res && res.data.code === 0) {
+          wx.setStorageSync('tp_key', '04')
           Toast.success('操作成功')
           this.concernsList()
         } else {

@@ -91,6 +91,7 @@ Page({
       }
       esRequest('follow_users', data).then(res => {
         if (res && res.data.code === 0) {
+          wx.setStorageSync('tp_key', '04')
           if (res.data.type === '1') {
             Toast.success('已关注Ta啦')
           }
