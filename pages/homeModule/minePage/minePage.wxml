@@ -67,19 +67,19 @@
       <view class="my_tracks_center_img" wx:for="{{scenicspotList}}" wx:key="index" wx:if="{{index < 4}}" bindtap="scenicspotDetails" data-id="{{item.scenicspot_id}}">
         <van-image lazy-load width="100%" height="100%" src="{{item.scenicspot_img}}" image-class="br_5"/>
       </view>
-      <view class="my_tracks_center_img" wx:if="{{scenicspotList.length < 1}}" bindtap="scenicspotDetails" data-id="{{1}}">
+      <view class="my_tracks_center_img" wx:if="{{imgFlage01}}" bindtap="scenicspotDetails" data-id="{{1}}">
         <van-image lazy-load width="100%" height="100%" src="https://dimg04.c-ctrip.com/images/010481200086o0iraBE7A_C_1600_1200.jpg" image-class="br_5"/>
         <view class="my_tracks_center_mask w_h_100 br_5"></view>
       </view>
-      <view class="my_tracks_center_img" wx:if="{{scenicspotList.length < 2}}" bindtap="scenicspotDetails" data-id="{{2}}">
+      <view class="my_tracks_center_img" wx:if="{{imgFlage02}}" bindtap="scenicspotDetails" data-id="{{2}}">
         <van-image lazy-load width="100%" height="100%" src="https://dimg07.c-ctrip.com/images/350t1a0000018ff8p8C7D_C_1600_1200.jpg" image-class="br_5"/>
         <view class="my_tracks_center_mask w_h_100 br_5"></view>
       </view>
-      <view class="my_tracks_center_img" wx:if="{{scenicspotList.length < 3}}" bindtap="scenicspotDetails" data-id="{{3}}">
+      <view class="my_tracks_center_img" wx:if="{{imgFlage03}}" bindtap="scenicspotDetails" data-id="{{3}}">
         <van-image lazy-load width="100%" height="100%" src="https://dimg01.c-ctrip.com/images/100v1f000001h1cafBE4A_R_1600_10000.jpg" image-class="br_5"/>
         <view class="my_tracks_center_mask w_h_100 br_5"></view>
       </view>
-      <view class="my_tracks_center_img" wx:if="{{scenicspotList.length < 4}}" bindtap="scenicspotDetails" data-id="{{4}}">
+      <view class="my_tracks_center_img" wx:if="{{imgFlage04}}" bindtap="scenicspotDetails" data-id="{{4}}">
         <van-image lazy-load width="100%" height="100%" src="https://dimg02.c-ctrip.com/images/0103g120008681blwE16E_R_10000_1200.jpg" image-class="br_5"/>
         <view class="my_tracks_center_mask w_h_100 br_5"></view>
       </view>

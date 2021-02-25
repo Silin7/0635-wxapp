@@ -101,13 +101,17 @@
   margin: 20px auto 0;
   background-color: #FFFFFF;
   border-radius: 20px;
-  padding: 10px;
+  padding: 10px 0;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
 }
 .footprint_box {
   width: 26px;
   height: 26px;
 }
 .my_tracks_top {
+  width: 86vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -123,14 +127,19 @@
   font-weight: 700;
 }
 .my_tracks_center {
+  width: 86vw;
+  height: 110px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  overflow-x: hidden;
 }
 
 .my_tracks_center_img {
+  flex-shrink: 0;
   width: 20vw;
   height: 100px;
+  margin-right: 2vw;
   position: relative;
 }
 

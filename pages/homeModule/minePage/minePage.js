@@ -9,6 +9,11 @@ Page({
     follow: 0,
     collection: 0,
     mineDataForm: {},
+    scenicspotLen: 4,
+    imgFlage01: true,
+    imgFlage02: true,
+    imgFlage03: true,
+    imgFlage04: true,
     scenicspotList: []
   },
 
@@ -68,12 +73,43 @@ Page({
 
   // 足迹列表
   mineScenicspotList: function () {
+    let _this = this
+    this.data.imgFlage01 = true
+    this.data.imgFlage02 = true
+    this.data.imgFlage03 = true
+    this.data.imgFlage04 = true
     let data = {
       followers_id: this.data.id_key
     }
     esRequest('mine_scenicspot_list', data).then (res => {
       if (res && res.data.code === 0) {
+        let scenicspotList = res.data.data
+        if (scenicspotList.length < 4) {
+          let len = scenicspotList.length
+          _this.data.scenicspotLen = 4 - len
+          for(let i=0; i<len; i++) {
+            if (scenicspotList[i].scenicspot_id == '1') {
+              _this.data.imgFlage01 = false
+            }
+            if (scenicspotList[i].scenicspot_id == '2') {
+              _this.data.imgFlage02 = false
+            }
+            if (scenicspotList[i].scenicspot_id == '3') {
+              _this.data.imgFlage03 = false
+            }
+            if (scenicspotList[i].scenicspot_id == '4') {
+              _this.data.imgFlage04 = false
+            }
+          }
+        } else {
+          this.data.scenicspotLen = 0
+        }
         this.setData({
+          imgFlage01: this.data.imgFlage01,
+          imgFlage02: this.data.imgFlage02,
+          imgFlage03: this.data.imgFlage03,
+          imgFlage04: this.data.imgFlage04,
+          scenicspotLen: this.data.scenicspotLen,
           scenicspotList: res.data.data
         })
       } else {
