@@ -1,53 +1,33 @@
 <van-toast id="van-toast" />
 
-<van-tabs active="{{tabActive}}" bind:change="tabChange" ellipsis="{{false}}" border="{{ false }}" swipeable sticky animated color="#4545FF">
-  <van-tab title="同城">
-    <scroll-view wx:if="{{tabActive === 0}}" scroll-y="true" bindscrolltolower="onScrollBottom1" class="dynamic_box m_t_10" style="height: {{windowHeight-54}}px;">
-      <view class="dynamic_item" wx:for="{{dynamicList}}" wx:key="index" bindtap="getDynamicDetalis" data-item="{{item}}">
-        <!-- 标签 -->
-        <van-tag color="#4545FF" plain class="dynamic_tag" size="large"> 标 签 </van-tag>
-        <!-- 作者信息 -->
-        <view class="dynamic_user_info">
-          <van-image lazy-load width="50" height="50" src="{{item.author_avatar_url}}" image-class="br_10"/>
-          <view class="dynamic_user_box">
-            <view class="dynamic_user_name to_1">
-              <text class="ls_1">{{item.author_name}}</text>
-              <!-- <wxs module="filter" src="../../../utils/filter.wxs"></wxs>
-              <text class="dynamic_user_id">{{filter.licensePlate(item.author_id)}}</text> -->
-            </view>
-            <view class="dynamic_user_date">{{item.create_time}}</view>
-          </view>
+<page id="container">
+  <!-- 发现 -->
+  <view class="dynamic_item" wx:for="{{dynamicList}}" wx:key="index" bindtap="getDynamicDetalis" data-item="{{item}}">
+    <!-- 标签 -->
+    <!-- <van-tag color="#4545FF" class="dynamic_tag" size="large"> 标 签 </van-tag> -->
+    <!-- 作者信息 -->
+    <view class="dynamic_user_info">
+      <image src="{{item.author_avatar_url}}" class="dynamic_user_img"></image>
+      <view class="dynamic_user_box">
+        <view class="dynamic_user_name to_1">
+          <text class="ls_1">{{item.author_name}}</text>
+          <!-- <wxs module="filter" src="../../../utils/filter.wxs"></wxs>
+          <text class="dynamic_user_id">{{filter.licensePlate(item.author_id)}}</text> -->
         </view>
-        <!-- 动态内容 -->
-        <view class="dynamic_rich_text">
-          <rich-text nodes="{{item.content}}"></rich-text>
-        </view>
-        <!-- 动态图片 -->
-        <view wx:if="{{item.image}}" catchtap="dynamicImg" data-item="{{item}}">
-          <van-image lazy-load width="100%" height="180" src="{{item.image}}"/>
-        </view>
+        <view class="dynamic_user_date">{{item.create_time}}</view>
       </view>
-    </scroll-view>
-  </van-tab>
-  <van-tab title="新闻">
-    <view class="bs_bb bg_F7 fx_r_b_s m_t_10" style="height: {{windowHeight-54}}px;" wx:if="{{tabActive === 1}}">
-      <view class="sidebar_box" style="height: {{windowHeight-54}}px;">
-        <van-sidebar active-key="{{sidebarKey}}" bind:change="sidebarChange">
-          <van-sidebar-item wx:for="{{newsTypeList}}" wx:key="index" title="{{item.type_name}}"/>
-        </van-sidebar>
-      </view>
-      <scroll-view scroll-y="true" bindscrolltolower="onScrollBottom2" class="sidebar_item_box" style="width: {{windowWidth-80}}px; height: {{windowHeight-54}}px;">
-        <view wx:for="{{newsList}}" wx:key="index" class="find_news" bindtap="getNewsDetalis" data-item="{{item}}">
-          <view class="find_news_img">
-            <van-image lazy-load width="100%" height="100%" wx:if="{{item.imgList[0]}}" src="{{item.imgList[0]}}"/>
-            <van-image lazy-load width="100%" height="100%" wx:else src="/images/homeModule/banner_xq.jpg"/>
-          </view>
-          <view style="width: {{windowWidth-150}}px;">
-            <view class="find_news_title to_2">{{item.title}}</view>
-            <text class="find_news_time">{{item.postTime}}</text>
-          </view>
-        </view>
-      </scroll-view>
     </view>
-  </van-tab>
-</van-tabs>
+    <!-- 动态内容 -->
+    <view class="dynamic_rich_text">
+      <rich-text nodes="{{item.content}}"></rich-text>
+    </view>
+    <!-- 动态图片 -->
+    <view wx:if="{{item.image}}" catchtap="dynamicImg" data-item="{{item}}">
+      <image src="{{item.image}}" class="dynamic_img"></image>
+    </view>
+  </view>
+  <!-- 回到顶部 -->
+  <view wx:if="{{topShow}}" class="go_top" bindtap="bindTop">
+    <image src="/images/homeModule/hddb.png" class="top_img"></image>
+  </view>
+</page>

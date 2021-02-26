@@ -3,62 +3,24 @@ import Toast from '../../../miniprogram_npm/vant-weapp/toast/toast';
 
 Page({
   data: {
-    windowWidth: 0,
+    id_key: '',
     windowHeight: 0,
-    tabActive: 0,
+    topShow: false,
     dynamicPage: 1,
     dynamicLimit: 10,
     totalCount: 0,
-    dynamicList: [],
-    sidebarKey: 0,
-    newsTypeList: [],
-    newsNext: true,
-    typeId: '',
-    newsPage: 1,
-    newsList: [],
+    dynamicList: []
   },
 
   onLoad: function (options) {
     this.getDynamicList()
-    this.awaitNews()
   },
 
   onReady: function () {
     this.setData({
-      windowWidth: wx.getSystemInfoSync().windowWidth,
+      container: () => wx.createSelectorQuery().select('#container'),
       windowHeight: wx.getSystemInfoSync().windowHeight
     })
-  },
-
-  async awaitNews () {
-    await this.getNewsType()
-    this.data.typeId = this.data.newsTypeList[0].type_id
-    this.getNewsList()
-  },
-
-  // tabs切换
-  tabChange: function (event) {
-    this.setData({
-      tabActive: event.detail.name
-    })
-    if (event.detail.name === 0) {
-      this.setData({
-        dynamicPage: 1,
-        totalCount: 0,
-        dynamicList: [],
-      })
-      this.getDynamicList()
-    }
-  },
-
-  // sidebar切换
-  sidebarChange: function (event) {
-    this.setData({
-      typeId: this.data.newsTypeList[event.detail].type_id,
-      newsPage: 1,
-      newsList: [],
-    })
-    this.getNewsList()
   },
   
   // 同城动态列表
@@ -67,15 +29,18 @@ Page({
       page: this.data.dynamicPage,
       limit: this.data.dynamicLimit
     }
-    esRequest('dynamic_list', data).then(res => {
-      if (res && res.data.code === 0) {
-        this.setData({
-          totalCount: res.data.totalCount,
-          dynamicList: this.data.dynamicList.concat(res.data.data)
-        })
-      } else {
-        Toast.fail('系统错误')
-      }
+    return new Promise (async (resolve, reject) => {
+      esRequest('dynamic_list', data).then(res => {
+        if (res && res.data.code === 0) {
+          this.setData({
+            totalCount: res.data.totalCount,
+            dynamicList: this.data.dynamicList.concat(res.data.data)
+          })
+        } else {
+          Toast.fail('系统错误')
+        }
+        resolve()
+      })
     })
   },
 
@@ -91,15 +56,7 @@ Page({
     })
   },
 
-  // 同城动态触底函数
-  onScrollBottom1: function () {
-    if (this.data.totalCount > this.data.dynamicList.length) {
-      this.data.dynamicPage += 1
-      this.getDynamicList()
-    }
-  },
-
-  // 同城动态触底函数
+  // 同城动态详情
   getDynamicDetalis: function (e) {
     // 01：相亲
     if (e.currentTarget.dataset.item.type_id === '01') {
@@ -115,52 +72,58 @@ Page({
     }
     // 03：普通
   },
+  
+  // 同城动态触底函数
+  onReachBottom: function () {
+    console.log('触底函数')
+    if (this.data.totalCount > this.data.dynamicList.length) {
+      this.data.dynamicPage += 1
+      this.getDynamicList()
+    }
+  },
 
-  // 新闻类型列表
-  getNewsType: function () {
-    return new Promise (async (resolve, reject) => {
-      esRequest('classification_news').then(res => {
-        if (res && res.data.code === 0) {
-          this.setData({
-            newsTypeList: res.data.data
-          })
-        } else {
-          Toast.fail('系统错误')
-        }
-        resolve()
+  // 获取滚动条当前位置
+  onPageScroll: function (e) {
+    console.log(e.scrollTop, this.data.windowHeight)
+    if (e.scrollTop > this.data.windowHeight) {
+      this.setData({
+        topShow: true
+      });
+    } else {
+      this.setData({
+        topShow: false
+      });
+    }
+  },
+
+  // 回到顶部
+  bindTop: function (e) {
+    if (wx.pageScrollTo) {
+      wx.pageScrollTo({
+        scrollTop: 0
       })
-    })
-  },
-
-  // 新闻列表
-  getNewsList: function () {
-    let data = {
-      typeId: this.data.typeId,
-      page: this.data.newsPage
-    }
-    esRequest('news_list', data).then(res => {
-      if (res && res.data.code == 1) {
-        this.setData({
-          newsList: this.data.newsList.concat(res.data.data)
-        })
-      } else {
-        this.data.newsNext = false
-      }
-    })
-  },
-
-  // 新闻触底函数
-  onScrollBottom2: function () {
-    if (this.data.newsNext) {
-      this.data.newsPage += 1
-      this.getNewsList()
+    } else {
+      wx.showModal({
+        title: '提示',
+        content: '当前微信版本过低，无法使用该功能，请升级到最新微信版本后重试。'
+      })
     }
   },
 
-  // 新闻详情
-  getNewsDetalis: function (e) {
-    wx.navigateTo({
-      url: '/pages/dynamicModule/newsDetails/newsDetails?newsId=' + e.currentTarget.dataset.item.newsId
-    })
-  }
+  //下拉刷新
+  onPullDownRefresh: function () {
+    this.data.dynamicPage = 1
+    this.data.dynamicLimit = 10
+    this.data.totalCount = 0
+    this.data.dynamicList = []
+    this.awaitDynamicList()
+  },
+  // 停止下拉刷新 清空数据
+  async awaitDynamicList () {
+    await this.getDynamicList()
+    Toast.success('刷新成功')
+    // 停止下拉刷新
+    wx.stopPullDownRefresh();
+  },
+
 })
