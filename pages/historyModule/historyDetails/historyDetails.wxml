@@ -1,10 +1,14 @@
 <van-toast id="van-toast" />
 
 <view class="bg_F5 bs_bb oy_a" style="height: {{windowHeight}}px; ">
-  <!-- 图片 -->
-  <view class="scenic_img_box">
-    <van-image lazy-load width="100%" height="100%" src="{{cityDetails.city_image}}"/>
-  </view>
+  <!-- swiper滚动图 -->
+  <swiper indicator-dots="{{true}}" autoplay="{{true}}" circular="{{true}}" style="height: 240px;">
+    <block wx:for="{{historyImgs}}" wx:key="index">
+      <swiper-item>
+        <van-image lazy-load width="100%" height="240px" src="{{item}}"/>
+      </swiper-item>
+    </block>
+  </swiper>
   <!-- 简介 -->
   <view class="scenic_info_box">
     <view class="scenic_info_item">
@@ -36,14 +40,3 @@
     </view>
   </view>
 </view>
-
-<!-- <div style="display: flex; justify-content: space-between; align-items: center;">
-  <div style="width: 30%; display: flex; justify-content: center; align-items: center; font-weight: 700;">区长</div>
-  <div style="width: 30%; display: flex; justify-content: center; align-items: center; font-weight: 700;">区委书记</div>
-  <div style="width: 30%; display: flex; justify-content: center; align-items: center; font-weight: 700;">区委副书记</div>
-</div>
-<div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
-  <div style="width: 30%; display: flex; justify-content: center; align-items: center;">荣红智</div>
-  <div style="width: 30%; display: flex; justify-content: center; align-items: center;">刘培国</div>
-  <div style="width: 30%; display: flex; justify-content: center; align-items: center;">毕黎明</div>
-</div> -->

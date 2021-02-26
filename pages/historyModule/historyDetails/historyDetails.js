@@ -6,6 +6,7 @@ Page({
     windowWidth: 0,
     windowHeight: 0,
     cityId: '',
+    historyImgs: [],
     cityDetails: {}
   },
 
@@ -33,6 +34,7 @@ Page({
     esRequest('local_historical', data).then(res => {
       if (res && res.data.code === 0) {
         this.setData({
+          historyImgs: res.data.data.city_images.split('，'),
           cityDetails: res.data.data
         })
       } else {

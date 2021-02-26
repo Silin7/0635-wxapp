@@ -3,10 +3,10 @@
 
 <view class="oy_a" style="height: {{windowHeight-80}}px;">
   <!-- swiper滚动图 -->
-  <swiper indicator-dots="{{true}}" autoplay="{{true}}" circular="{{true}}" class="swiper">
+  <swiper indicator-dots="{{true}}" autoplay="{{true}}" circular="{{true}}" class="swiper" style="height: 240px;">
     <block wx:for="{{swiperList}}" wx:key="index" wx:for-item="item">
       <swiper-item bindtap="swiperTap" data-item="{{item}}">
-        <van-image lazy-load width="100%" height="480rpx" src="{{item}}"/>
+        <van-image lazy-load width="100%" height="240px" src="{{item}}"/>
       </swiper-item>
     </block>
   </swiper>

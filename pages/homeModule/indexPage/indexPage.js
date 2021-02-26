@@ -1,6 +1,3 @@
-// import esRequest from '../../../utils/esRequest';
-// import Toast from '../../../miniprogram_npm/vant-weapp/toast/toast';
-
 Page({
   data: {
     windowWidth: 0,
@@ -11,10 +8,10 @@ Page({
       { id: 'swiper03', image: '/images/homeModule/swiper_02.jpg' }
     ],
     iconList: [
-      { name: '测试', image: '/images/homeModule/banner_xq.jpg', id: 'icon01' },
-      { name: '测试', image: '/images/homeModule/banner_xq.jpg', id: 'icon02' },
-      { name: '测试', image: '/images/homeModule/banner_xq.jpg', id: 'icon03' },
-      { name: '测试', image: '/images/homeModule/banner_xq.jpg', id: 'icon04' },
+      { name: '测试测试', image: '/images/homeModule/banner_xq.jpg', id: 'icon01' },
+      { name: '测试测试', image: '/images/homeModule/banner_xq.jpg', id: 'icon02' },
+      { name: '测试测试', image: '/images/homeModule/banner_xq.jpg', id: 'icon03' },
+      { name: '测试测试', image: '/images/homeModule/banner_xq.jpg', id: 'icon04' },
     ]
   },
 

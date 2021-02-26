@@ -1,14 +1,11 @@
 <van-toast id="van-toast" />
 
 <view class="bg_F5 bs_bb oy_a" style="height: {{windowHeight}}px; ">
-  <!-- <view class="scenic_img_box">
-    <van-image lazy-load width="100%" height="100%" src="{{scenicDetails.scenicspot_img}}"/>
-  </view> -->
   <!-- swiper滚动图 -->
-  <swiper indicator-dots="{{true}}" autoplay="{{true}}" circular="{{true}}" style="height: 280px;">
+  <swiper indicator-dots="{{true}}" autoplay="{{true}}" circular="{{true}}" style="height: 240px;">
     <block wx:for="{{scenicspotImgs}}" wx:key="index">
       <swiper-item>
-        <van-image lazy-load width="100%" height="280px" src="{{item}}"/>
+        <van-image lazy-load width="100%" height="240px" src="{{item}}"/>
       </swiper-item>
     </block>
   </swiper>

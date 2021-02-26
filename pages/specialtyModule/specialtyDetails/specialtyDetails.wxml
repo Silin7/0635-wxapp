@@ -2,10 +2,11 @@
 
 <view class="bg_F5 bs_bb oy_a" style="height: {{windowHeight}}px; ">
   <!-- swiper滚动图 -->
-  <swiper indicator-dots="{{true}}" autoplay="{{true}}" circular="{{true}}" style="height: 420rpx;">
+  <swiper indicator-dots="{{true}}" autoplay="{{true}}" circular="{{true}}" style="height: 240px;">
     <block wx:for="{{specialty_image}}" wx:key="index">
       <swiper-item bindtap="swiperTap" data-item="{{item}}">
-        <image style="height: 420rpx; width: 100%;" src="{{item}}"></image>
+        <!-- <image style="height: 420rpx; width: 100%;" src="{{item}}"></image> -->
+        <van-image lazy-load width="100%" height="240px" src="{{item}}"/>
       </swiper-item>
     </block>
   </swiper>

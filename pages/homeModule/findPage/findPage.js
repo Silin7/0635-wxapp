@@ -75,7 +75,6 @@ Page({
   
   // 同城动态触底函数
   onReachBottom: function () {
-    console.log('触底函数')
     if (this.data.totalCount > this.data.dynamicList.length) {
       this.data.dynamicPage += 1
       this.getDynamicList()
@@ -84,7 +83,6 @@ Page({
 
   // 获取滚动条当前位置
   onPageScroll: function (e) {
-    console.log(e.scrollTop, this.data.windowHeight)
     if (e.scrollTop > this.data.windowHeight) {
       this.setData({
         topShow: true

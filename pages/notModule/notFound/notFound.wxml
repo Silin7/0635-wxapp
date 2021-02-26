@@ -1,8 +1,0 @@
-  <view class="animation-container">
-    <view class="heading">404</view>
-    <view class="heading2">{{msg}}</view>
-    <view class="wrapper">
-      <image src="/images/loginModule/aircraft1.png" class="w_h_100"></image>
-    </view>
-    <view class="reload-button">返回首页</view>
-  </view>

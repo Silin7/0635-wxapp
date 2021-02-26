@@ -1,0 +1,3 @@
+<view class="zwsj_box" style="height: {{windowHeight-100}}px;">
+  <image src="/images/homeModule/zwsj.png" style="width: {{windowWidth}}px; height: {{windowWidth}}px;"></image>
+</view>

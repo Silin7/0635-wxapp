@@ -48,7 +48,7 @@
     "pages/components/choosePicker/choosePicker",
     "pages/components/footTabbar/footTabbar",
     "pages/components/loading/loading",
-    "pages/notModule/notFound/notFound",
+    "pages/components/noData/noData",
     "pages/topicModule/topicList/topicList"
   ],
   "tabBar": {
