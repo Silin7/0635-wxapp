@@ -1,6 +1,10 @@
 <van-toast id="van-toast" />
 <van-dialog id="van-dialog" />
 
+<component-loginTips mask-closable="{{false}}" show="{{loginShow}}" buttontap="dialogButtontap">
+  <view class="fs_14 ls_2 m_t_15">登录后的世界才更美妙</view>
+</component-loginTips>
+
 <van-tabs active="{{messageTab}}" bind:change="messageTabChange" ellipsis="{{false}}" border="{{ false }}" swipeable sticky animated>
   <van-tab title="个人私信">
     <scroll-view style="height: {{windowHeight-44}}px;" scroll-y="true" bindscrolltolower="onScrollBottom1">

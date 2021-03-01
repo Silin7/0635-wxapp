@@ -74,6 +74,6 @@
   display: none !important;
 }
 /* dialog */
-.van-button__text {
+.dialog-index--van-dialog__confirm {
   color: #4545FF !important;
 }

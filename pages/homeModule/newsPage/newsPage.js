@@ -5,6 +5,7 @@ import Dialog from '../../../miniprogram_npm/vant-weapp/dialog/dialog';
 Page({
   data: {
     id_key: '',
+    loginShow: false,
     windowWidth: 0,
     windowHeight: 0,
     messageTab: 0,
@@ -31,10 +32,17 @@ Page({
 
   onShow: function () {
     if (!wx.getStorageSync('id_key')) {
-      wx.redirectTo({
-        url: '/pages/loginModule/loginPage/loginPage',
+      this.setData({
+        loginShow: true
       })
     }
+  },
+
+  // 未登录跳转倒登录界面
+  dialogButtontap() {
+    wx.redirectTo({
+      url: '/pages/loginModule/loginPage/loginPage',
+    })
   },
 
   // 消息tabs切换

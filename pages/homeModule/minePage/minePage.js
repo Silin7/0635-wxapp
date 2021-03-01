@@ -4,6 +4,7 @@ import Toast from '../../../miniprogram_npm/vant-weapp/toast/toast';
 Page({
   data: {
     id_key: '',
+    loginShow: false,
     windowWidth: 0,
     windowHeight: 0,
     follow: 0,
@@ -37,8 +38,8 @@ Page({
 
   onShow: function () {
     if (!wx.getStorageSync('id_key')) {
-      wx.redirectTo({
-        url: '/pages/loginModule/loginPage/loginPage',
+      this.setData({
+        loginShow: true
       })
     }
     if (wx.getStorageSync('tp_key')) {
@@ -53,6 +54,13 @@ Page({
       }
       wx.setStorageSync('tp_key', '01')
     }
+  },
+
+  // 未登录跳转倒登录界面
+  dialogButtontap() {
+    wx.redirectTo({
+      url: '/pages/loginModule/loginPage/loginPage',
+    })
   },
 
   // 获取个人信息
