@@ -2,7 +2,7 @@
 
 <van-tabs active="{{cityActive}}" bind:change="cityChange" ellipsis="{{false}}" border="{{ false }}" swipeable sticky animated >
   <van-tab wx:for="{{cityList}}" wx:key="index" title="{{item.type_name}}">
-    <scroll-view scroll-y="true" bindscrolltolower="onScrollBottom" style="height: {{windowHeight-44}}px;">
+    <scroll-view scroll-y="{{true}}" bindscrolltolower="onScrollBottom" style="height: {{windowHeight-44}}px;">
       <view class="specialty_box bg_F5" style="min-height: {{windowHeight-44}}px;">
         <view class="specialty_item" wx:for="{{specialtyList}}" wx:key="index" bindtap="specialtyDetails" data-item="{{item}}">
           <view class="specialty_cover">

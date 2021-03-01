@@ -2,7 +2,7 @@
 
 <van-tabs active="{{appointmentActive}}" bind:change="appointmentChange" ellipsis="{{false}}" border="{{ false }}" swipeable sticky animated>
   <van-tab wx:for="{{appointmentType}}" wx:key="index" title="{{item.title}}" name="{{item.name}}">
-    <scroll-view class="bg_F5 bs_bb oy_a" scroll-y="true" style="height: {{windowHeight-44}}px;" bindscrolltolower="onScrollBottom">
+    <scroll-view class="bg_F5 bs_bb oy_a" scroll-y="{{true}}" style="height: {{windowHeight-44}}px;" bindscrolltolower="onScrollBottom">
       <view class="item_box" wx:for="{{appointmentList}}" wx:key="index" bindtap="appointmentDetails" data-item="{{item}}" wx:if="{{isShow}}">
         <view class="sponsor_box">
           <van-image lazy-load width="80" height="100" src="{{item.sponsor_img}}" image-class="sponsor_img"/>

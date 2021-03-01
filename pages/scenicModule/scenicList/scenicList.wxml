@@ -3,7 +3,7 @@
 <!-- <van-tabs bind:change="onChange" swipeable sticky animated border="{{ false }}" line-width="60"> -->
 <van-tabs active="{{scenicActive}}" bind:change="scenicChange" ellipsis="{{false}}" border="{{ false }}" swipeable sticky animated>
   <van-tab wx:for="{{cityList}}" wx:key="index" title="{{item.type_name}}">
-    <scroll-view class="bg_F5 bs_bb oy_a" scroll-y="true" style="height: {{windowHeight-44}}px;" bindscrolltolower="onScrollBottom">
+    <scroll-view class="bg_F5 bs_bb oy_a" scroll-y="{{true}}" style="height: {{windowHeight-44}}px;" bindscrolltolower="onScrollBottom">
       <view class="sub_module1_ns" wx:for="{{scenicspotList}}" wx:key="index" bindtap="scenicDetails" data-item="{{item}}" >
         <view class="sub_module1_item_ns">
         <van-image width="60" height="60" lazy-load src="{{item.scenicspot_img}}"/>

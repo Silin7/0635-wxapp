@@ -7,7 +7,7 @@
       <van-sidebar-item wx:for="{{newsTypeList}}" wx:key="index" title="{{item.type_name}}"/>
     </van-sidebar>
   </view>
-  <scroll-view scroll-y="true" bindscrolltolower="onScrollBottom" class="sidebar_item_box" style="width: {{windowWidth-80}}px; height: {{windowHeight-44}}px;">
+  <scroll-view scroll-y="{{true}}" bindscrolltolower="onScrollBottom" class="sidebar_item_box" style="width: {{windowWidth-80}}px; height: {{windowHeight-44}}px;">
     <view wx:for="{{newsList}}" wx:key="index" class="find_news" bindtap="getNewsDetalis" data-item="{{item}}">
       <view class="find_news_img">
         <image wx:if="{{item.imgList[0]}}" src="{{item.imgList[0]}}" class="w_h_100"></image>
