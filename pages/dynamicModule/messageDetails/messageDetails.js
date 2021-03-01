@@ -9,7 +9,12 @@ Page({
     messageId: '',
     mineDataForm: {},
     messageData: {},
-    sysmessage_details: ''
+    sysmessage_details: '',
+    dialogType: '01',
+    dialogShow: false,
+    dialogTitle: '',
+    dialogText: '',
+    dialogButtons: [{text: '取消'}, {text: '确定'}],
   },
 
   onLoad: function (options) {
@@ -65,69 +70,83 @@ Page({
     })
   },
 
+  tapDialogButton(e) {
+    this.setData({
+      dialogShow: false
+    })
+    if (e.detail.index === 0) {
+      Toast.success('取消')
+    }
+    
+    if (e.detail.index === 1) {
+      if (this.data.dialogType === '01') {
+        let data = {
+          receiver_id: this.data.messageData.sender_id,
+          sender_id: this.data.id_key,
+          sender_name: this.data.mineDataForm.nickName,
+          sender_img: this.data.mineDataForm.avatarUrl,
+          message_title: `来自${this.data.mineDataForm.nickName}的消息回复`,
+          message_content: `谢谢你的喜欢哟，我的微信号是<span style="color: #4545FF;">${this.data.mineDataForm.userPhone}</span>，期待我们的缘分鸭。`,
+          message_type: '03'
+        }
+        esRequest('permessage_send', data).then(res => {
+          if (res && res.data.code === 0) {
+            Toast.success('发送成功')
+            if (res.data.type === '1') {
+              Toast.success('已经回复过啦')
+            }
+            if (res.data.type === '0') {
+              Toast.success('发送成功')
+            }
+          } else {
+            Toast.fail('系统错误')
+          }
+        })
+      }
+      if (this.data.dialogType === '02') {
+        let data = {
+          receiver_id: this.data.messageData.sender_id,
+          sender_id: this.data.id_key,
+          sender_name: this.data.mineDataForm.nickName,
+          sender_img: this.data.mineDataForm.avatarUrl,
+          message_title: `来自${this.data.mineDataForm.nickName}的消息回复`,
+          message_content: `谢谢你的喜欢哟，我还没有准备好，期待我们的下一场缘分吧。`,
+          message_type: '03'
+        }
+        esRequest('permessage_send', data).then(res => {
+          if (res && res.data.code === 0) {
+            Toast.success('发送成功')
+            if (res.data.type === '1') {
+              Toast.success('已经回复过啦')
+            }
+            if (res.data.type === '0') {
+              Toast.success('发送成功')
+            }
+          } else {
+            Toast.fail('系统错误')
+          }
+        })
+      }
+    }
+},
+
   // 欣然同意
   gladlyConsent: function () {
-    Dialog.confirm({
-      title: '欣然同意',
-      message: '一段微妙的缘分就要开始咯！',
-    }).then(() => {
-      let data = {
-        receiver_id: this.data.messageData.sender_id,
-        sender_id: this.data.id_key,
-        sender_name: this.data.mineDataForm.nickName,
-        sender_img: this.data.mineDataForm.avatarUrl,
-        message_title: `来自${this.data.mineDataForm.nickName}的消息回复`,
-        message_content: `谢谢你的喜欢哟，我的微信号是<span style="color: #4545FF;">${this.data.mineDataForm.userPhone}</span>，期待我们的缘分鸭。`,
-        message_type: '03'
-      }
-      esRequest('permessage_send', data).then(res => {
-        if (res && res.data.code === 0) {
-          Toast.success('发送成功')
-          if (res.data.type === '1') {
-            Toast.success('已经回复过啦')
-          }
-          if (res.data.type === '0') {
-            Toast.success('发送成功')
-          }
-        } else {
-          Toast.fail('系统错误')
-        }
-      })
-    }).catch(() => {
-      Toast.success('取消')
-    });
+    this.setData({
+      dialogType: '01',
+      dialogShow: true,
+      dialogTitle: '欣然同意',
+      dialogText: '一段微妙的缘分就要开始咯！'
+    })
   },
 
   // 残忍拒绝
   cruelRefusal: function () {
-    Dialog.confirm({
-      title: '残忍拒绝',
-      message: '拒绝之后你们就永远错过了呢！',
-    }).then(() => {
-      let data = {
-        receiver_id: this.data.messageData.sender_id,
-        sender_id: this.data.id_key,
-        sender_name: this.data.mineDataForm.nickName,
-        sender_img: this.data.mineDataForm.avatarUrl,
-        message_title: `来自${this.data.mineDataForm.nickName}的消息回复`,
-        message_content: `谢谢你的喜欢哟，我还没有准备好，期待我们的下一场缘分吧。`,
-        message_type: '03'
-      }
-      esRequest('permessage_send', data).then(res => {
-        if (res && res.data.code === 0) {
-          Toast.success('发送成功')
-          if (res.data.type === '1') {
-            Toast.success('已经回复过啦')
-          }
-          if (res.data.type === '0') {
-            Toast.success('发送成功')
-          }
-        } else {
-          Toast.fail('系统错误')
-        }
-      })
-    }).catch(() => {
-      Toast.success('取消')
-    });
+    this.setData({
+      dialogType: '02',
+      dialogShow: true,
+      dialogTitle: '残忍拒绝',
+      dialogText: '拒绝之后你们就永远错过了呢！'
+    })
   }
 })

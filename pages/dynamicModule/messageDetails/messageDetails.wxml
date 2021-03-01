@@ -1,6 +1,10 @@
 <van-toast id="van-toast" />
 <van-dialog id="van-dialog" />
 
+<component-dialog title="{{dialogTitle}}" show="{{dialogShow}}" buttons="{{dialogButtons}}" bindbuttontap="tapDialogButton" >
+  <view class="fs_14 ls_2 m_t_15">{{dialogText}}</view>
+</component-dialog>
+
 <view class="page_box" style="height: {{windowHeight}}px;">
   <view class="news_date fs_14">{{messageData.create_time}}</view>
   <!-- 消息详情 -->
