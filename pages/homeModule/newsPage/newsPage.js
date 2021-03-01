@@ -13,7 +13,8 @@ Page({
     page: 1,
     limit: 10,
     perMessageList: [],
-    sysMessageList: []
+    sysMessageList: [],
+    triggered: true
   },
 
   onLoad: function (options) {
@@ -70,28 +71,23 @@ Page({
 
   // 个人私信列表
   getPerMessage: function () {
-    this.data.perMessageList = []
     let data = {
       page: this.data.page,
       limit: this.data.limit,
       receiver_id: this.data.id_key
     }
-    esRequest('permessage_list', data).then(res => {
-      if (res && res.data.code === 0) {
-        this.setData({
-          totalCount: res.data.totalCount,
-          perMessageList: this.data.perMessageList.concat(res.data.data)
-        })
-      } else {
-        Toast.fail('系统错误')
-      }
-    })
-  },
-
-  // 个人私信详情
-  messageDetails: function (e) {
-    wx.navigateTo({
-      url: '/pages/dynamicModule/messageDetails/messageDetails?id=' + e.currentTarget.dataset.item.id
+    return new Promise (async (resolve, reject) => {
+      esRequest('permessage_list', data).then(res => {
+        if (res && res.data.code === 0) {
+          this.setData({
+            totalCount: res.data.totalCount,
+            perMessageList: this.data.perMessageList.concat(res.data.data)
+          })
+        } else {
+          Toast.fail('系统错误')
+        }
+      })
+      resolve()
     })
   },
 
@@ -117,12 +113,37 @@ Page({
     });
   },
 
+  // 个人私信下拉刷新
+  permessagerePull: function () {
+    this.setData({
+      page: 1,
+      limit: 10,
+      totalCount: 0,
+      perMessageList: []
+    })
+    this.awaitPerMessage()
+  },
+  async awaitPerMessage () {
+    await this.getPerMessage()
+    Toast.success('刷新成功')
+    this.setData({
+      triggered: false
+    })
+  },
+
   // 个人私信触底函数
   onScrollBottom1: function () {
     if (this.data.totalCount > this.data.perMessageList.length) {
       this.data.page += 1
       this.getPerMessage()
     }
+  },
+
+  // 个人私信详情
+  messageDetails: function (e) {
+    wx.navigateTo({
+      url: '/pages/dynamicModule/messageDetails/messageDetails?id=' + e.currentTarget.dataset.item.id
+    })
   },
 
   // 系统消息列表
@@ -144,19 +165,20 @@ Page({
     })
   },
 
-  // 系统消息详情
-  messageSystem: function (e) {
-    wx.navigateTo({
-      // url: '/pages/messageModule/messageSystem/messageSystem?id=' + e.currentTarget.dataset.item.id
-      url: '/pages/dynamicModule/advertisement/advertisement?id=' + e.currentTarget.dataset.item.id + '&type=2'
-    })
-  },
-
   // 系统消息触底函数
   onScrollBottom2: function () {
     if (this.data.totalCount > this.data.sysMessageList.length) {
       this.data.page += 1
       this.getSysMessage()
     }
+  },
+
+  // 系统消息详情
+  messageSystem: function (e) {
+    wx.navigateTo({
+      // url: '/pages/messageModule/messageSystem/messageSystem?id=' + e.currentTarget.dataset.item.id
+      url: '/pages/dynamicModule/advertisement/advertisement?id=' + e.currentTarget.dataset.item.id + '&type=2'
+    })
   }
+
 })
