@@ -9,7 +9,7 @@ Page({
   },
 
   onShow: function (options) {
-    Toast.fail('请先登录')
+    // Toast.fail('请先登录')
   },
 
   // 账号
