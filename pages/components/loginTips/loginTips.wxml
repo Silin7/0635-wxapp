@@ -1,0 +1,17 @@
+<view bindtap="close" class="weui-mask {{!show ? 'weui-mask_hidden' : '' }}" wx:if="{{mask}}"></view>
+<view wx:if="{{show}}" bindtap="close" class="weui-dialog__wrp {{extClass}}">
+    <view class="weui-dialog" catchtap="stopEvent">
+      <view class="weui-dialog__hd">
+        <view class="weui-dialog__title">温馨提示
+          <slot name="title"></slot>
+        </view>
+      </view>
+      <view class="weui-dialog__bd">
+        <slot></slot>
+      </view>
+      <view class="weui-dialog__ft">
+        <view class="weui-dialog__btn" bindtap="confirm"> 确 定 </view>
+      </view>
+    </view>
+</view>
+
