@@ -36,7 +36,7 @@ Page({
     let data = {
       id: this.data.id
     }
-    esRequest('advertisement_details', data).then(res => {
+    esRequest('dynamic_details', data).then(res => {
       if (res && res.data.code === 0) {
         res.data.data.content = res.data.data.content.toString().replace(/\<img/gi, '<img style="max-width:100%; height:auto"')
         this.setData({

@@ -67,7 +67,7 @@ Page({
     // 02：新闻
     if (e.currentTarget.dataset.item.type_id === '02') {
       wx.navigateTo({
-        url: '/pages/dynamicModule/advertisement/advertisement?id=' + e.currentTarget.dataset.item.advertisement_id + '&type=1'
+        url: '/pages/dynamicModule/advertisement/advertisement?id=' + e.currentTarget.dataset.item.id + '&type=1'
       })
     }
     // 03：普通
