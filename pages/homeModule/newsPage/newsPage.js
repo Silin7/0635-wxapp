@@ -12,7 +12,9 @@ Page({
     totalCount: 0,
     page: 1,
     limit: 10,
+    perMessageNo: false,
     perMessageList: [],
+    sysMessageNo: false,
     sysMessageList: [],
     triggered: true
   },
@@ -79,6 +81,11 @@ Page({
     return new Promise (async (resolve, reject) => {
       esRequest('permessage_list', data).then(res => {
         if (res && res.data.code === 0) {
+          if (res.data.totalCount == 0) {
+            this.setData({ perMessageNo: true })
+          } else {
+            this.setData({ perMessageNo: false })
+          }
           this.setData({
             totalCount: res.data.totalCount,
             perMessageList: this.data.perMessageList.concat(res.data.data)
@@ -155,6 +162,11 @@ Page({
     }
     esRequest('sysmessage_list', data).then(res => {
       if (res && res.data.code === 0) {
+        if (res.data.totalCount == 0) {
+          this.setData({ sysMessageNo: true })
+        } else {
+          this.setData({ sysMessageNo: false })
+        }
         this.setData({
           totalCount: res.data.totalCount,
           sysMessageList: this.data.sysMessageList.concat(res.data.data)

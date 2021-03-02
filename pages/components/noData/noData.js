@@ -1,14 +1,25 @@
-Page({
-
-  data: {
-    windowWidth: 0,
-    windowHeight: 0
+Component({
+  // 参数
+  properties: {
+    height: {
+      type: Number
+    }
   },
 
-  onReady: function () {
+  data: {
+    windowWidth: 0
+  },
+
+  attached: function () {
+  },
+
+  ready: function() {
     this.setData({
-      windowWidth: wx.getSystemInfoSync().windowWidth,
-      windowHeight: wx.getSystemInfoSync().windowHeight
+      windowWidth: wx.getSystemInfoSync().windowWidth
     })
+  },
+
+  methods: {
   }
+
 })
