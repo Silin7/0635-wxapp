@@ -87,17 +87,19 @@
 .appointment_tag_box {
   height: 40px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
 }
 .appointment_tag_item {
-  width: 40px;
-  height: 20px;
-  line-height: 20px;
-  padding-left: 0 5px 0 7px;
-  letter-spacing: 2px;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+.appointment_tag_text {
+  height: 25px;
+  line-height: 25px;
+  margin: 0 10px;
   color: #FFFFFF;
   font-size: 12px;
   font-weight: 700;
-  background-color: #4545FF;
+  letter-spacing: 3px;
 }

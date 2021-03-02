@@ -120,6 +120,29 @@ var studentTicket = function (ticket) {
   return sticket
 }
 
+// 地区代码
+var areaCode = function (code) {
+  if (code === '01') {
+    return '东昌府区'
+  } else if (code === '02') {
+    return '阳谷县'
+  } else if (code === '03') {
+    return '莘县'
+  } else if (code === '04') {
+    return '茌平区'
+  } else if (code === '05') {
+    return '东阿县'
+  } else if (code === '06') {
+    return '冠县'
+  } else if (code === '07') {
+    return '高唐县'
+  } else if (code === '08') {
+    return '临清市'
+  } else {
+    return '聊城市'
+  }
+}
+
 // 约会付款方式
 var appointmentPay = function (type) {
   if (type === '01') {
@@ -135,9 +158,42 @@ var appointmentPay = function (type) {
   }
 }
 
+// 性别
+var gander = function (type) {
+  if (type === '01') {
+    return '男生'
+  } else if (type === '02') {
+    return '女生'
+  } else {
+    return '不限性别'
+  }
+}
+
+// 活动类别
+var activeType = function (type) {
+  if (type === '01') {
+    return '约饭'
+  } else if (type === '02') {
+    return '看电影'
+  } else if (type === '03') {
+    return '唱歌'
+  } else if (type === '04') {
+    return '运动'
+  } else if (type === '05') {
+    return '旅游'
+  } else if (type === '06') {
+    return '其他'
+  } else {
+    return '其他'
+  }
+}
+
 module.exports = {
   dayjs: dayjs,
   licensePlate: licensePlate,
   studentTicket: studentTicket,
-  appointmentPay: appointmentPay
+  areaCode: areaCode,
+  appointmentPay: appointmentPay,
+  gander: gander,
+  activeType: activeType
 }

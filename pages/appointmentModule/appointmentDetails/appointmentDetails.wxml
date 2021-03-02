@@ -23,14 +23,23 @@
   <view class="appointment_box">
     <view class="appointment_title">{{appointmentDetails.appointment_title}}</view>
     <view class="appointment_tag_box">
-      <!-- <view class="appointment_tag_item">{{appointmentDetails.appointment_type}}</view>
-      <view class="appointment_tag_item">{{appointmentDetails.area_type}}</view>
-      <view class="appointment_tag_item">{{appointmentDetails.appointment_pay}}</view>
-      <view class="appointment_tag_item">{{appointmentDetails.appointment_gander}}</view> -->
-      <!-- <van-tag color="#f2826a">{{appointmentDetails.appointment_type}}</van-tag>
-      <van-tag color="#f2826a">{{appointmentDetails.area_type}}</van-tag>
-      <van-tag color="#f2826a">{{appointmentDetails.appointment_pay}}</van-tag>
-      <van-tag color="#f2826a">{{appointmentDetails.appointment_gander}}</van-tag> -->
+      <wxs module="filter" src="../../../utils/filter.wxs"></wxs>
+      <view class="appointment_tag_item bg_45">
+        <text class="appointment_tag_text">{{filter.activeType(appointmentDetails.appointment_type)}}</text>
+      </view>
+      <view class="appointment_tag_item bg_9A">
+        <text class="appointment_tag_text">{{filter.areaCode(appointmentDetails.area_type)}}</text>
+      </view>
+      <view class="appointment_tag_item bg_D5">
+        <text class="appointment_tag_text">{{filter.appointmentPay(appointmentDetails.appointment_pay)}}</text>
+      </view>
+      <view class="appointment_tag_item bg_45">
+        <text class="appointment_tag_text">{{filter.gander(appointmentDetails.appointment_gander)}}</text>
+      </view>
+      <!-- <van-tag color="#f2826a">{{filter.activeType(appointmentDetails.appointment_type)}}</van-tag>
+      <van-tag color="#f2826a">{{filter.areaCode(appointmentDetails.area_type)}}</van-tag>
+      <van-tag color="#f2826a">{{filter.appointmentPay(appointmentDetails.appointment_pay)}}</van-tag>
+      <van-tag color="#f2826a">{{filter.gander(appointmentDetails.appointment_gander)}}</van-tag> -->
     </view>
     <view>{{appointmentDetails.appointment_info}}</view>
     <view>{{appointmentDetails.appointment_time}}</view>
