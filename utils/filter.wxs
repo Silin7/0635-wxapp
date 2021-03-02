@@ -125,9 +125,11 @@ var appointmentPay = function (type) {
   if (type === '01') {
     return '发起方支付'
   } else if (type === '02') {
-    return 'AA制'
-  } else if (type === '03') {
     return '参与方支付'
+  } else if (type === '03') {
+    return 'AA制'
+  } else if (type === '04') {
+    return '免费'
   } else {
     return '暂定'
   }

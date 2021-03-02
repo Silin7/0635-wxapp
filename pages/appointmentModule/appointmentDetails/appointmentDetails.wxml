@@ -1,0 +1,40 @@
+<van-toast id="van-toast" />
+
+<view class="page_box" style="height: {{windowHeight-80}}px;">
+  <!-- 发起人简介 -->
+  <view class="sponsor_box">
+    <view class="sponsor_left">
+      <van-image lazy-load width="80" height="80" src="{{appointmentDetails.sponsor_img}}" image-class="br_10"/>
+    </view>
+    <view class="sponsor_right" style="width: {{windowWidth-130}}px;">
+      <view class="sponsor_name to_1">{{appointmentDetails.sponsor_name}}</view>
+      <view class="sponsor_info">
+        <view wx:if="{{appointmentDetails.sponsor_gender == '01'}}">男</view>
+        <view wx:if="{{appointmentDetails.sponsor_gender == '02'}}">女</view>
+        <view>{{appointmentDetails.sponsor_age}}岁</view>
+        <view class="sponsor_wx">
+          <image src="/images/appointmentModule/wx.png" class="sponsor_wximg"></image>
+          <text>联系微信</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 活动简介 -->
+  <view class="appointment_box">
+    <view class="appointment_title">{{appointmentDetails.appointment_title}}</view>
+    <view class="appointment_tag_box">
+      <!-- <view class="appointment_tag_item">{{appointmentDetails.appointment_type}}</view>
+      <view class="appointment_tag_item">{{appointmentDetails.area_type}}</view>
+      <view class="appointment_tag_item">{{appointmentDetails.appointment_pay}}</view>
+      <view class="appointment_tag_item">{{appointmentDetails.appointment_gander}}</view> -->
+      <!-- <van-tag color="#f2826a">{{appointmentDetails.appointment_type}}</van-tag>
+      <van-tag color="#f2826a">{{appointmentDetails.area_type}}</van-tag>
+      <van-tag color="#f2826a">{{appointmentDetails.appointment_pay}}</van-tag>
+      <van-tag color="#f2826a">{{appointmentDetails.appointment_gander}}</van-tag> -->
+    </view>
+    <view>{{appointmentDetails.appointment_info}}</view>
+    <view>{{appointmentDetails.appointment_time}}</view>
+    <view>{{appointmentDetails.appointment_place}}</view>
+    <view>{{appointmentDetails.appointment_details}}</view>
+  </view>
+</view>
