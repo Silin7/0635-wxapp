@@ -4,6 +4,7 @@ import Toast from '../../../miniprogram_npm/vant-weapp/toast/toast';
 Page({
   data: {
     id_key: '',
+    loginShow: false,
     windowWidth: 0,
     windowHeight: 0,
     scenicId: '',
@@ -14,8 +15,8 @@ Page({
   },
 
   onLoad: function (options) {
-    this.data.id_key = wx.getStorageSync('id_key').toString()
-    this.data.scenicId = options.id ? options.id : '2'
+    this.data.id_key = wx.getStorageSync('id_key') ? wx.getStorageSync('id_key').toString() : ''
+    this.data.scenicId = options.id ? options.id : ''
   },
 
   onReady: function () {
@@ -29,6 +30,13 @@ Page({
     this.getScenicSpot()
     this.isPunchClock()
   },
+
+    // 未登录跳转倒登录界面
+    dialogButtontap() {
+      wx.redirectTo({
+        url: '/pages/loginModule/loginPage/loginPage',
+      })
+    },
 
   // 景点详情
   getScenicSpot: function () {
@@ -74,21 +82,28 @@ Page({
 
   // 打卡
   punchClock: function () {
-    let data = {
-      followers_id: this.data.id_key,
-      scenicspot_id: this.data.scenicDetails.id,
-      scenicspot_name: this.data.scenicDetails.scenicspot_name,
-      scenicspot_img: this.data.scenicDetails.scenicspot_img
-    }
-    esRequest('follow_scenicspot', data).then(res => {
-      if (res && res.data.code === 0) {
-        wx.setStorageSync('tp_key', '03')
-        Toast.success('打卡成功')
-        this.isPunchClock()
-      } else {
-        Toast.fail('系统错误')
+    if (!this.data.id_key) {
+      console.log('请先登录')
+      this.setData({
+        loginShow: true
+      })
+    } else {
+      let data = {
+        followers_id: this.data.id_key,
+        scenicspot_id: this.data.scenicDetails.id,
+        scenicspot_name: this.data.scenicDetails.scenicspot_name,
+        scenicspot_img: this.data.scenicDetails.scenicspot_img
       }
-    })
+      esRequest('follow_scenicspot', data).then(res => {
+        if (res && res.data.code === 0) {
+          wx.setStorageSync('tp_key', '03')
+          Toast.success('打卡成功')
+          this.isPunchClock()
+        } else {
+          Toast.fail('系统错误')
+        }
+      })
+    }
   },
 
   // 取消打卡
