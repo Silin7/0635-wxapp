@@ -1,45 +1,89 @@
 <van-toast id="van-toast" />
 
-<van-tabs active="{{appointmentActive}}" bind:change="appointmentChange" ellipsis="{{false}}" border="{{ false }}" swipeable sticky animated>
-  <van-tab wx:for="{{appointmentType}}" wx:key="index" title="{{item.title}}" name="{{item.name}}">
-    <scroll-view class="bg_F5 bs_bb oy_a" scroll-y="{{true}}" style="height: {{windowHeight-44}}px;" bindscrolltolower="onScrollBottom">
-      <view class="item_box" wx:for="{{appointmentList}}" wx:key="index" bindtap="appointmentDetails" data-item="{{item}}" wx:if="{{isShow}}">
-        <view class="sponsor_box">
-          <van-image lazy-load width="80" height="100" src="{{item.sponsor_img}}" image-class="sponsor_img"/>
-          <text class="to_1 sponsor_name">{{item.sponsor_name}}</text>
-          <view class="plate_box">
-            <view wx:if="{{item.sponsor_gender == '01'}}" class="gender_boy">
-              <van-image lazy-load width="14" height="14" src="/images/mineModule/boy_icon2.png"/>
-              <text class="age_text">{{item.sponsor_age}}</text>
-            </view>
-            <view wx:if="{{item.sponsor_gender == '02'}}" class="gender_girl">
-              <van-image lazy-load width="14" height="14" src="/images/mineModule/girl_icon2.png"/>
-              <text class="age_text">{{item.sponsor_age}}</text>
-            </view>
-            <text class="appointment_type">{{item.sponsor_gender === '01' ? '个人发起' : '官方发起'}}</text>
-          </view>
+<!-- DropdownMenu 下拉菜单 -->
+<van-dropdown-menu active-color="#4545FF">
+  <van-dropdown-item id="item1" title="{{dropTitle1}}">
+    <view class="dropdown_cell">
+      <view class="dropdown_item_nomal {{ area_type == '' ? 'dropdown_item_active' : '' }}" bindtap="dropTap1" data-id="" data-title="全部地区">全部地区</view>
+      <view class="dropdown_item_nomal {{ area_type == '01' ? 'dropdown_item_active' : '' }}" bindtap="dropTap1" data-id="01" data-title="东昌府区">东昌府区</view>
+      <view class="dropdown_item_nomal {{ area_type == '02' ? 'dropdown_item_active' : '' }}" bindtap="dropTap1" data-id="02" data-title="阳谷县">阳谷县</view>
+    </view>
+    <view class="dropdown_cell">
+      <view class="dropdown_item_nomal {{ area_type == '03' ? 'dropdown_item_active' : '' }}" bindtap="dropTap1" data-id="03" data-title="莘县">莘县</view>
+      <view class="dropdown_item_nomal {{ area_type == '04' ? 'dropdown_item_active' : '' }}" bindtap="dropTap1" data-id="04" data-title="茌平区">茌平区</view>
+      <view class="dropdown_item_nomal {{ area_type == '05' ? 'dropdown_item_active' : '' }}" bindtap="dropTap1" data-id="05" data-title="东阿县">东阿县</view>
+    </view>
+    <view class="dropdown_cell">
+      <view class="dropdown_item_nomal {{ area_type == '06' ? 'dropdown_item_active' : '' }}" bindtap="dropTap1" data-id="06" data-title="冠县">冠县</view>
+      <view class="dropdown_item_nomal {{ area_type == '07' ? 'dropdown_item_active' : '' }}" bindtap="dropTap1" data-id="07" data-title="高唐县">高唐县</view>
+      <view class="dropdown_item_nomal {{ area_type == '08' ? 'dropdown_item_active' : '' }}" bindtap="dropTap1" data-id="08" data-title="临清市">临清市</view>
+    </view>
+  </van-dropdown-item>
+  <van-dropdown-item id="item2" title="{{dropTitle2}}">
+    <view class="dropdown_cell">
+      <view class="dropdown_item_nomal {{ appointment_type == '' ? 'dropdown_item_active' : '' }}" bindtap="dropTap2" data-id="" data-title="全部分类">全部分类</view>
+      <view class="dropdown_item_nomal {{ appointment_type == '01' ? 'dropdown_item_active' : '' }}" bindtap="dropTap2" data-id="01" data-title="约饭">约饭</view>
+      <view class="dropdown_item_nomal {{ appointment_type == '02' ? 'dropdown_item_active' : '' }}" bindtap="dropTap2" data-id="02" data-title="看电影">看电影</view>
+    </view>
+    <view class="dropdown_cell">
+      <view class="dropdown_item_nomal {{ appointment_type == '03' ? 'dropdown_item_active' : '' }}" bindtap="dropTap2" data-id="03" data-title="唱歌">唱歌</view>
+      <view class="dropdown_item_nomal {{ appointment_type == '04' ? 'dropdown_item_active' : '' }}" bindtap="dropTap2" data-id="04" data-title="运动">运动</view>
+      <view class="dropdown_item_nomal {{ appointment_type == '05' ? 'dropdown_item_active' : '' }}" bindtap="dropTap2" data-id="05" data-title="旅游">旅游</view>
+    </view>
+    <view class="dropdown_cell">
+      <view class="dropdown_item_nomal {{ appointment_type == '06' ? 'dropdown_item_active' : '' }}" bindtap="dropTap2" data-id="06" data-title="其他">其他</view>
+    </view>
+  </van-dropdown-item>
+  <van-dropdown-item id="item3" title="{{dropTitle3}}">
+    <view class="dropdown_cell">
+      <view class="dropdown_item_nomal {{ sponsor_gender == '' ? 'dropdown_item_active' : '' }}" bindtap="dropTap3" data-id="" data-title="不限性别">不限性别</view>
+      <view class="dropdown_item_nomal {{ sponsor_gender == '01' ? 'dropdown_item_active' : '' }}" bindtap="dropTap3" data-id="01" data-title="男生">男生</view>
+      <view class="dropdown_item_nomal {{ sponsor_gender == '02' ? 'dropdown_item_active' : '' }}" bindtap="dropTap3" data-id="02" data-title="女生">女生</view>
+    </view>
+  </van-dropdown-item>
+</van-dropdown-menu>
+
+<!-- 数据列表 -->
+<scroll-view wx:if="{{!appointmentNo}}" class="bg_F5 bs_bb oy_a" scroll-y="{{true}}" style="height: {{windowHeight-50}}px;" bindscrolltolower="onScrollBottom">
+  <view class="item_box" wx:for="{{appointmentList}}" wx:key="index" bindtap="appointmentDetails" data-item="{{item}}" wx:if="{{isShow}}">
+    <view class="sponsor_box">
+      <van-image lazy-load width="90" height="100" src="{{item.sponsor_img}}" image-class="sponsor_img"/>
+      <text class="to_1 sponsor_name">{{item.sponsor_name}}</text>
+      <view class="plate_box">
+        <view wx:if="{{item.sponsor_gender == '01'}}" class="gender_boy">
+          <image src="/images/mineModule/boy_icon2.png" style="width: 14px; height: 14px"/>
+          <text class="age_text">{{item.sponsor_age}}</text>
         </view>
-        <view class="appointment_box" style="width: {{windowWidth-120}}px;">
-          <view class="appointment_title to_1">{{item.appointment_title}}</view>
-          <view class="appointment_item">
-            <van-image lazy-load width="16" height="16" src="/images/appointmentModule/time.png"/>
-            <text class="appointment_text to_1" style="width: {{windowWidth-150}}px;">{{item.appointment_time}}</text>
-          </view>
-          <view class="appointment_item">
-            <van-image lazy-load width="16" height="16" src="/images/appointmentModule/place.png"/>
-            <text class="appointment_text to_1" style="width: {{windowWidth-150}}px;">{{item.appointment_place}}</text>
-          </view>
-          <view class="appointment_item">
-            <van-image lazy-load width="16" height="16" src="/images/appointmentModule/pay.png"/>
-            <wxs module="filter" src="../../../utils/filter.wxs"></wxs>
-            <text class="appointment_text to_1" style="width: {{windowWidth-150}}px;">{{filter.appointmentPay(item.appointment_pay)}}</text>
-          </view>
-          <view class="appointment_item2">
-            <van-image lazy-load width="16" height="16" src="/images/appointmentModule/info.png" image-class="m_t_5"/>
-            <text class="appointment_text to_2" style="width: {{windowWidth-150}}px;">{{item.appointment_info}}</text>
-          </view>
+        <view wx:if="{{item.sponsor_gender == '02'}}" class="gender_girl">
+          <image src="/images/mineModule/girl_icon2.png" style="width: 14px; height: 14px"/>
+          <text class="age_text">{{item.sponsor_age}}</text>
         </view>
+        <text class="appointment_type">{{item.sponsor_gender === '01' ? '个人发起' : '官方发起'}}</text>
       </view>
-    </scroll-view>
-  </van-tab>
-</van-tabs>
+    </view>
+    <view class="appointment_box" style="width: {{windowWidth-120}}px;">
+      <view class="appointment_title to_1">{{item.appointment_title}}</view>
+      <view class="appointment_item">
+        <image src="/images/appointmentModule/time.png" style="width: 16px; height: 16px"/>
+        <text class="appointment_text to_1" style="width: {{windowWidth-150}}px;">{{item.appointment_time}}</text>
+      </view>
+      <view class="appointment_item">
+        <image src="/images/appointmentModule/place.png" style="width: 16px; height: 16px"/>
+        <text class="appointment_text to_1" style="width: {{windowWidth-150}}px;">{{item.appointment_place}}</text>
+      </view>
+      <view class="appointment_item">
+        <image src="/images/appointmentModule/pay.png" style="width: 16px; height: 16px"/>
+        <wxs module="filter" src="../../../utils/filter.wxs"></wxs>
+        <text class="appointment_text to_1" style="width: {{windowWidth-150}}px;">{{filter.appointmentPay(item.appointment_pay)}}</text>
+      </view>
+      <view class="appointment_item">
+        <image src="/images/appointmentModule/info.png" style="width: 16px; height: 16px"/>
+        <wxs module="filter" src="../../../utils/filter.wxs"></wxs>
+        <text class="appointment_text to_1" style="width: {{windowWidth-150}}px;">{{item.appointment_info}}</text>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+
+<!-- 暂无数据 -->
+<component-noData wx:if="{{appointmentNo}}" height="{{windowHeight-50}}"></component-noData>

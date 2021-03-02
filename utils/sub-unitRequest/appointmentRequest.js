@@ -2,7 +2,7 @@ let appointmentRequest = {
   appointment_list: {
     apiMethod: 'GET',
     apiName: '/appointment/appointment_list',
-    name: '约会列表（参数: page, limit, appointment_gander, appointment_type, appointment_pay）'
+    name: '约会列表（参数: page, limit, sponsor_gender, appointment_type, area_type）'
   },
   appointment_details: {
     apiMethod: 'GET',
