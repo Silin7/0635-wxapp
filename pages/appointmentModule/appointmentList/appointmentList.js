@@ -99,7 +99,9 @@ Page({
 
   // 线下活动详情
   appointmentDetails: function (e) {
-    console.log(e.currentTarget.dataset.item)
+    wx.navigateTo({
+      url: '/pages/appointmentModule/appointmentDetails/appointmentDetails?id=' + e.currentTarget.dataset.item.id
+    })
   },
 
 })

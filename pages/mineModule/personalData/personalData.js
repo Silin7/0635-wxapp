@@ -137,6 +137,7 @@ Page({
 
   // 保存
   save_btn: function () {
+    let _this= this
     let data = this.data.dataForm
     for (let key in data) {
       if (data[key] == null) {
@@ -169,6 +170,14 @@ Page({
       this.data.dataForm.id = wx.getStorageSync('id_key')
       esRequest('update_mineInfo', this.data.dataForm).then(res => {
         if (res && res.data.code === 0) {
+          let userIfo = {
+            id: _this.data.dataForm.id,
+            nickName: _this.data.dataForm.nickName,
+            avatarUrl: _this.data.dataForm.avatarUrl,
+            userPhone: _this.data.dataForm.userPhone,
+            gender: _this.data.dataForm.gender,
+          }
+          wx.setStorageSync('userIfo', userIfo)
           wx.setStorageSync('tp_key', '02')
           Toast.success('操作成功')
           setTimeout(() => {

@@ -1,8 +1,7 @@
 {
-  "navigationBarTitleText": "",
+  "navigationBarTitleText": "线下活动",
   "usingComponents": {
     "van-toast": "vant-weapp/toast/index",
-    "van-image": "vant-weapp/image/index",
-    "van-tag": "vant-weapp/tag/index"
+    "van-image": "vant-weapp/image/index"
   }
 }

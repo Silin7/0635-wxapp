@@ -1,6 +1,5 @@
 {
   "pages":[
-    "pages/appointmentModule/appointmentDetails/appointmentDetails",
     "pages/homeModule/indexPage/indexPage",
     "pages/homeModule/findPage/findPage",
     "pages/homeModule/newsPage/newsPage",
@@ -15,6 +14,7 @@
     "pages/marryModule/bindList/bindList",
     "pages/marryModule/bindDetails/bindDetails",
     "pages/appointmentModule/appointmentList/appointmentList",
+    "pages/appointmentModule/appointmentDetails/appointmentDetails",
     "pages/pictureModule/wallportraitType/wallportraitType",
     "pages/pictureModule/wallportraitSeries/wallportraitSeries",
     "pages/pictureModule/wallportraitList/wallportraitList",
@@ -44,6 +44,7 @@
     "pages/otherModule/weather/weather",
     "pages/otherModule/historyToday/historyToday",
     "pages/otherModule/historyDetails/historyDetails",
+    "pages/components/signUp/signUp",
     "pages/components/mapComponent/mapComponent",
     "pages/components/dateTimePicker/dateTimePicker",
     "pages/components/choosePicker/choosePicker",

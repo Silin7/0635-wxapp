@@ -159,11 +159,11 @@ var appointmentPay = function (type) {
 }
 
 // 性别
-var gander = function (type) {
+var limitGander = function (type) {
   if (type === '01') {
-    return '男生'
+    return '仅限男生'
   } else if (type === '02') {
-    return '女生'
+    return '仅限女生'
   } else {
     return '不限性别'
   }
@@ -194,6 +194,6 @@ module.exports = {
   studentTicket: studentTicket,
   areaCode: areaCode,
   appointmentPay: appointmentPay,
-  gander: gander,
+  limitGander: limitGander,
   activeType: activeType
 }

@@ -12,9 +12,10 @@
         <view wx:if="{{appointmentDetails.sponsor_gender == '01'}}">男</view>
         <view wx:if="{{appointmentDetails.sponsor_gender == '02'}}">女</view>
         <view>{{appointmentDetails.sponsor_age}}岁</view>
-        <view class="sponsor_wx">
+        <view class="sponsor_wx" bindtap="sponsorWx">
           <image src="/images/appointmentModule/wx.png" class="sponsor_wximg"></image>
-          <text>联系微信</text>
+          <text wx:if="{{signUp}}">{{appointmentDetails.appointment_wx}}</text>
+          <text wx:else>查看微信</text>
         </view>
       </view>
     </view>
@@ -24,26 +25,55 @@
     <view class="appointment_title">{{appointmentDetails.appointment_title}}</view>
     <view class="appointment_tag_box">
       <wxs module="filter" src="../../../utils/filter.wxs"></wxs>
-      <view class="appointment_tag_item bg_45">
-        <text class="appointment_tag_text">{{filter.activeType(appointmentDetails.appointment_type)}}</text>
-      </view>
-      <view class="appointment_tag_item bg_9A">
+      <view class="appointment_tag_item" style="background-color: #2A1A5E;">
         <text class="appointment_tag_text">{{filter.areaCode(appointmentDetails.area_type)}}</text>
       </view>
-      <view class="appointment_tag_item bg_D5">
+      <view class="appointment_tag_item" style="background-color: #1FAB89;">
+        <text class="appointment_tag_text">{{filter.activeType(appointmentDetails.appointment_type)}}</text>
+      </view>
+      <view class="appointment_tag_item" style="background-color: #FF5858;">
         <text class="appointment_tag_text">{{filter.appointmentPay(appointmentDetails.appointment_pay)}}</text>
       </view>
-      <view class="appointment_tag_item bg_45">
-        <text class="appointment_tag_text">{{filter.gander(appointmentDetails.appointment_gander)}}</text>
+      <view class="appointment_tag_item" style="background-color: #EA2C62;">
+        <text class="appointment_tag_text">{{filter.limitGander(appointmentDetails.appointment_gander)}}</text>
       </view>
-      <!-- <van-tag color="#f2826a">{{filter.activeType(appointmentDetails.appointment_type)}}</van-tag>
-      <van-tag color="#f2826a">{{filter.areaCode(appointmentDetails.area_type)}}</van-tag>
-      <van-tag color="#f2826a">{{filter.appointmentPay(appointmentDetails.appointment_pay)}}</van-tag>
-      <van-tag color="#f2826a">{{filter.gander(appointmentDetails.appointment_gander)}}</van-tag> -->
     </view>
-    <view>{{appointmentDetails.appointment_info}}</view>
-    <view>{{appointmentDetails.appointment_time}}</view>
-    <view>{{appointmentDetails.appointment_place}}</view>
-    <view>{{appointmentDetails.appointment_details}}</view>
+    <view class="appointment_item">
+      <view class="appointment_item_title">活动时间：</view>
+      <view class="appointment_item_info to_1">{{appointmentDetails.appointment_time}}</view>
+    </view>
+    <view class="appointment_item">
+      <view class="appointment_item_title">活动地点：</view>
+      <view class="appointment_item_info to_1">{{appointmentDetails.appointment_place}}</view>
+    </view>
+    <view class="appointment_item">
+      <view class="appointment_item_title">活动宣言：</view>
+      <view class="appointment_item_info to_1">{{appointmentDetails.appointment_info}}</view>
+    </view>
+    <view class="appointment_item" wx:if="{{appointmentDetails.appointment_details}}">
+      <view class="appointment_item_title">活动详情：</view>
+      <rich-text nodes="{{appointmentDetails.appointment_details}}" class="appointment_details"></rich-text>
+    </view>
+  </view>
+</view>
+
+<!-- 底部按钮 -->
+<view class="btn_box">
+  <view class="btn_box_item1">
+    <!-- 分享 -->
+    <button open-type="share" class="share_active" size="mini"></button>
+    <view class="btn_gz">
+      <van-image lazy-load width="28" height="28" src="/images/marryModule/btn_fx.png"/>
+      <view class="btn_text">活动分享</view>
+    </view>
+    <!-- 报名 -->
+    <view class="btn_wx" bindtap="binSign">
+      <van-image lazy-load width="28" height="28" src="/images/marryModule/btn_gz.png"/>
+      <view class="btn_text">活动报名</view>
+    </view>
+  </view>
+  <!-- 联系客服 -->
+  <view class="btn_kf">
+    <button open-type="contact" bindcontact="handleContact" class="kf_btn">联系客服</button>
   </view>
 </view>
