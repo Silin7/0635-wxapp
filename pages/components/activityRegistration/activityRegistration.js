@@ -81,9 +81,17 @@ Page({
     }
     esRequest('mine_info', data).then (res => {
       if (res && res.data.code === 0) {
+        let userIfo = {
+          id: res.data.data.id,
+          nickName: res.data.data.nickName,
+          avatarUrl: res.data.data.avatarUrl,
+          userPhone: res.data.data.userPhone,
+          gender: res.data.data.gender,
+        }
+        wx.setStorageSync('userIfo', userIfo)
         this.setData({
-        nickName: res.data.data.nickName,
-        userInfo: res.data.data
+          nickName: res.data.data.nickName,
+          userInfo: res.data.data
         })
       } else {
         Toast.fail('系统错误')

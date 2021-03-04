@@ -3,6 +3,7 @@ import Toast from '../../../miniprogram_npm/vant-weapp/toast/toast';
 
 Page({
   data: {
+    loginShow: false,
     windowWidth: 0,
     windowHeight: 0,
     signUp: false,
@@ -43,47 +44,65 @@ Page({
 
   // 查看微信
   sponsorWx: function () {
-    let _this = this
-    let data = {
-      active_id: this.data.appointmentDetails.id,
-      followers_id: wx.getStorageSync('id_key').toString()
-    }
-    esRequest('appointment_issign', data).then(res => {
-      if (res && res.data.code === 0) {
-        if (res.data.type === '0') {
-          Toast.fail('报名后查看')
-        }
-        if (res.data.type === '1') {
-          _this.setData({
-            signUp: true
-          })
-        }
-      } else {
-        Toast.fail('系统错误')
+    if (!wx.getStorageSync('id_key')) {
+      this.setData({
+        loginShow: true
+      })
+    } else {
+      let _this = this
+      let data = {
+        active_id: this.data.appointmentDetails.id,
+        followers_id: wx.getStorageSync('id_key').toString()
       }
-    })
+      esRequest('appointment_issign', data).then(res => {
+        if (res && res.data.code === 0) {
+          if (res.data.type === '0') {
+            Toast.fail('报名后查看')
+          }
+          if (res.data.type === '1') {
+            _this.setData({
+              signUp: true
+            })
+          }
+        } else {
+          Toast.fail('系统错误')
+        }
+      })
+    }
   },
 
   // 活动报名
   binSign: function () {
-    let _this = this
-    let data = {
-      active_id: this.data.appointmentDetails.id,
-      followers_id: wx.getStorageSync('id_key').toString()
-    }
-    esRequest('appointment_issign', data).then(res => {
-      if (res && res.data.code === 0) {
-        if (res.data.type === '0') {
-          wx.navigateTo({
-            url: `/pages/components/signUp/signUp?receiver_id=${this.data.appointmentDetails.sponsor_id}&active_id=${this.data.appointmentDetails.id}&active_title=${this.data.appointmentDetails.appointment_title}`
-          })
-        }
-        if (res.data.type === '1') {
-          Toast.success('您已经报名')
-        }
-      } else {
-        Toast.fail('系统错误')
+    if (!wx.getStorageSync('id_key')) {
+      this.setData({
+        loginShow: true
+      })
+    } else {
+      let data = {
+        active_id: this.data.appointmentDetails.id,
+        followers_id: wx.getStorageSync('id_key').toString()
       }
+      esRequest('appointment_issign', data).then(res => {
+        if (res && res.data.code === 0) {
+          if (res.data.type === '0') {
+            wx.navigateTo({
+              url: `/pages/components/activityRegistration/activityRegistration?receiver_id=${this.data.appointmentDetails.sponsor_id}&active_id=${this.data.appointmentDetails.id}&active_title=${this.data.appointmentDetails.appointment_title}`
+            })
+          }
+          if (res.data.type === '1') {
+            Toast.success('您已经报名')
+          }
+        } else {
+          Toast.fail('系统错误')
+        }
+      })
+    }
+  },
+
+  // 未登录跳转倒登录界面
+  dialogButtontap() {
+    wx.redirectTo({
+      url: '/pages/loginModule/loginPage/loginPage',
     })
   }
 
