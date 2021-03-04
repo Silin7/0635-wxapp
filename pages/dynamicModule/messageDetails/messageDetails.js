@@ -113,7 +113,7 @@ Page({
           sender_img: this.data.mineDataForm.avatarUrl,
           message_title: `来自${this.data.mineDataForm.nickName}的消息回复`,
           message_content: `谢谢你的喜欢哟，我的微信号是<span style="color: #4545FF;">${this.data.mineDataForm.userPhone}</span>，期待我们的缘分鸭。`,
-          message_type: '03'
+          message_type: '02'
         }
         esRequest('permessage_send', data).then(res => {
           if (res && res.data.code === 0) {
@@ -137,7 +137,7 @@ Page({
           sender_img: this.data.mineDataForm.avatarUrl,
           message_title: `来自${this.data.mineDataForm.nickName}的消息回复`,
           message_content: `谢谢你的喜欢哟，我还没有准备好，期待我们的下一场缘分吧。`,
-          message_type: '03'
+          message_type: '02'
         }
         esRequest('permessage_send', data).then(res => {
           if (res && res.data.code === 0) {

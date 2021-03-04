@@ -18,7 +18,7 @@ Page({
       sender_img	: '',
       message_title: '',
       message_content: '',
-      message_type: '02',
+      message_type: '',
     },
     dialogTitle: '期待缘分发生',
     dialogText: '您确定要对方的微信吗？',
@@ -162,20 +162,24 @@ Page({
             if (_this.data.dataType === '01') {
               _this.data.dataForm.message_title = '小哥哥，可以留个微信吗？'
               _this.data.dataForm.message_content = `你好，能给我留一个你的微信吗？我被你的颜值所打动，在我心里你一定是个乐观开朗的男孩子。但我不能自己妄加推断，所以想了解一下你真的性格。`
+              _this.data.dataForm.message_type = '01'
             }
             if (_this.data.dataType === '02') {
               _this.data.dataForm.message_title = '小哥哥，很想和你认识一下呢'
               _this.data.dataForm.message_content = `你好，我被你的颜值所打动，在我心里你一定是个乐观开朗的男孩子。但我不能自己妄加推断，所以想了解一下你真正的性格。这是我的微信号<span style="color: #4545FF;">${_this.data.userInfo.userPhone}</span>，期待我们的缘分鸭。`
+              _this.data.dataForm.message_type = '02'
             }
           }
           if (_this.data.gender === '女') {
             if (_this.data.dataType === '01') {
               _this.data.dataForm.message_title = '小姐姐，可以留个微信吗？'
               _this.data.dataForm.message_content = `你好，能给我留一个你的微信吗？我被你的颜值所打动，在我心里你一定是个善良温柔的女孩子。但我不能自己妄加推断，所以想了解一下你真的性格。`
+              _this.data.dataForm.message_type = '01'
             }
             if (_this.data.dataType === '02') {
               _this.data.dataForm.message_title = '小姐姐，很想和你认识一下呢'
               _this.data.dataForm.message_content = `你好，我被你的颜值所打动，在我心里你一定是个善良温柔的女孩子。但我不能自己妄加推断，所以想了解一下你真正的性格。这是我的微信号<span style="color: #4545FF;">${_this.data.userInfo.userPhone}</span>，期待我们的缘分鸭。`
+              _this.data.dataForm.message_type = '02'
             }
           }
           esRequest('permessage_send', _this.data.dataForm).then(res => {

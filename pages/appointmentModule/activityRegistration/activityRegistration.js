@@ -17,7 +17,7 @@ Page({
       sender_img	: '',
       message_title: '',
       message_content: '',
-      message_type: '04',
+      message_type: '03',
     },
     dialogShow: false,
     dialogButtons: [{text: '取消'}, {text: '确定'}],
