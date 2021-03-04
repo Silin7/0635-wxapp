@@ -86,7 +86,7 @@ Page({
         if (res && res.data.code === 0) {
           if (res.data.type === '0') {
             wx.navigateTo({
-              url: `/pages/components/activityRegistration/activityRegistration?receiver_id=${this.data.appointmentDetails.sponsor_id}&active_id=${this.data.appointmentDetails.id}&active_title=${this.data.appointmentDetails.appointment_title}`
+              url: `/pages/appointmentModule/activityRegistration/activityRegistration?receiver_id=${this.data.appointmentDetails.sponsor_id}&active_id=${this.data.appointmentDetails.id}&active_title=${this.data.appointmentDetails.appointment_title}`
             })
           }
           if (res.data.type === '1') {
