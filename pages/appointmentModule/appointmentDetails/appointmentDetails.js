@@ -3,7 +3,6 @@ import Toast from '../../../miniprogram_npm/vant-weapp/toast/toast';
 
 Page({
   data: {
-    id_key: '',
     windowWidth: 0,
     windowHeight: 0,
     signUp: false,
@@ -12,8 +11,8 @@ Page({
   },
 
   onLoad: function (options) {
-    this.data.id_key = wx.getStorageSync('id_key').toString()
     this.data.appointmentId = options.id ? options.id : ''
+    this.getAppointmentDetails()
   },
 
   onReady: function () {
@@ -21,10 +20,6 @@ Page({
       windowWidth: wx.getSystemInfoSync().windowWidth,
       windowHeight: wx.getSystemInfoSync().windowHeight
     })
-  },
-
-  onShow: function () {
-    this.getAppointmentDetails()
   },
 
   // 线下活动详情
@@ -48,24 +43,48 @@ Page({
 
   // 查看微信
   sponsorWx: function () {
-    if (this.data.signUp) {
-
-    } else {
-      Toast.fail('报名后查看')
+    let _this = this
+    let data = {
+      active_id: this.data.appointmentDetails.id,
+      followers_id: wx.getStorageSync('id_key').toString()
     }
-  },
-
-  binSign: function () {
-    console.log(this.data.id_key)
-    console.log(this.data.appointmentDetails.id)
-    wx.navigateTo({
-      url: `/pages/components/signUp/signUp?receiver_id=${this.data.appointmentDetails.sponsor_id}&active_title=${this.data.appointmentDetails.appointment_title}`
+    esRequest('appointment_issign', data).then(res => {
+      if (res && res.data.code === 0) {
+        if (res.data.type === '0') {
+          Toast.fail('报名后查看')
+        }
+        if (res.data.type === '1') {
+          _this.setData({
+            signUp: true
+          })
+        }
+      } else {
+        Toast.fail('系统错误')
+      }
     })
   },
 
-  // xxx
-  xxx: function (e) {
-    console.log(e.currentTarget.dataset.xxx)
+  // 活动报名
+  binSign: function () {
+    let _this = this
+    let data = {
+      active_id: this.data.appointmentDetails.id,
+      followers_id: wx.getStorageSync('id_key').toString()
+    }
+    esRequest('appointment_issign', data).then(res => {
+      if (res && res.data.code === 0) {
+        if (res.data.type === '0') {
+          wx.navigateTo({
+            url: `/pages/components/signUp/signUp?receiver_id=${this.data.appointmentDetails.sponsor_id}&active_id=${this.data.appointmentDetails.id}&active_title=${this.data.appointmentDetails.appointment_title}`
+          })
+        }
+        if (res.data.type === '1') {
+          Toast.success('您已经报名')
+        }
+      } else {
+        Toast.fail('系统错误')
+      }
+    })
   }
 
 })

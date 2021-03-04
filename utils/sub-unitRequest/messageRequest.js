@@ -14,6 +14,11 @@ let messageRequest = {
     apiName: '/message/permessage_send',
     name: '消息详情（参数：receiver_id, sender_id, sender_name, sender_img, message_title, message_content）'
   },
+  permessage_active: {
+    apiMethod: 'POST',
+    apiName: '/message/permessage_active',
+    name: '消息详情（参数：receiver_id, sender_id, sender_name, sender_img, message_title, message_content）'
+  },
   permessage_delete: {
     apiMethod: 'GET',
     apiName: '/message/permessage_delete',

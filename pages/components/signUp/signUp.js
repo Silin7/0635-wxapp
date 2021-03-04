@@ -6,6 +6,7 @@ Page({
   data: {
     windowWidth: 0,
     windowHeight: 0,
+    active_id: '',
     active_title: '',
     nickName: '',
     userInfo: {},
@@ -25,6 +26,9 @@ Page({
   onLoad: function (option) {
     if (option.receiver_id) {
       this.data.dataForm.receiver_id = option.receiver_id
+    }
+    if (option.active_id) {
+      this.data.active_id = option.active_id
     }
     if (option.active_title) {
       this.data.active_title = option.active_title
@@ -120,25 +124,31 @@ Page({
       dialogShow: false
     })
     if (e.detail.index == 1) {
+      let _this = this
+      let data = {
+        active_id: this.data.active_id,
+        followers_id: this.data.userInfo.id
+      }
       let gender = this.data.userInfo.gender === '1' ? '男' : '女'
       this.data.dataForm.sender_id = this.data.userInfo.id
       this.data.dataForm.sender_name = this.data.userInfo.nickName
       this.data.dataForm.sender_img = this.data.userInfo.avatarUrl
       this.data.dataForm.message_title = '活动报名通知'
-      this.data.dataForm.message_content = `用户${this.data.userInfo.nickName}（<span style="color: #F76262;">${gender}</span>，<span style="color: #4545FF;">${this.data.userInfo.userPhone}</span>）报名参加了您发起的活动 ${this.data.active_title},请您尽快联系对方哟 。`
-      esRequest('permessage_send', this.data.dataForm).then(res => {
+      this.data.dataForm.message_content = `用户${this.data.userInfo.nickName}（<span style="color: #F76262;">${gender}</span>，<span style="color: #F76262;">${this.data.userInfo.userPhone}</span>）报名参加了您发起的活动 [<span style="color: #4545FF;">${this.data.active_title}</span>] ,请您尽快联系对方哟 。`
+      esRequest('appointment_sign', data).then(res => {
         if (res && res.data.code === 0) {
-          if (res.data.type == '1') {
-            Toast.success('您已经报名')
-          }
-          if (res.data.type == '0') {
-            Toast.success('报名成功')
-          }
-          setTimeout(function () {
-            wx.navigateBack({
-              delta: 1
-            })
-          }, 1500)
+          esRequest('permessage_active', _this.data.dataForm).then(res => {
+            if (res && res.data.code === 0) {
+              Toast.success('报名成功')
+              setTimeout(function () {
+                wx.navigateBack({
+                  delta: 1
+                })
+              }, 1500)
+            } else {
+              Toast.fail('系统错误')
+            }
+          })
         } else {
           Toast.fail('系统错误')
         }
