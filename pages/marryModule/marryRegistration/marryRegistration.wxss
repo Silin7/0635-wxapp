@@ -3,6 +3,7 @@
   width: 100vw;
   padding: 10px;
   background-color: #F7F8FA;
+  overflow-y: auto;
 }
 .user_box {
   box-sizing: border-box;
@@ -65,6 +66,17 @@
   justify-content: space-around;
   align-items: center;
   padding-right: 20%;
+}
+.notes {
+  box-sizing: border-box;
+  padding-left: 10px;
+  height: 40px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 12px;
+  color: #999999;
+  letter-spacing: 1px;
 }
 
 

@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "报名",
+  "usingComponents": {
+    "van-toast": "vant-weapp/toast/index",
+    "van-image": "vant-weapp/image/index",
+    "van-field": "vant-weapp/field/index",
+    "van-radio": "vant-weapp/radio/index",
+    "van-radio-group": "vant-weapp/radio-group/index",
+    "component-dialog": "/pages/components/wxdialog/wxdialog"
+  }
+}

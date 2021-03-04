@@ -251,7 +251,7 @@ button[size='mini'] {
   width: 56%;
   height: 60px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   position: relative;
 }
@@ -270,6 +270,7 @@ button[size='mini'] {
   flex-flow: column;
   justify-content: space-around;
   align-items: center;
+  margin-left: 20px;
 }
 .btn_yt {
   width: 30%;

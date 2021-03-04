@@ -1,9 +1,8 @@
 <van-toast id="van-toast" />
 
-<component-dialog title="{{dialogTitle}}" show="{{dialogShow}}" buttons="{{dialogButtons}}" bindbuttontap="tapDialogButton" >
-  <view class="fs_14 ls_2 m_t_15">{{dialogText}}</view>
+<component-dialog title="关注TA" show="{{dialogShow}}" buttons="{{dialogButtons}}" bindbuttontap="tapDialogButton" >
+  <view class="fs_14 ls_2 m_t_15">您确定要关注Ta吗？</view>
 </component-dialog>
-
 
 <view class="oy_a" style="height: {{windowHeight-80}}px;">
   <!-- swiper滚动图 -->
@@ -185,11 +184,6 @@
 <!-- 底部按钮 -->
 <view class="btn_box">
   <view class="btn_box_item1">
-    <!-- <view class="btn_gz" bindtap="btnGz">
-      <van-image lazy-load width="28" height="28" src="/images/marryModule/btn_gz.png"/>
-      <text class="btn_text">关注Ta</text>
-    </view> -->
-    <!-- 分享 -->
     <button open-type="share" class="share_active" size="mini"></button>
     <view class="btn_gz">
       <van-image lazy-load width="28" height="28" src="/images/marryModule/btn_fx.png"/>
@@ -197,15 +191,10 @@
     </view>
     <view class="btn_wx" bindtap="btnWY" data-type="01">
       <van-image lazy-load width="28" height="28" src="/images/marryModule/btn_wx.png"/>
-      <text class="btn_text">要微信</text>
-    </view>
-    <view class="btn_yt" bindtap="btnWY" data-type="02">
-      <van-image lazy-load width="28" height="28" src="/images/marryModule/btn_yt.png"/>
-      <text class="btn_text">推自己</text>
+      <text class="btn_text">联系微信</text>
     </view>
   </view>
   <view class="btn_kf">
-    <!-- <text class="kf_btn">联系客服</text> -->
     <button open-type="contact" bindcontact="handleContact" class="kf_btn">联系客服</button>
   </view>
 </view>
