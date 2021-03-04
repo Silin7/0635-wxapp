@@ -7,8 +7,8 @@
 
 <van-tabs active="{{messageTab}}" bind:change="messageTabChange" ellipsis="{{false}}" border="{{ false }}" swipeable sticky animated>
   <van-tab title="个人私信">
-    <scroll-view wx:if="{{!perMessageNo}}" scroll-y="{{true}}" refresher-enabled="{{true}}" refresher-triggered="{{triggered}}" bindrefresherrefresh="permessagerePull" bindscrolltolower="onScrollBottom1" style="height: {{windowHeight-44}}px;">
-      <van-swipe-cell right-width="{{ 65 }}" wx:for="{{perMessageList}}" wx:key="index" bind:click="messageDetails" data-item="{{item}}" >
+    <scroll-view scroll-y="{{true}}" refresher-enabled="{{true}}" refresher-triggered="{{triggered}}" bindrefresherrefresh="permessagerePull" bindscrolltolower="onScrollBottom1" style="height: {{windowHeight-44}}px;">
+      <van-swipe-cell wx:if="{{!perMessageNo}}" right-width="{{ 65 }}" wx:for="{{perMessageList}}" wx:key="index" bind:click="messageDetails" data-item="{{item}}" >
         <view class="sub_module1_ns">
           <view class="sub_module1_item_ns">
             <van-image lazy-load width="100%" height="100%" src="{{item.sender_img}}"/>
@@ -27,9 +27,9 @@
         </view>
         <view class="permessage_delete" slot="right" catchtap="permessageDelete" data-item="{{item}}">删除</view>
       </van-swipe-cell>
+      <component-noData wx:if="{{perMessageNo}}" height="{{windowHeight-44}}"></component-noData>
     </scroll-view>
     <!-- 暂无数据 -->
-    <component-noData wx:if="{{perMessageNo}}" height="{{windowHeight-44}}"></component-noData>
   </van-tab>
   <van-tab title="系统消息">
     <scroll-view wx:if="{{!sysMessageNo}}" scroll-y="{{true}}" bindscrolltolower="onScrollBottom2" style="height: {{windowHeight-44}}px;">

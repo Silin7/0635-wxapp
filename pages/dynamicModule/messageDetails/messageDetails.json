@@ -2,7 +2,6 @@
   "navigationBarTitleText": "个人私信",
   "usingComponents": {
     "van-toast": "vant-weapp/toast/index",
-    "van-dialog": "vant-weapp/dialog/index",
     "component-dialog": "/pages/components/wxdialog/wxdialog"
   }
 }

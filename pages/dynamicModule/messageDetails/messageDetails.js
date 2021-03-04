@@ -1,6 +1,5 @@
 import esRequest from '../../../utils/esRequest';
 import Toast from '../../../miniprogram_npm/vant-weapp/toast/toast';
-import Dialog from '../../../miniprogram_npm/vant-weapp/dialog/dialog';
 
 Page({
   data: {
@@ -33,7 +32,13 @@ Page({
 
   onShow: function () {
     this.getPermessageDetails()
-    this.getMineInfo()
+    if (wx.getStorageSync('userIfo')) {
+      this.setData({
+        mineDataForm: wx.getStorageSync('userIfo')
+      })
+    } else {
+      this.getMineInfo()
+    }
   },
 
   // 获取个人信息
@@ -43,6 +48,14 @@ Page({
     }
     esRequest('mine_info', data).then (res => {
       if (res && res.data.code === 0) {
+        let userIfo = {
+          id: res.data.data.id,
+          nickName: res.data.data.nickName,
+          avatarUrl: res.data.data.avatarUrl,
+          userPhone: res.data.data.userPhone,
+          gender: res.data.data.gender,
+        }
+        wx.setStorageSync('userIfo', userIfo)
         this.setData({
           mineDataForm: res.data.data
         })
@@ -70,6 +83,27 @@ Page({
     })
   },
 
+  // 欣然同意
+  gladlyConsent: function () {
+    this.setData({
+      dialogType: '01',
+      dialogShow: true,
+      dialogTitle: '欣然同意',
+      dialogText: '一段微妙的缘分就要开始咯！'
+    })
+  },
+
+  // 残忍拒绝
+  cruelRefusal: function () {
+    this.setData({
+      dialogType: '02',
+      dialogShow: true,
+      dialogTitle: '残忍拒绝',
+      dialogText: '拒绝之后你们就永远错过了呢！'
+    })
+  },
+
+  // 回复消息
   tapDialogButton(e) {
     this.setData({
       dialogShow: false
@@ -77,7 +111,6 @@ Page({
     if (e.detail.index === 0) {
       Toast.success('取消')
     }
-    
     if (e.detail.index === 1) {
       if (this.data.dialogType === '01') {
         let data = {
@@ -128,25 +161,5 @@ Page({
         })
       }
     }
-},
-
-  // 欣然同意
-  gladlyConsent: function () {
-    this.setData({
-      dialogType: '01',
-      dialogShow: true,
-      dialogTitle: '欣然同意',
-      dialogText: '一段微妙的缘分就要开始咯！'
-    })
-  },
-
-  // 残忍拒绝
-  cruelRefusal: function () {
-    this.setData({
-      dialogType: '02',
-      dialogShow: true,
-      dialogTitle: '残忍拒绝',
-      dialogText: '拒绝之后你们就永远错过了呢！'
-    })
   }
 })

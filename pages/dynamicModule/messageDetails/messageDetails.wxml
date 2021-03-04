@@ -1,5 +1,4 @@
 <van-toast id="van-toast" />
-<van-dialog id="van-dialog" />
 
 <component-dialog title="{{dialogTitle}}" show="{{dialogShow}}" buttons="{{dialogButtons}}" bindbuttontap="tapDialogButton" >
   <view class="fs_14 ls_2 m_t_15">{{dialogText}}</view>
