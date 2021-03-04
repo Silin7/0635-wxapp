@@ -56,7 +56,7 @@ Page({
     // 社交
     if (e.currentTarget.dataset.item.id === 'icon04') {
       wx.navigateTo({
-        url: '/pages/marryModule/bindList/bindList'
+        url: '/pages/marryModule/marryList/marryList'
       })
     }
   },

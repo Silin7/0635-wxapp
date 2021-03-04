@@ -48,14 +48,7 @@ Page({
     }
     esRequest('mine_info', data).then (res => {
       if (res && res.data.code === 0) {
-        let userIfo = {
-          id: res.data.data.id,
-          nickName: res.data.data.nickName,
-          avatarUrl: res.data.data.avatarUrl,
-          userPhone: res.data.data.userPhone,
-          gender: res.data.data.gender,
-        }
-        wx.setStorageSync('userIfo', userIfo)
+        wx.setStorageSync('userIfo', res.data.data)
         this.setData({
           mineDataForm: res.data.data
         })

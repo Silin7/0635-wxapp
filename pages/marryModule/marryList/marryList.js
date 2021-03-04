@@ -109,7 +109,7 @@ Page({
   // 查看详情
   personDetails: function (e) {
     wx.navigateTo({
-      url: '/pages/marryModule/bindDetails/bindDetails?user_id=' + e.currentTarget.dataset.item.user_id,
+      url: '/pages/marryModule/marryDetails/marryDetails?register_id=' + e.currentTarget.dataset.item.id,
     })
   },
 

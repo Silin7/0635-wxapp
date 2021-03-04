@@ -1,5 +1,9 @@
 <van-toast id="van-toast" />
-<van-dialog id="van-dialog" />
+
+<component-dialog title="{{dialogTitle}}" show="{{dialogShow}}" buttons="{{dialogButtons}}" bindbuttontap="tapDialogButton" >
+  <view class="fs_14 ls_2 m_t_15">{{dialogText}}</view>
+</component-dialog>
+
 
 <view class="oy_a" style="height: {{windowHeight-80}}px;">
   <!-- swiper滚动图 -->
@@ -26,7 +30,7 @@
           <text>{{personDetails.address}}</text>
         </view>
       </view>
-      <view class="item_right">
+      <view class="item_right" bindtap="btnGz">
         <van-image lazy-load width="30" height="30" src="/images/marryModule/like_ta.png"/>
         <!-- <text class="item_right_text">喜欢Ta</text> -->
       </view>
@@ -181,9 +185,15 @@
 <!-- 底部按钮 -->
 <view class="btn_box">
   <view class="btn_box_item1">
-    <view class="btn_gz" bindtap="btnGz">
+    <!-- <view class="btn_gz" bindtap="btnGz">
       <van-image lazy-load width="28" height="28" src="/images/marryModule/btn_gz.png"/>
       <text class="btn_text">关注Ta</text>
+    </view> -->
+    <!-- 分享 -->
+    <button open-type="share" class="share_active" size="mini"></button>
+    <view class="btn_gz">
+      <van-image lazy-load width="28" height="28" src="/images/marryModule/btn_fx.png"/>
+      <view class="btn_text">分享TA</view>
     </view>
     <view class="btn_wx" bindtap="btnWY" data-type="01">
       <van-image lazy-load width="28" height="28" src="/images/marryModule/btn_wx.png"/>

@@ -212,7 +212,33 @@ page {
   font-size: 13px;
 }
 
+
 /* 底部按钮 */
+button{
+  line-height: 1;
+  padding: 0 !important;
+  margin:0;
+}
+button::after{
+  border:none;
+}
+input{
+  outline:none;
+  border:none;
+  list-style: none;
+}
+button[size='mini'] {
+  font-size: 12px !important;
+  font-weight: 700 !important;
+}
+.share_active {
+  position: absolute;
+  z-index: 2;
+  width: 60px !important;
+  height: 60px;
+  background-color: red;
+  opacity: 0;
+}
 .btn_box {
   box-sizing: border-box;
   height: 80px;
@@ -227,6 +253,7 @@ page {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 .btn_gz {
   width: 30%;

@@ -61,7 +61,7 @@ Page({
     // 01：相亲
     if (e.currentTarget.dataset.item.type_id === '01') {
       wx.navigateTo({
-        url: '/pages/marryModule/bindDetails/bindDetails?user_id=' + e.currentTarget.dataset.item.author_id
+        url: '/pages/marryModule/marryDetails/marryDetails?user_id=' + e.currentTarget.dataset.item.author_id
       })
     }
     // 02：新闻
