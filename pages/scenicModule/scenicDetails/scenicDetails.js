@@ -3,7 +3,6 @@ import Toast from '../../../miniprogram_npm/vant-weapp/toast/toast';
 
 Page({
   data: {
-    id_key: '',
     loginShow: false,
     windowWidth: 0,
     windowHeight: 0,
@@ -15,7 +14,6 @@ Page({
   },
 
   onLoad: function (options) {
-    this.data.id_key = wx.getStorageSync('id_key') ? wx.getStorageSync('id_key').toString() : ''
     this.data.scenicId = options.id ? options.id : ''
   },
 
@@ -27,16 +25,11 @@ Page({
   },
 
   onShow: function () {
+    if (wx.getStorageSync('id_key')) {
+      this.isPunchClock()
+    }
     this.getScenicSpot()
-    this.isPunchClock()
   },
-
-    // 未登录跳转倒登录界面
-    dialogButtontap() {
-      wx.redirectTo({
-        url: '/pages/loginModule/loginPage/loginPage',
-      })
-    },
 
   // 景点详情
   getScenicSpot: function () {
@@ -67,7 +60,7 @@ Page({
   isPunchClock: function () {
     let data = {
       scenicspot_id: this.data.scenicId,
-      followers_id: this.data.id_key,
+      followers_id: wx.getStorageSync('id_key').toString()
     }
     esRequest('is_follow_scenicspot', data).then(res => {
       if (res && res.data.code === 0) {
@@ -82,14 +75,11 @@ Page({
 
   // 打卡
   punchClock: function () {
-    if (!this.data.id_key) {
-      console.log('请先登录')
-      this.setData({
-        loginShow: true
-      })
+    if (!wx.getStorageSync('id_key')) {
+      this.setData({ loginShow: true })
     } else {
       let data = {
-        followers_id: this.data.id_key,
+        followers_id: wx.getStorageSync('id_key').toString(),
         scenicspot_id: this.data.scenicDetails.id,
         scenicspot_name: this.data.scenicDetails.scenicspot_name,
         scenicspot_img: this.data.scenicDetails.scenicspot_img
@@ -109,7 +99,7 @@ Page({
   // 取消打卡
   cancePunch: function () {
     let data = {
-      followers_id: this.data.id_key,
+      followers_id: wx.getStorageSync('id_key').toString(),
       scenicspot_id: this.data.scenicDetails.id
     }
     esRequest('cancel_scenicspot', data).then(res => {
@@ -148,6 +138,13 @@ Page({
     let slongitude = this.data.scenicDetails.longitude
     wx.navigateTo({
       url: '/pages/components/mapComponent/mapComponent?sname=' + sname + '&splace=' + splace + '&slatitude=' + slatitude + '&slongitude=' + slongitude
+    })
+  },
+
+  // 未登录跳转倒登录界面
+  dialogButtontap() {
+    wx.redirectTo({
+      url: '/pages/loginModule/loginPage/loginPage'
     })
   }
 

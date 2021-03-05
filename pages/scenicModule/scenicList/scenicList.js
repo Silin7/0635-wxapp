@@ -14,16 +14,16 @@ Page({
     scenicspotList: []
   },
 
+  onLoad: function () {
+    this.getCityList()
+    this.getScenicSpot()
+  },
+
   onReady: function () {
     this.setData({
       windowWidth: wx.getSystemInfoSync().windowWidth,
       windowHeight: wx.getSystemInfoSync().windowHeight
     })
-  },
-
-  onShow: function () {
-    this.getCityList()
-    this.getScenicSpot()
   },
 
   // 切换Tabs
@@ -32,9 +32,6 @@ Page({
     this.data.scenicspotList = []
     this.data.scenicspotPosition = e.detail.title
     this.getScenicSpot()
-    // wx.pageScrollTo({
-    //   scrollTop: 0
-    // })
   },
 
   // 县市列表
