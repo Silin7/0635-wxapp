@@ -1,22 +1,58 @@
 <van-toast id="van-toast" />
 
-<!-- 新闻 -->
-<view class="bs_bb bg_F7 fx_r_b_s" style="height: {{windowHeight}}px;">
-  <view class="sidebar_box" style="height: {{windowHeight-44}}px;">
-    <van-sidebar active-key="{{sidebarKey}}" bind:change="sidebarChange">
-      <van-sidebar-item wx:for="{{newsTypeList}}" wx:key="index" title="{{item.type_name}}"/>
-    </van-sidebar>
-  </view>
-  <scroll-view scroll-y="{{true}}" bindscrolltolower="onScrollBottom" class="sidebar_item_box" style="width: {{windowWidth-80}}px; height: {{windowHeight-44}}px;">
-    <view wx:for="{{newsList}}" wx:key="index" class="find_news" bindtap="getNewsDetalis" data-item="{{item}}">
-      <view class="find_news_img">
-        <image wx:if="{{item.imgList[0]}}" src="{{item.imgList[0]}}" class="w_h_100"></image>
-        <image wx:else src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
-      </view>
-      <view style="width: {{windowWidth-150}}px;">
-        <view class="find_news_title to_2">{{item.title}}</view>
-        <text class="find_news_time">{{item.postTime}}</text>
-      </view>
+<!-- DropdownMenu 下拉菜单 -->
+<van-dropdown-menu active-color="#4545FF">
+  <van-dropdown-item id="typeItem" title="{{typeTitle}}">
+    <view class="dropdown_cell">
+      <view class="dropdown_item_nomal {{ newsType == '' ? 'dropdown_item_active' : '' }}" bindtap="newsTap" data-id="" data-title="全部地区">全部地区</view>
+      <view class="dropdown_item_nomal {{ newsType == '09' ? 'dropdown_item_active' : '' }}" bindtap="newsTap" data-id="09" data-title="民间聊城">民间聊城</view>
+      <view class="dropdown_item_nomal {{ newsType == '01' ? 'dropdown_item_active' : '' }}" bindtap="newsTap" data-id="01" data-title="东昌府区">东昌府区</view>
     </view>
-  </scroll-view>
-</view>
+    <view class="dropdown_cell">
+      <view class="dropdown_item_nomal {{ newsType == '02' ? 'dropdown_item_active' : '' }}" bindtap="newsTap" data-id="02" data-title="阳谷县">阳谷县</view>
+      <view class="dropdown_item_nomal {{ newsType == '03' ? 'dropdown_item_active' : '' }}" bindtap="newsTap" data-id="03" data-title="莘县">莘县</view>
+      <view class="dropdown_item_nomal {{ newsType == '04' ? 'dropdown_item_active' : '' }}" bindtap="newsTap" data-id="04" data-title="茌平区">茌平区</view>
+    </view>
+    <view class="dropdown_cell">
+      <view class="dropdown_item_nomal {{ newsType == '05' ? 'dropdown_item_active' : '' }}" bindtap="newsTap" data-id="05" data-title="东阿县">东阿县</view>
+      <view class="dropdown_item_nomal {{ newsType == '06' ? 'dropdown_item_active' : '' }}" bindtap="newsTap" data-id="06" data-title="冠县">冠县</view>
+      <view class="dropdown_item_nomal {{ newsType == '07' ? 'dropdown_item_active' : '' }}" bindtap="newsTap" data-id="07" data-title="高唐县">高唐县</view>
+    </view>
+    <view class="dropdown_cell">
+      <view class="dropdown_item_nomal {{ newsType == '08' ? 'dropdown_item_active' : '' }}" bindtap="newsTap" data-id="08" data-title="临清市">临清市</view>
+    </view>
+  </van-dropdown-item>
+  <van-dropdown-item id="classItem" title="{{classTitle}}">
+    <view class="dropdown_cell">
+      <view class="dropdown_item_nomal {{ newsClass == '01' ? 'dropdown_item_active' : '' }}" bindtap="classTap" data-id="01" data-title="推荐">推荐</view>
+      <view class="dropdown_item_nomal {{ newsClass == '02' ? 'dropdown_item_active' : '' }}" bindtap="classTap" data-id="02" data-title="娱乐">娱乐</view>
+      <view class="dropdown_item_nomal {{ newsClass == '03' ? 'dropdown_item_active' : '' }}" bindtap="classTap" data-id="03" data-title="旅游">旅游</view>
+    </view>
+    <view class="dropdown_cell">
+      <view class="dropdown_item_nomal {{ newsClass == '04' ? 'dropdown_item_active' : '' }}" bindtap="classTap" data-id="04" data-title="养生">动漫</view>
+      <view class="dropdown_item_nomal {{ newsClass == '05' ? 'dropdown_item_active' : '' }}" bindtap="classTap" data-id="05" data-title="游戏">游戏</view>
+      <view class="dropdown_item_nomal {{ newsClass == '06' ? 'dropdown_item_active' : '' }}" bindtap="classTap" data-id="06" data-title="科技">科技</view>
+    </view>
+    <view class="dropdown_cell">
+      <view class="dropdown_item_nomal {{ newsClass == '07' ? 'dropdown_item_active' : '' }}" bindtap="classTap" data-id="07" data-title="历史">历史</view>
+      <view class="dropdown_item_nomal {{ newsClass == '08' ? 'dropdown_item_active' : '' }}" bindtap="classTap" data-id="08" data-title="军事">军事</view>
+      <view class="dropdown_item_nomal {{ newsClass == '09' ? 'dropdown_item_active' : '' }}" bindtap="classTap" data-id="09" data-title="财经">财经</view>
+    </view>
+    <view class="dropdown_cell">
+      <view class="dropdown_item_nomal {{ newsClass == '10' ? 'dropdown_item_active' : '' }}" bindtap="classTap" data-id="10" data-title="其他">其他</view>
+    </view>
+  </van-dropdown-item>
+</van-dropdown-menu>
+
+<!-- 新闻 -->
+<scroll-view scroll-y="{{true}}" bindscrolltolower="onScrollBottom" class="sidebar_item_box" style="height: {{windowHeight-50}}px;">
+  <view wx:for="{{newsList}}" wx:key="index" class="find_news" bindtap="getNewsDetalis" data-item="{{item}}">
+    <view class="find_news_img">
+      <van-image lazy-load width="100%" height="100%" src="{{item.journalism_img}}"/>
+    </view>
+    <view style="width: {{windowWidth-70}}px;">
+      <view class="find_news_title to_2">{{item.journalism_title}}</view>
+      <text class="find_news_time">{{item.create_time}}</text>
+    </view>
+  </view>
+</scroll-view>

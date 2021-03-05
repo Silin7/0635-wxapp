@@ -6,16 +6,19 @@ Page({
     id_key: '',
     windowWidth: 0,
     windowHeight: 0,
-    sidebarKey: 0,
-    newsTypeList: [],
-    newsNext: true,
-    typeId: '',
+    newsType: '01',
+    typeTitle: '全部地区',
+    newsArea: '',
+    classTitle: '全部分类',
+    newsClass: '',
     newsPage: 1,
+    newslimit: 10,
+    totalCount: 0,
     newsList: [],
   },
 
   onLoad: function (options) {
-    this.data.id_key = wx.getStorageSync('id_key').toString()
+    this.getNewsList()
   },
 
   onReady: function () {
@@ -25,62 +28,56 @@ Page({
     })
   },
 
-  onShow: function () {
-    this.awaitNews()
-  },
-
-  async awaitNews () {
-    await this.getNewsType()
-    this.data.typeId = this.data.newsTypeList[0].type_id
-    this.getNewsList()
-  },
-
-  // sidebar切换
-  sidebarChange: function (event) {
+  newsTap: function (e) {
     this.setData({
-      typeId: this.data.newsTypeList[event.detail].type_id,
-      newsPage: 1,
+      newsType: '01',
       newsList: [],
+      typeTitle: e.currentTarget.dataset.title,
+      newsArea: e.currentTarget.dataset.id,
+      classTitle: '全部分类',
+      newsClass: '',
     })
+    this.selectComponent('#typeItem').toggle('false');
     this.getNewsList()
   },
 
-  // 新闻类型列表
-  getNewsType: function () {
-    return new Promise (async (resolve, reject) => {
-      esRequest('classification_news').then(res => {
-        if (res && res.data.code === 0) {
-          this.setData({
-            newsTypeList: res.data.data
-          })
-        } else {
-          Toast.fail('系统错误')
-        }
-        resolve()
-      })
+  classTap: function (e) {
+    this.setData({
+      newsType: '02',
+      newsList: [],
+      classTitle: e.currentTarget.dataset.title,
+      newsClass: e.currentTarget.dataset.id,
+      typeTitle: '全部地区',
+      newsArea: '',
     })
+    this.selectComponent('#classItem').toggle(false);
+    this.getNewsList()
   },
 
   // 新闻列表
   getNewsList: function () {
     let data = {
-      typeId: this.data.typeId,
-      page: this.data.newsPage
+      page: this.data.newsPage,
+      limit: this.data.newslimit,
+      type: this.data.newsType,
+      area: this.data.newsArea,
+      class: this.data.newsClass
     }
-    esRequest('news_list', data).then(res => {
-      if (res && res.data.code == 1) {
+    esRequest('journalism_list', data).then(res => {
+      if (res && res.data.code == 0) {
         this.setData({
+          totalCount: res.data.totalCount,
           newsList: this.data.newsList.concat(res.data.data)
         })
       } else {
-        this.data.newsNext = false
+        Toast.fail('系统错误')
       }
     })
   },
 
   // 新闻触底函数
   onScrollBottom: function () {
-    if (this.data.newsNext) {
+    if (this.data.totalCount > this.data.newsList.length) {
       this.data.newsPage += 1
       this.getNewsList()
     }
@@ -88,8 +85,8 @@ Page({
 
   // 新闻详情
   getNewsDetalis: function (e) {
-    wx.navigateTo({
-      url: '/pages/dynamicModule/newsDetails/newsDetails?newsId=' + e.currentTarget.dataset.item.newsId
-    })
+    // wx.navigateTo({
+    //   url: '/pages/dynamicModule/newsDetails/newsDetails?newsId=' + e.currentTarget.dataset.item.newsId
+    // })
   }
 })

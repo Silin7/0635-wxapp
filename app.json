@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/dynamicModule/newsList/newsList",
     "pages/homeModule/indexPage/indexPage",
     "pages/homeModule/findPage/findPage",
     "pages/homeModule/newsPage/newsPage",
@@ -30,7 +31,6 @@
     "pages/recipeModule/recipeList/recipeList",
     "pages/recipeModule/recipeInfo/recipeInfo",
     "pages/recipeModule/recipeDetail/recipeDetail",
-    "pages/dynamicModule/newsList/newsList",
     "pages/dynamicModule/newsDetails/newsDetails",
     "pages/dynamicModule/advertisement/advertisement",
     "pages/dynamicModule/messageDetails/messageDetails",

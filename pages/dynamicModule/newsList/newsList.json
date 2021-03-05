@@ -2,7 +2,9 @@
   "navigationBarTitleText": "新闻列表",
   "usingComponents": {
     "van-toast": "vant-weapp/toast/index",
-    "van-sidebar": "vant-weapp/sidebar/index",
-    "van-sidebar-item": "vant-weapp/sidebar-item/index"
+    "van-image": "vant-weapp/image/index",
+    "van-dropdown-menu": "vant-weapp/dropdown-menu/index",
+    "van-dropdown-item": "vant-weapp/dropdown-item/index",
+    "component-noData": "/pages/components/noData/noData"
   }
 }
