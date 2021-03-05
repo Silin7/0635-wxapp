@@ -115,8 +115,6 @@
   color: #333333;
 }
 
-
-
 /* 导航栏 */
 .van-tabs__line {
   background-color: #FFFFFF !important;
@@ -127,9 +125,6 @@
   font-size: 16px !important;
   letter-spacing: 2px !important;
 }
-
-
-
 
 /* DropdownMenu 下拉菜单 */
 .dropdown_cell {
