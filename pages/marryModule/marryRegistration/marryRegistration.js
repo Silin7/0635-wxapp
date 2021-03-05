@@ -182,7 +182,7 @@ Page({
               _this.data.dataForm.message_type = '02'
             }
           }
-          esRequest('permessage_send', _this.data.dataForm).then(res => {
+          esRequest('permessage_active', _this.data.dataForm).then(res => {
             if (res && res.data.code === 0) {
               Toast.success('发送成功')
               setTimeout(function () {

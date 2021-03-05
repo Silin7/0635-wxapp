@@ -3,7 +3,6 @@ import Toast from '../../../miniprogram_npm/vant-weapp/toast/toast';
 
 Page({
   data: {
-    id_key: '',
     windowHeight: 0,
     topShow: false,
     dynamicPage: 1,

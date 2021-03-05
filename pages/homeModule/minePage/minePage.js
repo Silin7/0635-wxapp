@@ -66,7 +66,7 @@ Page({
   // 获取个人信息
   getMineInfo: function () {
     let data = {
-      id: this.data.id_key
+      id: wx.getStorageSync('id_key')
     }
     esRequest('mine_info', data).then (res => {
       if (res && res.data.code === 0) {
@@ -163,10 +163,8 @@ Page({
   
   // 编辑个人资料
   personalData: function () {
-    let id = this.data.id_key.toString()
-    id = id.substr(1)
     wx.navigateTo({
-      url: '/pages/mineModule/personalData/personalData?id=' + id,
+      url: '/pages/mineModule/personalData/personalData'
     })
   }
 })

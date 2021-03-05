@@ -29,9 +29,8 @@ Page({
 
   onLoad: function (options) {
     this.setData({
-      id_key: options.id
+      id_key: wx.getStorageSync('id_key').toString().substr(1)
     })
-    this.getMineInfo()
   },
 
   onReady: function () {
@@ -42,6 +41,7 @@ Page({
   },
 
   onShow: function () {
+    this.getMineInfo()
   },
 
   // 获取个人信息
@@ -170,14 +170,7 @@ Page({
       this.data.dataForm.id = wx.getStorageSync('id_key')
       esRequest('update_mineInfo', this.data.dataForm).then(res => {
         if (res && res.data.code === 0) {
-          let userIfo = {
-            id: _this.data.dataForm.id,
-            nickName: _this.data.dataForm.nickName,
-            avatarUrl: _this.data.dataForm.avatarUrl,
-            userPhone: _this.data.dataForm.userPhone,
-            gender: _this.data.dataForm.gender,
-          }
-          wx.setStorageSync('userIfo', userIfo)
+          wx.setStorageSync('userIfo', this.data.dataForm)
           wx.setStorageSync('tp_key', '02')
           Toast.success('操作成功')
           setTimeout(() => {

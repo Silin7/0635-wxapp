@@ -21,4 +21,4 @@
   <view wx:if="{{messageData.message_type === '01'}}" class="remark">*注：点击同意按钮后，系统会将您个人中心中绑定的手机号推送给对方，请确认您的手机号与微信同号</view>
 </view>
 
-  
+<!-- message_type： 01（社交消息），02（社交回复），03（活动消息） -->

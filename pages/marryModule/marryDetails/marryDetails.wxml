@@ -1,5 +1,9 @@
 <van-toast id="van-toast" />
 
+<component-loginTips mask-closable="{{false}}" show="{{loginShow}}" buttontap="dialogButtontap">
+  <view class="fs_14 ls_2 m_t_15">登录后的世界才更美妙</view>
+</component-loginTips>
+
 <component-dialog title="关注TA" show="{{dialogShow}}" buttons="{{dialogButtons}}" bindbuttontap="tapDialogButton" >
   <view class="fs_14 ls_2 m_t_15">您确定要关注Ta吗？</view>
 </component-dialog>

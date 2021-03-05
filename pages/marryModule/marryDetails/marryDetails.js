@@ -3,6 +3,7 @@ import Toast from '../../../miniprogram_npm/vant-weapp/toast/toast';
 
 Page({
   data: {
+    loginShow: false,
     id_key: '',
     register_id: '',
     windowWidth: 0,
@@ -15,7 +16,6 @@ Page({
   },
 
   onLoad: function (options) {
-    this.data.id_key = wx.getStorageSync('id_key').toString()
     this.data.register_id = options.register_id ? options.register_id : ''
   },
 
@@ -28,13 +28,6 @@ Page({
 
   onShow: function () {
     this.marryDetails()
-    if (wx.getStorageSync('userIfo')) {
-      this.setData({
-        userInfo: wx.getStorageSync('userIfo')
-      })
-    } else {
-      this.getUserInfo()
-    }
   },
 
   // 点击首页轮播图
@@ -71,7 +64,7 @@ Page({
   // 本人信息
   getUserInfo: function () {
     let data = {
-      id: this.data.id_key
+      id: wx.getStorageSync('id_key')
     }
     esRequest('mine_info',data).then(res => {
       if (res && res.data.code === 0) {
@@ -85,29 +78,45 @@ Page({
 
   // 关注Ta
   btnGz: function () {
-    this.setData({
-      dialogShow: true
-    })
+    if (!wx.getStorageSync('id_key')) {
+      this.setData({ loginShow: true })
+    } else {
+      if (wx.getStorageSync('userIfo')) {
+        this.setData({ userInfo: wx.getStorageSync('userIfo') })
+      } else {
+        this.getUserInfo()
+      }
+      this.setData({ dialogShow: true })
+    }
   },
 
   // 要微信 / 求约会
   btnWY: function (e) {
-    let data = {
-      register_id: this.data.personDetails.register_id,
-      followers_id: this.data.userInfo.id
-    }
-    esRequest('marry_issign', data).then(res => {
-      if (res && res.data.code === 0) {
-        if (res.data.type === '0') {
-          wx.navigateTo({
-            url: `/pages/marryModule/marryRegistration/marryRegistration?receiver_id=${this.data.personDetails.user_id}&register_id=${this.data.personDetails.register_id}&gender=${this.data.personDetails.gender}`
-          })
-        }
-        if (res.data.type === '1') {
-          Toast.success('您已经报名')
-        }
+    if (!wx.getStorageSync('id_key')) {
+      this.setData({ loginShow: true })
+    } else {
+      if (wx.getStorageSync('userIfo')) {
+        this.setData({ userInfo: wx.getStorageSync('userIfo') })
+      } else {
+        this.getUserInfo()
       }
-    })
+      let data = {
+        register_id: this.data.personDetails.register_id,
+        followers_id: this.data.userInfo.id
+      }
+      esRequest('marry_issign', data).then(res => {
+        if (res && res.data.code === 0) {
+          if (res.data.type === '0') {
+            wx.navigateTo({
+              url: `/pages/marryModule/marryRegistration/marryRegistration?receiver_id=${this.data.personDetails.user_id}&register_id=${this.data.personDetails.register_id}&gender=${this.data.personDetails.gender}`
+            })
+          }
+          if (res.data.type === '1') {
+            Toast.success('已发送消息')
+          }
+        }
+      })
+    }
   },
 
   // 关注确定按钮
@@ -141,5 +150,12 @@ Page({
         }
       })
     }
+  },
+
+  // 未登录跳转倒登录界面
+  dialogButtontap() {
+    wx.navigateTo({
+      url: '/pages/loginModule/loginPage/loginPage'
+    })
   }
 })

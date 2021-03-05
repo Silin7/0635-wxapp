@@ -13,7 +13,6 @@ Page({
 
   onLoad: function (options) {
     this.data.appointmentId = options.id ? options.id : ''
-    this.getAppointmentDetails()
   },
 
   onReady: function () {
@@ -21,6 +20,10 @@ Page({
       windowWidth: wx.getSystemInfoSync().windowWidth,
       windowHeight: wx.getSystemInfoSync().windowHeight
     })
+  },
+
+  onShow: function () {
+    this.getAppointmentDetails()
   },
 
   // 线下活动详情

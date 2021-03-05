@@ -17,9 +17,6 @@ Page({
   },
 
   onLoad: function (options) {
-    this.setData({
-      id_key: wx.getStorageSync('id_key').toString()
-    })
     this.data.messageId = options.id ? options.id : ''
   },
 
@@ -44,7 +41,7 @@ Page({
   // 获取个人信息
   getMineInfo: function () {
     let data = {
-      id: this.data.id_key
+      id: wx.getStorageSync('id_key')
     }
     esRequest('mine_info', data).then (res => {
       if (res && res.data.code === 0) {
@@ -78,21 +75,47 @@ Page({
 
   // 欣然同意
   gladlyConsent: function () {
-    this.setData({
-      dialogType: '01',
-      dialogShow: true,
-      dialogTitle: '欣然同意',
-      dialogText: '一段微妙的缘分就要开始咯！'
+    let data = {
+      register_id: this.data.messageId,
+      followers_id: this.data.mineDataForm.id
+    }
+    esRequest('marry_issign', data).then(res => {
+      if (res && res.data.code === 0) {
+        if (res.data.type === '0') {
+          this.setData({
+            dialogType: '01',
+            dialogShow: true,
+            dialogTitle: '欣然同意',
+            dialogText: '一段微妙的缘分就要开始咯！'
+          })
+        }
+        if (res.data.type === '1') {
+          Toast.success('已经回复了')
+        }
+      }
     })
   },
 
   // 残忍拒绝
   cruelRefusal: function () {
-    this.setData({
-      dialogType: '02',
-      dialogShow: true,
-      dialogTitle: '残忍拒绝',
-      dialogText: '拒绝之后你们就永远错过了呢！'
+    let data = {
+      register_id: this.data.messageId,
+      followers_id: this.data.mineDataForm.id
+    }
+    esRequest('marry_issign', data).then(res => {
+      if (res && res.data.code === 0) {
+        if (res.data.type === '0') {
+          this.setData({
+            dialogType: '02',
+            dialogShow: true,
+            dialogTitle: '残忍拒绝',
+            dialogText: '拒绝之后你们就永远错过了呢！'
+          })
+        }
+        if (res.data.type === '1') {
+          Toast.success('已经回复了')
+        }
+      }
     })
   },
 
@@ -105,54 +128,52 @@ Page({
       Toast.success('取消')
     }
     if (e.detail.index === 1) {
-      if (this.data.dialogType === '01') {
-        let data = {
-          receiver_id: this.data.messageData.sender_id,
-          sender_id: this.data.id_key,
-          sender_name: this.data.mineDataForm.nickName,
-          sender_img: this.data.mineDataForm.avatarUrl,
-          message_title: `来自${this.data.mineDataForm.nickName}的消息回复`,
-          message_content: `谢谢你的喜欢哟，我的微信号是<span style="color: #4545FF;">${this.data.mineDataForm.userPhone}</span>，期待我们的缘分鸭。`,
-          message_type: '02'
-        }
-        esRequest('permessage_send', data).then(res => {
-          if (res && res.data.code === 0) {
-            Toast.success('发送成功')
-            if (res.data.type === '1') {
-              Toast.success('已经回复过啦')
-            }
-            if (res.data.type === '0') {
-              Toast.success('发送成功')
-            }
-          } else {
-            Toast.fail('系统错误')
-          }
-        })
+      let data = {
+        register_id: this.data.messageId,
+        followers_id: this.data.mineDataForm.id
       }
-      if (this.data.dialogType === '02') {
-        let data = {
-          receiver_id: this.data.messageData.sender_id,
-          sender_id: this.data.id_key,
-          sender_name: this.data.mineDataForm.nickName,
-          sender_img: this.data.mineDataForm.avatarUrl,
-          message_title: `来自${this.data.mineDataForm.nickName}的消息回复`,
-          message_content: `谢谢你的喜欢哟，我还没有准备好，期待我们的下一场缘分吧。`,
-          message_type: '02'
-        }
-        esRequest('permessage_send', data).then(res => {
-          if (res && res.data.code === 0) {
-            Toast.success('发送成功')
-            if (res.data.type === '1') {
-              Toast.success('已经回复过啦')
+      esRequest('marry_sign', data).then(res => {
+        if (res && res.data.code === 0) {
+          if (this.data.dialogType === '01') {
+            let data = {
+              receiver_id: this.data.messageData.sender_id,
+              sender_id: this.data.mineDataForm.id,
+              sender_name: this.data.mineDataForm.nickName,
+              sender_img: this.data.mineDataForm.avatarUrl,
+              message_title: `来自${this.data.mineDataForm.nickName}的消息回复`,
+              message_content: `谢谢你的喜欢哟，我的微信号是<span style="color: #4545FF;">${this.data.mineDataForm.userPhone}</span>，期待我们的缘分鸭。`,
+              message_type: '02'
             }
-            if (res.data.type === '0') {
-              Toast.success('发送成功')
-            }
-          } else {
-            Toast.fail('系统错误')
+            esRequest('permessage_active', data).then(res => {
+              if (res && res.data.code === 0) {
+                Toast.success('发送成功')
+              } else {
+                Toast.fail('系统错误')
+              }
+            })
           }
-        })
-      }
+          if (this.data.dialogType === '02') {
+            let data = {
+              receiver_id: this.data.messageData.sender_id,
+              sender_id: this.data.mineDataForm.id,
+              sender_name: this.data.mineDataForm.nickName,
+              sender_img: this.data.mineDataForm.avatarUrl,
+              message_title: `来自${this.data.mineDataForm.nickName}的消息回复`,
+              message_content: `谢谢你的喜欢哟，我还没有准备好，期待我们的下一场缘分吧。`,
+              message_type: '02'
+            }
+            esRequest('permessage_active', data).then(res => {
+              if (res && res.data.code === 0) {
+                Toast.success('发送成功')
+              } else {
+                Toast.fail('系统错误')
+              }
+            })
+          }
+        } else {
+          Toast.fail('系统错误')
+        }
+      })
     }
   }
 })
