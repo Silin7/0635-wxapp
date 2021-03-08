@@ -7,13 +7,11 @@ Page({
     windowHeight: 0,
     keyword: '',
     sidebarKey: 0,
+    isShow: true,
     recipeList: [],
     recipeItemList: []
   },
-
-  onLoad: function (options) {
-  },
-
+  
   onReady: function () {
     this.setData({
       windowWidth: wx.getSystemInfoSync().windowWidth,
@@ -24,9 +22,6 @@ Page({
       recipeList: Json.recipe_catalogs.data,
       recipeItemList: Json.recipe_catalogs.data[0].data
     })
-  },
-
-  onShow: function () {
   },
 
   // 搜索框value change
@@ -46,7 +41,11 @@ Page({
   // 侧边栏chenge
   sidebarChange: function (e) {
     this.setData({
-      recipeItemList: this.data.recipeList[e.detail].data
+      isShow: false
+    })
+    this.setData({
+      recipeItemList: this.data.recipeList[e.detail].data,
+      isShow: true
     })
   },
   

@@ -3,24 +3,18 @@ import Toast from '../../../miniprogram_npm/vant-weapp/toast/toast';
 
 Page({
   data: {
-    windowWidth: 0,
-    windowHeight: 0,
     keyword: '',
     recipeInfo: []
   },
+
   onLoad: function (options) {
-    this.data.keyword = options.keyword ? options.keyword : '红烧肉'
+    this.data.keyword = options.keyword ? options.keyword : ''
   },
-  onReady: function () {
-    this.setData({
-      windowWidth: wx.getSystemInfoSync().windowWidth,
-      windowHeight: wx.getSystemInfoSync().windowHeight
-    })
-  },
+
   onShow: function () {
-    console.log(this.data.keyword)
     this.getRecipeList()
   },
+
   // 获取菜单列表
   getRecipeList: function () {
     let data = {
@@ -36,6 +30,7 @@ Page({
       }
     })
   },
+
   // 菜谱详情
   recipeDetail: function (e) {
     wx.navigateTo({

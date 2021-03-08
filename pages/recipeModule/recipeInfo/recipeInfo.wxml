@@ -1,15 +1,10 @@
 <van-toast id="van-toast" />
 
-<view class="bg_F5 bs_bb p_10 oy_a" style="height: {{windowHeight}}px;">
-  <view wx:for="{{recipeInfo}}" wx:key="index" class="recipeInfo_item" bindtap="recipeDetail" data-item="{{item}}">
-    <view class="recipeInfo_item_img">
-      <image src="{{item.r.img}}" class="w_h_100"></image>
+<view class="recipe_box">
+  <view class="recipe_item" wx:for="{{recipeInfo}}" wx:key="index" bindtap="recipeDetail" data-item="{{item}}">
+    <view style="width: 100%;">
+      <van-image lazy-load width="100%" height="160" src="{{item.r.img}}" />
     </view>
-    <view class="recipeInfo_item_box bs_bb p_l_10" style="width: {{windowWidth-180}}px;">
-      <view class="recipeInfo_item_name to_2">{{item.r.n}}</view>
-      <view class="recipeInfo_item_cookstory to_2" wx:if="{{item.r.cookstory}}">{{item.r.cookstory}}</view>
-      <view class="recipeInfo_item_cookstory to_2" wx:else>这里有地道的“私房菜”，真正的“身边美食”。</view>
-      <view class="recipeInfo_item_an">作者：{{item.r.an ? item.r.an : "美食杰"}}</view>
-    </view>
+    <view class="recipe_title to_1">{{item.r.n}}</view>
   </view>
 </view>

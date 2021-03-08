@@ -139,12 +139,7 @@ Page({
       esRequest('follow_users', data).then(res => {
         if (res && res.data.code === 0) {
           wx.setStorageSync('tp_key', '04')
-          if (res.data.type === '1') {
-            Toast.success('已关注Ta啦')
-          }
-          if (res.data.type === '0') {
-            Toast.success('关注成功')
-          }
+          Toast.success('已关注')
         } else {
           Toast.fail('系统错误')
         }

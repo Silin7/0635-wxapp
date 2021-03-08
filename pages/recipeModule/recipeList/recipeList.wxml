@@ -5,7 +5,7 @@
   value="{{keyword}}"
   placeholder="请输入关键词"
   bind:change="searchChange"
-  background="#A084F1"
+  background="#CAE4DB"
   use-action-slot>
   <view slot="action" bind:tap="searchClick" class="co_F fw_7 ls_2">搜索</view>
 </van-search>
@@ -17,10 +17,9 @@
     </van-sidebar>
   </view>
   <view class="bs_bb bg_F oy_a p_10 sidebar_item_box" style="width: {{windowWidth-80}}px; height: {{windowHeight-54}}px;">
-   <view wx:for="{{recipeItemList}}" wx:key="index" class="recipe_item_title">
-      <view class="recipe_item_title_name">
-        <image wx:if="{{item.image_url}}" src="{{item.image_url}}" class="w_h_100"></image>
-        <image wx:else src="/images/homeModule/banner_xq.jpg" class="w_h_100"></image>
+   <view wx:if="{{isShow}}" wx:for="{{recipeItemList}}" wx:key="index" class="recipe_item_title">
+      <view wx:if="{{item.image_url}}" class="recipe_item_title_name">
+        <van-image lazy-load width="100%" height="100%" src="{{item.image_url}}"/>
       </view>
       <view class="sidebar_item_box">
         <view class="recipe_item" wx:for="{{item.data}}" wx:key="index" wx:for-item="item2" bindtap="recipeInfo" data-item="{{item2}}">
