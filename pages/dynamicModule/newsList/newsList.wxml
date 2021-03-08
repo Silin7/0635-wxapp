@@ -2,44 +2,44 @@
 
 <!-- DropdownMenu 下拉菜单 -->
 <van-dropdown-menu active-color="#4545FF">
-  <van-dropdown-item id="typeItem" title="{{typeTitle}}">
+  <van-dropdown-item id="typeItem" title="{{areaTitle}}">
     <view class="dropdown_cell">
-      <view class="dropdown_item_nomal {{ newsType == '' ? 'dropdown_item_active' : '' }}" bindtap="newsTap" data-id="" data-title="全部地区">全部地区</view>
-      <view class="dropdown_item_nomal {{ newsType == '09' ? 'dropdown_item_active' : '' }}" bindtap="newsTap" data-id="09" data-title="民间聊城">民间聊城</view>
-      <view class="dropdown_item_nomal {{ newsType == '01' ? 'dropdown_item_active' : '' }}" bindtap="newsTap" data-id="01" data-title="东昌府区">东昌府区</view>
+      <view class="dropdown_item_nomal {{ newsArea == '' ? 'dropdown_item_active' : '' }}" bindtap="areaTap" data-id="" data-title="全部地区">全部地区</view>
+      <view class="dropdown_item_nomal {{ newsArea == '01' ? 'dropdown_item_active' : '' }}" bindtap="areaTap" data-id="01" data-title="东昌府区">东昌府区</view>
+      <view class="dropdown_item_nomal {{ newsArea == '02' ? 'dropdown_item_active' : '' }}" bindtap="areaTap" data-id="02" data-title="阳谷县">阳谷县</view>
     </view>
     <view class="dropdown_cell">
-      <view class="dropdown_item_nomal {{ newsType == '02' ? 'dropdown_item_active' : '' }}" bindtap="newsTap" data-id="02" data-title="阳谷县">阳谷县</view>
-      <view class="dropdown_item_nomal {{ newsType == '03' ? 'dropdown_item_active' : '' }}" bindtap="newsTap" data-id="03" data-title="莘县">莘县</view>
-      <view class="dropdown_item_nomal {{ newsType == '04' ? 'dropdown_item_active' : '' }}" bindtap="newsTap" data-id="04" data-title="茌平区">茌平区</view>
+      <view class="dropdown_item_nomal {{ newsArea == '03' ? 'dropdown_item_active' : '' }}" bindtap="areaTap" data-id="03" data-title="莘县">莘县</view>
+      <view class="dropdown_item_nomal {{ newsArea == '04' ? 'dropdown_item_active' : '' }}" bindtap="areaTap" data-id="04" data-title="茌平区">茌平区</view>
+      <view class="dropdown_item_nomal {{ newsArea == '05' ? 'dropdown_item_active' : '' }}" bindtap="areaTap" data-id="05" data-title="东阿县">东阿县</view>
     </view>
     <view class="dropdown_cell">
-      <view class="dropdown_item_nomal {{ newsType == '05' ? 'dropdown_item_active' : '' }}" bindtap="newsTap" data-id="05" data-title="东阿县">东阿县</view>
-      <view class="dropdown_item_nomal {{ newsType == '06' ? 'dropdown_item_active' : '' }}" bindtap="newsTap" data-id="06" data-title="冠县">冠县</view>
-      <view class="dropdown_item_nomal {{ newsType == '07' ? 'dropdown_item_active' : '' }}" bindtap="newsTap" data-id="07" data-title="高唐县">高唐县</view>
+      <view class="dropdown_item_nomal {{ newsArea == '06' ? 'dropdown_item_active' : '' }}" bindtap="areaTap" data-id="06" data-title="冠县">冠县</view>
+      <view class="dropdown_item_nomal {{ newsArea == '07' ? 'dropdown_item_active' : '' }}" bindtap="areaTap" data-id="07" data-title="高唐县">高唐县</view>
+      <view class="dropdown_item_nomal {{ newsArea == '08' ? 'dropdown_item_active' : '' }}" bindtap="areaTap" data-id="08" data-title="临清市">临清市</view>
     </view>
     <view class="dropdown_cell">
-      <view class="dropdown_item_nomal {{ newsType == '08' ? 'dropdown_item_active' : '' }}" bindtap="newsTap" data-id="08" data-title="临清市">临清市</view>
+      <view class="dropdown_item_nomal {{ newsArea == '09' ? 'dropdown_item_active' : '' }}" bindtap="areaTap" data-id="09" data-title="民间故事">民间故事</view>
     </view>
   </van-dropdown-item>
   <van-dropdown-item id="classItem" title="{{classTitle}}">
     <view class="dropdown_cell">
-      <view class="dropdown_item_nomal {{ newsClass == '01' ? 'dropdown_item_active' : '' }}" bindtap="classTap" data-id="01" data-title="推荐">推荐</view>
-      <view class="dropdown_item_nomal {{ newsClass == '02' ? 'dropdown_item_active' : '' }}" bindtap="classTap" data-id="02" data-title="娱乐">娱乐</view>
-      <view class="dropdown_item_nomal {{ newsClass == '03' ? 'dropdown_item_active' : '' }}" bindtap="classTap" data-id="03" data-title="旅游">旅游</view>
+      <view class="dropdown_item_nomal {{ newsClass == '' ? 'dropdown_item_active' : '' }}" bindtap="classTap" data-id="" data-title="推荐">推荐</view>
+      <view class="dropdown_item_nomal {{ newsClass == '01' ? 'dropdown_item_active' : '' }}" bindtap="classTap" data-id="01" data-title="娱乐">娱乐</view>
+      <view class="dropdown_item_nomal {{ newsClass == '02' ? 'dropdown_item_active' : '' }}" bindtap="classTap" data-id="02" data-title="旅游">旅游</view>
     </view>
     <view class="dropdown_cell">
-      <view class="dropdown_item_nomal {{ newsClass == '04' ? 'dropdown_item_active' : '' }}" bindtap="classTap" data-id="04" data-title="养生">动漫</view>
-      <view class="dropdown_item_nomal {{ newsClass == '05' ? 'dropdown_item_active' : '' }}" bindtap="classTap" data-id="05" data-title="游戏">游戏</view>
-      <view class="dropdown_item_nomal {{ newsClass == '06' ? 'dropdown_item_active' : '' }}" bindtap="classTap" data-id="06" data-title="科技">科技</view>
+      <view class="dropdown_item_nomal {{ newsClass == '03' ? 'dropdown_item_active' : '' }}" bindtap="classTap" data-id="04" data-title="养生">动漫</view>
+      <view class="dropdown_item_nomal {{ newsClass == '04' ? 'dropdown_item_active' : '' }}" bindtap="classTap" data-id="05" data-title="游戏">游戏</view>
+      <view class="dropdown_item_nomal {{ newsClass == '05' ? 'dropdown_item_active' : '' }}" bindtap="classTap" data-id="06" data-title="科技">科技</view>
     </view>
     <view class="dropdown_cell">
-      <view class="dropdown_item_nomal {{ newsClass == '07' ? 'dropdown_item_active' : '' }}" bindtap="classTap" data-id="07" data-title="历史">历史</view>
-      <view class="dropdown_item_nomal {{ newsClass == '08' ? 'dropdown_item_active' : '' }}" bindtap="classTap" data-id="08" data-title="军事">军事</view>
-      <view class="dropdown_item_nomal {{ newsClass == '09' ? 'dropdown_item_active' : '' }}" bindtap="classTap" data-id="09" data-title="财经">财经</view>
+      <view class="dropdown_item_nomal {{ newsClass == '06' ? 'dropdown_item_active' : '' }}" bindtap="classTap" data-id="07" data-title="历史">历史</view>
+      <view class="dropdown_item_nomal {{ newsClass == '07' ? 'dropdown_item_active' : '' }}" bindtap="classTap" data-id="08" data-title="军事">军事</view>
+      <view class="dropdown_item_nomal {{ newsClass == '08' ? 'dropdown_item_active' : '' }}" bindtap="classTap" data-id="09" data-title="财经">财经</view>
     </view>
     <view class="dropdown_cell">
-      <view class="dropdown_item_nomal {{ newsClass == '10' ? 'dropdown_item_active' : '' }}" bindtap="classTap" data-id="10" data-title="其他">其他</view>
+      <view class="dropdown_item_nomal {{ newsClass == '09' ? 'dropdown_item_active' : '' }}" bindtap="classTap" data-id="10" data-title="其他">其他</view>
     </view>
   </van-dropdown-item>
 </van-dropdown-menu>

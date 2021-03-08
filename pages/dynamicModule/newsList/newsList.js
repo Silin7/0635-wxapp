@@ -7,7 +7,7 @@ Page({
     windowWidth: 0,
     windowHeight: 0,
     newsType: '01',
-    typeTitle: '全部地区',
+    areaTitle: '全部地区',
     newsArea: '',
     classTitle: '全部分类',
     newsClass: '',
@@ -28,11 +28,12 @@ Page({
     })
   },
 
-  newsTap: function (e) {
+  // 切换地区
+  areaTap: function (e) {
     this.setData({
       newsType: '01',
       newsList: [],
-      typeTitle: e.currentTarget.dataset.title,
+      areaTitle: e.currentTarget.dataset.title,
       newsArea: e.currentTarget.dataset.id,
       classTitle: '全部分类',
       newsClass: '',
@@ -41,13 +42,14 @@ Page({
     this.getNewsList()
   },
 
+  // 切换分类
   classTap: function (e) {
     this.setData({
       newsType: '02',
       newsList: [],
       classTitle: e.currentTarget.dataset.title,
       newsClass: e.currentTarget.dataset.id,
-      typeTitle: '全部地区',
+      areaTitle: '全部地区',
       newsArea: '',
     })
     this.selectComponent('#classItem').toggle(false);
