@@ -1,6 +1,5 @@
 .news_title {
   box-sizing: border-box;
-  /* height: 60px; */
   padding: 0 5px;
   display: flex;
   justify-content: center;
@@ -9,22 +8,12 @@
   line-height: 30px;
   letter-spacing: 1px;
 }
-.news_ptime {
+
+.news_info {
   box-sizing: border-box;
-  height: 30px;
-  padding-right: 10px;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  color: #666666;
-  font-size: 14px;
-}
-.sub_module1 {
-  box-sizing: border-box;
-  width: 100vw;
+  width: 100%;
   padding: 10px;
-  background-color: #FFFFFF;
-  color: #333333;
   line-height: 30px;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
+  color: #333333;
 }

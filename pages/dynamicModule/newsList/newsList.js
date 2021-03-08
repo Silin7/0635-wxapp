@@ -87,8 +87,8 @@ Page({
 
   // 新闻详情
   getNewsDetalis: function (e) {
-    // wx.navigateTo({
-    //   url: '/pages/dynamicModule/newsDetails/newsDetails?newsId=' + e.currentTarget.dataset.item.newsId
-    // })
+    wx.navigateTo({
+      url: '/pages/dynamicModule/newsDetails/newsDetails?newsId=' + e.currentTarget.dataset.item.id
+    })
   }
 })

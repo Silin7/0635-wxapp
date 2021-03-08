@@ -1,9 +1,8 @@
 <van-toast id="van-toast" />
 
-<view class="news_title to_2">{{newsDetails.title}}</view>
-<!-- <view class="news_ptime">{{newsDetails.ptime}}</view> -->
+<view class="news_title to_2">{{newsDetails.journalism_title}}</view>
 
 <!-- 新闻内容 -->
-<view class="sub_module1">
-  <rich-text nodes="{{newsContent}}"></rich-text>
+<view class="news_info">
+  <rich-text nodes="{{newsDetails.journalism_info}}"></rich-text>
 </view>
