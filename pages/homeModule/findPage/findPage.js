@@ -69,7 +69,7 @@ Page({
         url: '/pages/appointmentModule/appointmentDetails/appointmentDetails?id=' + e.currentTarget.dataset.item.advertisement_id
       })
     }
-    // 03：新闻
+    // 03：广告
     if (e.currentTarget.dataset.item.type_id === '03') {
       wx.navigateTo({
         url: '/pages/dynamicModule/advertisement/advertisement?id=' + e.currentTarget.dataset.item.id + '&type=1'
