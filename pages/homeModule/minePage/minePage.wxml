@@ -16,15 +16,17 @@
         <view class="fs_12 ls_1">ID号：<text class="fw_7 fs_13">{{filter.licensePlate(id_key)}}</text></view>
       </view>
       <!-- 我的关注 -->
-      <view class="personal_info1_right" bindtap="myConcerns">
-        <view class="personal_info1_right_item">
-          <view class="p_l_6">{{follow}}</view>
-          <view></view>
-          <view class="p_r_6">{{collection}}</view>
-        </view>
-        <view class="personal_info1_right_item">
+      <view class="personal_info1_right">
+        <view class="personal_info1_right_item" bindtap="myConcerns">
+          <view>{{follow}}</view>
           <view>关注</view>
+        </view>
+        <view class="personal_info1_right_item" style="width: 10px;">
+          <view class="personal_info1_right_item_cs"></view>
           <view class="fs_12">|</view>
+        </view>
+        <view class="personal_info1_right_item" bindtap="myCollection">
+          <view>{{collection}}</view>
           <view>收藏</view>
         </view>
       </view>

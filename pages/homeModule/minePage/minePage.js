@@ -24,6 +24,7 @@ Page({
         id_key: wx.getStorageSync('id_key').toString()
       })
       this.concernsList()
+      this.collectionList()
       this.getMineInfo()
       this.mineScenicspotList()
     }
@@ -51,6 +52,9 @@ Page({
       }
       if (wx.getStorageSync('tp_key') === '04') {
         this.concernsList()
+      }
+      if (wx.getStorageSync('tp_key') === '05') {
+        this.collectionList()
       }
       wx.setStorageSync('tp_key', '01')
     }
@@ -140,7 +144,7 @@ Page({
     })
   },
 
-  // 我关注的人（number）
+  // 我的关注(number)
   concernsList: function () {
     let data = {
       followers_id: this.data.id_key
@@ -154,10 +158,31 @@ Page({
     })
   },
 
+  // 我的收藏(number)
+  collectionList: function () {
+    let data = {
+      followers_id: this.data.id_key
+    }
+    esRequest('collection_count', data).then(res => {
+      if (res && res.data.code === 0) {
+        this.setData({
+          collection: res.data.data
+        })
+      }
+    })
+  },
+
   // 跳转到我的关注
   myConcerns: function () {
     wx.navigateTo({
-      url: '/pages/mineModule/myConcerns/myConcerns',
+      url: '/pages/mineModule/myConcerns/myConcerns?type=01',
+    })
+  },
+
+  // 跳转到我的收藏
+  myCollection: function () {
+    wx.navigateTo({
+      url: '/pages/mineModule/myConcerns/myConcerns?type=02',
     })
   },
   

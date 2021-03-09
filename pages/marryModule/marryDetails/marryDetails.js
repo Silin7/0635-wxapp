@@ -4,7 +4,6 @@ import Toast from '../../../miniprogram_npm/vant-weapp/toast/toast';
 Page({
   data: {
     loginShow: false,
-    id_key: '',
     register_id: '',
     windowWidth: 0,
     windowHeight: 0,
@@ -130,7 +129,7 @@ Page({
     if (e.detail.index === 1) {
       let _this = this
       let data = {
-        followers_id: _this.data.id_key,
+        followers_id: wx.getStorageSync('id_key').toString(),
         watched_id: _this.data.personDetails.register_id,
         nick_name: _this.data.personDetails.nick_name,
         photo: _this.data.personDetails.photo1,

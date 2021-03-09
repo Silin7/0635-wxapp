@@ -73,12 +73,12 @@ Page({
         followers_id: wx.getStorageSync('id_key').toString(),
         menu_id: _this.data.menuId,
         menu_name: _this.data.menuDetails.title,
-        menu_info: _this.data.menuDetails.photo_path,
-        menu_image: `时间：${_this.data.menuDetails.cook_time ? _this.data.menuDetails.cook_time : '暂未评估'}，难度：${_this.data.menuDetails.cook_difficulty ? _this.data.menuDetails.cook_difficulty : '暂未评估'}`
+        menu_image: _this.data.menuDetails.photo_path,
+        menu_info: `时间：${_this.data.menuDetails.cook_time ? _this.data.menuDetails.cook_time : '暂未评估'}，难度：${_this.data.menuDetails.cook_difficulty ? _this.data.menuDetails.cook_difficulty : '暂未评估'}`
       }
       esRequest('follow_collection', data).then(res => {
         if (res && res.data.code === 0) {
-          wx.setStorageSync('tp_key', '04')
+          wx.setStorageSync('tp_key', '05')
           Toast.success('已收藏')
         } else {
           Toast.fail('系统错误')
