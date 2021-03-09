@@ -136,7 +136,6 @@ Page({
     }
   },
 
-
   // 个人私信下拉刷新
   permessagerePull: function () {
     this.setData({

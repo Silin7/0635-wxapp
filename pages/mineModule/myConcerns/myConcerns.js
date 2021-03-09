@@ -24,17 +24,7 @@ Page({
         type: options.type
       })
     }
-  },
-
-  onReady: function () {
-    this.setData({
-      windowWidth: wx.getSystemInfoSync().windowWidth,
-      windowHeight: wx.getSystemInfoSync().windowHeight
-    })
-  },
-  
-  onShow: function () {
-    if (this.data.type == '01') {
+    if (options.type == '01') {
       wx.setNavigationBarTitle({
         title: '我的关注'
       })
@@ -44,7 +34,7 @@ Page({
       })
       this.getConcernsList()
     }
-    if (this.data.type == '02') {
+    if (options.type == '02') {
       wx.setNavigationBarTitle({
         title: '我的收藏'
       })
@@ -54,6 +44,13 @@ Page({
       })
       this.getCollectionList()
     }
+  },
+
+  onReady: function () {
+    this.setData({
+      windowWidth: wx.getSystemInfoSync().windowWidth,
+      windowHeight: wx.getSystemInfoSync().windowHeight
+    })
   },
 
   // 我的关注

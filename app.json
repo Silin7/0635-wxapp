@@ -52,6 +52,7 @@
     "pages/components/footTabbar/footTabbar",
     "pages/components/loading/loading",
     "pages/components/noData/noData",
+    "pages/index2/index",
     "pages/topicModule/topicList/topicList"
   ],
   "tabBar": {

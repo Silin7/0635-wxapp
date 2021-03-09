@@ -60,16 +60,22 @@ Page({
     // 01：相亲
     if (e.currentTarget.dataset.item.type_id === '01') {
       wx.navigateTo({
-        url: '/pages/marryModule/marryDetails/marryDetails?user_id=' + e.currentTarget.dataset.item.author_id
+        url: '/pages/marryModule/marryDetails/marryDetails?register_id=' + e.currentTarget.dataset.item.advertisement_id
       })
     }
-    // 02：新闻
+    // 02：活动
     if (e.currentTarget.dataset.item.type_id === '02') {
+      wx.navigateTo({
+        url: '/pages/appointmentModule/appointmentDetails/appointmentDetails?id=' + e.currentTarget.dataset.item.advertisement_id
+      })
+    }
+    // 03：新闻
+    if (e.currentTarget.dataset.item.type_id === '03') {
       wx.navigateTo({
         url: '/pages/dynamicModule/advertisement/advertisement?id=' + e.currentTarget.dataset.item.id + '&type=1'
       })
     }
-    // 03：普通
+    
   },
   
   // 同城动态触底函数
