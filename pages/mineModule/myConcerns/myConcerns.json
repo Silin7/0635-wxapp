@@ -3,9 +3,6 @@
   "usingComponents": {
     "van-toast": "vant-weapp/toast/index",
     "van-image": "vant-weapp/image/index",
-    "van-dialog": "vant-weapp/dialog/index",
-    "van-tab": "vant-weapp/tab/index",
-    "van-tabs": "vant-weapp/tabs/index",
-    "component-loading": "/pages/components/loading/loading"
+    "component-dialog": "/pages/components/wxdialog/wxdialog"
   }
 }

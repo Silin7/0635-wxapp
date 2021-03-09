@@ -17,7 +17,7 @@ let mineRequest = {
   concerns_list: {
     apiMethod: 'GET',
     apiName: '/mine/concerns_list',
-    name: '我关注的人列表（参数：followers_id）'
+    name: '我关注的人列表（参数：page, limit, followers_id）'
   },
   follow_users: {
     apiMethod: 'POST',
@@ -37,7 +37,7 @@ let mineRequest = {
   collection_list: {
     apiMethod: 'GET',
     apiName: '/mine/collection_list',
-    name: '我的收藏列表（参数：followers_id）'
+    name: '我的收藏列表（参数：page, limit, followers_id）'
   },
   follow_collection: {
     apiMethod: 'POST',

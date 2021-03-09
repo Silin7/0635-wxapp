@@ -1,5 +1,6 @@
 .follow_list {
-  padding: 10px;
+  box-sizing: border-box;
+  padding: 0px 10px 10px;
 }
 .follow_item {
   display: flex;

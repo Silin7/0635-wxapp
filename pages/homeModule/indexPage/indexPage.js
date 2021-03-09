@@ -135,7 +135,7 @@ Page({
   // testBind4
   testBind4: function () {
     wx.navigateTo({
-      url: '/pages/otherModule/jokesRandom/jokesRandom'
+      url: '/pages/recipeModule/recipeList/recipeList'
     })
   },
 

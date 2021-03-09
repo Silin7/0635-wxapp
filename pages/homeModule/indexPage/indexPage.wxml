@@ -98,7 +98,7 @@
     <view class="sub_module2_item1_01" bindtap="testBind4">
       <van-image lazy-load width="100%" height="100%" src="/images/homeModule/banner_xq.jpg"/>
       <view class="item_banner_mask1"></view>
-      <view class="item_banner_text2">测试测试</view>
+      <view class="item_banner_text2">菜谱</view>
     </view>
     <view class="sub_module2_item1_02" bindtap="testBind5">
       <van-image lazy-load width="100%" height="100%" src="/images/homeModule/banner_xq.jpg"/>
