@@ -1,6 +1,5 @@
 import esRequest from '../../../utils/esRequest';
 import Toast from '../../../miniprogram_npm/vant-weapp/toast/toast';
-import Dialog from '../../../miniprogram_npm/vant-weapp/dialog/dialog';
 
 Page({
   data: {
@@ -16,7 +15,10 @@ Page({
     perMessageList: [],
     sysMessageNo: false,
     sysMessageList: [],
-    triggered: true
+    triggered: true,
+    parameterDate: {},
+    dialogShow: false,
+    dialogButtons: [{text: '取消'}, {text: '确定'}],
   },
 
   onLoad: function (options) {
@@ -100,14 +102,30 @@ Page({
 
   // 删除个人私信
   permessageDelete: function (e) {
-    Dialog.confirm({
-      title: '删除',
-      message: '您确定要删除这条信息吗？',
-    }).then(() => {
-      let data = {
-        id: e.currentTarget.dataset.item.id
-      }
-      esRequest('permessage_delete', data).then(res => {
+    this.setData({
+      dialogShow: true
+    })
+    this.data.parameterDate = {
+      id: e.currentTarget.dataset.item.id
+    }
+  },
+
+  // 删除个人私信确定按钮
+  tapDialogButton: function (e) {
+    this.setData({
+      dialogShow: false
+    })
+    if (e.detail.index === 0) {
+      Toast.success('取消')
+    }
+    if (e.detail.index === 1) {
+      this.setData({
+        page: 1,
+        limit: 10,
+        totalCount: 0,
+        perMessageList: []
+      })
+      esRequest('permessage_delete', this.data.parameterDate).then(res => {
         if (res && res.data.code === 0) {
           Toast.success('操作成功')
           this.getPerMessage()
@@ -115,10 +133,9 @@ Page({
           Toast.fail('系统错误')
         }
       })
-    }).catch(() => {
-      Toast.success('取消')
-    });
+    }
   },
+
 
   // 个人私信下拉刷新
   permessagerePull: function () {

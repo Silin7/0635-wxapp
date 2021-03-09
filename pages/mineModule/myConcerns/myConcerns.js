@@ -162,8 +162,8 @@ Page({
         })
       }
     }
-    
   },
+  
   // 跳转到关注的人详情
   myConcerns: function (e) {
     wx.navigateTo({

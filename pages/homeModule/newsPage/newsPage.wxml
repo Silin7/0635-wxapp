@@ -1,9 +1,12 @@
 <van-toast id="van-toast" />
-<van-dialog id="van-dialog" />
 
 <component-loginTips mask-closable="{{false}}" show="{{loginShow}}" buttontap="dialogButtontap">
   <view class="fs_14 ls_2 m_t_15">登录后的世界才更美妙</view>
 </component-loginTips>
+
+<component-dialog title="删除私信" show="{{dialogShow}}" buttons="{{dialogButtons}}" bindbuttontap="tapDialogButton" >
+  <view class="fs_14 ls_2 m_t_15">您确定要删除这条私信吗?</view>
+</component-dialog>
 
 <van-tabs active="{{messageTab}}" bind:change="messageTabChange" ellipsis="{{false}}" border="{{ false }}" swipeable sticky animated>
   <van-tab title="个人私信">
