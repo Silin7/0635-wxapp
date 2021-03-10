@@ -15,10 +15,10 @@
   <!-- 菜名 -->
   <view class="header_box">
     <view class="recipeDetail_name_box">
-      <view class="recipeDetail_name to_1" style="width: {{windowWidth-80}}px;">{{menuDetails.title}}</view>
-      <view class="recipeDetail_collection" bindtap="collectionMenu">
+      <view class="recipeDetail_name to_1" style="width: {{windowWidth-30}}px;">{{menuDetails.title}}</view>
+      <!-- <view class="recipeDetail_collection" bindtap="collectionMenu">
         <van-image lazy-load width="30" height="30" src="/images/marryModule/like_ta.png"/>
-      </view>
+      </view> -->
     </view>
     <view class="recipeDetail_date_box">
       <view class="recipeDetail_date">时间：<text class="recipeDetail_date_text">{{menuDetails.cook_time ? menuDetails.cook_time : '暂无'}}</text></view>
