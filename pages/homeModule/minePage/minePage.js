@@ -191,5 +191,13 @@ Page({
     wx.navigateTo({
       url: '/pages/mineModule/personalData/personalData'
     })
-  }
+  },
+
+   // 跳转到我的收藏
+   myDynamic: function () {
+    wx.navigateTo({
+      url: '/pages/mineModule/myDynamic/myDynamic',
+    })
+  },
+
 })

@@ -19,7 +19,7 @@
       <view class="personal_info1_right">
         <view class="personal_info1_right_item" bindtap="myConcerns">
           <view>{{follow}}</view>
-          <view>关注</view>
+          <view>喜欢</view>
         </view>
         <view class="personal_info1_right_item" style="width: 10px;">
           <view class="personal_info1_right_item_cs"></view>
@@ -27,7 +27,7 @@
         </view>
         <view class="personal_info1_right_item" bindtap="myCollection">
           <view>{{collection}}</view>
-          <view>收藏</view>
+          <view>关注</view>
         </view>
       </view>
     </view>
@@ -100,15 +100,16 @@
         </view>
         <view class="d_ib p_l_10">话题</view>
       </view>
-      <text class="dialog-close see_more p_t_5 fs_12 co_9" decode="true">查看更多 &gt;</text>
+      <!-- <text class="dialog-close see_more p_t_5 fs_12 co_9" decode="true">查看更多 &gt;</text> -->
+      <text class="dialog-close see_more p_t_5 fs_12 co_9" decode="true"> </text>
     </view>
-    <view class="my_conversation_center m_t_10">
+    <view class="my_conversation_center m_t_10" bindtap="myDynamic">
       <view class="my_conversation_center_box">
         <view class="my_conversation_center_img">
           <van-image lazy-load width="100%" height="100%" src="/images/homeModule/banner_xq.jpg" image-class="br_10"/>
         </view>
         <view class="my_conversation_center_text_box m_l_10">
-          <view class="my_conversation_center_text to_1 fs_14 ls_1">美食晒出来</view>
+          <view class="my_conversation_center_text to_1 fs_14 ls_1">我的动态</view>
           <view class="my_conversation_center_text to_1 fs_12 co_9 ls_1">美食啊晒出来美食啊晒出来美食啊晒出来美食啊晒出来美食啊晒出来美食啊晒出来美</view>
         </view>
       </view>
