@@ -1,7 +1,5 @@
 {
   "pages":[
-    "pages/dynamicModule/dynamicDeatils/dynamicDeatils",
-    "pages/mineModule/myDynamic/myDynamic",
     "pages/homeModule/indexPage/indexPage",
     "pages/homeModule/findPage/findPage",
     "pages/homeModule/newsPage/newsPage",
@@ -36,6 +34,9 @@
     "pages/dynamicModule/newsDetails/newsDetails",
     "pages/dynamicModule/advertisement/advertisement",
     "pages/dynamicModule/messageDetails/messageDetails",
+    "pages/dynamicModule/dynamicList/dynamicList",
+    "pages/dynamicModule/dynamicDeatils/dynamicDeatils",
+    "pages/mineModule/myDynamic/myDynamic",
     "pages/mineModule/myConcerns/myConcerns",
     "pages/mineModule/personalData/personalData",
     "pages/loginModule/loginPage/loginPage",

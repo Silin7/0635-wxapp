@@ -43,6 +43,13 @@ Page({
     })
   },
 
+  // 作者动态列表
+  authorDynamic: function (e) {
+    wx.navigateTo({
+      url: '/pages/dynamicModule/dynamicList/dynamicList?authorId=' + e.currentTarget.dataset.item.author_id
+    })
+  },
+
   // 查看大图或保存图片
   dynamicImg: function (e) {
     let current = e.currentTarget.dataset.item.image

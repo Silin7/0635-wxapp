@@ -3,14 +3,12 @@
 <page id="container">
   <!-- 发现 -->
   <view class="dynamic_item" wx:for="{{dynamicList}}" wx:key="index" bindtap="getDynamicDetalis" data-item="{{item}}">
-    <!-- 标签 -->
-    
     <!-- 作者信息 -->
-    <view class="dynamic_user_info">
-      <image src="{{item.author_avatar_url}}" class="dynamic_user_img"></image>
+    <view class="dynamic_user_info" bindtap="authorDynamic" data-item="{{item}}">
+      <van-image lazy-load width="50" height="50" src="{{item.author_avatar_url}}" image-class="br_10"/>
       <view class="dynamic_user_box">
         <view class="dynamic_user_name to_1">
-          <!-- 88 官方认证 -->
+          <!-- 官方认证 -->
           <view class="fx_r_s_c">
             <view wx:if="{{item.advertisement_id != null}}" class="dynamic_tag">官方</view>
             <view class="ls_1">{{item.author_name}}</view>

@@ -1,0 +1,48 @@
+<van-toast id="van-toast" />
+
+<component-loginTips mask-closable="{{false}}" show="{{loginShow}}" buttontap="dialogButtontap">
+  <view class="fs_14 ls_2 m_t_15">登录后的世界才更美妙</view>
+</component-loginTips>
+
+<component-dialog title="关注" show="{{dialogShow}}" buttons="{{dialogButtons}}" bindbuttontap="tapDialogButton" >
+  <view class="fs_14 ls_2 m_t_15">您确定要关注此用户吗？</view>
+</component-dialog>
+
+<view class="page_box">
+  <!-- 作者基本信息 -->
+  <view class="user_box">
+    <view class="user_image">
+      <van-image lazy-load width="60" height="60" src="{{authorInfo.avatarUrl}}" image-class="avatar_img"/>
+    </view>
+      <view class="nick_name">{{authorInfo.nickName}}</view>
+      <view class="personal_signature">{{authorInfo.personalSignature}}</view>
+      <view class="user_info">
+        <view class="appointment_tag_item" style="background-color: #F14668;">
+          <text class="appointment_tag_text">{{authorInfo.gender == '1' ? '男' : '女'}}</text>
+        </view>
+        <view class="appointment_tag_item" style="background-color: #FF5858;">
+          <text class="appointment_tag_text">{{authorInfo.age}}岁</text>
+        </view>
+        <view class="appointment_tag_item" style="background-color: #3A6351;">
+          <text class="appointment_tag_text">{{authorInfo.constellation}}</text>
+        </view>
+        <view class="appointment_tag_item" style="background-color: #4A3933;">
+          <text class="appointment_tag_text">{{authorInfo.address}}</text>
+        </view>
+      </view>
+      <view class="follow_box">
+        <view class="follow_text" bindtap="collectionuser">+关注</view>
+      </view>
+  </view>
+  <view wx:if="{{!dynamicNo}}" class="dynamic_item" wx:for="{{dynamicList}}" wx:key="inxex" bindtap="dynamicDeatils" data-item="{{item}}">
+    <van-image lazy-load width="80" height="110" wx:if="{{item.image}}" src="{{item.image}}" image-class="br_5" />
+    <view class="{{item.image ? 'dynamic_info1' : 'dynamic_info2'}}">
+      <view class="dynamic_content to_3">{{item.content}}</view>
+      <view class="create_delete">
+        <text class="create_time">{{item.create_time}}</text>
+      </view>
+    </view>
+  </view>
+  <!-- 暂无数据 -->
+  <component-noData wx:if="{{dynamicNo}}" height="{{windowHeight-210}}"></component-noData>
+</view>

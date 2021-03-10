@@ -1,5 +1,9 @@
 <van-toast id="van-toast" />
 
+<component-dialog title="删除" show="{{dialogShow}}" buttons="{{dialogButtons}}" bindbuttontap="tapDialogButton" >
+  <view class="fs_14 ls_2 m_t_15">您确定要删除这条动态吗？</view>
+</component-dialog>
+
 <view class="page_box">
   <!-- 作者基本信息 -->
   <view class="user_box">
@@ -23,14 +27,16 @@
         </view>
       </view>
   </view>
-  <view class="dynamic_item" wx:for="{{dynamicList}}" wx:key="inxex" bindtap="dynamicDeatils" data-item="{{item}}">
+  <view wx:if="{{!dynamicNo}}" class="dynamic_item" wx:for="{{dynamicList}}" wx:key="inxex" bindtap="dynamicDeatils" data-item="{{item}}">
     <van-image lazy-load width="80" height="110" wx:if="{{item.image}}" src="{{item.image}}" image-class="br_5" />
     <view class="{{item.image ? 'dynamic_info1' : 'dynamic_info2'}}">
       <view class="dynamic_content to_3">{{item.content}}</view>
       <view class="create_delete">
         <text class="create_time">{{item.create_time}}</text>
-        <text class="dynamic_delete">删除</text>
+        <text class="dynamic_delete" catchtap="cancelDynamic" data-item="{{item}}">删除</text>
       </view>
     </view>
   </view>
+  <!-- 暂无数据 -->
+  <component-noData wx:if="{{dynamicNo}}" height="{{windowHeight-160}}"></component-noData>
 </view>

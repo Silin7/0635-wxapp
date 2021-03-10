@@ -37,7 +37,7 @@
   </view>
   <view class="dynamic_comment">
     <view wx:for="{{commentList}}" wx:key="index" class="comment_item">
-      <view class="comment_user">
+      <view class="comment_user" bindtap="authorDynamic" data-item="{{item}}">
         <van-image lazy-load width="30" height="30" src="{{item.reviewer_image}}" image-class="br_15"/>
         <view class="reviewer_name" style="width: {{windowWidth-60}}px;">{{item.reviewer_name}}</view>
       </view>

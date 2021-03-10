@@ -9,6 +9,11 @@ let dynamicRequest = {
     apiName: '/dynamic/dynamic_details',
     name: '动态详情（参数: id）'
   },
+  cancel_dynamic: {
+    apiMethod: 'GET',
+    apiName: '/dynamic/cancel_dynamic',
+    name: '动态详情（参数: id, author_id）'
+  },
   write_comment: {
     apiMethod: 'POST',
     apiName: '/dynamic/write_comment',

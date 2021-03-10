@@ -3,6 +3,7 @@ import Toast from '../../../miniprogram_npm/vant-weapp/toast/toast';
 
 Page({
   data: {
+    loginShow: false,
     authorId: '',
     dynamicId: '',
     windowWidth: 0,
@@ -23,8 +24,8 @@ Page({
   },
 
   onLoad: function (options) {
-    this.data.authorId = options.authorId ? options.authorId : '100001'
-    this.data.dynamicId = options.dynamicId ? options.dynamicId : '12'
+    this.data.authorId = options.authorId ? options.authorId : ''
+    this.data.dynamicId = options.dynamicId ? options.dynamicId : ''
   },
 
   onReady: function () {
@@ -212,6 +213,13 @@ Page({
         })
       }
     }
+  },
+
+  // 评论区作者动态列表
+  authorDynamic: function (e) {
+    wx.navigateTo({
+      url: '/pages/dynamicModule/dynamicList/dynamicList?authorId=' + e.currentTarget.dataset.item.reviewer_id
+    })
   },
 
   // 未登录跳转倒登录界面
