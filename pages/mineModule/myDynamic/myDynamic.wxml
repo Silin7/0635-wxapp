@@ -1,0 +1,36 @@
+<van-toast id="van-toast" />
+
+<view class="page_box">
+  <!-- 作者基本信息 -->
+  <view class="user_box">
+    <view class="user_image">
+      <van-image lazy-load width="60" height="60" src="{{userInfo.avatarUrl}}" image-class="avatar_img"/>
+    </view>
+      <view class="nick_name">{{userInfo.nickName}}</view>
+      <view class="personal_signature">{{userInfo.personalSignature}}</view>
+      <view class="user_info">
+        <view class="appointment_tag_item" style="background-color: #F14668;">
+          <text class="appointment_tag_text">{{userInfo.gender == '1' ? '男' : '女'}}</text>
+        </view>
+        <view class="appointment_tag_item" style="background-color: #FF5858;">
+          <text class="appointment_tag_text">{{userInfo.age}}岁</text>
+        </view>
+        <view class="appointment_tag_item" style="background-color: #7868E6;">
+          <text class="appointment_tag_text">{{userInfo.constellation}}</text>
+        </view>
+        <view class="appointment_tag_item" style="background-color: #5b5b5b;">
+          <text class="appointment_tag_text">{{userInfo.address}}</text>
+        </view>
+      </view>
+  </view>
+  <view class="dynamic_item" wx:for="{{dynamicList}}" wx:key="inxex" bindtap="dynamicDeatils" data-item="{{item}}">
+    <van-image lazy-load width="80" height="110" wx:if="{{item.image}}" src="{{item.image}}" image-class="br_5" />
+    <view class="{{item.image ? 'dynamic_info1' : 'dynamic_info2'}}">
+      <view class="dynamic_content to_3">{{item.content}}</view>
+      <view class="create_delete">
+        <text class="create_time">{{item.create_time}}</text>
+        <text class="dynamic_delete">删除</text>
+      </view>
+    </view>
+  </view>
+</view>

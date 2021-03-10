@@ -1,0 +1,113 @@
+.page_box {
+  box-sizing: border-box;
+  background-color: #F7F8FA;
+  padding: 0px 0px 10px;
+}
+.user_box {
+  height: 150px;
+  background-color: #FFFFFF;
+  margin-bottom: 10px;
+}
+.user_image {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.avatar_img {
+  border-radius: 30px;
+}
+.nick_name {
+  box-sizing: border-box;
+  width: 100%;
+  height: 20px;
+  padding-left: 3px;
+  line-height: 20px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #000000;
+}
+.personal_signature {
+  width: 100%;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #999999;
+}
+.user_info {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.appointment_tag_item {
+  margin-right: 10px;
+  border-radius: 5px;
+}
+.appointment_tag_text {
+  height: 18px;
+  line-height: 22px;
+  margin: 0 10px;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+/*  */
+.dynamic_item {
+  box-sizing: border-box;
+  width: 96vw;
+  height: 150px;
+  margin: 0px auto 10px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+}
+.dynamic_info1 {
+  width: calc(96vw - 120px);
+  height: 120px;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+}
+.dynamic_info2 {
+  width: calc(96vw - 20px);
+  height: 130px;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+}
+.dynamic_content {
+  line-height: 30px;
+  font-size: 16px;
+  color: #333333;
+}
+.create_delete {
+  box-sizing: border-box;
+  width: 100%;
+  height: 20px;
+  padding: 0px 0px 0px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.create_time {
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #999999;
+}
+.dynamic_delete {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 5px;
+  color: #4545FF;
+}

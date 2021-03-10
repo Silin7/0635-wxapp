@@ -1,5 +1,7 @@
 {
   "pages":[
+    "pages/dynamicModule/dynamicDeatils/dynamicDeatils",
+    "pages/mineModule/myDynamic/myDynamic",
     "pages/homeModule/indexPage/indexPage",
     "pages/homeModule/findPage/findPage",
     "pages/homeModule/newsPage/newsPage",

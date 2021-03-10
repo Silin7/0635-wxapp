@@ -48,6 +48,11 @@ let mineRequest = {
     apiMethod: 'GET',
     apiName: '/mine/cancel_collection',
     name: '取消收藏菜谱（参数：followers_id, menu_id'
-  }
+  },
+  my_dynamic_list: {
+    apiMethod: 'GET',
+    apiName: '/mine/my_dynamic_list',
+    name: '我的动态列表（参数：page, limit, followers_id）'
+  },
 }
 module.exports = mineRequest

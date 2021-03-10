@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "动态详情",
+  "usingComponents": {
+    "van-toast": "vant-weapp/toast/index",
+    "van-image": "vant-weapp/image/index",
+    "van-cell": "vant-weapp/cell/index",
+    "van-field": "vant-weapp/field/index",
+    "component-dialog": "/pages/components/wxdialog/wxdialog",
+    "component-loginTips": "/pages/components/loginTips/loginTips"
+  }
+}
