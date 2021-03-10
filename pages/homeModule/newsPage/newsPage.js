@@ -204,7 +204,6 @@ Page({
   // 系统消息详情
   messageSystem: function (e) {
     wx.navigateTo({
-      // url: '/pages/messageModule/messageSystem/messageSystem?id=' + e.currentTarget.dataset.item.id
       url: '/pages/dynamicModule/advertisement/advertisement?id=' + e.currentTarget.dataset.item.id + '&type=2'
     })
   }

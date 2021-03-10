@@ -21,10 +21,11 @@
     </view>
     <!-- 动态内容 -->
     <view class="dynamic_rich_text">
-      <rich-text nodes="{{item.content}}"></rich-text>
+      <rich-text wx:if="{{item.type_id == '03'}}}}" nodes="{{item.introduce}}"></rich-text>
+      <rich-text wx:if="{{item.type_id != '03'}}" nodes="{{item.content}}"></rich-text>
     </view>
     <!-- 动态图片 -->
-    <view wx:if="{{item.image}}" catchtap="dynamicImg" data-item="{{item}}">
+    <view wx:if="{{item.image}}" catchtap="dynamicImg" data-item="{{item}}" class="m_t_10">
       <image src="{{item.image}}" class="dynamic_img"></image>
     </view>
   </view>
