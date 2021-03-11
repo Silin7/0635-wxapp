@@ -82,7 +82,14 @@ Page({
         url: '/pages/dynamicModule/advertisement/advertisement?id=' + e.currentTarget.dataset.item.id + '&type=1'
       })
     }
-    
+    // 09：用户上传
+    if (e.currentTarget.dataset.item.type_id === '09') {
+      let dynamicId = e.currentTarget.dataset.item.id
+      let authorId = e.currentTarget.dataset.item.author_id
+      wx.navigateTo({
+        url: `/pages/dynamicModule/dynamicDeatils/dynamicDeatils?dynamicId=${dynamicId}&authorId=${authorId}`
+      })
+    }
   },
   
   // 同城动态触底函数
