@@ -2,8 +2,10 @@
   "pages":[
     "pages/homeModule/indexPage/indexPage",
     "pages/homeModule/findPage/findPage",
+    "pages/homeModule/releasePage/releasePage",
     "pages/homeModule/newsPage/newsPage",
     "pages/homeModule/minePage/minePage",
+    "pages/releaseModule/releaseDynamic/releaseDynamic",
     "pages/recipeModule/recipeList/recipeList",
     "pages/recipeModule/recipeInfo/recipeInfo",
     "pages/recipeModule/recipeDetail/recipeDetail",
@@ -55,7 +57,6 @@
     "pages/components/footTabbar/footTabbar",
     "pages/components/loading/loading",
     "pages/components/noData/noData",
-    "pages/index2/index",
     "pages/topicModule/topicList/topicList"
   ],
   "tabBar": {
@@ -64,22 +65,27 @@
     "backgroundColor": "#FFFFFF",
     "list": [{
       "pagePath": "pages/homeModule/indexPage/indexPage",
-      "text": "首页",
+      "text": "首 页",
       "iconPath": "/images/homeModule/home_normal.png",
       "selectedIconPath": "/images/homeModule/home_active.png"
     },{
       "pagePath": "pages/homeModule/findPage/findPage",
-      "text": "发现",
+      "text": "发 现",
       "iconPath": "/images/homeModule/compass_normal.png",
       "selectedIconPath": "/images/homeModule/compass_active.png"
     },{
+      "pagePath": "pages/homeModule/releasePage/releasePage",
+      "text": "",
+      "iconPath": "/images/homeModule/release_normal.png",
+      "selectedIconPath": "/images/homeModule/release_active.png"
+    },{
       "pagePath": "pages/homeModule/newsPage/newsPage",
-      "text": "消息",
+      "text": "消 息",
       "iconPath": "/images/homeModule/news_normal.png",
       "selectedIconPath": "/images/homeModule/news_active.png"
     },{
       "pagePath": "pages/homeModule/minePage/minePage",
-      "text": "我的",
+      "text": "我 的",
       "iconPath": "/images/homeModule/mine_normal.png",
       "selectedIconPath": "/images/homeModule/mine_active.png"
     }]

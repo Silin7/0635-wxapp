@@ -173,7 +173,7 @@ Page({
   // 跳转到关注的人详情
   myCollection: function (e) {
     wx.navigateTo({
-      url: '/pages/dynamicModule/dynamicInfo/dynamicInfo?authorId=' + e.currentTarget.dataset.item.user_id
+      url: '/pages/dynamicModule/dynamicList/dynamicList?authorId=' + e.currentTarget.dataset.item.user_id
     })
   }
 })

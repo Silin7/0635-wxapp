@@ -1,0 +1,40 @@
+<van-toast id="van-toast" />
+
+<component-loginTips mask-closable="{{false}}" show="{{loginShow}}" buttontap="dialogButtontap">
+  <view class="fs_14 ls_2 m_t_15">登录后的世界才更美妙</view>
+</component-loginTips>
+
+<component-dialog title="发布动态" show="{{dialogShow}}" buttons="{{dialogButtons}}" bindbuttontap="tapDialogButton" >
+  <view class="fs_14 ls_2 m_t_15">您确定要发布这条动态吗？</view>
+</component-dialog>
+
+<view class="page_box" style="height: {{windowHeight-80}}px;">
+  <view class="dynamic_content">
+    <van-field
+      placeholder="记录生活点滴，分享给懂你的人..."
+      value="{{dynamicContent}}"
+      type="textarea"
+      autosize="{{autosize}}"
+      border="{{false}}"
+      maxlength="{{200}}"
+      bind:change="contentChange"/>
+  </view>
+
+  <view class="uploader_box">
+    <van-uploader
+      max-count="{{1}}"
+      file-list="{{uploadImgs}}"
+      center="{{true}}"
+      deletable="{{true}}"
+      preview-image="{{true}}"
+      preview-size="{{windowWidth-20}}"
+      bind:delete="deleteImg"
+      bind:after-read="afterRead"
+      upload-text="个人开发者资源有限，您只能上传一张图片哟~"/>
+  </view>
+</view>
+
+<!-- 底部按钮 -->
+<view class="sign_up">
+  <view class="sign_up_btn" bindtap="releaseDynamic">发布</view>
+</view>

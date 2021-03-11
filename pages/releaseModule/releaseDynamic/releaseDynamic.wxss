@@ -1,0 +1,47 @@
+.page_box {
+  box-sizing: border-box;
+  padding: 10px;
+  background-color: #F7F8FA;
+  overflow-y: auto;
+}
+.dynamic_content {
+  color: #333333;
+}
+.uploader_box {
+  margin-top: 10px;
+}
+
+
+/* 底部按钮 */
+.sign_up {
+  box-sizing: border-box;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 15px 10px;
+}
+.sign_up_btn {
+  width: 80%;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  letter-spacing: 3px;
+  border-radius: 20px;
+  background: -webkit-linear-gradient(left, #9A93F3, #D58BBC);
+  font-weight: bold;
+  color: #FFFFFF;
+}
+
+
+/* 文本输入框 */
+.van-field__input {
+  font-size: 16px !important;
+  line-height: 25px !important;
+  letter-spacing: 2px !important;
+}
+.textarea {
+  font-size: 16px !important;
+  line-height: 25px !important;
+  letter-spacing: 2px !important; 
+}
