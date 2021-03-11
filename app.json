@@ -5,6 +5,7 @@
     "pages/homeModule/releasePage/releasePage",
     "pages/homeModule/newsPage/newsPage",
     "pages/homeModule/minePage/minePage",
+    "pages/releaseModule/releaseAppointment/releaseAppointment",
     "pages/releaseModule/releaseDynamic/releaseDynamic",
     "pages/recipeModule/recipeList/recipeList",
     "pages/recipeModule/recipeInfo/recipeInfo",

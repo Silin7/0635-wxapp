@@ -37,8 +37,8 @@
   <van-dropdown-item id="item3" title="{{dropTitle3}}">
     <view class="dropdown_cell">
       <view class="dropdown_item_nomal {{ sponsor_gender == '' ? 'dropdown_item_active' : '' }}" bindtap="dropTap3" data-id="" data-title="不限性别">不限性别</view>
-      <view class="dropdown_item_nomal {{ sponsor_gender == '01' ? 'dropdown_item_active' : '' }}" bindtap="dropTap3" data-id="01" data-title="男生">男生</view>
-      <view class="dropdown_item_nomal {{ sponsor_gender == '02' ? 'dropdown_item_active' : '' }}" bindtap="dropTap3" data-id="02" data-title="女生">女生</view>
+      <view class="dropdown_item_nomal {{ sponsor_gender == '1' ? 'dropdown_item_active' : '' }}" bindtap="dropTap3" data-id="1" data-title="男生">男生</view>
+      <view class="dropdown_item_nomal {{ sponsor_gender == '2' ? 'dropdown_item_active' : '' }}" bindtap="dropTap3" data-id="2" data-title="女生">女生</view>
     </view>
   </van-dropdown-item>
 </van-dropdown-menu>
@@ -50,15 +50,15 @@
       <van-image lazy-load width="90" height="100" src="{{item.sponsor_img}}" image-class="sponsor_img"/>
       <text class="to_1 sponsor_name">{{item.sponsor_name}}</text>
       <view class="plate_box">
-        <view wx:if="{{item.sponsor_gender == '01'}}" class="gender_boy">
+        <view wx:if="{{item.sponsor_gender == '1'}}" class="gender_boy">
           <image src="/images/mineModule/boy_icon2.png" style="width: 14px; height: 14px"/>
           <text class="age_text">{{item.sponsor_age}}</text>
         </view>
-        <view wx:if="{{item.sponsor_gender == '02'}}" class="gender_girl">
+        <view wx:if="{{item.sponsor_gender == '2'}}" class="gender_girl">
           <image src="/images/mineModule/girl_icon2.png" style="width: 14px; height: 14px"/>
           <text class="age_text">{{item.sponsor_age}}</text>
         </view>
-        <text class="appointment_type">{{item.sponsor_gender === '01' ? '个人发起' : '官方发起'}}</text>
+        <!-- <text class="appointment_type">{{item.sponsor_gender === '1' ? '个人发起' : '官方发起'}}</text> -->
       </view>
     </view>
     <view class="appointment_box" style="width: {{windowWidth-120}}px;">

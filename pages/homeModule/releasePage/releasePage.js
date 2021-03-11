@@ -44,6 +44,13 @@ Page({
     wx.navigateTo({
       url: '/pages/releaseModule/releaseDynamic/releaseDynamic',
     })
+  },
+
+   // 发起活动
+   releaseAppointment: function () {
+    wx.navigateTo({
+      url: '/pages/releaseModule/releaseAppointment/releaseAppointment',
+    })
   }
 
 })

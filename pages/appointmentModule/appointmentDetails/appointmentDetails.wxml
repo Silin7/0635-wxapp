@@ -13,8 +13,8 @@
     <view class="sponsor_right" style="width: {{windowWidth-130}}px;">
       <view class="sponsor_name to_1">{{appointmentDetails.sponsor_name}}</view>
       <view class="sponsor_info">
-        <view wx:if="{{appointmentDetails.sponsor_gender == '01'}}">男</view>
-        <view wx:if="{{appointmentDetails.sponsor_gender == '02'}}">女</view>
+        <view wx:if="{{appointmentDetails.sponsor_gender == '1'}}">男</view>
+        <view wx:if="{{appointmentDetails.sponsor_gender == '2'}}">女</view>
         <view>{{appointmentDetails.sponsor_age}}岁</view>
         <view class="sponsor_wx" bindtap="sponsorWx">
           <image src="/images/appointmentModule/wx.png" class="sponsor_wximg"></image>
