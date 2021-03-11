@@ -1,8 +1,7 @@
 .page_box {
   box-sizing: border-box;
-  padding: 10px;
-  background-color: #CCCCCC;
-  min-height: 100vh;
+  padding: 0px 10px;
+  background-color: #F7F8FA;
 }
 
 .release_item {

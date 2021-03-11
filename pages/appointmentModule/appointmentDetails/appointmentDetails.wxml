@@ -27,6 +27,9 @@
   <!-- 活动简介 -->
   <view class="appointment_box">
     <view class="appointment_title">{{appointmentDetails.appointment_title}}</view>
+    <view wx:if="{{appointmentDetails.activity_poster}}">
+      <van-image lazy-load width="{{windowWidth-20}}" height="200" src="{{appointmentDetails.activity_poster}}" image-class="br_10"/>
+    </view>
     <view class="appointment_tag_box">
       <wxs module="filter" src="../../../utils/filter.wxs"></wxs>
       <view class="appointment_tag_item" style="background-color: #2A1A5E;">
