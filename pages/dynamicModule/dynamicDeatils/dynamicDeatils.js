@@ -222,6 +222,18 @@ Page({
     })
   },
 
+  // 查看大图或保存图片
+  dynamicImg: function () {
+    let current = this.data.dynamicDetails.image
+    let urls = [this.data.dynamicDetails.image]
+    wx.previewImage({
+      // 当前显示图片的http链接
+      current: current,
+      // 需要预览的图片http链接列表
+      urls: urls
+    })
+  },
+
   // 未登录跳转倒登录界面
   dialogButtontap() {
     wx.navigateTo({

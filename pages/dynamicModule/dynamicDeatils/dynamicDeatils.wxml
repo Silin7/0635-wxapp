@@ -22,7 +22,7 @@
     </view>
     <view class="dynamic_info">
       <view class="dynamic_content">{{dynamicDetails.content}}</view>
-      <view class="dynamic_image">
+      <view class="dynamic_image" wx:if="{{dynamicDetails.image}}" bindtap="dynamicImg">
         <van-image lazy-load width="100%" height="200" src="{{dynamicDetails.image}}" image-class="br_5"/>
       </view>
     </view>

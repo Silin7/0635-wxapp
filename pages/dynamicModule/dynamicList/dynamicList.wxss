@@ -84,14 +84,19 @@
 .dynamic_item {
   box-sizing: border-box;
   width: 96vw;
-  height: 150px;
+  min-height: 150px;
   margin: 10px auto;
   padding: 10px;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+}
+.dynamic_item_box1 {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: #FFFFFF;
-  border-radius: 10px;
+}
+.dynamic_item_box2 {
+  width: 100%;
 }
 .dynamic_info1 {
   width: calc(96vw - 120px);
@@ -111,6 +116,7 @@
   line-height: 30px;
   font-size: 16px;
   color: #333333;
+  letter-spacing: 2px;
 }
 .create_delete {
   box-sizing: border-box;
