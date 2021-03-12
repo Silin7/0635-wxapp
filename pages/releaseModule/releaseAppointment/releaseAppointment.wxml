@@ -30,7 +30,7 @@
     <!-- 活动地点 -->
     <view class="information_item">
       <view class="information_item_text">活动地点</view>
-      <van-field value="{{dataForm.appointment_place}}" placeholder="请填写活动地点" bind:blur="appointmentPlace" style="width: {{windowWidth-100}}px;"/>
+      <van-field value="{{dataForm.appointment_place}}" placeholder="例：1月1日 8点至18点" bind:blur="appointmentPlace" style="width: {{windowWidth-100}}px;"/>
     </view>
      <!-- 联系方式 -->
     <view class="information_item">

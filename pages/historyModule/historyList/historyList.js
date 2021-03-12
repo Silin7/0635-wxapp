@@ -1,37 +1,23 @@
-import esRequest from '../../../utils/esRequest';
-import Toast from '../../../miniprogram_npm/vant-weapp/toast/toast';
-
 Page({
   data: {
     windowWidth: 0,
     windowHeight: 0,
-    historyList: []
-  },
-
-  onLoad: function (options) {
+    historyList: [
+      {type_id: '1001', type_name: '东昌府区'},
+      {type_id: '1002', type_name: '阳谷县'},
+      {type_id: '1003', type_name: '莘县'},
+      {type_id: '1004', type_name: '茌平区'},
+      {type_id: '1005', type_name: '东阿县'},
+      {type_id: '1006', type_name: '冠县'},
+      {type_id: '1007', type_name: '高唐县'},
+      {type_id: '1008', type_name: '临清市'}
+    ]
   },
 
   onReady: function () {
     this.setData({
       windowWidth: wx.getSystemInfoSync().windowWidth,
       windowHeight: wx.getSystemInfoSync().windowHeight
-    })
-  },
-
-  onShow: function () {
-    this.historyList()
-  },
-
-  // 县市列表
-  historyList: function () {
-    esRequest('classification_city').then(res => {
-      if (res && res.data.code === 0) {
-        this.setData({
-          historyList: res.data.data
-        })
-      } else {
-        Toast.fail('系统错误')
-      }
     })
   },
 

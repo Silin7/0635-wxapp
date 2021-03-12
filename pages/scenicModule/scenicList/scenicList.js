@@ -6,7 +6,17 @@ Page({
     windowWidth: 0,
     windowHeight: 0,
     scenicActive: 0,
-    cityList: [],
+    cityList: [
+      {"id":"","type_id":"","type_name":"全部"},
+      {"id":1,"type_id":1001,"type_name":"东昌府区"},
+      {"id":2,"type_id":1002,"type_name":"阳谷县"},
+      {"id":3,"type_id":1003,"type_name":"莘县"},
+      {"id":4,"type_id":1004,"type_name":"茌平区"},
+      {"id":5,"type_id":1005,"type_name":"东阿县"},
+      {"id":6,"type_id":1006,"type_name":"冠县"},
+      {"id":7,"type_id":1007,"type_name":"高唐县"},
+      {"id":8,"type_id":1008,"type_name":"临清市"}
+    ],
     scenicspotPage: 1,
     scenicspotLimit: 10,
     totalCount: 0,
@@ -15,7 +25,6 @@ Page({
   },
 
   onLoad: function () {
-    this.getCityList()
     this.getScenicSpot()
   },
 
@@ -32,21 +41,6 @@ Page({
     this.data.scenicspotList = []
     this.data.scenicspotPosition = e.detail.title
     this.getScenicSpot()
-  },
-
-  // 县市列表
-  getCityList: function () {
-    esRequest('classification_city').then(res => {
-      if (res && res.data.code === 0) {
-        this.data.cityList = res.data.data
-        this.data.cityList.unshift({ id: '', type_id: '', type_name: '全部' })
-        this.setData({
-          cityList: this.data.cityList
-        })
-      } else {
-        Toast.fail('系统错误')
-      }
-    })
   },
 
   // 景点列表
