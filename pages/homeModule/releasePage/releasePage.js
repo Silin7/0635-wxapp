@@ -51,6 +51,13 @@ Page({
     wx.navigateTo({
       url: '/pages/releaseModule/releaseAppointment/releaseAppointment',
     })
+  },
+
+  // 发起社交
+  releaseMarry: function () {
+    wx.navigateTo({
+      url: '/pages/releaseModule/releaseMarry/releaseMarry',
+    })
   }
 
 })

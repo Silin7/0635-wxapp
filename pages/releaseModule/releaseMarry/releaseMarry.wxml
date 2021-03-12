@@ -1,0 +1,113 @@
+<van-toast id="van-toast" />
+
+<component-choosePicker bind:confirmItem="confirmItem" overlayShow="{{pickerShow}}" pickerTitle="{{pickerTitle}}" dataList="{{pickerList}}"/>
+
+<component-loginTips mask-closable="{{false}}" show="{{loginShow}}" buttontap="dialogButtontap">
+  <view class="fs_14 ls_2 m_t_15">登录后的世界才更美妙</view>
+</component-loginTips>
+
+<component-dialog title="发布动态" show="{{dialogShow}}" buttons="{{dialogButtons}}" bindbuttontap="tapDialogButton" >
+  <view class="fs_14 ls_2 m_t_15">您确定要发布这条动态吗？</view>
+</component-dialog>
+
+<view class="page_box" style="height: {{windowHeight-80}}px;">
+  <view class="item_title">请完善您的个人信息</view>
+  <view class="data_form_box">
+    <!-- 社交类型 -->
+    <view class="information_item">
+      <view class="information_item_text ls_2">社交类型</view>
+      <van-field readonly="{{true}}" value="{{dataForm.type_text}}" placeholder="请选择社交类型" bindtap="bindType" style="width: {{windowWidth-100}}px;"/>
+    </view>
+    <!-- 昵称 -->
+    <view class="information_item">
+      <view class="information_item_text">昵称</view>
+      <van-field value="{{dataForm.name}}" placeholder="请填写昵称"  bind:blur="bindName" style="width: {{windowWidth-100}}px;"/>
+    </view>
+    <!-- 性别 -->
+    <view class="information_item">
+      <view class="information_item_text">性别</view>
+      <van-radio-group value="{{dataForm.gender}}" bind:change="genderChange" class="information_item_radio_group" style="width: {{windowWidth-140}}px;">
+        <van-radio name="01" checked-color="#4545FF">男</van-radio>
+        <van-radio name="02" checked-color="#4545FF">女</van-radio>
+      </van-radio-group>
+    </view>
+    <!-- 身高 -->
+    <view class="information_item">
+      <view class="information_item_text">身高</view>
+      <van-field type="number" value="{{dataForm.height}}" placeholder="请填写身高" bind:blur="bindHeight" style="width: {{windowWidth-180}}px;"/>
+      <view class="information_item_text">CM</view>
+    </view>
+    <!-- 体重 -->
+    <view class="information_item">
+      <view class="information_item_text">体重</view>
+      <van-field type="number" value="{{dataForm.weight}}" placeholder="请填写体重" bind:blur="bindWeight" style="width: {{windowWidth-180}}px;"/>
+      <view class="information_item_text">KG</view>
+    </view>
+    <!-- 年龄 -->
+    <view class="information_item">
+      <view class="information_item_text">年龄</view>
+      <van-field type="number" value="{{dataForm.age}}" placeholder="请填写年龄" bind:blur="bindAge" style="width: {{windowWidth-180}}px;"/>
+      <view class="information_item_text">岁</view>
+    </view>
+    <!-- 星座 -->
+    <view class="information_item">
+      <view class="information_item_text ls_2">星座</view>
+      <van-field readonly="{{true}}" value="{{dataForm.constellation_text}}" placeholder="请选择星座" bindtap="bindConstellation" style="width: {{windowWidth-100}}px;"/>
+    </view>
+    <!-- 地区 -->
+    <view class="information_item">
+      <view class="information_item_text ls_2">地区</view>
+      <van-field readonly="{{true}}" value="{{dataForm.address_text}}" placeholder="请选择地区" bindtap="bindAddress" style="width: {{windowWidth-100}}px;"/>
+    </view>
+    <!-- 学历  -->
+    <view class="information_item">
+      <view class="information_item_text">学历</view>
+      <van-field readonly="{{true}}" value="{{dataForm.education_text}}" placeholder="请选择学历" bindtap="bindEducation" style="width: {{windowWidth-100}}px;"/>
+    </view>
+    <!-- 职业  -->
+    <view class="information_item">
+      <view class="information_item_text">职业</view>
+      <van-field readonly="{{true}}" value="{{dataForm.occupation_text}}" placeholder="请选择职业" bindtap="bindOccupation" style="width: {{windowWidth-100}}px;"/>
+    </view>
+    <!-- 收入 -->
+    <view class="information_item">
+      <view class="information_item_text ls_2">收入</view>
+      <van-field readonly="{{true}}" value="{{dataForm.income_text}}" placeholder="请选择收入" bindtap="bindIncome" style="width: {{windowWidth-100}}px;"/>
+    </view>
+    <!-- 感情状态 -->
+    <view class="information_item">
+      <view class="information_item_text ls_2">感情状态</view>
+      <van-field readonly="{{true}}" value="{{dataForm.state_text}}" placeholder="请选择感情状态" bindtap="bindState" style="width: {{windowWidth-100}}px;"/>
+    </view>
+    <!-- 是否有车 -->
+    <view class="information_item">
+      <view class="information_item_text ls_2">是否有车</view>
+      <van-field readonly="{{true}}" value="{{dataForm.car_text}}" placeholder="是否有车" bindtap="bindCar" style="width: {{windowWidth-100}}px;"/>
+    </view>
+    <!-- 是否有房 -->
+    <view class="information_item">
+      <view class="information_item_text ls_2">是否有房</view>
+      <van-field readonly="{{true}}" value="{{dataForm.house_text}}" placeholder="是否有房" bindtap="bindHouse" style="width: {{windowWidth-100}}px;"/>
+    </view>
+    <!-- 个人简介 -->
+    <view class="information_item_text2">个人简介</view>
+    <van-field type="textarea" autosize="{{autosize}}" border="{{false}}" value="{{dataForm.introduce}}" placeholder="请填写个人简介" bind:blur="bindIntroduce" style="width: {{windowWidth-30}}px;"/>
+    <!-- 本人照片 -->
+    <view class="information_item_text2">本人照片</view>
+    <van-uploader
+      max-count="{{1}}"
+      file-list="{{uploadImgs}}"
+      center="{{true}}"
+      deletable="{{true}}"
+      preview-image="{{true}}"
+      preview-size="{{windowWidth-30}}"
+      bind:delete="deleteImg"
+      bind:after-read="afterRead"
+      upload-text="个人开发者资源有限，您只能上传一张图片哟~"/>
+  </view>
+</view>
+
+<!-- 底部按钮 -->
+<view class="sign_up">
+  <view class="sign_up_btn" bindtap="releaseDynamic">确定</view>
+</view>

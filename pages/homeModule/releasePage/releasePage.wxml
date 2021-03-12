@@ -11,7 +11,7 @@
   <view class="release_item" bindtap="releaseAppointment">
     <van-image lazy-load width="100%" height="150" src="/images/homeModule/banner_xq.jpg" image-class="br_10"/>
   </view>
-  <view class="release_item">
+  <view class="release_item" bindtap="releaseMarry">
     <van-image lazy-load width="100%" height="150" src="/images/homeModule/banner_xq.jpg" image-class="br_10"/>
   </view>
 </view>
