@@ -3,6 +3,7 @@ import Toast from '../../../miniprogram_npm/vant-weapp/toast/toast';
 
 Page({
   data: {
+    windowWidth: 0,
     windowHeight: 0,
     topShow: false,
     dynamicPage: 1,
@@ -18,6 +19,7 @@ Page({
   onReady: function () {
     this.setData({
       container: () => wx.createSelectorQuery().select('#container'),
+      windowWidth: wx.getSystemInfoSync().windowWidth,
       windowHeight: wx.getSystemInfoSync().windowHeight
     })
   },

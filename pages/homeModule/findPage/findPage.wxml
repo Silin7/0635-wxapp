@@ -24,7 +24,7 @@
     </view>
     <!-- 动态图片 -->
     <view wx:if="{{item.image}}" catchtap="dynamicImg" data-item="{{item}}" class="m_t_10">
-      <image src="{{item.image}}" class="dynamic_img"></image>
+      <van-image lazy-load fit="widthFix" width="{{windowWidth-20}}" src="{{item.image}}"/>
     </view>
   </view>
   <!-- 回到顶部 -->
