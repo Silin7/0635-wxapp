@@ -92,21 +92,21 @@ Page({
   // 笑话
   storyList01: function () {
     wx.navigateTo({
-      url: '/pages/happyModule/storyList/storyList?id=01'
+      url: '/pages/happyModule/entertainmentList/entertainmentList?id=01'
     })
   },
 
   // 图片
   storyList02: function () {
     wx.navigateTo({
-      url: '/pages/happyModule/storyList/storyList?id=02'
+      url: '/pages/happyModule/entertainmentList/entertainmentList?id=02'
     })
   },
 
   // 视频
   storyList03: function () {
     wx.navigateTo({
-      url: '/pages/happyModule/storyList/storyList?id=03'
+      url: '/pages/happyModule/entertainmentList/entertainmentList?id=03'
     })
   },
 

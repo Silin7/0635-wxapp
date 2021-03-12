@@ -7,7 +7,7 @@ Page({
     windowWidth: 0,
     windowHeight: 0,
     type_id: '',
-    storyList: []
+    entertainmentList: []
   },
 
   onLoad: function (options) {
@@ -34,10 +34,10 @@ Page({
     let data = {
       type_id: this.data.type_id
     }
-    esRequest('story_list', data).then(res => {
+    esRequest('entertainment_list', data).then(res => {
       if (res && res.data.code === 0) {
         this.setData({
-          storyList: res.data.data
+          entertainmentList: res.data.data
         })
       } else {
         Toast.fail('系统错误')
