@@ -8,7 +8,7 @@ Page({
     windowHeight: 0,
     active_id: '',
     active_title: '',
-    nickName: '',
+    nick_name: '',
     userInfo: {},
     dataForm: {
       receiver_id: '',
@@ -35,7 +35,7 @@ Page({
     }
     if (wx.getStorageSync('userIfo')) {
       this.setData({
-        nickName: wx.getStorageSync('userIfo').nickName,
+        nick_name: wx.getStorageSync('userIfo').nick_name,
         userInfo: wx.getStorageSync('userIfo')
       })
     } else {
@@ -52,7 +52,7 @@ Page({
 
   // 填写姓名
   nickNameTap: function (event) {
-    this.data.userInfo.nickName = event.detail.value
+    this.data.userInfo.nick_name = event.detail.value
     this.setData({
       userInfo: this.data.userInfo
     });
@@ -68,7 +68,7 @@ Page({
 
   // 填写电话
   userPhoneTap: function (event) {
-    this.data.userInfo.userPhone = event.detail.value
+    this.data.userInfo.user_phone = event.detail.value
     this.setData({
       userInfo: this.data.userInfo
     });
@@ -83,7 +83,7 @@ Page({
       if (res && res.data.code === 0) {
         wx.setStorageSync('userIfo', res.data.data)
         this.setData({
-          nickName: res.data.data.nickName,
+          nick_name: res.data.data.nick_name,
           userInfo: res.data.data
         })
       } else {
@@ -96,11 +96,11 @@ Page({
     let data = this.data.userInfo
     for (let key in data) {
       if (data[key] == "") {
-        if (key == 'nickName') {
+        if (key == 'nick_name') {
           Toast.fail('请填写姓名')
           return
         }
-        if (key == 'userPhone') {
+        if (key == 'user_phone') {
           Toast.fail('请填写电话')
           return
         }
@@ -110,7 +110,7 @@ Page({
         }
       }
     }
-    if (regular.phoneNumber(this.data.userInfo.userPhone)) {
+    if (regular.phoneNumber(this.data.userInfo.user_phone)) {
       this.setData({
         dialogShow: true
       })
@@ -132,10 +132,10 @@ Page({
       }
       let gender = this.data.userInfo.gender === '1' ? '男' : '女'
       this.data.dataForm.sender_id = this.data.userInfo.id
-      this.data.dataForm.sender_name = this.data.userInfo.nickName
-      this.data.dataForm.sender_img = this.data.userInfo.avatarUrl
+      this.data.dataForm.sender_name = this.data.userInfo.nick_name
+      this.data.dataForm.sender_img = this.data.userInfo.avatar_url
       this.data.dataForm.message_title = '活动报名通知'
-      this.data.dataForm.message_content = `用户${this.data.userInfo.nickName}（<span style="color: #F76262;">${gender}</span>，<span style="color: #F76262;">${this.data.userInfo.userPhone}</span>）报名参加了您发起的活动 [<span style="color: #4545FF;">${this.data.active_title}</span>] ,请您尽快联系对方哟 。`
+      this.data.dataForm.message_content = `用户${this.data.userInfo.nick_name}（<span style="color: #F76262;">${gender}</span>，<span style="color: #F76262;">${this.data.userInfo.user_phone}</span>）报名参加了您发起的活动 [<span style="color: #4545FF;">${this.data.active_title}</span>] ,请您尽快联系对方哟 。`
       esRequest('appointment_sign', data).then(res => {
         if (res && res.data.code === 0) {
           esRequest('permessage_active', _this.data.dataForm).then(res => {

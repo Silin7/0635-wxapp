@@ -138,10 +138,10 @@ Page({
             let data = {
               receiver_id: this.data.messageData.sender_id,
               sender_id: this.data.mineDataForm.id,
-              sender_name: this.data.mineDataForm.nickName,
-              sender_img: this.data.mineDataForm.avatarUrl,
-              message_title: `来自${this.data.mineDataForm.nickName}的消息回复`,
-              message_content: `谢谢你的喜欢哟，我的微信号是<span style="color: #4545FF;">${this.data.mineDataForm.userPhone}</span>，期待我们的缘分鸭。`,
+              sender_name: this.data.mineDataForm.nick_name,
+              sender_img: this.data.mineDataForm.avatar_url,
+              message_title: `来自${this.data.mineDataForm.nick_name}的消息回复`,
+              message_content: `谢谢你的喜欢哟，我的微信号是<span style="color: #4545FF;">${this.data.mineDataForm.user_phone}</span>，期待我们的缘分鸭。`,
               message_type: '02'
             }
             esRequest('permessage_active', data).then(res => {
@@ -156,9 +156,9 @@ Page({
             let data = {
               receiver_id: this.data.messageData.sender_id,
               sender_id: this.data.mineDataForm.id,
-              sender_name: this.data.mineDataForm.nickName,
-              sender_img: this.data.mineDataForm.avatarUrl,
-              message_title: `来自${this.data.mineDataForm.nickName}的消息回复`,
+              sender_name: this.data.mineDataForm.nick_name,
+              sender_img: this.data.mineDataForm.avatar_url,
+              message_title: `来自${this.data.mineDataForm.nick_name}的消息回复`,
               message_content: `谢谢你的喜欢哟，我还没有准备好，期待我们的下一场缘分吧。`,
               message_type: '02'
             }

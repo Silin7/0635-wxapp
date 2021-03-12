@@ -6,7 +6,7 @@
   <!-- 头像 -->
   <view class="head_portrait_box bs_bb">
     <view class="head_portrait">
-      <image src="{{dataForm.avatarUrl}}" class="w_h_100 br_20"></image>
+      <image src="{{dataForm.avatar_url}}" class="w_h_100 br_20"></image>
       <text class="head_portrait_age">
         <text class="head_portrait_age_text">{{dataForm.age ? dataForm.age : 0}}</text>
       </text>
@@ -21,7 +21,7 @@
     <!-- 电话 -->
     <view class="information_item m_t_10">
       <view class="information_item_text ls_3">电话</view>
-      <van-field type="number" value="{{dataForm.userPhone}}" placeholder="请输入电话" style="width: {{windowWidth-120}}px;" maxlength="{{11}}" bind:blur="userPhoneTap"/>
+      <van-field type="number" value="{{dataForm.user_phone}}" placeholder="请输入电话" style="width: {{windowWidth-120}}px;" maxlength="{{11}}" bind:blur="userPhoneTap"/>
     </view>
     <!-- 生日 -->
     <view class="information_item m_t_10">
@@ -52,7 +52,7 @@
     <!-- 个性签名 -->
     <view class="information_item m_t_10 color_45">
       <view class="information_item_text ls_3">个性签名</view>
-      <van-field value="{{dataForm.personalSignature}}" placeholder="请输入个性签名" style="width: {{windowWidth-120}}px;" maxlength="{{18}}" bind:blur="personalSignatureTap"/>
+      <van-field value="{{dataForm.personal_signature}}" placeholder="请输入个性签名" style="width: {{windowWidth-120}}px;" maxlength="{{18}}" bind:blur="personalSignatureTap"/>
     </view>
     <view class="information_item fs_12 co_9">*注：个性签名最多为18个字符</view>
   </view>

@@ -8,7 +8,7 @@ Page({
     windowHeight: 0,
     register_id: '',
     gender: '',
-    nickName: '',
+    nick_name: '',
     userInfo: {},
     dataType: '01',
     dataForm: {
@@ -39,7 +39,7 @@ Page({
     }
     if (wx.getStorageSync('userIfo')) {
       this.setData({
-        nickName: wx.getStorageSync('userIfo').nickName,
+        nick_name: wx.getStorageSync('userIfo').nick_name,
         userInfo: wx.getStorageSync('userIfo')
       })
     } else {
@@ -56,7 +56,7 @@ Page({
 
   // 填写姓名
   nickNameTap: function (event) {
-    this.data.userInfo.nickName = event.detail.value
+    this.data.userInfo.nick_name = event.detail.value
     this.setData({
       userInfo: this.data.userInfo
     });
@@ -82,7 +82,7 @@ Page({
 
   // 填写电话
   userPhoneTap: function (event) {
-    this.data.userInfo.userPhone = event.detail.value
+    this.data.userInfo.user_phone = event.detail.value
     this.setData({
       userInfo: this.data.userInfo
     });
@@ -97,7 +97,7 @@ Page({
       if (res && res.data.code === 0) {
         wx.setStorageSync('userIfo', res.data.data)
         this.setData({
-          nickName: res.data.data.nickName,
+          nick_name: res.data.data.nick_name,
           userInfo: res.data.data
         })
       } else {
@@ -110,11 +110,11 @@ Page({
     let data = this.data.userInfo
     for (let key in data) {
       if (data[key] == "") {
-        if (key == 'nickName') {
+        if (key == 'nick_name') {
           Toast.fail('请填写姓名')
           return
         }
-        if (key == 'userPhone') {
+        if (key == 'user_phone') {
           if (this.data.dataType === '02') {
             Toast.fail('请填写微信')
             return
@@ -132,7 +132,7 @@ Page({
       })
     }
     if (this.data.dataType === '02') {
-      if (regular.phoneNumber(this.data.userInfo.userPhone)) {
+      if (regular.phoneNumber(this.data.userInfo.user_phone)) {
         this.setData({
           dialogShow: true
         })
@@ -156,8 +156,8 @@ Page({
       esRequest('marry_sign', data).then(res => {
         if (res && res.data.code === 0) {
           _this.data.dataForm.sender_id = _this.data.userInfo.id
-          _this.data.dataForm.sender_name = _this.data.userInfo.nickName
-          _this.data.dataForm.sender_img = _this.data.userInfo.avatarUrl
+          _this.data.dataForm.sender_name = _this.data.userInfo.nick_name
+          _this.data.dataForm.sender_img = _this.data.userInfo.avatar_url
           if (_this.data.gender === '男') {
             if (_this.data.dataType === '01') {
               _this.data.dataForm.message_title = '小哥哥，可以留个微信吗？'
@@ -166,7 +166,7 @@ Page({
             }
             if (_this.data.dataType === '02') {
               _this.data.dataForm.message_title = '小哥哥，很想和你认识一下呢'
-              _this.data.dataForm.message_content = `你好，我被你的颜值所打动，在我心里你一定是个乐观开朗的男孩子。但我不能自己妄加推断，所以想了解一下你真正的性格。这是我的微信号<span style="color: #4545FF;">${_this.data.userInfo.userPhone}</span>，期待我们的缘分鸭。`
+              _this.data.dataForm.message_content = `你好，我被你的颜值所打动，在我心里你一定是个乐观开朗的男孩子。但我不能自己妄加推断，所以想了解一下你真正的性格。这是我的微信号<span style="color: #4545FF;">${_this.data.userInfo.user_phone}</span>，期待我们的缘分鸭。`
               _this.data.dataForm.message_type = '02'
             }
           }
@@ -178,7 +178,7 @@ Page({
             }
             if (_this.data.dataType === '02') {
               _this.data.dataForm.message_title = '小姐姐，很想和你认识一下呢'
-              _this.data.dataForm.message_content = `你好，我被你的颜值所打动，在我心里你一定是个善良温柔的女孩子。但我不能自己妄加推断，所以想了解一下你真正的性格。这是我的微信号<span style="color: #4545FF;">${_this.data.userInfo.userPhone}</span>，期待我们的缘分鸭。`
+              _this.data.dataForm.message_content = `你好，我被你的颜值所打动，在我心里你一定是个善良温柔的女孩子。但我不能自己妄加推断，所以想了解一下你真正的性格。这是我的微信号<span style="color: #4545FF;">${_this.data.userInfo.user_phone}</span>，期待我们的缘分鸭。`
               _this.data.dataForm.message_type = '02'
             }
           }

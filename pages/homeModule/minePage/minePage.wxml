@@ -38,12 +38,12 @@
   <view class="personal_info2_box" bindtap="personalData">
     <!-- 微信头像 -->
     <view class="personal_info2_left br_20" style="overflow: hidden;">
-      <van-image lazy-load width="100%" height="100%" src="{{mineDataForm.avatarUrl}}" image-class="br_20"/>
+      <van-image lazy-load width="100%" height="100%" src="{{mineDataForm.avatar_url}}" image-class="br_20"/>
     </view>
     <view class="personal_info2_right" style="width: {{windowWidth-140}}px;">
       <!-- 微信昵称 -->
       <view class="name_follow">
-        <view class="ls_2 fw_7">{{mineDataForm.nickName}}</view>
+        <view class="ls_2 fw_7">{{mineDataForm.nick_name}}</view>
       </view>
       <!-- 年龄 星座 地址 -->
       <view class="fs_12 fx_r_s_c" wx:if="{{mineDataForm.age && mineDataForm.constellation && mineDataForm.address}}">
@@ -54,7 +54,7 @@
         <view>{{mineDataForm.address}}</view>
       </view>
       <!-- 个性签名 -->
-      <view class="fs_12 co_9 ls_1" wx:if="{{mineDataForm.personalSignature}}">{{mineDataForm.personalSignature}}</view>
+      <view class="fs_12 co_9 ls_1" wx:if="{{mineDataForm.personal_signature}}">{{mineDataForm.personal_signature}}</view>
       <view class="fs_12 co_9 ls_1" wx:else>点击完善个人信息</view>
     </view>
   </view>

@@ -7,7 +7,7 @@ let loginRequest = {
   register_inster: {
     apiMethod: 'POST',
     apiName: '/login/register_inster',
-    name: '将注册信息写入数据库（参数：userName，password，nickName，avatarUrl，gender）'
+    name: '将注册信息写入数据库（参数：user_name，password，nickName，avatar_url，gender）'
   },
   change_password: {
     apiMethod: 'POST',
@@ -17,7 +17,7 @@ let loginRequest = {
   sign_in: {
     apiMethod: 'POST',
     apiName: '/login/sign_in',
-    name: '判断账号密码是否正确（参数：userName，password）'
+    name: '判断账号密码是否正确（参数：user_name，password）'
   }
 }
 module.exports = loginRequest

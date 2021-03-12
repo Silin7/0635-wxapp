@@ -11,10 +11,10 @@
 <view class="page_box">
   <view class="dynamic_details">
     <view class="author_indo">
-      <van-image lazy-load width="60" height="60" src="{{userInfo.avatarUrl}}" image-class="avatar_img"/>
+      <van-image lazy-load width="60" height="60" src="{{userInfo.avatar_url}}" image-class="avatar_img"/>
       <view class="user_box" style="width: {{windowWidth-90}}px;">
         <view class="nick_name_box">
-          <view class="nick_name to_1" style="width: {{windowWidth-160}}px;">{{userInfo.nickName}}</view>
+          <view class="nick_name to_1" style="width: {{windowWidth-160}}px;">{{userInfo.nick_name}}</view>
           <view class="follow" bindtap="collectionuser">关注</view>
         </view>
         <view class="user_info">{{userInfo.gender == '1' ? '男' : '女'}} · {{userInfo.age}}岁 · {{userInfo.constellation}} · {{userInfo.address}}</view>
