@@ -11,12 +11,11 @@ import mineRequest from "./sub-unitRequest/mineRequest"
 import otherRequest from "./sub-unitRequest/otherRequest"
 import pictureRequest from "./sub-unitRequest/pictureRequest"
 import recipeRequest from "./sub-unitRequest/recipeRequest"
-import recordRequest from "./sub-unitRequest/recordRequest"
 import scenicspotRequest from "./sub-unitRequest/scenicspotRequest"
 import specialtyRequest from "./sub-unitRequest/specialtyRequest"
 
 export default (localObjects, parametersData, parameters) => {
-  var globalObjects = Object.assign({}, appointmentRequest, dynamicRequest, happyRequest, historyRequest, journalismRequest, loginRequest, marryRequest, messageRequest, mineRequest, otherRequest, pictureRequest, recipeRequest, recordRequest, scenicspotRequest, specialtyRequest)
+  var globalObjects = Object.assign({}, appointmentRequest, dynamicRequest, happyRequest, historyRequest, journalismRequest, loginRequest, marryRequest, messageRequest, mineRequest, otherRequest, pictureRequest, recipeRequest, scenicspotRequest, specialtyRequest)
   var apiMethod = globalObjects[localObjects].apiMethod
   if (parameters) {
     var requestURL = baseURL.baseURL + globalObjects[localObjects].apiName + '/' + parameters

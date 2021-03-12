@@ -45,8 +45,6 @@
     "pages/mineModule/personalData/personalData",
     "pages/loginModule/loginPage/loginPage",
     "pages/loginModule/registerPage/registerPage",
-    "pages/recordModule/diaryList/diaryList",
-    "pages/recordModule/keepDiary/keepDiary",
     "pages/otherModule/girlRandom/girlRandom",
     "pages/otherModule/jokesRandom/jokesRandom",
     "pages/otherModule/garbage/garbage",
