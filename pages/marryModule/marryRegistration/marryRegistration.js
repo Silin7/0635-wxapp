@@ -158,7 +158,7 @@ Page({
           _this.data.dataForm.sender_id = _this.data.userInfo.id
           _this.data.dataForm.sender_name = _this.data.userInfo.nick_name
           _this.data.dataForm.sender_img = _this.data.userInfo.avatar_url
-          if (_this.data.gender === '男') {
+          if (_this.data.gender === '01') {
             if (_this.data.dataType === '01') {
               _this.data.dataForm.message_title = '小哥哥，可以留个微信吗？'
               _this.data.dataForm.message_content = `你好，能给我留一个你的微信吗？我被你的颜值所打动，在我心里你一定是个乐观开朗的男孩子。但我不能自己妄加推断，所以想了解一下你真的性格。`
@@ -170,7 +170,7 @@ Page({
               _this.data.dataForm.message_type = '02'
             }
           }
-          if (_this.data.gender === '女') {
+          if (_this.data.gender === '02') {
             if (_this.data.dataType === '01') {
               _this.data.dataForm.message_title = '小姐姐，可以留个微信吗？'
               _this.data.dataForm.message_content = `你好，能给我留一个你的微信吗？我被你的颜值所打动，在我心里你一定是个善良温柔的女孩子。但我不能自己妄加推断，所以想了解一下你真的性格。`

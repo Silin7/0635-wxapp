@@ -60,6 +60,14 @@ Page({
     })
   },
 
+  // 填写昵称
+  nickNameTap: function (event) {
+    this.data.dataForm.nick_name = event.detail.value
+    this.setData({
+      dataForm: this.data.dataForm
+    });
+  },
+
   // 填写电话
   userPhoneTap: function (event) {
     this.data.dataForm.user_phone = event.detail.value
@@ -70,10 +78,10 @@ Page({
 
   // 选择性别
   genderChange: function (event) {
-    // this.data.dataForm.gender = event.detail
-    // this.setData({
-    //   dataForm: this.data.dataForm
-    // });
+    this.data.dataForm.gender = event.detail
+    this.setData({
+      dataForm: this.data.dataForm
+    });
   },
 
   // 弹出日期选择器
@@ -139,7 +147,11 @@ Page({
   save_btn: function () {
     let data = this.data.dataForm
     for (let key in data) {
-      if (data[key] == null) {
+      if (data[key] == null || data[key] == '') {
+        if (key == 'nick_name') {
+          Toast.fail('请填写昵称')
+          return
+        }
         if (key == 'user_phone') {
           Toast.fail('请填写电话')
           return
