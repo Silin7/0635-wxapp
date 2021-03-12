@@ -137,7 +137,6 @@ Page({
 
   // 保存
   save_btn: function () {
-    let _this= this
     let data = this.data.dataForm
     for (let key in data) {
       if (data[key] == null) {
