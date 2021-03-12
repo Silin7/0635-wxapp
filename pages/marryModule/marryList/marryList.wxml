@@ -1,25 +1,60 @@
 <van-toast id="van-toast" />
 
-<van-tabs active="{{tabActive}}" bind:change="tabChange" ellipsis="{{false}}" border="{{ false }}" swipeable sticky animated>
-  <van-tab wx:for="{{typeList}}" wx:key="index" title="{{item.key}}" name="{{item.value}}">
-    <scroll-view style="height: {{windowHeight-44}}px;" scroll-y="{{true}}" bindscrolltolower="onScrollBottom">
-      <view class="page_box" style="min-height: {{windowHeight-44}}px;">
-        <view class="person_item" wx:for="{{personList}}" wx:key="index" bindtap="personDetails" data-item="{{item}}">
-          <view class="person_img">
-            <van-image lazy-load width="100%" height="100%" src="{{item.photo}}"/>
-          </view>
-          <view class="person_name">
-            <view class="person_name_item1">
-              <text class="fs_14 fw_7 ls_2 to_1">{{item.nick_name}}</text>
-              <text class="fs_12 m_l_5 m_r_5 co_45 fw_7" style="width: 31px;">{{item.age}}岁</text>
-            </view>
-            <view class="person_name_item2 ls_2 to_1">
-              <van-icon name="like" color="red" class="m_r_2"/>
-              {{item.introduce}}
-            </view>
-          </view>
+
+<!-- DropdownMenu 下拉菜单 -->
+<van-dropdown-menu active-color="#4545FF">
+  <van-dropdown-item id="item1" title="{{dropTitle1}}">
+    <view class="dropdown_cell">
+      <view class="dropdown_item_nomal {{ address == '' ? 'dropdown_item_active' : '' }}" bindtap="dropTap1" data-id="" data-title="全部地区">全部地区</view>
+      <view class="dropdown_item_nomal {{ address == '01' ? 'dropdown_item_active' : '' }}" bindtap="dropTap1" data-id="01" data-title="东昌府区">东昌府区</view>
+      <view class="dropdown_item_nomal {{ address == '02' ? 'dropdown_item_active' : '' }}" bindtap="dropTap1" data-id="02" data-title="阳谷县">阳谷县</view>
+    </view>
+    <view class="dropdown_cell">
+      <view class="dropdown_item_nomal {{ address == '03' ? 'dropdown_item_active' : '' }}" bindtap="dropTap1" data-id="03" data-title="莘县">莘县</view>
+      <view class="dropdown_item_nomal {{ address == '04' ? 'dropdown_item_active' : '' }}" bindtap="dropTap1" data-id="04" data-title="茌平区">茌平区</view>
+      <view class="dropdown_item_nomal {{ address == '05' ? 'dropdown_item_active' : '' }}" bindtap="dropTap1" data-id="05" data-title="东阿县">东阿县</view>
+    </view>
+    <view class="dropdown_cell">
+      <view class="dropdown_item_nomal {{ address == '06' ? 'dropdown_item_active' : '' }}" bindtap="dropTap1" data-id="06" data-title="冠县">冠县</view>
+      <view class="dropdown_item_nomal {{ address == '07' ? 'dropdown_item_active' : '' }}" bindtap="dropTap1" data-id="07" data-title="高唐县">高唐县</view>
+      <view class="dropdown_item_nomal {{ address == '08' ? 'dropdown_item_active' : '' }}" bindtap="dropTap1" data-id="08" data-title="临清市">临清市</view>
+    </view>
+  </van-dropdown-item>
+  <van-dropdown-item id="item2" title="{{dropTitle2}}">
+    <view class="dropdown_cell">
+      <view class="dropdown_item_nomal {{ type == '' ? 'dropdown_item_active' : '' }}" bindtap="dropTap2" data-id="" data-title="全部分类">全部分类</view>
+      <view class="dropdown_item_nomal {{ type == '01' ? 'dropdown_item_active' : '' }}" bindtap="dropTap2" data-id="01" data-title="结婚">结婚</view>
+      <view class="dropdown_item_nomal {{ type == '02' ? 'dropdown_item_active' : '' }}" bindtap="dropTap2" data-id="02" data-title="恋爱">恋爱</view>
+    </view>
+    <view class="dropdown_cell">
+      <view class="dropdown_item_nomal {{ type == '03' ? 'dropdown_item_active' : '' }}" bindtap="dropTap2" data-id="03" data-title="交友">交友</view>
+    </view>
+  </van-dropdown-item>
+  <van-dropdown-item id="item3" title="{{dropTitle3}}">
+    <view class="dropdown_cell">
+      <view class="dropdown_item_nomal {{ gender == '' ? 'dropdown_item_active' : '' }}" bindtap="dropTap3" data-id="" data-title="不限性别">不限性别</view>
+      <view class="dropdown_item_nomal {{ gender == '1' ? 'dropdown_item_active' : '' }}" bindtap="dropTap3" data-id="01" data-title="男生">男生</view>
+      <view class="dropdown_item_nomal {{ gender == '2' ? 'dropdown_item_active' : '' }}" bindtap="dropTap3" data-id="02" data-title="女生">女生</view>
+    </view>
+  </van-dropdown-item>
+</van-dropdown-menu>
+
+<scroll-view style="height: {{windowHeight-50}}px;" scroll-y="{{true}}" bindscrolltolower="onScrollBottom">
+  <view class="page_box" style="min-height: {{windowHeight-44}}px;">
+    <view class="person_item" wx:for="{{personList}}" wx:key="index" bindtap="personDetails" data-item="{{item}}">
+      <view class="person_img">
+        <van-image fit="cover" lazy-load width="100%" height="100%" src="{{item.cover}}"/>
+      </view>
+      <view class="person_name">
+        <view class="person_name_item1">
+          <text class="person_name_item1_name to_1">{{item.name}}</text>
+          <text class="person_name_item1_age">{{item.age}}岁</text>
+        </view>
+        <view class="person_name_item2 to_1">
+          <van-icon name="like" color="red" class="m_r_2"/>
+          {{item.introduce}}
         </view>
       </view>
-    </scroll-view>
-  </van-tab>
-</van-tabs>
+    </view>
+  </view>
+</scroll-view>

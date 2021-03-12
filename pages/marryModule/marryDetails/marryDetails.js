@@ -4,10 +4,9 @@ import Toast from '../../../miniprogram_npm/vant-weapp/toast/toast';
 Page({
   data: {
     loginShow: false,
-    register_id: '',
+    marryId: '',
     windowWidth: 0,
     windowHeight: 0,
-    swiperList: [],
     personDetails: {},
     userInfo: {},
     dialogShow: false,
@@ -15,7 +14,7 @@ Page({
   },
 
   onLoad: function (options) {
-    this.data.register_id = options.register_id ? options.register_id : ''
+    this.data.marryId = options.id ? options.id : ''
   },
 
   onReady: function () {
@@ -35,23 +34,19 @@ Page({
       // 当前显示图片的http链接
       current: e.currentTarget.dataset.item,
       // 需要预览的图片http链接列表
-      urls: this.data.swiperList
+      urls: this.data.personDetails.photo
     })
   },
 
   // 基本信息
   marryDetails: function () {
     let data = {
-      register_id: this.data.register_id
+      id: this.data.marryId
     }
     esRequest('marry_details', data).then(res => {
       if (res && res.data.code === 0) {
-        this.data.swiperList = []
-        this.data.swiperList.push(res.data.data.photo1)
-        this.data.swiperList.push(res.data.data.photo2)
-        this.data.swiperList.push(res.data.data.photo3)
+        res.data.data.photo = JSON.parse(res.data.data.photo)
         this.setData({
-          swiperList: this.data.swiperList,
           personDetails: res.data.data
         })
       } else {
@@ -100,14 +95,14 @@ Page({
         this.getUserInfo()
       }
       let data = {
-        register_id: this.data.personDetails.register_id,
+        register_id: this.data.personDetails.id,
         followers_id: this.data.userInfo.id
       }
       esRequest('marry_issign', data).then(res => {
         if (res && res.data.code === 0) {
           if (res.data.type === '0') {
             wx.navigateTo({
-              url: `/pages/marryModule/marryRegistration/marryRegistration?receiver_id=${this.data.personDetails.user_id}&register_id=${this.data.personDetails.register_id}&gender=${this.data.personDetails.gender}`
+              url: `/pages/marryModule/marryRegistration/marryRegistration?receiver_id=${this.data.personDetails.user_id}&register_id=${this.data.personDetails.id}&gender=${this.data.personDetails.gender}`
             })
           }
           if (res.data.type === '1') {
@@ -130,7 +125,7 @@ Page({
       let _this = this
       let data = {
         followers_id: wx.getStorageSync('id_key').toString(),
-        watched_id: _this.data.personDetails.register_id,
+        watched_id: _this.data.personDetails.id,
         nick_name: _this.data.personDetails.nick_name,
         photo: _this.data.personDetails.photo1,
         introduce: _this.data.personDetails.introduce

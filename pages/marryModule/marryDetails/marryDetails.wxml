@@ -1,5 +1,7 @@
 <van-toast id="van-toast" />
 
+<wxs module="filter" src="../../../utils/filter.wxs"></wxs>
+
 <component-loginTips mask-closable="{{false}}" show="{{loginShow}}" buttontap="dialogButtontap">
   <view class="fs_14 ls_2 m_t_15">登录后的世界才更美妙</view>
 </component-loginTips>
@@ -11,9 +13,9 @@
 <view class="oy_a" style="height: {{windowHeight-80}}px;">
   <!-- swiper滚动图 -->
   <swiper indicator-dots="{{true}}" autoplay="{{true}}" circular="{{true}}" class="swiper" style="height: 240px;">
-    <block wx:for="{{swiperList}}" wx:key="index" wx:for-item="item">
+    <block wx:for="{{personDetails.photo}}" wx:key="index" wx:for-item="item">
       <swiper-item bindtap="swiperTap" data-item="{{item}}">
-        <van-image lazy-load width="100%" height="240px" src="{{item}}"/>
+        <van-image lazy-load width="100%" height="240px" src="{{item}}" widthFix/>
       </swiper-item>
     </block>
   </swiper>
@@ -22,15 +24,15 @@
     <!-- 简介 -->
     <view class="name_item">
       <view class="item_left" style="width: {{windowWidth-80}}px;">
-        <view class="item_left_top to_1">{{personDetails.nick_name}}</view>
+        <view class="item_left_top to_1">{{personDetails.name}}</view>
         <view class="item_left_btm">
-          <text>{{personDetails.gender}}</text>
+          <text>{{filter.gander(personDetails.gender)}}</text>
           <text class="m_l_5 m_r_5">·</text>
-          <text>{{personDetails.age}}</text>
+          <text>{{personDetails.age}}岁</text>
           <text class="m_l_5 m_r_5">·</text>
-          <text>{{personDetails.constellation}}</text>
+          <text>{{filter.constellation(personDetails.constellation)}}</text>
           <text class="m_l_5 m_r_5">·</text>
-          <text>{{personDetails.address}}</text>
+          <text>{{filter.areaCode(personDetails.address)}}</text>
         </view>
       </view>
       <view class="item_right" bindtap="btnGz">
@@ -78,14 +80,14 @@
             <van-image lazy-load width="16" height="16" src="/images/marryModule/info_height.png"/>
             <text class="m_l_5">身高</text>
           </view>
-          <view class="box_item2">{{personDetails.height}}</view>
+          <view class="box_item2">{{personDetails.height}}cm</view>
         </view>
         <view class="information_item_box">
           <view class="box_item1">
             <van-image lazy-load width="16" height="16" src="/images/marryModule/info_weight.png"/>
             <text class="m_l_5">体重</text>
           </view>
-          <view class="box_item2">{{personDetails.weight}}</view>
+          <view class="box_item2">{{personDetails.weight}}kg</view>
         </view>
       </view>
       <view class="information_item">
@@ -94,14 +96,14 @@
             <van-image lazy-load width="16" height="16" src="/images/marryModule/info_education.png"/>
             <text class="m_l_5">学历</text>
           </view>
-          <view class="box_item2">{{personDetails.education}}</view>
+          <view class="box_item2">{{filter.education(personDetails.education)}}</view>
         </view>
         <view class="information_item_box">
           <view class="box_item1">
             <van-image lazy-load width="16" height="16" src="/images/marryModule/info_occupation.png"/>
             <text class="m_l_5">职业</text>
           </view>
-          <view class="box_item2">{{personDetails.occupation}}</view>
+          <view class="box_item2">{{filter.occupation(personDetails.occupation)}}</view>
         </view>
       </view>
       <view class="information_item">
@@ -110,14 +112,14 @@
             <van-image lazy-load width="16" height="16" src="/images/marryModule/info_income.png"/>
             <text class="m_l_5">收入</text>
           </view>
-          <view class="box_item2">{{personDetails.income}}</view>
+          <view class="box_item2">{{filter.income(personDetails.income)}}</view>
         </view>
         <view class="information_item_box">
           <view class="box_item1">
             <van-image lazy-load width="16" height="16" src="/images/marryModule/info_car.png"/>
             <text class="m_l_5">是否有车</text>
           </view>
-          <view class="box_item2">{{personDetails.car}}</view>
+          <view class="box_item2">{{filter.carHouse(personDetails.car)}}</view>
         </view>
       </view>
       <view class="information_item">
@@ -126,59 +128,14 @@
             <van-image lazy-load width="16" height="16" src="/images/marryModule/info_house.png"/>
             <text class="m_l_5">是否有房</text>
           </view>
-          <view class="box_item2">{{personDetails.house}}</view>
+          <view class="box_item2">{{filter.carHouse(personDetails.house)}}</view>
         </view>
         <view class="information_item_box">
           <view class="box_item1">
             <van-image lazy-load width="16" height="16" src="/images/marryModule/info_state.png"/>
             <text class="m_l_5">感情状态</text>
           </view>
-          <view class="box_item2">{{personDetails.state}}</view>
-        </view>
-      </view>
-    </view>
-    <!-- 择偶标准 -->
-    <view class="standard">
-      <view class="standard_top">择偶标准</view>
-      <view class="information_item">
-      <view class="information_item_box">
-          <view class="box_item1">
-            <van-image lazy-load width="16" height="16" src="/images/marryModule/info_age.png"/>
-            <text class="m_l_5">年龄</text>
-          </view>
-          <view class="box_item2">{{personDetails.m_age}}</view>
-        </view>
-        <view class="information_item_box">
-          <view class="box_item1">
-            <van-image lazy-load width="16" height="16" src="/images/marryModule/info_height.png"/>
-            <text class="m_l_5">身高</text>
-          </view>
-          <view class="box_item2">{{personDetails.m_height}}</view>
-        </view>
-      </view>
-      <view class="information_item">
-        <view class="information_item_box">
-          <view class="box_item1">
-            <van-image lazy-load width="16" height="16" src="/images/marryModule/info_education.png"/>
-            <text class="m_l_5">学历</text>
-          </view>
-          <view class="box_item2">{{personDetails.m_education}}</view>
-        </view>
-        <view class="information_item_box">
-          <view class="box_item1">
-            <van-image lazy-load width="16" height="16" src="/images/marryModule/info_income.png"/>
-            <text class="m_l_5">收入</text>
-          </view>
-          <view class="box_item2">{{personDetails.m_income}}</view>
-        </view>
-      </view>
-      <view class="information_item">
-        <view class="standard_item_box">
-          <view class="tandard_item1">
-            <van-image lazy-load width="16" height="16" src="/images/marryModule/info_remark.png"/>
-            <text class="m_l_5">备注</text>
-          </view>
-          <view class="tandard_item2">{{personDetails.m_introduce}}</view>
+          <view class="box_item2">{{filter.emotionalState(personDetails.state)}}</view>
         </view>
       </view>
     </view>

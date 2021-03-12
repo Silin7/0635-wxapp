@@ -9,18 +9,12 @@ Page({
     totalCount: 0,
     page: 1,
     limit: 10,
-    is_top: '01',
-    marry: '',
+    dropTitle1: '全部地区',
+    address: '',
+    dropTitle2: '全部分类',
+    type: '',
+    dropTitle3: '不限性别',
     gender: '',
-    friends: '',
-    typeList: [
-      { key: '推荐', value: '01' },
-      { key: '相亲', value: '02' },
-      { key: '恋爱', value: '03' },
-      { key: '交友', value: '04' },
-      { key: '女神', value: '05' },
-      { key: '男神', value: '06' }
-    ],
     personList: []
   },
 
@@ -34,63 +28,48 @@ Page({
       windowHeight: wx.getSystemInfoSync().windowHeight
     })
   },
-  
-  // 切换tabs
-  tabChange(event) {
-    if (event.detail.name === '01') {
-      this.data.is_top = '01'
-      this.data.marry = ''
-      this.data.gender = ''
-      this.data.friends = ''
-    }
-    if (event.detail.name === '02') {
-      this.data.is_top = ''
-      this.data.marry = '01'
-      this.data.gender = ''
-      this.data.friends = ''
-    }
-    if (event.detail.name === '03') {
-      this.data.is_top = ''
-      this.data.marry = '02'
-      this.data.gender = ''
-      this.data.friends = ''
-    }
-    if (event.detail.name === '04') {
-      this.data.is_top = ''
-      this.data.marry = ''
-      this.data.gender = ''
-      this.data.friends = '01'
-    }
-    if (event.detail.name === '05') {
-      this.data.is_top = ''
-      this.data.marry = ''
-      this.data.gender = '02'
-      this.data.friends = ''
-    }
-    if (event.detail.name === '06') {
-      this.data.is_top = ''
-      this.data.marry = ''
-      this.data.gender = '01'
-      this.data.friends = ''
-    }
+  dropTap1: function (e) {
     this.setData({
-      page: 1,
-      limit: 10,
-      totalCount: 0,
-      personList: []
+      isShow: false,
+      personList: [],
+      address: e.currentTarget.dataset.id,
+      dropTitle1: e.currentTarget.dataset.title
     })
+    this.selectComponent('#item1').toggle('false');
     this.marryList()
   },
+
+  dropTap2: function (e) {
+    this.setData({
+      isShow: false,
+      personList: [],
+      type: e.currentTarget.dataset.id,
+      dropTitle2: e.currentTarget.dataset.title
+    })
+    this.selectComponent('#item2').toggle(false);
+    this.marryList()
+  },
+
+  dropTap3: function (e) {
+    this.setData({
+      isShow: false,
+      personList: [],
+      gender: e.currentTarget.dataset.id,
+      dropTitle3: e.currentTarget.dataset.title
+    })
+    this.selectComponent('#item3').toggle(false);
+    this.marryList()
+  },
+
 
   // 获取人员列表
   marryList: function () {
     let data = {
       page: this.data.page,
       limit: this.data.limit,
+      address: this.data.address,
+      type: this.data.type,
       gender: this.data.gender,
-      marry: this.data.marry,
-      is_top: this.data.is_top,
-      friends: this.data.friends
     }
     esRequest('marry_list', data).then(res => {
       if (res && res.data.code === 0) {
@@ -107,7 +86,7 @@ Page({
   // 查看详情
   personDetails: function (e) {
     wx.navigateTo({
-      url: '/pages/marryModule/marryDetails/marryDetails?register_id=' + e.currentTarget.dataset.item.id,
+      url: '/pages/marryModule/marryDetails/marryDetails?id=' + e.currentTarget.dataset.item.id,
     })
   },
 

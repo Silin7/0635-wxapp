@@ -158,7 +158,7 @@ var appointmentPay = function (type) {
   }
 }
 
-// 性别
+// 性别限制
 var limitGander = function (type) {
   if (type === '01') {
     return '仅限男生'
@@ -166,6 +166,17 @@ var limitGander = function (type) {
     return '仅限女生'
   } else {
     return '不限性别'
+  }
+}
+
+// 性别
+var gander = function (type) {
+  if (type === '01') {
+    return '男'
+  } else if (type === '02') {
+    return '女'
+  } else {
+    return '保密'
   }
 }
 
@@ -188,6 +199,124 @@ var activeType = function (type) {
   }
 }
 
+// 星座
+var constellation = function (code) {
+  if (code === '01') {
+    return '白羊座'
+  } else if (code === '02') {
+    return '金牛座'
+  } else if (code === '03') {
+    return '双子座'
+  } else if (code === '04') {
+    return '巨蟹座'
+  } else if (code === '05') {
+    return '狮子座'
+  } else if (code === '06') {
+    return '处女座'
+  } else if (code === '07') {
+    return '天秤座'
+  } else if (code === '08') {
+    return '天蝎座'
+  } else if (code === '09') {
+    return '射手座'
+  } else if (code === '010') {
+    return '摩羯座'
+  } else if (code === '011') {
+    return '水瓶座'
+  } else if (code === '012') {
+    return '双鱼座'
+  } else {
+    return '保密'
+  }
+}
+
+// 学历
+var education = function (code) {
+  if (code === '01') {
+    return '高中及以下'
+  } else if (code === '02') {
+    return '大专'
+  }  else if (code === '03') {
+    return '本科'
+  }  else if (code === '04') {
+    return '研究生'
+  }  else if (code === '05') {
+    return '博士及以上'
+  } else if (code === '06') {
+    return '保密'
+  }
+}
+
+// 职业
+var occupation = function (code) {
+  if (code === '01') {
+    return '高中及以下'
+  } else if (code === '02') {
+    return '生活|服务业'
+  }  else if (code === '03') {
+    return '行政|公务员'
+  }  else if (code === '04') {
+    return '销售|客服'
+  }  else if (code === '05') {
+    return '传媒|通信'
+  } else if (code === '06') {
+    return '教育|法律'
+  } else if (code === '07') {
+    return '财会|医疗'
+  } else if (code === '08') {
+    return '技术|工程师'
+  } else if (code === '09') {
+    return '学生'
+  } else if (code === '010') {
+    return '其他'
+  } else if (code === '011') {
+    return '保密'
+  }
+}
+
+// 收入
+var income = function (code) {
+  if (code === '01') {
+    return '3千及以下'
+  } else if (code === '02') {
+    return '3千至5千'
+  }  else if (code === '03') {
+    return '5千至1万'
+  }  else if (code === '04') {
+    return '1万至2万'
+  }  else if (code === '05') {
+    return '2万以上'
+  } else if (code === '06') {
+    return '保密'
+  }
+}
+
+// 感情状态
+var emotionalState  = function (code) {
+  if (code === '01') {
+    return '单身'
+  } else if (code === '02') {
+    return '恋爱'
+  }  else if (code === '03') {
+    return '已婚'
+  }  else if (code === '04') {
+    return '离异'
+  } else if (code === '05') {
+    return '保密'
+  }
+}
+
+// 车房
+var carHouse = function (code) {
+  if (code === '01') {
+    return '有'
+  } else if (code === '02') {
+    return '无'
+  }else if (code === '03') {
+    return '保密'
+  }
+}
+
 module.exports = {
   dayjs: dayjs,
   licensePlate: licensePlate,
@@ -195,5 +324,12 @@ module.exports = {
   areaCode: areaCode,
   appointmentPay: appointmentPay,
   limitGander: limitGander,
-  activeType: activeType
+  gander: gander,
+  activeType: activeType,
+  constellation: constellation,
+  education: education,
+  occupation: occupation,
+  income: income,
+  emotionalState: emotionalState,
+  carHouse: carHouse
 }

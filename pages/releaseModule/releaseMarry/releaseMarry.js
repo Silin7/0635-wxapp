@@ -155,7 +155,7 @@ Page({
       pickerType: 'income',
       pickerShow: true,
       pickerTitle: '请选择收入',
-      pickerList: ['3千及以下', '3千至5千', '5千至1万', '1W至2W', '2W以上', '保密']
+      pickerList: ['3千及以下', '3千至5千', '5千至1万', '1万至2万', '2万以上', '保密']
     })
   },
 
