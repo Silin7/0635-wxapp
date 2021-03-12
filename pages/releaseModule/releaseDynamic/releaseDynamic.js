@@ -100,7 +100,7 @@ Page({
         let formData = {
           author_id: wx.getStorageSync('id_key').toString(),
           author_name: _this.data.userInfo.nick_name,
-          author_avatar_url: _this.data.userInfo.avatar_url,
+          author_avatar: _this.data.userInfo.avatar_url,
           content: _this.data.dynamicContent
         }
         wx.uploadFile({ 
@@ -124,7 +124,7 @@ Page({
         let data = {
           author_id: wx.getStorageSync('id_key').toString(),
           author_name: _this.data.userInfo.nick_name,
-          author_avatar_url: _this.data.userInfo.avatar_url,
+          author_avatar: _this.data.userInfo.avatar_url,
           content: _this.data.dynamicContent
         }
         esRequest('dynamic_release_txt', data).then(res => {
