@@ -1,14 +1,14 @@
 <van-toast id="van-toast" />
 
-<scroll-view scroll-y="{{true}}" bindscrolltolower="onScrollBottom" class="scroll_box" style="height: {{windowHeight}}px;">
-  <view class="series_name">{{series_name}}</view>
-  <view wx:for="{{seriesList}}" wx:key="index">
+<scroll-view scroll-y="{{true}}" class="scroll_box" style="height: {{windowHeight}}px;">
+  <view class="series_name">{{seriesList.series_name}}</view>
+  <view wx:for="{{seriesList.series_images}}" wx:key="index">
     <view class="transition_box">
       <image src="http://121.89.215.228/birch-forest-media/saveUnhappy/picture/gd-love.gif" class="transition_img"/>
     </view>
     <view class="content_box">
-      <rich-text class="story_title" nodes="{{item.wallwriting_info}}"></rich-text>
-      <van-image lazy-load width="{{windowWidth-24}}" height="200" wx:if="{{item.wallwriting_url}}" src="{{item.wallwriting_url}}" bind:click="savePicture" data-img="{{item.wallwriting_url}}"/>
+      <rich-text wx:if="{{item.info}}" class="story_title" nodes="{{item.info}}"></rich-text>
+      <van-image lazy-load width="{{windowWidth-24}}" height="200" wx:if="{{item.url}}" src="{{item.url}}" bind:click="savePicture" data-img="{{item.url}}"/>
     </view>
   </view>
 </scroll-view>

@@ -5,22 +5,15 @@ Page({
   data: {
     windowWidth: 0,
     windowHeight: 0,
-    series_id: '',
-    series_name: '',
-    seriesPage: '1',
-    seriesLimit: '10',
-    seriesList: []
+    id: '',
+    seriesList: {}
   },
 
   onLoad: function (options) {
     if (options.id) {
-      this.data.series_id = options.id
+      this.data.id = options.id
     }
-    if (options.name) {
-      this.setData({
-        series_name: options.name
-      })
-    }
+    this.wallwritingList()
   },
 
   onReady: function () {
@@ -30,34 +23,21 @@ Page({
     })
   },
 
-  onShow: function () {
-    this.wallwritingList()
-  },
-
   // 头像系列
   wallwritingList: function () {
     let data = {
-      page: this.data.seriesPage,
-      limit: this.data.seriesLimit,
-      series_id: this.data.series_id
+      id: this.data.id
     }
     esRequest('wallwriting_list', data).then(res => {
       if (res && res.data.code === 0) {
+        res.data.data.series_images = JSON.parse(res.data.data.series_images)
         this.setData({
-          seriesList: this.data.seriesList.concat(res.data.data)
+          seriesList: res.data.data
         })
       } else {
         Toast.fail('系统错误')
       }
     })
-  },
-
-  // 触底函数
-  onScrollBottom: function () {
-    if (this.data.totalCount > this.data.seriesList.length) {
-      this.data.seriesPage += 1
-      this.wallwritingList()
-    }
   },
   
   // 点击保存图片

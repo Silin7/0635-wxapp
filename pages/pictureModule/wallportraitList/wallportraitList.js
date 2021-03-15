@@ -4,21 +4,15 @@ import Toast from '../../../miniprogram_npm/vant-weapp/toast/toast';
 Page({
   data: {
     windowHeight: 0,
-    series_id: '',
-    series_name: '',
+    id: '',
     seriesPage: '1',
     seriesLimit: '10',
-    seriesList: []
+    seriesList: {}
   },
 
   onLoad: function (options) {
     if (options.id) {
-      this.data.series_id = options.id
-    }
-    if (options.name) {
-      this.setData({
-        series_name: options.name
-      })
+      this.data.id = options.id
     }
     this.wallportraitList()
   },
@@ -32,27 +26,18 @@ Page({
   // 头像系列
   wallportraitList: function () {
     let data = {
-      page: this.data.seriesPage,
-      limit: this.data.seriesLimit,
-      series_id: this.data.series_id
+      id: this.data.id
     }
     esRequest('wallportrait_list', data).then(res => {
       if (res && res.data.code === 0) {
+        res.data.data.series_images = JSON.parse(res.data.data.series_images)
         this.setData({
-          seriesList: this.data.seriesList.concat(res.data.data)
+          seriesList: res.data.data
         })
       } else {
         Toast.fail('系统错误')
       }
     })
-  },
-
-  // 触底函数
-  onScrollBottom: function () {
-    if (this.data.totalCount > this.data.seriesList.length) {
-      this.data.seriesPage += 1
-      this.wallportraitList()
-    }
   },
   
   // 点击保存图片
