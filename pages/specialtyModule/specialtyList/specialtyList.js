@@ -3,7 +3,6 @@ import Toast from '../../../miniprogram_npm/vant-weapp/toast/toast';
 
 Page({
   data: {
-    windowWidth: 0,
     windowHeight: 0,
     cityActive: 0,
     cityList: [
@@ -29,7 +28,6 @@ Page({
 
   onReady: function () {
     this.setData({
-      windowWidth: wx.getSystemInfoSync().windowWidth,
       windowHeight: wx.getSystemInfoSync().windowHeight
     })
   },
@@ -42,18 +40,19 @@ Page({
   },
 
   // tabs 切换
-  cityChange: function (e) {
+  cityChange: function (event) {
     this.data.specialtyPage = 1
     this.data.specialtyList = []
-    this.data.specialtyPosition = e.detail.title
+    if (event.detail.name == 0) {
+      this.data.scenicspotPosition = ''
+    } else {
+      this.data.scenicspotPosition = event.detail.name
+    }
     this.getSpecialtyList()
   },
 
   // 特产列表
   getSpecialtyList: function () {
-    if (this.data.specialtyPosition === '全部') {
-      this.data.specialtyPosition = ''
-    }
     let data = {
       page: this.data.specialtyPage,
       limit: this.data.specialtyLimit,

@@ -4,7 +4,6 @@ import Toast from '../../../miniprogram_npm/vant-weapp/toast/toast';
 Page({
   data: {
     cityId: '',
-    historyImgs: [],
     cityDetails: {}
   },
 
@@ -26,8 +25,8 @@ Page({
     }
     esRequest('local_historical', data).then(res => {
       if (res && res.data.code === 0) {
+        res.data.data.city_images = JSON.parse(res.data.data.city_images)
         this.setData({
-          historyImgs: res.data.data.city_images.split('，'),
           cityDetails: res.data.data
         })
       } else {

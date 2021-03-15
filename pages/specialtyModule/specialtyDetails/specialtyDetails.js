@@ -6,8 +6,7 @@ Page({
     id: '',
     windowWidth: 0,
     windowHeight: 0,
-    specialtyDetails: {},
-    specialty_image: []
+    specialtyDetails: {}
   },
 
   onLoad: function (options) {
@@ -32,9 +31,9 @@ Page({
     }
     esRequest('specialty_details', data).then(res => {
       if (res && res.data.code === 0) {
+        res.data.data.specialty_image = JSON.parse(res.data.data.specialty_image)
         this.setData({
           specialtyDetails: res.data.data,
-          specialty_image: res.data.data.specialty_image.split('，')
         })
       } else {
         Toast.fail('系统错误')

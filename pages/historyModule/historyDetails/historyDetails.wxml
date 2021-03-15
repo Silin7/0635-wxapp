@@ -3,7 +3,7 @@
 <view class="page_box">
   <!-- swiper滚动图 -->
   <swiper indicator-dots="{{true}}" autoplay="{{true}}" circular="{{true}}" style="height: 240px;">
-    <block wx:for="{{historyImgs}}" wx:key="index">
+    <block wx:for="{{cityDetails.city_images}}" wx:key="index">
       <swiper-item>
         <van-image lazy-load width="100%" height="240px" src="{{item}}"/>
       </swiper-item>
