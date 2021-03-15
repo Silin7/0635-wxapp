@@ -3,7 +3,6 @@ import Toast from '../../../miniprogram_npm/vant-weapp/toast/toast';
 
 Page({
   data: {
-    windowWidth: 0,
     windowHeight: 0,
     series_id: '',
     series_name: '',
@@ -28,9 +27,6 @@ Page({
     this.setData({
       windowHeight: wx.getSystemInfoSync().windowHeight
     })
-  },
-
-  onShow: function () {
   },
 
   // 头像系列

@@ -1,6 +1,5 @@
 <view class="history_box">
   <view class="history_item" wx:for="{{wallportraitType}}" wx:key="inex" bindtap="wallportraitSeries" data-item="{{item}}">
-    <image src="{{item.image}}" class="w_h_100"></image>
     <van-image lazy-load width="100%" height="100%" src="{{item.image}}"/>
     <view class="item_banner_mask1"></view>
     <view class="item_banner_text2">{{item.name}}</view>
