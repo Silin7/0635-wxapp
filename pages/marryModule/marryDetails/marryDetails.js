@@ -70,7 +70,7 @@ Page({
     })
   },
 
-  // 关注Ta
+  // 喜欢Ta
   btnGz: function () {
     if (!wx.getStorageSync('id_key')) {
       this.setData({ loginShow: true })
@@ -113,7 +113,7 @@ Page({
     }
   },
 
-  // 关注确定按钮
+  // 喜欢确定按钮
   tapDialogButton: function (e) {
     this.setData({
       dialogShow: false
@@ -126,14 +126,14 @@ Page({
       let data = {
         followers_id: wx.getStorageSync('id_key').toString(),
         watched_id: _this.data.personDetails.id,
-        nick_name: _this.data.personDetails.nick_name,
-        photo: _this.data.personDetails.photo1,
+        nick_name: _this.data.personDetails.name,
+        photo: _this.data.personDetails.cover,
         introduce: _this.data.personDetails.introduce
       }
       esRequest('follow_users', data).then(res => {
         if (res && res.data.code === 0) {
           wx.setStorageSync('tp_key', '04')
-          Toast.success('已关注')
+          Toast.success('已喜欢')
         } else {
           Toast.fail('系统错误')
         }
