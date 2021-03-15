@@ -1,7 +1,5 @@
 Page({
   data: {
-    windowWidth: 0,
-    windowHeight: 0,
     historyList: [
       {type_id: '1001', type_name: '东昌府区'},
       {type_id: '1002', type_name: '阳谷县'},
@@ -12,13 +10,6 @@ Page({
       {type_id: '1007', type_name: '高唐县'},
       {type_id: '1008', type_name: '临清市'}
     ]
-  },
-
-  onReady: function () {
-    this.setData({
-      windowWidth: wx.getSystemInfoSync().windowWidth,
-      windowHeight: wx.getSystemInfoSync().windowHeight
-    })
   },
 
   // 历史详情

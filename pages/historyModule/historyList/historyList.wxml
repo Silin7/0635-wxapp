@@ -1,5 +1,3 @@
-<van-toast id="van-toast" />
-
 <view class="history_box">
   <view class="history_item" wx:for="{{historyList}}" wx:key="inex" bindtap="historyDetails" data-id="{{item.type_id}}">
     <van-image lazy-load width="100%" height="100%" src="/images/homeModule/banner_xq.jpg"/>

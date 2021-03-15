@@ -1,6 +1,6 @@
 <van-toast id="van-toast" />
 
-<view class="bg_F5 bs_bb oy_a" style="height: {{windowHeight}}px; ">
+<view class="page_box">
   <!-- swiper滚动图 -->
   <swiper indicator-dots="{{true}}" autoplay="{{true}}" circular="{{true}}" style="height: 240px;">
     <block wx:for="{{historyImgs}}" wx:key="index">
@@ -11,9 +11,7 @@
   </swiper>
   <!-- 简介 -->
   <view class="scenic_info_box">
-    <view class="scenic_info_item">
-      <text class="co_0">{{cityDetails.city_name}}</text>
-    </view>
+    <view class="scenic_info_item">{{cityDetails.city_name}}</view>
     <view class="scenic_details_box" wx:if="{{cityDetails.county_annals}}">
       <view class="scenic_details_title">县志</view>
       <rich-text class="scenic_details_node" nodes="{{cityDetails.county_annals}}"></rich-text>

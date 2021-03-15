@@ -3,23 +3,16 @@ import Toast from '../../../miniprogram_npm/vant-weapp/toast/toast';
 
 Page({
   data: {
-    windowWidth: 0,
-    windowHeight: 0,
     cityId: '',
     historyImgs: [],
     cityDetails: {}
   },
 
   onLoad: function (options) {
-    console.log(options.cityId)
     this.data.cityId = options.cityId ? options.cityId : ''
   },
 
   onReady: function () {
-    this.setData({
-      windowWidth: wx.getSystemInfoSync().windowWidth,
-      windowHeight: wx.getSystemInfoSync().windowHeight
-    })
   },
 
   onShow: function () {

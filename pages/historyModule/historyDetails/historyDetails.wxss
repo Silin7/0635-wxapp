@@ -1,50 +1,49 @@
-.scenic_img_box {
-  width: 100vw;
-  height: 260px;
+.page_box {
+  box-sizing: border-box;
+  background-color: #F7F8FA;
 }
 .scenic_info_box {
   box-sizing: border-box;
   width: 100vw;
-  padding:10px 10px 5px;
+  padding: 10px;
   background-color: #FFFFFF;
   border-radius: 10px 10px 0px 0px;
   position: absolute;
   top: 220px;
   z-index: 1;
 }
-
 .scenic_info_item {
   box-sizing: border-box;
-  padding-left: 5px;
   height: 40px;
-  line-height: 40px;
+  padding-left: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 700;
+  line-height: 40px;
   letter-spacing: 5px;
-  color: #333333;
-  /* border-bottom: 1rpx solid #999999; */
+  color: #000000;
 }
 .scenic_details_box {
   box-sizing: border-box;
   display: flex;
   flex-flow: column;
-  padding: 10px;
-  color: #333333;
+  margin: 10px 0;
 }
 .scenic_details_title {
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 700;
   letter-spacing: 2px;
+  color: #000000;
 }
 .scenic_details_node {
   box-sizing: border-box;
   width: 100%;
-  padding: 10px;
-  font-size: 13px;
-  color: #666666;
-  letter-spacing: 1px;
-  line-height: 20px;
+  padding: 15px;
+  font-size: 14px;
+  line-height: 30px;
+  letter-spacing: 2px;
+  color: #333333;
+  background-color: #FFFFFF;
 }
