@@ -139,7 +139,8 @@ Page({
 
   // 足迹更多
   tracksMore: function () {
-    wx.navigateTo({
+      wx.setStorageSync('tp_key', '03')
+      wx.navigateTo({
       url: '/pages/scenicModule/mineScenic/mineScenic'
     })
   },
@@ -172,14 +173,14 @@ Page({
     })
   },
 
-  // 跳转到我的关注
+  // 跳转到我的喜欢
   myConcerns: function () {
     wx.navigateTo({
       url: '/pages/mineModule/myConcerns/myConcerns?type=01',
     })
   },
 
-  // 跳转到我的收藏
+  // 跳转到我的关注
   myCollection: function () {
     wx.navigateTo({
       url: '/pages/mineModule/myConcerns/myConcerns?type=02',
@@ -193,7 +194,7 @@ Page({
     })
   },
 
-   // 跳转到我的收藏
+   // 跳转到我的动态
    myDynamic: function () {
     wx.navigateTo({
       url: '/pages/mineModule/myDynamic/myDynamic',

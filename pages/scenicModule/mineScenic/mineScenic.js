@@ -3,21 +3,15 @@ import Toast from '../../../miniprogram_npm/vant-weapp/toast/toast';
 
 Page({
   data: {
-    windowWidth: 0,
-    windowHeight: 0,
     scenicspotList: [],
     mineScenicspotList: []
   },
 
-  onReady: function () {
-    this.setData({
-      windowWidth: wx.getSystemInfoSync().windowWidth,
-      windowHeight: wx.getSystemInfoSync().windowHeight
-    })
-  },
-
   onShow: function () {
-    this.waitScenicSpot()
+    if (wx.getStorageSync('tp_key') === '03') {
+      wx.setStorageSync('tp_key', '01')
+      this.waitScenicSpot()
+    }
   },
 
   async waitScenicSpot() {

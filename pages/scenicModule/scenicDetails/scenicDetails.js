@@ -8,13 +8,16 @@ Page({
     windowHeight: 0,
     scenicId: '',
     scenicDetails: {},
-    scenicspotImgs: [],
     markers: [],
     isFollow: '0'
   },
 
   onLoad: function (options) {
     this.data.scenicId = options.id ? options.id : ''
+    if (wx.getStorageSync('id_key')) {
+      this.isPunchClock()
+    }
+    this.getScenicSpot()
   },
 
   onReady: function () {
@@ -24,13 +27,6 @@ Page({
     })
   },
 
-  onShow: function () {
-    if (wx.getStorageSync('id_key')) {
-      this.isPunchClock()
-    }
-    this.getScenicSpot()
-  },
-
   // 景点详情
   getScenicSpot: function () {
     let data = {
@@ -38,9 +34,9 @@ Page({
     }
     esRequest('scenicspot_info', data).then(res => {
       if (res && res.data.code === 0) {
+        res.data.data.scenicspot_imgs = JSON.parse(res.data.data.scenicspot_imgs)
         this.setData({
           scenicDetails: res.data.data,
-          scenicspotImgs: res.data.data.scenicspot_imgs.split('，'),
           markers: [{
             latitude: res.data.data.latitude,
             longitude: res.data.data.longitude,

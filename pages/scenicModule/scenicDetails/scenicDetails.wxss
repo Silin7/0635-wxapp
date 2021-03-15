@@ -118,11 +118,12 @@
   top: 585px;
   z-index: 1;
   width: 100vw;
-  padding:15px;
-  background-color: #FFFFFF;
-  color: #333333;
+  padding: 15px;
+  font-size: 14px;
   line-height: 30px;
   letter-spacing: 2px;
+  color: #333333;
+  background-color: #FFFFFF;
 }
 
 /* 地图 */

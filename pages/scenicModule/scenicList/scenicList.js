@@ -36,18 +36,19 @@ Page({
   },
 
   // 切换Tabs
-  scenicChange: function (e) {
+  scenicChange: function (event) {
     this.data.scenicspotPage = 1
     this.data.scenicspotList = []
-    this.data.scenicspotPosition = e.detail.title
+    if (event.detail.name == 0) {
+      this.data.scenicspotPosition = ''
+    } else {
+      this.data.scenicspotPosition = event.detail.name
+    }
     this.getScenicSpot()
   },
 
   // 景点列表
   getScenicSpot: function () {
-    if (this.data.scenicspotPosition === '全部') {
-      this.data.scenicspotPosition = ''
-    }
     let data = {
       page: this.data.scenicspotPage,
       limit: this.data.scenicspotLimit,

@@ -1,9 +1,5 @@
 <van-toast id="van-toast" />
 
-<!-- 我的足迹 -->
-<!-- <view class="n_title_box_fd">
-  <text class="fx_r_c_c fs_13 co_6 fw_7 ls_2">我的足迹</text>
-</view> -->
 <view class="footprint">
   <view class="footprint_item" wx:for="{{scenicspotList}}" wx:key="index" bindtap="scenicDetails" data-item="{{item}}">
     <image src="{{item.scenicspot_img}}" class="footprint_item_img">
