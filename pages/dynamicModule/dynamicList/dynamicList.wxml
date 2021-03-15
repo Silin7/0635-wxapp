@@ -12,10 +12,10 @@
   <!-- 作者基本信息 -->
   <view class="user_box">
     <view class="user_image">
-      <van-image lazy-load width="60" height="60" src="{{authorInfo.avatarUrl}}" image-class="avatar_img"/>
+      <van-image lazy-load width="60" height="60" src="{{authorInfo.avatar_url}}" image-class="avatar_img"/>
     </view>
-      <view class="nick_name">{{authorInfo.nickName}}</view>
-      <view class="personal_signature">{{authorInfo.personalSignature}}</view>
+      <view class="nick_name">{{authorInfo.nick_name}}</view>
+      <view class="personal_signature">{{authorInfo.personal_signature}}</view>
       <view class="user_info">
         <view class="appointment_tag_item" style="background-color: #F14668;">
           <text class="appointment_tag_text">{{authorInfo.gender == '1' ? '男' : '女'}}</text>

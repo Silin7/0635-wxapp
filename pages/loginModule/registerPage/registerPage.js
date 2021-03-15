@@ -5,13 +5,13 @@ import Toast from '../../../miniprogram_npm/vant-weapp/toast/toast';
 Page({
   data: {
     state: '',
-    userName: '',
+    user_name: '',
     password: '',
     password2: '',
     newPassword: '',
-    nickName: '',
+    nick_name: '',
     gender: '',
-    avatarUrl: '',
+    avatar_url: '',
   },
 
   onLoad: function (options) {
@@ -23,7 +23,7 @@ Page({
   // 账号
   inputName: function (event) {
     this.setData({
-      userName: event.detail.value
+      user_name: event.detail.value
     })
   },
 
@@ -54,11 +54,11 @@ Page({
       Toast.fail('未授权')
       return
     } else {
-      this.data.nickName = e.detail.userInfo.nickName
+      this.data.nick_name = e.detail.userInfo.nick_name
       this.data.gender = e.detail.userInfo.gender.toString(),
-      this.data.avatarUrl = e.detail.userInfo.avatarUrl
+      this.data.avatar_url = e.detail.userInfo.avatar_url
     }
-    if (!this.data.userName) {
+    if (!this.data.user_name) {
       Toast.fail('请输入账号')
       return
     }
@@ -78,7 +78,7 @@ Page({
         return
       }
     }
-    if (!regular.APNumber(this.data.userName)) {
+    if (!regular.APNumber(this.data.user_name)) {
       Toast.fail('账号格式错误')
       return
     }
@@ -94,16 +94,16 @@ Page({
     }
     if (this.data.state == '0') {
       let data = {
-        userName: this.data.userName,
+        user_name: this.data.user_name,
         state: '0'
       }
       esRequest('is_register', data).then(res => {
         let data2 = {
-          userName: this.data.userName,
+          user_name: this.data.user_name,
           password: this.data.password,
-          nickName: this.data.nickName,
+          nick_name: this.data.nick_name,
           gender: this.data.gender,
-          avatarUrl: this.data.avatarUrl
+          avatar_url: this.data.avatar_url
         }
         if (res && res.data.code === 0) {
           esRequest('register_inster', data2).then(res => {
@@ -125,7 +125,7 @@ Page({
     }
     if (this.data.state == '1') {
       let data1 = {
-        userName: this.data.userName,
+        user_name: this.data.user_name,
         state: '1'
       }
       esRequest('is_register', data1).then(res => {
@@ -133,7 +133,7 @@ Page({
           this.data.id = res.data.data.id
           let data2 = {
             id: res.data.data.id,
-            userName: this.data.userName,
+            user_name: this.data.user_name,
             password: this.data.password,
           }
           esRequest('change_password', data2).then(res => {

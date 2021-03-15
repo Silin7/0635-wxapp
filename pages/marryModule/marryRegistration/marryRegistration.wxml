@@ -6,20 +6,20 @@
 
 <view class="page_box" style="height: {{windowHeight-80}}px;">
   <view class="user_box">
-    <van-image width="60" height="60" src="{{userInfo.avatarUrl}}" image-class="avatar_img"/>
-    <view class="nick_name" style="width: {{windowWidth-120}}px;">{{nickName}}</view>
+    <van-image width="60" height="60" src="{{userInfo.avatar_url}}" image-class="avatar_img"/>
+    <view class="nick_name" style="width: {{windowWidth-120}}px;">{{nick_name}}</view>
   </view>
 
   <view class="sign_box">
     <!-- 姓名 -->
     <view class="information_item">
       <view class="information_item_text">昵称</view>
-      <van-field value="{{userInfo.nickName}}" placeholder="请输入姓名" bind:blur="nickNameTap" border="{{false}}" maxlength="{{11}}" style="width: {{windowWidth-140}}px;"/>
+      <van-field value="{{userInfo.nick_name}}" placeholder="请输入姓名" bind:blur="nickNameTap" border="{{false}}" maxlength="{{11}}" style="width: {{windowWidth-140}}px;"/>
     </view>
     <!-- 手机号 -->
     <view class="information_item">
       <view class="information_item_text">微信</view>
-      <van-field type="number" value="{{userInfo.userPhone}}" placeholder="请输入手机号码格式微信" bind:blur="userPhoneTap" border="{{false}}" maxlength="{{11}}" style="width: {{windowWidth-140}}px;"/>
+      <van-field type="number" value="{{userInfo.user_phone}}" placeholder="请输入手机号码格式微信" bind:blur="userPhoneTap" border="{{false}}" maxlength="{{11}}" style="width: {{windowWidth-140}}px;"/>
     </view>
     <!-- 类别 -->
     <view class="information_item2">

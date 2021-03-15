@@ -9,15 +9,15 @@ Page({
     windowHeight: 0,
     dataForm: {
       id: '',
-      nickName: '',
-      avatarUrl: '',
-      userPhone: '',
+      nick_name: '',
+      avatar_url: '',
+      user_phone: '',
       age: '',
       birthday: '',
       gender: '',
       constellation: '',
       address: '',
-      personalSignature: '',
+      personal_signature: '',
     },
     pickerShow: false,
     pickerType: '',
@@ -60,9 +60,17 @@ Page({
     })
   },
 
+  // 填写昵称
+  nickNameTap: function (event) {
+    this.data.dataForm.nick_name = event.detail.value
+    this.setData({
+      dataForm: this.data.dataForm
+    });
+  },
+
   // 填写电话
   userPhoneTap: function (event) {
-    this.data.dataForm.userPhone = event.detail.value
+    this.data.dataForm.user_phone = event.detail.value
     this.setData({
       dataForm: this.data.dataForm
     });
@@ -70,10 +78,10 @@ Page({
 
   // 选择性别
   genderChange: function (event) {
-    // this.data.dataForm.gender = event.detail
-    // this.setData({
-    //   dataForm: this.data.dataForm
-    // });
+    this.data.dataForm.gender = event.detail
+    this.setData({
+      dataForm: this.data.dataForm
+    });
   },
 
   // 弹出日期选择器
@@ -129,7 +137,7 @@ Page({
 
   // 填写个性签名
   personalSignatureTap: function (event) {
-    this.data.dataForm.personalSignature = event.detail.value
+    this.data.dataForm.personal_signature = event.detail.value
     this.setData({
       dataForm: this.data.dataForm
     });
@@ -139,8 +147,12 @@ Page({
   save_btn: function () {
     let data = this.data.dataForm
     for (let key in data) {
-      if (data[key] == null) {
-        if (key == 'userPhone') {
+      if (data[key] == null || data[key] == '') {
+        if (key == 'nick_name') {
+          Toast.fail('请填写昵称')
+          return
+        }
+        if (key == 'user_phone') {
           Toast.fail('请填写电话')
           return
         }
@@ -160,12 +172,12 @@ Page({
           Toast.fail('请填写地址')
           return
         }
-        if (key == 'personalSignature') {
-          this.data.dataForm.personalSignature = '保持热爱奔赴山海，各自努力顶峰相见！'
+        if (key == 'personal_signature') {
+          this.data.dataForm.personal_signature = '保持热爱奔赴山海，各自努力顶峰相见！'
         }
       }
     }
-    if (regular.phoneNumber(this.data.dataForm.userPhone)) {
+    if (regular.phoneNumber(this.data.dataForm.user_phone)) {
       this.data.dataForm.id = wx.getStorageSync('id_key')
       esRequest('update_mineInfo', this.data.dataForm).then(res => {
         if (res && res.data.code === 0) {

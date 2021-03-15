@@ -8,10 +8,10 @@
   <!-- 作者基本信息 -->
   <view class="user_box">
     <view class="user_image">
-      <van-image lazy-load width="60" height="60" src="{{userInfo.avatarUrl}}" image-class="avatar_img"/>
+      <van-image lazy-load width="60" height="60" src="{{userInfo.avatar_url}}" image-class="avatar_img"/>
     </view>
-      <view class="nick_name">{{userInfo.nickName}}</view>
-      <view class="personal_signature">{{userInfo.personalSignature}}</view>
+      <view class="nick_name">{{userInfo.nick_name}}</view>
+      <view class="personal_signature">{{userInfo.personal_signature}}</view>
       <view class="user_info">
         <view class="appointment_tag_item" style="background-color: #F14668;">
           <text class="appointment_tag_text">{{userInfo.gender == '1' ? '男' : '女'}}</text>

@@ -3,7 +3,7 @@
 
 <!-- 笑话 -->
 <view class="story_box" wx:if="{{type_id === '01'}}">
-  <view wx:for="{{storyList}}" wx:key="index">
+  <view wx:for="{{entertainmentList}}" wx:key="index">
     <view class="transition_box">
       <van-image lazy-load width="15" height="15" src="http://121.89.215.228/birch-forest-media/saveUnhappy/picture/gd-love.gif"/>
     </view>
@@ -16,7 +16,7 @@
 
 <!-- 图片 -->
 <view class="story_box" wx:if="{{type_id === '02'}}">
-  <view wx:for="{{storyList}}" wx:key="index">
+  <view wx:for="{{entertainmentList}}" wx:key="index">
     <view class="transition_box">
       <van-image lazy-load width="15" height="15" src="http://121.89.215.228/birch-forest-media/saveUnhappy/picture/gd-love.gif"/>
     </view>
@@ -29,7 +29,7 @@
 
 <!-- 视频 -->
 <view class="story_box" wx:if="{{type_id === '03'}}">
-  <view wx:for="{{storyList}}" wx:key="index">
+  <view wx:for="{{entertainmentList}}" wx:key="index">
     <view class="transition_box">
       <van-image lazy-load width="15" height="15" src="http://121.89.215.228/birch-forest-media/saveUnhappy/picture/gd-love.gif"/>
     </view>

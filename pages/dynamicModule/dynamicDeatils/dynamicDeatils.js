@@ -178,9 +178,9 @@ Page({
         let data = {
           followers_id: wx.getStorageSync('id_key').toString(),
           user_id: _this.data.userInfo.id.toString(),
-          user_name: _this.data.userInfo.nickName,
-          user_image: _this.data.userInfo.avatarUrl,
-          user_info: _this.data.userInfo.personalSignature,
+          user_name: _this.data.userInfo.nick_name,
+          user_image: _this.data.userInfo.avatar_url,
+          user_info: _this.data.userInfo.personal_signature,
         }
         esRequest('follow_collection', data).then(res => {
           if (res && res.data.code === 0) {
@@ -198,8 +198,8 @@ Page({
           dynamic_id: _this.data.dynamicId,
           comment_content: _this.data.commentContent,
           reviewer_id: _this.data.reviewerInfo.id,
-          reviewer_name: _this.data.reviewerInfo.nickName,
-          reviewer_image: _this.data.reviewerInfo.avatarUrl,
+          reviewer_name: _this.data.reviewerInfo.nick_name,
+          reviewer_image: _this.data.reviewerInfo.avatar_url,
         }
         esRequest('write_comment', data).then(res => {
           if (res && res.data.code === 0) {

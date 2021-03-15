@@ -102,9 +102,9 @@ Page({
       let data = {
         followers_id: wx.getStorageSync('id_key').toString(),
         user_id: this.data.authorInfo.id.toString(),
-        user_name: this.data.authorInfo.nickName,
-        user_image: this.data.authorInfo.avatarUrl,
-        user_info: this.data.authorInfo.personalSignature,
+        user_name: this.data.authorInfo.nick_name,
+        user_image: this.data.authorInfo.avatar_url,
+        user_info: this.data.authorInfo.personal_signature,
       }
       esRequest('follow_collection', data).then(res => {
         if (res && res.data.code === 0) {

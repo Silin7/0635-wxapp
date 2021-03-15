@@ -4,7 +4,7 @@ import Toast from '../../../miniprogram_npm/vant-weapp/toast/toast';
 
 Page({
   data: {
-    userName: '',
+    user_name: '',
     password: '',
   },
 
@@ -15,7 +15,7 @@ Page({
   // 账号
   inputName: function (event) {
     this.setData({
-      userName: event.detail.value
+      user_name: event.detail.value
     })
   },
 
@@ -28,7 +28,7 @@ Page({
 
   // 登录
   signIn: function () {
-    if (!this.data.userName) {
+    if (!this.data.user_name) {
       Toast.fail('请输入账号')
       return
     }
@@ -36,7 +36,7 @@ Page({
       Toast.fail('请输入密码')
       return
     }
-    if (!regular.APNumber(this.data.userName)) {
+    if (!regular.APNumber(this.data.user_name)) {
       Toast.fail('账号格式错误')
       return
     }

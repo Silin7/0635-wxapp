@@ -191,10 +191,10 @@ Page({
     if (wx.getStorageSync('userIfo')) {
       let userIfo = wx.getStorageSync('userIfo')
       this.data.dataForm.sponsor_id = wx.getStorageSync('id_key').toString()
-      this.data.dataForm.sponsor_name = userIfo.nickName
+      this.data.dataForm.sponsor_name = userIfo.nick_name
       this.data.dataForm.sponsor_gender = userIfo.gender
       this.data.dataForm.sponsor_age = userIfo.age
-      this.data.dataForm.sponsor_img = userIfo.avatarUrl
+      this.data.dataForm.sponsor_img = userIfo.avatar_url
     } else {
       this.getMineInfo()
     }
@@ -268,10 +268,10 @@ Page({
         wx.setStorageSync('userIfo', res.data.data)
         let userIfo = res.data.data
         _this.data.dataForm.sponsor_id = wx.getStorageSync('id_key').toString()
-        _this.data.dataForm.sponsor_name = userIfo.nickName
+        _this.data.dataForm.sponsor_name = userIfo.nick_name
         _this.data.dataForm.sponsor_gender = userIfo.gender
         _this.data.dataForm.sponsor_age = userIfo.age
-        _this.data.dataForm.sponsor_img = userIfo.avatarUrl
+        _this.data.dataForm.sponsor_img = userIfo.avatar_url
       } else {
         Toast.fail('系统错误')
       }
