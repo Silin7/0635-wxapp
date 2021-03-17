@@ -1,7 +1,7 @@
 {
   "pages":[
-    "pages/homeModule/findPage/findPage",
     "pages/homeModule/indexPage/indexPage",
+    "pages/homeModule/findPage/findPage",
     "pages/homeModule/releasePage/releasePage",
     "pages/homeModule/newsPage/newsPage",
     "pages/homeModule/minePage/minePage",
