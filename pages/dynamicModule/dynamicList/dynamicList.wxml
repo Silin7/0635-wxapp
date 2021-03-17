@@ -35,18 +35,20 @@
       </view>
   </view>
   <view wx:if="{{!dynamicNo}}" class="dynamic_item" wx:for="{{dynamicList}}" wx:key="inxex" bindtap="dynamicDeatils" data-item="{{item}}">
-    <view class="dynamic_item_box1" wx:if="{{item.content != ''}}">
-      <van-image lazy-load width="80" height="110" wx:if="{{item.image}}" src="{{item.image}}" image-class="br_5" />
-      <view class="{{item.image ? 'dynamic_info1' : 'dynamic_info2'}}">
+    <view class="dynamic_item_box1" wx:if="{{item.image && item.content != ''}}">
+      <van-image lazy-load width="80" height="110" src="{{item.image}}" image-class="br_5" />
+      <view class="dynamic_info1">
         <view class="dynamic_content to_3">{{item.content}}</view>
-        <view class="create_delete">
-          <text class="create_time">{{item.create_time}}</text>
-        </view>
+        <view class="create_time">{{item.create_time}}</view>
       </view>
     </view>
-    <view  class="dynamic_item_box2" wx:if="{{item.content == ''}}">
+    <view class="dynamic_item_box2" wx:if="{{!item.image && item.content != ''}}">
+      <view class="dynamic_content2 to_2">{{item.content}}</view>
+      <view class="create_time">{{item.create_time}}</view>
+    </view>
+    <view class="dynamic_item_box3" wx:if="{{item.content == ''}}">
       <van-image lazy-load width="100%" height="200" wx:if="{{item.image}}" src="{{item.image}}" image-class="br_5" />
-      <text class="create_time m_l_10">{{item.create_time}}</text>
+      <view class="create_time">{{item.create_time}}</view>
     </view>
   </view>
   <!-- 暂无数据 -->

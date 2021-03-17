@@ -108,7 +108,7 @@ var licensePlate  = function (id_key) {
   carNo = carNo.split('')
   carNo.shift()
   carNo = carNo.join('')
-  carNo =  '鲁P' + carNo
+  carNo =  '鲁P·' + carNo
   return carNo
 }
 

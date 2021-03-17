@@ -5,16 +5,15 @@
   <view class="dynamic_item" wx:for="{{dynamicList}}" wx:key="index" bindtap="getDynamicDetalis" data-item="{{item}}">
     <!-- 作者信息 -->
     <view class="dynamic_user_info" bindtap="authorDynamic" data-item="{{item}}">
-      <van-image lazy-load width="50" height="50" src="{{item.author_avatar}}" image-class="br_10"/>
+      <van-image lazy-load width="60" height="60" src="{{item.author_avatar}}" image-class="br_10"/>
       <view class="dynamic_user_box">
-        <view class="dynamic_user_name to_1">
-          <!-- 官方认证 -->
-          <view class="fx_r_s_c">
-            <view wx:if="{{item.advertisement_id != null}}" class="dynamic_tag">官方</view>
-            <view class="ls_1">{{item.author_name}}</view>
-          </view>
+        <view class="dynamic_user_name to_1">{{item.author_name}}</view>
+        <view class="dynamic_user_date">
+          <wxs module="filter" src="../../../utils/filter.wxs"></wxs>
+          <view wx:if="{{item.advertisement_id != null}}" class="dynamic_tag">官方账号</view>
+          <view wx:if="{{item.advertisement_id == null}}" class="license_plate">{{filter.licensePlate(item.author_id)}}</view>
+          <view class="create_time">{{filter.dayjs(item.create_time, '6')}}</view>
         </view>
-        <view class="dynamic_user_date">{{item.create_time}}</view>
       </view>
     </view>
     <!-- 动态内容 -->
@@ -23,7 +22,7 @@
       <rich-text wx:if="{{item.type_id != '03'}}" nodes="{{item.content}}"></rich-text>
     </view>
     <!-- 动态图片 -->
-    <view wx:if="{{item.image}}" catchtap="dynamicImg" data-item="{{item}}" class="m_t_10">
+    <view wx:if="{{item.image}}" class="m_t_10">
       <van-image lazy-load fit="widthFix" width="{{windowWidth-20}}" src="{{item.image}}"/>
     </view>
   </view>

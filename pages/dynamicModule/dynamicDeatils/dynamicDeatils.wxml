@@ -21,7 +21,7 @@
       </view>
     </view>
     <view class="dynamic_info">
-      <view class="dynamic_content">{{dynamicDetails.content}}</view>
+      <view class="dynamic_content" wx:if="{{dynamicDetails.content}}">{{dynamicDetails.content}}</view>
       <view class="dynamic_image" wx:if="{{dynamicDetails.image}}" bindtap="dynamicImg">
         <van-image lazy-load width="100%" height="200" src="{{dynamicDetails.image}}" image-class="br_5"/>
       </view>
@@ -31,7 +31,7 @@
       <view class="share_right">
         <button open-type="share" class="share_active" size="mini"></button>
         <view class="share_comment">评论(<text class="share_comment_text">{{totalCount}}</text>)</view>
-        <view class="share_forward">转发</view>
+        <view class="share_forward">转发<image src="/images/dynamicModule/zf.png" class="zf_icon"></image></view>
       </view>
     </view>
   </view>

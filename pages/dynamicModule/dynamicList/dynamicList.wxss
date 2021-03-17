@@ -84,7 +84,6 @@
 .dynamic_item {
   box-sizing: border-box;
   width: 96vw;
-  min-height: 150px;
   margin: 10px auto;
   padding: 10px;
   background-color: #FFFFFF;
@@ -96,6 +95,14 @@
   align-items: center;
 }
 .dynamic_item_box2 {
+  width: 100%;
+  min-height: 60px;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+.dynamic_item_box3 {
   width: 100%;
 }
 .dynamic_info1 {
@@ -113,21 +120,21 @@
   justify-content: space-around;
 }
 .dynamic_content {
+  height: 90px;
   line-height: 30px;
   font-size: 16px;
   color: #333333;
   letter-spacing: 2px;
 }
-.create_delete {
-  box-sizing: border-box;
-  width: 100%;
-  height: 20px;
-  padding: 0px 0px 0px 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.dynamic_content2 {
+  line-height: 30px;
+  font-size: 16px;
+  color: #333333;
+  letter-spacing: 2px;
 }
 .create_time {
+  height: 30px;
+  line-height: 30px;
   font-size: 12px;
   letter-spacing: 1px;
   color: #999999;

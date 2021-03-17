@@ -52,24 +52,12 @@ Page({
     })
   },
 
-  // 查看大图或保存图片
-  dynamicImg: function (e) {
-    let current = e.currentTarget.dataset.item.image
-    let urls = [e.currentTarget.dataset.item.image]
-    wx.previewImage({
-      // 当前显示图片的http链接
-      current: current,
-      // 需要预览的图片http链接列表
-      urls: urls
-    })
-  },
-
   // 同城动态详情
   getDynamicDetalis: function (e) {
     // 01：相亲
     if (e.currentTarget.dataset.item.type_id === '01') {
       wx.navigateTo({
-        url: '/pages/marryModule/marryDetails/marryDetails?register_id=' + e.currentTarget.dataset.item.advertisement_id
+        url: '/pages/marryModule/marryDetails/marryDetails?id=' + e.currentTarget.dataset.item.advertisement_id
       })
     }
     // 02：活动
