@@ -6,8 +6,8 @@
   <view class="fs_14 ls_2 m_t_15">登录后的世界才更美妙</view>
 </component-loginTips>
 
-<component-dialog title="发布动态" show="{{dialogShow}}" buttons="{{dialogButtons}}" bindbuttontap="tapDialogButton" >
-  <view class="fs_14 ls_2 m_t_15">您确定要发布这条动态吗？</view>
+<component-dialog title="聊城社交" show="{{dialogShow}}" buttons="{{dialogButtons}}" bindbuttontap="tapDialogButton" >
+  <view class="fs_14 ls_2 m_t_15">您确定要发布这条信息吗？</view>
 </component-dialog>
 
 <view class="page_box" style="height: {{windowHeight-80}}px;">

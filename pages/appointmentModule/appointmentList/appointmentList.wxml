@@ -1,5 +1,7 @@
 <van-toast id="van-toast" />
 
+<view class="goAddPage" bindtap="goAddPage">+</view>
+
 <!-- DropdownMenu 下拉菜单 -->
 <van-dropdown-menu active-color="#4545FF">
   <van-dropdown-item id="item1" title="{{dropTitle1}}">
@@ -7,13 +9,9 @@
       <view class="dropdown_item_nomal {{ area_type == '' ? 'dropdown_item_active' : '' }}" bindtap="dropTap1" data-id="" data-title="全部地区">全部地区</view>
       <view class="dropdown_item_nomal {{ area_type == '01' ? 'dropdown_item_active' : '' }}" bindtap="dropTap1" data-id="01" data-title="东昌府区">东昌府区</view>
       <view class="dropdown_item_nomal {{ area_type == '02' ? 'dropdown_item_active' : '' }}" bindtap="dropTap1" data-id="02" data-title="阳谷县">阳谷县</view>
-    </view>
-    <view class="dropdown_cell">
       <view class="dropdown_item_nomal {{ area_type == '03' ? 'dropdown_item_active' : '' }}" bindtap="dropTap1" data-id="03" data-title="莘县">莘县</view>
       <view class="dropdown_item_nomal {{ area_type == '04' ? 'dropdown_item_active' : '' }}" bindtap="dropTap1" data-id="04" data-title="茌平区">茌平区</view>
       <view class="dropdown_item_nomal {{ area_type == '05' ? 'dropdown_item_active' : '' }}" bindtap="dropTap1" data-id="05" data-title="东阿县">东阿县</view>
-    </view>
-    <view class="dropdown_cell">
       <view class="dropdown_item_nomal {{ area_type == '06' ? 'dropdown_item_active' : '' }}" bindtap="dropTap1" data-id="06" data-title="冠县">冠县</view>
       <view class="dropdown_item_nomal {{ area_type == '07' ? 'dropdown_item_active' : '' }}" bindtap="dropTap1" data-id="07" data-title="高唐县">高唐县</view>
       <view class="dropdown_item_nomal {{ area_type == '08' ? 'dropdown_item_active' : '' }}" bindtap="dropTap1" data-id="08" data-title="临清市">临清市</view>
@@ -24,13 +22,9 @@
       <view class="dropdown_item_nomal {{ appointment_type == '' ? 'dropdown_item_active' : '' }}" bindtap="dropTap2" data-id="" data-title="全部分类">全部分类</view>
       <view class="dropdown_item_nomal {{ appointment_type == '01' ? 'dropdown_item_active' : '' }}" bindtap="dropTap2" data-id="01" data-title="约饭">约饭</view>
       <view class="dropdown_item_nomal {{ appointment_type == '02' ? 'dropdown_item_active' : '' }}" bindtap="dropTap2" data-id="02" data-title="看电影">看电影</view>
-    </view>
-    <view class="dropdown_cell">
       <view class="dropdown_item_nomal {{ appointment_type == '03' ? 'dropdown_item_active' : '' }}" bindtap="dropTap2" data-id="03" data-title="唱歌">唱歌</view>
       <view class="dropdown_item_nomal {{ appointment_type == '04' ? 'dropdown_item_active' : '' }}" bindtap="dropTap2" data-id="04" data-title="运动">运动</view>
       <view class="dropdown_item_nomal {{ appointment_type == '05' ? 'dropdown_item_active' : '' }}" bindtap="dropTap2" data-id="05" data-title="旅游">旅游</view>
-    </view>
-    <view class="dropdown_cell">
       <view class="dropdown_item_nomal {{ appointment_type == '06' ? 'dropdown_item_active' : '' }}" bindtap="dropTap2" data-id="06" data-title="其他">其他</view>
     </view>
   </van-dropdown-item>

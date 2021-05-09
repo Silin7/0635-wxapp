@@ -50,13 +50,14 @@ Page({
 
   // 授权 注册
   bindGetUserInfo: function (e) {
+    console.log(e)
     if (e.detail.errMsg == 'getUserInfo:fail auth deny') {
       Toast.fail('未授权')
       return
     } else {
-      this.data.nick_name = e.detail.userInfo.nick_name
+      this.data.nick_name = e.detail.userInfo.nickName
       this.data.gender = e.detail.userInfo.gender.toString(),
-      this.data.avatar_url = e.detail.userInfo.avatar_url
+      this.data.avatar_url = e.detail.userInfo.avatarUrl
     }
     if (!this.data.user_name) {
       Toast.fail('请输入账号')

@@ -1,8 +1,0 @@
-{
-  "navigationBarTitleText": "发布",
-  "usingComponents": {
-    "van-toast": "vant-weapp/toast/index",
-    "van-image": "vant-weapp/image/index",
-    "component-loginTips": "/pages/components/loginTips/loginTips"
-  }
-}

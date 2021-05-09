@@ -28,6 +28,14 @@ Page({
       windowHeight: wx.getSystemInfoSync().windowHeight
     })
   },
+
+  // 新增社交信息
+  goAddPage: function () {
+    wx.navigateTo({
+      url: '/pages/releaseModule/releaseMarry/releaseMarry',
+    })
+  },
+
   dropTap1: function (e) {
     this.setData({
       isShow: false,
@@ -60,7 +68,6 @@ Page({
     this.selectComponent('#item3').toggle(false);
     this.marryList()
   },
-
 
   // 获取人员列表
   marryList: function () {

@@ -8,10 +8,10 @@ Page({
       { id: 'swiper03', image: '/images/homeModule/swiper_02.jpg' }
     ],
     iconList: [
-      { name: '测试测试', image: '/images/homeModule/banner_xq.jpg', id: 'icon01' },
-      { name: '测试测试', image: '/images/homeModule/banner_xq.jpg', id: 'icon02' },
-      { name: '测试测试', image: '/images/homeModule/banner_xq.jpg', id: 'icon03' },
-      { name: '测试测试', image: '/images/homeModule/banner_xq.jpg', id: 'icon04' },
+      { name: '聊城景点', image: '/images/homeModule/banner_xq.jpg', id: 'icon01' },
+      { name: '聊城历史', image: '/images/homeModule/banner_xq.jpg', id: 'icon02' },
+      { name: '聊城特产', image: '/images/homeModule/banner_xq.jpg', id: 'icon03' },
+      { name: '聊城社交', image: '/images/homeModule/banner_xq.jpg', id: 'icon04' },
     ]
   },
 

@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "景点",
+  "navigationBarTitleText": "聊城景点",
   "usingComponents": {
     "van-toast": "vant-weapp/toast/index",
     "van-tab": "vant-weapp/tab/index",

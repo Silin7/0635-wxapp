@@ -29,6 +29,13 @@ Page({
     })
   },
 
+  // 新增线下活动
+  goAddPage: function () {
+    wx.navigateTo({
+      url: '/pages/releaseModule/releaseAppointment/releaseAppointment',
+    })
+  },
+
   dropTap1: function (e) {
     this.setData({
       isShow: false,

@@ -23,6 +23,13 @@ Page({
       windowHeight: wx.getSystemInfoSync().windowHeight
     })
   },
+
+  // 新增社交信息
+  goAddPage: function () {
+    wx.navigateTo({
+      url: '/pages/releaseModule/releaseDynamic/releaseDynamic',
+    })
+  },
   
   // 同城动态列表
   getDynamicList: function () {

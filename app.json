@@ -2,7 +2,6 @@
   "pages":[
     "pages/homeModule/indexPage/indexPage",
     "pages/homeModule/findPage/findPage",
-    "pages/homeModule/releasePage/releasePage",
     "pages/homeModule/newsPage/newsPage",
     "pages/homeModule/minePage/minePage",
     "pages/releaseModule/releaseAppointment/releaseAppointment",
@@ -73,11 +72,6 @@
       "text": "发 现",
       "iconPath": "/images/homeModule/compass_normal.png",
       "selectedIconPath": "/images/homeModule/compass_active.png"
-    },{
-      "pagePath": "pages/homeModule/releasePage/releasePage",
-      "text": "",
-      "iconPath": "/images/homeModule/release_normal.png",
-      "selectedIconPath": "/images/homeModule/release_active.png"
     },{
       "pagePath": "pages/homeModule/newsPage/newsPage",
       "text": "消 息",

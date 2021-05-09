@@ -126,20 +126,23 @@
   letter-spacing: 2px !important;
 }
 
+
 /* DropdownMenu 下拉菜单 */
 .dropdown_cell {
   box-sizing: border-box;
   width: 100vw;
-  height: 60px;
   padding: 0 10px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
 }
 .dropdown_item_nomal {
+  flex-shrink: 0;
   box-sizing: border-box;
   width: 28vw;
   height: 40px;
+  margin: 10px 0;
   padding-left: 2px;
   display: flex;
   justify-content: center;
@@ -154,4 +157,19 @@
   font-weight: 700;
   color: #FFFFFF;
   background-color: #4545FF;
+}
+
+.goAddPage {
+  position: fixed;
+  right: 20px;
+  bottom: 50px;
+  z-index: 2;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  line-height: 50px;
+  text-align: center;
+  border-radius: 50%;
+  color: #FFFFFF;
+  background: -webkit-linear-gradient(top, #A084F1, #CA85D6);
 }

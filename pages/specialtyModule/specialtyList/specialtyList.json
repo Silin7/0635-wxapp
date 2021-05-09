@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "",
+  "navigationBarTitleText": "聊城特产",
   "usingComponents": {
     "van-toast": "vant-weapp/toast/index",
     "van-image": "vant-weapp/image/index",
