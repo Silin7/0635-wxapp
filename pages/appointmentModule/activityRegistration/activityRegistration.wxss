@@ -10,7 +10,7 @@
   height: 80px;
   margin: 10px 0;
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 5px;
   background-color: #FFFFFF;
   display: flex;
   justify-content: flex-start;
@@ -33,7 +33,7 @@
   width: 100%;
   margin: 20px 0;
   padding: 30px 10px;
-  border-radius: 10px;
+  border-radius: 5px;
   background-color: #FFFFFF;
 }
 .information_item {

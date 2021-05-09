@@ -87,7 +87,7 @@
   margin: 10px auto;
   padding: 10px;
   background-color: #FFFFFF;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 .dynamic_item_box1 {
   display: flex;

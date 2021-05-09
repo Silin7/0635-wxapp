@@ -18,7 +18,7 @@
 .recipe_item {
   width: 31%;
   margin-bottom: 20px;
-  border-radius: 10px;
+  border-radius: 5px;
   display: flex;
   flex-flow: column;
   justify-content: space-between;

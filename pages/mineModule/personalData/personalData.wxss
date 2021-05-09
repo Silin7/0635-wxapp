@@ -24,7 +24,7 @@
   bottom: 0;
   z-index: 99;
   background-color: #FFFFFF;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 .head_portrait_age_text {
   display: block;
@@ -36,7 +36,7 @@
   font-weight: 700;
   color: #FFFFFF;
   background-color: #4545FF;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 .head_portrait_text {
   height: 38px;

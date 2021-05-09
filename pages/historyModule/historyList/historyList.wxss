@@ -10,7 +10,7 @@
   margin: 10px 0;
   width: 48%;
   height: 180px;
-  border-radius: 10px;
+  border-radius: 5px;
   position: relative;
 }
 .item_banner_mask1 {

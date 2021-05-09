@@ -1,5 +1,7 @@
 {
   "pages":[
+    "pages/topicModule/topicClass/topicClass",
+    "pages/topicModule/topicList/topicList",
     "pages/homeModule/indexPage/indexPage",
     "pages/homeModule/findPage/findPage",
     "pages/homeModule/newsPage/newsPage",
@@ -55,8 +57,7 @@
     "pages/components/choosePicker/choosePicker",
     "pages/components/footTabbar/footTabbar",
     "pages/components/loading/loading",
-    "pages/components/noData/noData",
-    "pages/topicModule/topicList/topicList"
+    "pages/components/noData/noData"
   ],
   "tabBar": {
     "color": "#333333",

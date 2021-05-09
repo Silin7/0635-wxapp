@@ -106,7 +106,7 @@
     <view class="my_conversation_center m_t_10" bindtap="myDynamic">
       <view class="my_conversation_center_box">
         <view class="my_conversation_center_img">
-          <van-image lazy-load width="100%" height="100%" src="/images/homeModule/banner_xq.jpg" image-class="br_10"/>
+          <van-image lazy-load width="100%" height="100%" src="/images/homeModule/banner_xq.jpg" image-class="br_5"/>
         </view>
         <view class="my_conversation_center_text_box m_l_10">
           <view class="my_conversation_center_text to_1 fs_14 ls_1">我的动态</view>
@@ -117,7 +117,7 @@
     <view class="my_conversation_center m_t_10">
       <view class="my_conversation_center_box">
         <view class="my_conversation_center_img">
-          <van-image lazy-load width="100%" height="100%" src="/images/homeModule/banner_xq.jpg" image-class="br_10"/>
+          <van-image lazy-load width="100%" height="100%" src="/images/homeModule/banner_xq.jpg" image-class="br_5"/>
         </view>
         <view class="my_conversation_center_text_box m_l_10">
           <view class="my_conversation_center_text to_1 fs_14 ls_1">美食晒出来</view>
@@ -128,7 +128,7 @@
     <view class="my_conversation_center m_t_10">
       <view class="my_conversation_center_box">
         <view class="my_conversation_center_img">
-          <van-image lazy-load width="100%" height="100%" src="/images/homeModule/banner_xq.jpg" image-class="br_10"/>
+          <van-image lazy-load width="100%" height="100%" src="/images/homeModule/banner_xq.jpg" image-class="br_5"/>
         </view>
         <view class="my_conversation_center_text_box m_l_10">
           <view class="my_conversation_center_text to_1 fs_14 ls_1">美食晒出来</view>

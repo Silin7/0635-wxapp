@@ -3,7 +3,7 @@
   width: 100vw;
   padding:10px 10px 5px;
   background-color: #FFFFFF;
-  border-radius: 10px 10px 0px 0px;
+  border-radius: 5px 10px 0px 0px;
   position: absolute;
   top: 220px;
   z-index: 1;

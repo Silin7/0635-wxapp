@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "讨论组",
+  "usingComponents": {
+    "van-toast": "vant-weapp/toast/index"
+  }
+}

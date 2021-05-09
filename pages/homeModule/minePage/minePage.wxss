@@ -99,7 +99,7 @@
   letter-spacing: 2px;
   color: #FFFFFF;
   font-size: 14px;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 .my_tracks {
   box-sizing: border-box;

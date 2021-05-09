@@ -24,7 +24,7 @@
   color: #FFFFFF;
   font-size: 18px;
   font-weight: 700;
-  border-radius: 10px;
+  border-radius: 5px;
   display: flex;
   justify-content: center;
   align-items: center;

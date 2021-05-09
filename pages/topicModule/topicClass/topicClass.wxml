@@ -1,0 +1,25 @@
+<van-toast id="van-toast" />
+
+<!-- 家乡话题 -->
+<view class="topic_title">家乡话题</view>
+<view class="topic_box">
+  <view class="topic_item" wx:for="{{cityList}}" wx:key="index">
+    <image src="/images/homeModule/banner_xq.jpg" class="w_h_100" wx:if="{{item.topic_class}}"></image>
+    <view class="topic_item_banner_mask" wx:if="{{item.topic_class}}" bindtap="goTopicList" data-item="{{item}}"></view>
+    <text class="topic_item_banner_text" wx:if="{{item.topic_class}}" bindtap="goTopicList" data-item="{{item}}">{{item.topic_name}}</text>
+  </view>
+</view>
+
+<!-- 热门话题 -->
+<view class="topic_title m_t_10 m_b_10">热门话题</view>
+<view class="topic_box">
+  <view class="topic_class_item" wx:for="{{topicClass}}" wx:key="index" bindtap="goTopicList" data-item="{{item}}">
+    <view class="topic_class_item_img">
+      <image src="{{item.topic_img}}" class="w_h_100"></image>
+    </view>
+    <view class="topic_class_item_text" style="width: {{windowWidth-130}}px;">
+      <view class="topic_class_item_text_title to_1">{{item.topic_title}}</view>
+      <view class="topic_class_item_text_txt to_1">{{item.topic_info}}</view>
+    </view>
+  </view>
+</view>
