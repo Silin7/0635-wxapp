@@ -18,8 +18,8 @@
       <image src="{{item.topic_img}}" class="w_h_100"></image>
     </view>
     <view class="topic_class_item_text" style="width: {{windowWidth-130}}px;">
-      <view class="topic_class_item_text_title to_1">{{item.topic_title}}</view>
-      <view class="topic_class_item_text_txt to_1">{{item.topic_info}}</view>
+      <view class="topic_class_item_text_title">{{item.topic_title}}</view>
+      <view class="topic_class_item_text_txt">{{item.topic_info}}</view>
     </view>
   </view>
 </view>
