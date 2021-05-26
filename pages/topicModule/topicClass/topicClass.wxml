@@ -1,5 +1,6 @@
 <van-toast id="van-toast" />
 
+<scroll-view style="height: {{windowHeight}}px;" scroll-y="{{true}}" bindscrolltolower="onScrollBottom">
 <!-- 家乡话题 -->
 <view class="topic_title">家乡话题</view>
 <view class="topic_box">
@@ -9,7 +10,6 @@
     <text class="topic_item_banner_text" wx:if="{{item.topic_class}}" bindtap="goTopicList" data-item="{{item}}">{{item.topic_name}}</text>
   </view>
 </view>
-
 <!-- 热门话题 -->
 <view class="topic_title m_t_10 m_b_10">热门话题</view>
 <view class="topic_box">
@@ -19,7 +19,8 @@
     </view>
     <view class="topic_class_item_text" style="width: {{windowWidth-130}}px;">
       <view class="topic_class_item_text_title">{{item.topic_title}}</view>
-      <view class="topic_class_item_text_txt">{{item.topic_info}}</view>
+      <view class="topic_class_item_text_txt to_1">{{item.topic_info}}</view>
     </view>
   </view>
 </view>
+</scroll-view>

@@ -50,18 +50,27 @@ Page({
   // 话题列表
   getTopicList: function () {
     let data = {
-      page: 1,
-      limit: 10,
+      page: this.data.page,
+      limit: this.data.limit,
       topic_class: this.data.topicClass
     }
     esRequest('topic_list', data).then(res => {
       if (res && res.data.code === 0) {
         this.setData({
-          topicList: res.data.data
+          totalCount: res.data.totalCount,
+          topicList: this.data.topicList.concat(res.data.data)
         })
       } else {
         Toast.fail('系统错误')
       }
     })
   },
+
+  // 触底函数
+  onScrollBottom: function () {
+    if (this.data.totalCount > this.data.topicList.length) {
+      this.data.page += 1
+      this.getTopicList()
+    }
+  }
 })

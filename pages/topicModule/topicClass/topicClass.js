@@ -38,17 +38,18 @@ Page({
     this.getTopicClass()
   },
 
-  // 同城动态列表
+  // 热门话题列表
   getTopicClass: function () {
     let data = {
-      page: 1,
-      limit: 10,
+      page: this.data.page,
+      limit: this.data.limit,
       state: '02'
     }
     esRequest('topic_class', data).then(res => {
       if (res && res.data.code === 0) {
         this.setData({
-          topicClass: res.data.data
+          totalCount: res.data.totalCount,
+          topicClass: this.data.topicClass.concat(res.data.data)
         })
       } else {
         Toast.fail('系统错误')
@@ -61,5 +62,13 @@ Page({
     wx.navigateTo({
       url: '/pages/topicModule/topicList/topicList?id=' + e.currentTarget.dataset.item.id + '&topic_class=' + e.currentTarget.dataset.item.topic_class
     })
+  },
+
+  // 触底函数
+  onScrollBottom: function () {
+    if (this.data.totalCount > this.data.topicClass.length) {
+      this.data.page += 1
+      this.getTopicClass()
+    }
   }
 })

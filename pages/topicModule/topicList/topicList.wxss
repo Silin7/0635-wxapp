@@ -48,12 +48,14 @@
 }
 
 .topic_list {
+  box-sizing: border-box;
   width: 100%;
   padding: 10px;
 }
 .sub_module1 {
   display: flex;
   justify-content: flex-start;
+  margin-bottom: 20px;
 }
 .sub_module1_item_fd_02 {
   width: 60px;
