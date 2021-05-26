@@ -1,7 +1,0 @@
-{
-  "navigationBarTitleText": "垃圾分类",
-  "usingComponents": {
-    "van-toast": "vant-weapp/toast/index",
-    "van-search": "vant-weapp/search/index"
-  }
-}

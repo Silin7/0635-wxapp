@@ -166,7 +166,7 @@ Page({
   // 跳转到喜欢的人详情
   myConcerns: function (e) {
     wx.navigateTo({
-      url: '/pages/marryModule/marryDetails/marryDetails?register_id=' + e.currentTarget.dataset.item.watched_id
+      url: '/pages/marryModule/marryDetails/marryDetails?id=' + e.currentTarget.dataset.item.watched_id
     })
   },
 

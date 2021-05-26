@@ -171,5 +171,6 @@
   text-align: center;
   border-radius: 50%;
   color: #FFFFFF;
-  background: -webkit-linear-gradient(top, #A084F1, #CA85D6);
+  background-color: #00000080;
+  /* background: -webkit-linear-gradient(top, #A084F1, #CA85D6); */
 }

@@ -7,17 +7,16 @@
 
 /* 底部按钮 */
 .refresh_box {
-  margin: 20px;
   box-sizing: border-box;
-  height: 80px;
+  height: 60px;
   padding: 0px 0px 10px;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 .refresh_btn {
+  width: 80%;
   height: 40px;
-  width: 180px;
   padding-left: 10px;
   letter-spacing: 10px;
   background-color: #4545FF;

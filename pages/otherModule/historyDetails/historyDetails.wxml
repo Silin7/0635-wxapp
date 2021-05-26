@@ -1,3 +1,0 @@
-<van-toast id="van-toast" />
-
-<view>{{historyData.details}}</view>

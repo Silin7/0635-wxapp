@@ -36,6 +36,31 @@
   </view>
 </view>
 
+<!-- 拯救不开心 -->
+<view class="title_box m_t_10">
+  <view class="title_icon_box">
+    <van-image lazy-load width="100%" height="100%" src="/images/homeModule/icon-appointment.png"/>
+  </view>
+  <text class="title_text">拯救不开心</text>
+</view>
+<view class="sub_module1">
+  <view class="sub_module1_item" bindtap="storyList01">
+    <van-image lazy-load width="100%" height="100%" src="/images/homeModule/banner_xq.jpg"/>
+    <view class="item_banner_mask"></view>
+    <text class="item_banner_text1">笑话</text>
+  </view>
+  <view class="sub_module1_item" bindtap="storyList02">
+    <van-image lazy-load width="100%" height="100%" src="/images/homeModule/banner_xq.jpg"/>
+    <view class="item_banner_mask"></view>
+    <text class="item_banner_text1">搞笑图片</text>
+  </view>
+  <view class="sub_module1_item" bindtap="storyList03">
+    <van-image lazy-load width="100%" height="100%" src="/images/homeModule/banner_xq.jpg"/>
+    <view class="item_banner_mask"></view>
+    <text class="item_banner_text1">搞笑视频</text>
+  </view>
+</view>
+
 <!-- 头像 / 壁纸 / 文案 -->
 <view class="title_box m_t_10">
   <view class="title_icon_box">
@@ -58,31 +83,6 @@
     <van-image lazy-load width="100%" height="100%" src="/images/homeModule/banner_xq.jpg"/>
     <view class="item_banner_mask"></view>
     <text class="item_banner_text1">文案</text>
-  </view>
-</view>
-
-<!-- 拯救不开心 -->
-<view class="title_box m_t_10">
-  <view class="title_icon_box">
-    <van-image lazy-load width="100%" height="100%" src="/images/homeModule/icon-appointment.png"/>
-  </view>
-  <text class="title_text">测试</text>
-</view>
-<view class="sub_module1">
-  <view class="sub_module1_item" bindtap="storyList01">
-    <van-image lazy-load width="100%" height="100%" src="/images/homeModule/banner_xq.jpg"/>
-    <view class="item_banner_mask"></view>
-    <text class="item_banner_text1">笑话</text>
-  </view>
-  <view class="sub_module1_item" bindtap="storyList02">
-    <van-image lazy-load width="100%" height="100%" src="/images/homeModule/banner_xq.jpg"/>
-    <view class="item_banner_mask"></view>
-    <text class="item_banner_text1">搞笑图片</text>
-  </view>
-  <view class="sub_module1_item" bindtap="storyList03">
-    <van-image lazy-load width="100%" height="100%" src="/images/homeModule/banner_xq.jpg"/>
-    <view class="item_banner_mask"></view>
-    <text class="item_banner_text1">搞笑视频</text>
   </view>
 </view>
 
