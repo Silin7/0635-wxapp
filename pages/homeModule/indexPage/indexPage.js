@@ -110,53 +110,10 @@ Page({
     })
   },
 
-
-  // testBind1
-  testBind1: function () {
+  // 菜谱
+  recipeList: function () {
     wx.navigateTo({
       url: '/pages/recipeModule/recipeList/recipeList'
     })
   },
-  
-  // testBind2
-  testBind2: function () {
-    wx.navigateTo({
-      url: '/pages/recordModule/diaryList/diaryList'
-    })
-  },
-
-  // testBind3
-  testBind3: function () {
-    wx.navigateTo({
-      url: '/pages/otherModule/girlRandom/girlRandom'
-    })
-  },
-
-  // testBind4
-  testBind4: function () {
-    wx.navigateTo({
-      url: '/pages/recipeModule/recipeList/recipeList'
-    })
-  },
-
-  // testBind5
-  testBind5: function () {
-    wx.navigateTo({
-      url: '/pages/otherModule/garbage/garbage'
-    })
-  },
-
-  // testBind6
-  testBind6: function () {
-    wx.navigateTo({
-      url: '/pages/otherModule/weather/weather'
-    })
-  },
-
-  // testBind7
-  testBind7: function () {
-    wx.navigateTo({
-      url: '/pages/otherModule/historyToday/historyToday'
-    })
-  }
 })

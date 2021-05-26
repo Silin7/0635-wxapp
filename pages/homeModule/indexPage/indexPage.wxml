@@ -95,24 +95,24 @@
 </view>
 <view class="sub_module3">
   <view class="sub_module2_item1">
-    <view class="sub_module2_item1_01" bindtap="testBind4">
+    <view class="sub_module2_item1_01" bindtap="recipeList">
       <van-image lazy-load width="100%" height="100%" src="/images/homeModule/banner_xq.jpg"/>
       <view class="item_banner_mask1"></view>
       <view class="item_banner_text2">菜谱</view>
     </view>
-    <view class="sub_module2_item1_02" bindtap="testBind5">
+    <view class="sub_module2_item1_02">
       <van-image lazy-load width="100%" height="100%" src="/images/homeModule/banner_xq.jpg"/>
       <view class="item_banner_mask1"></view>
       <view class="item_banner_text2">测试测试</view>
     </view>
   </view>
   <view class="sub_module2_item1 m_t_15">
-    <view class="sub_module2_item1_02" bindtap="testBind6">
+    <view class="sub_module2_item1_02">
       <van-image lazy-load width="100%" height="100%" src="/images/homeModule/banner_xq.jpg"/>
       <view class="item_banner_mask1"></view>
       <view class="item_banner_text2">测试测试</view>
     </view>
-    <view class="sub_module2_item1_01" bindtap="testBind7">
+    <view class="sub_module2_item1_01">
       <van-image lazy-load width="100%" height="100%" src="/images/homeModule/banner_xq.jpg"/>
       <view class="item_banner_mask1"></view>
       <view class="item_banner_text2">测试测试</view>
@@ -129,12 +129,12 @@
 </view>
 <view class="sub_module2">
   <view class="sub_module2_left">
-    <view class="sub_module2_01" bindtap="testBind8">
+    <view class="sub_module2_01">
       <van-image lazy-load width="100%" height="100%" src="/images/homeModule/banner_xq.jpg"/>
       <view class="item_banner_mask1"></view>
       <view class="item_banner_text2">测试测试</view>
     </view>
-    <view class="sub_module2_02 m_t_15" bindtap="testBind9">
+    <view class="sub_module2_02 m_t_15">
       <van-image lazy-load width="100%" height="100%" src="/images/homeModule/banner_xq.jpg"/>
       <view class="item_banner_mask1"></view>
       <view class="item_banner_text2">测试测试</view>
@@ -169,17 +169,17 @@
     </view>
   </view>
   <view class="sub_module4_item m_t_15">
-    <view class="sub_module4_item_02" bindtap="testBind10">
+    <view class="sub_module4_item_02">
       <van-image lazy-load width="100%" height="100%" src="/images/homeModule/banner_xq.jpg"/>
       <view class="item_banner_mask1"></view>
       <view class="item_banner_text2">测试测试</view>
     </view>
-    <view class="sub_module4_item_02" bindtap="testBind11">
+    <view class="sub_module4_item_02">
       <van-image lazy-load width="100%" height="100%" src="/images/homeModule/banner_xq.jpg"/>
       <view class="item_banner_mask1"></view>
       <view class="item_banner_text2">测试测试</view>
     </view>
-    <view class="sub_module4_item_02" bindtap="testBind12">
+    <view class="sub_module4_item_02">
       <van-image lazy-load width="100%" height="100%" src="/images/homeModule/banner_xq.jpg"/>
       <view class="item_banner_mask1"></view>
       <view class="item_banner_text2">测试测试</view>
