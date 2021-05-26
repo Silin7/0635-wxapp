@@ -22,11 +22,25 @@ Page({
     }
     esRequest('recipe_list', data).then(res => {
       if (res && res.data.state === 'success') {
-        this.setData({
-          recipeInfo: res.data.result.list
-        })
+        if (res.data.result.list.length > 0) {
+          this.setData({
+            recipeInfo: res.data.result.list
+          })
+        } else {
+          Toast.fail('暂无相关菜谱')
+          setTimeout(()=> {
+            wx.navigateBack({
+              delta: 1
+            })
+          }, 1000)
+        }
       } else {
         Toast.fail('系统错误')
+        setTimeout(()=> {
+          wx.navigateBack({
+            delta: 1
+          })
+        }, 1000)
       }
     })
   },

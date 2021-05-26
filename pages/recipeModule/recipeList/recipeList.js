@@ -33,6 +33,10 @@ Page({
 
   // 点击搜索
   searchClick: function () {
+    if (this.data.keyword === '') {
+      Toast.fail('请输入关键词')
+      return
+    }
     wx.navigateTo({
       url: '/pages/recipeModule/recipeInfo/recipeInfo?keyword=' + this.data.keyword
     })
