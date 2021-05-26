@@ -5,9 +5,13 @@ Page({
   data: {
     windowWidth: 0,
     windowHeight: 0,
+    page: 1,
+    limit: 10,
+    totalCount: 0,
     topicId: '',
     topicClass: '',
-    topicDetails: {}
+    topicDetails: {},
+    topicList: []
   },
 
   onLoad: function (options) {
@@ -24,9 +28,10 @@ Page({
   
   onShow: function () {
     this.getTopicClassDetails()
+    this.getTopicList()
   },
   
-  // 同城动态列表
+  // 话题分类详情
   getTopicClassDetails: function () {
     let data = {
       id: this.data.topicId
@@ -35,6 +40,24 @@ Page({
       if (res && res.data.code === 0) {
         this.setData({
           topicDetails: res.data.data
+        })
+      } else {
+        Toast.fail('系统错误')
+      }
+    })
+  },
+  
+  // 话题列表
+  getTopicList: function () {
+    let data = {
+      page: 1,
+      limit: 10,
+      topic_class: this.data.topicClass
+    }
+    esRequest('topic_list', data).then(res => {
+      if (res && res.data.code === 0) {
+        this.setData({
+          topicList: res.data.data
         })
       } else {
         Toast.fail('系统错误')

@@ -116,4 +116,13 @@ Page({
       url: '/pages/recipeModule/recipeList/recipeList'
     })
   },
+
+  // 话题
+  topicClass: function () {
+    wx.navigateTo({
+      url: '/pages/topicModule/topicClass/topicClass'
+    })
+  },
+
+
 })

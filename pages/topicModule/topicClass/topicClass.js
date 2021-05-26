@@ -6,6 +6,9 @@ Page({
     id_key: '',
     windowWidth: 0,
     windowHeight: 0,
+    page: 1,
+    limit: 10,
+    totalCount: 0,
     newsTypeList: [],
     cityList: [
       { "id": 100001, "topic_class": "101", "topic_name": "东昌府区"} ,
@@ -38,7 +41,9 @@ Page({
   // 同城动态列表
   getTopicClass: function () {
     let data = {
-      is_pass: '02'
+      page: 1,
+      limit: 10,
+      state: '02'
     }
     esRequest('topic_class', data).then(res => {
       if (res && res.data.code === 0) {
