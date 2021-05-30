@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "话题",
+  "navigationBarTitleText": "话题列表",
   "usingComponents": {
     "van-image": "vant-weapp/image/index"
   }

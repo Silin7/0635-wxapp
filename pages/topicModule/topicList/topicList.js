@@ -72,5 +72,12 @@ Page({
       this.data.page += 1
       this.getTopicList()
     }
+  },
+
+  // 话题详情
+  topicDetails: function (e) {
+    wx.navigateTo({
+      url: '/pages/topicModule/topicDetails/topicDetails?topicId=' + e.currentTarget.dataset.item.id
+    })
   }
 })

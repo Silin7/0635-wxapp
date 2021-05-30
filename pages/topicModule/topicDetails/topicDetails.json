@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "话题分类",
+  "navigationBarTitleText": "话题详情",
   "usingComponents": {
     "van-toast": "vant-weapp/toast/index"
   }

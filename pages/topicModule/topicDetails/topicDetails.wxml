@@ -1,0 +1,8 @@
+<van-toast id="van-toast" />
+
+<view class="news_title to_2">{{topicDetails.topic_title}}</view>
+
+<!-- 新闻内容 -->
+<view class="news_info">
+  <rich-text nodes="{{topicDetails.topic_details}}"></rich-text>
+</view>

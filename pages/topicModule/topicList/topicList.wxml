@@ -16,7 +16,7 @@
     </view>
   </view>
   <view class="topic_list">
-    <view class="sub_module1" wx:for="{{topicList}}" wx:key="index">
+    <view class="sub_module1" wx:for="{{topicList}}" wx:key="index" bindtap="topicDetails" data-item="{{item}}">
       <view class="sub_module1_item_fd_02">
         <van-image lazy-load width="60" height="60" src="{{item.topic_img}}"/>
       </view>
