@@ -20,13 +20,13 @@
 </view>
 
 <!-- 活动 -->
-<view class="title_box mt10">
+<!-- <view class="title_box mt10">
   <view class="title_icon_box">
     <van-image lazy-load width="100%" height="100%" src="/images/homeModule/icon-appointment.png"/>
   </view>
   <text class="title_text">测试</text>
-</view>
-<view class="sub_module4">
+</view> -->
+<view class="sub_module4 mt10">
   <view class="sub_module4_item">
     <view class="sub_module4_item_01" bindtap="appointmentList">
       <van-image lazy-load width="100%" height="100%" src="/images/homeModule/banner_xq.jpg"/>

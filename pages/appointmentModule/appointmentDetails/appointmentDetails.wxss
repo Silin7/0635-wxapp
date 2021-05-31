@@ -154,69 +154,6 @@ button[size='mini'] {
   font-size: 12px !important;
   font-weight: 700 !important;
 }
-.btn_box {
-  box-sizing: border-box;
-  height: 80px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 15px 10px;
-}
-.btn_box_item1 {
-  width: 56%;
-  height: 60px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  position: relative;
-}
-.btn_gz {
-  width: 30%;
-  height: 60px;
-  display: flex;
-  flex-flow: column;
-  justify-content: space-around;
-  align-items: center;
-}
-.btn_wx {
-  width: 30%;
-  height: 60px;
-  display: flex;
-  flex-flow: column;
-  justify-content: space-around;
-  align-items: center;
-  margin-left: 20px;
-}
-.btn_text {
-  width: 100%;
-  font-size: 12px;
-  font-weight: 700;
-  text-align: center;
-  letter-spacing: 2px;
-  color: #999999;
-}
-.btn_kf {
-  width: 38%;
-  height: 60px;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-.kf_btn {
-  width: 80%;
-  height: 40px;
-  line-height: 40px;
-  text-align: center;
-  letter-spacing: 3px;
-  border-radius: 20px;
-  /* background: -webkit-linear-gradient(left, #9A93F3, #D58BBC); */
-  background:  #D58BBC;
-  font-weight: bold;
-  color: #FFFFFF;
-}
-.van-button__text {
-  color: #4545FF !important;
-}
 .share_active {
   position: absolute;
   z-index: 2;
@@ -224,4 +161,67 @@ button[size='mini'] {
   height: 60px;
   background-color: red;
   opacity: 0;
+}
+.btn_box {
+  box-sizing: border-box;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px 10px;
+}
+.btn_box_item1 {
+  width: 50%;
+  height: 60px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+}
+.btn_gz {
+  width: 40%;
+  height: 60px;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.btn_wx {
+  width: 40%;
+  height: 60px;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  align-items: center;
+  margin-left: 10px;
+}
+.btn_text {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #999999;
+}
+.btn_kf {
+  width: 48%;
+  height: 60px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.kf_btn {
+  width: 80%;
+  height: 44px;
+  line-height: 44px;
+  text-align: center;
+  letter-spacing: 5px;
+  border-radius: 22px;
+  font-weight: bold;
+  color: #FFFFFF;
+  background:  #D58BBC;
+}
+button {
+  padding: 0 !important;
+}
+.van-button__text {
+  color: #4545FF !important;
 }
