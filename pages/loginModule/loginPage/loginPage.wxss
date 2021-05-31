@@ -1,16 +1,25 @@
 .relative {
   position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: #FFF;
+}
+.logo_text {
+  font-size: 26px;
+  letter-spacing: 2px;
+  color: #FFF;
 }
 
 .page_top {
+  box-sizing: border-box;
   width: 100vw;
   height: 38vh;
-  background-color: #E9E9FF;
   display: flex;
   flex-flow: column;
   justify-content: center;
   align-items: center;
   padding-bottom: 2vh;
+  background: -webkit-linear-gradient(top, #A084F1, #CA85D6);
 }
 .logo_box {
   width: 180rpx;
@@ -22,25 +31,36 @@
 }
 
 .page_center {
+  box-sizing: border-box;
   width: 90vw;
   height: 280px;
   position: absolute;
   top: 30vh;
   left: 5vw;
-  border-radius: 20px;
+  border-radius: 10px;
   padding: 20px 20px;
-  box-shadow: 0px 2px 2px #999999;
+  box-shadow: 0px 2px 2px #CCCCCC;
+  background-color: #FFFFFF;
 }
 
 .login_name {
   width: 100%;
-  /* background-color: #F9F9F9; */
   height: 40px;
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-start;
+  align-items: center;
 }
 .login_text {
   width: 50%;
-  /* background-color: #F9F9F9; */
   height: 40px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: #4545FF;
+  font-size: 12px;
+  letter-spacing: 2px;
+  margin-top: 20px;
 }
 .login_name_icon {
   width: 50px;
@@ -55,15 +75,19 @@
 }
 
 .sign_up_btn {
-  width: 90%;
+  box-sizing: border-box;
+  width: 184px;
   height: 40px;
-  color: #FFFFFF;
-  margin-left: 5%;
+  margin: 20px auto 0px;
+  padding-left: 5px;
+  font-size: 18px;
+  font-weight: 700;
   line-height: 40px;
   text-align: center;
-  border-radius: 20px;
+  border-radius: 5px;
   letter-spacing: 5px;
-  background: -webkit-linear-gradient(left, #9A93F3, #D58BBC);
+  color: #FFFFFF;
+  background-color: #4545FF;
 }
 
 .to_register {

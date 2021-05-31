@@ -1,29 +1,29 @@
 <van-toast id="van-toast" position="middle" mask="{{true}}"/>
 
-<view class="relative wh100wh bgF">
-  <view class="page_top bsbb">
+<view class="relative">
+  <view class="page_top">
     <view class="logo_box">
       <image src="/images/loginModule/logo.png" class="logo_img"></image>
     </view>
-    <view class="coF fs26 ls2">聊吧</view>
+    <view class="logo_text">0635聊吧</view>
   </view>
-  <view class="page_center bgF bsbb">
+  <view class="page_center">
     <!-- 请输入账号 -->
-    <view class="login_name frsc mt10">
+    <view class="login_name mt10">
       <view class="login_name_icon">
         <image src="/images/loginModule/userName.png" class="login_name_icon_img"></image>
       </view>
       <van-field value="{{user_name}}" placeholder="请输入账号" bind:blur="inputName" border="{{false}}"/>
     </view>
     <!-- 请输入密码 -->
-    <view class="login_name frsc mt20">
+    <view class="login_name mt20">
       <view class="login_name_icon">
         <image src="/images/loginModule/password.png" class="login_name_icon_img"></image>
       </view>
       <van-field type="password" value="{{password}}" placeholder="请输入密码" bind:blur="inputPassword" border="{{false}}"/>
     </view>
-    <view class="login_text frsc co6 fs14 mt20" bindtap="changePassword">修改密码</view>
-    <view class="sign_up_btn mt20" bindtap="signIn">登录</view>
+    <view class="login_text" bindtap="changePassword">修改密码</view>
+    <view class="sign_up_btn" bindtap="signIn">登录</view>
     <!-- <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" wx:if="{{state === '1'}}" class="sign_up_btn mt20">修改密码</button> -->
     <text class='dialog-close mt60 frcc fs14 co9' decode='true' bindtap="to_register">还没有账号？点此注册 &gt;</text>
   </view>

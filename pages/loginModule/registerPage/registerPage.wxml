@@ -1,42 +1,42 @@
 <van-toast id="van-toast" position="middle" mask="{{true}}"/>
 
-<view class="relative wh100wh bgF">
-  <view class="page_top bsbb">
-    <view class="coF fs26 ls2">Welcome to 0635!</view>
+<view class="relative">
+  <view class="page_top">
+    <view class="logo_text">Welcome to 0635!</view>
   </view>
-  <view class="page_center bgF bsbb">
+  <view class="page_center">
     <!-- 请输入账号 -->
-    <view class="login_name frsc mt10">
+    <view class="login_name mt10">
       <view class="login_name_icon">
         <image src="/images/loginModule/userName.png" class="login_name_icon_img"></image>
       </view>
       <van-field value="{{user_name}}" placeholder="请输入账号" bind:blur="inputName" maxlength="{{16}}" border="{{false}}"/>
     </view>
     <!-- 请输入密码 -->
-    <view class="login_name frsc mt20">
+    <view class="login_name mt20">
       <view class="login_name_icon">
         <image src="/images/loginModule/password.png" class="login_name_icon_img"></image>
       </view>
       <van-field type="password" value="{{password}}" placeholder="请输入密码" bind:blur="inputPassword" maxlength="{{16}}" border="{{false}}"/>
     </view>
     <!-- 再次输入密码 -->
-    <view class="login_name frsc mt20" wx:if="{{state === '0'}}">
+    <view class="login_name mt20" wx:if="{{state === '0'}}">
       <view class="login_name_icon">
         <image src="/images/loginModule/password2.png" class="login_name_icon_img"></image>
       </view>
       <van-field type="password" value="{{password2}}" placeholder="请再次输入密码" bind:blur="inputPassword2" maxlength="{{16}}" border="{{false}}"/>
     </view>
     <!-- 请输入新密码 -->
-    <view class="login_name frsc mt20" wx:if="{{state === '1'}}">
+    <view class="login_name mt20" wx:if="{{state === '1'}}">
       <view class="login_name_icon">
         <image src="/images/loginModule/password2.png" class="login_name_icon_img"></image>
       </view>
       <van-field type="password" value="{{newPassword}}" placeholder="请输入新密码" bind:blur="inputPassword3" maxlength="{{16}}" border="{{false}}"/>
     </view>
-    <view class="login_text frsc co9 fs14 mt20">4到16位的字母，数字，下划线</view>
-    <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" wx:if="{{state === '0'}}" class="sign_up_btn mt20">注册</button>
-    <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" wx:if="{{state === '1'}}" class="sign_up_btn mt20">修改密码</button>
-    <view class="tips frsc coC fs12 mt10">*注: 请确认授权，否则我们获取不到您的头像</view>
+    <view class="login_text">4到16位的字母，数字，下划线</view>
+    <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" wx:if="{{state === '0'}}" class="sign_up_btn">注册</button>
+    <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" wx:if="{{state === '1'}}" class="sign_up_btn">修改密码</button>
+    <view class="tips">*注: 请确认授权，否则我们获取不到您的头像</view>
     <text class='dialog-close mt60 frcc fs14 co9' decode='true' bindtap="to_login">&lt; 已有账号？点此登录</text>
   </view>
 

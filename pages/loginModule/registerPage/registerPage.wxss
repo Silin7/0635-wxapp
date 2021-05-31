@@ -1,8 +1,17 @@
 .relative {
   position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: #FFFFFF;
+}
+.logo_text {
+  font-size: 26px;
+  letter-spacing: 2px;
+  color: #FFFFFF;
 }
 
 .page_top {
+  box-sizing: border-box;
   width: 100vw;
   height: 38vh;
   background: -webkit-linear-gradient(top, #A084F1, #CA85D6);
@@ -22,32 +31,50 @@
 }
 
 .page_center {
+  box-sizing: border-box;
   width: 90vw;
   height: 360px;
   position: absolute;
   top: 20vh;
   left: 5vw;
-  border-radius: 20px;
+  border-radius: 10px;
   padding: 20px 20px;
-  box-shadow: 0px 2px 2px #999999;
+  box-shadow: 0px 2px 2px #CCCCCC;
+  background-color: #FFFFFF;
 }
 
 .login_name {
   width: 100%;
   /* background-color: #F9F9F9; */
   height: 40px;
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-start;
+  align-items: center;
 }
 .login_text {
   width: 90%;
   /* background-color: #F9F9F9; */
   height: 40px;
   margin-left: 5%;
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-start;
+  align-items: center;
+  color: #999999;
+  font-size: 12px;
+  margin-top: 20px;
 }
 .tips {
   width: 100%;
-  /* background-color: #F9F9F9; */
   height: 20px;
-  /* color: #4545FF; */
+  margin-top: 10px;
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-start;
+  align-items: center;
+  color: #CCCCCC;
+  font-size: 12px;
 }
 .login_name_icon {
   width: 50px;
@@ -61,14 +88,16 @@
   height: 18px;
 }
 .sign_up_btn {
-  width: 90%;
+  box-sizing: border-box;
+  width: 184px;
   height: 40px;
-  color: #FFFFFF;
-  margin-left: 5%;
+  margin: 20px auto 0;
+  font-size: 18px;
   text-align: center;
-  border-radius: 20px;
+  border-radius: 5px;
   letter-spacing: 5px;
-  background: -webkit-linear-gradient(left, #9A93F3, #D58BBC);
+  color: #FFFFFF;
+  background-color: #4545FF;
 }
 
 .van-cell {
