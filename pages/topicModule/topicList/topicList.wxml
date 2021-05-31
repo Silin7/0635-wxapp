@@ -5,12 +5,12 @@
     <view class="topic_info_img">
       <van-image lazy-load width="80" height="80" src="{{topicDetails.topic_img}}"/>
     </view>
-    <view class="topic_info_box fx_c_s_c" style="width: {{windowWidth-100}}px;">
-      <view class="name_follow m_t_10">
+    <view class="topic_info_box fcsc" style="width: {{windowWidth-100}}px;">
+      <view class="name_follow mt10">
         <view class="personal_info2_right_title to1" style="width: {{windowWidth - 190}}px;">{{topicDetails.topic_title}}</view>
         <view class="personal_info2_right_follow">关注</view>
       </view>
-      <view class="topic_info_text to_1">
+      <view class="topic_info_text to1">
         {{topicDetails.topic_info}}
       </view>
     </view>
@@ -20,9 +20,9 @@
       <view class="sub_module1_item_fd_02">
         <van-image lazy-load width="60" height="60" src="{{item.topic_img}}"/>
       </view>
-      <view class="sub_module1_item_fd_info fx_c_s_s m_l_10" style="width: {{windowWidth-100}}px;">
-        <text class="sub_module1_item_fd_info_item to_1 fs_14">{{item.topic_title}}</text>
-        <text class="sub_module1_item_fd_info_item2 to_1 fs_12 co_9">{{item.create_time}}</text>
+      <view class="sub_module1_item_fd_info fcss ml10" style="width: {{windowWidth-100}}px;">
+        <text class="sub_module1_item_fd_info_item to1 fs14">{{item.topic_title}}</text>
+        <text class="sub_module1_item_fd_info_item2 to1 fs12 co9">{{item.create_time}}</text>
       </view>
     </view>
   </view>

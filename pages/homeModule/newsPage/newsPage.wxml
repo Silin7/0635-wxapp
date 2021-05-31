@@ -1,11 +1,11 @@
 <van-toast id="van-toast" />
 
 <component-loginTips mask-closable="{{false}}" show="{{loginShow}}" buttontap="dialogButtontap">
-  <view class="fs_14 ls_2 m_t_15">登录后的世界才更美妙</view>
+  <view class="fs14 ls2 mt15">登录后的世界才更美妙</view>
 </component-loginTips>
 
 <component-dialog title="删除私信" show="{{dialogShow}}" buttons="{{dialogButtons}}" bindbuttontap="tapDialogButton" >
-  <view class="fs_14 ls_2 m_t_15">您确定要删除这条私信吗?</view>
+  <view class="fs14 ls2 mt15">您确定要删除这条私信吗?</view>
 </component-dialog>
 
 <van-tabs active="{{messageTab}}" bind:change="messageTabChange" ellipsis="{{false}}" border="{{ false }}" swipeable sticky animated>
@@ -16,15 +16,15 @@
           <view class="sub_module1_item_ns">
             <van-image lazy-load width="100%" height="100%" src="{{item.sender_img}}"/>
           </view>
-          <view class="sub_module1_item_ns_info fx_c_s_s" style="width: {{windowWidth-90}}px;">
-            <view class="sub_module1_item_ns_info_item fx_r_s_c">
-              <text class="to_1 fs_16 ls_1" style="width: {{windowWidth-160}}px;">{{item.sender_name}}</text>
+          <view class="sub_module1_item_ns_info fcss" style="width: {{windowWidth-90}}px;">
+            <view class="sub_module1_item_ns_info_item frsc">
+              <text class="to1 fs16 ls1" style="width: {{windowWidth-160}}px;">{{item.sender_name}}</text>
               <wxs module="filter" src="../../../utils/filter.wxs"></wxs>
-              <text class="sub_module1_item_ns_info_item_per sub_module1_item_ns_info_item_bg_a fs_12 fw_7">附近的人</text>
+              <text class="sub_module1_item_ns_info_item_per sub_module1_item_ns_info_item_bga fs12 fw7">附近的人</text>
             </view>
-            <view class="sub_module1_item_ns_info_item fx_r_s_e">
-              <text class="to_1 fs_12 co_6" style="width: {{windowWidth-200}}px;">{{item.message_title}}</text>
-              <text class="to_1 fs_12 co_9 m_l_10">{{filter.dayjs(item.create_time, '3-1')}}</text>
+            <view class="sub_module1_item_ns_info_item frse">
+              <text class="to1 fs12 co6" style="width: {{windowWidth-200}}px;">{{item.message_title}}</text>
+              <text class="to1 fs12 co9 ml10">{{filter.dayjs(item.create_time, '3-1')}}</text>
             </view>
           </view>
         </view>
@@ -40,15 +40,15 @@
         <view class="sub_module1_item_ns">
           <van-image lazy-load width="100%" height="100%" src="/images/homeModule/banner_xq.jpg"/>
         </view>
-        <view class="sub_module1_item_ns_info fx_c_s_s" style="width: {{windowWidth-90}}px;">
-          <view class="sub_module1_item_ns_info_item fx_r_s_c">
-            <text class="to_1 fs_16 ls_2" style="width: {{windowWidth-140}}px;">{{item.message_title}}</text>
+        <view class="sub_module1_item_ns_info fcss" style="width: {{windowWidth-90}}px;">
+          <view class="sub_module1_item_ns_info_item frsc">
+            <text class="to1 fs16 ls2" style="width: {{windowWidth-140}}px;">{{item.message_title}}</text>
             <wxs module="filter" src="../../../utils/filter.wxs"></wxs>
-            <text class="sub_module1_item_ns_info_item_state sub_module1_item_ns_info_item_bg_a fs_12 fw_7">公告</text>
+            <text class="sub_module1_item_ns_info_item_state sub_module1_item_ns_info_item_bga fs12 fw7">公告</text>
           </view>
-          <view class="sub_module1_item_ns_info_item fx_r_s_e">
-            <text class="to_1 fs_12 co_6" style="width: {{windowWidth-200}}px;">{{item.message_intro}}</text>
-            <text class="to_1 fs_12 co_9 m_l_10">{{filter.dayjs(item.create_time, '3-1')}}</text>
+          <view class="sub_module1_item_ns_info_item frse">
+            <text class="to1 fs12 co6" style="width: {{windowWidth-200}}px;">{{item.message_intro}}</text>
+            <text class="to1 fs12 co9 ml10">{{filter.dayjs(item.create_time, '3-1')}}</text>
           </view>
         </view>
       </view>

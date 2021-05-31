@@ -38,11 +38,11 @@
 </van-dropdown-menu>
 
 <!-- 数据列表 -->
-<scroll-view wx:if="{{!appointmentNo}}" class="bg_F5 bs_bb oy_a" scroll-y="{{true}}" style="height: {{windowHeight-50}}px;" bindscrolltolower="onScrollBottom">
+<scroll-view wx:if="{{!appointmentNo}}" class="bgF5 bsbb oya" scroll-y="{{true}}" style="height: {{windowHeight-50}}px;" bindscrolltolower="onScrollBottom">
   <view class="item_box" wx:for="{{appointmentList}}" wx:key="index" bindtap="appointmentDetails" data-item="{{item}}" wx:if="{{isShow}}">
     <view class="sponsor_box">
       <van-image lazy-load width="90" height="100" src="{{item.sponsor_img}}" image-class="sponsor_img"/>
-      <text class="to_1 sponsor_name">{{item.sponsor_name}}</text>
+      <text class="to1 sponsor_name">{{item.sponsor_name}}</text>
       <view class="plate_box">
         <view wx:if="{{item.sponsor_gender == '1'}}" class="gender_boy">
           <image src="/images/mineModule/boy_icon2.png" style="width: 14px; height: 14px"/>
@@ -56,24 +56,24 @@
       </view>
     </view>
     <view class="appointment_box" style="width: {{windowWidth-120}}px;">
-      <view class="appointment_title to_1">{{item.appointment_title}}</view>
+      <view class="appointment_title to1">{{item.appointment_title}}</view>
       <view class="appointment_item">
         <image src="/images/appointmentModule/time.png" style="width: 16px; height: 16px"/>
-        <text class="appointment_text to_1" style="width: {{windowWidth-150}}px;">{{item.appointment_time}}</text>
+        <text class="appointment_text to1" style="width: {{windowWidth-150}}px;">{{item.appointment_time}}</text>
       </view>
       <view class="appointment_item">
         <image src="/images/appointmentModule/place.png" style="width: 16px; height: 16px"/>
-        <text class="appointment_text to_1" style="width: {{windowWidth-150}}px;">{{item.appointment_place}}</text>
+        <text class="appointment_text to1" style="width: {{windowWidth-150}}px;">{{item.appointment_place}}</text>
       </view>
       <view class="appointment_item">
         <image src="/images/appointmentModule/pay.png" style="width: 16px; height: 16px"/>
         <wxs module="filter" src="../../../utils/filter.wxs"></wxs>
-        <text class="appointment_text to_1" style="width: {{windowWidth-150}}px;">{{filter.appointmentPay(item.appointment_pay)}}</text>
+        <text class="appointment_text to1" style="width: {{windowWidth-150}}px;">{{filter.appointmentPay(item.appointment_pay)}}</text>
       </view>
       <view class="appointment_item">
         <image src="/images/appointmentModule/info.png" style="width: 16px; height: 16px"/>
         <wxs module="filter" src="../../../utils/filter.wxs"></wxs>
-        <text class="appointment_text to_1" style="width: {{windowWidth-150}}px;">{{item.appointment_info}}</text>
+        <text class="appointment_text to1" style="width: {{windowWidth-150}}px;">{{item.appointment_info}}</text>
       </view>
     </view>
   </view>

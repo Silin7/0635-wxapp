@@ -1,11 +1,11 @@
 <van-toast id="van-toast" />
 
 <component-loginTips mask-closable="{{false}}" show="{{loginShow}}" buttontap="dialogButtontap">
-  <view class="fs_14 ls_2 m_t_15">登录后的世界才更美妙</view>
+  <view class="fs14 ls2 mt15">登录后的世界才更美妙</view>
 </component-loginTips>
 
 <component-dialog title="{{dialogTitle}}" show="{{dialogShow}}" buttons="{{dialogButtons}}" bindbuttontap="tapDialogButton" >
-  <view class="fs_14 ls_2 m_t_15">{{dialogText}}</view>
+  <view class="fs14 ls2 mt15">{{dialogText}}</view>
 </component-dialog>
 
 <view class="page_box">
@@ -14,7 +14,7 @@
       <van-image lazy-load width="60" height="60" src="{{userInfo.avatar_url}}" image-class="avatar_img"/>
       <view class="user_box" style="width: {{windowWidth-90}}px;">
         <view class="nick_name_box">
-          <view class="nick_name to_1" style="width: {{windowWidth-160}}px;">{{userInfo.nick_name}}</view>
+          <view class="nick_name to1" style="width: {{windowWidth-160}}px;">{{userInfo.nick_name}}</view>
           <view class="follow" bindtap="collectionuser">关注</view>
         </view>
         <view class="user_info">{{userInfo.gender == '1' ? '男' : '女'}} · {{userInfo.age}}岁 · {{userInfo.constellation}} · {{userInfo.address}}</view>
@@ -23,7 +23,7 @@
     <view class="dynamic_info">
       <view class="dynamic_content" wx:if="{{dynamicDetails.content}}">{{dynamicDetails.content}}</view>
       <view class="dynamic_image" wx:if="{{dynamicDetails.image}}" bindtap="dynamicImg">
-        <van-image lazy-load width="100%" height="200" src="{{dynamicDetails.image}}" image-class="br_5"/>
+        <van-image lazy-load width="100%" height="200" src="{{dynamicDetails.image}}" image-class="br5"/>
       </view>
     </view>
     <view class="share">
@@ -38,7 +38,7 @@
   <view class="dynamic_comment">
     <view wx:for="{{commentList}}" wx:key="index" class="comment_item">
       <view class="comment_user" bindtap="authorDynamic" data-item="{{item}}">
-        <van-image lazy-load width="30" height="30" src="{{item.reviewer_image}}" image-class="br_15"/>
+        <van-image lazy-load width="30" height="30" src="{{item.reviewer_image}}" image-class="br15"/>
         <view class="reviewer_name" style="width: {{windowWidth-60}}px;">{{item.reviewer_name}}</view>
       </view>
       <view class="comment_content">{{item.comment_content}}</view>

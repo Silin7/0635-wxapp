@@ -1,30 +1,30 @@
 <van-toast id="van-toast" position="middle" mask="{{true}}"/>
 
-<view class="relative w_h_100wh bg_F">
-  <view class="page_top bs_bb">
+<view class="relative wh100wh bgF">
+  <view class="page_top bsbb">
     <view class="logo_box">
       <image src="/images/loginModule/logo.png" class="logo_img"></image>
     </view>
-    <view class="co_F fs_26 ls_2">聊吧</view>
+    <view class="coF fs26 ls2">聊吧</view>
   </view>
-  <view class="page_center bg_F bs_bb">
+  <view class="page_center bgF bsbb">
     <!-- 请输入账号 -->
-    <view class="login_name fx_r_s_c m_t_10">
+    <view class="login_name frsc mt10">
       <view class="login_name_icon">
         <image src="/images/loginModule/userName.png" class="login_name_icon_img"></image>
       </view>
       <van-field value="{{user_name}}" placeholder="请输入账号" bind:blur="inputName" border="{{false}}"/>
     </view>
     <!-- 请输入密码 -->
-    <view class="login_name fx_r_s_c m_t_20">
+    <view class="login_name frsc mt20">
       <view class="login_name_icon">
         <image src="/images/loginModule/password.png" class="login_name_icon_img"></image>
       </view>
       <van-field type="password" value="{{password}}" placeholder="请输入密码" bind:blur="inputPassword" border="{{false}}"/>
     </view>
-    <view class="login_text fx_r_s_c co_6 fs_14 m_t_20" bindtap="changePassword">修改密码</view>
-    <view class="sign_up_btn m_t_20" bindtap="signIn">登录</view>
-    <!-- <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" wx:if="{{state === '1'}}" class="sign_up_btn m_t_20">修改密码</button> -->
-    <text class='dialog-close m_t_60 fx_r_c_c fs_14 co_9' decode='true' bindtap="to_register">还没有账号？点此注册 &gt;</text>
+    <view class="login_text frsc co6 fs14 mt20" bindtap="changePassword">修改密码</view>
+    <view class="sign_up_btn mt20" bindtap="signIn">登录</view>
+    <!-- <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" wx:if="{{state === '1'}}" class="sign_up_btn mt20">修改密码</button> -->
+    <text class='dialog-close mt60 frcc fs14 co9' decode='true' bindtap="to_register">还没有账号？点此注册 &gt;</text>
   </view>
 </view>

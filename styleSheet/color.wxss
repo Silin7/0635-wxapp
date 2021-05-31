@@ -1,73 +1,73 @@
-.co_0 {
+.co0 {
   color: #000000;
 }
-.co_3 {
+.co3 {
   color: #333333;
 }
-.co_45 {
+.co45 {
   color: #4545FF;
 }
-.co_6 {
+.co6 {
   color: #666666;
 }
-.co_9 {
+.co9 {
   color: #999999;
 }
-.co_9A {
+.co9A {
  color: #9A93F3;
 }
-.co_BD {
+.coBD {
   color: #BDBDBD;
 }
-.co_B7 {
+.coB7 {
   color: #B7BBC2;
 }
-.co_C {
+.coC {
   color: #CCCCCC;
 }
-.co_D5 {
+.coD5 {
   color: #D58BBC;
 }
-.co_F {
+.coF {
   color: #FFFFFF;
 }
 
-.bg_0 {
+.bg0 {
   background-color: #000000;
 }
-.bg_3 {
+.bg3 {
   background-color: #333333;
 }
-.bg_45 {
+.bg45 {
   background-color: #4545FF;
 }
-.bg_6 {
+.bg6 {
   background-color: #666666;
 }
-.bg_9 {
+.bg9 {
   background-color: #999999;
 }
-.bg_9A {
+.bg9A {
   background-color: #9A93F3;
 }
-.bg_BD {
+.bgBD {
   background-color: #BDBDBD;
 }
-.bg_C {
+.bgC {
   background-color: #CCCCCC;
 }
-.bg_D5 {
+.bgD5 {
   background-color: #D58BBC;
 }
-.bg_F {
+.bgF {
   background-color: #FFFFFF;
 }
-.bg_F0 {
+.bgF0 {
   background-color: #F0F0F0;
 }
-.bg_F5 {
+.bgF5 {
   background-color: #F7F8FA;
 }
-.bg_F7 {
+.bgF7 {
   background-color: #F7F8FA;
 }

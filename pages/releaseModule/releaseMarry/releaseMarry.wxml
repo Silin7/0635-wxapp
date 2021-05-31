@@ -3,11 +3,11 @@
 <component-choosePicker bind:confirmItem="confirmItem" overlayShow="{{pickerShow}}" pickerTitle="{{pickerTitle}}" dataList="{{pickerList}}"/>
 
 <component-loginTips mask-closable="{{false}}" show="{{loginShow}}" buttontap="dialogButtontap">
-  <view class="fs_14 ls_2 m_t_15">登录后的世界才更美妙</view>
+  <view class="fs14 ls2 mt15">登录后的世界才更美妙</view>
 </component-loginTips>
 
 <component-dialog title="聊城社交" show="{{dialogShow}}" buttons="{{dialogButtons}}" bindbuttontap="tapDialogButton" >
-  <view class="fs_14 ls_2 m_t_15">您确定要发布这条信息吗？</view>
+  <view class="fs14 ls2 mt15">您确定要发布这条信息吗？</view>
 </component-dialog>
 
 <view class="page_box" style="height: {{windowHeight-80}}px;">
@@ -15,7 +15,7 @@
   <view class="data_form_box">
     <!-- 社交类型 -->
     <view class="information_item">
-      <view class="information_item_text ls_2">社交类型</view>
+      <view class="information_item_text ls2">社交类型</view>
       <van-field readonly="{{true}}" value="{{dataForm.type_text}}" placeholder="请选择社交类型" bindtap="bindType" style="width: {{windowWidth-100}}px;"/>
     </view>
     <!-- 昵称 -->
@@ -51,12 +51,12 @@
     </view>
     <!-- 星座 -->
     <view class="information_item">
-      <view class="information_item_text ls_2">星座</view>
+      <view class="information_item_text ls2">星座</view>
       <van-field readonly="{{true}}" value="{{dataForm.constellation_text}}" placeholder="请选择星座" bindtap="bindConstellation" style="width: {{windowWidth-100}}px;"/>
     </view>
     <!-- 地区 -->
     <view class="information_item">
-      <view class="information_item_text ls_2">地区</view>
+      <view class="information_item_text ls2">地区</view>
       <van-field readonly="{{true}}" value="{{dataForm.address_text}}" placeholder="请选择地区" bindtap="bindAddress" style="width: {{windowWidth-100}}px;"/>
     </view>
     <!-- 学历  -->
@@ -71,22 +71,22 @@
     </view>
     <!-- 收入 -->
     <view class="information_item">
-      <view class="information_item_text ls_2">收入</view>
+      <view class="information_item_text ls2">收入</view>
       <van-field readonly="{{true}}" value="{{dataForm.income_text}}" placeholder="请选择收入" bindtap="bindIncome" style="width: {{windowWidth-100}}px;"/>
     </view>
     <!-- 感情状态 -->
     <view class="information_item">
-      <view class="information_item_text ls_2">感情状态</view>
+      <view class="information_item_text ls2">感情状态</view>
       <van-field readonly="{{true}}" value="{{dataForm.state_text}}" placeholder="请选择感情状态" bindtap="bindState" style="width: {{windowWidth-100}}px;"/>
     </view>
     <!-- 是否有车 -->
     <view class="information_item">
-      <view class="information_item_text ls_2">是否有车</view>
+      <view class="information_item_text ls2">是否有车</view>
       <van-field readonly="{{true}}" value="{{dataForm.car_text}}" placeholder="是否有车" bindtap="bindCar" style="width: {{windowWidth-100}}px;"/>
     </view>
     <!-- 是否有房 -->
     <view class="information_item">
-      <view class="information_item_text ls_2">是否有房</view>
+      <view class="information_item_text ls2">是否有房</view>
       <van-field readonly="{{true}}" value="{{dataForm.house_text}}" placeholder="是否有房" bindtap="bindHouse" style="width: {{windowWidth-100}}px;"/>
     </view>
     <!-- 个人简介 -->

@@ -1,21 +1,21 @@
 <van-toast id="van-toast" />
 
 <component-dialog title="{{dialogTitle}}" show="{{dialogShow}}" buttons="{{dialogButtons}}" bindbuttontap="tapDialogButton" >
-  <view class="fs_14 ls_2 m_t_15">{{dialogText}}</view>
+  <view class="fs14 ls2 mt15">{{dialogText}}</view>
 </component-dialog>
 
 <!-- 喜欢 -->
 <scroll-view wx:if="{{type == '01'}}" class="follow_list" scroll-y="{{true}}" style="height: {{windowHeight}}px;" bindscrolltolower="onScrollBottom1">
   <view class="follow_item" wx:for="{{concernsList}}" wx:key="index" bindtap="myConcerns" data-item="{{item}}">
     <view class="follow_head_portrait">
-      <van-image lazy-load width="100%" height="100%" src="{{item.photo}}" image-class="br_5"/>
+      <van-image lazy-load width="100%" height="100%" src="{{item.photo}}" image-class="br5"/>
     </view>
     <view class="follow_info_text" style="width: {{windowWidth-90}}px;">
       <view class="follow_name_personalSignature" style="width: {{windowWidth-180}}px;">
         <view class="follow_name">
-          <view class="follow_name_text to_1 ls_2">{{item.nick_name}}</view>
+          <view class="follow_name_text to1 ls2">{{item.nick_name}}</view>
         </view>
-        <view class="follow_personalSignature to_1">{{item.introduce}}</view>
+        <view class="follow_personalSignature to1">{{item.introduce}}</view>
       </view>
       <view class="follow_follow">
         <view catchtap="cancelFollow" data-item="{{item}}">取消喜欢</view>
@@ -28,14 +28,14 @@
 <scroll-view wx:if="{{type == '02'}}" class="follow_list" scroll-y="{{true}}" style="height: {{windowHeight}}px;" bindscrolltolower="onScrollBottom2">
   <view class="follow_item" wx:for="{{collectionList}}" wx:key="index" bindtap="myCollection" data-item="{{item}}">
     <view class="follow_head_portrait">
-      <van-image lazy-load width="100%" height="100%" src="{{item.user_image}}" image-class="br_5"/>
+      <van-image lazy-load width="100%" height="100%" src="{{item.user_image}}" image-class="br5"/>
     </view>
     <view class="follow_info_text" style="width: {{windowWidth-90}}px;">
       <view class="follow_name_personalSignature" style="width: {{windowWidth-180}}px;">
         <view class="follow_name">
-          <view class="follow_name_text to_1">{{item.user_name}}</view>
+          <view class="follow_name_text to1">{{item.user_name}}</view>
         </view>
-        <view class="follow_personalSignature to_1">{{item.user_info}}</view>
+        <view class="follow_personalSignature to1">{{item.user_info}}</view>
       </view>
       <view class="follow_follow">
         <view catchtap="cancelCollection" data-item="{{item}}">取消关注</view>

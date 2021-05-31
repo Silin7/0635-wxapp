@@ -1,6 +1,6 @@
 <van-toast id="van-toast" />
 
-<view class="bg_F5 bs_bb oy_a" style="height: {{windowHeight}}px; ">
+<view class="bgF5 bsbb oya" style="height: {{windowHeight}}px; ">
   <!-- swiper滚动图 -->
   <swiper indicator-dots="{{true}}" autoplay="{{true}}" circular="{{true}}" style="height: 240px;">
     <block wx:for="{{specialtyDetails.specialty_image}}" wx:key="index">

@@ -1,6 +1,6 @@
 <van-toast id="van-toast" />
 
-<view class="news_title to_2">{{newsDetails.journalism_title}}</view>
+<view class="news_title to2">{{newsDetails.journalism_title}}</view>
 
 <!-- 新闻内容 -->
 <view class="news_info">

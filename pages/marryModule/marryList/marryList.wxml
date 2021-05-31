@@ -42,11 +42,11 @@
       </view>
       <view class="person_name">
         <view class="person_name_item1">
-          <text class="person_name_item1_name to_1">{{item.name}}</text>
+          <text class="person_name_item1_name to1">{{item.name}}</text>
           <text class="person_name_item1_age">{{item.age}}岁</text>
         </view>
-        <view class="person_name_item2 to_1">
-          <van-icon name="like" color="red" class="m_r_2"/>
+        <view class="person_name_item2 to1">
+          <van-icon name="like" color="red" class="rl2"/>
           {{item.introduce}}
         </view>
       </view>

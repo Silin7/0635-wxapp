@@ -1,21 +1,21 @@
 <van-toast id="van-toast" />
 
 <component-loginTips mask-closable="{{false}}" show="{{loginShow}}" buttontap="dialogButtontap">
-  <view class="fs_14 ls_2 m_t_15">登录后的世界才更美妙</view>
+  <view class="fs14 ls2 mt15">登录后的世界才更美妙</view>
 </component-loginTips>
 
 <component-dialog title="收藏" show="{{dialogShow}}" buttons="{{dialogButtons}}" bindbuttontap="tapDialogButton" >
-  <view class="fs_14 ls_2 m_t_15">您确定要收藏本菜谱吗？</view>
+  <view class="fs14 ls2 mt15">您确定要收藏本菜谱吗？</view>
 </component-dialog>
 
-<view class="bs_bb bg_F5" style="height: {{windowHeight}}px;">
+<view class="bsbb bgF5" style="height: {{windowHeight}}px;">
   <view class="page_banner">
     <van-image lazy-load width="100%" height="100%" src="{{menuDetails.photo_path}}"/>
   </view>
   <!-- 菜名 -->
   <view class="header_box">
     <view class="recipeDetail_name_box">
-      <view class="recipeDetail_name to_1" style="width: {{windowWidth-30}}px;">{{menuDetails.title}}</view>
+      <view class="recipeDetail_name to1" style="width: {{windowWidth-30}}px;">{{menuDetails.title}}</view>
       <!-- <view class="recipeDetail_collection" bindtap="collectionMenu">
         <van-image lazy-load width="30" height="30" src="/images/marryModule/like_ta.png"/>
       </view> -->
@@ -38,11 +38,11 @@
       <view class="major_note">{{item.note}}</view>
     </view>
   </view>
-  <view class="bg_F5" style="height: 10px;"></view>
+  <view class="bgF5" style="height: 10px;"></view>
   <!-- 步骤 -->
   <view class="step_box">
     <view class="tips_title">制作步骤</view>
-    <view wx:for="{{menuDetails.cookstep}}" wx:key="index" class="m_t_10">
+    <view wx:for="{{menuDetails.cookstep}}" wx:key="index" class="mt10">
       <view class="step_title">{{index+1}}、{{item.content}}</view>
       <van-image lazy-load width="100%" height="260" src="{{item.image}}" bind:click="savePicture" data-img="{{item.image}}" />
     </view>

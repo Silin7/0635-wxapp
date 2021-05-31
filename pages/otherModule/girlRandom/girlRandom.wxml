@@ -1,6 +1,6 @@
 <van-toast id="van-toast" />
 
-<view wx:if="{{imageList.length > 0}}" class="bg_F5">
+<view wx:if="{{imageList.length > 0}}" class="bgF5">
   <!-- 图片列表篇 -->
   <image wx:for="{{imageList}}" wx:key="index" src="{{item.imageUrl}}" bindtap="bPicture" data-item="{{item}}" class="van_img"/>
   <!-- 换一批 -->

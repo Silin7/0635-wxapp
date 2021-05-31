@@ -3,11 +3,11 @@
 <component-choosePicker bind:confirmItem="confirmItem" overlayShow="{{pickerShow}}" pickerTitle="{{pickerTitle}}" dataList="{{pickerList}}"/>
 
 <component-loginTips mask-closable="{{false}}" show="{{loginShow}}" buttontap="dialogButtontap">
-  <view class="fs_14 ls_2 m_t_15">登录后的世界才更美妙</view>
+  <view class="fs14 ls2 mt15">登录后的世界才更美妙</view>
 </component-loginTips>
 
 <component-dialog title="发起活动" show="{{dialogShow}}" buttons="{{dialogButtons}}" bindbuttontap="tapDialogButton" >
-  <view class="fs_14 ls_2 m_t_15">您确定要发布这条信息吗？</view>
+  <view class="fs14 ls2 mt15">您确定要发布这条信息吗？</view>
 </component-dialog>
 
 <view class="page_box" style="height: {{windowHeight-80}}px;">
@@ -39,22 +39,22 @@
     </view>
     <!-- 地区分类 -->
     <view class="information_item">
-      <view class="information_item_text ls_2">地区分类</view>
+      <view class="information_item_text ls2">地区分类</view>
       <van-field readonly="{{true}}" value="{{dataForm.area_type_text}}" placeholder="请选择所在地区" bindtap="areaType" style="width: {{windowWidth-100}}px;"/>
     </view>
     <!-- 活动分类 -->
     <view class="information_item">
-      <view class="information_item_text ls_2">活动分类</view>
+      <view class="information_item_text ls2">活动分类</view>
       <van-field readonly="{{true}}" value="{{dataForm.appointment_type_text}}" placeholder="请选择活动分类" bindtap="appointmentType" style="width: {{windowWidth-100}}px;"/>
     </view>
     <!-- 付款方式 -->
     <view class="information_item">
-      <view class="information_item_text ls_2">付款方式</view>
+      <view class="information_item_text ls2">付款方式</view>
       <van-field readonly="{{true}}" value="{{dataForm.appointment_pay_text}}" placeholder="请选择付款方式" bindtap="appointmentPay" style="width: {{windowWidth-100}}px;"/>
     </view>
     <!-- 性别要求 -->
     <view class="information_item">
-      <view class="information_item_text ls_2">性别要求</view>
+      <view class="information_item_text ls2">性别要求</view>
       <van-field readonly="{{true}}" value="{{dataForm.appointment_gander_text}}" placeholder="请选择性别要求" bindtap="appointmentGander" style="width: {{windowWidth-100}}px;"/>
     </view>
     <!-- 活动详情 -->
@@ -73,7 +73,7 @@
       bind:after-read="afterRead"
       upload-text="个人开发者资源有限，您只能上传一张图片哟~"/>
   </view>
-  <!-- <view class="information_item fs_12 co_9">*注：个性签名最多为18个字符</view> -->
+  <!-- <view class="information_item fs12 co9">*注：个性签名最多为18个字符</view> -->
 </view>
 
 <!-- 底部按钮 -->

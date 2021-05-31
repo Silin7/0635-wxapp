@@ -39,7 +39,7 @@
       <van-image lazy-load width="100%" height="100%" src="{{item.journalism_img}}"/>
     </view>
     <view style="width: {{windowWidth-70}}px;">
-      <view class="find_news_title to_2">{{item.journalism_title}}</view>
+      <view class="find_news_title to2">{{item.journalism_title}}</view>
       <text class="find_news_time">{{item.create_time}}</text>
     </view>
   </view>

@@ -1,7 +1,7 @@
 <van-toast id="van-toast" />
 
 <component-loginTips mask-closable="{{false}}" show="{{loginShow}}" buttontap="dialogButtontap">
-  <view class="fs_14 ls_2 m_t_15">登录后的世界才更美妙</view>
+  <view class="fs14 ls2 mt15">登录后的世界才更美妙</view>
 </component-loginTips>
 
 <view class="personal_banner">
@@ -11,9 +11,9 @@
     <view class="personal_info1_box">
       <!-- 我的ID -->
       <view class="personal_info1_left">
-        <view class="fs_22">聊吧</view>
+        <view class="fs22">聊吧</view>
         <wxs module="filter" src="../../../utils/filter.wxs"></wxs>
-        <view class="fs_12 ls_1">ID号：<text class="fw_7 fs_13">{{filter.licensePlate(id_key)}}</text></view>
+        <view class="fs12 ls1">ID号：<text class="fw7 fs13">{{filter.licensePlate(id_key)}}</text></view>
       </view>
       <!-- 我的关注 -->
       <view class="personal_info1_right">
@@ -23,7 +23,7 @@
         </view>
         <view class="personal_info1_right_item" style="width: 10px;">
           <view class="personal_info1_right_item_cs"></view>
-          <view class="fs_12">|</view>
+          <view class="fs12">|</view>
         </view>
         <view class="personal_info1_right_item" bindtap="myCollection">
           <view>{{collection}}</view>
@@ -37,25 +37,25 @@
   <!-- 个人简介 -->
   <view class="personal_info2_box" bindtap="personalData">
     <!-- 微信头像 -->
-    <view class="personal_info2_left br_20" style="overflow: hidden;">
-      <van-image lazy-load width="100%" height="100%" src="{{mineDataForm.avatar_url}}" image-class="br_20"/>
+    <view class="personal_info2_left br20" style="overflow: hidden;">
+      <van-image lazy-load width="100%" height="100%" src="{{mineDataForm.avatar_url}}" image-class="br20"/>
     </view>
     <view class="personal_info2_right" style="width: {{windowWidth-140}}px;">
       <!-- 微信昵称 -->
       <view class="name_follow">
-        <view class="ls_2 fw_7">{{mineDataForm.nick_name}}</view>
+        <view class="ls2 fw7">{{mineDataForm.nick_name}}</view>
       </view>
       <!-- 年龄 星座 地址 -->
-      <view class="fs_12 fx_r_s_c" wx:if="{{mineDataForm.age && mineDataForm.constellation && mineDataForm.address}}">
+      <view class="fs12 frsc" wx:if="{{mineDataForm.age && mineDataForm.constellation && mineDataForm.address}}">
         <van-image lazy-load width="100%" height="100%" wx:if="{{mineDataForm.gender == '1'}}" src="/images/mineModule/boy_icon.png" image-class="image_class"/>
         <van-image lazy-load width="100%" height="100%" wx:if="{{mineDataForm.gender == '2'}}" src="/images/mineModule/girl_icon.png" image-class="image_class"/>
-        <view>{{mineDataForm.age}}岁<text class="fw_7 p_l_3 p_r_3">·</text></view>
-        <view>{{mineDataForm.constellation}}<text class="fw_7 p_l_3 p_r_3">·</text></view>
+        <view>{{mineDataForm.age}}岁<text class="fw7 pl3 pr3">·</text></view>
+        <view>{{mineDataForm.constellation}}<text class="fw7 pl3 pr3">·</text></view>
         <view>{{mineDataForm.address}}</view>
       </view>
       <!-- 个性签名 -->
-      <view class="fs_12 co_9 ls_1" wx:if="{{mineDataForm.personal_signature}}">{{mineDataForm.personal_signature}}</view>
-      <view class="fs_12 co_9 ls_1" wx:else>点击完善个人信息</view>
+      <view class="fs12 co9 ls1" wx:if="{{mineDataForm.personal_signature}}">{{mineDataForm.personal_signature}}</view>
+      <view class="fs12 co9 ls1" wx:else>点击完善个人信息</view>
     </view>
   </view>
   <!-- 我的足迹 -->
@@ -63,76 +63,76 @@
     <view class="my_tracks_top">
       <view class="my_tracks_top_box">
         <view class="footprint_box">
-          <van-image lazy-load width="100%" height="100%" src="/images/mineModule/footprint_icon.png" image-class="br_5"/>
+          <van-image lazy-load width="100%" height="100%" src="/images/mineModule/footprint_icon.png" image-class="br5"/>
         </view>
-        <view class="d_ib p_l_10">足迹</view>
+        <view class="dib pl10">足迹</view>
       </view>
-      <text class="dialog-close see_more p_t_5 fs_12 co_9" decode="true" bindtap="tracksMore">查看更多 &gt;</text>
+      <text class="dialog-close see_more pt5 fs12 co9" decode="true" bindtap="tracksMore">查看更多 &gt;</text>
     </view>
-    <view class="my_tracks_center m_t_20">
+    <view class="my_tracks_center mt20">
       <view class="my_tracks_center_img" wx:for="{{scenicspotList}}" wx:key="index" wx:if="{{index < 4}}" bindtap="scenicspotDetails" data-id="{{item.scenicspot_id}}">
-        <van-image lazy-load width="100%" height="100%" src="{{item.scenicspot_img}}" image-class="br_5"/>
+        <van-image lazy-load width="100%" height="100%" src="{{item.scenicspot_img}}" image-class="br5"/>
       </view>
       <view class="my_tracks_center_img" wx:if="{{imgFlage01}}" bindtap="scenicspotDetails" data-id="{{1}}">
-        <van-image lazy-load width="100%" height="100%" src="https://dimg04.c-ctrip.com/images/010481200086o0iraBE7A_C_1600_1200.jpg" image-class="br_5"/>
-        <view class="my_tracks_center_mask w_h_100 br_5"></view>
+        <van-image lazy-load width="100%" height="100%" src="https://dimg04.c-ctrip.com/images/010481200086o0iraBE7Ac1600_1200.jpg" image-class="br5"/>
+        <view class="my_tracks_center_mask wh100 br5"></view>
       </view>
       <view class="my_tracks_center_img" wx:if="{{imgFlage02}}" bindtap="scenicspotDetails" data-id="{{2}}">
-        <van-image lazy-load width="100%" height="100%" src="https://dimg07.c-ctrip.com/images/350t1a0000018ff8p8C7D_C_1600_1200.jpg" image-class="br_5"/>
-        <view class="my_tracks_center_mask w_h_100 br_5"></view>
+        <van-image lazy-load width="100%" height="100%" src="https://dimg07.c-ctrip.com/images/350t1a0000018ff8p8C7Dc1600_1200.jpg" image-class="br5"/>
+        <view class="my_tracks_center_mask wh100 br5"></view>
       </view>
       <view class="my_tracks_center_img" wx:if="{{imgFlage03}}" bindtap="scenicspotDetails" data-id="{{3}}">
-        <van-image lazy-load width="100%" height="100%" src="https://dimg01.c-ctrip.com/images/100v1f000001h1cafBE4A_R_1600_10000.jpg" image-class="br_5"/>
-        <view class="my_tracks_center_mask w_h_100 br_5"></view>
+        <van-image lazy-load width="100%" height="100%" src="https://dimg01.c-ctrip.com/images/100v1f000001h1cafBE4A_R_1600_10000.jpg" image-class="br5"/>
+        <view class="my_tracks_center_mask wh100 br5"></view>
       </view>
       <view class="my_tracks_center_img" wx:if="{{imgFlage04}}" bindtap="scenicspotDetails" data-id="{{4}}">
-        <van-image lazy-load width="100%" height="100%" src="https://dimg02.c-ctrip.com/images/0103g120008681blwE16E_R_10000_1200.jpg" image-class="br_5"/>
-        <view class="my_tracks_center_mask w_h_100 br_5"></view>
+        <van-image lazy-load width="100%" height="100%" src="https://dimg02.c-ctrip.com/images/0103g120008681blwE16E_R_10000_1200.jpg" image-class="br5"/>
+        <view class="my_tracks_center_mask wh100 br5"></view>
       </view>
     </view>
   </view>
   <!-- 我的话题 -->
-  <view class="my_tracks m_t_10">
+  <view class="my_tracks mt10">
     <view class="my_tracks_top">
       <view class="my_tracks_top_box">
         <view class="footprint_box">
-          <van-image lazy-load width="100%" height="100%" src="/images/mineModule/conversation_icon.png" image-class="d_ib"/>
+          <van-image lazy-load width="100%" height="100%" src="/images/mineModule/conversation_icon.png" image-class="dib"/>
         </view>
-        <view class="d_ib p_l_10">话题</view>
+        <view class="dib pl10">话题</view>
       </view>
-      <!-- <text class="dialog-close see_more p_t_5 fs_12 co_9" decode="true">查看更多 &gt;</text> -->
-      <text class="dialog-close see_more p_t_5 fs_12 co_9" decode="true"> </text>
+      <!-- <text class="dialog-close see_more pt5 fs12 co9" decode="true">查看更多 &gt;</text> -->
+      <text class="dialog-close see_more pt5 fs12 co9" decode="true"> </text>
     </view>
-    <view class="my_conversation_center m_t_10" bindtap="myDynamic">
+    <view class="my_conversation_center mt10" bindtap="myDynamic">
       <view class="my_conversation_center_box">
         <view class="my_conversation_center_img">
-          <van-image lazy-load width="100%" height="100%" src="/images/homeModule/banner_xq.jpg" image-class="br_5"/>
+          <van-image lazy-load width="100%" height="100%" src="/images/homeModule/banner_xq.jpg" image-class="br5"/>
         </view>
-        <view class="my_conversation_center_text_box m_l_10">
-          <view class="my_conversation_center_text to_1 fs_14 ls_1">我的动态</view>
-          <view class="my_conversation_center_text to_1 fs_12 co_9 ls_1">美食啊晒出来美食啊晒出来美食啊晒出来美食啊晒出来美食啊晒出来美食啊晒出来美</view>
-        </view>
-      </view>
-    </view>
-    <view class="my_conversation_center m_t_10">
-      <view class="my_conversation_center_box">
-        <view class="my_conversation_center_img">
-          <van-image lazy-load width="100%" height="100%" src="/images/homeModule/banner_xq.jpg" image-class="br_5"/>
-        </view>
-        <view class="my_conversation_center_text_box m_l_10">
-          <view class="my_conversation_center_text to_1 fs_14 ls_1">美食晒出来</view>
-          <view class="my_conversation_center_text to_1 fs_12 co_9 ls_1">美食啊晒出来美食啊晒出来美食啊晒出来美食啊晒出来美食啊晒出来美食啊晒出来美</view>
+        <view class="my_conversation_center_text_box ml10">
+          <view class="my_conversation_center_text to1 fs14 ls1">我的动态</view>
+          <view class="my_conversation_center_text to1 fs12 co9 ls1">美食啊晒出来美食啊晒出来美食啊晒出来美食啊晒出来美食啊晒出来美食啊晒出来美</view>
         </view>
       </view>
     </view>
-    <view class="my_conversation_center m_t_10">
+    <view class="my_conversation_center mt10">
       <view class="my_conversation_center_box">
         <view class="my_conversation_center_img">
-          <van-image lazy-load width="100%" height="100%" src="/images/homeModule/banner_xq.jpg" image-class="br_5"/>
+          <van-image lazy-load width="100%" height="100%" src="/images/homeModule/banner_xq.jpg" image-class="br5"/>
         </view>
-        <view class="my_conversation_center_text_box m_l_10">
-          <view class="my_conversation_center_text to_1 fs_14 ls_1">美食晒出来</view>
-          <view class="my_conversation_center_text to_1 fs_12 co_9 ls_1">美食啊晒出来美食啊晒出来美食啊晒出来美食啊晒出来美食啊晒出来美食啊晒出来美</view>
+        <view class="my_conversation_center_text_box ml10">
+          <view class="my_conversation_center_text to1 fs14 ls1">美食晒出来</view>
+          <view class="my_conversation_center_text to1 fs12 co9 ls1">美食啊晒出来美食啊晒出来美食啊晒出来美食啊晒出来美食啊晒出来美食啊晒出来美</view>
+        </view>
+      </view>
+    </view>
+    <view class="my_conversation_center mt10">
+      <view class="my_conversation_center_box">
+        <view class="my_conversation_center_img">
+          <van-image lazy-load width="100%" height="100%" src="/images/homeModule/banner_xq.jpg" image-class="br5"/>
+        </view>
+        <view class="my_conversation_center_text_box ml10">
+          <view class="my_conversation_center_text to1 fs14 ls1">美食晒出来</view>
+          <view class="my_conversation_center_text to1 fs12 co9 ls1">美食啊晒出来美食啊晒出来美食啊晒出来美食啊晒出来美食啊晒出来美食啊晒出来美</view>
         </view>
       </view>
     </view>

@@ -1,7 +1,7 @@
 <van-toast id="van-toast" />
 
 <component-dialog title="删除" show="{{dialogShow}}" buttons="{{dialogButtons}}" bindbuttontap="tapDialogButton" >
-  <view class="fs_14 ls_2 m_t_15">您确定要删除这条动态吗？</view>
+  <view class="fs14 ls2 mt15">您确定要删除这条动态吗？</view>
 </component-dialog>
 
 <view class="page_box">
@@ -29,9 +29,9 @@
   </view>
   <view wx:if="{{!dynamicNo}}" class="dynamic_item" wx:for="{{dynamicList}}" wx:key="inxex" bindtap="dynamicDeatils" data-item="{{item}}">
     <view class="dynamic_item_box1" wx:if="{{item.image && item.content != ''}}">
-      <van-image lazy-load width="80" height="110" src="{{item.image}}" image-class="br_5" />
+      <van-image lazy-load width="80" height="110" src="{{item.image}}" image-class="br5" />
       <view class="dynamic_info1">
-        <view class="dynamic_content to_3">{{item.content}}</view>
+        <view class="dynamic_content to3">{{item.content}}</view>
         <view class="create_delete">
           <text class="create_time">{{item.create_time}}</text>
           <text class="dynamic_delete" catchtap="cancelDynamic" data-item="{{item}}">删除</text>
@@ -39,14 +39,14 @@
       </view>
     </view>
     <view class="dynamic_item_box2" wx:if="{{!item.image && item.content != ''}}">
-      <view class="dynamic_content2 to_2">{{item.content}}</view>
+      <view class="dynamic_content2 to2">{{item.content}}</view>
       <view class="create_delete">
         <text class="create_time">{{item.create_time}}</text>
         <text class="dynamic_delete" catchtap="cancelDynamic" data-item="{{item}}">删除</text>
       </view>
     </view>
     <view class="dynamic_item_box3" wx:if="{{item.content == ''}}">
-      <van-image lazy-load width="100%" height="200" wx:if="{{item.image}}" src="{{item.image}}" image-class="br_5" />
+      <van-image lazy-load width="100%" height="200" wx:if="{{item.image}}" src="{{item.image}}" image-class="br5" />
       <view class="create_delete">
         <text class="create_time">{{item.create_time}}</text>
         <text class="dynamic_delete" catchtap="cancelDynamic" data-item="{{item}}">删除</text>
@@ -54,9 +54,9 @@
     </view>
   </view>
   <!-- <view wx:if="{{!dynamicNo}}" class="dynamic_item" wx:for="{{dynamicList}}" wx:key="inxex" bindtap="dynamicDeatils" data-item="{{item}}">
-    <van-image lazy-load width="80" height="110" wx:if="{{item.image}}" src="{{item.image}}" image-class="br_5" />
+    <van-image lazy-load width="80" height="110" wx:if="{{item.image}}" src="{{item.image}}" image-class="br5" />
     <view class="{{item.image ? 'dynamic_info1' : 'dynamic_info2'}}">
-      <view class="dynamic_content to_3">{{item.content}}</view>
+      <view class="dynamic_content to3">{{item.content}}</view>
       <view class="create_delete">
         <text class="create_time">{{item.create_time}}</text>
         <text class="dynamic_delete" catchtap="cancelDynamic" data-item="{{item}}">删除</text>

@@ -1,10 +1,10 @@
 <van-toast id="van-toast" />
 
 <component-loginTips mask-closable="{{false}}" show="{{loginShow}}" buttontap="dialogButtontap">
-  <view class="fs_14 ls_2 m_t_15">登录后的世界才更美妙</view>
+  <view class="fs14 ls2 mt15">登录后的世界才更美妙</view>
 </component-loginTips>
 
-<view class="bg_F5 bs_bb oy_a" style="height: {{windowHeight}}px; ">
+<view class="bgF5 bsbb oya" style="height: {{windowHeight}}px; ">
   <!-- swiper滚动图 -->
   <swiper indicator-dots="{{true}}" autoplay="{{true}}" circular="{{true}}" style="height: 240px;">
     <block wx:for="{{scenicDetails.scenicspot_imgs}}" wx:key="index">
@@ -15,25 +15,25 @@
   </swiper>
   <view class="scenic_info_box">
     <view class="scenic_info_item scenic_info_name">
-      <text class="co_0">{{scenicDetails.scenicspot_name}}</text>
+      <text class="co0">{{scenicDetails.scenicspot_name}}</text>
       <text class="punch_clock" bindtap="punchClock" wx:if="{{isFollow == '0'}}">打卡</text>
       <text class="punch_clock2" bindtap="cancePunch" wx:else>已打卡</text>
     </view>
-    <view class="scenic_info_item2 ls_1">{{scenicDetails.scenicspot_hours}}</view>
+    <view class="scenic_info_item2 ls1">{{scenicDetails.scenicspot_hours}}</view>
     <!-- 地图 -->
-    <view class="scenic_info_item scenic_info_date ls_1 to_1" bindtap="mapComponent">{{scenicDetails.scenicspot_place}}</view>
+    <view class="scenic_info_item scenic_info_date ls1 to1" bindtap="mapComponent">{{scenicDetails.scenicspot_place}}</view>
     <view class="scenicspot_place_box">
       <map longitude="{{scenicDetails.longitude}}" latitude="{{scenicDetails.latitude}}" markers="{{markers}}" show-compass="{{false}}" style="width: 100%; height: 100%;" bindtap="mapComponent" enable-scroll="{{false}}" enable-zoom="{{false}}"></map>
     </view>
-    <view class="scenic_info_item ls_1" wx:if="{{scenicDetails.scenicspot_phone}}">官方电话：{{scenicDetails.scenicspot_phone}}</view>
-    <view class="scenic_info_item ls_1" wx:else>官方电话：暂无联系方式</view>
-    <view class="scenic_info_ticket ls_1" wx:if="{{scenicDetails.scenicspot_Ticket}}"> 
-      <view class="scenic_info_ticket_item ls_1">成人票 {{scenicDetails.scenicspot_Ticket}}元</view>
+    <view class="scenic_info_item ls1" wx:if="{{scenicDetails.scenicspot_phone}}">官方电话：{{scenicDetails.scenicspot_phone}}</view>
+    <view class="scenic_info_item ls1" wx:else>官方电话：暂无联系方式</view>
+    <view class="scenic_info_ticket ls1" wx:if="{{scenicDetails.scenicspot_Ticket}}"> 
+      <view class="scenic_info_ticket_item ls1">成人票 {{scenicDetails.scenicspot_Ticket}}元</view>
       <wxs module="filter" src="../../../utils/filter.wxs"></wxs>
-      <text class="scenic_info_ticket_item2 ls_1">学生票 {{filter.studentTicket(scenicDetails.scenicspot_Ticket)}}元</text>
+      <text class="scenic_info_ticket_item2 ls1">学生票 {{filter.studentTicket(scenicDetails.scenicspot_Ticket)}}元</text>
     </view>
-    <view class="scenic_info_ticket ls_1" wx:else> 
-      <view class="scenic_info_ticket_item3 p_l_10 ls_10">免费</view>
+    <view class="scenic_info_ticket ls1" wx:else> 
+      <view class="scenic_info_ticket_item3 pl10 ls10">免费</view>
     </view>
   </view>
   <view class="boundary"></view>

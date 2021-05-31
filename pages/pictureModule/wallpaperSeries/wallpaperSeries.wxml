@@ -3,7 +3,7 @@
 <scroll-view scroll-y="{{true}}" bindscrolltolower="onScrollBottom" class="scroll_box" style="height: {{windowHeight}}px;">
   <view wx:for="{{seriesList}}" wx:key="index" class="scroll_item" bindtap="wallportraitList" data-item="{{item}}">
     <view style="width: {{windowWidth-160}}px;">
-      <view class="series_title to_2">{{item.series_name}}</view>
+      <view class="series_title to2">{{item.series_name}}</view>
     </view>
     <van-image lazy-load width="120" height="80" src="{{item.series_image}}"/>
   </view>

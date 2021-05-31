@@ -8,7 +8,7 @@
           <view class="specialty_cover">
             <van-image lazy-load width="100%" height="160px" src="{{item.specialty_cover}}"/>
           </view>
-          <view class="specialty_name to_1">{{item.specialty_name}}</view>
+          <view class="specialty_name to1">{{item.specialty_name}}</view>
         </view>
       </view>
     </scroll-view>

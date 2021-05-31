@@ -7,9 +7,9 @@
   <view class="dynamic_item" wx:for="{{dynamicList}}" wx:key="index" bindtap="getDynamicDetalis" data-item="{{item}}">
     <!-- 作者信息 -->
     <view class="dynamic_user_info" bindtap="authorDynamic" data-item="{{item}}">
-      <van-image lazy-load width="60" height="60" src="{{item.author_avatar}}" image-class="br_5"/>
+      <van-image lazy-load width="60" height="60" src="{{item.author_avatar}}" image-class="br5"/>
       <view class="dynamic_user_box">
-        <view class="dynamic_user_name to_1">{{item.author_name}}</view>
+        <view class="dynamic_user_name to1">{{item.author_name}}</view>
         <view class="dynamic_user_date">
           <wxs module="filter" src="../../../utils/filter.wxs"></wxs>
           <view wx:if="{{item.advertisement_id != null}}" class="dynamic_tag">官方账号</view>
@@ -24,7 +24,7 @@
       <rich-text wx:if="{{item.type_id != '03'}}" nodes="{{item.content}}"></rich-text>
     </view>
     <!-- 动态图片 -->
-    <view wx:if="{{item.image}}" class="m_t_10">
+    <view wx:if="{{item.image}}" class="mt10">
       <van-image lazy-load fit="widthFix" width="{{windowWidth-20}}" src="{{item.image}}"/>
     </view>
   </view>
