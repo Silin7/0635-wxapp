@@ -52,7 +52,8 @@ Page({
     let data = {
       page: this.data.dynamicPage,
       limit: this.data.dynamicLimit,
-      author_id: this.data.authorId
+      author_id: this.data.authorId,
+      is_pass: '02'
     }
     esRequest('my_dynamic_list', data).then(res => {
       if (res && res.data.code === 0) {

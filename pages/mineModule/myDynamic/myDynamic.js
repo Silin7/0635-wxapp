@@ -56,7 +56,8 @@ Page({
     let data = {
       page: this.data.dynamicPage,
       limit: this.data.dynamicLimit,
-      author_id: wx.getStorageSync('id_key').toString()
+      author_id: wx.getStorageSync('id_key').toString(),
+      is_pass: '02'
     }
     esRequest('my_dynamic_list', data).then(res => {
       if (res && res.data.code === 0) {

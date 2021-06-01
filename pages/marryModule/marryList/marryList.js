@@ -77,6 +77,7 @@ Page({
       address: this.data.address,
       type: this.data.type,
       gender: this.data.gender,
+      is_pass: '02'
     }
     esRequest('marry_list', data).then(res => {
       if (res && res.data.code === 0) {
