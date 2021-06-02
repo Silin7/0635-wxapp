@@ -103,9 +103,9 @@ Page({
 
   // 线下活动详情
   workDetails: function (e) {
-    // wx.navigateTo({
-    //   url: '/pages/locationModule/workDetails/workDetails?id=' + e.currentTarget.dataset.item.id
-    // })
+    wx.navigateTo({
+      url: '/pages/locationModule/workDetails/workDetails?id=' + e.currentTarget.dataset.item.id
+    })
   },
 
   // 新增工作岗位

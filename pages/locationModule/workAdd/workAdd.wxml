@@ -1,2 +1,120 @@
-<!--pages/locationModule/workAdd/workAdd.wxml-->
-<text>pages/locationModule/workAdd/workAdd.wxml</text>
+<van-toast id="van-toast" />
+
+<component-choosePicker bind:confirmItem="confirmItem" overlayShow="{{pickerShow}}" pickerTitle="{{pickerTitle}}" dataList="{{pickerList}}"/>
+
+<component-loginTips mask-closable="{{false}}" show="{{loginShow}}" buttontap="dialogButtontap">
+  <view class="fs14 ls2 mt15">登录后的世界才更美妙</view>
+</component-loginTips>
+
+<component-dialog title="聊城社交" show="{{dialogShow}}" buttons="{{dialogButtons}}" bindbuttontap="tapDialogButton" >
+  <view class="fs14 ls2 mt15">您确定要发布这条信息吗？</view>
+</component-dialog>
+
+<view class="page_box" style="height: {{windowHeight-80}}px;">
+  <!-- 岗位信息 -->
+  <view class="item_title">请填写岗位信息</view>
+  <view class="data_form_box">
+    <!-- 昵称 -->
+    <view class="information_item">
+      <view class="information_item_text">岗位名称</view>
+      <van-field value="{{dataForm.name}}" placeholder="请填写岗位名称"  bind:blur="bindName" style="width: {{windowWidth-100}}px;"/>
+    </view>
+    <!-- 薪资水平 -->
+    <view class="information_item">
+      <view class="information_item_text ls2">薪资水平</view>
+      <van-field readonly="{{true}}" value="{{dataForm.type_text}}" placeholder="请选择薪资水平" bindtap="bindType" style="width: {{windowWidth-100}}px;"/>
+    </view>
+    <!-- 招聘人数 -->
+    <view class="information_item">
+      <view class="information_item_text">招聘人数</view>
+      <van-field value="{{dataForm.name}}" placeholder="请填写招聘人数"  bind:blur="bindName" style="width: {{windowWidth-100}}px;"/>
+    </view>
+    <!-- 联系电话 -->
+    <view class="information_item">
+      <view class="information_item_text">联系电话</view>
+      <van-field value="{{dataForm.name}}" placeholder="请填写联系电话"  bind:blur="bindName" style="width: {{windowWidth-100}}px;"/>
+    </view>
+    <!-- 工作类型 -->
+    <view class="information_item">
+      <view class="information_item_text ls2">工作类型</view>
+      <van-field readonly="{{true}}" value="{{dataForm.type_text}}" placeholder="请选择工作类型" bindtap="bindType" style="width: {{windowWidth-100}}px;"/>
+    </view>
+    <!-- 学历要求 -->
+    <view class="information_item">
+      <view class="information_item_text ls2">学历要求</view>
+      <van-field readonly="{{true}}" value="{{dataForm.type_text}}" placeholder="请选择学历要求" bindtap="bindType" style="width: {{windowWidth-100}}px;"/>
+    </view>
+    <!-- 经验要求 -->
+    <view class="information_item">
+      <view class="information_item_text ls2">经验要求</view>
+      <van-field readonly="{{true}}" value="{{dataForm.type_text}}" placeholder="请选择经验要求" bindtap="bindType" style="width: {{windowWidth-100}}px;"/>
+    </view>
+    <!-- 所属地区 -->
+    <view class="information_item">
+      <view class="information_item_text ls2">所属地区</view>
+      <van-field readonly="{{true}}" value="{{dataForm.address_text}}" placeholder="请选择所属地区" bindtap="bindAddress" style="width: {{windowWidth-100}}px;"/>
+    </view>
+    <!-- 办公地址 -->
+    <view class="information_item">
+      <view class="information_item_text">办公地址</view>
+      <van-field value="{{dataForm.name}}" placeholder="请填写详细地址"  bind:blur="bindName" style="width: {{windowWidth-100}}px;"/>
+    </view>
+    <!-- 福利待遇 -->
+    <view class="information_item">
+      <view class="information_item_text">福利待遇</view>
+      <van-field value="{{dataForm.name}}" placeholder="请填写详细地址"  bind:blur="bindName" style="width: {{windowWidth-100}}px;"/>
+    </view>
+    <!-- 职位简介 -->
+    <view class="information_item_text2">职位简介</view>
+    <van-field type="textarea" autosize="{{autosize}}" border="{{false}}" value="{{dataForm.introduce}}" placeholder="请填写职位简介" bind:blur="bindIntroduce" style="width: {{windowWidth-30}}px;"/>
+    
+    <!-- 工商信息 -->
+    <view class="item_title">请填写工商信息</view>
+    <!-- 公司名称 -->
+    <view class="information_item">
+      <view class="information_item_text">公司名称</view>
+      <van-field value="{{dataForm.name}}" placeholder="请填写公司名称"  bind:blur="bindName" style="width: {{windowWidth-100}}px;"/>
+    </view>
+    <!-- 企业法人 -->
+    <view class="information_item">
+      <view class="information_item_text">企业法人</view>
+      <van-field value="{{dataForm.name}}" placeholder="请填写企业法人"  bind:blur="bindName" style="width: {{windowWidth-100}}px;"/>
+    </view>
+    <!-- 注册资本 -->
+    <view class="information_item">
+      <view class="information_item_text">注册资本</view>
+      <van-field value="{{dataForm.name}}" placeholder="请填写注册资本"  bind:blur="bindName" style="width: {{windowWidth-100}}px;"/>
+    </view>
+    <!-- 信用代码 -->
+    <view class="information_item">
+      <view class="information_item_text">信用代码</view>
+      <van-field value="{{dataForm.name}}" placeholder="请填写信用代码"  bind:blur="bindName" style="width: {{windowWidth-100}}px;"/>
+    </view>
+    <!-- 成立时间 -->
+    <view class="information_item">
+      <view class="information_item_text ls2">成立时间</view>
+      <van-field readonly="{{true}}" value="{{dataForm.type_text}}" placeholder="请选择成立时间" bindtap="bindType" style="width: {{windowWidth-100}}px;"/>
+    </view>
+    <!-- 注册地址 -->
+    <view class="information_item">
+      <view class="information_item_text">注册地址</view>
+      <van-field value="{{dataForm.name}}" placeholder="请填写注册地址"  bind:blur="bindName" style="width: {{windowWidth-100}}px;"/>
+    </view>
+    <!-- 经营范围 -->
+    <view class="information_item_text2">经营范围</view>
+    <van-field type="textarea" autosize="{{autosize}}" border="{{false}}" value="{{dataForm.introduce}}" placeholder="请填写经营范围" bind:blur="bindIntroduce" style="width: {{windowWidth-30}}px;"/>
+  </view>
+</view>
+
+<!-- 底部按钮 -->
+<view class="sign_up">
+  <view class="sign_up_btn" bindtap="releaseDynamic">确定</view>
+</view>
+
+
+<!-- 身高 -->
+<!-- <view class="information_item">
+  <view class="information_item_text">身高</view>
+  <van-field type="number" value="{{dataForm.height}}" placeholder="请填写身高" bind:blur="bindHeight" style="width: {{windowWidth-180}}px;"/>
+  <view class="information_item_text">CM</view>
+</view> -->

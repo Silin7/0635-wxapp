@@ -1,66 +1,56 @@
-// pages/locationModule/workDetails/workDetails.js
+import esRequest from '../../../utils/esRequest';
+import Toast from '../../../miniprogram_npm/vant-weapp/toast/toast';
+
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    id: '',
+    windowWidth: 0,
+    windowHeight: 0,
+    workDetails: {}
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
-
+    this.data.id = options.id ? options.id : ''
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
   onReady: function () {
-
+    this.setData({
+      windowWidth: wx.getSystemInfoSync().windowWidth,
+      windowHeight: wx.getSystemInfoSync().windowHeight
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
   onShow: function () {
-
+    this.getWorkDetails()
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  // 工作详情
+  getWorkDetails: function () {
+    let data = {
+      id: this.data.id
+    }
+    esRequest('location_work_details', data).then(res => {
+      if (res && res.data.code === 0) {
+        this.setData({
+          workDetails: res.data.data
+        })
+      } else {
+        Toast.fail('系统错误')
+      }
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
+  // xxx
+  xxx: function (e) {
+    console.log(e.currentTarget.dataset.xxx)
   },
 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  btnDH: function () {
+    wx.makePhoneCall({
+      phoneNumber: this.data.workDetails.basic_phone
+    }).catch((e) => {
+      Toast.fail('取消')
+    })
   }
+
 })

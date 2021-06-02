@@ -345,13 +345,13 @@ var workSalary = function (code) {
   if (code === '01') {
     return '1000元以下'
   } else if (code === '02') {
-    return '1000 - 3000元'
+    return '1000-3000元'
   } else if (code === '03') {
-    return '3000 - 5000元'
+    return '3000-5000元'
   } else if (code === '04') {
-    return '5000 - 8000元'
+    return '5000-8000元'
   } else if (code === '05') {
-    return '8000 - 10000元'
+    return '8000-10000元'
   } else if (code === '06') {
     return '10000元以上'
   }

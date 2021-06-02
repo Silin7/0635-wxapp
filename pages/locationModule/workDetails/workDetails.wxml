@@ -1,2 +1,97 @@
-<!--pages/locationModule/workDetails/workDetails.wxml-->
-<text>pages/locationModule/workDetails/workDetails.wxml</text>
+<van-toast id="van-toast" />
+<wxs module="filter" src="../../../utils/filter.wxs"></wxs>
+
+<view class="bigBox" style="height: {{windowHeight-80}}px;">
+  <view class="basic_box">
+    <view class="basic_title">{{workDetails.basic_title}}</view>
+    <view class="basic_item">
+      <view class="basic_label">工资待遇：</view>
+      <view class="basic_value">{{filter.workSalary(workDetails.basic_salary)}}</view>
+    </view>
+    <view class="basic_item">
+      <view class="basic_label">联系电话：</view>
+      <view class="basic_value">{{workDetails.basic_phone}}</view>
+    </view>
+    <view class="basic_item">
+      <view class="basic_label">招聘人数：</view>
+      <view class="basic_value">{{workDetails.basic_people}}人</view>
+    </view>
+    <view class="basic_item">
+      <view class="basic_label">工作类型：</view>
+      <view class="basic_value">{{filter.workType(workDetails.basic_type)}}</view>
+    </view>
+    <view class="basic_item">
+      <view class="basic_label">学历要求：</view>
+      <view class="basic_value">{{filter.workEducation(workDetails.basic_education)}}</view>
+    </view>
+    <view class="basic_item">
+      <view class="basic_label">经验要求：</view>
+      <view class="basic_value">{{filter.workExperience(workDetails.basic_experience)}}</view>
+    </view>
+    <view class="basic_item">
+      <view class="basic_label">办公地址：</view>
+      <view class="basic_value">{{workDetails.basic_address}}</view>
+    </view>
+    <view class="basic_item">
+      <view class="basic_label">福利待遇：</view>
+      <view class="basic_value">{{workDetails.basic_welfare}}</view>
+    </view>
+  </view>
+  <!-- 企业信息 -->
+  <view class="basic_box">
+    <view class="basic_title">工商信息</view>
+    <view class="basic_item">
+      <view class="basic_label">公司全称：</view>
+      <view class="basic_value">{{workDetails.business_name}}</view>
+    </view>
+    <view class="basic_item">
+      <view class="basic_label">企业法人：</view>
+      <view class="basic_value">{{workDetails.business_gsfr}}</view>
+    </view>
+    <view class="basic_item">
+      <view class="basic_label">注册资本：</view>
+      <view class="basic_value">{{workDetails.business_zczb}}</view>
+    </view>
+    <view class="basic_item">
+      <view class="basic_label">信用代码：</view>
+      <view class="basic_value">{{workDetails.business_xydm}}</view>
+    </view>
+    <view class="basic_item">
+      <view class="basic_label">成立时间：</view>
+      <view class="basic_value">{{workDetails.business_clsj}}</view>
+    </view>
+    <view class="basic_item">
+      <view class="basic_label">注册地址：</view>
+      <view class="basic_value">{{workDetails.business_zcdz}}</view>
+    </view>
+    <view class="basic_item">
+      <view class="basic_label">经营范围：</view>
+      <view class="basic_value">{{workDetails.business_jyfw}}</view>
+    </view>
+  </view>
+  <!-- 职位介绍 -->
+  <view class="basic_box">
+    <view class="basic_title">职位简介</view>
+    <rich-text nodes="{{workDetails.basic_info}}" class="basic_value2"></rich-text>
+  </view>
+</view>
+
+
+
+<!-- 底部按钮 -->
+<view class="btn_box">
+  <view class="btn_box_item1">
+    <button open-type="share" class="share_active" size="mini"></button>
+    <view class="btn_gz">
+      <van-image lazy-load width="28" height="28" src="/images/marryModule/btn_fx.png"/>
+      <view class="btn_text">分享</view>
+    </view>
+    <view class="btn_wx" bindtap="btnDH">
+      <van-image lazy-load width="28" height="28" src="/images/marryModule/btn_dh.png"/>
+      <text class="btn_text">联系电话</text>
+    </view>
+  </view>
+  <view class="btn_kf">
+    <button open-type="contact" bindcontact="handleContact" class="kf_btn">联系客服</button>
+  </view>
+</view>

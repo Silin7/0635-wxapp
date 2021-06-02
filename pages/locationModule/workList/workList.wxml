@@ -46,16 +46,18 @@
 </van-dropdown-menu>
 
 <!-- 数据列表 -->
-<scroll-view wx:if="{{!workNo}}" scroll-y="{{true}}" style="height: {{windowHeight-50}}px;" bindscrolltolower="onScrollBottom">
+<scroll-view wx:if="{{!workNo}}" scroll-y="{{true}}" style="height: {{windowHeight-50}}px;" class="scroll_box" bindscrolltolower="onScrollBottom">
   <view class="item_box" wx:for="{{workList}}" wx:key="index" bindtap="workDetails" data-item="{{item}}" wx:if="{{isShow}}">
     <view class="basic_area">{{filter.areaCode(item.basic_area)}}</view>
-    <view class="basic_title">{{item.basic_title}}</view>
+    <view class="basic_title to1">{{item.basic_title}}</view>
     <view class="basic_box">
       <view class="basic_item">{{filter.workType(item.basic_type)}}</view>
+      <view class="basic_item_fg">|</view>
       <view class="basic_item">{{filter.workEducation(item.basic_education)}}</view>
+      <view class="basic_item_fg">|</view>
       <view class="basic_item">{{filter.workExperience(item.basic_experience)}}</view>
     </view>
-    <view class="basic_address">{{item.basic_address}}</view>
+    <view class="basic_address to1">{{item.basic_address}}</view>
     <view class="basic_salary">{{filter.workSalary(item.basic_salary)}}</view>
   </view>
 </scroll-view>
