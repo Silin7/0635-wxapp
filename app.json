@@ -1,5 +1,8 @@
 {
   "pages":[
+    "pages/locationModule/workList/workList",
+    "pages/locationModule/workAdd/workAdd",
+    "pages/locationModule/workDetails/workDetails",
     "pages/homeModule/indexPage/indexPage",
     "pages/homeModule/findPage/findPage",
     "pages/homeModule/newsPage/newsPage",

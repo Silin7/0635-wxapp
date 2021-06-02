@@ -236,11 +236,11 @@ var education = function (code) {
     return '高中及以下'
   } else if (code === '02') {
     return '大专'
-  }  else if (code === '03') {
+  } else if (code === '03') {
     return '本科'
-  }  else if (code === '04') {
+  } else if (code === '04') {
     return '研究生'
-  }  else if (code === '05') {
+  } else if (code === '05') {
     return '博士及以上'
   } else if (code === '06') {
     return '保密'
@@ -253,11 +253,11 @@ var occupation = function (code) {
     return '高中及以下'
   } else if (code === '02') {
     return '生活|服务业'
-  }  else if (code === '03') {
+  } else if (code === '03') {
     return '行政|公务员'
-  }  else if (code === '04') {
+  } else if (code === '04') {
     return '销售|客服'
-  }  else if (code === '05') {
+  } else if (code === '05') {
     return '传媒|通信'
   } else if (code === '06') {
     return '教育|法律'
@@ -280,11 +280,11 @@ var income = function (code) {
     return '3千及以下'
   } else if (code === '02') {
     return '3千至5千'
-  }  else if (code === '03') {
+  } else if (code === '03') {
     return '5千至1万'
-  }  else if (code === '04') {
+  } else if (code === '04') {
     return '1万至2万'
-  }  else if (code === '05') {
+  } else if (code === '05') {
     return '2万以上'
   } else if (code === '06') {
     return '保密'
@@ -297,9 +297,9 @@ var emotionalState  = function (code) {
     return '单身'
   } else if (code === '02') {
     return '恋爱'
-  }  else if (code === '03') {
+  } else if (code === '03') {
     return '已婚'
-  }  else if (code === '04') {
+  } else if (code === '04') {
     return '离异'
   } else if (code === '05') {
     return '保密'
@@ -312,8 +312,76 @@ var carHouse = function (code) {
     return '有'
   } else if (code === '02') {
     return '无'
-  }else if (code === '03') {
+  } else if (code === '03') {
     return '保密'
+  }
+}
+
+// 工作分类
+var workType  = function (code) {
+  if (code === '01') {
+    return '生活/服务'
+  } else if (code === '02') {
+    return '人事/后勤'
+  } else if (code === '03') {
+    return '采购/销售'
+  } else if (code === '04') {
+    return '司机/普工'
+  } else if (code === '05') {
+    return '电商/传媒'
+  } else if (code === '06') {
+    return '财务/教育'
+  } else if (code === '07') {
+    return '电气/计算机'
+  } else if (code === '08') {
+    return '管理/实习生'
+  } else if (code === '09') {
+    return '其他'
+  }
+}
+
+// 薪资水平
+var workSalary = function (code) {
+  if (code === '01') {
+    return '1000元以下'
+  } else if (code === '02') {
+    return '1000 - 3000元'
+  } else if (code === '03') {
+    return '3000 - 5000元'
+  } else if (code === '04') {
+    return '5000 - 8000元'
+  } else if (code === '05') {
+    return '8000 - 10000元'
+  } else if (code === '06') {
+    return '10000元以上'
+  }
+}
+
+// 学历要求
+var workEducation = function (code) {
+  if (code === '01') {
+    return '学历不限'
+  } else if (code === '02') {
+    return '高中以上学历'
+  } else if (code === '03') {
+    return '专科以上学历'
+  } else if (code === '04') {
+    return '本科以上学历'
+  } else if (code === '05') {
+    return '研究生以上学历'
+  }
+}
+
+// 经验要求
+var workExperience = function (code) {
+  if (code === '01') {
+    return '工作经验不限'
+  } else if (code === '02') {
+    return '一至三年工作经验'
+  } else if (code === '03') {
+    return '三至五年工作经验'
+  } else if (code === '04') {
+    return '五年以上工作经验'
   }
 }
 
@@ -331,5 +399,9 @@ module.exports = {
   occupation: occupation,
   income: income,
   emotionalState: emotionalState,
-  carHouse: carHouse
+  carHouse: carHouse,
+  workType: workType,
+  workSalary: workSalary,
+  workEducation: workEducation,
+  workExperience: workExperience,
 }
