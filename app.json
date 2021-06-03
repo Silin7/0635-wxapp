@@ -1,8 +1,5 @@
 {
   "pages":[
-    "pages/locationModule/workAdd/workAdd",
-    "pages/locationModule/workList/workList",
-    "pages/locationModule/workDetails/workDetails",
     "pages/homeModule/indexPage/indexPage",
     "pages/homeModule/findPage/findPage",
     "pages/homeModule/newsPage/newsPage",
@@ -23,6 +20,9 @@
     "pages/appointmentModule/appointmentList/appointmentList",
     "pages/appointmentModule/appointmentDetails/appointmentDetails",
     "pages/appointmentModule/activityRegistration/activityRegistration",
+    "pages/locationModule/workAdd/workAdd",
+    "pages/locationModule/workList/workList",
+    "pages/locationModule/workDetails/workDetails",
     "pages/pictureModule/wallportraitType/wallportraitType",
     "pages/pictureModule/wallportraitSeries/wallportraitSeries",
     "pages/pictureModule/wallportraitList/wallportraitList",

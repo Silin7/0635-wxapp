@@ -6,11 +6,7 @@
     <view class="basic_title">{{workDetails.basic_title}}</view>
     <view class="basic_item">
       <view class="basic_label">工资待遇：</view>
-      <view class="basic_value">{{filter.workSalary(workDetails.basic_salary)}}</view>
-    </view>
-    <view class="basic_item">
-      <view class="basic_label">联系电话：</view>
-      <view class="basic_value">{{workDetails.basic_phone}}</view>
+      <view class="basic_value" style="color: #FF552E;">{{filter.workSalary(workDetails.basic_salary)}}</view>
     </view>
     <view class="basic_item">
       <view class="basic_label">招聘人数：</view>

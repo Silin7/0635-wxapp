@@ -124,5 +124,12 @@ Page({
     })
   },
 
+  // 同城招聘
+  locationWork: function () {
+    wx.navigateTo({
+      url: '/pages/locationModule/workList/workList'
+    })
+  },
+
 
 })

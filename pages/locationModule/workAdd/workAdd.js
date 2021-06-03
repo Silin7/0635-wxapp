@@ -1,9 +1,10 @@
-import baseURL from '../../../utils/baseURL';
+import mixins from '../../../utils/mixins'
+// import baseURL from '../../../utils/baseURL';
+import esRequest from '../../../utils/esRequest';
 import Toast from '../../../miniprogram_npm/vant-weapp/toast/toast';
 
 Page({
   data: {
-    loginShow: '',
     windowWidth: 0,
     windowHeight: 0,
     autosize: {
@@ -11,37 +12,36 @@ Page({
       minHeight: 120
     },
     uploadImgs: [],
-    userInfo: {},
     dataForm: {
-      type: '',
-      type_text: '',
-      user_id: '',
-      name: '',
-      gender: '',
-      age: '',
-      constellation: '',
-      constellation_text: '',
-      address: '',
-      address_text: '',
-      height: '',
-      weight: '',
-      education: '',
-      education_text: '',
-      occupation: '',
-      occupation_text: '',
-      income: '',
-      income_text: '',
-      state: '',
-      state_text: '',
-      car: '',
-      car_text: '',
-      house: '',
-      house_text: '',
-      introduce: ''
+      basic_title: '',
+      basic_salary: '',
+      basic_salary_text: '',
+      basic_phone: '',
+      basic_type: '',
+      basic_type_text: '',
+      basic_education: '',
+      basic_education_text: '',
+      basic_experience: '',
+      basic_experience_text: '',
+      basic_people: '',
+      basic_area: '',
+      basic_area_text: '',
+      basic_address: '',
+      basic_welfare: '',
+      basic_info: '',
+      business_name: '',
+      business_gsfr: '',
+      business_zczb: '',
+      business_xydm: '',
+      business_clsj: '',
+      business_zcdz: '',
+      business_jyfw: '',
     },
     pickerShow: false,
     dialogShow: false,
     dialogButtons: [{text: '取消'}, {text: '确定'}],
+    showDate: false,
+    currentDate: new Date(2000, 5, 15).getTime()
   },
 
   onReady: function () {
@@ -52,190 +52,196 @@ Page({
   },
 
   onShow: function () {
-    if (!wx.getStorageSync('id_key')) {
-      this.setData({
-        loginShow: true
-      })
-    }
   },
 
-  // 社交类型
-  bindType: function () {
+  // 岗位名称
+  basicTitle: function (event) {
+    this.data.dataForm.basic_title = event.detail.value
     this.setData({
-      pickerType: 'type',
+      dataForm: this.data.dataForm
+    });
+  },
+
+  // 薪资水平
+  basicSalary: function () {
+    this.setData({
+      pickerType: 'basicSalary',
       pickerShow: true,
-      pickerTitle: '请选择社交类型',
-      pickerList: ['结婚', '恋爱', '交友']
+      pickerTitle: '请选择薪资水平',
+      pickerList: ['1000元以下', '1000-3000元', '3000-5000元', '5000-8000元', '8000-10000元', '10000元以上']
     })
   },
 
-  // 昵称
-  bindName: function (event) {
-    this.data.dataForm.name = event.detail.value
+  // 招聘人数
+  basicPeople: function (event) {
+    this.data.dataForm.basic_people = event.detail.value
     this.setData({
       dataForm: this.data.dataForm
     });
   },
 
-  // 性别切换
-  genderChange(event) {
-    this.data.dataForm.gender = event.detail
+  // 联系电话
+  basicPhone: function (event) {
+    this.data.dataForm.basic_phone = event.detail.value
     this.setData({
       dataForm: this.data.dataForm
     });
   },
 
-  // 身高
-  bindHeight: function (event) {
-    this.data.dataForm.height = event.detail.value
+  // 工作类型
+  basicType: function () {
     this.setData({
-      dataForm: this.data.dataForm
-    });
-  },
-
-  // 体重
-  bindWeight: function (event) {
-    this.data.dataForm.weight = event.detail.value
-    this.setData({
-      dataForm: this.data.dataForm
-    });
-  },
-
-  // 年龄
-  bindAge: function (event) {
-    this.data.dataForm.age = event.detail.value
-    this.setData({
-      dataForm: this.data.dataForm
-    });
-  },
-
-  // 请选择星座
-  bindConstellation: function () {
-    this.setData({
-      pickerType: 'constellation',
+      pickerType: 'basicType',
       pickerShow: true,
-      pickerTitle: '请选择星座',
-      pickerList: ['白羊座', '金牛座', '双子座', '巨蟹座', '狮子座', '处女座', '天秤座', '天蝎座', '射手座', '摩羯座', '水瓶座', '双鱼座']
+      pickerTitle: '请选择工作类型',
+      pickerList: ['生活 | 服务', '人事 | 后勤', '采购 | 销售', '司机 | 普工', '电商 | 传媒', '财务 | 教育', '电气 | 计算机', '管理 | 实习生', '其他']
     })
   },
 
-  // 地区
-  bindAddress: function () {
+  // 学历要求
+  basicEducation: function () {
     this.setData({
-      pickerType: 'address',
+      pickerType: 'basicEducation',
       pickerShow: true,
-      pickerTitle: '请选择地区',
+      pickerTitle: '请选择学历要求',
+      pickerList: ['学历不限', '高中以上学历', '专科以上学历', '本科以上学历', '研究生以上学历']
+    })
+  },
+
+  // 经验要求
+  basicExperience: function () {
+    this.setData({
+      pickerType: 'basicExperience',
+      pickerShow: true,
+      pickerTitle: '请选择经验要求',
+      pickerList: ['工作经验不限', '一至三年工作经验', '三至五年工作经验', '五年以上工作经验']
+    })
+  },
+
+  // 地区分类
+  basicArea: function () {
+    this.setData({
+      pickerType: 'basicArea',
+      pickerShow: true,
+      pickerTitle: '选择所在地区',
       pickerList: ['东昌府区', '阳谷县', '莘县', '茌平区', '东阿县', '冠县', '高唐县', '临清市']
     })
   },
 
-  // 学历
-  bindEducation: function () {
-    this.setData({
-      pickerType: 'education',
-      pickerShow: true,
-      pickerTitle: '请选择学历',
-      pickerList: ['高中及以下', '大专', '本科', '研究生', '博士及以上', '保密']
-    })
-  },
-
-  // 职业
-  bindOccupation: function () {
-    this.setData({
-      pickerType: 'occupation',
-      pickerShow: true,
-      pickerTitle: '请选择职业',
-      pickerList: ['生活 | 服务业', '行政 | 公务员', '销售 | 客服', '传媒 | 通信', '教育 | 法律', '财会 | 医疗', '技术 | 工程师', '学生', '其他', '保密']
-    })
-  },
-
-  // 收入
-  bindIncome: function () {
-    this.setData({
-      pickerType: 'income',
-      pickerShow: true,
-      pickerTitle: '请选择收入',
-      pickerList: ['3千及以下', '3千至5千', '5千至1万', '1万至2万', '2万以上', '保密']
-    })
-  },
-
-  // 感情状态
-  bindState: function () {
-    this.setData({
-      pickerType: 'state',
-      pickerShow: true,
-      pickerTitle: '请选择收入',
-      pickerList: ['单身', '恋爱', '已婚', '离异', '保密']
-    })
-  },
-
-  // 是否有车
-  bindCar: function () {
-    this.setData({
-      pickerType: 'car',
-      pickerShow: true,
-      pickerTitle: '是否有车',
-      pickerList: ['是', '否', '保密']
-    })
-  },
-
-  // 是否有房
-  bindHouse: function () {
-    this.setData({
-      pickerType: 'house',
-      pickerShow: true,
-      pickerTitle: '是否有房',
-      pickerList: ['是', '否', '保密']
-    })
-  },
-
-  // 个人简介
-  bindIntroduce: function (event) {
-    this.data.dataForm.introduce = event.detail.value
+  // 办公地址
+  basicAddress: function (event) {
+    this.data.dataForm.basic_address = event.detail.value
     this.setData({
       dataForm: this.data.dataForm
     });
   },
 
+  // 福利待遇
+  basicWelfare: function (event) {
+    this.data.dataForm.basic_welfare = event.detail.value
+    this.setData({
+      dataForm: this.data.dataForm
+    });
+  },
+
+  // 职位简介
+  basicInfo: function (event) {
+    this.data.dataForm.basic_info = event.detail.value
+    this.setData({
+      dataForm: this.data.dataForm
+    });
+  },
+
+  // 公司名称
+  businessName: function (event) {
+    this.data.dataForm.business_name = event.detail.value
+    this.setData({
+      dataForm: this.data.dataForm
+    });
+  },
+
+  // 企业法人
+  businessGsfr: function (event) {
+    this.data.dataForm.business_gsfr = event.detail.value
+    this.setData({
+      dataForm: this.data.dataForm
+    });
+  },
+
+  // 注册资本
+  businessZczb: function (event) {
+    this.data.dataForm.business_zczb = event.detail.value
+    this.setData({
+      dataForm: this.data.dataForm
+    });
+  },
+
+  // 信用代码
+  businessXydm: function (event) {
+    this.data.dataForm.business_xydm = event.detail.value
+    this.setData({
+      dataForm: this.data.dataForm
+    });
+  },
+  
+
+  // 成立时间
+  businessClsj: function () {
+    this.setData({
+      showDate: true
+    })
+  },
+
+  // 注册地址
+  businessZcdz: function (event) {
+    this.data.dataForm.business_zcdz = event.detail.value
+    this.setData({
+      dataForm: this.data.dataForm
+    });
+  },
+
+  // 经营范围
+  businessJyfw: function (event) {
+    this.data.dataForm.business_jyfw = event.detail.value
+    this.setData({
+      dataForm: this.data.dataForm
+    });
+  },
+
+  
+
   // 选中弹出框
   confirmItem(event) {
     let valueIndex = '0' + (event.detail.index + 1)
-    if (this.data.pickerType == 'type') {
-      this.data.dataForm.type = valueIndex
-      this.data.dataForm.type_text = event.detail.value
+    if (this.data.pickerType == 'basicSalary') {
+      this.data.dataForm.basic_salary = valueIndex
+      this.data.dataForm.basic_salary_text = event.detail.value
     }
-    if (this.data.pickerType == 'constellation') {
-      this.data.dataForm.constellation = valueIndex
-      this.data.dataForm.constellation_text = event.detail.value
+    if (this.data.pickerType == 'basicType') {
+      this.data.dataForm.basic_type = valueIndex
+      this.data.dataForm.basic_type_text = event.detail.value
     }
-    if (this.data.pickerType == 'address') {
-      this.data.dataForm.address = valueIndex
-      this.data.dataForm.address_text = event.detail.value
+    if (this.data.pickerType == 'basicEducation') {
+      this.data.dataForm.basic_education = valueIndex
+      this.data.dataForm.basic_education_text = event.detail.value
     }
-    if (this.data.pickerType == 'education') {
-      this.data.dataForm.education = valueIndex
-      this.data.dataForm.education_text = event.detail.value
+    if (this.data.pickerType == 'basicExperience') {
+      this.data.dataForm.basic_experience = valueIndex
+      this.data.dataForm.basic_experience_text = event.detail.value
     }
-    if (this.data.pickerType == 'occupation') {
-      this.data.dataForm.occupation = valueIndex
-      this.data.dataForm.occupation_text = event.detail.value
+    if (this.data.pickerType == 'basicArea') {
+      this.data.dataForm.basic_area = valueIndex
+      this.data.dataForm.basic_area_text = event.detail.value
     }
-    if (this.data.pickerType == 'income') {
-      this.data.dataForm.income = valueIndex
-      this.data.dataForm.income_text = event.detail.value
-    }
-    if (this.data.pickerType == 'state') {
-      this.data.dataForm.state = valueIndex
-      this.data.dataForm.state_text = event.detail.value
-    }
-    if (this.data.pickerType == 'car') {
-      this.data.dataForm.car = valueIndex
-      this.data.dataForm.car_text = event.detail.value
-    }
-    if (this.data.pickerType == 'house') {
-      this.data.dataForm.house = valueIndex
-      this.data.dataForm.house_text = event.detail.value
-    }
+    this.setData({
+      dataForm: this.data.dataForm
+    })
+  },
+
+  // 选中日期
+  confirmDate(event) {
+    let clsj = mixins.formatDate(event.detail, '03', '-')
+    this.data.dataForm.business_clsj = clsj
     this.setData({
       dataForm: this.data.dataForm
     })
@@ -256,54 +262,39 @@ Page({
     })
   },
 
-  // 发布动态
+  // 确定按钮
   releaseDynamic: function () {
-    console.log(this.data.dataForm)
-    if (this.data.uploadImgs.length == 0) {
-      Toast.fail('请上传图片')
-      return
-    } else {
-      this.data.dataForm.user_id = wx.getStorageSync('id_key').toString()
-      this.setData({
-        dialogShow: true
-      });
-    }
+    this.setData({
+      dialogShow: true
+    });
+    // if (this.data.uploadImgs.length == 0) {
+    //   Toast.fail('请上传图片')
+    //   return
+    // } else {
+    //   this.setData({
+    //     dialogShow: true
+    //   });
+    // }
   },
 
-  // 发布确定按钮
+  // 弹框确定按钮
   tapDialogButton: function (e) {
-    let _this = this
     this.setData({
       dialogShow: false
     })
-    if (e.detail.index === 0) {
-      Toast.success('取消')
-    }
-    if (e.detail.index === 1) {
-      let filep = _this.data.uploadImgs[0].url
-      wx.uploadFile({ 
-        url: baseURL.baseURL + '/marry/marry_release',
-        filePath: filep, 
-        name: 'file', 
-        formData: _this.data.dataForm, 
-        success: function (res) { 
+    if (e.detail.index == 1) {
+      esRequest('location_work_add', this.data.dataForm).then (res => {
+        if (res && res.data.code === 0) {
           Toast.success('发布成功')
           setTimeout(function () {
             wx.navigateBack({
               delta: 1
             })
           }, 1500)
-        }, fail: function (err) { 
+        } else {
           Toast.fail('系统错误')
-        } 
-      }); 
+        }
+      })
     }
   },
-
-  // 未登录跳转倒登录界面
-  dialogButtontap() {
-    wx.redirectTo({
-      url: '/pages/loginModule/loginPage/loginPage',
-    })
-  }
 })
