@@ -1,0 +1,66 @@
+<van-toast id="van-toast" />
+<wxs module="filter" src="../../../utils/filter.wxs"></wxs>
+
+<view class="goAddPage" bindtap="goAddPage">+</view>
+
+<!-- DropdownMenu 下拉菜单 -->
+<van-dropdown-menu active-color="#4545FF">
+  <van-dropdown-item id="item1" title="{{dropTitle1}}">
+    <view class="dropdown_cell">
+      <view class="dropdown_item_nomal {{ basic_area == '' ? 'dropdown_item_active' : '' }}" bindtap="dropTap1" data-id="" data-title="全部地区">全部地区</view>
+      <view class="dropdown_item_nomal {{ basic_area == '01' ? 'dropdown_item_active' : '' }}" bindtap="dropTap1" data-id="01" data-title="东昌府区">东昌府区</view>
+      <view class="dropdown_item_nomal {{ basic_area == '02' ? 'dropdown_item_active' : '' }}" bindtap="dropTap1" data-id="02" data-title="阳谷县">阳谷县</view>
+      <view class="dropdown_item_nomal {{ basic_area == '03' ? 'dropdown_item_active' : '' }}" bindtap="dropTap1" data-id="03" data-title="莘县">莘县</view>
+      <view class="dropdown_item_nomal {{ basic_area == '04' ? 'dropdown_item_active' : '' }}" bindtap="dropTap1" data-id="04" data-title="茌平区">茌平区</view>
+      <view class="dropdown_item_nomal {{ basic_area == '05' ? 'dropdown_item_active' : '' }}" bindtap="dropTap1" data-id="05" data-title="东阿县">东阿县</view>
+      <view class="dropdown_item_nomal {{ basic_area == '06' ? 'dropdown_item_active' : '' }}" bindtap="dropTap1" data-id="06" data-title="冠县">冠县</view>
+      <view class="dropdown_item_nomal {{ basic_area == '07' ? 'dropdown_item_active' : '' }}" bindtap="dropTap1" data-id="07" data-title="高唐县">高唐县</view>
+      <view class="dropdown_item_nomal {{ basic_area == '08' ? 'dropdown_item_active' : '' }}" bindtap="dropTap1" data-id="08" data-title="临清市">临清市</view>
+    </view>
+  </van-dropdown-item>
+  <van-dropdown-item id="item2" title="{{dropTitle2}}">
+    <view class="dropdown_cell">
+      <view class="dropdown_item_nomal {{ basic_type == '' ? 'dropdown_item_active' : '' }}" bindtap="dropTap2" data-id="" data-title="工作分类">工作分类</view>
+      <view class="dropdown_item_nomal {{ basic_type == '01' ? 'dropdown_item_active' : '' }}" bindtap="dropTap2" data-id="01" data-title="生活/服务">生活/服务</view>
+      <view class="dropdown_item_nomal {{ basic_type == '02' ? 'dropdown_item_active' : '' }}" bindtap="dropTap2" data-id="02" data-title="人事/后勤">人事/后勤</view>
+      <view class="dropdown_item_nomal {{ basic_type == '03' ? 'dropdown_item_active' : '' }}" bindtap="dropTap2" data-id="03" data-title="采购/销售">采购/销售</view>
+      <view class="dropdown_item_nomal {{ basic_type == '04' ? 'dropdown_item_active' : '' }}" bindtap="dropTap2" data-id="04" data-title="司机/普工">司机/普工</view>
+      <view class="dropdown_item_nomal {{ basic_type == '05' ? 'dropdown_item_active' : '' }}" bindtap="dropTap2" data-id="05" data-title="电商/传媒">电商/传媒</view>
+      <view class="dropdown_item_nomal {{ basic_type == '06' ? 'dropdown_item_active' : '' }}" bindtap="dropTap2" data-id="06" data-title="财务/教育">财务/教育</view>
+      <view class="dropdown_item_nomal {{ basic_type == '07' ? 'dropdown_item_active' : '' }}" bindtap="dropTap2" data-id="07" data-title="电气/计算机">电气/计算机</view>
+      <view class="dropdown_item_nomal {{ basic_type == '08' ? 'dropdown_item_active' : '' }}" bindtap="dropTap2" data-id="08" data-title="管理/实习生">管理/实习生</view>
+      <view class="dropdown_item_nomal {{ basic_type == '09' ? 'dropdown_item_active' : '' }}" bindtap="dropTap2" data-id="09" data-title="其他">其他</view>
+    </view>
+  </van-dropdown-item>
+  <van-dropdown-item id="item3" title="{{dropTitle3}}">
+    <view class="dropdown_cell">
+      <view class="dropdown_item_nomal {{ basic_salary == '' ? 'dropdown_item_active' : '' }}" bindtap="dropTap3" data-id="" data-title="薪资水平">薪资水平</view>
+      <view class="dropdown_item_nomal {{ basic_salary == '01' ? 'dropdown_item_active' : '' }}" bindtap="dropTap3" data-id="01" data-title="1千元以下">1千元以下</view>
+      <view class="dropdown_item_nomal {{ basic_salary == '02' ? 'dropdown_item_active' : '' }}" bindtap="dropTap3" data-id="02" data-title="1千-3千元">1千-3千元</view>
+      <view class="dropdown_item_nomal {{ basic_salary == '03' ? 'dropdown_item_active' : '' }}" bindtap="dropTap3" data-id="03" data-title="3千-5千元">3千-5千元</view>
+      <view class="dropdown_item_nomal {{ basic_salary == '04' ? 'dropdown_item_active' : '' }}" bindtap="dropTap3" data-id="04" data-title="5千-8千元">5千-8千元</view>
+      <view class="dropdown_item_nomal {{ basic_salary == '05' ? 'dropdown_item_active' : '' }}" bindtap="dropTap3" data-id="05" data-title="8千-1万元">8千-1万元</view>
+      <view class="dropdown_item_nomal {{ basic_salary == '06' ? 'dropdown_item_active' : '' }}" bindtap="dropTap3" data-id="06" data-title="1万元以上">1.5万元以上</view>
+    </view>
+  </van-dropdown-item>
+</van-dropdown-menu>
+
+<!-- 数据列表 -->
+<scroll-view wx:if="{{!workNo}}" scroll-y="{{true}}" style="height: {{windowHeight-50}}px;" class="scroll_box" bindscrolltolower="onScrollBottom">
+  <view class="item_box" wx:for="{{workList}}" wx:key="index" bindtap="workDetails" data-item="{{item}}" wx:if="{{isShow}}">
+    <view class="basic_area">{{filter.areaCode(item.basic_area)}}</view>
+    <view class="basic_title to1">{{item.basic_title}}</view>
+    <view class="basic_box">
+      <view class="basic_item">{{filter.workType(item.basic_type)}}</view>
+      <view class="basic_item_fg">|</view>
+      <view class="basic_item">{{filter.workEducation(item.basic_education)}}</view>
+      <view class="basic_item_fg">|</view>
+      <view class="basic_item">{{filter.workExperience(item.basic_experience)}}</view>
+    </view>
+    <view class="basic_address to1">{{item.basic_address}}</view>
+    <view class="basic_salary">{{filter.workSalary(item.basic_salary)}}</view>
+  </view>
+</scroll-view>
+
+<!-- 暂无数据 -->
+<component-noData wx:if="{{workNo}}" height="{{windowHeight-50}}"></component-noData>

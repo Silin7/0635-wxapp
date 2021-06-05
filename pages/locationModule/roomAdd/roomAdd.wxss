@@ -1,0 +1,116 @@
+.page_box {
+  box-sizing: border-box;
+  padding: 10px;
+  /* background-color: #F7F8FA; */
+  overflow-y: auto;
+}
+.dynamic_content {
+  color: #333333;
+}
+.uploader_box {
+  margin-top: 10px;
+}
+
+
+/* 底部按钮 */
+.sign_up {
+  box-sizing: border-box;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px 10px;
+}
+.sign_up_btn {
+  box-sizing: border-box;
+  width: 100%;
+  height: 44px;
+  line-height: 44px;
+  text-align: center;
+  padding-left: 20px;
+  letter-spacing: 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  color: #FFFFFF;
+  background-color: #4545FF;
+}
+
+/* ------------------------- */
+
+.information_item_radio_group {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-right: 20%;
+}
+
+.item_title {
+  box-sizing: border-box;
+  height: 40px;
+  line-height: 40px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.data_form_box {
+  padding: 0 5px;
+}
+.information_item {
+  box-sizing: border-box;
+  height: 50px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.information_item_text {
+  width: 70px;
+  font-size: 12px;
+  letter-spacing: 3px;
+  display: flex;
+  align-items: center;
+}
+.information_item_text2 {
+  width: 70px;
+  height: 30px;
+  margin: 10px 0;
+  font-size: 12px;
+  letter-spacing: 3px;
+  display: flex;
+  align-items: center;
+}
+
+.information_item_radio_group {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-right: 20%;
+}
+
+.sign_up {
+  box-sizing: border-box;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px 10px;
+}
+.sign_up_btn {
+  box-sizing: border-box;
+  width: 100%;
+  height: 44px;
+  line-height: 44px;
+  text-align: center;
+  padding-left: 20px;
+  letter-spacing: 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  color: #FFFFFF;
+  background-color: #4545FF;
+}
+
+.color_45 .van-field__placeholder {
+  color: #4545FF !important;
+}

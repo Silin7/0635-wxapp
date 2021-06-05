@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "聊城招聘",
+  "usingComponents": {
+    "van-toast": "vant-weapp/toast/index",
+    "van-image": "vant-weapp/image/index"
+  }
+}
