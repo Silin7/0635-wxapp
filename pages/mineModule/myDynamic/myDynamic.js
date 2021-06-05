@@ -108,6 +108,7 @@ Page({
         if (res && res.data.code === 0) {
           Toast.success('操作成功')
           this.setData({
+            dynamicPage: 1,
             dynamicList: []
           })
           this.getDynamicList()

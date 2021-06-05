@@ -35,7 +35,8 @@ Page({
   getDynamicList: function () {
     let data = {
       page: this.data.dynamicPage,
-      limit: this.data.dynamicLimit
+      limit: this.data.dynamicLimit,
+      is_pass: '02'
     }
     return new Promise (async (resolve, reject) => {
       esRequest('dynamic_list', data).then(res => {
