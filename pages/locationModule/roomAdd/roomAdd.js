@@ -13,29 +13,35 @@ Page({
     },
     uploadImgs: [],
     dataForm: {
-      basic_title: '',
-      basic_salary: '',
-      basic_salary_text: '',
-      basic_phone: '',
-      basic_type: '',
-      basic_type_text: '',
-      basic_education: '',
-      basic_education_text: '',
-      basic_experience: '',
-      basic_experience_text: '',
-      basic_people: '',
+      room_name: '',
+      room_type: '',
+      room_type_text: '',
+      lxr_phone: '',
+      pay_type: '',
+      pay_type_text: '',
+      pay_rent: '',
+      pay_method: '',
+      room_areas: '',
+      room_shape: '',
+      room_orientation: '',
+      room_renovation: '',
+      room_renovation_text: '',
+      room_height: '',
       basic_area: '',
       basic_area_text: '',
       basic_address: '',
-      basic_welfare: '',
-      basic_info: '',
-      business_name: '',
-      business_gsfr: '',
-      business_zczb: '',
-      business_xydm: '',
-      business_clsj: '',
-      business_zcdz: '',
-      business_jyfw: '',
+      room_elevator: '01',
+      room_refrigerator: '01',
+      room_washing: '01',
+      room_heater: '01',
+      room_broadband: '01',
+      room_toilet: '01',
+      room_bed: '01',
+      room_wardrobe: '01',
+      room_conditioner: '01',
+      room_heating: '01',
+      room_cook: '01',
+      room_info: '',
     },
     pickerShow: false,
     dialogShow: false,
@@ -54,68 +60,98 @@ Page({
   onShow: function () {
   },
 
-  // 岗位名称
-  basicTitle: function (event) {
-    this.data.dataForm.basic_title = event.detail.value
+  // 小区名称
+  roomName: function (event) {
+    this.data.dataForm.room_name = event.detail.value
     this.setData({
       dataForm: this.data.dataForm
     });
   },
 
-  // 薪资水平
-  basicSalary: function () {
+  // 租赁类型
+  roomType: function () {
     this.setData({
-      pickerType: 'basicSalary',
+      pickerType: 'roomType',
       pickerShow: true,
-      pickerTitle: '请选择薪资水平',
-      pickerList: ['1000元以下', '1000-3000元', '3000-5000元', '5000-8000元', '8000-10000元', '10000元以上']
+      pickerTitle: '请选择租赁类型',
+      pickerList: ['整租', '合租']
     })
-  },
-
-  // 招聘人数
-  basicPeople: function (event) {
-    this.data.dataForm.basic_people = event.detail.value
-    this.setData({
-      dataForm: this.data.dataForm
-    });
   },
 
   // 联系电话
-  basicPhone: function (event) {
-    this.data.dataForm.basic_phone = event.detail.value
+  lxrPhone: function (event) {
+    this.data.dataForm.lxr_phone = event.detail.value
     this.setData({
       dataForm: this.data.dataForm
     });
   },
 
-  // 工作类型
-  basicType: function () {
+  // 区间价格
+  payType: function () {
     this.setData({
-      pickerType: 'basicType',
+      pickerType: 'payType',
       pickerShow: true,
-      pickerTitle: '请选择工作类型',
-      pickerList: ['生活 | 服务', '人事 | 后勤', '采购 | 销售', '司机 | 普工', '电商 | 传媒', '财务 | 教育', '电气 | 计算机', '管理 | 实习生', '其他']
+      pickerTitle: '请选择区间价格',
+      pickerList: ['500元以下', '500-800元', '800-1200元', '1200元以上']
     })
   },
 
-  // 学历要求
-  basicEducation: function () {
+  // 租金
+  payRent: function (event) {
+    this.data.dataForm.pay_rent = event.detail.value
     this.setData({
-      pickerType: 'basicEducation',
+      dataForm: this.data.dataForm
+    });
+  },
+
+  // 支付方式
+  payMethod: function (event) {
+    this.data.dataForm.pay_method = event.detail.value
+    this.setData({
+      dataForm: this.data.dataForm
+    });
+  },
+
+  // 房屋面积
+  roomAreas: function (event) {
+    this.data.dataForm.room_areas = event.detail.value
+    this.setData({
+      dataForm: this.data.dataForm
+    });
+  },
+
+  // 房屋房型
+  roomShape: function (event) {
+    this.data.dataForm.room_shape = event.detail.value
+    this.setData({
+      dataForm: this.data.dataForm
+    });
+  },
+
+  // 房屋朝向
+  roomOrientation: function (event) {
+    this.data.dataForm.room_orientation = event.detail.value
+    this.setData({
+      dataForm: this.data.dataForm
+    });
+  },
+
+  // 装修状况
+  roomRenovation: function (event) {
+    this.setData({
+      pickerType: 'roomRenovation',
       pickerShow: true,
-      pickerTitle: '请选择学历要求',
-      pickerList: ['学历不限', '高中以上学历', '专科以上学历', '本科以上学历', '研究生以上学历']
+      pickerTitle: '选择装修状况',
+      pickerList: ['精装', '简装', '无装修']
     })
   },
 
-  // 经验要求
-  basicExperience: function () {
+  // 楼层高度
+  roomHeight: function (event) {
+    this.data.dataForm.room_height = event.detail.value
     this.setData({
-      pickerType: 'basicExperience',
-      pickerShow: true,
-      pickerTitle: '请选择经验要求',
-      pickerList: ['工作经验不限', '一至三年工作经验', '三至五年工作经验', '五年以上工作经验']
-    })
+      dataForm: this.data.dataForm
+    });
   },
 
   // 地区分类
@@ -128,7 +164,7 @@ Page({
     })
   },
 
-  // 办公地址
+  // 详细地址
   basicAddress: function (event) {
     this.data.dataForm.basic_address = event.detail.value
     this.setData({
@@ -136,112 +172,121 @@ Page({
     });
   },
 
-  // 福利待遇
-  basicWelfare: function (event) {
-    this.data.dataForm.basic_welfare = event.detail.value
+  // 电梯
+  roomElevator: function (event) {
+    this.data.dataForm.room_elevator = event.detail
     this.setData({
       dataForm: this.data.dataForm
     });
   },
 
-  // 职位简介
-  basicInfo: function (event) {
-    this.data.dataForm.basic_info = event.detail.value
+  // 冰箱
+  roomRefrigerator: function (event) {
+    this.data.dataForm.room_refrigerator = event.detail
     this.setData({
       dataForm: this.data.dataForm
     });
   },
 
-  // 公司名称
-  businessName: function (event) {
-    this.data.dataForm.business_name = event.detail.value
+  // 洗衣机
+  roomWashing: function (event) {
+    this.data.dataForm.room_washing = event.detail
     this.setData({
       dataForm: this.data.dataForm
     });
   },
 
-  // 企业法人
-  businessGsfr: function (event) {
-    this.data.dataForm.business_gsfr = event.detail.value
+  // 热水器
+  roomHeater: function (event) {
+    this.data.dataForm.room_heater = event.detail
     this.setData({
       dataForm: this.data.dataForm
     });
   },
 
-  // 注册资本
-  businessZczb: function (event) {
-    this.data.dataForm.business_zczb = event.detail.value
+  // 宽带
+  roomBroadband: function (event) {
+    this.data.dataForm.room_broadband = event.detail
     this.setData({
       dataForm: this.data.dataForm
     });
   },
 
-  // 信用代码
-  businessXydm: function (event) {
-    this.data.dataForm.business_xydm = event.detail.value
+  // 卫生间
+  roomToilet: function (event) {
+    this.data.dataForm.room_toilet = event.detail
+    this.setData({
+      dataForm: this.data.dataForm
+    });
+  },
+
+  // 床
+  roomBed: function (event) {
+    this.data.dataForm.room_bed = event.detail
+    this.setData({
+      dataForm: this.data.dataForm
+    });
+  },
+
+  // 衣柜
+  roomWardrobe: function (event) {
+    this.data.dataForm.room_wardrobe = event.detail
+    this.setData({
+      dataForm: this.data.dataForm
+    });
+  },
+
+  // 空调
+  roomConditioner: function (event) {
+    this.data.dataForm.room_conditioner = event.detail
+    this.setData({
+      dataForm: this.data.dataForm
+    });
+  },
+
+  // 暖气
+  roomHeating: function (event) {
+    this.data.dataForm.room_heating = event.detail
     this.setData({
       dataForm: this.data.dataForm
     });
   },
   
-
-  // 成立时间
-  businessClsj: function () {
-    this.setData({
-      showDate: true
-    })
-  },
-
-  // 注册地址
-  businessZcdz: function (event) {
-    this.data.dataForm.business_zcdz = event.detail.value
+  // 做饭
+  roomCook: function (event) {
+    this.data.dataForm.room_cook = event.detail
     this.setData({
       dataForm: this.data.dataForm
     });
   },
 
-  // 经营范围
-  businessJyfw: function (event) {
-    this.data.dataForm.business_jyfw = event.detail.value
+  // 简介
+  roomInfo: function (event) {
+    this.data.dataForm.room_info = event.detail.value
     this.setData({
       dataForm: this.data.dataForm
     });
   },
-
-  
 
   // 选中弹出框
   confirmItem(event) {
     let valueIndex = '0' + (event.detail.index + 1)
-    if (this.data.pickerType == 'basicSalary') {
-      this.data.dataForm.basic_salary = valueIndex
-      this.data.dataForm.basic_salary_text = event.detail.value
+    if (this.data.pickerType == 'payType') {
+      this.data.dataForm.pay_type = valueIndex
+      this.data.dataForm.pay_type_text = event.detail.value
     }
-    if (this.data.pickerType == 'basicType') {
-      this.data.dataForm.basic_type = valueIndex
-      this.data.dataForm.basic_type_text = event.detail.value
-    }
-    if (this.data.pickerType == 'basicEducation') {
-      this.data.dataForm.basic_education = valueIndex
-      this.data.dataForm.basic_education_text = event.detail.value
-    }
-    if (this.data.pickerType == 'basicExperience') {
-      this.data.dataForm.basic_experience = valueIndex
-      this.data.dataForm.basic_experience_text = event.detail.value
+    if (this.data.pickerType == 'roomType') {
+      this.data.dataForm.room_type = valueIndex
+      this.data.dataForm.room_type_text = event.detail.value
     }
     if (this.data.pickerType == 'basicArea') {
       this.data.dataForm.basic_area = valueIndex
       this.data.dataForm.basic_area_text = event.detail.value
     }
-    this.setData({
-      dataForm: this.data.dataForm
-    })
-  },
-
-  // 选中日期
-  confirmDate(event) {
-    let clsj = mixins.formatDate(event.detail, '03', '-')
-    this.data.dataForm.business_clsj = clsj
+    if (this.data.pickerType == 'roomRenovation') {
+      this.data.dataForm.room_renovation = valueIndex
+      this.data.dataForm.room_renovation_text = event.detail.value
+    }
     this.setData({
       dataForm: this.data.dataForm
     })
@@ -279,11 +324,12 @@ Page({
 
   // 弹框确定按钮
   tapDialogButton: function (e) {
+    console.log('this.data.dataForm', this.data.dataForm, JSON.stringify(this.data.dataForm))
     this.setData({
       dialogShow: false
     })
     if (e.detail.index == 1) {
-      esRequest('location_work_add', this.data.dataForm).then (res => {
+      esRequest('location_room_add', this.data.dataForm).then (res => {
         if (res && res.data.code === 0) {
           Toast.success('发布成功')
           setTimeout(function () {

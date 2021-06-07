@@ -35,15 +35,6 @@
   background-color: #4545FF;
 }
 
-/* ------------------------- */
-
-.information_item_radio_group {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding-right: 20%;
-}
-
 .item_title {
   box-sizing: border-box;
   height: 40px;
@@ -66,7 +57,14 @@
   position: relative;
 }
 .information_item_text {
-  width: 70px;
+  width: 80px;
+  font-size: 12px;
+  letter-spacing: 3px;
+  display: flex;
+  align-items: center;
+}
+.information_item_text_radio {
+  width: 110px;
   font-size: 12px;
   letter-spacing: 3px;
   display: flex;
@@ -86,7 +84,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding-right: 20%;
+  padding-right: 15%;
 }
 
 .sign_up {

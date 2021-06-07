@@ -8,98 +8,168 @@
 </component-dialog>
 
 <view class="page_box" style="height: {{windowHeight-80}}px;">
-  <!-- 岗位信息 -->
-  <view class="item_title">请填写岗位信息</view>
+  <!-- 基本信息 -->
+  <view class="item_title">请填写基本信息</view>
   <view class="data_form_box">
-    <!-- 昵称 -->
+    <!-- 小区名称 -->
     <view class="information_item">
-      <view class="information_item_text">岗位名称</view>
-      <van-field value="{{dataForm.basic_title}}" placeholder="请填写岗位名称"  bind:blur="basicTitle" style="width: {{windowWidth-100}}px;"/>
+      <view class="information_item_text">小区名称：</view>
+      <van-field value="{{dataForm.room_name}}" placeholder="请填写小区名称" bind:blur="roomName" style="width: {{windowWidth-110}}px;"/>
     </view>
-    <!-- 薪资水平 -->
+    <!-- 租赁类型 -->
     <view class="information_item">
-      <view class="information_item_text ls2">薪资水平</view>
-      <van-field readonly="{{true}}" value="{{dataForm.basic_salary_text}}" placeholder="请选择薪资水平" bindtap="basicSalary" style="width: {{windowWidth-100}}px;"/>
-    </view>
-    <!-- 招聘人数 -->
-    <view class="information_item">
-      <view class="information_item_text">招聘人数</view>
-      <van-field type="number" value="{{dataForm.basic_people}}" placeholder="请填写招聘人数"  bind:blur="basicPeople" style="width: {{windowWidth-100}}px;"/>
+      <view class="information_item_text">租赁类型：</view>
+      <van-field readonly="{{true}}" value="{{dataForm.room_type_text}}" placeholder="请选择租赁类型" bindtap="roomType" style="width: {{windowWidth-110}}px;"/>
     </view>
     <!-- 联系电话 -->
     <view class="information_item">
-      <view class="information_item_text">联系电话</view>
-      <van-field type="number" value="{{dataForm.basic_phone}}" placeholder="请填写联系电话"  bind:blur="basicPhone" style="width: {{windowWidth-100}}px;"/>
+      <view class="information_item_text">联系电话：</view>
+      <van-field type="number" value="{{dataForm.lxr_phone}}" placeholder="请填写联系电话" bind:blur="lxrPhone" style="width: {{windowWidth-110}}px;"/>
     </view>
-    <!-- 工作类型 -->
+    <!-- 租金 -->
     <view class="information_item">
-      <view class="information_item_text ls2">工作类型</view>
-      <van-field readonly="{{true}}" value="{{dataForm.basic_type_text}}" placeholder="请选择工作类型" bindtap="basicType" style="width: {{windowWidth-100}}px;"/>
+      <view class="information_item_text">月租金：</view>
+      <van-field value="{{dataForm.pay_rent}}" placeholder="请填写租金（元/月）" bind:blur="payRent" style="width: {{windowWidth-110}}px;"/>
     </view>
-    <!-- 学历要求 -->
+    <!-- 区间价格 -->
     <view class="information_item">
-      <view class="information_item_text ls2">学历要求</view>
-      <van-field readonly="{{true}}" value="{{dataForm.basic_education_text}}" placeholder="请选择学历要求" bindtap="basicEducation" style="width: {{windowWidth-100}}px;"/>
+      <view class="information_item_text">区间价格：</view>
+      <van-field readonly="{{true}}" value="{{dataForm.pay_type_text}}" placeholder="请选择区间价格" bindtap="payType" style="width: {{windowWidth-110}}px;"/>
     </view>
-    <!-- 经验要求 -->
+    <!-- 支付方式 -->
     <view class="information_item">
-      <view class="information_item_text ls2">经验要求</view>
-      <van-field readonly="{{true}}" value="{{dataForm.basic_experience_text}}" placeholder="请选择经验要求" bindtap="basicExperience" style="width: {{windowWidth-100}}px;"/>
+      <view class="information_item_text">支付方式：</view>
+      <van-field value="{{dataForm.pay_method}}" placeholder="请填写支付方式" bind:blur="payMethod" style="width: {{windowWidth-110}}px;"/>
+    </view>
+    <!-- 房屋面积 -->
+    <view class="information_item">
+      <view class="information_item_text">房屋面积：</view>
+      <van-field type="number" value="{{dataForm.room_areas}}" placeholder="请填写房屋面积" bind:blur="roomAreas" style="width: {{windowWidth-110}}px;"/>
+    </view>
+    <!-- 房屋房型 -->
+    <view class="information_item">
+      <view class="information_item_text">房屋房型：</view>
+      <van-field type="number" value="{{dataForm.room_shape}}" placeholder="请填写房屋房型" bind:blur="roomShape" style="width: {{windowWidth-110}}px;"/>
+    </view>
+    <!-- 房屋朝向 -->
+    <view class="information_item">
+      <view class="information_item_text">房屋朝向：</view>
+      <van-field type="number" value="{{dataForm.room_orientation}}" placeholder="请填写房屋朝向" bind:blur="roomOrientation" style="width: {{windowWidth-110}}px;"/>
+    </view>
+    <!-- 装修状况 -->
+    <view class="information_item">
+      <view class="information_item_text">装修状况：</view>
+      <van-field readonly="{{true}}" value="{{dataForm.room_renovation_text}}" placeholder="请选择装修状况" bindtap="roomRenovation" style="width: {{windowWidth-110}}px;"/>
+    </view>
+    <!-- 楼层高度 -->
+    <view class="information_item">
+      <view class="information_item_text">楼层高度：</view>
+      <van-field value="{{dataForm.room_height}}" placeholder="请填写楼层高度" bind:blur="roomHeight" style="width: {{windowWidth-110}}px;"/>
     </view>
     <!-- 所属地区 -->
     <view class="information_item">
-      <view class="information_item_text ls2">所属地区</view>
-      <van-field readonly="{{true}}" value="{{dataForm.basic_area_text}}" placeholder="请选择所属地区" bindtap="basicArea" style="width: {{windowWidth-100}}px;"/>
+      <view class="information_item_text">所属地区：</view>
+      <van-field readonly="{{true}}" value="{{dataForm.basic_area_text}}" placeholder="请选择所属地区" bindtap="basicArea" style="width: {{windowWidth-110}}px;"/>
     </view>
-    <!-- 办公地址 -->
+    <!-- 详细地址 -->
     <view class="information_item">
-      <view class="information_item_text">办公地址</view>
-      <van-field value="{{dataForm.basic_address}}" placeholder="请填写详细地址"  bind:blur="basicAddress" style="width: {{windowWidth-100}}px;"/>
+      <view class="information_item_text">详细地址：</view>
+      <van-field value="{{dataForm.basic_address}}" placeholder="请填写详细地址" bind:blur="basicAddress" style="width: {{windowWidth-110}}px;"/>
     </view>
-    <!-- 福利待遇 -->
+
+    <!-- 房屋信息 -->
+    <view class="item_title">请填写房屋信息</view>
+    <!-- 电梯 -->
     <view class="information_item">
-      <view class="information_item_text">福利待遇</view>
-      <van-field value="{{dataForm.basic_welfare}}" placeholder="请填写福利待遇"  bind:blur="basicWelfare" style="width: {{windowWidth-100}}px;"/>
+      <view class="information_item_text_radio">是否有电梯：</view>
+      <van-radio-group class="information_item_radio_group" style="width: 160px;" value="{{dataForm.room_elevator}}" bind:change="roomElevator">
+        <van-radio name="01" checked-color="#4545FF">是</van-radio>
+        <van-radio name="02" checked-color="#4545FF">否</van-radio>
+      </van-radio-group>
     </view>
-    <!-- 职位简介 -->
-    <view class="information_item_text2">职位简介</view>
-    <van-field type="textarea" autosize="{{autosize}}" border="{{false}}" value="{{dataForm.basic_info}}" placeholder="请填写职位简介" bind:blur="basicInfo" style="width: {{windowWidth-30}}px;"/>
-    
-    <!-- 工商信息 -->
-    <view class="item_title">请填写工商信息</view>
-    <!-- 公司名称 -->
+    <!-- 冰箱 -->
     <view class="information_item">
-      <view class="information_item_text">公司名称</view>
-      <van-field value="{{dataForm.business_name}}" placeholder="请填写公司名称"  bind:blur="businessName" style="width: {{windowWidth-100}}px;"/>
+      <view class="information_item_text_radio">是否有冰箱：</view>
+      <van-radio-group class="information_item_radio_group" style="width: 160px;" value="{{dataForm.room_refrigerator}}" bind:change="roomRefrigerator">
+        <van-radio name="01" checked-color="#4545FF">是</van-radio>
+        <van-radio name="02" checked-color="#4545FF">否</van-radio>
+      </van-radio-group>
     </view>
-    <!-- 企业法人 -->
+    <!-- 洗衣机 -->
     <view class="information_item">
-      <view class="information_item_text">企业法人</view>
-      <van-field value="{{dataForm.business_gsfr}}" placeholder="请填写企业法人"  bind:blur="businessGsfr" style="width: {{windowWidth-100}}px;"/>
+      <view class="information_item_text_radio">是否有洗衣机：</view>
+      <van-radio-group class="information_item_radio_group" style="width: 160px;" value="{{dataForm.room_washing}}" bind:change="roomWashing">
+        <van-radio name="01" checked-color="#4545FF">是</van-radio>
+        <van-radio name="02" checked-color="#4545FF">否</van-radio>
+      </van-radio-group>
     </view>
-    <!-- 注册资本 -->
+    <!-- 热水器 -->
     <view class="information_item">
-      <view class="information_item_text">注册资本</view>
-      <van-field value="{{dataForm.business_zczb}}" placeholder="请填写注册资本"  bind:blur="businessZczb" style="width: {{windowWidth-100}}px;"/>
+      <view class="information_item_text_radio">是否有热水器：</view>
+      <van-radio-group class="information_item_radio_group" style="width: 160px;" value="{{dataForm.room_heater}}" bind:change="roomHeater">
+        <van-radio name="01" checked-color="#4545FF">是</van-radio>
+        <van-radio name="02" checked-color="#4545FF">否</van-radio>
+      </van-radio-group>
     </view>
-    <!-- 信用代码 -->
+    <!-- 宽带 -->
     <view class="information_item">
-      <view class="information_item_text">信用代码</view>
-      <van-field value="{{dataForm.business_xydm}}" placeholder="请填写信用代码"  bind:blur="businessXydm" style="width: {{windowWidth-100}}px;"/>
+      <view class="information_item_text_radio">是否有宽带：</view>
+      <van-radio-group class="information_item_radio_group" style="width: 160px;" value="{{dataForm.room_broadband}}" bind:change="roomBroadband">
+        <van-radio name="01" checked-color="#4545FF">是</van-radio>
+        <van-radio name="02" checked-color="#4545FF">否</van-radio>
+      </van-radio-group>
     </view>
-    <!-- 成立时间 -->
+    <!-- 卫生间 -->
     <view class="information_item">
-      <view class="information_item_text ls2">成立时间</view>
-      <van-field readonly="{{true}}" value="{{dataForm.business_clsj}}" placeholder="请选择成立时间" bindtap="businessClsj" style="width: {{windowWidth-100}}px;"/>
+      <view class="information_item_text_radio">是否有卫生间：</view>
+      <van-radio-group class="information_item_radio_group" style="width: 160px;" value="{{dataForm.room_toilet}}" bind:change="roomToilet">
+        <van-radio name="01" checked-color="#4545FF">是</van-radio>
+        <van-radio name="02" checked-color="#4545FF">否</van-radio>
+      </van-radio-group>
     </view>
-    <!-- 注册地址 -->
+    <!-- 床 -->
     <view class="information_item">
-      <view class="information_item_text">注册地址</view>
-      <van-field value="{{dataForm.business_zcdz}}" placeholder="请填写注册地址"  bind:blur="businessZcdz" style="width: {{windowWidth-100}}px;"/>
+      <view class="information_item_text_radio">是否有床：</view>
+      <van-radio-group class="information_item_radio_group" style="width: 160px;" value="{{dataForm.room_bed}}" bind:change="roomBed">
+        <van-radio name="01" checked-color="#4545FF">是</van-radio>
+        <van-radio name="02" checked-color="#4545FF">否</van-radio>
+      </van-radio-group>
     </view>
-    <!-- 经营范围 -->
-    <view class="information_item_text2">经营范围</view>
-    <van-field type="textarea" autosize="{{autosize}}" border="{{false}}" value="{{dataForm.business_jyfw}}" placeholder="请填写经营范围" bind:blur="businessJyfw" style="width: {{windowWidth-30}}px;"/>
+    <!-- 衣柜 -->
+    <view class="information_item">
+      <view class="information_item_text_radio">是否有衣柜：</view>
+      <van-radio-group class="information_item_radio_group" style="width: 160px;" value="{{dataForm.room_wardrobe}}" bind:change="roomWardrobe">
+        <van-radio name="01" checked-color="#4545FF">是</van-radio>
+        <van-radio name="02" checked-color="#4545FF">否</van-radio>
+      </van-radio-group>
+    </view>
+    <!-- 空调 -->
+    <view class="information_item">
+      <view class="information_item_text_radio">是否有空调：</view>
+      <van-radio-group class="information_item_radio_group" style="width: 160px;" value="{{dataForm.room_conditioner}}" bind:change="roomConditioner">
+        <van-radio name="01" checked-color="#4545FF">是</van-radio>
+        <van-radio name="02" checked-color="#4545FF">否</van-radio>
+      </van-radio-group>
+    </view>
+    <!-- 暖气 -->
+    <view class="information_item">
+      <view class="information_item_text_radio">是否有暖气：</view>
+      <van-radio-group class="information_item_radio_group" style="width: 160px;" value="{{dataForm.room_heating}}" bind:change="roomHeating">
+        <van-radio name="01" checked-color="#4545FF">是</van-radio>
+        <van-radio name="02" checked-color="#4545FF">否</van-radio>
+      </van-radio-group>
+    </view>
+    <!-- 做饭 -->
+    <view class="information_item">
+      <view class="information_item_text_radio">是否可做饭：</view>
+      <van-radio-group class="information_item_radio_group" style="width: 160px;" value="{{dataForm.room_cook}}" bind:change="roomCook">
+        <van-radio name="01" checked-color="#4545FF">是</van-radio>
+        <van-radio name="02" checked-color="#4545FF">否</van-radio>
+      </van-radio-group>
+    </view>
+    <!-- 简介 -->
+    <view class="information_item_text2">简介：</view>
+    <van-field type="textarea" autosize="{{autosize}}" border="{{false}}" value="{{dataForm.room_info}}" placeholder="请填写简介" bind:blur="roomInfo" style="width: {{windowWidth-30}}px;"/>
   </view>
 </view>
 

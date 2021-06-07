@@ -1,8 +1,8 @@
 {
   "pages":[
+    "pages/locationModule/roomAdd/roomAdd",
     "pages/locationModule/roomList/roomList",
     "pages/locationModule/roomDetails/roomDetails",
-    "pages/locationModule/roomAdd/roomAdd",
     "pages/homeModule/indexPage/indexPage",
     "pages/homeModule/findPage/findPage",
     "pages/homeModule/newsPage/newsPage",
