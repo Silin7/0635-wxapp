@@ -21,40 +21,27 @@
       <view class="information_item_text">租赁类型：</view>
       <van-field readonly="{{true}}" value="{{dataForm.room_type_text}}" placeholder="请选择租赁类型" bindtap="roomType" style="width: {{windowWidth-110}}px;"/>
     </view>
-    <!-- 联系电话 -->
-    <view class="information_item">
-      <view class="information_item_text">联系电话：</view>
-      <van-field type="number" value="{{dataForm.lxr_phone}}" placeholder="请填写联系电话" bind:blur="lxrPhone" style="width: {{windowWidth-110}}px;"/>
-    </view>
     <!-- 租金 -->
     <view class="information_item">
       <view class="information_item_text">月租金：</view>
-      <van-field value="{{dataForm.pay_rent}}" placeholder="请填写租金（元/月）" bind:blur="payRent" style="width: {{windowWidth-110}}px;"/>
-    </view>
-    <!-- 区间价格 -->
-    <view class="information_item">
-      <view class="information_item_text">区间价格：</view>
-      <van-field readonly="{{true}}" value="{{dataForm.pay_type_text}}" placeholder="请选择区间价格" bindtap="payType" style="width: {{windowWidth-110}}px;"/>
+      <van-field type="number" value="{{dataForm.pay_rent}}" placeholder="请填写租金" bind:blur="payRent" style="width: {{windowWidth-180}}px;"/>
+      <view class="information_item_text">元/月</view>
     </view>
     <!-- 支付方式 -->
     <view class="information_item">
       <view class="information_item_text">支付方式：</view>
-      <van-field value="{{dataForm.pay_method}}" placeholder="请填写支付方式" bind:blur="payMethod" style="width: {{windowWidth-110}}px;"/>
+      <van-field value="{{dataForm.pay_method}}" placeholder="例：押一付三" bind:blur="payMethod" style="width: {{windowWidth-110}}px;"/>
     </view>
     <!-- 房屋面积 -->
     <view class="information_item">
       <view class="information_item_text">房屋面积：</view>
-      <van-field type="number" value="{{dataForm.room_areas}}" placeholder="请填写房屋面积" bind:blur="roomAreas" style="width: {{windowWidth-110}}px;"/>
+      <van-field type="number" value="{{dataForm.room_areas}}" placeholder="请填写房屋面积" bind:blur="roomAreas" style="width: {{windowWidth-180}}px;"/>
+      <view class="information_item_text">㎡</view>
     </view>
     <!-- 房屋房型 -->
     <view class="information_item">
       <view class="information_item_text">房屋房型：</view>
-      <van-field type="number" value="{{dataForm.room_shape}}" placeholder="请填写房屋房型" bind:blur="roomShape" style="width: {{windowWidth-110}}px;"/>
-    </view>
-    <!-- 房屋朝向 -->
-    <view class="information_item">
-      <view class="information_item_text">房屋朝向：</view>
-      <van-field type="number" value="{{dataForm.room_orientation}}" placeholder="请填写房屋朝向" bind:blur="roomOrientation" style="width: {{windowWidth-110}}px;"/>
+      <van-field value="{{dataForm.room_shape}}" placeholder="例：三室一厅" bind:blur="roomShape" style="width: {{windowWidth-110}}px;"/>
     </view>
     <!-- 装修状况 -->
     <view class="information_item">
@@ -64,17 +51,18 @@
     <!-- 楼层高度 -->
     <view class="information_item">
       <view class="information_item_text">楼层高度：</view>
-      <van-field value="{{dataForm.room_height}}" placeholder="请填写楼层高度" bind:blur="roomHeight" style="width: {{windowWidth-110}}px;"/>
-    </view>
-    <!-- 所属地区 -->
-    <view class="information_item">
-      <view class="information_item_text">所属地区：</view>
-      <van-field readonly="{{true}}" value="{{dataForm.basic_area_text}}" placeholder="请选择所属地区" bindtap="basicArea" style="width: {{windowWidth-110}}px;"/>
+      <van-field type="number" value="{{dataForm.room_height}}" placeholder="请填写楼层高度" bind:blur="roomHeight" style="width: {{windowWidth-180}}px;"/>
+      <view class="information_item_text">楼</view>
     </view>
     <!-- 详细地址 -->
     <view class="information_item">
       <view class="information_item_text">详细地址：</view>
       <van-field value="{{dataForm.basic_address}}" placeholder="请填写详细地址" bind:blur="basicAddress" style="width: {{windowWidth-110}}px;"/>
+    </view>
+    <!-- 联系电话 -->
+    <view class="information_item">
+      <view class="information_item_text">联系电话：</view>
+      <van-field type="number" value="{{dataForm.lxr_phone}}" placeholder="请填写联系电话" bind:blur="lxrPhone" style="width: {{windowWidth-110}}px;"/>
     </view>
 
     <!-- 房屋信息 -->
@@ -107,6 +95,14 @@
     <view class="information_item">
       <view class="information_item_text_radio">是否有热水器：</view>
       <van-radio-group class="information_item_radio_group" style="width: 160px;" value="{{dataForm.room_heater}}" bind:change="roomHeater">
+        <van-radio name="01" checked-color="#4545FF">是</van-radio>
+        <van-radio name="02" checked-color="#4545FF">否</van-radio>
+      </van-radio-group>
+    </view>
+    <!-- 做饭 -->
+    <view class="information_item">
+      <view class="information_item_text_radio">是否可做饭：</view>
+      <van-radio-group class="information_item_radio_group" style="width: 160px;" value="{{dataForm.room_cook}}" bind:change="roomCook">
         <van-radio name="01" checked-color="#4545FF">是</van-radio>
         <van-radio name="02" checked-color="#4545FF">否</van-radio>
       </van-radio-group>
@@ -159,14 +155,6 @@
         <van-radio name="02" checked-color="#4545FF">否</van-radio>
       </van-radio-group>
     </view>
-    <!-- 做饭 -->
-    <view class="information_item">
-      <view class="information_item_text_radio">是否可做饭：</view>
-      <van-radio-group class="information_item_radio_group" style="width: 160px;" value="{{dataForm.room_cook}}" bind:change="roomCook">
-        <van-radio name="01" checked-color="#4545FF">是</van-radio>
-        <van-radio name="02" checked-color="#4545FF">否</van-radio>
-      </van-radio-group>
-    </view>
     <!-- 简介 -->
     <view class="information_item_text2">简介：</view>
     <van-field type="textarea" autosize="{{autosize}}" border="{{false}}" value="{{dataForm.room_info}}" placeholder="请填写简介" bind:blur="roomInfo" style="width: {{windowWidth-30}}px;"/>
@@ -177,11 +165,3 @@
 <view class="sign_up">
   <view class="sign_up_btn" bindtap="releaseDynamic">确定</view>
 </view>
-
-
-<!-- 身高 -->
-<!-- <view class="information_item">
-  <view class="information_item_text">身高</view>
-  <van-field type="number" value="{{dataForm.height}}" placeholder="请填写身高" bind:blur="bindHeight" style="width: {{windowWidth-180}}px;"/>
-  <view class="information_item_text">CM</view>
-</view> -->

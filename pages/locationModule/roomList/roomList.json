@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "聊城招聘",
+  "navigationBarTitleText": "聊城租房",
   "usingComponents": {
     "van-toast": "vant-weapp/toast/index",
     "van-image": "vant-weapp/image/index",
