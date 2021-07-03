@@ -50,7 +50,6 @@
     "pages/mineModule/personalData/personalData",
     "pages/loginModule/loginPage/loginPage",
     "pages/loginModule/registerPage/registerPage",
-    "pages/otherModule/girlRandom/girlRandom",
     "pages/releaseModule/releaseMarry/releaseMarry",
     "pages/releaseModule/releaseDynamic/releaseDynamic",
     "pages/releaseModule/releaseAppointment/releaseAppointment",
