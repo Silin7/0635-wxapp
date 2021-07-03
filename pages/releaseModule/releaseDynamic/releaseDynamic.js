@@ -105,6 +105,9 @@ Page({
         }
         wx.uploadFile({ 
           url: baseURL.baseURL + '/dynamic/dynamic_release_img',
+          header: {
+            author_id: wx.getStorageSync('id_key').toString()
+          },
           filePath: filep, 
           name: 'file', 
           formData: formData, 
