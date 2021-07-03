@@ -1,8 +1,5 @@
 {
   "pages":[
-    "pages/locationModule/roomList/roomList",
-    "pages/locationModule/roomDetails/roomDetails",
-    "pages/locationModule/roomAdd/roomAdd",
     "pages/homeModule/indexPage/indexPage",
     "pages/homeModule/findPage/findPage",
     "pages/homeModule/newsPage/newsPage",
@@ -26,6 +23,9 @@
     "pages/locationModule/workAdd/workAdd",
     "pages/locationModule/workList/workList",
     "pages/locationModule/workDetails/workDetails",
+    "pages/locationModule/roomList/roomList",
+    "pages/locationModule/roomDetails/roomDetails",
+    "pages/locationModule/roomAdd/roomAdd",
     "pages/pictureModule/wallportraitType/wallportraitType",
     "pages/pictureModule/wallportraitSeries/wallportraitSeries",
     "pages/pictureModule/wallportraitList/wallportraitList",
