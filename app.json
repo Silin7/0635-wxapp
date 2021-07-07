@@ -1,5 +1,8 @@
 {
   "pages":[
+    "pages/recipeModule/recipeList/recipeList",
+    "pages/recipeModule/recipeInfo/recipeInfo",
+    "pages/recipeModule/recipeDetail/recipeDetail",
     "pages/homeModule/indexPage/indexPage",
     "pages/homeModule/findPage/findPage",
     "pages/homeModule/newsPage/newsPage",

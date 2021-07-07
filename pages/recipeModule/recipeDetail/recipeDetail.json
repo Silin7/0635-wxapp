@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "菜谱详情",
+  "usingComponents": {
+    "van-toast": "vant-weapp/toast/index",
+    "van-image": "vant-weapp/image/index",
+    "component-dialog": "/pages/components/wxdialog/wxdialog",
+    "component-loginTips": "/pages/components/loginTips/loginTips"
+  }
+}

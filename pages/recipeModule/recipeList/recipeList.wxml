@@ -1,0 +1,32 @@
+<van-toast id="van-toast" />
+
+<van-search
+  label="菜谱"
+  value="{{keyword}}"
+  placeholder="请输入关键词"
+  bind:change="searchChange"
+  background="#CAE4DB"
+  use-action-slot>
+  <view slot="action" bind:tap="searchClick" class="coF fw7 ls2">搜索</view>
+</van-search>
+
+<view class="bsbb bgF7 frbs" style="height: {{windowHeight-54}}px;">
+  <view class="sidebar_box oya" style="height: {{windowHeight-54}}px;">
+    <van-sidebar active-key="{{sidebarKey}}" bind:change="sidebarChange">
+      <van-sidebar-item wx:for="{{recipeList}}" wx:key="index" title="{{item.name}}"/>
+    </van-sidebar>
+  </view>
+  <view class="bsbb bgF oya p10 sidebar_item_box" style="width: {{windowWidth-80}}px; height: {{windowHeight-54}}px;">
+   <view wx:if="{{isShow}}" wx:for="{{recipeItemList}}" wx:key="index" class="recipe_item_title">
+      <view wx:if="{{item.image_url}}" class="recipe_item_title_name">
+        <van-image lazy-load width="100%" height="100%" src="{{item.image_url}}"/>
+      </view>
+      <view class="sidebar_item_box">
+        <view class="recipe_item" wx:for="{{item.data}}" wx:key="index" wx:for-item="item2" bindtap="recipeInfo" data-item="{{item2}}">
+          <view class="recipe_item_name">{{item2}}</view>
+      </view>
+    </view>
+    </view>
+    
+  </view>
+</view>
