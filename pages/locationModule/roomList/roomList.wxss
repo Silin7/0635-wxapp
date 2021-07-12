@@ -55,7 +55,7 @@
   letter-spacing: 2px;
   color: #333;
 }
-.basic_salary {
+.pay_type {
   font-size: 20px;
   font-weight: 700;
   height: 30px;

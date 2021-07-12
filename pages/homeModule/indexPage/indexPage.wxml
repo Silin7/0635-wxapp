@@ -19,70 +19,23 @@
   </view>
 </view>
 
-<!-- 活动 -->
-<!-- <view class="title_box mt10">
-  <view class="title_icon_box">
-    <van-image lazy-load width="100%" height="100%" src="/images/homeModule/icon-appointment.png"/>
-  </view>
-  <text class="title_text">测试</text>
-</view> -->
-<view class="sub_module4 mt10">
-  <view class="sub_module4_item">
-    <view class="sub_module4_item_01" bindtap="appointmentList">
-      <van-image lazy-load width="100%" height="100%" src="/images/homeModule/banner_xq.jpg"/>
-      <view class="item_banner_mask1"></view>
-      <view class="item_banner_text2">线下活动</view>
-    </view>
-  </view>
-</view>
-
 <!-- 拯救不开心 -->
 <view class="title_box mt10">
   <view class="title_icon_box">
     <van-image lazy-load width="100%" height="100%" src="/images/homeModule/icon-appointment.png"/>
   </view>
-  <text class="title_text">拯救不开心</text>
-</view>
-<view class="sub_module1">
-  <view class="sub_module1_item" bindtap="storyList01">
-    <van-image lazy-load width="100%" height="100%" src="/images/homeModule/banner_xq.jpg"/>
-    <view class="item_banner_mask"></view>
-    <text class="item_banner_text1">笑话</text>
-  </view>
-  <view class="sub_module1_item" bindtap="storyList02">
-    <van-image lazy-load width="100%" height="100%" src="/images/homeModule/banner_xq.jpg"/>
-    <view class="item_banner_mask"></view>
-    <text class="item_banner_text1">搞笑图片</text>
-  </view>
-  <view class="sub_module1_item" bindtap="storyList03">
-    <van-image lazy-load width="100%" height="100%" src="/images/homeModule/banner_xq.jpg"/>
-    <view class="item_banner_mask"></view>
-    <text class="item_banner_text1">搞笑视频</text>
-  </view>
-</view>
-
-<!-- 头像 / 壁纸 / 文案 -->
-<view class="title_box mt10">
-  <view class="title_icon_box">
-    <van-image lazy-load width="100%" height="100%" src="/images/homeModule/icon-appointment.png"/>
-  </view>
   <text class="title_text">测试</text>
 </view>
 <view class="sub_module1">
-  <view class="sub_module1_item" bindtap="wallportraitType">
+  <view class="sub_module1_item" bindtap="marryList">
     <van-image lazy-load width="100%" height="100%" src="/images/homeModule/banner_xq.jpg"/>
     <view class="item_banner_mask"></view>
-    <text class="item_banner_text1">头像</text>
+    <text class="item_banner_text1">相亲交友</text>
   </view>
-  <view class="sub_module1_item" bindtap="wallpaperType">
+  <view class="sub_module1_item" bindtap="appointmentList">
     <van-image lazy-load width="100%" height="100%" src="/images/homeModule/banner_xq.jpg"/>
     <view class="item_banner_mask"></view>
-    <text class="item_banner_text1">壁纸</text>
-  </view>
-  <view class="sub_module1_item" bindtap="wallwritingType">
-    <van-image lazy-load width="100%" height="100%" src="/images/homeModule/banner_xq.jpg"/>
-    <view class="item_banner_mask"></view>
-    <text class="item_banner_text1">文案</text>
+    <text class="item_banner_text1">线下活动</text>
   </view>
 </view>
 
@@ -95,64 +48,31 @@
 </view>
 <view class="sub_module3">
   <view class="sub_module2_item1">
-    <view class="sub_module2_item1_01" bindtap="recipeList">
+    <view class="sub_module2_item1_01" bindtap="xxx">
       <van-image lazy-load width="100%" height="100%" src="/images/homeModule/banner_xq.jpg"/>
       <view class="item_banner_mask1"></view>
-      <view class="item_banner_text2">菜谱</view>
+      <view class="item_banner_text2">吃喝玩乐</view>
     </view>
-    <view class="sub_module2_item1_02" bindtap="topicClass">
-      <van-image lazy-load width="100%" height="100%" src="/images/homeModule/banner_xq.jpg"/>
-      <view class="item_banner_mask1"></view>
-      <view class="item_banner_text2">话题</view>
-    </view>
-  </view>
-  <view class="sub_module2_item1 mt15">
     <view class="sub_module2_item1_02" bindtap="locationWork">
       <van-image lazy-load width="100%" height="100%" src="/images/homeModule/banner_xq.jpg"/>
       <view class="item_banner_mask1"></view>
-      <view class="item_banner_text2">同城招聘</view>
+      <view class="item_banner_text2">求职招聘</view>
     </view>
-    <view class="sub_module2_item1_01">
+  </view>
+  <view class="sub_module2_item1 mt15">
+    <view class="sub_module2_item1_02" bindtap="locationRoom">
       <van-image lazy-load width="100%" height="100%" src="/images/homeModule/banner_xq.jpg"/>
       <view class="item_banner_mask1"></view>
-      <view class="item_banner_text2">测试测试</view>
+      <view class="item_banner_text2">房屋租售</view>
+    </view>
+    <view class="sub_module2_item1_01" bindtap="xxx">
+      <van-image lazy-load width="100%" height="100%" src="/images/homeModule/banner_xq.jpg"/>
+      <view class="item_banner_mask1"></view>
+      <view class="item_banner_text2">二手物品</view>
     </view>
   </view>
 </view>
 
-<!-- 子模块04 -->
-<view class="title_box mt10">
-  <view class="title_icon_box">
-    <van-image lazy-load width="100%" height="100%" src="/images/homeModule/icon-appointment.png"/>
-  </view>
-  <text class="title_text">测试</text>
-</view>
-<view class="sub_module2">
-  <view class="sub_module2_left">
-    <view class="sub_module2_01">
-      <van-image lazy-load width="100%" height="100%" src="/images/homeModule/banner_xq.jpg"/>
-      <view class="item_banner_mask1"></view>
-      <view class="item_banner_text2">测试测试</view>
-    </view>
-    <view class="sub_module2_02 mt15">
-      <van-image lazy-load width="100%" height="100%" src="/images/homeModule/banner_xq.jpg"/>
-      <view class="item_banner_mask1"></view>
-      <view class="item_banner_text2">测试测试</view>
-    </view>
-  </view>
-  <view class="sub_module2_right">
-    <view class="sub_module2_02">
-      <van-image lazy-load width="100%" height="100%" src="/images/homeModule/banner_xq.jpg"/>
-      <view class="item_banner_mask1"></view>
-      <view class="item_banner_text2">测试测试</view>
-    </view>
-    <view class="sub_module2_01 mt15">
-      <van-image lazy-load width="100%" height="100%" src="/images/homeModule/banner_xq.jpg"/>
-      <view class="item_banner_mask1"></view>
-      <view class="item_banner_text2">测试测试</view>
-    </view>
-  </view>
-</view>
 <!-- 子模块05 -->
 <view class="title_box mt10">
   <view class="title_icon_box">
@@ -162,27 +82,47 @@
 </view>
 <view class="sub_module4">
   <view class="sub_module4_item">
-    <view class="sub_module4_item_01">
+    <view class="sub_module4_item_02" bindtap="storyList01">
       <van-image lazy-load width="100%" height="100%" src="/images/homeModule/banner_xq.jpg"/>
       <view class="item_banner_mask1"></view>
-      <view class="item_banner_text2">测试测试</view>
+      <view class="item_banner_text2">笑话</view>
+    </view>
+    <view class="sub_module4_item_02" bindtap="storyList02">
+      <van-image lazy-load width="100%" height="100%" src="/images/homeModule/banner_xq.jpg"/>
+      <view class="item_banner_mask1"></view>
+      <view class="item_banner_text2">图片</view>
+    </view>
+    <view class="sub_module4_item_02" bindtap="storyList03">
+      <van-image lazy-load width="100%" height="100%" src="/images/homeModule/banner_xq.jpg"/>
+      <view class="item_banner_mask1"></view>
+      <view class="item_banner_text2">视频</view>
     </view>
   </view>
-  <view class="sub_module4_item mt15">
-    <view class="sub_module4_item_02">
+</view>
+
+<!-- 子模块05 -->
+<view class="title_box mt10">
+  <view class="title_icon_box">
+    <van-image lazy-load width="100%" height="100%" src="/images/homeModule/icon-appointment.png"/>
+  </view>
+  <text class="title_text">测试</text>
+</view>
+<view class="sub_module4">
+  <view class="sub_module4_item">
+    <view class="sub_module4_item_02" bindtap="wallportraitType">
       <van-image lazy-load width="100%" height="100%" src="/images/homeModule/banner_xq.jpg"/>
       <view class="item_banner_mask1"></view>
-      <view class="item_banner_text2">测试测试</view>
+      <view class="item_banner_text2">头像</view>
     </view>
-    <view class="sub_module4_item_02">
+    <view class="sub_module4_item_02" bindtap="wallpaperType">
       <van-image lazy-load width="100%" height="100%" src="/images/homeModule/banner_xq.jpg"/>
       <view class="item_banner_mask1"></view>
-      <view class="item_banner_text2">测试测试</view>
+      <view class="item_banner_text2">壁纸</view>
     </view>
-    <view class="sub_module4_item_02">
+    <view class="sub_module4_item_02" bindtap="wallwritingType">
       <van-image lazy-load width="100%" height="100%" src="/images/homeModule/banner_xq.jpg"/>
       <view class="item_banner_mask1"></view>
-      <view class="item_banner_text2">测试测试</view>
+      <view class="item_banner_text2">文案</view>
     </view>
   </view>
 </view>

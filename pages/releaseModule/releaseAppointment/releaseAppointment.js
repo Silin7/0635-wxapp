@@ -225,6 +225,9 @@ Page({
         let filep = _this.data.uploadImgs[0].url
         wx.uploadFile({ 
           url: baseURL.baseURL + '/appointment/appointment_release_img',
+          header: {
+            author_id: wx.getStorageSync('id_key').toString()
+          },
           filePath: filep, 
           name: 'file', 
           formData: _this.data.dataForm, 

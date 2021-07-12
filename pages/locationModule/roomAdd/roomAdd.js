@@ -16,31 +16,26 @@ Page({
       room_name: '',
       room_type: '',
       room_type_text: '',
-      lxr_phone: '',
-      pay_type: '',
-      pay_type_text: '',
       pay_rent: '',
       pay_method: '',
       room_areas: '',
       room_shape: '',
-      room_orientation: '',
       room_renovation: '',
       room_renovation_text: '',
       room_height: '',
-      basic_area: '',
-      basic_area_text: '',
       basic_address: '',
+      lxr_phone: '',
       room_elevator: '01',
       room_refrigerator: '01',
       room_washing: '01',
       room_heater: '01',
+      room_cook: '01',
       room_broadband: '01',
       room_toilet: '01',
       room_bed: '01',
       room_wardrobe: '01',
       room_conditioner: '01',
       room_heating: '01',
-      room_cook: '01',
       room_info: '',
     },
     pickerShow: false,
@@ -78,24 +73,6 @@ Page({
     })
   },
 
-  // 联系电话
-  lxrPhone: function (event) {
-    this.data.dataForm.lxr_phone = event.detail.value
-    this.setData({
-      dataForm: this.data.dataForm
-    });
-  },
-
-  // 区间价格
-  payType: function () {
-    this.setData({
-      pickerType: 'payType',
-      pickerShow: true,
-      pickerTitle: '请选择区间价格',
-      pickerList: ['500元以下', '500-800元', '800-1200元', '1200元以上']
-    })
-  },
-
   // 租金
   payRent: function (event) {
     this.data.dataForm.pay_rent = event.detail.value
@@ -128,14 +105,6 @@ Page({
     });
   },
 
-  // 房屋朝向
-  roomOrientation: function (event) {
-    this.data.dataForm.room_orientation = event.detail.value
-    this.setData({
-      dataForm: this.data.dataForm
-    });
-  },
-
   // 装修状况
   roomRenovation: function (event) {
     this.setData({
@@ -154,19 +123,17 @@ Page({
     });
   },
 
-  // 地区分类
-  basicArea: function () {
-    this.setData({
-      pickerType: 'basicArea',
-      pickerShow: true,
-      pickerTitle: '选择所在地区',
-      pickerList: ['东昌府区', '阳谷县', '莘县', '茌平区', '东阿县', '冠县', '高唐县', '临清市']
-    })
-  },
-
   // 详细地址
   basicAddress: function (event) {
     this.data.dataForm.basic_address = event.detail.value
+    this.setData({
+      dataForm: this.data.dataForm
+    });
+  },
+
+  // 联系电话
+  lxrPhone: function (event) {
+    this.data.dataForm.lxr_phone = event.detail.value
     this.setData({
       dataForm: this.data.dataForm
     });
@@ -199,6 +166,14 @@ Page({
   // 热水器
   roomHeater: function (event) {
     this.data.dataForm.room_heater = event.detail
+    this.setData({
+      dataForm: this.data.dataForm
+    });
+  },
+  
+  // 做饭
+  roomCook: function (event) {
+    this.data.dataForm.room_cook = event.detail
     this.setData({
       dataForm: this.data.dataForm
     });
@@ -251,14 +226,6 @@ Page({
       dataForm: this.data.dataForm
     });
   },
-  
-  // 做饭
-  roomCook: function (event) {
-    this.data.dataForm.room_cook = event.detail
-    this.setData({
-      dataForm: this.data.dataForm
-    });
-  },
 
   // 简介
   roomInfo: function (event) {
@@ -271,17 +238,9 @@ Page({
   // 选中弹出框
   confirmItem(event) {
     let valueIndex = '0' + (event.detail.index + 1)
-    if (this.data.pickerType == 'payType') {
-      this.data.dataForm.pay_type = valueIndex
-      this.data.dataForm.pay_type_text = event.detail.value
-    }
     if (this.data.pickerType == 'roomType') {
       this.data.dataForm.room_type = valueIndex
       this.data.dataForm.room_type_text = event.detail.value
-    }
-    if (this.data.pickerType == 'basicArea') {
-      this.data.dataForm.basic_area = valueIndex
-      this.data.dataForm.basic_area_text = event.detail.value
     }
     if (this.data.pickerType == 'roomRenovation') {
       this.data.dataForm.room_renovation = valueIndex

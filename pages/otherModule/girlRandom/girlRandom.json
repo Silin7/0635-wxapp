@@ -1,7 +1,0 @@
-{
-  "navigationBarTitleText": "随机美女",
-  "usingComponents": {
-    "van-toast": "vant-weapp/toast/index",
-    "van-image": "vant-weapp/image/index"
-  }
-}
