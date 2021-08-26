@@ -39,8 +39,6 @@
     "pages/topicModule/topicClass/topicClass",
     "pages/topicModule/topicList/topicList",
     "pages/topicModule/topicDetails/topicDetails",
-    "pages/dynamicModule/newsList/newsList",
-    "pages/dynamicModule/newsDetails/newsDetails",
     "pages/dynamicModule/advertisement/advertisement",
     "pages/dynamicModule/messageDetails/messageDetails",
     "pages/dynamicModule/dynamicList/dynamicList",
