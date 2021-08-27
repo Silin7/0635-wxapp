@@ -1,3 +1,6 @@
+import esRequest from './utils/esRequest';
+
+
 App({
   onLaunch: function () {
     // 获取openid和session_key
@@ -10,17 +13,11 @@ App({
             code: res.code,
             grant_type: 'authorization_code'
           }
-          // https://api.weixin.qq.com/sns/jscode2session?appid=APPID&secret=SECRET&js_code=JSCODE&grant_type=authorization_code
-          let URL = `https://api.weixin.qq.com/sns/jscode2session?appid=${data.appid}&secret=${data.secret}&js_code=${data.code}&grant_type=${data.grant_type}`
-          wx.request({
-            method: 'GET',
-            url: URL,
-            data: '',
-            success(res) {
+          esRequest('wx_login', data).then(res => {
+            if (res && res.errMsg === "request:ok") {
               wx.setStorageSync('openid', res.data.openid)
               wx.setStorageSync('session_key', res.data.session_key)
-            },
-            fail(err) {
+            } else {
               console.warn('fail' + JSON.stringify(err))
             }
           })

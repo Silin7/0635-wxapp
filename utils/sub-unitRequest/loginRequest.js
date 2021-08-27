@@ -1,13 +1,8 @@
 let loginRequest = {
-  is_register: {
-    apiMethod: 'GET',
-    apiName: '/login/is_register',
-    name: '判断账号是否存在'
-  },
   register_inster: {
     apiMethod: 'POST',
     apiName: '/login/register_inster',
-    name: '将注册信息写入数据库'
+    name: '注册'
   },
   change_password: {
     apiMethod: 'POST',
@@ -17,7 +12,7 @@ let loginRequest = {
   sign_in: {
     apiMethod: 'POST',
     apiName: '/login/sign_in',
-    name: '判断账号密码是否正确'
+    name: '登录'
   }
 }
 module.exports = loginRequest

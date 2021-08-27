@@ -47,7 +47,7 @@ Page({
     esRequest('sign_in', this.data).then(res => {
       if (res && res.data.code === 0) {
         wx.setStorageSync('tp_key', '01')
-        wx.setStorageSync('id_key', res.data.data.id)
+        wx.setStorageSync('id_key', JSON.stringify(res.data.data.id))
         Toast.success('登录成功')
         setTimeout(() => {
           wx.switchTab({

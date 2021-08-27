@@ -31,7 +31,7 @@
       <view class="login_name_icon">
         <image src="/images/loginModule/password2.png" class="login_name_icon_img"></image>
       </view>
-      <van-field type="password" value="{{newPassword}}" placeholder="请输入新密码" bind:blur="inputPassword3" maxlength="{{16}}" border="{{false}}"/>
+      <van-field type="password" value="{{new_password}}" placeholder="请输入新密码" bind:blur="inputPassword3" maxlength="{{16}}" border="{{false}}"/>
     </view>
     <view class="login_text">4到16位的字母，数字，下划线</view>
     <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" wx:if="{{state === '0'}}" class="sign_up_btn">注册</button>

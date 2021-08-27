@@ -8,7 +8,7 @@ Page({
     user_name: '',
     password: '',
     password2: '',
-    newPassword: '',
+    new_password: '',
     nick_name: '',
     gender: '',
     avatar_url: '',
@@ -44,13 +44,12 @@ Page({
   // 请输入新密码
   inputPassword3: function (event) {
     this.setData({
-      newPassword: event.detail.value
+      new_password: event.detail.value
     })
   },
 
   // 授权 注册
   bindGetUserInfo: function (e) {
-    console.log(e)
     if (e.detail.errMsg == 'getUserInfo:fail auth deny') {
       Toast.fail('未授权')
       return
@@ -74,7 +73,7 @@ Page({
       }
     }
     if (this.data.state == '1') {
-      if (!this.data.newPassword) {
+      if (!this.data.new_password) {
         Toast.fail('请输入新密码')
         return
       }
@@ -96,59 +95,38 @@ Page({
     if (this.data.state == '0') {
       let data = {
         user_name: this.data.user_name,
-        state: '0'
+        password: this.data.password,
+        nick_name: this.data.nick_name,
+        gender: this.data.gender,
+        avatar_url: this.data.avatar_url
       }
-      esRequest('is_register', data).then(res => {
-        let data2 = {
-          user_name: this.data.user_name,
-          password: this.data.password,
-          nick_name: this.data.nick_name,
-          gender: this.data.gender,
-          avatar_url: this.data.avatar_url
-        }
+      esRequest('register_inster', data).then(res => {
         if (res && res.data.code === 0) {
-          esRequest('register_inster', data2).then(res => {
-            if (res && res.data.code === 0) {
-              Toast.success('注册成功')
-              setTimeout(() => {
-                wx.redirectTo({
-                  url: '/pages/loginModule/loginPage/loginPage'
-                })
-              }, 2000)
-            } else {
-              Toast.fail(res.data.msg)
-            }
-          })
+          Toast.success('注册成功')
+          setTimeout(() => {
+            wx.redirectTo({
+              url: '/pages/loginModule/loginPage/loginPage'
+            })
+          }, 2000)
         } else {
           Toast.fail(res.data.msg)
         }
       })
     }
     if (this.data.state == '1') {
-      let data1 = {
+      let data = {
         user_name: this.data.user_name,
-        state: '1'
+        password: this.data.password,
+        new_password: this.data.new_password
       }
-      esRequest('is_register', data1).then(res => {
+      esRequest('change_password', data).then(res => {
         if (res && res.data.code === 0) {
-          this.data.id = res.data.data.id
-          let data2 = {
-            id: res.data.data.id,
-            user_name: this.data.user_name,
-            password: this.data.password,
-          }
-          esRequest('change_password', data2).then(res => {
-            if (res && res.data.code === 0) {
-              Toast.success('修改成功')
-              setTimeout(() => {
-                wx.redirectTo({
-                  url: '/pages/loginModule/loginPage/loginPage'
-                })
-              }, 2000)
-            } else {
-              Toast.fail(res.data.msg)
-            }
-          })
+          Toast.success('修改成功')
+          setTimeout(() => {
+            wx.redirectTo({
+              url: '/pages/loginModule/loginPage/loginPage'
+            })
+          }, 2000)
         } else {
           Toast.fail(res.data.msg)
         }

@@ -1,5 +1,7 @@
 {
   "pages":[
+    "pages/loginModule/loginPage/loginPage",
+    "pages/loginModule/registerPage/registerPage",
     "pages/homeModule/indexPage/indexPage",
     "pages/homeModule/findPage/findPage",
     "pages/homeModule/newsPage/newsPage",
@@ -46,8 +48,6 @@
     "pages/mineModule/myDynamic/myDynamic",
     "pages/mineModule/myConcerns/myConcerns",
     "pages/mineModule/personalData/personalData",
-    "pages/loginModule/loginPage/loginPage",
-    "pages/loginModule/registerPage/registerPage",
     "pages/components/mapComponent/mapComponent",
     "pages/components/dateTimePicker/dateTimePicker",
     "pages/components/choosePicker/choosePicker",
