@@ -28,6 +28,9 @@ export default (localObjects, parametersData, parameters) => {
       method: apiMethod,
       url: requestURL,
       data: parametersData,
+      header: {
+        author_id: wx.getStorageSync('id_key')
+      },
       success(res) {
         resolve(res)
       },
