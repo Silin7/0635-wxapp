@@ -77,8 +77,7 @@ Page({
   getPerMessage: function () {
     let data = {
       page: this.data.page,
-      limit: this.data.limit,
-      receiver_id: this.data.id_key
+      limit: this.data.limit
     }
     return new Promise (async (resolve, reject) => {
       esRequest('permessage_list', data).then(res => {
@@ -173,8 +172,7 @@ Page({
   getSysMessage: function () {
     let data = {
       page: this.data.page,
-      limit: this.data.limit,
-      receiver_id: this.data.id_key
+      limit: this.data.limit
     }
     esRequest('sysmessage_list', data).then(res => {
       if (res && res.data.code === 0) {

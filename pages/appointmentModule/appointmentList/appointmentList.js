@@ -76,8 +76,7 @@ Page({
       limit: this.data.appointmentLimit,
       area_type: this.data.area_type,
       appointment_type: this.data.appointment_type,
-      sponsor_gender: this.data.sponsor_gender,
-      is_pass: '02'
+      sponsor_gender: this.data.sponsor_gender
     }
     esRequest('appointment_list', data).then(res => {
       if (res && res.data.code === 0) {

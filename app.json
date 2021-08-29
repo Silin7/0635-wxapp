@@ -1,9 +1,9 @@
 {
   "pages":[
-    "pages/homeModule/minePage/minePage",
     "pages/homeModule/indexPage/indexPage",
     "pages/homeModule/findPage/findPage",
     "pages/homeModule/newsPage/newsPage",
+    "pages/homeModule/minePage/minePage",
     "pages/recipeModule/recipeList/recipeList",
     "pages/recipeModule/recipeInfo/recipeInfo",
     "pages/recipeModule/recipeDetail/recipeDetail",
