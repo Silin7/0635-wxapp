@@ -8,7 +8,6 @@ Page({
     windowWidth: 0,
     windowHeight: 0,
     dataForm: {
-      id: '',
       nick_name: '',
       avatar_url: '',
       user_phone: '',
@@ -27,12 +26,6 @@ Page({
     currentDate: new Date(2000, 5, 15).getTime()
   },
 
-  onLoad: function (options) {
-    this.setData({
-      id_key: wx.getStorageSync('id_key').toString().substr(1)
-    })
-  },
-
   onReady: function () {
     this.setData({
       windowWidth: wx.getSystemInfoSync().windowWidth,
@@ -41,15 +34,15 @@ Page({
   },
 
   onShow: function () {
+    this.setData({
+      id_key: wx.getStorageSync('id_key').substr(1)
+    })
     this.getMineInfo()
   },
 
   // 获取个人信息
   getMineInfo: function () {
-    let data = {
-      id: wx.getStorageSync('id_key')
-    }
-    esRequest('mine_info', data).then (res => {
+    esRequest('mine_info').then (res => {
       if (res && res.data.code === 0) {
         this.setData({
           dataForm: res.data.data
@@ -178,7 +171,6 @@ Page({
       }
     }
     if (regular.phoneNumber(this.data.dataForm.user_phone)) {
-      this.data.dataForm.id = wx.getStorageSync('id_key')
       esRequest('update_mineInfo', this.data.dataForm).then(res => {
         if (res && res.data.code === 0) {
           wx.setStorageSync('userIfo', this.data.dataForm)

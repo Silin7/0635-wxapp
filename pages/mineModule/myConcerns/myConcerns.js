@@ -58,7 +58,6 @@ Page({
     let data = {
       page: this.data.page,
       limit: this.data.limit,
-      followers_id: wx.getStorageSync('id_key').toString()
     }
     esRequest('concerns_list', data).then(res => {
       if (res && res.data.code === 0) {
@@ -84,7 +83,6 @@ Page({
   cancelFollow: function (e) {
     this.setData({ dialogShow: true })
     this.data.parameterDate = {
-      followers_id: e.currentTarget.dataset.item.followers_id,
       watched_id: e.currentTarget.dataset.item.watched_id
     }
   },
@@ -102,7 +100,6 @@ Page({
     let data = {
       page: this.data.page,
       limit: this.data.limit,
-      followers_id: wx.getStorageSync('id_key').toString()
     }
     esRequest('collection_list', data).then(res => {
       if (res && res.data.code === 0) {
@@ -120,7 +117,6 @@ Page({
   cancelCollection: function (e) {
     this.setData({ dialogShow: true })
     this.data.parameterDate = {
-      followers_id: e.currentTarget.dataset.item.followers_id,
       user_id: e.currentTarget.dataset.item.user_id
     }
   },

@@ -33,10 +33,7 @@ Page({
 
   // 获取作者信息
   getAuthorInfo: function () {
-    let data = {
-      id: this.data.authorId
-    }
-    esRequest('mine_info', data).then (res => {
+    esRequest('mine_info').then (res => {
       if (res && res.data.code === 0) {
         this.setData({
           authorInfo: res.data.data
@@ -52,8 +49,6 @@ Page({
     let data = {
       page: this.data.dynamicPage,
       limit: this.data.dynamicLimit,
-      author_id: this.data.authorId,
-      is_pass: '02'
     }
     esRequest('my_dynamic_list', data).then(res => {
       if (res && res.data.code === 0) {

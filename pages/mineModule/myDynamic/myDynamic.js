@@ -36,10 +36,7 @@ Page({
 
   // 获取个人信息
   getMineInfo: function () {
-    let data = {
-      id: wx.getStorageSync('id_key')
-    }
-    esRequest('mine_info', data).then (res => {
+    esRequest('mine_info').then (res => {
       if (res && res.data.code === 0) {
         wx.setStorageSync('userIfo', res.data.data)
         this.setData({
@@ -57,7 +54,6 @@ Page({
       page: this.data.dynamicPage,
       limit: this.data.dynamicLimit,
       author_id: wx.getStorageSync('id_key').toString(),
-      is_pass: '02'
     }
     esRequest('my_dynamic_list', data).then(res => {
       if (res && res.data.code === 0) {

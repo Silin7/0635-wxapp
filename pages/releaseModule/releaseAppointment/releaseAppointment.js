@@ -263,10 +263,7 @@ Page({
   // 本人信息
   getMineInfo: function () {
     let _this = this
-    let data = {
-      id: wx.getStorageSync('id_key')
-    }
-    esRequest('mine_info',data).then(res => {
+    esRequest('mine_info').then(res => {
       if (res && res.data.code === 0) {
         wx.setStorageSync('userIfo', res.data.data)
         let userIfo = res.data.data

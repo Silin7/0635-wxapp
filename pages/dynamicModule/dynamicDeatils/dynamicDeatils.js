@@ -43,10 +43,7 @@ Page({
 
   // 获取作者信息
   getMineInfo: function () {
-    let data = {
-      id: this.data.authorId
-    }
-    esRequest('mine_info', data).then (res => {
+    esRequest('mine_info').then (res => {
       if (res && res.data.code === 0) {
         this.setData({
           userInfo: res.data.data
@@ -59,10 +56,7 @@ Page({
 
   // 获取个人信息
   getReviewerInfo: function () {
-    let data = {
-      id: wx.getStorageSync('id_key').toString()
-    }
-    esRequest('mine_info', data).then (res => {
+    esRequest('mine_info').then (res => {
       if (res && res.data.code === 0) {
         wx.setStorageSync('userIfo', res.data.data)
         this.setData({

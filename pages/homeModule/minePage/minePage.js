@@ -69,16 +69,35 @@ Page({
 
   // 获取个人信息
   getMineInfo: function () {
-    let data = {
-      id: wx.getStorageSync('id_key')
-    }
-    esRequest('mine_info', data).then (res => {
+    esRequest('mine_info').then (res => {
       if (res && res.data.code === 0) {
         this.setData({
           mineDataForm: res.data.data
         })
       } else {
         Toast.fail('系统错误')
+      }
+    })
+  },
+
+  // 喜欢
+  concernsList: function () {
+    esRequest('concerns_count').then(res => {
+      if (res && res.data.code === 0) {
+        this.setData({
+          follow: res.data.data
+        })
+      }
+    })
+  },
+
+  // 关注
+  collectionList: function () {
+    esRequest('collection_count').then(res => {
+      if (res && res.data.code === 0) {
+        this.setData({
+          collection: res.data.data
+        })
       }
     })
   },
@@ -142,34 +161,6 @@ Page({
       wx.setStorageSync('tp_key', '03')
       wx.navigateTo({
       url: '/pages/scenicModule/mineScenic/mineScenic'
-    })
-  },
-
-  // 我的关注(number)
-  concernsList: function () {
-    let data = {
-      followers_id: this.data.id_key
-    }
-    esRequest('concerns_count', data).then(res => {
-      if (res && res.data.code === 0) {
-        this.setData({
-          follow: res.data.data
-        })
-      }
-    })
-  },
-
-  // 我的收藏(number)
-  collectionList: function () {
-    let data = {
-      followers_id: this.data.id_key
-    }
-    esRequest('collection_count', data).then(res => {
-      if (res && res.data.code === 0) {
-        this.setData({
-          collection: res.data.data
-        })
-      }
     })
   },
 
