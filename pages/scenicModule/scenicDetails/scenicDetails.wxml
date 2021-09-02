@@ -16,7 +16,7 @@
   <view class="scenic_info_box">
     <view class="scenic_info_item scenic_info_name">
       <text class="co0">{{scenicDetails.scenicspot_name}}</text>
-      <text class="punch_clock" bindtap="punchClock" wx:if="{{isFollow == '0'}}">打卡</text>
+      <text class="punch_clock" bindtap="punchClock" wx:if="{{isFollow === '01'}}">打卡</text>
       <text class="punch_clock2" bindtap="cancePunch" wx:else>已打卡</text>
     </view>
     <view class="scenic_info_item2 ls1">{{scenicDetails.scenicspot_hours}}</view>

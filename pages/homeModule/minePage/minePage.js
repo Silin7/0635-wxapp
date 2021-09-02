@@ -109,10 +109,7 @@ Page({
     this.data.imgFlage02 = true
     this.data.imgFlage03 = true
     this.data.imgFlage04 = true
-    let data = {
-      followers_id: this.data.id_key
-    }
-    esRequest('mine_scenicspot_list', data).then (res => {
+    esRequest('mine_scenicspot_list').then (res => {
       if (res && res.data.code === 0) {
         let scenicspotList = res.data.data
         if (scenicspotList.length < 4) {

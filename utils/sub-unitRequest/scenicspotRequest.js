@@ -15,7 +15,7 @@ let scenicspotRequest = {
     name: '我关注的景点列表'
   },
   is_follow_scenicspot: {
-    apiMethod: 'POST',
+    apiMethod: 'GET',
     apiName: '/scenicspot/is_follow_scenicspot',
     name: '是否关注此景点'
   },
@@ -25,7 +25,7 @@ let scenicspotRequest = {
     name: '关注此景点'
   },
   cancel_scenicspot: {
-    apiMethod: 'POST',
+    apiMethod: 'GET',
     apiName: '/scenicspot/cancel_scenicspot',
     name: '取消关注此景点'
   },

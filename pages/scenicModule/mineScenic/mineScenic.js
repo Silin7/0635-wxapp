@@ -53,10 +53,7 @@ Page({
   // 足迹列表
   mineScenicspotList: function () {
     return new Promise (async (resolve, reject) => {
-      let data = {
-        followers_id: wx.getStorageSync('id_key').toString()
-      }
-      esRequest('mine_scenicspot_list', data).then (res => {
+      esRequest('mine_scenicspot_list').then (res => {
         if (res && res.data.code === 0) {
           this.setData({
             mineScenicspotList: res.data.data

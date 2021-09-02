@@ -9,7 +9,7 @@ Page({
     scenicId: '',
     scenicDetails: {},
     markers: [],
-    isFollow: '0'
+    isFollow: '01'
   },
 
   onLoad: function (options) {
@@ -55,8 +55,7 @@ Page({
   // 是否已打卡
   isPunchClock: function () {
     let data = {
-      scenicspot_id: this.data.scenicId,
-      followers_id: wx.getStorageSync('id_key').toString()
+      scenicspot_id: this.data.scenicId
     }
     esRequest('is_follow_scenicspot', data).then(res => {
       if (res && res.data.code === 0) {
