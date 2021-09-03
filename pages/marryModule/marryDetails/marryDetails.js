@@ -28,12 +28,10 @@ Page({
     this.marryDetails()
   },
 
-  // 点击首页轮播图
+  // 点击首页轮播图（大图预览）
   swiperTap: function (e) {
     wx.previewImage({
-      // 当前显示图片的http链接
       current: e.currentTarget.dataset.item,
-      // 需要预览的图片http链接列表
       urls: this.data.personDetails.photo
     })
   },
@@ -81,6 +79,54 @@ Page({
     }
   },
 
+  // 喜欢确定按钮
+  tapDialogButton: function (e) {
+    this.setData({
+      dialogShow: false
+    })
+    if (e.detail.index === 0) {
+      Toast.success('取消')
+    }
+    if (e.detail.index === 1) {
+      // 是否喜欢了此用户
+      let _this = this
+      let data = {
+        watched_id: _this.data.personDetails.id,
+      }
+      esRequest('is_follow_users', data).then(res => {
+        if (res && res.data.code === 0) {
+          if (res.data.data) {
+            Toast.success('已喜欢')
+          } else {
+            _this.followUsers()
+          }
+        } else {
+          Toast.fail('系统错误')
+        }
+      })
+    }
+  },
+
+
+  // 喜欢此用户
+  followUsers: function () {
+    let _this = this
+    let data = {
+      watched_id: _this.data.personDetails.id,
+      nick_name: _this.data.personDetails.name,
+      photo: _this.data.personDetails.cover,
+      introduce: _this.data.personDetails.introduce
+    }
+    esRequest('follow_users', data).then(res => {
+      if (res && res.data.code === 0) {
+        wx.setStorageSync('tp_key', '04')
+        Toast.success('已喜欢')
+      } else {
+        Toast.fail('系统错误')
+      }
+    })
+  },
+
   // 要微信 / 求约会
   btnWY: function (e) {
     if (!wx.getStorageSync('id_key')) {
@@ -92,47 +138,17 @@ Page({
         this.getUserInfo()
       }
       let data = {
-        register_id: this.data.personDetails.id,
-        followers_id: this.data.userInfo.id
+        register_id: this.data.personDetails.id
       }
-      esRequest('marry_issign', data).then(res => {
+      esRequest('is_marry_sign', data).then(res => {
         if (res && res.data.code === 0) {
-          if (res.data.type === '0') {
+          if (res.data.data) {
+            Toast.success('已发送消息')
+          } else {
             wx.navigateTo({
               url: `/pages/marryModule/marryRegistration/marryRegistration?receiver_id=${this.data.personDetails.user_id}&register_id=${this.data.personDetails.id}&gender=${this.data.personDetails.gender}`
             })
           }
-          if (res.data.type === '1') {
-            Toast.success('已发送消息')
-          }
-        }
-      })
-    }
-  },
-
-  // 喜欢确定按钮
-  tapDialogButton: function (e) {
-    this.setData({
-      dialogShow: false
-    })
-    if (e.detail.index === 0) {
-      Toast.success('取消')
-    }
-    if (e.detail.index === 1) {
-      let _this = this
-      let data = {
-        followers_id: wx.getStorageSync('id_key').toString(),
-        watched_id: _this.data.personDetails.id,
-        nick_name: _this.data.personDetails.name,
-        photo: _this.data.personDetails.cover,
-        introduce: _this.data.personDetails.introduce
-      }
-      esRequest('follow_users', data).then(res => {
-        if (res && res.data.code === 0) {
-          wx.setStorageSync('tp_key', '04')
-          Toast.success('已喜欢')
-        } else {
-          Toast.fail('系统错误')
         }
       })
     }

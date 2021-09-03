@@ -9,7 +9,7 @@ Page({
     scenicId: '',
     scenicDetails: {},
     markers: [],
-    isFollow: '01'
+    isFollow: false
   },
 
   onLoad: function (options) {
@@ -60,7 +60,7 @@ Page({
     esRequest('is_follow_scenicspot', data).then(res => {
       if (res && res.data.code === 0) {
         this.setData({
-          isFollow: res.data.type
+          isFollow: res.data.data
         })
       } else {
         Toast.fail('系统错误')

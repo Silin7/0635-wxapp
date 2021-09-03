@@ -41,7 +41,7 @@
 .head_portrait_text {
   height: 38px;
   width: 150px;
-  background: #021C72;
+  background: #4545FF;
   border-radius: 8px;
   display: flex;
   justify-content: center;

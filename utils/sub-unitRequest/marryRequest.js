@@ -2,22 +2,22 @@ let marryRequest = {
   marry_list: {
     apiMethod: 'GET',
     apiName: '/marry/marry_list',
-    name: '相亲列表'
+    name: '社交列表'
   },
   marry_details: {
     apiMethod: 'GET',
     apiName: '/marry/marry_details',
-    name: '相亲详情'
+    name: '社交详情'
   },
-  marry_issign: {
+  is_marry_sign: {
     apiMethod: 'GET',
-    apiName: '/marry/marry_issign',
-    name: '相亲详情'
+    apiName: '/marry/is_marry_sign',
+    name: '是否报名参加社交'
   },
   marry_sign: {
     apiMethod: 'GET',
     apiName: '/marry/marry_sign',
-    name: '相亲详情'
+    name: '报名参加社交'
   },
 }
 

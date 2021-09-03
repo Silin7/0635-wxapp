@@ -73,21 +73,19 @@ Page({
   // 欣然同意
   gladlyConsent: function () {
     let data = {
-      register_id: this.data.messageId,
-      followers_id: this.data.mineDataForm.id
+      register_id: this.data.messageId
     }
-    esRequest('marry_issign', data).then(res => {
+    esRequest('is_marry_sign', data).then(res => {
       if (res && res.data.code === 0) {
-        if (res.data.type === '0') {
+        if (res.data.data) {
+          Toast.success('已经回复了')
+        } else {
           this.setData({
             dialogType: '01',
             dialogShow: true,
             dialogTitle: '欣然同意',
             dialogText: '一段微妙的缘分就要开始咯！'
           })
-        }
-        if (res.data.type === '1') {
-          Toast.success('已经回复了')
         }
       }
     })
@@ -96,21 +94,19 @@ Page({
   // 残忍拒绝
   cruelRefusal: function () {
     let data = {
-      register_id: this.data.messageId,
-      followers_id: this.data.mineDataForm.id
+      register_id: this.data.messageId
     }
-    esRequest('marry_issign', data).then(res => {
+    esRequest('is_marry_sign', data).then(res => {
       if (res && res.data.code === 0) {
-        if (res.data.type === '0') {
+        if (res.data.data) {
+          Toast.success('已经回复了')
+        } else {
           this.setData({
             dialogType: '02',
             dialogShow: true,
             dialogTitle: '残忍拒绝',
             dialogText: '拒绝之后你们就永远错过了呢！'
           })
-        }
-        if (res.data.type === '1') {
-          Toast.success('已经回复了')
         }
       }
     })
