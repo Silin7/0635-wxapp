@@ -12,6 +12,3 @@ $RECYCLE.BIN/
 
 # Node.js
 node_modules/
-
-# app.json
-./app.json
