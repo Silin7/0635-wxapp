@@ -30,4 +30,5 @@ let pictureRequest = {
     name: '文案列表'
   },
 }
+
 module.exports = pictureRequest

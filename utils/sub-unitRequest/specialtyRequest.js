@@ -10,4 +10,5 @@ let specialtyRequest = {
     name: '特产详情（参数：id）'
   },
 }
+
 module.exports = specialtyRequest

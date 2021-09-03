@@ -72,8 +72,7 @@ Page({
       limit: this.data.roomLimit,
       basic_area: this.data.basic_area,
       room_type: this.data.room_type,
-      pay_type: this.data.pay_type,
-      is_pass: '02'
+      pay_type: this.data.pay_type
     }
     esRequest('location_room_list', data).then(res => {
       if (res && res.data.code === 0) {

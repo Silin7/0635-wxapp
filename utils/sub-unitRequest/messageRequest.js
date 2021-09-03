@@ -35,4 +35,5 @@ let messageRequest = {
     name: '消息详情'
   },
 }
+
 module.exports = messageRequest

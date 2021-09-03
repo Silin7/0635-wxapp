@@ -44,9 +44,9 @@ Page({
     this.data.specialtyPage = 1
     this.data.specialtyList = []
     if (event.detail.name == 0) {
-      this.data.scenicspotPosition = ''
+      this.data.specialtyPosition = ''
     } else {
-      this.data.scenicspotPosition = event.detail.name
+      this.data.specialtyPosition = event.detail.name
     }
     this.getSpecialtyList()
   },

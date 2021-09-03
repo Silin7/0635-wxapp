@@ -65,4 +65,5 @@ let mineRequest = {
     name: '我的动态列表'
   },
 }
+
 module.exports = mineRequest

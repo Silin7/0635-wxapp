@@ -30,4 +30,5 @@ let appointmentRequest = {
     name: '报名参加活动'
   },
 }
+
 module.exports = appointmentRequest

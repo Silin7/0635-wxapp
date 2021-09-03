@@ -30,4 +30,5 @@ let locationRequest = {
     name: '同城招租详情'
   },
 }
+
 module.exports = locationRequest

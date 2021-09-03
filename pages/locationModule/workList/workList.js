@@ -72,8 +72,7 @@ Page({
       limit: this.data.workLimit,
       basic_area: this.data.basic_area,
       basic_type: this.data.basic_type,
-      basic_salary: this.data.basic_salary,
-      is_pass: '02'
+      basic_salary: this.data.basic_salary
     }
     esRequest('location_work_list', data).then(res => {
       if (res && res.data.code === 0) {

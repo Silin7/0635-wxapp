@@ -15,4 +15,5 @@ let recipeRequest = {
     name: '菜肴详情'
   },
 }
+
 module.exports = recipeRequest

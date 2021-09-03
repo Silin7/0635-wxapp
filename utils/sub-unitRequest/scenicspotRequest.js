@@ -30,4 +30,5 @@ let scenicspotRequest = {
     name: '取消关注此景点'
   },
 }
+
 module.exports = scenicspotRequest

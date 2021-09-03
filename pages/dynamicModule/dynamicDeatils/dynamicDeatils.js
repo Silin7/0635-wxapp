@@ -89,8 +89,7 @@ Page({
     let data = {
       page: this.data.commentPage,
       limit: this.data.commentLimit,
-      dynamic_id: this.data.dynamicId,
-      is_pass: '02'
+      dynamic_id: this.data.dynamicId
     }
     esRequest('comment_list', data).then(res => {
       if (res && res.data.code === 0) {

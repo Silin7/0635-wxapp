@@ -52,8 +52,7 @@ Page({
     let data = {
       page: this.data.page,
       limit: this.data.limit,
-      topic_class: this.data.topicClass,
-      is_pass: '02'
+      topic_class: this.data.topicClass
     }
     esRequest('topic_list', data).then(res => {
       if (res && res.data.code === 0) {

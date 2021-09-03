@@ -3,9 +3,9 @@ Page({
     windowWidth: 0,
     windowHeight: 0,
     swiperList: [
-      { id: 'swiper01', image: '/images/homeModule/swiper_02.jpg' },
-      { id: 'swiper02', image: '/images/homeModule/swiper_02.jpg' },
-      { id: 'swiper03', image: '/images/homeModule/swiper_02.jpg' }
+      { id: 'swiper01', image: '/images/homeModule/banner_xq.jpg' },
+      { id: 'swiper02', image: '/images/homeModule/banner_xq.jpg' },
+      { id: 'swiper03', image: '/images/homeModule/banner_xq.jpg' }
     ],
     iconList: [
       { name: '聊城景点', image: '/images/homeModule/banner_xq.jpg', id: 'icon01' },

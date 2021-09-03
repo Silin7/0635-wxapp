@@ -5,4 +5,5 @@ let systemRequest = {
     name: '微信授权'
   },
 }
+
 module.exports = systemRequest

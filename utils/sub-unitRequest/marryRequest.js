@@ -20,4 +20,5 @@ let marryRequest = {
     name: '相亲详情'
   },
 }
+
 module.exports = marryRequest

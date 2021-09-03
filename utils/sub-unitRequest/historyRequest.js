@@ -5,4 +5,5 @@ let historyRequest = {
     name: '历史详情'
   }
 }
+
 module.exports = historyRequest

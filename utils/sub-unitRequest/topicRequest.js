@@ -20,4 +20,5 @@ let topicRequest = {
     name: '话题详情'
   },
 }
+
 module.exports = topicRequest

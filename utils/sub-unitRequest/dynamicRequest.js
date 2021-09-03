@@ -35,4 +35,5 @@ let dynamicRequest = {
     name: '动态详情'
   },
 }
+
 module.exports = dynamicRequest
