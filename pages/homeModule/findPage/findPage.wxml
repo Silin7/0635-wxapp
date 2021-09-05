@@ -6,8 +6,10 @@
   <!-- 发现 -->
   <view class="dynamic_item" wx:for="{{dynamicList}}" wx:key="index" bindtap="getDynamicDetalis" data-item="{{item}}">
     <!-- 作者信息 -->
-    <view class="dynamic_user_info" bindtap="authorDynamic" data-item="{{item}}">
-      <van-image lazy-load width="60" height="60" src="{{item.author_avatar}}" image-class="br5"/>
+    <view class="dynamic_user_info">
+      <view catchtap="authorDynamic" data-item="{{item}}">
+        <van-image lazy-load width="60" height="60" src="{{item.author_avatar}}" image-class="br5"/>
+      </view>
       <view class="dynamic_user_box">
         <view class="dynamic_user_name to1">{{item.author_name}}</view>
         <view class="dynamic_user_date">

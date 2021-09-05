@@ -15,7 +15,7 @@
       <view class="user_box" style="width: {{windowWidth-90}}px;">
         <view class="nick_name_box">
           <view class="nick_name to1" style="width: {{windowWidth-160}}px;">{{userInfo.nick_name}}</view>
-          <view class="follow" bindtap="collectionuser">关注</view>
+          <view class="follow" bindtap="collectionuser" wx:if="{{!isFollow}}">关注</view>
         </view>
         <view class="user_info">{{userInfo.gender == '1' ? '男' : '女'}} · {{userInfo.age}}岁 · {{userInfo.constellation}} · {{userInfo.address}}</view>
       </view>

@@ -6,6 +6,7 @@ Page({
     loginShow: false,
     windowWidth: 0,
     windowHeight: 0,
+    isFollow: false,
     authorId: '',
     dynamicPage: 1,
     dynamicLimit: 6,
@@ -21,6 +22,7 @@ Page({
   onLoad: function (options) {
     this.data.authorId = options.authorId ? options.authorId : ''
     this.getAuthorInfo()
+    this.isFollowCollection()
     this.getDynamicList()
   },
 
@@ -33,7 +35,10 @@ Page({
 
   // 获取作者信息
   getAuthorInfo: function () {
-    esRequest('mine_info').then (res => {
+    let data = {
+      author_id: this.data.authorId
+    }
+    esRequest('author_info', data).then (res => {
       if (res && res.data.code === 0) {
         this.setData({
           authorInfo: res.data.data
@@ -44,13 +49,32 @@ Page({
     })
   },
 
+  // 是否关注了此用户
+  isFollowCollection: function () {
+    if (wx.getStorageSync('id_key')) {
+      let data = {
+        user_id: this.data.authorId
+      }
+      esRequest('is_follow_collection', data).then (res => {
+        if (res && res.data.code === 0) {
+          this.setData({
+            isFollow: res.data.data
+          })
+        } else {
+          Toast.fail('系统错误')
+        }
+      })
+    }
+  },
+
   // 作者动态列表
   getDynamicList: function () {
     let data = {
       page: this.data.dynamicPage,
       limit: this.data.dynamicLimit,
+      author_id: this.data.authorId
     }
-    esRequest('my_dynamic_list', data).then(res => {
+    esRequest('author_dynamic_list', data).then(res => {
       if (res && res.data.code === 0) {
         if (res.data.totalCount == 0) {
           this.setData({ dynamicNo: true })

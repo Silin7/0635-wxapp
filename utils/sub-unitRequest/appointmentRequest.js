@@ -19,9 +19,9 @@ let appointmentRequest = {
     apiName: '/appointment/appointment_details',
     name: '线下活动详情'
   },
-  appointment_issign: {
+  is_appointment_sign: {
     apiMethod: 'GET',
-    apiName: '/appointment/appointment_issign',
+    apiName: '/appointment/is_appointment_sign',
     name: '是否报名参加活动'
   },
   appointment_sign: {

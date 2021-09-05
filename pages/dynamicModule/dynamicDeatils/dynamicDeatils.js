@@ -8,6 +8,7 @@ Page({
     dynamicId: '',
     windowWidth: 0,
     windowHeight: 0,
+    isFollow: false,
     userInfo: {},
     reviewerInfo: {},
     commentPage: 1,
@@ -26,6 +27,10 @@ Page({
   onLoad: function (options) {
     this.data.authorId = options.authorId ? options.authorId : ''
     this.data.dynamicId = options.dynamicId ? options.dynamicId : ''
+    this.getAuthorInfo()
+    this.isFollowCollection()
+    this.getDynamicDetails()
+    this.getCommentList()
   },
 
   onReady: function () {
@@ -35,15 +40,12 @@ Page({
     })
   },
 
-  onShow: function () {
-    this.getMineInfo()
-    this.getDynamicDetails()
-    this.getCommentList()
-  },
-
   // 获取作者信息
-  getMineInfo: function () {
-    esRequest('mine_info').then (res => {
+  getAuthorInfo: function () {
+    let data = {
+      author_id: this.data.authorId
+    }
+    esRequest('author_info', data).then (res => {
       if (res && res.data.code === 0) {
         this.setData({
           userInfo: res.data.data
@@ -52,6 +54,24 @@ Page({
         Toast.fail('系统错误')
       }
     })
+  },
+
+  // 是否关注了此用户
+  isFollowCollection: function () {
+    if (wx.getStorageSync('id_key')) {
+      let data = {
+        user_id: this.data.authorId
+      }
+      esRequest('is_follow_collection', data).then (res => {
+        if (res && res.data.code === 0) {
+          this.setData({
+            isFollow: res.data.data
+          })
+        } else {
+          Toast.fail('系统错误')
+        }
+      })
+    }
   },
 
   // 获取个人信息
@@ -170,7 +190,6 @@ Page({
       if (this.data.dialogType == '01') {
         let _this = this
         let data = {
-          followers_id: wx.getStorageSync('id_key').toString(),
           user_id: _this.data.userInfo.id.toString(),
           user_name: _this.data.userInfo.nick_name,
           user_image: _this.data.userInfo.avatar_url,

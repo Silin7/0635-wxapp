@@ -18,7 +18,7 @@
       <view class="personal_signature">{{authorInfo.personal_signature}}</view>
       <view class="user_info">
         <view class="appointment_tag_item" style="background-color: #F14668;">
-          <text class="appointment_tag_text">{{authorInfo.gender == '1' ? '男' : '女'}}</text>
+          <text class="appointment_tag_text">{{authorInfo.gender === '1' ? '男' : '女'}}</text>
         </view>
         <view class="appointment_tag_item" style="background-color: #FF5858;">
           <text class="appointment_tag_text">{{authorInfo.age}}岁</text>
@@ -30,7 +30,7 @@
           <text class="appointment_tag_text">{{authorInfo.address}}</text>
         </view>
       </view>
-      <view class="follow_box">
+      <view class="follow_box" wx:if="{{!isFollow}}">
         <view class="follow_text" bindtap="collectionuser">+关注</view>
       </view>
   </view>

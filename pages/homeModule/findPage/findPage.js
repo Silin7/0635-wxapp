@@ -24,14 +24,14 @@ Page({
     })
   },
 
-  // 新增社交信息
+  // 发动态
   goAddPage: function () {
     wx.navigateTo({
       url: '/pages/releaseModule/releaseDynamic/releaseDynamic',
     })
   },
   
-  // 同城动态列表
+  // 动态列表
   getDynamicList: function () {
     let data = {
       page: this.data.dynamicPage,
@@ -59,7 +59,7 @@ Page({
     })
   },
 
-  // 同城动态详情
+  // 动态详情
   getDynamicDetalis: function (e) {
     // 01：相亲
     if (e.currentTarget.dataset.item.type_id === '01') {
@@ -89,7 +89,7 @@ Page({
     }
   },
   
-  // 同城动态触底函数
+  // 动态触底函数
   onReachBottom: function () {
     if (this.data.totalCount > this.data.dynamicList.length) {
       this.data.dynamicPage += 1

@@ -56,15 +56,14 @@ Page({
       let data = {
         active_id: this.data.appointmentDetails.id,
       }
-      esRequest('appointment_issign', data).then(res => {
+      esRequest('is_appointment_sign', data).then(res => {
         if (res && res.data.code === 0) {
-          if (res.data.type === '01') {
-            Toast.fail('报名后查看')
-          }
-          if (res.data.type === '02') {
+          if (res.data.data) {
             _this.setData({
               signUp: true
             })
+          } else {
+            Toast.fail('报名后查看')
           }
         } else {
           Toast.fail('系统错误')
@@ -83,15 +82,14 @@ Page({
       let data = {
         active_id: this.data.appointmentDetails.id,
       }
-      esRequest('appointment_issign', data).then(res => {
+      esRequest('is_appointment_sign', data).then(res => {
         if (res && res.data.code === 0) {
-          if (res.data.type === '01') {
+          if (res.data.data) {
+            Toast.success('您已经报名')
+          } else {
             wx.navigateTo({
               url: `/pages/appointmentModule/activityRegistration/activityRegistration?receiver_id=${this.data.appointmentDetails.sponsor_id}&active_id=${this.data.appointmentDetails.id}&active_title=${this.data.appointmentDetails.appointment_title}`
             })
-          }
-          if (res.data.type === '02') {
-            Toast.success('您已经报名')
           }
         } else {
           Toast.fail('系统错误')
