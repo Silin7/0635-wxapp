@@ -112,6 +112,7 @@ Page({
 
   // 关注确定按钮
   tapDialogButton: function (e) {
+    let _this = this
     this.setData({
       dialogShow: false
     })
@@ -130,6 +131,7 @@ Page({
         if (res && res.data.code === 0) {
           wx.setStorageSync('tp_key', '05')
           Toast.success('已关注')
+          _this.isFollowCollection()
         } else {
           Toast.fail('系统错误')
         }
