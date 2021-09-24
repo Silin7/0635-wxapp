@@ -1,9 +1,5 @@
 ﻿{
-<<<<<<< HEAD
-  "name": "0635-xcx",
-=======
   "name": "0635-wxapp",
->>>>>>> 28eb54aa7b0305b417b8a59643dfbef30de550b3
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
