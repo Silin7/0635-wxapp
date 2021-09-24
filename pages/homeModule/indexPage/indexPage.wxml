@@ -2,11 +2,11 @@
 
 <!-- swiper滚动图 -->
 <swiper indicator-dots="{{true}}" autoplay="{{true}}" circular="{{true}}" style="height: 240px;">
-	<block wx:for="{{swiperList}}" wx:key="index" wx:for-item="item">
-		<swiper-item bindtap="swiperTap" data-item="{{item}}">
-			<van-image lazy-load width="100%" height="240" src="{{item.image}}"/>
-		</swiper-item>
-	</block>
+  <block wx:for="{{swiperList}}" wx:key="index" wx:for-item="item">
+    <swiper-item bindtap="swiperTap" data-item="{{item}}">
+      <van-image lazy-load width="100%" height="240" src="{{item.image}}"/>
+    </swiper-item>
+  </block>
 </swiper>
 
 <!-- 子模块01 -->

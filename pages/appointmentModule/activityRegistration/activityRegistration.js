@@ -14,7 +14,7 @@ Page({
       receiver_id: '',
       sender_id: '',
       sender_name: '',
-      sender_img	: '',
+      sender_img: '',
       message_title: '',
       message_content: '',
       message_type: '03',
