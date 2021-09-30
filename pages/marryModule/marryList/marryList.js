@@ -3,6 +3,7 @@ import Toast from '../../../miniprogram_npm/vant-weapp/toast/toast';
 
 Page({
   data: {
+    loginShow: false,
     windowWidth: 0,
     windowHeight: 0,
     tabActive: 0,
@@ -31,6 +32,12 @@ Page({
 
   // 新增社交信息
   goAddPage: function () {
+    if (!wx.getStorageSync('id_key')) {
+      this.setData({
+        loginShow: true
+      })
+      return
+    }
     wx.navigateTo({
       url: '/pages/releaseModule/releaseMarry/releaseMarry',
     })
@@ -103,5 +110,12 @@ Page({
       this.data.page += 1
       this.marryList()
     }
+  },
+
+  // 未登录跳转倒登录界面
+  dialogButtontap() {
+    wx.redirectTo({
+      url: '/pages/loginModule/loginPage/loginPage',
+    })
   }
 })
