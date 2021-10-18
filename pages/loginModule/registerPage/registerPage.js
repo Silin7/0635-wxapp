@@ -50,6 +50,7 @@ Page({
 
   // 授权 注册
   bindGetUserInfo: function (e) {
+    console.log(e)
     if (e.detail.errMsg == 'getUserInfo:fail auth deny') {
       Toast.fail('未授权')
       return
@@ -58,6 +59,7 @@ Page({
       this.data.gender = e.detail.userInfo.gender.toString(),
       this.data.avatar_url = e.detail.userInfo.avatarUrl
     }
+    console.log('this.data', this.data)
     if (!this.data.user_name) {
       Toast.fail('请输入账号')
       return

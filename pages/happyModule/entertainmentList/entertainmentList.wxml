@@ -5,7 +5,7 @@
 <view class="story_box" wx:if="{{type_id === '01'}}">
   <view wx:for="{{entertainmentList}}" wx:key="index">
     <view class="transition_box">
-      <van-image lazy-load width="15" height="15" src="http://121.89.215.228/birch-forest-media/saveUnhappy/picture/gd-love.gif"/>
+      <van-image lazy-load width="15" height="15" src="http://121.89.215.228/0635-files/saveUnhappy/picture/gd-love.gif"/>
     </view>
     <view class="rich_box">
       <rich-text nodes="{{item.story_content}}" class="rich_text"></rich-text>
@@ -18,7 +18,7 @@
 <view class="story_box" wx:if="{{type_id === '02'}}">
   <view wx:for="{{entertainmentList}}" wx:key="index">
     <view class="transition_box">
-      <van-image lazy-load width="15" height="15" src="http://121.89.215.228/birch-forest-media/saveUnhappy/picture/gd-love.gif"/>
+      <van-image lazy-load width="15" height="15" src="http://121.89.215.228/0635-files/saveUnhappy/picture/gd-love.gif"/>
     </view>
     <view class="content_box">
       <view class="story_title">{{item.story_title}}</view>
@@ -31,7 +31,7 @@
 <view class="story_box" wx:if="{{type_id === '03'}}">
   <view wx:for="{{entertainmentList}}" wx:key="index">
     <view class="transition_box">
-      <van-image lazy-load width="15" height="15" src="http://121.89.215.228/birch-forest-media/saveUnhappy/picture/gd-love.gif"/>
+      <van-image lazy-load width="15" height="15" src="http://121.89.215.228/0635-files/saveUnhappy/picture/gd-love.gif"/>
     </view>
     <view class="content_box">
       <view class="story_title">{{item.story_title}}</view>

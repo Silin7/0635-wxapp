@@ -240,8 +240,8 @@ Page({
             }, 1500)
           }, fail: function (err) { 
             Toast.fail('系统错误')
-          } 
-        }); 
+          }
+        });
       }
       if (_this.data.dialogType == '02') {
         esRequest('appointment_release_txt', _this.data.dataForm).then(res => {

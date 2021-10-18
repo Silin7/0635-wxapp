@@ -4,7 +4,7 @@
   <view class="series_name">{{seriesList.series_name}}</view>
   <view wx:for="{{seriesList.series_images}}" wx:key="index">
     <view class="transition_box">
-      <image src="http://121.89.215.228/birch-forest-media/saveUnhappy/picture/gd-love.gif" class="transition_img"/>
+      <image src="http://121.89.215.228/0635-files/saveUnhappy/picture/gd-love.gif" class="transition_img"/>
     </view>
     <view class="content_box">
       <rich-text wx:if="{{item.info}}" class="story_title" nodes="{{item.info}}"></rich-text>
