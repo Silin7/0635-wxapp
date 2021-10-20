@@ -1,16 +1,17 @@
 <van-toast id="van-toast" position="middle" mask="{{true}}"/>
 <component-dateTimePicker bind:confirmDate="confirmDate" overlayShow="{{showDate}}" currentDate="{{currentDate}}"/>
 <component-choosePicker bind:confirmItem="confirmItem" overlayShow="{{pickerShow}}" pickerTitle="{{pickerTitle}}" dataList="{{pickerList}}"/>
-
 <view class="personal_box">
   <!-- 头像 -->
   <view class="head_portrait_box bsbb">
-    <view class="head_portrait">
-      <image src="{{dataForm.avatar_url}}" class="wh100 br20"></image>
-      <text class="head_portrait_age">
-        <text class="head_portrait_age_text">{{dataForm.age ? dataForm.age : 0}}</text>
-      </text>
-    </view>
+    <van-uploader max-count="1" bind:after-read="afterRead">
+      <view class="head_portrait">
+        <van-image src="{{dataForm.avatar_url}}" image-class="wh100 br20"/>
+        <text class="head_portrait_age">
+          <text class="head_portrait_age_text">{{dataForm.age ? dataForm.age : 0}}</text>
+        </text>
+      </view>
+    </van-uploader>
     <view class="head_portrait_text fs14">
       <text class="dialog-close ls2 fs18" decode="true">鲁P&nbsp;</text>
       <text class="ls2 fs18">{{id_key}}</text>

@@ -1,19 +1,35 @@
 <van-toast id="van-toast" />
 
-<scroll-view style="height: {{windowHeight}}px;" scroll-y="{{true}}" bindscrolltolower="onScrollBottom">
-<!-- 家乡话题 -->
-<view class="topic_title">家乡话题</view>
+
+
+<!-- DropdownMenu 下拉菜单 -->
+<van-dropdown-menu active-color="#4545FF">
+  <van-dropdown-item id="item1" title="{{dropTitle1}}">
+    <view class="dropdown_cell">
+      <view class="dropdown_item_nomal {{ journalism_area == '' ? 'dropdown_item_active' : '' }}" bindtap="dropTap1" data-id="" data-title="全部地区">全部地区</view>
+      <view class="dropdown_item_nomal {{ journalism_area == '01' ? 'dropdown_item_active' : '' }}" bindtap="dropTap1" data-id="01" data-title="东昌府区">东昌府区</view>
+      <view class="dropdown_item_nomal {{ journalism_area == '02' ? 'dropdown_item_active' : '' }}" bindtap="dropTap1" data-id="02" data-title="阳谷县">阳谷县</view>
+      <view class="dropdown_item_nomal {{ journalism_area == '03' ? 'dropdown_item_active' : '' }}" bindtap="dropTap1" data-id="03" data-title="莘县">莘县</view>
+      <view class="dropdown_item_nomal {{ journalism_area == '04' ? 'dropdown_item_active' : '' }}" bindtap="dropTap1" data-id="04" data-title="茌平区">茌平区</view>
+      <view class="dropdown_item_nomal {{ journalism_area == '05' ? 'dropdown_item_active' : '' }}" bindtap="dropTap1" data-id="05" data-title="东阿县">东阿县</view>
+      <view class="dropdown_item_nomal {{ journalism_area == '06' ? 'dropdown_item_active' : '' }}" bindtap="dropTap1" data-id="06" data-title="冠县">冠县</view>
+      <view class="dropdown_item_nomal {{ journalism_area == '07' ? 'dropdown_item_active' : '' }}" bindtap="dropTap1" data-id="07" data-title="高唐县">高唐县</view>
+      <view class="dropdown_item_nomal {{ journalism_area == '08' ? 'dropdown_item_active' : '' }}" bindtap="dropTap1" data-id="08" data-title="临清市">临清市</view>
+    </view>
+  </van-dropdown-item>
+  <van-dropdown-item id="item2" title="{{dropTitle2}}">
+    <view class="dropdown_cell">
+      <view class="dropdown_item_nomal {{ journalism_type == '' ? 'dropdown_item_active' : '' }}" bindtap="dropTap2" data-id="" data-title="全部分类">全部分类</view>
+      <view class="dropdown_item_nomal {{ journalism_type == '01' ? 'dropdown_item_active' : '' }}" bindtap="dropTap2" data-id="01" data-title="结婚">结婚</view>
+      <view class="dropdown_item_nomal {{ journalism_type == '02' ? 'dropdown_item_active' : '' }}" bindtap="dropTap2" data-id="02" data-title="恋爱">恋爱</view>
+      <view class="dropdown_item_nomal {{ journalism_type == '03' ? 'dropdown_item_active' : '' }}" bindtap="dropTap2" data-id="03" data-title="交友">交友</view>
+    </view>
+  </van-dropdown-item>
+</van-dropdown-menu>
+
+<scroll-view style="height: {{windowHeight-50}}px;" scroll-y="{{true}}" bindscrolltolower="onScrollBottom">
 <view class="topic_box">
-  <view class="topic_item" wx:for="{{cityList}}" wx:key="index">
-    <image src="/images/homeModule/banner_xq.jpg" class="wh100" wx:if="{{item.topic_class}}"></image>
-    <view class="topic_item_banner_mask" wx:if="{{item.topic_class}}" bindtap="goTopicList" data-item="{{item}}"></view>
-    <text class="topic_item_banner_text" wx:if="{{item.topic_class}}" bindtap="goTopicList" data-item="{{item}}">{{item.topic_name}}</text>
-  </view>
-</view>
-<!-- 热门话题 -->
-<view class="topic_title mt10 mb10">热门话题</view>
-<view class="topic_box">
-  <view class="topic_class_item" wx:for="{{topicClass}}" wx:key="index" bindtap="goTopicList" data-item="{{item}}">
+  <view class="topic_class_item" wx:for="{{journalismList}}" wx:key="index" bindtap="goTopicList" data-item="{{item}}">
     <view class="topic_class_item_img">
       <image src="{{item.topic_img}}" class="wh100"></image>
     </view>

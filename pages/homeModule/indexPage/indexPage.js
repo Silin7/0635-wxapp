@@ -11,7 +11,7 @@ Page({
       { name: '聊城景点', image: '/images/homeModule/banner_xq.jpg', id: 'icon01' },
       { name: '聊城特产', image: '/images/homeModule/banner_xq.jpg', id: 'icon02' },
       { name: '聊城历史', image: '/images/homeModule/banner_xq.jpg', id: 'icon03' },
-      { name: '聊城论坛', image: '/images/homeModule/banner_xq.jpg', id: 'icon04' },
+      { name: '聊城新闻', image: '/images/homeModule/banner_xq.jpg', id: 'icon04' },
     ]
   },
 

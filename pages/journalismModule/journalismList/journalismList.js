@@ -3,14 +3,12 @@ import Toast from '../../../miniprogram_npm/vant-weapp/toast/toast';
 
 Page({
   data: {
-    id_key: '',
     windowWidth: 0,
     windowHeight: 0,
     journalism_area: '',
-    dropTitle1: '全部地区',
-    address: '',
+    areaTitle: '全部地区',
     journalism_type: '',
-    dropTitle2: '全部分类',
+    typeTitle: '全部分类',
     page: 1,
     limit: 10,
     totalCount: 0,
@@ -28,43 +26,45 @@ Page({
   },
 
   onShow: function () {
-    this.getTopicClass()
+    this.getJournalismList()
   },
 
-  dropTap1: function (e) {
+  areaTap: function (e) {
     this.setData({
       page: 1,
       limit: 10,
       totalCount: 0,
       journalismList: [],
       journalism_area: e.currentTarget.dataset.id,
-      dropTitle1: e.currentTarget.dataset.title
+      areaTitle: e.currentTarget.dataset.title
     })
     this.selectComponent('#item1').toggle('false');
-    // this.getTopicClass()
+    this.getJournalismList()
   },
 
-  dropTap2: function (e) {
+  typeTap: function (e) {
     this.setData({
       page: 1,
       limit: 10,
       totalCount: 0,
       journalismList: [],
       journalism_type: e.currentTarget.dataset.id,
-      dropTitle2: e.currentTarget.dataset.title
+      typeTitle: e.currentTarget.dataset.title
     })
     this.selectComponent('#item2').toggle(false);
-    // this.marryList()
+    this.getJournalismList()
   },
 
-  // 热门话题列表
-  getTopicClass: function () {
+  // 新闻列表
+  getJournalismList: function () {
     let data = {
       page: this.data.page,
       limit: this.data.limit,
-      state: '02'
+      journalism_area: this.data.journalism_area,
+      journalism_type: this.data.journalism_type,
+      is_pass: '02'
     }
-    esRequest('topic_class', data).then(res => {
+    esRequest('journalism_list', data).then(res => {
       if (res && res.data.code === 0) {
         this.setData({
           totalCount: res.data.totalCount,
@@ -76,10 +76,10 @@ Page({
     })
   },
   
-  // 话题列表
-  goTopicList: function (e) {
+  // 新闻详情
+  gojournalismDetails: function (e) {
     wx.navigateTo({
-      url: '/pages/topicModule/topicList/topicList?id=' + e.currentTarget.dataset.item.id + '&topic_class=' + e.currentTarget.dataset.item.topic_class
+      url: '/pages/topicModule/journalismDetails/journalismDetails?id=' + e.currentTarget.dataset.item.id
     })
   },
 
@@ -87,7 +87,7 @@ Page({
   onScrollBottom: function () {
     if (this.data.totalCount > this.data.journalismList.length) {
       this.data.page += 1
-      this.getTopicClass()
+      this.getJournalismList()
     }
   }
 })

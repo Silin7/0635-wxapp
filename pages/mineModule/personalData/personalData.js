@@ -1,4 +1,5 @@
 import mixins from '../../../utils/mixins'
+import baseURL from '../../../utils/baseURL';
 import regular from '../../../utils/regular'
 import esRequest from '../../../utils/esRequest';
 import Toast from '../../../miniprogram_npm/vant-weapp/toast/toast';
@@ -26,18 +27,18 @@ Page({
     currentDate: new Date(2000, 5, 15).getTime()
   },
 
+  onLoad: function () {
+    this.setData({
+      id_key: wx.getStorageSync('id_key').substr(1)
+    })
+    this.getMineInfo()
+  },
+
   onReady: function () {
     this.setData({
       windowWidth: wx.getSystemInfoSync().windowWidth,
       windowHeight: wx.getSystemInfoSync().windowHeight
     })
-  },
-
-  onShow: function () {
-    this.setData({
-      id_key: wx.getStorageSync('id_key').substr(1)
-    })
-    this.getMineInfo()
   },
 
   // 获取个人信息
@@ -133,6 +134,33 @@ Page({
     this.data.dataForm.personal_signature = event.detail.value
     this.setData({
       dataForm: this.data.dataForm
+    });
+  },
+
+  // 头像上传完成
+  afterRead: function (event) {
+    let _this = this
+    let filePath = event.detail.file.url
+    wx.uploadFile({ 
+      url: baseURL.baseURL + '/mine/update_avatarUrl',
+      header: {
+        author_id: wx.getStorageSync('id_key').toString()
+      },
+      filePath: filePath, 
+      name: 'file', 
+      formData: {},
+      success: function (res) {
+        res.data = JSON.parse(res.data)
+        if (res.data && res.data.code === 0) {
+          _this.data.dataForm.avatar_url = res.data.avatarUrl
+          _this.setData({
+            dataForm: _this.data.dataForm
+          })
+          console.log('_this.data.dataForm.avatar_url', _this.data.dataForm.avatar_url)
+        }
+      }, fail: function (err) { 
+        Toast.fail('系统错误')
+      }
     });
   },
 

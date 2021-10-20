@@ -14,6 +14,8 @@
     "pages/historyModule/historyDetails/historyDetails",
     "pages/specialtyModule/specialtyList/specialtyList",
     "pages/specialtyModule/specialtyDetails/specialtyDetails",
+    "pages/journalismModule/journalismList/journalismList",
+    "pages/journalismModule/journalismDetails/journalismDetails",
     "pages/marryModule/marryList/marryList",
     "pages/marryModule/marryDetails/marryDetails",
     "pages/marryModule/marryRegistration/marryRegistration",
