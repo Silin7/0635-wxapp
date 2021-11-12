@@ -17,6 +17,7 @@ Page({
     dialogType: '01',
     dialogShow: false,
     dialogButtons: [{text: '取消'}, {text: '确定'}],
+    uploadedImgs: []
   },
 
   onLoad: function (options) {
@@ -46,26 +47,29 @@ Page({
 
   // 图片上传完成
   afterRead: function (event) {
-    this.data.uploadImgs.push(event.detail.file)
+    event.detail.file.forEach(item => {
+      this.data.uploadImgs.push(item)
+    })
     this.setData({
       uploadImgs: this.data.uploadImgs
     })
   },
 
   // 删除已经上传的图片
-  deleteImg: function () {
+  deleteImg: function (event) {
+    this.data.uploadImgs.splice(event.detail.index, 1)
     this.setData({
-      uploadImgs: []
+      uploadImgs: this.data.uploadImgs
     })
   },
 
   // 发布动态
   releaseDynamic: function () {
-    if (this.data.dynamicContent == '' && this.data.uploadImgs.length == 0) {
+    if (this.data.dynamicContent === '' && this.data.uploadImgs.length === 0) {
       Toast.fail('请填写内容')
       return
     }
-    if (this.data.uploadImgs.length == 0) {
+    if (this.data.uploadImgs.length === 0) {
       this.setData({
         dialogType: '02',
         dialogShow: true
@@ -96,54 +100,52 @@ Page({
     }
     if (e.detail.index === 1) {
       if (_this.data.dialogType == '01') {
-        let filep = _this.data.uploadImgs[0].url
-        let formData = {
-          author_id: wx.getStorageSync('id_key').toString(),
-          author_name: _this.data.userInfo.nick_name,
-          author_avatar: _this.data.userInfo.avatar_url,
-          content: _this.data.dynamicContent
-        }
-        wx.uploadFile({ 
-          url: baseURL.baseURL + '/dynamic/dynamic_release_img',
-          header: {
-            author_id: wx.getStorageSync('id_key').toString()
-          },
-          filePath: filep, 
-          name: 'file', 
-          formData: formData, 
-          success: function (res) { 
-            Toast.success('发布成功')
-            setTimeout(function () {
-              wx.navigateBack({
-                delta: 1
-              })
-            }, 1500)
-          }, fail: function (err) { 
-            Toast.fail('系统错误')
-          } 
-        }); 
-      }
-      if (_this.data.dialogType == '02') {
-        let data = {
-          author_id: wx.getStorageSync('id_key').toString(),
-          author_name: _this.data.userInfo.nick_name,
-          author_avatar: _this.data.userInfo.avatar_url,
-          content: _this.data.dynamicContent
-        }
-        esRequest('dynamic_release_txt', data).then(res => {
-          if (res && res.data.code === 0) {
-            Toast.success('发布成功')
-            setTimeout(function () {
-              wx.navigateBack({
-                delta: 1
-              })
-            }, 1500)
-          } else {
-            Toast.fail('系统错误')
-          }
+        _this.data.uploadImgs.forEach(item => {
+          wx.uploadFile({ 
+            url: baseURL.baseURL + '/system/upload_files',
+            header: {
+              author_id: wx.getStorageSync('id_key').toString(),
+              file_path: 'dynamicModules'
+            },
+            filePath: item.url,
+            name: 'file',
+            formData: {},
+            success: function (res) {
+              _this.data.uploadedImgs.push(res.data)
+              if (_this.data.uploadImgs.length === _this.data.uploadedImgs.length) {
+                _this.saveDynamic()
+              }
+            }
+          });
         })
       }
+      if (_this.data.dialogType == '02') {
+        _this.saveDynamic()
+      }
     }
+  },
+
+  // 发布接口存入数据库
+  saveDynamic: function () {
+    let data = {
+      author_id: wx.getStorageSync('id_key').toString(),
+      author_name: this.data.userInfo.nick_name,
+      author_avatar: this.data.userInfo.avatar_url,
+      content: this.data.dynamicContent,
+      images: this.data.uploadedImgs.join(',')
+    }
+    esRequest('dynamic_release', data).then(res => {
+      if (res && res.data.code === 0) {
+        Toast.success('发布成功')
+        setTimeout(function () {
+          wx.navigateBack({
+            delta: 1
+          })
+        }, 1500)
+      } else {
+        Toast.fail('系统错误')
+      }
+    })
   },
 
   // 本人信息

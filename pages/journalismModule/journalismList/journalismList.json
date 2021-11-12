@@ -1,8 +1,9 @@
 {
-  "navigationBarTitleText": "话题分类",
+  "navigationBarTitleText": "聊城新闻",
   "usingComponents": {
     "van-toast": "vant-weapp/toast/index",
-    "van-dropdown-menu": "vant-weapp/dropdown-menu/index",
-    "van-dropdown-item": "vant-weapp/dropdown-item/index"
+    "van-tab": "vant-weapp/tab/index",
+    "van-tabs": "vant-weapp/tabs/index",
+    "van-image": "vant-weapp/image/index"
   }
 }

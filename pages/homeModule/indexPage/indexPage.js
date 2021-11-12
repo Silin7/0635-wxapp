@@ -56,7 +56,7 @@ Page({
     // 聊城论坛
     if (e.currentTarget.dataset.item.id === 'icon04') {
       wx.navigateTo({
-        url: '/pages/topicModule/topicClass/topicClass'
+        url: '/pages/journalismModule/journalismList/journalismList'
       })
     }
   },

@@ -22,16 +22,16 @@
 
   <view class="uploader_box">
     <van-uploader
-      max-count="{{1}}"
+      max-count="{{3}}"
+      multiple="{{true}}"
       file-list="{{uploadImgs}}"
-      center="{{true}}"
       deletable="{{true}}"
       preview-image="{{true}}"
-      preview-size="{{windowWidth-20}}"
+      preview-size="{{windowWidth / 3 - 20}}"
       bind:delete="deleteImg"
       bind:after-read="afterRead"
-      image-fit="widthFix"
-      upload-text="个人开发者资源有限，您只能上传一个文件哟~"/>
+      image-fit="widthFix"/>
+      <!-- upload-text="个人开发者资源有限，您只能上传一个文件哟~" -->
   </view>
 </view>
 

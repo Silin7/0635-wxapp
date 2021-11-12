@@ -1,13 +1,8 @@
 let dynamicRequest = {
-  dynamic_release_img: {
+  dynamic_release: {
     apiMethod: 'POST',
-    apiName: '/dynamic/dynamic_release_img',
-    name: '发动态-图片'
-  },
-  dynamic_release_txt: {
-    apiMethod: 'POST',
-    apiName: '/dynamic/dynamic_release_txt',
-    name: '发动态-文字'
+    apiName: '/dynamic/dynamic_release',
+    name: '发动态'
   },
   dynamic_list: {
     apiMethod: 'GET',
