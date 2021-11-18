@@ -22,8 +22,20 @@
     </view>
     <view class="dynamic_info">
       <view class="dynamic_content" wx:if="{{dynamicDetails.content}}">{{dynamicDetails.content}}</view>
-      <view class="dynamic_image" wx:if="{{dynamicDetails.image}}" bindtap="dynamicImg">
-        <van-image lazy-load width="100%" height="200" src="{{dynamicDetails.image}}" image-class="br5"/>
+      <view class="dynamic_image" wx:if="{{dynamicDetails.images && dynamicDetails.images.length === 1}}">
+        <van-image lazy-load fit="widthFix" width="{{windowWidth - 20}}" image-class="br5"
+          wx:for="{{dynamicDetails.images}}" wx:key="index" src="{{item}}"
+          bindtap="dynamicImg" data-current="{{item}}"/>
+      </view>
+      <view class="dynamic_image frbc" wx:if="{{dynamicDetails.images && dynamicDetails.images.length === 2}}">
+        <van-image lazy-load fit="widthFix" width="{{windowWidth / 2 - 15}}" image-class="br5"
+          wx:for="{{dynamicDetails.images}}" wx:key="index" src="{{item}}"
+          bindtap="dynamicImg" data-current="{{item}}"/>
+      </view>
+      <view class="dynamic_image frbc" wx:if="{{dynamicDetails.images && dynamicDetails.images.length === 3}}">
+        <van-image lazy-load fit="widthFix" width="{{windowWidth / 3 - 10}}" image-class="br5"
+          wx:for="{{dynamicDetails.images}}" wx:key="index" src="{{item}}"
+          bindtap="dynamicImg" data-current="{{item}}"/>
       </view>
     </view>
     <view class="share">

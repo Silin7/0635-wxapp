@@ -26,8 +26,16 @@
       <rich-text wx:if="{{item.type_id != '03'}}" nodes="{{item.content}}"></rich-text>
     </view>
     <!-- 动态图片 -->
-    <view wx:if="{{item.image}}" class="mt10">
-      <van-image lazy-load fit="widthFix" width="{{windowWidth-20}}" src="{{item.image}}"/>
+    <view wx:if="{{item.images && item.images.length === 1}}" class="mt10">
+      <van-image lazy-load fit="widthFix" width="{{windowWidth - 20}}" src="{{item.images[0]}}"/>
+    </view>
+    <view wx:if="{{item.images && item.images.length === 2}}" class="mt10 frbc">
+      <van-image lazy-load fit="widthFix" width="{{windowWidth / 2 - 15}}"
+        wx:for="{{item.images}}" wx:key="index" wx:for-item="item2" src="{{item2}}"/>
+    </view>
+    <view wx:if="{{item.images && item.images.length === 3}}" class="mt10 frbc">
+      <van-image lazy-load fit="widthFix" width="{{windowWidth / 3 - 10}}"
+        wx:for="{{item.images}}" wx:key="index" wx:for-item="item2" src="{{item2}}"/>
     </view>
   </view>
   <!-- 回到顶部 -->

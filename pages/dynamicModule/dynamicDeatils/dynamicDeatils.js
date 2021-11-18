@@ -236,9 +236,9 @@ Page({
   },
 
   // 查看大图或保存图片
-  dynamicImg: function () {
-    let current = this.data.dynamicDetails.image
-    let urls = [this.data.dynamicDetails.image]
+  dynamicImg: function (e) {
+    let current = e.target.dataset.current
+    let urls = this.data.dynamicDetails.images
     wx.previewImage({
       // 当前显示图片的http链接
       current: current,
