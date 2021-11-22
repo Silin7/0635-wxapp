@@ -24,15 +24,15 @@ Page({
     journalismList: [],
   },
 
+  onLoad: function () {
+    this.getJournalismList()
+  },
+
   onReady: function () {
     this.setData({
       windowWidth: wx.getSystemInfoSync().windowWidth,
       windowHeight: wx.getSystemInfoSync().windowHeight
     })
-  },
-
-  onShow: function () {
-    this.getJournalismList()
   },
 
   // 切换Tabs
@@ -67,9 +67,9 @@ Page({
   },
   
   // 新闻详情
-  gotopicDetails: function (e) {
+  gojournalismDetails: function (e) {
     wx.navigateTo({
-      url: '/pages/topicModule/topicDetails/topicDetails?id=' + e.currentTarget.dataset.item.id
+      url: '/pages/journalismModule/journalismDetails/journalismDetails?id=' + e.currentTarget.dataset.item.id
     })
   },
 

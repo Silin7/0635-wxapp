@@ -13,11 +13,11 @@ Page({
     },
     dynamicContent: '',
     uploadImgs: [],
+    uploadedImgs: [],
     userInfo: {},
     dialogType: '01',
     dialogShow: false,
     dialogButtons: [{text: '取消'}, {text: '确定'}],
-    uploadedImgs: []
   },
 
   onLoad: function (options) {

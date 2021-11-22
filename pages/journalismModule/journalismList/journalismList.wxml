@@ -3,14 +3,14 @@
 <van-tabs active="{{scenicActive}}" bind:change="scenicChange" ellipsis="{{false}}" border="{{false}}" swipeable sticky animated>
   <van-tab wx:for="{{cityList}}" wx:key="index" title="{{item.type_name}}" name="{{item.type_id}}">
     <scroll-view style="height: {{windowHeight-50}}px;" scroll-y="{{true}}" bindscrolltolower="onScrollBottom">
-      <view class="topic_box">
-        <view class="topic_class_item" wx:for="{{journalismList}}" wx:key="index" bindtap="goTopicList" data-item="{{item}}">
-          <view class="topic_class_item_img">
-            <image src="{{item.topic_img}}" class="wh100"></image>
+      <view class="journalism_box">
+        <view class="journalism_class_item" wx:for="{{journalismList}}" wx:key="index" bindtap="gojournalismDetails" data-item="{{item}}">
+          <view class="journalism_class_item_img">
+            <image src="{{item.journalism_img}}" class="wh100"></image>
           </view>
-          <view class="topic_class_item_text" style="width: {{windowWidth-130}}px;">
-            <view class="topic_class_item_text_title">{{item.topic_title}}</view>
-            <view class="topic_class_item_text_txt to1">{{item.topic_info}}</view>
+          <view class="journalism_class_item_text" style="width: {{windowWidth-130}}px;">
+            <view class="journalism_class_item_text_title to2">{{item.journalism_title}}</view>
+            <view class="journalism_class_item_text_txt">{{item.create_time}}</view>
           </view>
         </view>
       </view>

@@ -1,5 +1,5 @@
 /* 家乡话题 */
-.topic_title {
+.journalism_title {
   box-sizing: border-box;
   height: 40px;
   padding: 0 10px;
@@ -9,7 +9,7 @@
   letter-spacing: 2px;
   color: #666666;
 }
-.topic_box {
+.journalism_box {
   box-sizing: border-box;
   width: 100%;
   padding: 10px 10px 0px;
@@ -19,7 +19,7 @@
   justify-content: space-between;
   align-items: center;
 }
-.topic_item {
+.journalism_item {
   flex-shrink: 0;
   width: 31%;
   height: 80px;
@@ -29,7 +29,7 @@
   overflow: hidden;
   position: relative;
 }
-.topic_item_banner_mask {
+.journalism_item_banner_mask {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -37,7 +37,7 @@
   background-color: #000000;
   opacity: 0.3;
 }
-.topic_item_banner_text {
+.journalism_item_banner_text {
   position: absolute;
   bottom: 25px;
   right: 0;
@@ -54,7 +54,7 @@
   letter-spacing: 8px;
 }
 
-.topic_class_item {
+.journalism_class_item {
   box-sizing: border-box;
   width: 100%;
   padding-bottom: 10px;
@@ -63,28 +63,27 @@
   justify-content: space-between;
   border-bottom: 1rpx solid #F7F8FA;
 }
-.topic_class_item_img {
+.journalism_class_item_img {
   width: 100px;
   height: 60px;
   box-sizing: border-box;
   border-radius: 5px;
   overflow: hidden;
 }
-.topic_class_item_text {
+.journalism_class_item_text {
   display: flex;
   flex-flow: column;
   justify-content: space-between;
 }
-.topic_class_item_text_title {
+.journalism_class_item_text_title {
   width: 100%;
-  height: 35px;
-  line-height: 35px;
+  line-height: 20px;
   font-size: 14px;
   font-weight: 700;
   letter-spacing: 1px;
   color: #333333;
 }
-.topic_class_item_text_txt {
+.journalism_class_item_text_txt {
   width: 100%;
   height: 25px;
   line-height: 25px;

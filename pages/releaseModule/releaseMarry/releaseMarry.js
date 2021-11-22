@@ -1,4 +1,5 @@
 import baseURL from '../../../utils/baseURL';
+import esRequest from '../../../utils/esRequest';
 import Toast from '../../../miniprogram_npm/vant-weapp/toast/toast';
 
 Page({
@@ -11,6 +12,7 @@ Page({
       minHeight: 120
     },
     uploadImgs: [],
+    uploadedImgs: [],
     userInfo: {},
     dataForm: {
       type: '',
@@ -243,22 +245,24 @@ Page({
 
   // 图片上传完成
   afterRead: function (event) {
-    this.data.uploadImgs.push(event.detail.file)
+    event.detail.file.forEach(item => {
+      this.data.uploadImgs.push(item)
+    })
     this.setData({
       uploadImgs: this.data.uploadImgs
     })
   },
 
   // 删除已经上传的图片
-  deleteImg: function () {
+  deleteImg: function (event) {
+    this.data.uploadImgs.splice(event.detail.index, 1)
     this.setData({
-      uploadImgs: []
+      uploadImgs: this.data.uploadImgs
     })
   },
 
   // 发布动态
   releaseDynamic: function () {
-    console.log(this.data.dataForm)
     if (this.data.uploadImgs.length == 0) {
       Toast.fail('请上传图片')
       return
@@ -280,27 +284,60 @@ Page({
       Toast.success('取消')
     }
     if (e.detail.index === 1) {
-      let filep = _this.data.uploadImgs[0].url
-      wx.uploadFile({ 
-        url: baseURL.baseURL + '/marry/marry_release',
-        header: {
-          author_id: wx.getStorageSync('id_key').toString()
-        },
-        filePath: filep, 
-        name: 'file', 
-        formData: _this.data.dataForm, 
-        success: function (res) { 
-          Toast.success('发布成功')
-          setTimeout(function () {
-            wx.navigateBack({
-              delta: 1
-            })
-          }, 1500)
-        }, fail: function (err) { 
-          Toast.fail('系统错误')
-        } 
-      }); 
+      // wx.uploadFile({ 
+      //   url: baseURL.baseURL + '/marry/marry_release',
+      //   header: {
+      //     author_id: wx.getStorageSync('id_key').toString()
+      //   },
+      //   filePath: filep, 
+      //   name: 'file', 
+      //   formData: _this.data.dataForm, 
+      //   success: function (res) { 
+      //     Toast.success('发布成功')
+      //     setTimeout(function () {
+      //       wx.navigateBack({
+      //         delta: 1
+      //       })
+      //     }, 1500)
+      //   }, fail: function (err) { 
+      //     Toast.fail('系统错误')
+      //   } 
+      // });
+      _this.data.uploadImgs.forEach(item => {
+        wx.uploadFile({ 
+          url: baseURL.baseURL + '/system/upload_files',
+          header: {
+            author_id: wx.getStorageSync('id_key').toString(),
+            file_path: 'marryModule'
+          },
+          filePath: item.url,
+          name: 'file',
+          formData: {},
+          success: function (res) {
+            _this.data.uploadedImgs.push(res.data)
+            if (_this.data.uploadImgs.length === _this.data.uploadedImgs.length) {
+              _this.saveDynamic()
+            }
+          }
+        });
+      })
     }
+  },
+
+  // 发布接口存入数据库
+  saveDynamic: function () {
+    esRequest('marry_release', this.data.dataForm).then(res => {
+      if (res && res.data.code === 0) {
+        Toast.success('发布成功')
+        // setTimeout(function () {
+        //   wx.navigateBack({
+        //     delta: 1
+        //   })
+        // }, 1500)
+      } else {
+        Toast.fail('系统错误')
+      }
+    })
   },
 
   // 未登录跳转倒登录界面

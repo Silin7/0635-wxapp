@@ -8,7 +8,7 @@ Page({
   },
 
   onLoad: function (options) {
-    this.data.journalismId = options.journalismId ? options.journalismId : '100001'
+    this.data.journalismId = options.id ? options.id : ''
     this.getJournalismDetails()
   },
 
@@ -22,6 +22,7 @@ Page({
     }
     esRequest('journalism_details', data).then(res => {
       if (res && res.data.code == 0) {
+        res.data.data.journalism_info = res.data.data.journalism_info.toString().replace(/\<img/gi, '<img style="max-width:100%; height:auto"')
         this.setData({
           journalismDetails: res.data.data
         })

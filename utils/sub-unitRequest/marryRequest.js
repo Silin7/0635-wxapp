@@ -1,4 +1,9 @@
 let marryRequest = {
+  marry_release: {
+    apiMethod: 'GET',
+    apiName: '/marry/marry_release',
+    name: '新增社交信息'
+  },
   marry_list: {
     apiMethod: 'GET',
     apiName: '/marry/marry_list',

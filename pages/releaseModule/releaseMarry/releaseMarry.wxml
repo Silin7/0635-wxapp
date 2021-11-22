@@ -95,6 +95,16 @@
     <!-- 本人照片 -->
     <view class="information_item_text2">本人照片</view>
     <van-uploader
+      accept="image"
+      max-count="{{6}}"
+      multiple="{{true}}"
+      file-list="{{uploadImgs}}"
+      deletable="{{true}}"
+      preview-image="{{true}}"
+      preview-size="{{((windowWidth - 54) / 3) + 'px'}}"
+      bind:delete="deleteImg"
+      bind:after-read="afterRead"/>
+    <!-- <van-uploader
       max-count="{{1}}"
       file-list="{{uploadImgs}}"
       center="{{true}}"
@@ -103,7 +113,7 @@
       preview-size="{{windowWidth-30}}"
       bind:delete="deleteImg"
       bind:after-read="afterRead"
-      upload-text="个人开发者资源有限，您只能上传一张图片哟~"/>
+      upload-text="个人开发者资源有限，您只能上传一张图片哟~"/> -->
   </view>
 </view>
 
